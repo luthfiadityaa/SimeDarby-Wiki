@@ -6,4 +6,4 @@ This project is based on the Agile process. The following image shows the hierar
 
 * User Stories and tasks are used to track work.
 * Bugs track code defects.
-* [Epics](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5056/) and features are used to group work under larger scenarios.
+* [Epics](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems) and features are used to group work under larger scenarios.
