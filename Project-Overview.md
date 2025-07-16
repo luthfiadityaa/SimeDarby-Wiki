@@ -4,7 +4,7 @@
 Documents for SimeDerby Oil are mainly managed in SharePoint.
 - [Project Home directory](https://daifuku.sharepoint.com)
   Production spec, IO spec, Contract spec, and Host system document.
-- [Design Material Docs] (https://daifuku.sharepoint.com)
+- [Design Material Docs](https://daifuku.sharepoint.com)
   - Linkage Specs
     1. Host Linkage
     2. Low Level Linkage
