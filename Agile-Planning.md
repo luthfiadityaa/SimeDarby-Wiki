@@ -9,7 +9,7 @@ This project is based on the Agile process. The following image shows the hierar
 * [Epics](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems) and [Features](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_queries/query/4d4ede94-1662-4af9-8c17-d527a036a596/) are used to group work under larger scenarios.
 
 # Workflow
-
-# Daily Meeting
-
-# Retrospective Meeting
+  - Sprint Planning
+  - Agile Meeting (Daily/Weekly)
+  - Sprint Review
+  - Sprint Retrospective
