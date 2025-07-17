@@ -29,12 +29,12 @@ This project is based on the Agile process. The following image shows the hierar
     - **Weekly:**
       - Some teams hold additional **weekly alignment or refinement meetings**, especially in hybrid agile setups.
       - Used for deeper backlog grooming, technical sync, or stakeholder alignment. 
-  - Sprint Review
+  - **Sprint Review**
     A meeting held at the **end of the sprint** to:
     - **Demonstrate completed work** to stakeholders.
     - Gather **feedback**.
     - Decide **next steps or changes** for upcoming work.
-  - Sprint Retrospective
+  - **Sprint Retrospective**
     A meeting held after the **Sprint Review and before the next Sprint Planning**, where the team reflects on:
     - **What went well?**
     - **What didn’t go well?**
