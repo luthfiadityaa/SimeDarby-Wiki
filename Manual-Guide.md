@@ -15,3 +15,9 @@
 
 #WareNavi7A
 [Manuals [WareNavi] - Overview](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/45/Manuals-WareNavi-)
+
+#Dummy Tools
+[Manuals [Dummy tools] - Overview](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/223/Manuals-Dummy-tools-)
+
+#Tools
+[Manuals [Tools] - Overview](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/789/Manuals-Tools-)
