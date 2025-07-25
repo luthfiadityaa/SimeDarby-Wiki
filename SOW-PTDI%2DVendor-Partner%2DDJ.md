@@ -15,7 +15,7 @@
 | Writing Linkage Specs |  ○   |        ○       |    |    
 | File Table Specs      |  ○   |        ○       |    |
 | Data Transition       |  o   |                | ○  |
-| Job Flow              |  ○   |        ○       | ○  |
+| Job Flow              |  ○   |                | ○  |
 
 
 # Development
