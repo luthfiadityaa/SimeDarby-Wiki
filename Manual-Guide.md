@@ -21,3 +21,6 @@
 
 #Tools
 [Manuals [Tools] - Overview](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/789/Manuals-Tools-)
+
+#Troubleshooting
+[Trouble shooting - Overview](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/43/Trouble-shooting)
