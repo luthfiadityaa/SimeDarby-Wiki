@@ -2,7 +2,7 @@
 
 # MaterialMasterReceive
 This is the module to receive material master data from SAP.
-SAP will send back the material master data on the response.
+SAP will send the material master data on the response.
 
 # DFD
 The trigger to start the process is this file.
