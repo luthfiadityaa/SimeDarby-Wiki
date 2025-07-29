@@ -2,7 +2,7 @@
 
 # PlannedStorageReceive
 This is the module to receive planned storage data from SAP.
-SAP will send back the planned storage data on the response.
+SAP will send the planned storage data on the response.
 
 # DFD
 The trigger to start the process is this file.
