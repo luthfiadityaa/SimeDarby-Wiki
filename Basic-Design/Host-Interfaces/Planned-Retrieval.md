@@ -1,6 +1,6 @@
 [[_TOC_]]
 
-# PlannedRetrievaleReceive
+# PlannedRetrievalReceive
 This is the module to receive planned retrieval data from SAP.
 SAP will send the planned retrieval data on the response.
 
