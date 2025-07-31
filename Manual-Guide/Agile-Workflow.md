@@ -12,6 +12,19 @@ This project is based on the Agile process. The following image shows the hierar
 
 [Boards - Overview](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/228/Boards)
 
+# Story Points vs. Original Estimate	              
+
+| **Story Points** | **Days** | **Hours** | **Typical Task Size**                    |
+|------------------|----------|-----------|------------------------------------------|
+| 1                | 0.5      | 4         | Very small or simple task                |
+| 2                | 1        | 8         | Small to medium task                     |
+| 3                | 1.5      | 12        | Medium complexity task                   |
+| 3                | 2        | 16        |                                          |
+| 5                | 2.5      | 20        | Large or complex task                    |
+| 5                | 3        | 24        |                                          |
+| 8                | 4        | 32        | Very large task or small feature         |
+| 8                | 5        | 40        |                                          |
+
 # Agile Ceremonies
   - **Sprint Planning**
     A meeting held at the **start of each sprint** where the team decides:
