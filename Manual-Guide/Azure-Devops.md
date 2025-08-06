@@ -1,12 +1,13 @@
+[[_TOC_]]
 # A. Clone Repository
 
-## A.1. Git
+## 1. Git
 
-## A.2. SSH-KEY
+## 2. SSH-KEY
   
 Generate an RSA key pair from Command Prompt on Windows using built-in tools.
 
-### 1.  Create
+### 2.1.  Create
 Option 1: Using ssh-keygen (Windows 10/11 with OpenSSH installed)
 Modern Windows versions come with ssh-keygen via OpenSSH.
 
@@ -26,7 +27,7 @@ ssh-keygen -t rsa -b 2048 -f C:\Users\%USERNAME%\.ssh\my_rsa_key
 - my_rsa_key → private key
 - my_rsa_key.pub → public key
 
-### 2. Adding
+### 2.2 Adding
 Ensure SSH Agent is running and your key is added
 In Git Bash or PowerShell:
 
@@ -53,7 +54,7 @@ To check if it's already added:
 ssh-add -l
 ```
 
-### 3. Testing
+### 2.3 Testing
 
 Test your SSH connection
 Run:
