@@ -3,9 +3,9 @@
 
 ## 1. Git
 
-## 2. SSH-KEY
+## 2. SSH-KEY (Command Prompt)
   
-Generate an RSA key pair from Command Prompt on Windows using built-in tools.
+Generate an RSA key pair from Command Prompt on Windows using built-in tools. if you using eclipse to setup SSH-Key, please refer to this [register-ssh-key](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/294/Quick-Start-guide?anchor=register-ssh-key) Wiki.
 
 ### 2.1.  Create
 Option 1: Using ssh-keygen (Windows 10/11 with OpenSSH installed)
