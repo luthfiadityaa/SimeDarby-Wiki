@@ -72,10 +72,10 @@ You've successfully authenticated, but Git does not provide shell access.
 
 ## 3. [Clone](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/294/Quick-Start-guide?anchor=clone-repository)
 
-## 4. Build Project
+#B. Build Project
 - Import all projects on Eclipse to build.
 
-## 5. Configure hosts file
+### 1. Configure hosts file
 - Open hosts file and copy the setting as listed below.  
 C:\Windows\System32\drivers\etc\hosts
 ```
@@ -85,6 +85,8 @@ C:\Windows\System32\drivers\etc\hosts
 127.0.0.1       MOSA001
 ```
 
-## 6. [Create Database](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/294/Quick-Start-guide?anchor=create-databse)
+### 2. [Create Database](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/294/Quick-Start-guide?anchor=create-databse)
 
-## 7. [Start Process](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/294/Quick-Start-guide?anchor=start-processes)
+### 3. [Start Process](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/294/Quick-Start-guide?anchor=start-processes)
+
+#C. [Pull Request (PR) - Overview](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/758/Pull-Request-(PR))
