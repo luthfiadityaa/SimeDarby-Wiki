@@ -54,7 +54,10 @@ To check if it's already added:
 ssh-add -l
 ```
 
-### 2.3 Testing
+### 2.3 Register SSH-KEY to Azure Devops
+[Register to Azure DevOps](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/294/Quick-Start-guide?anchor=register-ssh-key)
+
+### 2.4 Testing
 
 Test your SSH connection
 Run:
