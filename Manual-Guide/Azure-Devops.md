@@ -54,8 +54,7 @@ To check if it's already added:
 ssh-add -l
 ```
 
-### 2.3 Register SSH-KEY to Azure Devops
-[Register to Azure DevOps](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/294/Quick-Start-guide?anchor=register-ssh-key)
+### 2.3 [Register to Azure DevOps](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/294/Quick-Start-guide?anchor=register-ssh-key)
 
 ### 2.4 Testing
 
@@ -71,5 +70,21 @@ Expected response:
 You've successfully authenticated, but Git does not provide shell access.
 ```
 
-## Clone
-[clone-repository](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/294/Quick-Start-guide?anchor=clone-repository)
+## 3. [Clone](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/294/Quick-Start-guide?anchor=clone-repository)
+
+## 4. Build Project
+- Import all projects on Eclipse to build.
+
+## 5. Configure hosts file
+- Open hosts file and copy the setting as listed below.  
+C:\Windows\System32\drivers\etc\hosts
+```
+127.0.0.1       localhost rmiserver jasper-printserver
+127.0.0.1       DBSERVER as21server
+127.0.0.1       AGC01
+127.0.0.1       MOSA001
+```
+
+## 6. [Create Database](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/294/Quick-Start-guide?anchor=create-databse)
+
+## 7. [Start Process](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/294/Quick-Start-guide?anchor=start-processes)
