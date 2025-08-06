@@ -70,3 +70,6 @@ Expected response:
 ```
 You've successfully authenticated, but Git does not provide shell access.
 ```
+
+## Clone
+[clone-repository](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/294/Quick-Start-guide?anchor=clone-repository)
