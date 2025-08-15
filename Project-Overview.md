@@ -26,6 +26,7 @@ Documents for SimeDerby Oil are mainly managed in SharePoint.
 
 # Environment Settings
 - [Azure Devops](/Manual-Guide/Azure-Devops)
+Read some documents of Azure DevOps to know the development workflow.
 
 # Boards
 - [Agile Workflow](/Manual-Guide/Agile-Workflow)
