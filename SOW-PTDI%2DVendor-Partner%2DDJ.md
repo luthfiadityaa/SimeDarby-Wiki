@@ -5,8 +5,8 @@
 |                      | PTDI | Vendor Partner | DJ |
 |----------------------|------|----------------|----|
 | SimNavi              |      |                | ○  |
-| Setup DEV VM on AWS  |      |                | ○  |
-| Setup QA VM on AWS   |      |                | ○  |
+| Setup DEV VM (Local) |  ○   |                |    |
+| Setup QA on AWS      |      |                | ○  |
 
 
 # Basic Design
