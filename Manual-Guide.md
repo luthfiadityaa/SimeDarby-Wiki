@@ -16,6 +16,9 @@
 #WareNavi7A
 [Manuals [WareNavi] - Overview](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/45/Manuals-WareNavi-)
 
+#Daifuku Structure List Directory
+[Daifuku List Dir.txt](https://daifuku.sharepoint.com/:t:/r/sites/jp0211039/Shared%20Documents/PTDI/Projects/PT.%20Guthrie%20Indonesia%20Sei%20Mangkei%20Refinery(Sime%20Darby)/Garuda%20Project/I.%20Other%20Material/Daifuku%20List%20Dir.txt?csf=1&web=1&e=ztsMZf)
+
 #Dummy Tools
 [Manuals [Dummy tools] - Overview](https://dev.azure.com/Daifuku-SW/MY_SunwayWinstar/_wiki/wikis/MY_SunwayWinster.wiki/223/Manuals-Dummy-tools-)
 
