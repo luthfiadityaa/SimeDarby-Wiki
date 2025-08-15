@@ -2,9 +2,9 @@
 
 # Documents List
 Documents for SimeDerby Oil are mainly managed in SharePoint.
-- [Project Home directory](https://daifuku.sharepoint.com/:f:/r/sites/jp0211039/Shared%20Documents/PTDI/Projects/PT.%20Guthrie%20Indonesia%20Sei%20Mangkei%20Refinery(Sime%20Darby)/DJ%20Working%20Folder?csf=1&web=1&e=hTbhHm))
+- [Project Home directory](https://daifuku.sharepoint.com/:f:/r/sites/jp0211039/Shared%20Documents/PTDI/Projects/PT.%20Guthrie%20Indonesia%20Sei%20Mangkei%20Refinery(Sime%20Darby)/Garuda%20Project?csf=1&web=1&e=9ZHR8M)
   Production spec, IO spec, Contract spec, and Host system document.
-- [Design Material Docs](https://daifuku.sharepoint.com)
+- [Design Material Docs](https://daifuku.sharepoint.com/:f:/r/sites/jp0211039/Shared%20Documents/PTDI/Projects/PT.%20Guthrie%20Indonesia%20Sei%20Mangkei%20Refinery(Sime%20Darby)/Garuda%20Project/F.%20Basic%20Design?csf=1&web=1&e=jTMIU5)
   - Linkage Specs
     1. Host Linkage
     2. Low Level Linkage
