@@ -24,6 +24,9 @@ Documents for SimeDerby Oil are mainly managed in SharePoint.
   - Program List
   - Function Specifications
 
+# Environment Settings
+- [Azure Devops](/Manual-Guide/Azure-Devops)
+
 # Boards
 - [Agile Workflow](/Manual-Guide/Agile-Workflow)
   Boards in Azure DevOps used to manage work items and track progress in a project. It provides a clear overview of tasks, status, and flow through different stage. 
