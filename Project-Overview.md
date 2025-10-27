@@ -1,5 +1,7 @@
 [[_TOC_]]
 
+![image.png](/.attachments/image-21e549c9-736f-442d-9072-c41a2683a0e2.png)
+
 # Documents List
 Documents for SimeDerby Oil are mainly managed in SharePoint.
 - [Project Home directory](https://daifuku.sharepoint.com/:f:/r/sites/jp0211039/Shared%20Documents/PTDI/Projects/PT.%20Guthrie%20Indonesia%20Sei%20Mangkei%20Refinery(Sime%20Darby)/Garuda%20Project?csf=1&web=1&e=9ZHR8M)
