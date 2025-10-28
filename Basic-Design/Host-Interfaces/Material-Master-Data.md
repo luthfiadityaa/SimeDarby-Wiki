@@ -23,6 +23,7 @@ flowchart LR
 :::
 
 #XML Format
+##Finish Goods
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <MaterialMaster>
@@ -37,10 +38,30 @@ flowchart LR
 </MaterialMaster>
 ```
 
+##Packaging Material
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<MaterialMaster>
+     <MsgID>00000000025230999</MsgID>
+     <MaterialCode>4900000002</MaterialCode>
+     <MaterialName>PACKAGING 001</MaterialName>
+     <UoM>KG</UoM>
+     <MaterialType>ZPCK</MaterialType>
+     <DeletionInd>0</DeletionInd>
+</MaterialMaster>
+```
+
 #TXT/CSV Format
+##Finish Goods
 ```csv
 0000000002523009,2900000002,"CRUDE PALM OIL (CPO) v1",12,64,CTN,ZFNP,0
 ```  
+
+##Packaging Material
+```csv
+00000000025230999,4900000002,"PACKAGING 001",KG,ZPCK,0
+```
+
 # User Story
 - #5737
 
