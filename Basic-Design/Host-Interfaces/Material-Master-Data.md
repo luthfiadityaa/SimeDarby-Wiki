@@ -10,9 +10,10 @@ The trigger to start the process is this file.
 
 ::: mermaid
 flowchart LR
-    A[SAP] -->|Send XML via SFTP| B[HostCommExecutor]
-    B -->|Convert XML → TXT/CSV| C[FileExchangeConverter]
-    C -->|Insert Data| D[(DMMaterialMaster)]
+    A[SAP] -->|Send XML via SFTP| B[FTP Folder]
+    B -->|Convert XML → TXT/CSV| C[HostCommExecutor]
+    C -->|Convert XML → TXT/CSV| D[FileExchangeConverter]
+    D -->|Insert Data| E[(DMMaterialMaster)]
 
     subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
