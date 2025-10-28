@@ -10,9 +10,13 @@ The trigger to start the process is this file.
 
 ::: mermaid
 flowchart LR
-
+item[("DMMaterialMaster")]
+serviceHostComm-->periodicItemMaster--request-->SAP
+SAP--response-->periodicItemMaster
+periodicItemMaster--Insert-->item
 subgraph HostCommExecutor
 serviceHostComm["serviceHostComm.prj\n(ConsoleApplicationExecutor)"]
+periodicItemMaster["getItemMaster()\n>ItemMasterRequestSender"]
 end
 :::
 
