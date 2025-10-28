@@ -17,9 +17,9 @@ flowchart LR
     C -->|Convert TXT/CSV → XML| B
     B -->|Return XML Response via SFTP| A
 
-    subgraph HostCommExecutor
-        C1[serviceHostComm.prj<br>(ConsoleApplicationExecutor)]
-        C2[recvItemMasterData()<br>→ MaterialMasterReceive]
+     subgraph HostCommExecutor
+        C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
+        C2["recvProductionStorageReportData()<br>→ ProductionStorageReportData"]
         C1 --> C2
     end
 :::
@@ -29,7 +29,8 @@ flowchart LR
     A[SAP] -->|Send XML via SFTP| B[(FTP Folder)]
     B -->|GET XML| C[HostCommExecutor]
     C -->|Convert XML → TXT/CSV| D[FileExchangeConverter]
-    D -->|Insert| E[(DNRetrievalPlan)]
+    D -->|Insert| E[(DNStoragePlan)]
+    E -->|Response| F[(DNHostSend)]
 
     subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
