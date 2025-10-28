@@ -25,21 +25,36 @@ flowchart LR
 #XML Format
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<MaterialMaster>
-    <MsgID>0000000002523009</MsgID>
-    <MaterialCode>2900000002</MaterialCode>
-    <MaterialName>CRUDE PALM OIL (CPO) v1</MaterialName>
-    <QuantityKGCtn>12</QuantityKGCtn>
-    <QuantityCtnPal>64</QuantityCtnPal>
-    <UoM>CTN</UoM>
-    <MaterialType>ZFNP</MaterialType>
-    <DeletionInd>0</DeletionInd>
-</MaterialMaster>
+<PurchaseOrder>
+    <CompanyCode>1000</CompanyCode>
+    <Vendor>1234567890</Vendor>
+    <VendorName>ABC Supplies Ltd.</VendorName>
+    <DocumentDate>20250623</DocumentDate>
+    <Items>
+        <Item>
+            <ItemNumber>00010</ItemNumber>
+            <Plant>SG01</Plant>
+            <MaterialNumber>MAT123456789000001</MaterialNumber>
+            <OrderQuantity>100.000</OrderQuantity>
+            <OrderUnit>EA</OrderUnit>
+            <DeliveryDate>20250701</DeliveryDate>
+        </Item>
+        <Item>
+            <ItemNumber>00020</ItemNumber>
+            <Plant>SG01</Plant>
+            <MaterialNumber>MAT123456789000002</MaterialNumber>
+            <OrderQuantity>200.000</OrderQuantity>
+            <OrderUnit>BOX</OrderUnit>
+            <DeliveryDate>20250710</DeliveryDate>
+        </Item>
+    </Items>
+</PurchaseOrder>
 ```
 
 #TXT/CSV Format
 ```csv
-0000000002523009,2900000002,"CRUDE PALM OIL (CPO) v1",12,64,CTN,ZFNP,0
+1000,1234567890,"ABC Supplies Ltd.",20250623,00010,SG01,MAT123456789000001,100.000,EA,20250701
+1000,1234567890,"ABC Supplies Ltd.",20250623,00020,SG01,MAT123456789000002,200.000,BOX,20250710
 ```  
 
 # User Story
