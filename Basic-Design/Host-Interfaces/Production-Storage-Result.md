@@ -10,31 +10,16 @@ The trigger to start the process is this file.
 
 ::: mermaid
 flowchart LR
-    A[HostCommExecutor] -->|Send XML via SFTP| B[FileExchangeConverter]
-    B -->|Convert XML → TXT/CSV| C[HostCommExecutor]
-    C -->|Insert Data| D[(DMMaterialMaster)]
-    D -->|Send Data Back| C
+    A[HostCommExecutor] -->|Convert TXT/CSV -> XML| B[FileExchangeConverter]
+    B -->|GET XML| C[(FTP Folder)]
+    C -->|Send XML via SFTP| D[SAP]
+    D -->|Send Back Response| C
     C -->|Convert TXT/CSV → XML| B
     B -->|Return XML Response via SFTP| A
-    A <-- E[(DNStoragePlan)]
-    A <-- F[(DNHostSend)]
+    E[(DNStoragePlan)] <--> |Update| A
+    F[(DNHostSend)] <--> |Update| A
 
      subgraph HostCommExecutor
-        C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
-        C2["recvProductionStorageReportData()<br>→ ProductionStorageReportData"]
-        C1 --> C2
-    end
-:::
-
-::: mermaid
-flowchart LR
-    A[SAP] -->|Send XML via SFTP| B[(FTP Folder)]
-    B -->|GET XML| C[HostCommExecutor]
-    C -->|Convert XML → TXT/CSV| D[FileExchangeConverter]
-    D -->|Insert| E[(DNStoragePlan)]
-    E -->|Response| F[(DNHostSend)]
-
-    subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
         C2["recvProductionStorageReportData()<br>→ ProductionStorageReportData"]
         C1 --> C2
