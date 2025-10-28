@@ -16,7 +16,7 @@ SAP--response-->periodicItemMaster
 periodicItemMaster--Insert-->item
 subgraph HostCommExecutor
 serviceHostComm["serviceHostComm.prj\n(ConsoleApplicationExecutor)"]
-periodicItemMaster["getItemMaster()\n>ItemMasterRequestSender"]
+periodicItemMaster["getItemMaster()\n>MaterialMasterReceive"]
 end
 :::
 
