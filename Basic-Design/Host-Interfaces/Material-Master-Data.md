@@ -20,6 +20,22 @@ periodicItemMaster["recvItemMasterData()\n>MaterialMasterReceive"]
 end
 :::
 
+::: mermaid
+flowchart LR
+    A[SAP System] -->|Send XML via SFTP| B[FileExchangeConverter]
+    B -->|Convert XML → TXT/CSV| C[HostCommExecutor]
+    C -->|Insert Data| D[(DMMaterialMaster)]
+    D -->|Send Data Back| C
+    C -->|Convert TXT/CSV → XML| B
+    B -->|Return XML Response via SFTP| A
+
+    subgraph HostCommExecutor
+        C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
+        C2["recvItemMasterData()<br>→ MaterialMasterReceive"]
+        C1 --> C2
+    end
+:::
+
 # User Story
 - #5737
 
