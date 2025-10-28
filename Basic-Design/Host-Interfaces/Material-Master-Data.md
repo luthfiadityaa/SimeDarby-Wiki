@@ -23,7 +23,6 @@ flowchart LR
 :::
 
 #XML Format
-
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <MaterialMaster>
@@ -39,7 +38,6 @@ flowchart LR
 ```
 
 #TXT/CSV Format
-
 ```csv
 0000000002523009,2900000002,"CRUDE PALM OIL (CPO) v1",12,64,CTN,ZFNP,0
 ```  
