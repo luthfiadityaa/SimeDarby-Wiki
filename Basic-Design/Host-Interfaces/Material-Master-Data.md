@@ -22,6 +22,22 @@ flowchart LR
     end
 :::
 
+#XML Format
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<MaterialMaster>
+    <MsgID>0000000002523009</MsgID>
+    <MaterialCode>2900000002</MaterialCode>
+    <MaterialName>CRUDE PALM OIL (CPO) v1</MaterialName>
+    <QuantityKGCtn>12</QuantityKGCtn>
+    <QuantityCtnPal>64</QuantityCtnPal>
+    <UoM>CTN</UoM>
+    <MaterialType>ZFNP</MaterialType>
+    <DeletionInd>0</DeletionInd>
+</MaterialMaster>
+```
+  
 # User Story
 - #5737
 
