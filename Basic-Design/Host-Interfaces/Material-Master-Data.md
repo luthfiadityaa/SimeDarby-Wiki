@@ -37,7 +37,12 @@ flowchart LR
     <DeletionInd>0</DeletionInd>
 </MaterialMaster>
 ```
-  
+
+#TXT/CSV Format
+
+```csv
+0000000002523009,2900000002,"CRUDE PALM OIL (CPO) v1",12,64,CTN,ZFNP,0
+```  
 # User Story
 - #5737
 
