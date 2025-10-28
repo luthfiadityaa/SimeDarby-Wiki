@@ -1,6 +1,6 @@
 [[_TOC_]]
 
-# PlannedRetrievalReceive
+# RetrievalPlanDataLoader
 This is the module to receive planned retrieval data from SAP.
 SAP will send the planned retrieval data on the response.
 
@@ -10,10 +10,16 @@ The trigger to start the process is this file.
 
 ::: mermaid
 flowchart LR
+    A[SAP] -->|Send XML via SFTP| B[(FTP Folder)]
+    B -->|GET XML| C[HostCommExecutor]
+    C -->|Convert XML → TXT/CSV| D[FileExchangeConverter]
+    D -->|Insert| E[(DNRetrievalPlan)]
 
-subgraph HostCommExecutor
-serviceHostComm["serviceHostComm.prj\n(ConsoleApplicationExecutor)"]
-end
+    subgraph HostCommExecutor
+        C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
+        C2["recvRetrievalPlanData()<br>→ RetrievalPlanDataLoader"]
+        C1 --> C2
+    end
 :::
 
 # User Story
