@@ -10,18 +10,6 @@ The trigger to start the process is this file.
 
 ::: mermaid
 flowchart LR
-item[("DMMaterialMaster")]
-serviceHostComm-->periodicItemMaster--request-->SAP
-SAP--response-->periodicItemMaster
-periodicItemMaster--Insert-->item
-subgraph HostCommExecutor
-serviceHostComm["serviceHostComm.prj\n(ConsoleApplicationExecutor)"]
-periodicItemMaster["recvItemMasterData()\n>MaterialMasterReceive"]
-end
-:::
-
-::: mermaid
-flowchart LR
     A[SAP System] -->|Send XML via SFTP| B[FileExchangeConverter]
     B -->|Convert XML → TXT/CSV| C[HostCommExecutor]
     C -->|Insert Data| D[(DMMaterialMaster)]
