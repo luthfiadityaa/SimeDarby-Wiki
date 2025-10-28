@@ -10,7 +10,7 @@ The trigger to start the process is this file.
 
 ::: mermaid
 flowchart LR
-    A[SAP System] -->|Send XML via SFTP| B[HostCommExecutor]
+    A[SAP] -->|Send XML via SFTP| B[HostCommExecutor]
     B -->|Convert XML → TXT/CSV| C[FileExchangeConverter]
     C -->|Insert Data| D[(DMMaterialMaster)]
 
