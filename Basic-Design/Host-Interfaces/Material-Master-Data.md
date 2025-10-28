@@ -1,6 +1,6 @@
 [[_TOC_]]
 
-# MaterialMasterReceive
+# MaterialMasterDataLoader
 This is the module to receive material master data from SAP.
 SAP will send the material master data on the response.
 
