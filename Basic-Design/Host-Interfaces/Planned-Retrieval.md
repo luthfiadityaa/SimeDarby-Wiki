@@ -16,5 +16,8 @@ serviceHostComm["serviceHostComm.prj\n(ConsoleApplicationExecutor)"]
 end
 :::
 
+# Related User Story
+- #5749
+
 # Related DFD
-  - #5749
+- {}
