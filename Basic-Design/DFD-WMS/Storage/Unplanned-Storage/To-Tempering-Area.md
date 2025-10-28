@@ -1,6 +1,6 @@
 [[_TOC_]]
 
-# Palletizing Setting to Tempering Area
+# Unplanned Storage Setting to Tempering Area
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 # DFD
@@ -16,7 +16,7 @@ end
 :::
 
 # User Story
-  - #5761
+  - #5765
 
 # Related DFD
   - {}
