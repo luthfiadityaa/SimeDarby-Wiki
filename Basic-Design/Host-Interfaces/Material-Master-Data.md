@@ -25,5 +25,5 @@ flowchart LR
 - #5737
 
 # Related DFD
-- {}
+- [Material Information Maintenance - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/914/Material-Information-Maintenance)
 
