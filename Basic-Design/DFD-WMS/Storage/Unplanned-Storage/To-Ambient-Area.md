@@ -1,6 +1,6 @@
 [[_TOC_]]
 
-# Palletizing Setting to Ambient Area
+# Unplanned Storage Setting to Ambient Area
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 # DFD
@@ -16,7 +16,7 @@ end
 :::
 
 # User Story
-  - #5763
+  - #5766
 
 # Related DFD
   - {}
