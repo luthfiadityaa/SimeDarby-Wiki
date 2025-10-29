@@ -2,7 +2,7 @@
 
 # StorageRetievalReportData
 This is the module to send unplanned Storage/Retrieval data result from WareNavi.
-SAP will send back the unplanned retrieval data result on the response.
+SAP will send back the unplanned Storage/Retrieval data result on the response.
 
 # DFD
 The trigger to start the process is this file.
