@@ -44,6 +44,18 @@ flowchart LR
      - [Planned Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/846/Planned-Storage-Result)
      - [Planned Retrieval Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/848/Planned-Retrieval-Result)
      - [Unplanned Storage and Retrieval Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result) 
+ - <b>SAPDocNo</b>  
+ SAP document number.
+ - <b>ErrorIndicator</b> 
+ 1 = Error
+ 0 = Successful
+ - <b>Type</b> 
+ S – Success
+ E – Error
+ I – Information
+ W - Warning
+ - <b>MessageDesc</b>    
+ SAP base UOM
 
 ##<b>XML Format</b>
 ```xml
@@ -56,13 +68,11 @@ flowchart LR
     <ErrorIndicator>0</ErrorIndicator>
     <Messages>
         <Type>I</Type>
-        <MessageDesc>Processing SPOT invoice 2747/VCH/2025/0193
-         </MessageDesc>
+        <MessageDesc>Processing SPOT invoice 2747/VCH/2025/0193</MessageDesc>
     </Messages>
     <Messages>
         <Type>S</Type>
-        <MessageDesc>Incoming invoice 5105698830 2025 is created
-         </MessageDesc>
+        <MessageDesc>Incoming invoice 5105698830 2025 is created</MessageDesc>
     </Messages>
 </Response>
 ```
