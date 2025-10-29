@@ -32,7 +32,7 @@ flowchart LR
 ##Description
   
 - MessageType
-  Mentioning of the interfaces Processed  
+  Mentioning of the interfaces Processed below:  
   1. Production Storage
      - [Production Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)
   2. Pallet Update
