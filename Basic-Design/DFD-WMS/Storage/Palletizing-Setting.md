@@ -302,8 +302,8 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 |23| **ORDER_NO**               |
 |24| **PLAN_AREA_NO**           |
 |25| **PLAN_LOCATION_NO**       |
-|26| **MATERIAL_CODE**          |
-|27| **MATERIAL_NAME**          |
+|26| **MATERIAL_CODE**          | DNWORKINFO.MATERIAL_CODE
+|27| **MATERIAL_NAME**          | DMMATERIALMASTER.MATERIAL_NAME
 |28| **JAN**                    |
 |29| **CASE_ITF**               |
 |30| **BUNDLE_ITF**             |
@@ -311,16 +311,16 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 |32| **BUNDLE_ENTERING_QTY**    |
 |33| **PLAN_LOT_NO**            |
 |34| **NOTE**                   |
-|35| **PLAN_QTY**               |
+|35| **PLAN_QTY**               | DNWORKINFO.PLAN_QTY
 |36| **RESULT_QTY**             |
 |37| **SHORTAGE_QTY**           |
 |38| **RESULT_AREA_NO**         |
 |39| **RESULT_LOCATION_NO**     |
 |40| **RESULT_LOT_NO**          |
 |41| **WORK_NOTE**              |
-|42| **REPORT_FLAG**            |
-|43| **USER_ID**                |
-|44| **USER_NAME**              |
+|42| **REPORT_FLAG**            | DNSTORAGEPLAN.REPORT_FLAG
+|43| **USER_ID**                | DNWORKINFO.USER_ID
+|44| **USER_NAME**              | DCUSER.USER_NAME
 |45| **TERMINAL_NO**            |
 |46| **WORK_SECOND**            |
 |47| **MSG_ID**                 |
@@ -329,7 +329,7 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 |50| **ERROR_INDICATION**       |
 |51| **TYPE**                   |
 |52| **MESSAGE_DESC**           |
-|53| **REGIST_DATE**            |                                                    
-|54| **REGIST_PNAME**           |
-|55| **LAST_UPDATE_DATE**       |
-|56| **LAST_UPDATE_PNAME**      |
+|53| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+|54| **REGIST_PNAME**           | ClassName
+|55| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+|56| **LAST_UPDATE_PNAME**      | ClassName
