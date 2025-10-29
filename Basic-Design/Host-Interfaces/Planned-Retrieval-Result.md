@@ -33,7 +33,6 @@ flowchart LR
 1469,0,3100006023,9908,PS023128,64,CTN,2025-04-10,QI,UU,FGW2,3050343982,PLT00001
 ```
 ##XML Format
-###GR
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <PalletUpdate>
