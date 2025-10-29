@@ -55,25 +55,39 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
-| **PLAN_UKEY**              |                                                       |
-| **LOAD_UNIT_KEY**          |                                                       |
-| **FILE_LINE_NO**           |                                                       |
-| **STATUS_FLAG**            |                                                       |
-| **CANCEL_FLAG**            |                                                       |
-| **PLAN_DAY**               |                                                       |
-| **VENDOR_CODE**            |                                                       |
-| **COMPANY_CODE**           |                                                       |
-| **RECEIVE_TICKET_NO**      |                                                       |
-| **RECEIVE_LINE_NO**        |                                                       |
-| **RECEIVE_TICKET_DATE**    |                                                       |
-| **BRANCH_NO**              |                                                       |
-| **PLAN_AREA_NO**           |                                                       |
-| **PLAN_LOCATION_NO**       |                                                       |
-| **MATERIAL_CODE**          |                                                       |
-| **PLAN_LOT_NO**            |                                                       |
-| **NOTE**                   |                                                       |
-| **PLAN_QTY**               |                                                       |
-| **PROCESS_QTY**            |                                                       |
-| **RESULT_QTY**             | Class name (Class that last updated the plan)        |
-| **SHORTAGE_QTY**           | Class name (Class that last updated the plan)        |
-
+| **PLAN_UKEY**              |                                                       
+| **LOAD_UNIT_KEY**          |                                                       
+| **FILE_LINE_NO**           |                                                       
+| **STATUS_FLAG**            |                                                       
+| **CANCEL_FLAG**            |                                                       
+| **PLAN_DAY**               |                                                       
+| **VENDOR_CODE**            |                                                       
+| **COMPANY_CODE**           |                                                       
+| **RECEIVE_TICKET_NO**      |                                                       
+| **RECEIVE_LINE_NO**        |                                                       
+| **RECEIVE_TICKET_DATE**    |                                                       
+| **BRANCH_NO**              |                                                       
+| **PLAN_AREA_NO**           |                                                       
+| **PLAN_LOCATION_NO**       |                                                       
+| **MATERIAL_CODE**          |                                                       
+| **PLAN_LOT_NO**            |                                                       
+| **NOTE**                   |                                                       
+| **PLAN_QTY**               |                                                       
+| **PROCESS_QTY**            |                                                       
+| **RESULT_QTY**             |                                                       
+| **SHORTAGE_QTY**           |                                                       
+| **REPORT_FLAG**            |                                                       
+| **WORK_DAY**               |                                                       
+| **REGIST_KIND**            |                                                       
+| **BCR_DATA**               |                                                       
+| **STORING_PAIR_KEY**       |   
+| **MSG_ID**                 |
+| **MSG_TYPE**               |
+| **MSG_ID_ORI**             |
+| **ERROR_INDICATION**       |
+| **TYPE**                   |
+| **MESSAGE_DESC**           |
+| **REGIST_DATE**            |                                                    
+| **REGIST_PNAME**           |
+| **LAST_UPDATE_DATE**       |
+| **LAST_UPDATE_PNAME**       |
