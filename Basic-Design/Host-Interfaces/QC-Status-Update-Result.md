@@ -48,6 +48,7 @@ flowchart LR
     <StatusTo>UU</StatusTo>
     <StorageLocationTo>FGW2</StorageLocationTo>
 </PalletUpdate>
+```
 
 # User Story
   - https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5759)
