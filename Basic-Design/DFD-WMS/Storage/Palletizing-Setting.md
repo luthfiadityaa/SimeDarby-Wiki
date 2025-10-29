@@ -72,13 +72,13 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 | **RECEIVE_TICKET_NO**      |                                                       
 | **RECEIVE_LINE_NO**        |                                                       
 | **RECEIVE_TICKET_DATE**    |                                                       
-| **BRANCH_NO**              |                                                       
+| **BRANCH_NO**              |                                                         
 | **PLAN_AREA_NO**           |                                                       
 | **PLAN_LOCATION_NO**       |                                                       
 | **MATERIAL_CODE**          |                                                       
 | **PLAN_LOT_NO**            |                                                       
 | **NOTE**                   |                                                       
-| **PLAN_QTY**               |                                                       
+| **PLAN_QTY**               | Value from screen (Planned Carton Qty)                                                       
 | **PROCESS_QTY**            |                                                       
 | **RESULT_QTY**             |                                                       
 | **SHORTAGE_QTY**           |                                                       
