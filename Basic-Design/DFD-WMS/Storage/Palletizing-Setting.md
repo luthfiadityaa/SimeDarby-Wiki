@@ -210,51 +210,53 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 |NO| **Column Name**            | **Description / Notes**                               |
 |--|----------------------------|-------------------------------------------------------|
 |1 | **JOB_NO**                 |
-|2 | **SETTING_UNIT_KEY**       |
-|3 | **COLLECT_JOB_NO**         |
-|4 | **JOB_TYPE**               |
-|5 | **STATUS_FLAG**            |
-|6 | **RFT_STATUS_FLAG**        |
-|7 | **HARDWARE_TYPE**          |
-|8 | **PLAN_UKEY**              |
-|9 | **STOCK_ID**               |
-|10| **SYSTEM_CONN_KEY**        |
-|11| **PLAN_DAY**               |
-|12| **VENDOR_CODE**            |
-|13| **RECEIVE_TICKET_NO**      |
-|14| **RECEIVE_LINE_NO**        |
-|15| **RECEIVE_BRANCH_NO**      |
-|16| **COMPANY_CODE**           |
-|17| **SHIP_TICKET_NO**         |
-|18| **SHIP_LINE_NO**           |
-|19| **SHIP_BRANCH_NO**         |
-|20| **BATCH_NO**               |
-|21| **ORDER_NO**               |
-|22| **ORDER_SERIAL_NO**        |
-|23| **PLAN_AREA_NO**           |
-|24| **PLAN_LOCATION_NO**       |
-|25| **MATERIAL_CODE**          |
-|26| **PLAN_LOT_NO**            |
-|27| **NOTE**                   |
+|2 | **CARRY_KEY**              |
+|3 | **SETTING_UNIT_KEY**       |
+|4 | **COLLECT_JOB_NO**         |
+|5 | **JOB_TYPE**               |
+|6 | **PLAN_UKEY**              |
+|7 | **STOCK_ID**               |
+|8 | **PALLET_ID**              |
+|9 | **PLAN_DAY**               |
+|10| **COMPANY_CODE**           |
+|11| **COMPANY_NAME**           |
+|12| **SHIP_TICKET_NO**         |
+|13| **SHIP_LINE_NO**           |
+|14| **SHIP_BRANCH_NO**         |
+|15| **BATCH_NO**               |
+|16| **ORDER_NO**               |
+|17| **PLAN_AREA_NO**           |
+|18| **PLAN_LOCATION_NO**       |
+|19| **MATERIAL_CODE**          |
+|20| **MATERIAL_NAME**          |
+|21| **JAN**                    |
+|22| **CASE_ITF**               |
+|22| **BUNDLE_ITF**             |
+|20| **ENTERING_QTY**           |
+|20| **BUNDLE_ENTERING_QTY**    |
+|20| **PLAN_LOT_NO**            |
+|20| **STORAGE_TYPE**           |
+|20| **STORAGE_DATE**           |
+|20| **NOTE**                   |
 |28| **PLAN_QTY**               |
-|29| **RESULT_QTY**             |
-|30| **SHORTAGE_QTY**           |
-|31| **RESULT_AREA_NO**         |
-|32| **RESULT_LOCATION_NO**     |
-|33| **RESULT_NO**              |
+|28| **STOCK_QTY**              |
+|28| **ALLOCATION_QTY**         |
 |34| **WORK_NOTE**              |
-|35| **SKIP_CNT**               |
-|36| **WORK_DAY**               |
+|46| **PRIORITY**               |
+|46| **RETRIEVAL_STATION_NO**   |
+|46| **RETRIEVAL_DETAIL**       |
+|46| **WORK_NO**                |
+|46| **SOURCE_STATION_NO**      |
+|46| **DEST_STATION_NO**        |
+|46| **SCHEDULE_NO**            |
 |37| **USER_ID**                |
+|37| **USER_NAME**              |
 |38| **TERMINAL_NO**            |
 |39| **WORK_SECOND**            |
-|40| **STORAGE_LOCATION_TO**    |
-|41| **STORAGE_LOCATION_FROM**  |
 |42| **DOCK_NO**                |
 |43| **TRUCK_PLATE_NO**         |
 |44| **STORING_PAIR_KEY**       |
 |45| **NEW_STORING_PAIR_KEY**   |
-|46| **PRIORITY_TYPE**          |
 |47| **MSG_ID**                 |
 |48| **MSG_TYPE**               |
 |49| **MSG_ID_ORI**             |
