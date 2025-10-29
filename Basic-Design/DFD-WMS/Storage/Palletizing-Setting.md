@@ -52,21 +52,28 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 
 ##<span style="color:skyblue; font-weight:bold">Related Table</span>
 ###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
+
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
-| **PLAN_UKEY**              | Sequence object (Unique identifier for the plan)     |
-| **LOAD_UNIT_KEY**          | `1 = Started` (Status: whether the plan has started)  |
-| **FILE_LINE_NO**           | `0 = Normal data` (Flag for cancellation)            |
-| **STATUS_FLAG**            | Value from the screen (Supplier Code)                 |
-| **CANCEL_FLAG**            | Value from the screen (Supplier Name)                 |
-| **PLAN_DAY**               | Value from the screen (Storer Code)                   |
-| **VENDOR_CODE**            | Value from the screen (Unplanned Purchase Order)     |
-| **COMPANY_CODE**           | Value from the screen (Short Item ID)                 |
-| **RECEIVE_TICKET_NO**      | Value from the screen (Primary Unit of Measure Quantity) |
-| **RECEIVE_LINE_NO**        | `1 = Unplanned` (Storage type code)                   |
-| **RECEIVE_TICKET_DATE**    | Login info (User who registered the plan)            |
-| **BRANCH_NO**              | `SYSTIMESTAMP` (Timestamp of registration)            |
-| **PLAN_AREA_NO**           | Class name (Class that registered the plan)          |
-| **PLAN_LOCATION_NO**       | `SYSTIMESTAMP` (Timestamp of last update)             |
-| **MATERIAL_CODE**          | Class name (Class that last updated the plan)        |
+| **PLAN_UKEY**              |                                                       |
+| **LOAD_UNIT_KEY**          |                                                       |
+| **FILE_LINE_NO**           |                                                       |
+| **STATUS_FLAG**            |                                                       |
+| **CANCEL_FLAG**            |                                                       |
+| **PLAN_DAY**               |                                                       |
+| **VENDOR_CODE**            |                                                       |
+| **COMPANY_CODE**           |                                                       |
+| **RECEIVE_TICKET_NO**      |                                                       |
+| **RECEIVE_LINE_NO**        |                                                       |
+| **RECEIVE_TICKET_DATE**    |                                                       |
+| **BRANCH_NO**              |                                                       |
+| **PLAN_AREA_NO**           |                                                       |
+| **PLAN_LOCATION_NO**       |                                                       |
+| **MATERIAL_CODE**          |                                                       |
+| **PLAN_LOT_NO**            |                                                       |
+| **NOTE**                   |                                                       |
+| **PLAN_QTY**               |                                                       |
+| **PROCESS_QTY**            |                                                       |
+| **RESULT_QTY**             | Class name (Class that last updated the plan)        |
+| **SHORTAGE_QTY**           | Class name (Class that last updated the plan)        |
 
