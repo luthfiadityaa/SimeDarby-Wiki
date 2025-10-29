@@ -9,10 +9,22 @@ The trigger to start the process is this file.
 
 ::: mermaid
 flowchart LR
+    A[HostCommExecutor] -->|Convert TXT/CSV -> XML| B[FileExchangeConverter]
+    B -->|GET XML| C[(FTP Folder)]
+    C -->|Send XML via SFTP| D[SAP]
+    D -->|Send Back Response| C
+    C -->|Convert XML → TXT/CSV| B
+    B -->|Return XML Response via SFTP| A
+    E[(DNStoragePlan)] <--> |Update| A
+    F[(DNHostSend)] <--> |Update| A
+    G[(DNRetrievalPlan)] <--> |Update| A
+    H[(DNHostSend)] <--> |Update| A
 
-subgraph HostCommExecutor
-serviceHostComm["serviceHostComm.prj\n(ConsoleApplicationExecutor)"]
-end
+     subgraph HostCommExecutor
+        C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
+        C2["sendProductionStorageReportData()<br>→ ProductionStorageReportData"]
+        C1 --> C2
+    end
 :::
 
 #Response Data from SAP
