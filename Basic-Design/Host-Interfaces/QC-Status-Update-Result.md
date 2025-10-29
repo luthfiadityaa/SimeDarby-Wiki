@@ -14,7 +14,7 @@ flowchart LR
     B -->|GET XML| C[(FTP Folder)]
     C -->|Send XML via SFTP| D[SAP]
     D -->|Send Back Response| C
-    C -->|Convert TXT/CSV → XML| B
+    C -->|Convert XML → TXT/CSV| B
     B -->|Return XML Response via SFTP| A
     E[(DNStock)] <--> |Update| A
     F[(DNHostSend)] <--> |Update| A
