@@ -1,6 +1,6 @@
 [[_TOC_]]
 
-# ResponseSend
+# ResponseDataLoader
 This is the module When warenavi send the Result to SAP, sap will send a response to indicate the result of the communication.
 
 # DFD
@@ -22,7 +22,7 @@ flowchart LR
 
      subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
-        C2["sendProductionStorageReportData()<br>→ ProductionStorageReportData"]
+        C2["recvResponse()<br>→ ResponseReportData"]
         C1 --> C2
     end
 :::
