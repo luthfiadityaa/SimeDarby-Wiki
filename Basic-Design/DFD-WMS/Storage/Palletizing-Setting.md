@@ -147,20 +147,20 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 | **LAST_UPDATE_PNAME**      |
 
 ###<span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
-| **Column Name**            | **Description / Notes**                               |
-|----------------------------|-------------------------------------------------------|
-| **JOB_NO**                 |
-| **SETTING_UNIT_KEY**       |
-| **COLLECT_JOB_NO**         |
-| **JOB_TYPE**               |
-| **STATUS_FLAG**            |
-| **RFT_STATUS_FLAG**        |
-| **HARDWARE_TYPE**          |
-| **PLAN_UKEY**              |
-| **STOCK_ID**               |
-| **SYSTEM_CONN_KEY**        |
-| **PLAN_DAY**               |
-| **VENDOR_CODE**            |
+|NO| **Column Name**            | **Description / Notes**                               |
+|--|----------------------------|-------------------------------------------------------|
+|1|| **JOB_NO**                 |
+|--|| **SETTING_UNIT_KEY**       |
+|--|| **COLLECT_JOB_NO**         |
+|--|| **JOB_TYPE**               |
+|--|| **STATUS_FLAG**            |
+|--|| **RFT_STATUS_FLAG**        |
+|--|| **HARDWARE_TYPE**          |
+|--|| **PLAN_UKEY**              |
+|--|| **STOCK_ID**               |
+|--|| **SYSTEM_CONN_KEY**        |
+|--|| **PLAN_DAY**               |
+|--|| **VENDOR_CODE**            |
 | **RECEIVE_TICKET_NO**      |
 | **RECEIVE_LINE_NO**        |
 | **RECEIVE_BRANCH_NO**      |
