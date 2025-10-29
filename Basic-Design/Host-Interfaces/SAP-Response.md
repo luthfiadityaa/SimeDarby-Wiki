@@ -1,9 +1,9 @@
 [[_TOC_]]
 
-# ResponseDataLoader
+#<b>ResponseDataLoader</b>
 This is the module When warenavi send the Result to SAP, sap will send a response to indicate the result of the communication.
 
-# DFD
+#<b>DFD</b>
 The trigger to start the process is this file.
 `C:\daifuku\wms\tomcat\webapps\wms\serviceHostComm.prj`
 
@@ -27,11 +27,13 @@ flowchart LR
     end
 :::
 
-#Response Data from SAP
-
-##Description
-  
-- MessageType
+#<b>Response Data from SAP</b>
+##<b>Description</b>
+- <b>MsgID</b>  
+  Unique Id for communication
+- <b>OriginalMessageID</b>  
+  Original Message ID originationg from the file sent by Warenavi to SAP  
+- <b>MessageType</b>
   Mentioning of the interfaces Processed below:  
   1. Production Storage
      - [Production Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)
@@ -43,7 +45,7 @@ flowchart LR
      - [Planned Retrieval Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/848/Planned-Retrieval-Result)
      - [Unplanned Storage and Retrieval Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result) 
 
-##XML Format
+##<b>XML Format</b>
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Response>
@@ -65,14 +67,8 @@ flowchart LR
 </Response>
 ```
 
-##TXT/CSV Format
+##<b>TXT/CSV Format</b>
 ```csv
 5F678C281A9F11F0A3D4000011FE13AB,PRODUCTION_STORAGE,1469,100001301,0,I,"Processing SPOT invoice 2747/VCH/2025/0193"
 5F678C281A9F11F0A3D4000011FE13AB,PRODUCTION_STORAGE,1469,100001301,0,S,"Incoming invoice 5105698830 2025 is created"
 ```
-
-# User Story
-  - #5760
-
-# Related DFD
-  - {}
