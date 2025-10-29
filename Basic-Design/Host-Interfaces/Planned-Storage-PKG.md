@@ -2,7 +2,7 @@
 
 # StoragePlanPkgDataLoader
 This is the module to receive planned storage PKG data from SAP.
-SAP will send the planned storage data on the response.
+SAP will send the planned storage data on the SFTP.
 
 # DFD
 The trigger to start the process is this file.
