@@ -57,7 +57,7 @@ flowchart LR
 <Response>
     <MsgID>5F678C281A9F11F0A3D4000011FE13AB</MsgID>
     <MessageType>PALLET_UPDATE</MessageType>
-    <OriginalMessageID>17875422</OriginalMessageID>
+    <OriginalMessageID>1469</OriginalMessageID>
     <SAPDocNo>100001301</SAPDocNo>
     <ErrorIndicator>0</ErrorIndicator>
     <Messages>
