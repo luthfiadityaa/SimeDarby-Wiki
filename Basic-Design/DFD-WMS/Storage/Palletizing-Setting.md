@@ -229,7 +229,7 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 |12| **SHIP_TICKET_NO**         |
 |13| **SHIP_LINE_NO**           |
 |14| **SHIP_BRANCH_NO**         |
-|15| **BATCH_NO**               |
+|15| **BATCH_NO**               | DNWORKINFO.BATCH_NO
 |16| **ORDER_NO**               |
 |17| **PLAN_AREA_NO**           |
 |18| **PLAN_LOCATION_NO**       |
