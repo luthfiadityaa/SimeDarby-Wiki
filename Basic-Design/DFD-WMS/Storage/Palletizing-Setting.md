@@ -1,12 +1,11 @@
 [[_TOC_]]
 [[_TOSP_]]
 
-#<span style="color:skyblue; font-weight:bold">Palletizing to Tempering or Ambient database flow</span>
+#<span style="color:skyblue; font-weight:bold">Palletizing to Tempering/Ambient database flow</span>
 
-| Action Name                                              | STK | PLT | LCT | WKI | WKL | HST | STH | STG | 
-|----------------------------------------------|-----|-----|-----|-----|-----|-----|-----|-----|
-| Palletizing Setting - Set(F2)[(1)](#unplanned-po-set(F2)) |  I  |  I  |     |  I  |  I  |  I  |     |  I  |
-| Palletizing Setting - Cancel(F11)[(2)](#unplanned-po-cancel(F11))     |  D  |  D  |     |  U  |     |  I  |     |  U  |
+| Action Name                        | DNSTOCK | DNPALLET | DNWORKINFO | DNWORKLIST | DNHOSTSEND | DNSTORAGEPLAN | 
+|------------------------------------|---------|----------|------------|------------|------------|---------------|
+| Palletizing Setting - Set(F2)      |  INSERT |  INSERT  |   INSERT   |   INSERT   |   INSERT   |     INSERT    |
 
 #<span style="color:skyblue; font-weight:bold">Palletizing Setting Set(F2)</span>
 
