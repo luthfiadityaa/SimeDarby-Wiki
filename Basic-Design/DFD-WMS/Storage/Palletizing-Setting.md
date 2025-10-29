@@ -5,9 +5,9 @@
 
 | Action Name                        | DNSTOCK | DNPALLET | DNWORKINFO | DNWORKLIST | DNHOSTSEND | DNSTORAGEPLAN | 
 |------------------------------------|---------|----------|------------|------------|------------|---------------|
-| Palletizing Setting - Set(F2)      |  INSERT |  INSERT  |   INSERT   |   INSERT   |   INSERT   |     INSERT    |
+| [Palletizing Setting - Set(F2)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Palletizing%20Setting&pageId=886&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Epalletizing-setting-set(f2)%3C/span%3E)      |  INSERT |  INSERT  |   INSERT   |   INSERT   |   INSERT   |     INSERT    |
 
-#<span style="color:skyblue; font-weight:bold">Palletizing Setting Set(F2)</span>
+#<span style="color:skyblue; font-weight:bold">Palletizing Setting - Set(F2)</span>
 
 Palletizing Start is used to set the information of stock which will be palletized by robot automatically. After **Set(F2)**, all items in input text will be added into a Pallet Number. The result will be posted back to SAP as Production Storage Result.
 
