@@ -29,89 +29,29 @@ flowchart LR
 
 #Result Data from WareNavi
 ##TXT/CSV Format
-###GR
 ```csv
-20250623,20250620,101,4500012345,00010,MAT123456789000001,SG01,0001,50.000,EA,PALLET-001,BATCH00123
-20250623,20250620,101,4500012345,00020,MAT123456789000002,SG01,0002,75.000,EA,PALLET-002,BATCH00456
+1469,0,3100006023,9908,PS023128,64,CTN,2025-04-10,QI,UU,FGW2,3050343982,PLT00001
 ```
 ##XML Format
 ###GR
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<MaterialDocument>
-    <PostingDate>20250623</PostingDate>
-    <DocumentDate>20250620</DocumentDate>
-    <Items>
-        <Item>
-            <MovementType>101</MovementType>
-            <PurchaseOrder>4500012345</PurchaseOrder>
-            <PurchaseOrderItem>00010</PurchaseOrderItem>
-            <MaterialNumber>MAT123456789000001</MaterialNumber>
-            <Plant>SG01</Plant>
-            <StorageLocation>0001</StorageLocation>
-            <Quantity>50.000</Quantity>
-            <UnitOfEntry>EA</UnitOfEntry>
-            <UnloadingPoint>PALLET-001</UnloadingPoint>
-            <Batch>BATCH00123</Batch>
-        </Item>
-        <Item>
-            <MovementType>101</MovementType>
-            <PurchaseOrder>4500012345</PurchaseOrder>
-            <PurchaseOrderItem>00020</PurchaseOrderItem>
-            <MaterialNumber>MAT123456789000002</MaterialNumber>
-            <Plant>SG01</Plant>
-            <StorageLocation>0002</StorageLocation>
-            <Quantity>75.000</Quantity>
-            <UnitOfEntry>EA</UnitOfEntry>
-            <UnloadingPoint>PALLET-002</UnloadingPoint>
-            <Batch>BATCH00456</Batch>
-        </Item>
-    </Items>
-</MaterialDocument>
+<PalletUpdate>
+    <MsgID>1469</MsgID>
+    <Action>0</Action>
+    <MaterialCode>3100006023</MaterialCode>
+    <Plant>9908</Plant>
+    <Batch>PS023128</Batch>
+    <Quantity>64</Quantity>
+    <UoM>CTN</UoM>
+    <PostingDate>2025-04-10</PostingDate>
+    <StatusFrom>QI</StatusFrom>
+    <StatusTo>UU</StatusTo>
+    <StorageLocationTo>FGW2</StorageLocationTo>
+    <DocNumber>3050343982</DocNumber>
+    <PalletID>PLT00001</PalletID>
+</PalletUpdate>
 ```
-
-##TXT/CSV Format
-###CANCEL GR
-```csv
-20250623,20250620,102,4500012345,00010,MAT123456789000001,SG01,0001,50.000,EA,PALLET-001,BATCH00123
-20250623,20250620,101,4500012345,00020,MAT123456789000002,SG01,0002,75.000,EA,PALLET-002,BATCH0045656
-```
-##XML Format
-###CANCEL GR
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<MaterialDocument>
-    <PostingDate>20250623</PostingDate>
-    <DocumentDate>20250620</DocumentDate>
-    <Items>
-        <Item>
-            <MovementType>102</MovementType>
-            <PurchaseOrder>4500012345</PurchaseOrder>
-            <PurchaseOrderItem>00010</PurchaseOrderItem>
-            <MaterialNumber>MAT123456789000001</MaterialNumber>
-            <Plant>SG01</Plant>
-            <StorageLocation>0001</StorageLocation>
-            <Quantity>50.000</Quantity>
-            <UnitOfEntry>EA</UnitOfEntry>
-            <UnloadingPoint>PALLET-001</UnloadingPoint>
-            <Batch>BATCH00123</Batch>
-        </Item>
-        <Item>
-            <MovementType>101</MovementType>
-            <PurchaseOrder>4500012345</PurchaseOrder>
-            <PurchaseOrderItem>00020</PurchaseOrderItem>
-            <MaterialNumber>MAT123456789000002</MaterialNumber>
-            <Plant>SG01</Plant>
-            <StorageLocation>0002</StorageLocation>
-            <Quantity>75.000</Quantity>
-            <UnitOfEntry>EA</UnitOfEntry>
-            <UnloadingPoint>PALLET-002</UnloadingPoint>
-            <Batch>BATCH00456</Batch>
-        </Item>
-    </Items>
-</MaterialDocument>
-```
-
 #Response Data from SAP
 ##XML Format
 ```xml
@@ -119,7 +59,7 @@ flowchart LR
 <Response>
     <MsgID>5F678C281A9F11F0A3D4000011FE13AB</MsgID>
     <MessageType>DELIVERY_ORDER</MessageType>
-    <OriginalMessageID>17875422</OriginalMessageID>
+    <OriginalMessageID>1469</OriginalMessageID>
     <SAPDocNo>100001301</SAPDocNo>
     <ErrorIndicator>0</ErrorIndicator>
     <Messages>
@@ -137,8 +77,8 @@ flowchart LR
 
 ##TXT/CSV Format
 ```csv
-5F678C281A9F11F0A3D4000011FE13AB,PRODUCTION_STORAGE,17875422,100001301,0,I,"Processing SPOT invoice 2747/VCH/2025/0193"
-5F678C281A9F11F0A3D4000011FE13AB,PRODUCTION_STORAGE,17875422,100001301,0,S,"Incoming invoice 5105698830 2025 is created"
+5F678C281A9F11F0A3D4000011FE13AB,PRODUCTION_STORAGE,1469,100001301,0,I,"Processing SPOT invoice 2747/VCH/2025/0193"
+5F678C281A9F11F0A3D4000011FE13AB,PRODUCTION_STORAGE,1469,100001301,0,S,"Incoming invoice 5105698830 2025 is created"
 ```
 
 # User Story
