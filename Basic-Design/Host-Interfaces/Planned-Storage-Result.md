@@ -118,7 +118,7 @@ flowchart LR
 <?xml version="1.0" encoding="UTF-8"?>
 <Response>
     <MsgID>5F678C281A9F11F0A3D4000011FE13AB</MsgID>
-    <MessageType>PALLET_UPDATE</MessageType>
+    <MessageType>DELIVERY_ORDER</MessageType>
     <OriginalMessageID>17875422</OriginalMessageID>
     <SAPDocNo>100001301</SAPDocNo>
     <ErrorIndicator>0</ErrorIndicator>
