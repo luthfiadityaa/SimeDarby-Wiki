@@ -207,13 +207,64 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 |56| **LAST_UPDATE_PNAME**      |
 
 ###<span style="color:skyblue; font-weight:bold">DNWORKLIST</span>
-| **Column Name**            | **Description / Notes**                               |
-|----------------------------|-------------------------------------------------------|
-| **PALLET_ID**              |   
-| **REGIST_DATE**            |                                                    
-| **REGIST_PNAME**           |
-| **LAST_UPDATE_DATE**       |
-| **LAST_UPDATE_PNAME**      |
+|NO| **Column Name**            | **Description / Notes**                               |
+|--|----------------------------|-------------------------------------------------------|
+|1 | **JOB_NO**                 |
+|2 | **SETTING_UNIT_KEY**       |
+|3 | **COLLECT_JOB_NO**         |
+|4 | **JOB_TYPE**               |
+|5 | **STATUS_FLAG**            |
+|6 | **RFT_STATUS_FLAG**        |
+|7 | **HARDWARE_TYPE**          |
+|8 | **PLAN_UKEY**              |
+|9 | **STOCK_ID**               |
+|10| **SYSTEM_CONN_KEY**        |
+|11| **PLAN_DAY**               |
+|12| **VENDOR_CODE**            |
+|13| **RECEIVE_TICKET_NO**      |
+|14| **RECEIVE_LINE_NO**        |
+|15| **RECEIVE_BRANCH_NO**      |
+|16| **COMPANY_CODE**           |
+|17| **SHIP_TICKET_NO**         |
+|18| **SHIP_LINE_NO**           |
+|19| **SHIP_BRANCH_NO**         |
+|20| **BATCH_NO**               |
+|21| **ORDER_NO**               |
+|22| **ORDER_SERIAL_NO**        |
+|23| **PLAN_AREA_NO**           |
+|24| **PLAN_LOCATION_NO**       |
+|25| **MATERIAL_CODE**          |
+|26| **PLAN_LOT_NO**            |
+|27| **NOTE**                   |
+|28| **PLAN_QTY**               |
+|29| **RESULT_QTY**             |
+|30| **SHORTAGE_QTY**           |
+|31| **RESULT_AREA_NO**         |
+|32| **RESULT_LOCATION_NO**     |
+|33| **RESULT_NO**              |
+|34| **WORK_NOTE**              |
+|35| **SKIP_CNT**               |
+|36| **WORK_DAY**               |
+|37| **USER_ID**                |
+|38| **TERMINAL_NO**            |
+|39| **WORK_SECOND**            |
+|40| **STORAGE_LOCATION_TO**    |
+|41| **STORAGE_LOCATION_FROM**  |
+|42| **DOCK_NO**                |
+|43| **TRUCK_PLATE_NO**         |
+|44| **STORING_PAIR_KEY**       |
+|45| **NEW_STORING_PAIR_KEY**   |
+|46| **PRIORITY_TYPE**          |
+|47| **MSG_ID**                 |
+|48| **MSG_TYPE**               |
+|49| **MSG_ID_ORI**             |
+|50| **ERROR_INDICATION**       |
+|51| **TYPE**                   |
+|52| **MESSAGE_DESC**           |   
+|53| **REGIST_DATE**            |                                                    
+|54| **REGIST_PNAME**           |
+|55| **LAST_UPDATE_DATE**       |
+|56| **LAST_UPDATE_PNAME**      |
 
 ###<span style="color:skyblue; font-weight:bold">DNHOSTSEND</span>
 | **Column Name**            | **Description / Notes**                               |
