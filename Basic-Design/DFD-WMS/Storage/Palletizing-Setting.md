@@ -51,8 +51,8 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
 ##<span style="color:skyblue; font-weight:bold">Table Process</span>
-###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
 
+###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **PLAN_UKEY**              |                                                       
@@ -90,4 +90,47 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 | **REGIST_DATE**            |                                                    
 | **REGIST_PNAME**           |
 | **LAST_UPDATE_DATE**       |
-| **LAST_UPDATE_PNAME**       |
+| **LAST_UPDATE_PNAME**      |
+
+###<span style="color:skyblue; font-weight:bold">DNPallet</span>
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| **PALLET_ID**              |                                                       
+| **CURRENT_STATION_NO**     |                                                       
+| **WH_STATION_NO**          |                                                       
+| **STATUS_FLAG**            |                                                       
+| **ALLOCATION_FLAG**        |                                                       
+| **EMPTY_FLAG**             |                                                       
+| **HEIGHT**                 |                                                       
+| **WIDTH**                  |                                                       
+| **SOFTZONE_ID**            |                                                       
+| **BCR_DATA**               |                                                       
+| **LAST_STORED_DATE**       |                                                       
+| **AISLE_DISPERSE_KEY**     |                                                       
+| **AISLE_COLLECT_KEY**      |                                                       
+| **LEVEL_DISPERSE_KEY**     |                                                       
+| **COLLECT_BATCH_NO**       |                                                       
+| **REGIST_DATE**            |                                                    
+| **REGIST_PNAME**           |
+| **LAST_UPDATE_DATE**       |
+| **LAST_UPDATE_PNAME**      |
+
+###<span style="color:skyblue; font-weight:bold">DNSTOCK</span>
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| **PALLET_ID**              |   
+
+###<span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| **PALLET_ID**              |   
+
+###<span style="color:skyblue; font-weight:bold">DNWORKLIST</span>
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| **PALLET_ID**              |   
+
+###<span style="color:skyblue; font-weight:bold">DNHOSTSEND</span>
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| **PALLET_ID**              |   
