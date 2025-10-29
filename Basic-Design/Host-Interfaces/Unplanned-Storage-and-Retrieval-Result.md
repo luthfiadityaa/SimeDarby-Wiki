@@ -29,13 +29,12 @@ flowchart LR
 :::
 
 #Result Data from WareNavi
-##TXT/CSV Format
-###UNplanned Storage
+##UNplanned Storage
+###TXT/CSV Format
 ```csv
 1469,0,3100006023,9908,PS023128,64,CTN,2025-04-10,QI,UU,FGW2,3050343982,PLT00001
 ```
-##XML Format
-###GR
+###XML Format
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <PalletUpdate>
@@ -55,13 +54,12 @@ flowchart LR
 </PalletUpdate>
 ```
 
-##TXT/CSV Format
-###UNplanned Retrieval
+##UNplanned Retrieval
+###TXT/CSV Format
 ```csv
 1469,0,3100006023,9908,PS023128,64,CTN,2025-04-10,QI,UU,FGW2,3050343982,PLT00001
 ```
-##XML Format
-###GR
+###XML Format
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <PalletUpdate>
