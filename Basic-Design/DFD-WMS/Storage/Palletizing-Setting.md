@@ -4,6 +4,8 @@
 #<span style="color:skyblue; font-weight:bold">Palletizing Setting Set(F2)**</p>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.storage.palletizingsetting.PalletizingSettingSCH &nbsp;</span>
 
+Palletizing Start is used to set the information of stock which will be palletized by robot automatically. After **Set(F2)**, all items in input text will be added into a Pallet Number. The result will be posted back to SAP as Production Storage Result.
+
 ![image.png](/.attachments/image-0617abe5-5a77-4ffa-a06f-55d39356473b.png)
 
 ::: mermaid
@@ -41,8 +43,6 @@ flowchart LR
     class input leftAlign;
 
 :::
-
-Palletizing Start is used to set the information of stock which will be palletized by robot automatically. After **Set(F2)**, all items in input text will be added into a Pallet Number. The result will be posted back to SAP as Production Storage Result.
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
 This section explains the validations for the `DNSTORAGEPLAN` data
