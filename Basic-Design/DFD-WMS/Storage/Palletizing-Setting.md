@@ -9,42 +9,50 @@
 | Unplanned PO - Cancel(F11)[(2)](#unplanned-po-cancel(F11))     |  D  |  D  |     |  U  |     |  I  |     |  U  |
 | RFT Putaway[(3)](#rft-putaway)               |  U  |  U  |  U  |  U  |     |  I  |  I  |  U  |
 
-# Unplanned PO Set(F2)
-jp.co.daifuku.wms.web.display.storage.unplannedpo.UnplannedPOSCH
+# Palletizing Setting Set(F2)
+jp.co.daifuku.wms.web.display.storage.palletizingsetting.PalletizingSettingSCH
 
-![UnplannedPO.png](/.attachments/UnplannedPO-54d74643-ffb8-4bf7-906f-53f5ff416373.png)
+![image.png](/.attachments/image-0617abe5-5a77-4ffa-a06f-55d39356473b.png)
 
 ::: mermaid
 flowchart LR
+    input[
+        Station<br>
+        Current Status<br>
+        Material Code<br>
+        Material Name<br>
+        Material Type<br>
+        Batch #<br>
+        Planned Craton Qty<br>
+        Qty kg/crtn<br>
+        Qty crtn/PL<br>
+        UOM<br>
+        Tempering Period<br>
+        Storage Location<br>
+        Expiry Days<br>
+    ]
 
-input("
-Storer Code
-Short ID
-Supplier Code
-Supplier Name
-Primary UOM Qty
-Manufacturing Date
-Expiry Date
-Pallet Number
-Unplanned PO
-")
+    tableList-insert[("
+        DNSTORAGEPLAN<br>
+        DNPALLET<br>
+        DNSTOCK<br>
+        DNWORKINFO<br>
+        DNWORKLIST<br>
+        DNHOSTSEND<br>
+    ")]
 
-unplannedpo-insert[("
-DNSTORAGEPLAN
-DNPALLET
-DNSTOCK
-DNWORKINFO
-DNWORKLIST
-DNHOSTSEND
-")]
+    className[PalletizingSettingSCH]
 
-unplannedpo[UnplannedPOSCH]
+    input --> className --> tableList-insert
 
-input-->unplannedpo
-unplannedpo--I-->unplannedpo-insert
+    classDef leftAlign text-align:left;
+    class input leftAlign;
+
 :::
 
-Unplanned PO web screen is accessed and used by user when JDE is not available due to service disruption. After **Set(F2)**, all items in Details list will be added into a Pallet Number. The Purchase Order generated for this pallet number will be categorized as Unplanned and no result will be posted back to JDE.
+Palletizing Start is used to set the information of stock which will be palletized by robot automatically.
+
+Palletizing Setting web screen is accessed and used by user when JDE is not available due to service disruption. After **Set(F2)**, all items in Details list will be added into a Pallet Number. The Purchase Order generated for this pallet number will be categorized as Unplanned and no result will be posted back to JDE.
 
 ## Validations
 - Storer Code exists in DMSTORER.
