@@ -208,9 +208,9 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 |51| **TYPE**                   |
 |52| **MESSAGE_DESC**           |   
 |53| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-|54|**REGIST_PNAME**            | ClassName
-|55|**LAST_UPDATE_DATE**        | SYSTIMESTAMP
-|56|**LAST_UPDATE_PNAME**       | ClassName
+|54| **REGIST_PNAME**           | ClassName
+|55| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+|56| **LAST_UPDATE_PNAME**      | ClassName
 
 ###<span style="color:skyblue; font-weight:bold">DNWORKLIST</span>
 |NO| **Column Name**            | **Description / Notes**                               |
@@ -285,9 +285,9 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 |6 | **STATUS_FLAG**            | DNWORKINFO.STATUS_FLAG
 |7 | **HARDWARE_TYPE**          |
 |8 | **PLAN_UKEY**              | DNWORKINFO.PLAN_UKEY
-|9 | **STOCK_ID**               |
-|10| **SYSTEM_CONN_KEY**        |
-|11| **PLAN_DAY**               |
+|9 | **STOCK_ID**               | DNWORKINFO.STOCK_ID
+|10| **SYSTEM_CONN_KEY**        | 
+|11| **PLAN_DAY**               | DNWORKINFO.PLAN_DAY
 |12| **VENDOR_CODE**            |
 |13| **VENDOR_NAME**            |
 |14| **RECEIVE_TICKET_NO**      |
@@ -298,7 +298,7 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 |19| **SHIP_TICKET_NO**         |
 |20| **SHIP_LINE_NO**           |
 |21| **SHIP_BRANCH_NO**         |
-|22| **BATCH_NO**               |
+|22| **BATCH_NO**               | DNWORKINFO.BATCH_NO
 |23| **ORDER_NO**               |
 |24| **PLAN_AREA_NO**           |
 |25| **PLAN_LOCATION_NO**       |
