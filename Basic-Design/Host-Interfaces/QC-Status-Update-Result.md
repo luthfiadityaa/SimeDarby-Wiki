@@ -79,12 +79,6 @@ flowchart LR
 ```
 
 # User Story
-  - #5758
-
-# Related DFD
-- {}
-
-# User Story
   - #5759
 
 # Related DFD
