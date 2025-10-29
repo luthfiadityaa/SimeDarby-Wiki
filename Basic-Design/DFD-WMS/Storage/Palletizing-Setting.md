@@ -61,12 +61,12 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 ###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
-| **PLAN_UKEY**              |                                                       
+| **PLAN_UKEY**              | Sequence Object                                                       
 | **LOAD_UNIT_KEY**          |                                                       
 | **FILE_LINE_NO**           |                                                       
-| **STATUS_FLAG**            |                                                       
-| **CANCEL_FLAG**            |                                                       
-| **PLAN_DAY**               |                                                       
+| **STATUS_FLAG**            | 1:Working                                                       
+| **CANCEL_FLAG**            | 0:Normal Data                                                      
+| **PLAN_DAY**               | Value from screen (Storage Date/Time)                                                      
 | **VENDOR_CODE**            |                                                       
 | **COMPANY_CODE**           |                                                       
 | **RECEIVE_TICKET_NO**      |                                                       
