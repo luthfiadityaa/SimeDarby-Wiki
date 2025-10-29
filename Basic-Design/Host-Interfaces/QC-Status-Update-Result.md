@@ -50,8 +50,5 @@ flowchart LR
 </PalletUpdate>
 ```
 
-# User Story
-  - https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5759)
-
 # Related DFD
-  - {}
+  - [SAP Response - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/866/SAP-Response)
