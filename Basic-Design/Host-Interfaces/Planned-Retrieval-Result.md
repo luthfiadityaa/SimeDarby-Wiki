@@ -86,10 +86,3 @@ flowchart LR
 
 # Related DFD
   - {}
-
-
-# User Story
-  - #5757
-
-# Related DFD
-  - {}
