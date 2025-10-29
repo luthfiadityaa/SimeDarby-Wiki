@@ -1,16 +1,6 @@
 [[_TOC_]]
 
-# QcStatusUpdateSend
-This is the module to send QC status update data result from WareNavi.
-SAP will send back the QC status update data result on the response.
-
-# DFD
-The trigger to start the process is this file.
-`C:\daifuku\wms\tomcat\webapps\wms\serviceHostComm.prj`
-
-[[_TOC_]]
-
-# ProductionStorageReportData
+# QCStatusUpdateReportData
 This is the module to send production storage data result from WareNavi.
 SAP will send back the production storage data result on the response.
 
@@ -26,12 +16,12 @@ flowchart LR
     D -->|Send Back Response| C
     C -->|Convert TXT/CSV → XML| B
     B -->|Return XML Response via SFTP| A
-    E[(DNStoragePlan)] <--> |Update| A
+    E[(DNStock)] <--> |Update| A
     F[(DNHostSend)] <--> |Update| A
 
      subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
-        C2["recvProductionStorageReportData()<br>→ ProductionStorageReportData"]
+        C2["sendQCStatusUpdateReportData()<br>→ QCStatusUpdateReportData"]
         C1 --> C2
     end
 :::
@@ -39,7 +29,7 @@ flowchart LR
 #Result Data from WareNavi
 ##TXT/CSV Format
 ```csv
-1469,0,3100006023,9908,PS023128,64,CTN,2025-04-10,UU,VT01,FGW2,PLY0001
+1469,0,3100006023,9908,PS023128,64,CTN,2025-04-10,QI,UU,FGW2
 ```
 
 ##XML Format
@@ -54,10 +44,9 @@ flowchart LR
     <Quantity>64</Quantity>
     <UoM>CTN</UoM>
     <PostingDate>2025-04-10</PostingDate>
+    <StatusFrom>QI</StatusFrom>
     <StatusTo>UU</StatusTo>
-    <StorageLocationFrom>VT01</StorageLocationFrom>
     <StorageLocationTo>FGW2</StorageLocationTo>
-    <PalletID>PLY0001</PalletID>
 </PalletUpdate>
 ```
 
@@ -67,7 +56,7 @@ flowchart LR
 <?xml version="1.0" encoding="UTF-8"?>
 <Response>
     <MsgID>5F678C281A9F11F0A3D4000011FE13AB</MsgID>
-    <MessageType>PRODUCTION_STORAGE</MessageType>
+    <MessageType>PALLET_UPDATE</MessageType>
     <OriginalMessageID>17875422</OriginalMessageID>
     <SAPDocNo>100001301</SAPDocNo>
     <ErrorIndicator>0</ErrorIndicator>
@@ -86,8 +75,7 @@ flowchart LR
 
 ##TXT/CSV Format
 ```csv
-5F678C281A9F11F0A3D4000011FE13AB,PRODUCTION_STORAGE,17875422,100001301,0,I,"Processing SPOT invoice 2747/VCH/2025/0193"
-5F678C281A9F11F0A3D4000011FE13AB,PRODUCTION_STORAGE,17875422,100001301,0,S,"Incoming invoice 5105698830 2025 is created"
+5F678C281A9F11F0A3D4000011FE13AB,PALLET_UPDATE,17875422,100001301,0,I,"Processing SPOT invoice 2747/VCH/2025/0193"
 ```
 
 # User Story
