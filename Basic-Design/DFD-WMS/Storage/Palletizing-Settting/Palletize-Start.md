@@ -42,6 +42,10 @@ flowchart LR
         DNHOSTSEND<br>
     ")]
 
+    tableList-update[("
+        DMSTATION
+    ")]
+
     className[PalletizingSettingSCH]
 
     input --> className --> tableList-insert
