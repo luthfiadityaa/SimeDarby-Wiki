@@ -222,7 +222,7 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 |5 | **JOB_TYPE**               | DNWORKINFO.JOB_TYPE
 |6 | **PLAN_UKEY**              | DNWORKINFO.PLAN_UKEY
 |7 | **STOCK_ID**               | DNWORKINFO.STOCK_ID
-|8 | **PALLET_ID**              |
+|8 | **PALLET_ID**              | DNPALLET.PALLET_ID
 |9 | **PLAN_DAY**               | DNWORKINFO.PLAN_DAY
 |10| **COMPANY_CODE**           |
 |11| **COMPANY_NAME**           |
@@ -233,7 +233,7 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 |16| **ORDER_NO**               |
 |17| **PLAN_AREA_NO**           |
 |18| **PLAN_LOCATION_NO**       |
-|19| **MATERIAL_CODE**          | DMMASTERIALMASTER.MATERIAL_CODE
+|19| **MATERIAL_CODE**          | DNWORKINFO.MATERIAL_CODE
 |20| **MATERIAL_NAME**          | DMMASTERIALMASTER.MATERIAL_NAME
 |21| **JAN**                    |
 |22| **CASE_ITF**               |
@@ -256,8 +256,8 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 |39| **DEST_STATION_NO**        |
 |40| **SCHEDULE_NO**            |
 |41| **SCHEDULE_NO**            |
-|42| **USER_ID**                |
-|43| **USER_NAME**              |
+|42| **USER_ID**                | DNWORKINFO.USER_ID
+|43| **USER_NAME**              | DCUSER.USER_NAME
 |44| **TERMINAL_NO**            |
 |45| **DOCK_NO**                |
 |46| **TRUCK_PLATE_NO**         |
