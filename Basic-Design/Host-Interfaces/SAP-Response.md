@@ -22,7 +22,7 @@ flowchart LR
 
      subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
-        C2["recvResponse()<br>→ ResponseReportData"]
+        C2["recvResponseDataLoader()<br>→ ResponseReportData"]
         C1 --> C2
     end
 :::
