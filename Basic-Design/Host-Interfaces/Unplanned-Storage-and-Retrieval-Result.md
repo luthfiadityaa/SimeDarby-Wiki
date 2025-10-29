@@ -15,7 +15,7 @@ flowchart LR
     C -->|Send XML via SFTP| D[SAP]
     D -->|Send Back Response| C
     C -->|Convert XML → TXT/CSV| B
-    B -->|Return XML Response via SFTP| A
+    B -->|Return TXT/CSV Response via SFTP| A
     E[(DNStock)] <--> |Update| A
     F[(DNHostSend)] <--> |Update| A
     G[(DNRetrievalPlan)] <--> |Update| A
@@ -29,28 +29,50 @@ flowchart LR
 :::
 
 #Result Data from WareNavi
-##UNplanned Storage
-###TXT/CSV Format
+##Unplanned Storage
+###Finish Goods
+####TXT/CSV Format
 ```csv
-1469,0,3100006023,9908,PS023128,64,CTN,2025-04-10,QI,UU,FGW2,3050343982,PLT00001
+1469,0,3100006023,PS023128,64,CTN,2025-04-10,UU,9908,VT01,FGW1
 ```
-###XML Format
+####XML Format
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <PalletUpdate>
     <MsgID>1469</MsgID>
     <Action>0</Action>
     <MaterialCode>3100006023</MaterialCode>
-    <Plant>9908</Plant>
     <Batch>PS023128</Batch>
     <Quantity>64</Quantity>
     <UoM>CTN</UoM>
     <PostingDate>2025-04-10</PostingDate>
-    <StatusFrom>QI</StatusFrom>
     <StatusTo>UU</StatusTo>
-    <StorageLocationTo>FGW2</StorageLocationTo>
-    <DocNumber>3050343982</DocNumber>
-    <PalletID>PLT00001</PalletID>
+    <Plant>9908</Plant>
+    <StorageLocationFrom>VT01</StorageLocationFrom>
+    <StorageLocationTo>FGW1</StorageLocationTo>
+</PalletUpdate>
+```
+
+###Packaging Material
+####TXT/CSV Format
+```csv
+1469,0,3100006023,PS023128,64,CTN,2025-04-10,UU,9908,VT01,ZPCK
+```
+####XML Format
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<PalletUpdate>
+    <MsgID>1469</MsgID>
+    <Action>0</Action>
+    <MaterialCode>3100006023</MaterialCode>
+    <Batch>PS023128</Batch>
+    <Quantity>64</Quantity>
+    <UoM>CTN</UoM>
+    <PostingDate>2025-04-10</PostingDate>
+    <StatusTo>UU</StatusTo>
+    <Plant>9908</Plant>
+    <StorageLocationFrom>VT01</StorageLocationFrom>
+    <StorageLocationTo>ZPCK</StorageLocationTo>
 </PalletUpdate>
 ```
 
