@@ -79,7 +79,7 @@ flowchart LR
 ```
 
 # User Story
-  - #5759
+  - [ID_SimeDarbyPlantation Team Stories Board - Boards](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5759)
 
 # Related DFD
   - {}
