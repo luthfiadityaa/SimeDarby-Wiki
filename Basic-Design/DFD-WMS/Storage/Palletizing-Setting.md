@@ -2,7 +2,7 @@
 [[_TOSP_]]
 
 #<span style="color:skyblue; font-weight:bold">Palletizing Setting Set(F2)**</p>
-<span style="background-color:yellow; font-color:black;">jp.co.daifuku.wms.web.display.storage.palletizingsetting.PalletizingSettingSCH</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.storage.palletizingsetting.PalletizingSettingSCH &nbsp;</span>
 
 ![image.png](/.attachments/image-0617abe5-5a77-4ffa-a06f-55d39356473b.png)
 
