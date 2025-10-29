@@ -1,7 +1,7 @@
 [[_TOC_]]
 [[_TOSP_]]
 
-#<span style="color:skyblue; font-weight:bold">Palletizing to Tempering/Ambient database flow</span>
+#<span style="color:skyblue; font-weight:bold">Palletize Start database flow</span>
 
 | Action Name                        | DNSTOCK | DNPALLET | DNWORKINFO | DNWORKLIST | DNHOSTSEND | DNSTORAGEPLAN | 
 |------------------------------------|---------|----------|------------|------------|------------|---------------|
