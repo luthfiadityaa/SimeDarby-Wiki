@@ -57,7 +57,7 @@ flowchart LR
 :::
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
-This section explains the validations for the `DNSTORAGEPLAN` data
+This section explains the validations for the whole proccess Palletize Start
 - Material Code exists in **DMMaterialMaster**
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
