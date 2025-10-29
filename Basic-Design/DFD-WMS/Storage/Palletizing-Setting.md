@@ -1,7 +1,7 @@
 [[_TOC_]]
 [[_TOSP_]]
 
-#<span style="color:skyblue; font-weight:bold">Palletizing Setting Set(F2)**</p>
+#<span style="color:skyblue; font-weight:bold">Palletizing Setting Set(F2)</p>
 
 Palletizing Start is used to set the information of stock which will be palletized by robot automatically. After **Set(F2)**, all items in input text will be added into a Pallet Number. The result will be posted back to SAP as Production Storage Result.
 
