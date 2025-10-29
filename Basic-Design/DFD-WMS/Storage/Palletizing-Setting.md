@@ -101,25 +101,25 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 ###<span style="color:skyblue; font-weight:bold">DNPallet</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
-| **PALLET_ID**              |                                                        
-| **CURRENT_STATION_NO**     |                                                       
-| **WH_STATION_NO**          |                                                       
-| **STATUS_FLAG**            |                                                       
+| **PALLET_ID**              | Sequence Object                                                       
+| **CURRENT_STATION_NO**     |                                                        
+| **WH_STATION_NO**          | Selected Value from screen (1101/1102/1103/1104/1105)                                                      
+| **STATUS_FLAG**            | 1:Reserved for Storage                                                      
 | **ALLOCATION_FLAG**        |                                                       
-| **EMPTY_FLAG**             |                                                       
+| **EMPTY_FLAG**             | 0:Normal Pallet                                                       
 | **HEIGHT**                 |                                                       
 | **WIDTH**                  |                                                       
 | **SOFTZONE_ID**            |                                                       
-| **BCR_DATA**               |                                                       
+| **BCR_DATA**               | System generated (Sequence Number)                                                      
 | **LAST_STORED_DATE**       |                                                       
 | **AISLE_DISPERSE_KEY**     |                                                       
 | **AISLE_COLLECT_KEY**      |                                                       
 | **LEVEL_DISPERSE_KEY**     |                                                       
 | **COLLECT_BATCH_NO**       |                                                       
-| **REGIST_DATE**            |                                                    
-| **REGIST_PNAME**           |
-| **LAST_UPDATE_DATE**       |
-| **LAST_UPDATE_PNAME**      |
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
 
 ###<span style="color:skyblue; font-weight:bold">DNSTOCK</span>
 | **Column Name**            | **Description / Notes**                               |
