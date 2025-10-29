@@ -2,7 +2,7 @@
 
 # RetrievalPlanDataLoader
 This is the module to receive planned retrieval data from SAP.
-SAP will send the planned retrieval data on the response.
+SAP will send the planned retrieval data on the SFTP.
 
 # DFD
 The trigger to start the process is this file.
