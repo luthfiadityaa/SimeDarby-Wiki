@@ -121,7 +121,7 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-###<span style="color:skyblue; font-weight:bold">DNSTOCK</span>
+###<span style="color:skyblue; font-weight:bold">DNStock</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **STOCK_ID**               | Sequence Object   
@@ -152,7 +152,7 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-###<span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
+###<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 |NO| **Column Name**            | **Description / Notes**                               |
 |--|----------------------------|-------------------------------------------------------|
 |1 | **JOB_NO**                 | Sequence Object
@@ -212,7 +212,7 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 |55| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 |56| **LAST_UPDATE_PNAME**      | ClassName
 
-###<span style="color:skyblue; font-weight:bold">DNWORKLIST</span>
+###<span style="color:skyblue; font-weight:bold">DNWorkList</span>
 |NO| **Column Name**            | **Description / Notes**                               |
 |--|----------------------------|-------------------------------------------------------|
 |1 | **JOB_NO**                 | DNWORKINFO.JOB_NO
@@ -274,7 +274,7 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 |57| **LAST_UPDATE_DATE**       |
 |58| **LAST_UPDATE_PNAME**      |
 
-###<span style="color:skyblue; font-weight:bold">DNHOSTSEND</span>
+###<span style="color:skyblue; font-weight:bold">DNHostSend</span>
 |NO| **Column Name**            | **Description / Notes**                               |
 |--|----------------------------|-------------------------------------------------------|
 |1 | **WORK_DAY**               | 
