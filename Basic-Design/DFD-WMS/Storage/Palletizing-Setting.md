@@ -118,19 +118,57 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 ###<span style="color:skyblue; font-weight:bold">DNSTOCK</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
-| **PALLET_ID**              |   
+| **STOCK_ID**               |   
+| **AREA_NO**                |
+| **LOCATION_NO**            |
+| **LOT_NO**                 | 
+| **STORAGE_TYPE**           |
+| **NOTE**                   |
+| **STORAGE_DAY**            |
+| **STORAGE_DATE**           |
+| **NEWEST_STORAGE_DATE**    |
+| **RETRIEVAL_DAY**          |
+| **INVENTORY_DAY**          |
+| **STOCK_QTY**              |
+| **ALLOCATION_QTY**         |
+| **PLAN_QTY**               |
+| **PALLET_ID**              |
+| **BATCH_NO**               |
+| **STOCK_STATUS**           |
+| **QC_DURATION**            |
+| **TEMPERING_FLAG**         |
+| **QC_FLAG**                |
+| **TEMPERING_PERIOD**       |
+| **STORING_PAIR_KEY**       |
+| **EXPIRY_DATE**            |
+| **REGIST_DATE**            |                                                    
+| **REGIST_PNAME**           |
+| **LAST_UPDATE_DATE**       |
+| **LAST_UPDATE_PNAME**      |
 
 ###<span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **PALLET_ID**              |   
+| **REGIST_DATE**            |                                                    
+| **REGIST_PNAME**           |
+| **LAST_UPDATE_DATE**       |
+| **LAST_UPDATE_PNAME**      |
 
 ###<span style="color:skyblue; font-weight:bold">DNWORKLIST</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **PALLET_ID**              |   
+| **REGIST_DATE**            |                                                    
+| **REGIST_PNAME**           |
+| **LAST_UPDATE_DATE**       |
+| **LAST_UPDATE_PNAME**      |
 
 ###<span style="color:skyblue; font-weight:bold">DNHOSTSEND</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **PALLET_ID**              |   
+| **REGIST_DATE**            |                                                    
+| **REGIST_PNAME**           |
+| **LAST_UPDATE_DATE**       |
+| **LAST_UPDATE_PNAME**      |
