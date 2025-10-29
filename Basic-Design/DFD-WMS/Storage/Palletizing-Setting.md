@@ -102,7 +102,7 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **PALLET_ID**              | Sequence Object                                                       
-| **CURRENT_STATION_NO**     |                                                        
+| **CURRENT_STATION_NO**     | 99999999999                                                       
 | **WH_STATION_NO**          | Selected Value from screen (1101/1102/1103/1104/1105)                                                      
 | **STATUS_FLAG**            | 1:Reserved for Storage                                                      
 | **ALLOCATION_FLAG**        |                                                       
