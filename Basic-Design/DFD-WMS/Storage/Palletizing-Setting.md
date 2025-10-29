@@ -162,7 +162,7 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 |5 | **STATUS_FLAG**            | 0:Not Started
 |6 | **RFT_STATUS_FLAG**        |
 |7 | **HARDWARE_TYPE**          |
-|8 | **PLAN_UKEY**              | DNStoragePlan.Plan_Ukey
+|8 | **PLAN_UKEY**              | DNSTORAGEPLAN.PLAN_UKEY
 |9 | **STOCK_ID**               | Sequence Object
 |10| **SYSTEM_CONN_KEY**        |
 |11| **PLAN_DAY**               | DMWARENAVISYSTEM.WORK_DAY
@@ -277,14 +277,14 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 ###<span style="color:skyblue; font-weight:bold">DNHOSTSEND</span>
 |NO| **Column Name**            | **Description / Notes**                               |
 |--|----------------------------|-------------------------------------------------------|
-|1 | **WORK_DAY**               |   
-|2 | **JOB_NO**                 |
-|3 | **SETTING_UNIT_KEY**       |
-|4 | **COLLECT_JOB_NO**         |
-|5 | **JOB_TYPE**               |
-|6 | **STATUS_FLAG**            |
+|1 | **WORK_DAY**               | 
+|2 | **JOB_NO**                 | DNWORKINFO.JOB_NO
+|3 | **SETTING_UNIT_KEY**       | DNWORKINFO.SETTING_UNIT_KEY
+|4 | **COLLECT_JOB_NO**         | DNWORKINFO.COLLECT_JOB_NO
+|5 | **JOB_TYPE**               | DNWORKINFO.JOB_TYPE
+|6 | **STATUS_FLAG**            | DNWORKINFO.STATUS_FLAG
 |7 | **HARDWARE_TYPE**          |
-|8 | **PLAN_UKEY**              |
+|8 | **PLAN_UKEY**              | DNWORKINFO.PLAN_UKEY
 |9 | **STOCK_ID**               |
 |10| **SYSTEM_CONN_KEY**        |
 |11| **PLAN_DAY**               |
