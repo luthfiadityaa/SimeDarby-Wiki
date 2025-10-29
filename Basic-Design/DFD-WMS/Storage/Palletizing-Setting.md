@@ -174,7 +174,7 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 |17| **SHIP_TICKET_NO**         |
 |18| **SHIP_LINE_NO**           |
 |19| **SHIP_BRANCH_NO**         |
-|20| **BATCH_NO**               |
+|20| **BATCH_NO**               | Value from screen (Batch #)
 |21| **ORDER_NO**               |
 |22| **ORDER_SERIAL_NO**        |
 |23| **PLAN_AREA_NO**           |
@@ -215,15 +215,15 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 ###<span style="color:skyblue; font-weight:bold">DNWORKLIST</span>
 |NO| **Column Name**            | **Description / Notes**                               |
 |--|----------------------------|-------------------------------------------------------|
-|1 | **JOB_NO**                 |
+|1 | **JOB_NO**                 | DNWORKINFO.JOB_NO
 |2 | **CARRY_KEY**              |
-|3 | **SETTING_UNIT_KEY**       |
-|4 | **COLLECT_JOB_NO**         |
-|5 | **JOB_TYPE**               |
-|6 | **PLAN_UKEY**              |
-|7 | **STOCK_ID**               |
+|3 | **SETTING_UNIT_KEY**       | DNWORKINFO.SETTING_UNIT_KEY
+|4 | **COLLECT_JOB_NO**         | DNWORKINFO.COLLECT_JOB_NO
+|5 | **JOB_TYPE**               | DNWORKINFO.JOB_TYPE
+|6 | **PLAN_UKEY**              | DNWORKINFO.PLAN_UKEY
+|7 | **STOCK_ID**               | DNWORKINFO.STOCK_ID
 |8 | **PALLET_ID**              |
-|9 | **PLAN_DAY**               |
+|9 | **PLAN_DAY**               | DNWORKINFO.PLAN_DAY
 |10| **COMPANY_CODE**           |
 |11| **COMPANY_NAME**           |
 |12| **SHIP_TICKET_NO**         |
@@ -233,8 +233,8 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 |16| **ORDER_NO**               |
 |17| **PLAN_AREA_NO**           |
 |18| **PLAN_LOCATION_NO**       |
-|19| **MATERIAL_CODE**          |
-|20| **MATERIAL_NAME**          |
+|19| **MATERIAL_CODE**          | DMMASTERIALMASTER.MATERIAL_CODE
+|20| **MATERIAL_NAME**          | DMMASTERIALMASTER.MATERIAL_NAME
 |21| **JAN**                    |
 |22| **CASE_ITF**               |
 |23| **BUNDLE_ITF**             |
@@ -244,7 +244,7 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 |27| **STORAGE_TYPE**           |
 |28| **STORAGE_DATE**           |
 |29| **NOTE**                   |
-|30| **PLAN_QTY**               |
+|30| **PLAN_QTY**               | DNWORKINFO.PLAN_QTY
 |31| **STOCK_QTY**              |
 |32| **ALLOCATION_QTY**         |
 |33| **WORK_NOTE**              |
