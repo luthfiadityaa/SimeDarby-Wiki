@@ -56,7 +56,7 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 - Material Code exists in **DMMaterialMaster**
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
-##<span style="color:skyblue; font-weight:bold">Table Process</span>
+##<span style="color:skyblue; font-weight:bold">Table Value Insert</span>
 
 ###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
 | **Column Name**            | **Description / Notes**                               |
@@ -75,33 +75,33 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 | **BRANCH_NO**              |                                                         
 | **PLAN_AREA_NO**           |                                                       
 | **PLAN_LOCATION_NO**       |                                                       
-| **MATERIAL_CODE**          |                                                       
+| **MATERIAL_CODE**          | Value from screen (Material Code)                                                      
 | **PLAN_LOT_NO**            |                                                       
 | **NOTE**                   |                                                       
 | **PLAN_QTY**               | Value from screen (Planned Carton Qty)                                                       
 | **PROCESS_QTY**            |                                                       
 | **RESULT_QTY**             |                                                       
 | **SHORTAGE_QTY**           |                                                       
-| **REPORT_FLAG**            |                                                       
+| **REPORT_FLAG**            | 0:Not Reported                                                      
 | **WORK_DAY**               |                                                       
 | **REGIST_KIND**            |                                                       
 | **BCR_DATA**               |                                                       
-| **STORING_PAIR_KEY**       |   
+| **STORING_PAIR_KEY**       | Value from screen (Material Code + Batch #)  
 | **MSG_ID**                 |
 | **MSG_TYPE**               |
 | **MSG_ID_ORI**             |
 | **ERROR_INDICATION**       |
 | **TYPE**                   |
 | **MESSAGE_DESC**           |
-| **REGIST_DATE**            |                                                    
-| **REGIST_PNAME**           |
-| **LAST_UPDATE_DATE**       |
-| **LAST_UPDATE_PNAME**      |
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
 
 ###<span style="color:skyblue; font-weight:bold">DNPallet</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
-| **PALLET_ID**              |                                                       
+| **PALLET_ID**              |                                                        
 | **CURRENT_STATION_NO**     |                                                       
 | **WH_STATION_NO**          |                                                       
 | **STATUS_FLAG**            |                                                       
