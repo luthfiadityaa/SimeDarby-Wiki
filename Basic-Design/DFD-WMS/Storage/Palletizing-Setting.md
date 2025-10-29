@@ -333,3 +333,6 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 |54| **REGIST_PNAME**           | ClassName
 |55| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 |56| **LAST_UPDATE_PNAME**      | ClassName
+
+#User Story
+- [DFD Storage from Palletizing Area](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5783)
