@@ -50,15 +50,11 @@ flowchart LR
 
 :::
 
-Palletizing Start is used to set the information of stock which will be palletized by robot automatically.
-
-Palletizing Setting web screen is accessed and used by user when JDE is not available due to service disruption. After **Set(F2)**, all items in Details list will be added into a Pallet Number. The Purchase Order generated for this pallet number will be categorized as Unplanned and no result will be posted back to JDE.
+Palletizing Start is used to set the information of stock which will be palletized by robot automatically. After **Set(F2)**, all items in input text will be added into a Pallet Number. The result will be posted back to SAP as Production Storage Result.
 
 ## Validations
-- Storer Code exists in DMSTORER.
-- Short ID exists in DMITEM
-- Qty in Primary UOM is not larger than System set limit.
-- Details list is not empty
+- Material Code exists in **DMMaterialMaster**
+- Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
 ## DNSTORAGEPLAN
 - PLAN_UKEY = Sequence object
