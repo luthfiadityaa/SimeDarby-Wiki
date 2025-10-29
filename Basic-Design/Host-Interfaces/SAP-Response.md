@@ -1,7 +1,7 @@
 [[_TOC_]]
 
 #<b>ResponseDataLoader</b>
-This is the module When warenavi send the Result to SAP, sap will send a response to indicate the result of the communication.
+This is the module When warenavi send the Result to SAP, SAP will send a response to indicate the result of the communication.
 
 #<b>DFD</b>
 The trigger to start the process is this file.
