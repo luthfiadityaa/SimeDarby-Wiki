@@ -241,12 +241,12 @@ This section explains the validations for the `DNSTORAGEPLAN` data
 |24| **ENTERING_QTY**           |
 |25| **BUNDLE_ENTERING_QTY**    |
 |26| **PLAN_LOT_NO**            |
-|27| **STORAGE_TYPE**           |
-|28| **STORAGE_DATE**           |
+|27| **STORAGE_TYPE**           | DNWORKINFO.STORAGE_TYPE
+|28| **STORAGE_DATE**           | DNSTORAGEPLAN.PLAN_DAY
 |29| **NOTE**                   |
 |30| **PLAN_QTY**               | DNWORKINFO.PLAN_QTY
-|31| **STOCK_QTY**              |
-|32| **ALLOCATION_QTY**         |
+|31| **STOCK_QTY**              | 0
+|32| **ALLOCATION_QTY**         | 0
 |33| **WORK_NOTE**              |
 |34| **PRIORITY**               |
 |35| **RETRIEVAL_STATION_NO**   |
