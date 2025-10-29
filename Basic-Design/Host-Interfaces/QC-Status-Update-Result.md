@@ -48,9 +48,6 @@ flowchart LR
     <StatusTo>UU</StatusTo>
     <StorageLocationTo>FGW2</StorageLocationTo>
 </PalletUpdate>
-```
-A9F11F0A3D4000011FE13AB,PRODUCTION_STORAGE,1469,100001301,0,S,"Incoming invoice 5105698830 2025 is created"
-```
 
 # User Story
   - https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5759)
