@@ -43,14 +43,9 @@ flowchart LR
         DNPALLETIZE<br>
     ")]
 
-    tableList-insert[("
-        DNSTORAGEPLAN
-    ")]
-
     className[PalletizingSettingSCH]
 
-    input --> className --> |INSERT| tableList-insert
-    className --> |Insert/Update| tableList-insert-update
+    input --> className --> |Insert/Update| tableList-insert-update
 
     classDef leftAlign text-align:left;
     class input leftAlign;
