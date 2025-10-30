@@ -337,7 +337,4 @@ This section explains the validations for the whole proccess Palletize Start
 |56| **LAST_UPDATE_PNAME**      | ClassName
 
 # User Story
-  - #5768
-
-# Related DFD
-  - {}
+  - [DFD Storage Packaging Material](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5784)
