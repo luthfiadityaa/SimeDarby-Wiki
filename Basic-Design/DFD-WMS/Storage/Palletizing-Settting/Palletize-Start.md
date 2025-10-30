@@ -377,6 +377,42 @@ This section explains the validations for the whole proccess Palletize Start
 |55| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 |56| **LAST_UPDATE_PNAME**      | ClassName
 
+###<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+| **Column Name**                | **Description / Notes**                               |
+|--------------------------------|-------------------------------------------------------|
+| **CARRY_KEY**                  |  
+| **PALLET_ID**                  |
+| **WORK_TYPE**                  |
+| **GROUP_NO**                   |
+| **GROUP_SEQNO**                |
+| **CMD_STATUS**                 |
+| **NEXT_RESERVE_FLAG**          |
+| **PRIORITY**                   |
+| **RESTORING_FLAG**             |
+| **CARRY_FLAG**                 |
+| **RETRIEVAL_STATION_NO**       |
+| **RETRIEVAL_DETAIL**           |
+| **WORK_NO**                    |
+| **SOURCE_STATION_NO**          |
+| **DEST_STATION_NO**            |
+| **ARRIVAL_DATE**               |
+| **CONTROLINFO**                |
+| **CANCEL_REQUEST**             |
+| **CANCEL_REQUEST_DATE**        |
+| **SCHEDULE_NO**                |
+| **AISLE_STATION_NO**           |
+| **END_STATION_NO**             |
+| **RESERVE_SHELF_NO**           |
+| **ERROR_CODE**                 |
+| **MAINTENANCE_TERMINAL**       |
+| **REJECT_FACTOR**              |
+| **AGC_DATE**                   |
+| **WAIT_REASON**                |
+| **REGIST_DATE**                | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**               | ClassName
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**          | ClassName
+
 # Release Command from 
 
 # Dummy Arrival
