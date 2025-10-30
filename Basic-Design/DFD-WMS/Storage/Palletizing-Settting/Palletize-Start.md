@@ -6,6 +6,10 @@
 | Action Name                        | DNPALLETIZE | DNSTORAGEPLAN | DNWORKINFO | DNWORKLIST | DNPALLET | DNSTOCK | DNHOSTSEND   | 
 |------------------------------------|-------------|---------------|------------|------------|----------|---------|--------------|
 | [Palletize Start - Set(F2)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Palletizing%20Setting&pageId=886&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Epalletizing-setting-set(f2)%3C/span%3E)      |  INSERT |  INSERT  |   INSERT   |   INSERT   |   INSERT   |     INSERT    |     INSERT    |
+| ID26 | | | | | | | |
+| ID05 | | | | | | | |
+| ID64 | | | | | | | |
+| ID33 | | | | | | | |
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start - Set(F2)</span>
 
@@ -363,6 +367,34 @@ This section explains the validations for the whole proccess Palletize Start
 |54| **REGIST_PNAME**           | ClassName
 |55| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 |56| **LAST_UPDATE_PNAME**      | ClassName
+
+# Dummy Arrival
+
+::: mermaid
+flowchart LR
+
+buttonclicked["
+Station Completion 
+button clicked
+"]
+
+id26msg("
+ID 26
+")
+
+id26-insert[("
+DNARRIVAL
+")]
+
+inoutstationoperator[InOutStationOperator]
+
+buttonclicked --> id26msg
+id26msg -->id26process-->inoutstationoperator
+inoutstationoperator--I-->id26-insert
+:::
+
+After user clicked on Completion button at Station, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
+
 
 #User Story
 - [DFD Storage from Palletizing Area](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5783)
