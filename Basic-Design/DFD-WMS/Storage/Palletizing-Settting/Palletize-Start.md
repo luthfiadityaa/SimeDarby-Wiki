@@ -63,10 +63,10 @@ This section explains the validations for the whole proccess Palletize Start
 
 ##<span style="color:skyblue; font-weight:bold">Table Value Insert</span>
 
-###<span style="color:skyblue; font-weight:bold">DMSTATION</span>
+###<span style="color:skyblue; font-weight:bold">DMStation</span>
 | **Column Name**                | **Description / Notes**                               |
 |--------------------------------|-------------------------------------------------------|
-| **STATION_NO**                 | Selected from screen
+| **STATION_NO**                 | 
 | **MAX_PALLET_QTY**             |
 | **MAX_INSTRUCTION**            |
 | **SENDABLE**                   |
@@ -77,7 +77,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **SETTING_TYPE**               |
 | **WORKPLACE_TYPE**             |
 | **OPERATION_DISPLAY**          |
-| **STATION_NAME**               |
+| **STATION_NAME**               | 
 | **SUSPEND**                    | 
 | **ARRIVAL**                    |
 | **LOAD_SIZE_CHECK**            |
