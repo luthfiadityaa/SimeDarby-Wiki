@@ -4,14 +4,92 @@
 
 |Action Name| DNSTORAGEPLAN | DNPALLET | DNSTOCK | DNWORKLIST | DNWORKINFO | DNHOSTSEND |
 |-----------|--|--|--|--|--|--|
+| Planned Storage from Host | INSERT| | | | | |
 | Planned Storage - Set (F2) | UPDATE| INSERT | INSERT | INSERT | INSERT | INSERT |
+
+# Planned Storage from Host
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wms.web.display.storage.plannedstoragepkg.PlannedStoragePkgSCH` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+subgraph HostCommExecutor
+        C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
+        C2["recvStoragePlanPkgData()<br>→ StoragePlanPkgDataLoader"]
+        C1 --> C2
+    end
+
+subgraph WareNavi7A
+FileExchange[FileExchangeConverter]
+
+FileExchange-insert[("
+DNSTORAGEPLAN
+")]
+end
+
+HostCommExecutor-->FileExchange
+FileExchange--INSERT-->FileExchange-insert
+:::
+
+## StoragePlanPkgDataLoader
+- Document Number
+- Company Code
+- Vendor
+- Vendor Name
+- Document Date
+- Item No / Line No
+- Plant
+- Planned Quantity
+- Uom
+- Delivery Date
+
+Upon receiving new Plan Storage from Host system, WareNavi will insert related planned information to DNSTORAGEPLAN database table.
+
+### DNSTORAGEPLAN (INSERT)
+
+|NO| **Column Name**            | **Description / Notes**                           |
+|--|----------------------------|-------------------------------------------------------|
+|1 | **PLAN_UKEY**              | Sequence Object                                                       
+|2 | **LOAD_UNIT_KEY**          |                                                       
+|3 | **FILE_LINE_NO**           |                                                       
+|4 | **STATUS_FLAG**            | 0:Not Started                                                       
+|5 | **CANCEL_FLAG**            | 0:Normal Data                                                      
+|6 | **PLAN_DAY**               |                                                       
+|7 | **VENDOR_CODE**            | Vendor Code                                                     
+|8 | **COMPANY_CODE**           | Company Code                                                      
+|9 | **RECEIVE_TICKET_NO**      | Document Number                                                      
+|10| **RECEIVE_LINE_NO**        | Item No / Line No                                                      
+|11| **RECEIVE_TICKET_DATE**    | Document Date                                                      
+|12| **BRANCH_NO**              |                                                         
+|13| **PLAN_AREA_NO**           | Plant                                                      
+|14| **PLAN_LOCATION_NO**       | DMWAREHOUSE.Warehose_no                                                      
+|15| **MATERIAL_CODE**          |                                                      
+|16| **PLAN_LOT_NO**            |                                                     
+|17| **NOTE**                   |                                                       
+|18| **PLAN_QTY**               | Planned Quantity                                                     
+|19| **PROCESS_QTY**            |                                            
+|20| **RESULT_QTY**             |                                                  
+|21| **SHORTAGE_QTY**           |                                                       
+|22| **REPORT_FLAG**            | 0:Not Reported                                                      
+|23| **WORK_DAY**               |                                                       
+|24| **REGIST_KIND**            | 0:File Loading                                                      
+|25| **BCR_DATA**               |                                    
+|26| **STORING_PAIR_KEY**       | 
+|27| **MSG_ID**                 |
+|28| **MSG_TYPE**               |
+|29| **MSG_ID_ORI**             |
+|30| **ERROR_INDICATION**       | 0:Successfull
+|31| **TYPE**                   | S: Success
+|32| **MESSAGE_DESC**           |
+|33| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+|34| **REGIST_PNAME**           | ClassName
+|35| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+|36| **LAST_UPDATE_PNAME**      | ClassName
 
 # Planned Storage - Set (F2)
 Planned Storage Setting (PKG) is used to set the information of stock which will be entered into ASRS. After **Set(F2)** all item in input text will be process and the result will be posted back to SAP.
 ![image.png](/.attachments/image-731303e9-dc65-4f98-ba82-ba6d13a6c58b.png)
-
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.wms.web.display.storage.plannedstoragepkg.PlannedStoragePkgSCH` &nbsp;</span>
 
 ::: mermaid
 flowchart LR
@@ -107,7 +185,7 @@ This section explains the validations for the whole proccess Palletize Start
 |2 | **CURRENT_STATION_NO**     | Only 1 route station (ST1106)                                                       
 |3 | **WH_STATION_NO**          | 9002                                                      
 |4 | **STATUS_FLAG**            | 1:Reserved for Storage                                                      
-|5 | **ALLOCATION_FLAG**        |                                                       
+|5 | **ALLOCATION_FLAG**        | 1:Allocated                                                      
 |6 | **EMPTY_FLAG**             | 0:Normal Pallet                                                       
 |7 | **HEIGHT**                 |                                                       
 |8 | **WIDTH**                  |                                                       
