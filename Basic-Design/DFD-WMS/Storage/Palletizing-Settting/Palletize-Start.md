@@ -33,8 +33,11 @@ flowchart LR
         Expiry Days<br>
     ]
 
-    tableList-insert[("
+    tableList-insert-update[("
         DNPALLETIZE<br>
+    ")]
+
+    tableList-insert[("
         DNSTORAGEPLAN<br>
         DNPALLET<br>
         DNSTOCK<br>
@@ -46,7 +49,7 @@ flowchart LR
     className[PalletizingSettingSCH]
 
     input --> className --> |INSERT| tableList-insert
-    className --> |Update| tableList-update
+    className --> |Update| tableList-insert-update
 
     classDef leftAlign text-align:left;
     class input leftAlign;
