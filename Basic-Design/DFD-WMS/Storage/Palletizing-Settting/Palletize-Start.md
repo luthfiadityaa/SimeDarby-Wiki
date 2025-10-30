@@ -4,9 +4,9 @@
 #<span style="color:skyblue; font-weight:bold">Palletize Start database flow</span>
 
 | Action Name                        | DNPALLETIZE | DNSTORAGEPLAN | DNWORKINFO | DNWORKLIST | DNPALLET | DNSTOCK | DNHOSTSEND | DNARRIVAL | 
-|------------------------------------|-------------|---------------|------------|------------|----------|---------|--------------|
-| [Palletize Start - Set(F2)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Palletizing%20Setting&pageId=886&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Epalletizing-setting-set(f2)%3C/span%3E)      |  INSERT |  INSERT  |   INSERT   |   INSERT   |   INSERT   |     INSERT    |     INSERT    |
-| ID26 | | | | | | | | INSERT |
+|------------------------------------|-------------|---------------|------------|------------|----------|---------|--------------|--------------|
+| [Palletize Start - Set(F2)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Palletizing%20Setting&pageId=886&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Epalletizing-setting-set(f2)%3C/span%3E)      |  INSERT |  INSERT  |   INSERT   |   INSERT   |   INSERT   |     INSERT    |     INSERT    | |
+| ID26 | | | | | | | | INSERT ||
 | ID05 | | | | | | | | |
 | ID64 | | | | | | | | |
 | ID33 | | | | | | | | |
@@ -48,6 +48,7 @@ flowchart LR
         DNWORKINFO<br>
         DNWORKLIST<br>
         DNHOSTSEND<br>
+        DNCARRYINFO<br>
     ")]
 
     className[PalletizingSettingSCH]
@@ -61,6 +62,14 @@ flowchart LR
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
 This section explains the validations for the whole proccess Palletize Start
+- AGC is online. <span style="color:green; font-weight:bold">(DMGroupController.STATUS_FLAG.ONLINE)</span>
+- Selected Station Number is NOT under suspend. <span style="color:green; font-weight:bold">(DMStation.SUSPEND.OFF)</span>
+- Selected Station Number is available. <span style="color:green; font-weight:bold">(DMStation.STATUS.NORMAL and DMMachine.STATUS_FLAG.ACTIVE)</span>
+- Pallet Information does not exist in <span style="color:green; font-weight:bold">DNCARRYINFO.</span>  
+  To check for Pallet Information:  
+  <span style="color:green; font-weight:bold">JOIN DNCARRYINFO.PALLET_ID = DNPALLET.PALLET_ID  
+  CONDITION DNPALLET.BCR_DATA = <Pallet Number> </span>  
+  So if result > 0, Palletize Start cannot proceed.
 - Material Code exists in **DMMaterialMaster**
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
@@ -368,6 +377,8 @@ This section explains the validations for the whole proccess Palletize Start
 |55| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 |56| **LAST_UPDATE_PNAME**      | ClassName
 
+# Release Command from 
+
 # Dummy Arrival
 
 ::: mermaid
@@ -437,7 +448,7 @@ ID 05
 ")
 
 automaticmodechangesender-input-->automaticmodechangesender-->id05msg
-automaticmodechangesender-.U.->automaticmodechangesender-update
+automaticmodechangesender--> |UPDATE| automaticmodechangesender-update
 :::
 
 After successful creation of arrival record in ID26process, Automatic Mode Change Sender is the following process where it will send ID05 to AGC. To indicate ID05 is sent to AGC, DNCARRYINFO.CMD_STATUS will be updated from 1:Started to 2:Waiting for Response.
