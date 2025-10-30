@@ -27,7 +27,10 @@ flowchart LR
         Material Name<br>
         Material Type<br>
         Batch #<br>
+        Storage Qty<br>
         Planned Carton Qty<br>
+        Total Actual Carton Qty<br>
+        Storage Date/Time<br>
         Qty kg/crtn<br>
         Qty crtn/PL<br>
         UOM<br>
