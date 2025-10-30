@@ -24,7 +24,7 @@ flowchart LR
         Material Name<br>
         Material Type<br>
         Batch #<br>
-        Planned Craton Qty<br>
+        Planned Carton Qty<br>
         Qty kg/crtn<br>
         Qty crtn/PL<br>
         UOM<br>
