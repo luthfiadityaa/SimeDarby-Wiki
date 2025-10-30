@@ -53,7 +53,6 @@ flowchart LR
 
     classDef leftAlign text-align:left;
     class input leftAlign;
-
 :::
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
