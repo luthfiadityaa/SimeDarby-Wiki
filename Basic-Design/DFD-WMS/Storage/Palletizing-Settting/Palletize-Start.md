@@ -395,6 +395,8 @@ inoutstationoperator--I-->id26-insert
 
 After user clicked on Completion button at Station, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
 
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
+
 ###<span style="color:skyblue; font-weight:bold">DNArrival</span>
 |NO| **Column Name**            | **Description / Notes**                               |
 |--|----------------------------|-------------------------------------------------------|
@@ -412,7 +414,7 @@ After user clicked on Completion button at Station, AGC will send ID26 to WareNa
 |12| **LAST_UPDATE_PNAME**      | ClassName
 
 # Automatic Mode Change Sender
-jp.co.daifuku.wcs.mc.as21.transmission.AutomaticModeChangeSender
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.AutomaticModeChangeSender &nbsp;</span>
 
 ::: mermaid
 flowchart LR
