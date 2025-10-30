@@ -79,6 +79,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **TEMPERING_PERIOD**           | Value from screen (Tempering Period)
 | **STORAGE_LOCATION**           | Value from screen (Storage Location)
 | **EXPIRY_DAYS**                | Value from screen (Expiry Days)
+| **STORAGE_QTY**                | 1:In-Progress
 | **TOTAL_ACTUAL_CARTON_QTY**    | QTY_KG_CRTN++
 | **MAX_PALLET_BATCH_END**       | PLANNED_CARTON_QTY / QTY_CRTN_PL
 | **BATCH_PALLET_START**         | Value from screen (Storage Date/Time) + TimeStamp (System Generated)
