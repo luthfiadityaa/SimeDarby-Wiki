@@ -34,6 +34,7 @@ flowchart LR
     ]
 
     tableList-insert[("
+        DNPALLETIZE<br>
         DNSTORAGEPLAN<br>
         DNPALLET<br>
         DNSTOCK<br>
@@ -126,7 +127,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **PLAN_LOT_NO**            |                                                       
 | **NOTE**                   |                                                       
 | **PLAN_QTY**               | Value from screen (Planned Carton Qty)                                                       
-| **PROCESS_QTY**            | Value from screen (Qty Crtn/Pl)                                                     
+| **PROCESS_QTY**            | Value from screen (Qty crtn/PL)                                         
 | **RESULT_QTY**             |                                                       
 | **SHORTAGE_QTY**           |                                                       
 | **REPORT_FLAG**            | 0:Not Reported                                                      
@@ -230,7 +231,7 @@ This section explains the validations for the whole proccess Palletize Start
 |26| **PLAN_LOT_NO**            |
 |27| **NOTE**                   |
 |28| **PLAN_QTY**               | Value from screen (Planned Carton Qty)
-|29| **RESULT_QTY**             |
+|29| **RESULT_QTY**             | 
 |30| **SHORTAGE_QTY**           |
 |31| **RESULT_AREA_NO**         |
 |32| **RESULT_LOCATION_NO**     |
