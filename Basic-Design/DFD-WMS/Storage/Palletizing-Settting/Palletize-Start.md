@@ -49,7 +49,7 @@ flowchart LR
     className[PalletizingSettingSCH]
 
     input --> className --> |INSERT| tableList-insert
-    className --> |Update| tableList-insert-update
+    className --> |Insert/Update| tableList-insert-update
 
     classDef leftAlign text-align:left;
     class input leftAlign;
