@@ -61,7 +61,7 @@ This section explains the validations for the whole proccess Palletize Start
 - Material Code exists in **DMMaterialMaster**
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
-##<span style="color:skyblue; font-weight:bold">Table Value Insert</span>
+##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ###<span style="color:skyblue; font-weight:bold">DMStation</span>
 | **Column Name**                | **Description / Notes**                               |
