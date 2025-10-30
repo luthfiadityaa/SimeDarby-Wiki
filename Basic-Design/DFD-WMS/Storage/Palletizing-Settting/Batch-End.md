@@ -6,9 +6,9 @@
 
 #<span style="color:skyblue; font-weight:bold">Batch End database flow</span>
 
-| Action Name                        | DNSTOCK | DNPALLET | DNWORKINFO | DNWORKLIST | DNHOSTSEND | DNSTORAGEPLAN | DMSTATION | 
+| Action Name                        | DNSTOCK | DNPALLET | DNWORKINFO | DNWORKLIST | DNHOSTSEND | DNSTORAGEPLAN | DNPALLETIZE | 
 |------------------------------------|---------|----------|------------|------------|------------|---------------|---------------|
-| [Batch End - Set(F2)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Palletizing%20Setting&pageId=886&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Epalletizing-setting-set(f2)%3C/span%3E)      |  INSERT |  INSERT  |   INSERT   |   INSERT   |   INSERT   |     INSERT    |     UPDATE    |
+| [Batch End - Set(F2)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Palletizing%20Setting&pageId=886&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Epalletizing-setting-set(f2)%3C/span%3E)      |  INSERT |  INSERT  |   INSERT   |   INSERT   |   INSERT   |     INSERT    |     INSERT/UPDATE    |
 
 #<span style="color:skyblue; font-weight:bold">Batch End - Set(F2)</span>
   
@@ -27,9 +27,7 @@ flowchart LR
         Material Name<br>
         Material Type<br>
         Batch #<br>
-        Storage Qty<br>
         Planned Carton Qty<br>
-        Total Actual Carton Qty<br>
         Qty kg/crtn<br>
         Qty crtn/PL<br>
         UOM<br>
@@ -37,6 +35,10 @@ flowchart LR
         Storage Location<br>
         Expiry Days<br>
     ]
+
+    tableList-insert-update[("
+        DNPALLETIZE<br>
+    ")]
 
     tableList-insert[("
         DNSTORAGEPLAN<br>
@@ -47,14 +49,10 @@ flowchart LR
         DNHOSTSEND<br>
     ")]
 
-    tableList-update[("
-        DMSTATION
-    ")]
-
     className[PalletizingSettingSCH]
 
     input --> className --> |INSERT| tableList-insert
-    className --> |Update| tableList-update
+    className --> |Insert/Update| tableList-insert-update
 
     classDef leftAlign text-align:left;
     class input leftAlign;
