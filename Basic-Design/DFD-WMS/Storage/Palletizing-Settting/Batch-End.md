@@ -27,10 +27,7 @@ flowchart LR
         Material Name<br>
         Material Type<br>
         Batch #<br>
-        Storage_Qty #<br>
         Planned Carton Qty<br>
-        Total Actual Carton Qty<br>
-        Storage Date/Time<br>
         Qty kg/crtn<br>
         Qty crtn/PL<br>
         UOM<br>
@@ -43,13 +40,22 @@ flowchart LR
         DNPALLETIZE<br>
     ")]
 
+    tableList-insert[("
+        DNSTORAGEPLAN<br>
+        DNPALLET<br>
+        DNSTOCK<br>
+        DNWORKINFO<br>
+        DNWORKLIST<br>
+        DNHOSTSEND<br>
+    ")]
+
     className[PalletizingSettingSCH]
 
-    input --> className --> |Insert/Update| tableList-insert-update
+    input --> className --> |INSERT| tableList-insert
+    className --> |Insert/Update| tableList-insert-update
 
     classDef leftAlign text-align:left;
     class input leftAlign;
-
 :::
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
