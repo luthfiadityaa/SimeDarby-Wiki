@@ -126,7 +126,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **PLAN_LOT_NO**            |                                                       
 | **NOTE**                   |                                                       
 | **PLAN_QTY**               | Value from screen (Planned Carton Qty)                                                       
-| **PROCESS_QTY**            |                                                       
+| **PROCESS_QTY**            | Value from screen (Qty Crtn/Pl)                                                     
 | **RESULT_QTY**             |                                                       
 | **SHORTAGE_QTY**           |                                                       
 | **REPORT_FLAG**            | 0:Not Reported                                                      
