@@ -11,10 +11,10 @@
 | [Batch End - Set(F2)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Palletizing%20Setting&pageId=886&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Epalletizing-setting-set(f2)%3C/span%3E)      |  INSERT |  INSERT  |   INSERT   |   INSERT   |   INSERT   |     INSERT    |     UPDATE    |
 
 #<span style="color:skyblue; font-weight:bold">Batch End - Set(F2)</span>
+  
+Batch End is used to set qty of stock on the last pallet of current Batch and set the palletizing work to stop. After **Set(F2)**, all items in input text will be added into a Pallet Number. The result will be posted back to SAP as Production Storage Result.
 
-Palletize Start is used to set the information of stock which will be palletized by robot automatically. After **Set(F2)**, all items in input text will be added into a Pallet Number. The result will be posted back to SAP as Production Storage Result.
-
-![image.png](/.attachments/image-7191d145-133b-4a83-a710-1c3146541bc0.png)
+![image.png](/.attachments/image-afd50f57-e0f4-49c3-bea7-73a1dad10869.png)
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.storage.palletizingsetting.PalletizingSettingSCH &nbsp;</span>
 
@@ -27,7 +27,9 @@ flowchart LR
         Material Name<br>
         Material Type<br>
         Batch #<br>
-        Planned Craton Qty<br>
+        Storage Qty<br>
+        Planned Carton Qty<br>
+        Total Actual Carton Qty<br>
         Qty kg/crtn<br>
         Qty crtn/PL<br>
         UOM<br>
