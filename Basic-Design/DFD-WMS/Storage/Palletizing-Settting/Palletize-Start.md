@@ -43,10 +43,6 @@ flowchart LR
         DNHOSTSEND<br>
     ")]
 
-    tableList-update[("
-        DMSTATION
-    ")]
-
     className[PalletizingSettingSCH]
 
     input --> className --> |INSERT| tableList-insert
@@ -64,43 +60,26 @@ This section explains the validations for the whole proccess Palletize Start
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
-###<span style="color:skyblue; font-weight:bold">DMStation</span>
+###<span style="color:skyblue; font-weight:bold">DNPALLETIZE</span>
 | **Column Name**                | **Description / Notes**                               |
 |--------------------------------|-------------------------------------------------------|
-| **STATION_NO**                 | 
-| **MAX_PALLET_QTY**             |
-| **MAX_INSTRUCTION**            |
-| **SENDABLE**                   |
-| **STATUS**                     |
-| **CONTROLLER_NO**              |
-| **STATION_TYPE**               |
-| **SRS_STATION_TYPE**           |
-| **SETTING_TYPE**               |
-| **WORKPLACE_TYPE**             |
-| **OPERATION_DISPLAY**          |
-| **STATION_NAME**               | 
-| **SUSPEND**                    | 
-| **ARRIVAL**                    |
-| **LOAD_SIZE_CHECK**            |
-| **REMOVE**                     |
-| **RESTORING_OPERATION**        |
-| **RESTORING_INSTRUCTION**      |
-| **LOCATION_SAERCH_FLAG**       |
-| **WH_STATION_NO**              |
-| **PARENT_STATION_NO**          |
-| **AISLE_STATION_NO**           |
-| **NEXT_STATION_NO**            |
-| **LAST_USED_STATION_NO**       |
-| **REJECT_STATION_NO**          |
-| **LIFTER_STATION_NO**          |
-| **RESTORING_OPERATION**        |
-| **U_SHAPE_PAIR_STATION_NO**    |
-| **MODE_TYPE**                  |
-| **CURRENT_MODE**               |
-| **MODE_REQUEST**               |
-| **MODE_REQUEST_DATE**          |
-| **RETRIEVAL_TRIGGER_REQUEST**  |
-| **CLASS_NAME**                 |    
+| **STATION_NO**                 | Value from screen (Station No)
+| **CURRENT_STATUS**             | Value from screen (Current Status)
+| **MATERIAL_CODE**              | Value from screen (Material Code)
+| **MATERIAL_NAME**              | Value from screen (Material Name)
+| **MATERIAL_TYPE**              | Value from screen (Material Type)
+| **BATCH_NO**                   | Value from screen (BATCH_NO)
+| **PLANNED_CARTON_QTY**         | Value from screen (PLANNED CARTON QTY)
+| **QTY_KG_CRTN**                | Value from screen (Qty Kg/Crtn)
+| **QTY_CRTN_PL**                | Value from screen (Qty Crtn/PL)
+| **UOM**                        | Value from screen (UOM)
+| **TEMPERING_PERIOD**           | Value from screen (Tempering Period)
+| **STORAGE_LOCATION**           | Value from screen (Storage Location)
+| **EXPIRY_DAYS**                | Value from screen (Expiry Days)
+| **TOTAL_ACTUAL_CARTON_QTY**    | QTY_KG_CRTN++
+| **MAX_PALLET_BATCH_END**       | PLANNED_CARTON_QTY / QTY_CRTN_PL
+| **BATCH_PALLET_START**         | Value from screen (Storage Date/Time) + TimeStamp (System Generated)
+| **BATCH_PALLET_END**           | SYSTIMESTAMP
 | **REGIST_DATE**                | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**               | ClassName
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
