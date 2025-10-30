@@ -63,6 +63,48 @@ This section explains the validations for the whole proccess Palletize Start
 
 ##<span style="color:skyblue; font-weight:bold">Table Value Insert</span>
 
+###<span style="color:skyblue; font-weight:bold">DMSTATION</span>
+| **Column Name**                | **Description / Notes**                               |
+|--------------------------------|-------------------------------------------------------|
+| **STATION_NO**                 | Selected from screen
+| **MAX_PALLET_QTY**             |
+| **MAX_INSTRUCTION**            |
+| **SENDABLE**                   |
+| **STATUS**                     |
+| **CONTROLLER_NO**              |
+| **STATION_TYPE**               |
+| **SRS_STATION_TYPE**           |
+| **SETTING_TYPE**               |
+| **WORKPLACE_TYPE**             |
+| **OPERATION_DISPLAY**          |
+| **STATION_NAME**               |
+| **SUSPEND**                    | 
+| **ARRIVAL**                    |
+| **LOAD_SIZE_CHECK**            |
+| **REMOVE**                     |
+| **RESTORING_OPERATION**        |
+| **RESTORING_INSTRUCTION**      |
+| **LOCATION_SAERCH_FLAG**       |
+| **WH_STATION_NO**              |
+| **PARENT_STATION_NO**          |
+| **AISLE_STATION_NO**           |
+| **NEXT_STATION_NO**            |
+| **LAST_USED_STATION_NO**       |
+| **REJECT_STATION_NO**          |
+| **LIFTER_STATION_NO**          |
+| **RESTORING_OPERATION**        |
+| **U_SHAPE_PAIR_STATION_NO**    |
+| **MODE_TYPE**                  |
+| **CURRENT_MODE**               |
+| **MODE_REQUEST**               |
+| **MODE_REQUEST_DATE**          |
+| **RETRIEVAL_TRIGGER_REQUEST**  |
+| **CLASS_NAME**                 |    
+| **REGIST_DATE**                | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**               | ClassName
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**          | ClassName
+
 ###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
