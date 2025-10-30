@@ -82,7 +82,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **TOTAL_ACTUAL_CARTON_QTY**    | QTY_KG_CRTN++
 | **MAX_PALLET_BATCH_END**       | PLANNED_CARTON_QTY / QTY_CRTN_PL
 | **BATCH_PALLET_START**         | Value from screen (Storage Date/Time) + TimeStamp (System Generated)
-| **BATCH_PALLET_END**           | SYSTIMESTAMP
+| **BATCH_PALLET_END**           | 
 | **REGIST_DATE**                | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**               | ClassName
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
