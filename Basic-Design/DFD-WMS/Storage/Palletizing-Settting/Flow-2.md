@@ -21,7 +21,7 @@ id64process-.U.->id64-update
 :::
 
 Upon equipment have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
-##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####DNCARRYINFO
 - CMD_STATUS = 4:Pickup completed
 - LAST_UPDATE_DATE = SYSTIMESTAMP
@@ -107,14 +107,14 @@ id25process-.D.->id25-delete
 :::
 
 ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
-##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 #### DNCARRYINFO
 - CMD_STATUS: 3:Commanded
 - ERROR_CODE: 0
 - LAST_UPDATE_DATE = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
 
-###ID64
+##ID64
 jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process
 
 ::: mermaid
@@ -139,7 +139,7 @@ Upon equipment have picked up the Pallet successfully, ID64 will be sent from AG
 - LAST_UPDATE_DATE = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
 
-###ID33
+##ID33
 jp.co.daifuku.wcs.mc.as21.communication.control.Id33Process
 
 ::: mermaid
