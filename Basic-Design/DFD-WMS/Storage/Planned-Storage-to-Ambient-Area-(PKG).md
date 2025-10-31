@@ -141,44 +141,44 @@ This section explains the validations for the whole proccess Palletize Start
 # **Table Value**
 
 ### DNSTORAGEPLAN (UPDATE)
-|NO| **Column Name**            | **Description / Notes**                           |
-|--|----------------------------|-------------------------------------------------------|
-|1 | **PLAN_UKEY**              | Sequence Object                                                       
-|2 | **LOAD_UNIT_KEY**          |                                                       
-|3 | **FILE_LINE_NO**           |                                                       
-|4 | **STATUS_FLAG**            | 1:Working                                                       
-|5 | **CANCEL_FLAG**            | 0:Normal Data                                                      
-|6 | **PLAN_DAY**               |                                                       
-|7 | **VENDOR_CODE**            |                                                      
-|8 | **COMPANY_CODE**           |                                                       
-|9 | **RECEIVE_TICKET_NO**      |                                                       
-|10| **RECEIVE_LINE_NO**        |                                                       
-|11| **RECEIVE_TICKET_DATE**    |                                                       
-|12| **BRANCH_NO**              |                                                         
-|13| **PLAN_AREA_NO**           |                                                       
-|14| **PLAN_LOCATION_NO**       |                                                       
-|15| **MATERIAL_CODE**          |                                                      
-|16| **PLAN_LOT_NO**            |                                                     
-|17| **NOTE**                   |                                                       
-|18| **PLAN_QTY**               | Value from screen (Planned Qty)                                                     
-|19| **PROCESS_QTY**            | Value from screen (Storage Qty)                                                       
-|20| **RESULT_QTY**             | Value from screen (Stored Qty)                                                      
-|21| **SHORTAGE_QTY**           |                                                       
-|22| **REPORT_FLAG**            | 0:Not Reported                                                      
-|23| **WORK_DAY**               |                                                       
-|24| **REGIST_KIND**            |                                                       
-|25| **BCR_DATA**               | Value from screen (Pallet #)                                                      
-|26| **STORING_PAIR_KEY**       | Value from screen (Material Code + Batch #)  
-|27| **MSG_ID**                 |
-|28| **MSG_TYPE**               |
-|29| **MSG_ID_ORI**             |
-|30| **ERROR_INDICATION**       |
-|31| **TYPE**                   |
-|32| **MESSAGE_DESC**           |
-|33| **REGIST_DATE**            |                                                  
-|34| **REGIST_PNAME**           | 
-|35| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-|36| **LAST_UPDATE_PNAME**      | ClassName
+| **Column Name**            | **Description / Notes**                           |
+|----------------------------|---------------------------------------------------|
+| **PLAN_UKEY**              | Sequence Object                                                       
+| **LOAD_UNIT_KEY**          |                                                       
+| **FILE_LINE_NO**           |                                                       
+| **STATUS_FLAG**            | 1:Working                                                       
+| **CANCEL_FLAG**            | 0:Normal Data                                                      
+| **PLAN_DAY**               |                                                       
+| **VENDOR_CODE**            |                                                      
+| **COMPANY_CODE**           |                                                       
+| **RECEIVE_TICKET_NO**      |                                                       
+| **RECEIVE_LINE_NO**        |                                                       
+| **RECEIVE_TICKET_DATE**    |                                                       
+| **BRANCH_NO**              |                                                         
+| **PLAN_AREA_NO**           |                                                       
+| **PLAN_LOCATION_NO**       |                                                       
+| **MATERIAL_CODE**          |                                                      
+| **PLAN_LOT_NO**            |                                                     
+| **NOTE**                   |                                                       
+| **PLAN_QTY**               | Value from screen (Planned Qty)                                                     
+| **PROCESS_QTY**            | Value from screen (Storage Qty)                                                       
+| **RESULT_QTY**             | Value from screen (Stored Qty)                                                      
+| **SHORTAGE_QTY**           |                                                       
+| **REPORT_FLAG**            | 0:Not Reported                                                      
+| **WORK_DAY**               |                                                       
+| **REGIST_KIND**            |                                                       
+| **BCR_DATA**               | Value from screen (Pallet #)                                                      
+| **STORING_PAIR_KEY**       | Value from screen (Material Code + Batch #)  
+| **MSG_ID**                 |
+| **MSG_TYPE**               |
+| **MSG_ID_ORI**             |
+| **ERROR_INDICATION**       |
+| **TYPE**                   |
+| **MESSAGE_DESC**           |
+| **REGIST_DATE**            |                                                  
+| **REGIST_PNAME**           | 
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
 
 ### DNPallet (INSERT)
 |NO| **Column Name**            | **Description / Notes**                           |
