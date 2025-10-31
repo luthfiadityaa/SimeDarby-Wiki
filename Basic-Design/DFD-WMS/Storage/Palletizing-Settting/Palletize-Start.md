@@ -597,7 +597,7 @@ releaseCommand-->id26msg-->id26process-->inoutstationoperator
 inoutstationoperator--I-->id26-insert
 :::
 
-After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
+Continue the process, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
 
@@ -608,16 +608,6 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 |----------------------------|-------------------------------------------------------|
 | **ARRIVAL_DATE**           | SYSTIMESTAMP 
 | **STATION_NO**             | Arrival Station Number from ID26 
-| **CARRY_KEY**              | 99999999       
-| **BCR_DATA**               | Barcode information from ID26
-| **CONTROLINFO**            | Control information from ID26
-| **SEND_FLAG**              | 0:Not sent
-| **HEIGHT**                 | Dimension Information from ID26
-| **WIDTH**                  | Dimension Information From ID26
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
 
 ##<span style="color:skyblue; font-weight:bold">Automatic Mode Change Sender</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.AutomaticModeChangeSender &nbsp;</span>
@@ -650,44 +640,26 @@ After successful creation of arrival record in <span style="color:green; font-we
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
-####<span style="color:skyblue; font-weight:bold">DMWarehouse</span>
-| **Column Name**            | **Description / Notes**                               |
-|----------------------------|-------------------------------------------------------|
-| **LAST_USED_STATION_NO**   |  Aisle Number where a reserved location belongs to 
-
-####<span style="color:skyblue; font-weight:bold">DMShelf</span>
-| **Column Name**            | **Description / Notes**                               |
-|----------------------------|-------------------------------------------------------|
-| STATUS_FLAG                | 2:Reserved Location
-| LAST_UPDATE_DATE           | SYSTIMESTAMP
-
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
-| AISLE_STATION_NO           | Aisle Number where a reserved location belongs to
-| CMD_STATUS                 | 2:Waiting for response
 | LAST_UPDATE_DATE           | SYSTIMESTAMP
 | LAST_UPDATE_PNAME          | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
-| PLAN_LOCATION_NO           | Reserved Location Number
 | LAST_UPDATE_DATE           | SYSTIMESTAMP
 
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
-| CURRENT_STATION_NO         | Reserved Location Number
-| WH_STATION_NO              | DNCARRYINFO.END_STATION_NO
 | LAST_UPDATE_DATE           | SYSTIMESTAMP
 | LAST_UPDATE_PNAME          | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
-| AREA_NO                    | DNCARRYINFO.END_STATION_NO
-| LOCATION_NO                | Reserved Location Number
 | LAST_UPDATE_DATE           | SYSTIMESTAMP
 | LAST_UPDATE_PNAME          | Class name
 
@@ -730,6 +702,8 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 - LAST_UPDATE_DATE = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
 
+##Flow 1 (Refer to AGC Linkage Specs)
+##Flow 2 (Refer to AGC Linkage Specs)
 ##ID64
 jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process
 
