@@ -272,14 +272,14 @@ This section explains the validations for the whole proccess Palletize Start
 | **RETRIEVAL_DETAIL**           |
 | **WORK_NO**                    | Sequence Object
 | **SOURCE_STATION_NO**          | DNPALLET.CURRENT_STATION_NO
-| **DEST_STATION_NO**            | 9001
+| **DEST_STATION_NO**            | DNWORKINFO.PLAN_AREA_NO
 | **ARRIVAL_DATE**               |
 | **CONTROLINFO**                |
-| **CANCEL_REQUEST**             |
+| **CANCEL_REQUEST**             | 0:Not Requested
 | **CANCEL_REQUEST_DATE**        |
-| **SCHEDULE_NO**                |
+| **SCHEDULE_NO**                | Sequence Object
 | **AISLE_STATION_NO**           |
-| **END_STATION_NO**             |
+| **END_STATION_NO**             | DNWORKINFO.PLAN_AREA_NO
 | **RESERVE_SHELF_NO**           |
 | **ERROR_CODE**                 |
 | **MAINTENANCE_TERMINAL**       |
