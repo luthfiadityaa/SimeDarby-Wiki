@@ -785,6 +785,35 @@ Upon equipment have picked up the Pallet successfully, ID64 will be sent from AG
 
 ###ID26
 ###ID25
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id25("
+ID 25
+")
+
+id25-update[("
+DNCARRYINFO
+")]
+id25-delete[("
+DNARRIVAL
+")]
+
+id25-->id25process
+id25process-.U.->id25-update
+id25process-.D.->id25-delete
+:::
+
+ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+#### DNCARRYINFO
+- CMD_STATUS: 3:Commanded
+- ERROR_CODE: 0
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
 ###ID64
 jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process
 
@@ -812,6 +841,35 @@ Upon equipment have picked up the Pallet successfully, ID64 will be sent from AG
 
 ###ID26
 ###ID25
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id25("
+ID 25
+")
+
+id25-update[("
+DNCARRYINFO
+")]
+id25-delete[("
+DNARRIVAL
+")]
+
+id25-->id25process
+id25process-.U.->id25-update
+id25process-.D.->id25-delete
+:::
+
+ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+#### DNCARRYINFO
+- CMD_STATUS: 3:Commanded
+- ERROR_CODE: 0
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
 ###ID64
 jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process
 
