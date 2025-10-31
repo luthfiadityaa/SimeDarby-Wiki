@@ -2,10 +2,10 @@
 
 # Planned Storage Setting (PKG) database flow
 
-|Action Name| DNSTORAGEPLAN | DNPALLET | DNSTOCK | DNWORKLIST | DNWORKINFO | DNHOSTSEND |
-|-----------|--|--|--|--|--|--|
-| Planned Storage from Host | INSERT| | | | | |
-| Planned Storage - Set (F2) | UPDATE| INSERT | INSERT | INSERT | INSERT | INSERT |
+|Action Name| DNSTORAGEPLAN | DNPALLET | DNWORKINFO | DNWORKLIST | DNCARRYINFO | DNSTOCK | DNHOSTSEND |
+|-----------|--|--|--|--|--|--|--|
+| [Planned Storage from Host](#planned-storage-from-host) | INSERT| | | | | | |
+| Planned Storage - Set (F2) | UPDATE| INSERT | INSERT | INSERT | INSERT | INSERT | INSERT |
 
 # Planned Storage from Host
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
@@ -204,42 +204,6 @@ This section explains the validations for the whole proccess Palletize Start
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-### DNStock (INSERT)
-| **Column Name**            | **Description / Notes**                           |
-|----------------------------|-------------------------------------------------------|
-| **STOCK_ID**               | DNWORKINFO.STOCK_ID  
-| **AREA_NO**                | DNSTORAGEPLAN.AREA_NO
-| **LOCATION_NO**            | 99999999999
-| **MATERIAL_CODE**          | DNSTORAGEPLAN.MATERIAL_CODE
-| **COMPANY_CODE**           | DNSTORAGEPLAN.COMPANY_CODE
-| **VENDOR_CODE**            | DNSTORAGEPLAN.VENDOR_CODE
-| **VENDOR_NAME**            | DNSTORAGEPLAN.VENDOR_NAME
-| **LOT_NO**                 | 
-| **STORAGE_TYPE**           | 2:New 
-| **NOTE**                   |
-| **STORAGE_DAY**            | DNSTORAGEPLAN.PLAN_DAY
-| **STORAGE_DATE**           | DNSTORAGEPLAN.REGIST_DATE
-| **NEWEST_STORAGE_DATE**    |
-| **RETRIEVAL_DAY**          |
-| **INVENTORY_DAY**          |
-| **STOCK_QTY**              | 
-| **ALLOCATION_QTY**         | 0
-| **PLAN_QTY**               | Value from screen (Planned Carton Qty)
-| **PALLET_ID**              | DNPALLET.PALLET_ID
-| **QTY_CRTN**               | 
-| **BATCH_NO**               | Value from screen (Batch #)
-| **STOCK_STATUS**           | 
-| **QC_DURATION**            | 
-| **TEMPERING_FLAG**         | 
-| **QC_FLAG**                | 
-| **TEMPERING_PERIOD**       | 
-| **STORING_PAIR_KEY**       | Value from screen (Material Code + Batch #)
-| **EXPIRY_DATE**            | 
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
-
 ### DNWorkInfo (INSERT)
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
@@ -252,9 +216,10 @@ This section explains the validations for the whole proccess Palletize Start
 | **HARDWARE_TYPE**          | 3:ASRS
 | **PLAN_UKEY**              | DNSTORAGEPLAN.PLAN_UKEY
 | **STOCK_ID**               | Sequence Object
-| **SYSTEM_CONN_KEY**        |
+| **SYSTEM_CONN_KEY**        | Sequence Object
 | **PLAN_DAY**               | DNSTORAGE.PLAN_DAY
 | **VENDOR_CODE**            | DNSTORAGEPLAN.VENDOR_CODE
+| **VENDOR_NAME**            | DNSTORAGEPLAN.VENDOR_NAME
 | **RECEIVE_TICKET_NO**      | DNSTORAGEPLAN.RECEIVE_TICKET_NO
 | **RECEIVE_LINE_NO**        | DNSTORAGEPLAN.RECEIVE_LINE_NO
 | **RECEIVE_BRANCH_NO**      |
@@ -339,7 +304,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **PRIORITY**               |
 | **RETRIEVAL_STATION_NO**   |
 | **RETRIEVAL_DETAIL**       |
-| **WORK_NO**                |
+| **WORK_NO**                | DNWORKINFO.JOB_NO
 | **SOURCE_STATION_NO**      |
 | **DEST_STATION_NO**        |
 | **SCHEDULE_NO**            |
@@ -362,65 +327,138 @@ This section explains the validations for the whole proccess Palletize Start
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP 
 | **LAST_UPDATE_PNAME**      | ClassName
 
+### DNCarryInfo (INSERT)
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| **CARRY_KEY**              | DNWORKINFO.SYSTEM_CONN_KEY
+| **PALLET_ID**              | DNPALLET.PALLET_ID
+| **WORK_TYPE**              | 02:Storage
+| **GROUP_NO**               |
+| **GROUP_SEQNO**            |
+| **CMD_STATUS**             | 1:Started 
+| **NEXT_RESERVE_FLAG**      |
+| **PRIORITY**               | 2:Normal
+| **RESTORING_FLAG**         | 0:Not Restore to Original Location
+| **CARRY_FLAG**             | 1:Storage
+| **RETRIEVAL_STATION_NO**   | 
+| **RETRIEVAL_DETAIL**       |
+| **WORK_NO**                | DNWORKINFO.JOB_NO
+| **SOURCE_STATION_NO**      | DNPALLET.CURRENT_STATION_NO
+| **DEST_STATION_NO**        | DNWORKINFO.PLAN_AREA_NO
+| **ARRIVAL_DATE**           |
+| **CONTROLINFO**            |
+| **CANCEL_REQUEST**         | 0:Not Requested
+| **CANCEL_REQUEST_DATE**    |
+| **SCHEDULE_NO**            | Sequence Object
+| **AISLE_STATION_NO**       |
+| **END_STATION_NO**         | DNWORKINFO.PLAN_AREA_NO
+| **RESERVE_SHELF_NO**       |
+| **ERROR_CODE**             |
+| **MAINTENANCE_TERMINAL**   |
+| **REJECT_FACTOR**          |
+| **AGC_DATE**               |
+| **WAIT_REASON**            |
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
+
+### DNStock (INSERT)
+| **Column Name**            | **Description / Notes**                           |
+|----------------------------|-------------------------------------------------------|
+| **STOCK_ID**               | DNWORKINFO.STOCK_ID  
+| **AREA_NO**                | DNSTORAGEPLAN.AREA_NO
+| **LOCATION_NO**            | 99999999999
+| **MATERIAL_CODE**          | DNSTORAGEPLAN.MATERIAL_CODE
+| **COMPANY_CODE**           | DNSTORAGEPLAN.COMPANY_CODE
+| **VENDOR_CODE**            | DNSTORAGEPLAN.VENDOR_CODE
+| **VENDOR_NAME**            | DNSTORAGEPLAN.VENDOR_NAME
+| **LOT_NO**                 | 
+| **STORAGE_TYPE**           | 2:New 
+| **NOTE**                   |
+| **STORAGE_DAY**            | DNSTORAGEPLAN.PLAN_DAY
+| **STORAGE_DATE**           | DNSTORAGEPLAN.REGIST_DATE
+| **NEWEST_STORAGE_DATE**    |
+| **RETRIEVAL_DAY**          |
+| **INVENTORY_DAY**          |
+| **STOCK_QTY**              | 
+| **ALLOCATION_QTY**         | 0
+| **PLAN_QTY**               | Value from screen (Planned Carton Qty)
+| **PALLET_ID**              | DNPALLET.PALLET_ID
+| **QTY_CRTN**               | 
+| **BATCH_NO**               | Value from screen (Batch #)
+| **STOCK_STATUS**           | 
+| **QC_DURATION**            | 
+| **TEMPERING_FLAG**         | 
+| **QC_FLAG**                | 
+| **TEMPERING_PERIOD**       | 
+| **STORING_PAIR_KEY**       | Value from screen (Material Code + Batch #)
+| **EXPIRY_DATE**            | 
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
+
 ### DNHostSend (INSERT)
-|NO| **Column Name**            | **Description / Notes**                               |
-|--|----------------------------|-------------------------------------------------------|
-|1 | **WORK_DAY**               | 
-|2 | **JOB_NO**                 | DNWORKINFO.JOB_NO
-|3 | **SETTING_UNIT_KEY**       | DNWORKINFO.SETTING_UNIT_KEY
-|4 | **COLLECT_JOB_NO**         | DNWORKINFO.COLLECT_JOB_NO
-|5 | **JOB_TYPE**               | DNWORKINFO.JOB_TYPE
-|6 | **STATUS_FLAG**            | DNWORKINFO.STATUS_FLAG
-|7 | **HARDWARE_TYPE**          |
-|8 | **PLAN_UKEY**              | DNWORKINFO.PLAN_UKEY
-|9 | **STOCK_ID**               | DNWORKINFO.STOCK_ID
-|10| **SYSTEM_CONN_KEY**        | 
-|11| **PLAN_DAY**               | DNWORKINFO.PLAN_DAY
-|12| **VENDOR_CODE**            |
-|13| **VENDOR_NAME**            |
-|14| **RECEIVE_TICKET_NO**      |
-|15| **RECEIVE_LINE_NO**        |
-|16| **RECEIVE_BRANCH_NO**      |
-|17| **COMPANY_CODE**           |
-|18| **COMPANY_NAME**           |
-|19| **SHIP_TICKET_NO**         |
-|20| **SHIP_LINE_NO**           |
-|21| **SHIP_BRANCH_NO**         |
-|22| **BATCH_NO**               | DNWORKINFO.BATCH_NO
-|23| **ORDER_NO**               |
-|24| **PLAN_AREA_NO**           |
-|25| **PLAN_LOCATION_NO**       |
-|26| **MATERIAL_CODE**          | DNWORKINFO.MATERIAL_CODE
-|27| **MATERIAL_NAME**          | DMMATERIALMASTER.MATERIAL_NAME
-|28| **JAN**                    |
-|29| **CASE_ITF**               |
-|30| **BUNDLE_ITF**             |
-|31| **ENTERING_QTY**           |
-|32| **BUNDLE_ENTERING_QTY**    |
-|33| **PLAN_LOT_NO**            |
-|34| **NOTE**                   |
-|35| **PLAN_QTY**               | DNWORKINFO.PLAN_QTY
-|36| **RESULT_QTY**             |
-|37| **SHORTAGE_QTY**           |
-|38| **RESULT_AREA_NO**         |
-|39| **RESULT_LOCATION_NO**     |
-|40| **RESULT_LOT_NO**          |
-|41| **WORK_NOTE**              |
-|42| **REPORT_FLAG**            | DNSTORAGEPLAN.REPORT_FLAG
-|43| **USER_ID**                | DNWORKINFO.USER_ID
-|44| **USER_NAME**              | DCUSER.USER_NAME
-|45| **TERMINAL_NO**            |
-|46| **WORK_SECOND**            |
-|47| **MSG_ID**                 |
-|48| **MSG_TYPE**               |
-|49| **MSG_ID_ORI**             |
-|50| **ERROR_INDICATION**       |
-|51| **TYPE**                   |
-|52| **MESSAGE_DESC**           |
-|53| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-|54| **REGIST_PNAME**           | ClassName
-|55| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-|56| **LAST_UPDATE_PNAME**      | ClassName
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| **WORK_DAY**               | DNWORKINFO.WORK_DAY
+| **JOB_NO**                 | DNWORKINFO.JOB_NO
+| **SETTING_UNIT_KEY**       | DNWORKINFO.SETTING_UNIT_KEY
+| **COLLECT_JOB_NO**         | DNWORKINFO.COLLECT_JOB_NO
+| **JOB_TYPE**               | DNWORKINFO.JOB_TYPE
+| **STATUS_FLAG**            | DNWORKINFO.STATUS_FLAG
+| **HARDWARE_TYPE**          |
+| **PLAN_UKEY**              | DNWORKINFO.PLAN_UKEY
+| **STOCK_ID**               | DNWORKINFO.STOCK_ID
+| **SYSTEM_CONN_KEY**        | 
+| **PLAN_DAY**               | DNWORKINFO.PLAN_DAY
+| **VENDOR_CODE**            | DNWORKINFO.VENDOR_CODE
+| **VENDOR_NAME**            | DNWORKINFO.VENDOR_NAME
+| **RECEIVE_TICKET_NO**      | DNWORKINFO.RECEIVE_TICKET_NO
+| **RECEIVE_LINE_NO**        | DNWORKINFO.RECEIVE_LINE_NO
+| **RECEIVE_BRANCH_NO**      |
+| **COMPANY_CODE**           | RECEIVE_LINE_NO
+| **COMPANY_NAME**           |
+| **SHIP_TICKET_NO**         |
+| **SHIP_LINE_NO**           |
+| **SHIP_BRANCH_NO**         |
+| **BATCH_NO**               | DNWORKINFO.BATCH_NO
+| **ORDER_NO**               |
+| **PLAN_AREA_NO**           | DNWORKINFO.PLAN_AREA_NO
+| **PLAN_LOCATION_NO**       | DNWORKINFO.PLAN_LOCATION_NO
+| **MATERIAL_CODE**          | DNWORKINFO.MATERIAL_CODE
+| **MATERIAL_NAME**          | DMMATERIALMASTER.MATERIAL_NAME
+| **JAN**                    |
+| **CASE_ITF**               |
+| **BUNDLE_ITF**             |
+| **ENTERING_QTY**           |
+| **BUNDLE_ENTERING_QTY**    |
+| **PLAN_LOT_NO**            |
+| **NOTE**                   |
+| **PLAN_QTY**               | DNWORKINFO.PLAN_QTY
+| **RESULT_QTY**             | DNWORKINFO.RESULT_QTY
+| **SHORTAGE_QTY**           |
+| **RESULT_AREA_NO**         | DNWORKINFO.PLAN_AREA_NO
+| **RESULT_LOCATION_NO**     | DNWORKINFO.PLAN_LOCATION_NO
+| **RESULT_LOT_NO**          |
+| **WORK_NOTE**              |
+| **REPORT_FLAG**            | DNSTORAGEPLAN.REPORT_FLAG
+| **USER_ID**                | DNWORKINFO.USER_ID
+| **USER_NAME**              | DCUSER.USER_NAME
+| **TERMINAL_NO**            | DNWORKINFO.TERMINAL_NO
+| **WORK_SECOND**            |
+| **MSG_ID**                 |
+| **MSG_TYPE**               |
+| **MSG_ID_ORI**             |
+| **ERROR_INDICATION**       |
+| **TYPE**                   |
+| **MESSAGE_DESC**           |
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
+
 
 # User Story
   - [DFD Storage Packaging Material](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5784)
