@@ -255,7 +255,7 @@ This section explains the validations for the whole proccess Palletize Start
 |55| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 |56| **LAST_UPDATE_PNAME**      | ClassName
 
-###<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Column Name**                | **Description / Notes**                               |
 |--------------------------------|-------------------------------------------------------|
 | **CARRY_KEY**                  |  
