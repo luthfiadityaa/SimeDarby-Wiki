@@ -500,11 +500,13 @@ After successful creation of arrival record in <span style="color:green; font-we
 |2 | LAST_UPDATE_DATE           | SYSTIMESTAMP
 
 ###<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
-- DEST_STATION_NO = Reserved Location Number
-- AISLE_STATION_NO = Aisle Number where a reserved location belongs to
-- CMD_STATUS = 2:Waiting for response
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+|NO| **Column Name**            | **Description / Notes**                               |
+|--|----------------------------|-------------------------------------------------------|
+|1 | DEST_STATION_NO            | Reserved Location Number
+|2 | AISLE_STATION_NO           | Aisle Number where a reserved location belongs to
+|3 | CMD_STATUS                 | 2:Waiting for response
+|4 | LAST_UPDATE_DATE           | SYSTIMESTAMP
+|5 | LAST_UPDATE_PNAME          | Class name
 
 ## DNWORKINFO
 - PLAN_LOCATION_NO = Reserved Location Number
