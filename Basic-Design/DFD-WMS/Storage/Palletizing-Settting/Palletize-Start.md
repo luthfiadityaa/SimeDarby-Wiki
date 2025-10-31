@@ -499,7 +499,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 |1 | STATUS_FLAG                | 2:Reserved Location
 |2 | LAST_UPDATE_DATE           | SYSTIMESTAMP
 
-###<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 |NO| **Column Name**            | **Description / Notes**                               |
 |--|----------------------------|-------------------------------------------------------|
 |1 | DEST_STATION_NO            | Reserved Location Number
@@ -508,9 +508,11 @@ After successful creation of arrival record in <span style="color:green; font-we
 |4 | LAST_UPDATE_DATE           | SYSTIMESTAMP
 |5 | LAST_UPDATE_PNAME          | Class name
 
-## DNWORKINFO
-- PLAN_LOCATION_NO = Reserved Location Number
-- LAST_UPDATE_DATE = SYSTIMESTAMP
+###<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
+|NO| **Column Name**            | **Description / Notes**                               |
+|--|----------------------------|-------------------------------------------------------|
+|1 | PLAN_LOCATION_NO           | Reserved Location Number
+|2 | LAST_UPDATE_DATE           | SYSTIMESTAMP
 
 ## DNPALLET
 - CURRENT_STATION_NO = Reserved Location Number
