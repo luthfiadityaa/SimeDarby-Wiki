@@ -409,7 +409,7 @@ This section explains the validations for the whole proccess Palletize Start
 |55| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 |56| **LAST_UPDATE_PNAME**      | ClassName
 
-# Release Command from Palletize Robot
+#<span style="color:skyblue; font-weight:bold">Release Command from Palletize Robot</span
   After palletizing is completed, the palletizing robot sends <span style="color:green; font-weight:bold">“Release Command”</span> signal via conveyor interlock.
 
 ::: mermaid
@@ -458,7 +458,7 @@ After user clicked on Completion button at Station, AGC will send ID26 to WareNa
 |11| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 |12| **LAST_UPDATE_PNAME**      | ClassName
 
-# Automatic Mode Change Sender
+#<span style="color:skyblue; font-weight:bold">Automatic Mode Change Sender</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.AutomaticModeChangeSender &nbsp;</span>
 
 ::: mermaid
@@ -485,7 +485,7 @@ automaticmodechangesender-input-->automaticmodechangesender-->id05msg
 automaticmodechangesender--> |UPDATE| automaticmodechangesender-update
 :::
 
-After successful creation of arrival record in ID26process, Automatic Mode Change Sender is the following process where it will send ID05 to AGC. To indicate ID05 is sent to AGC, DNCARRYINFO.CMD_STATUS will be updated from 1:Started to 2:Waiting for Response.
+After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, Automatic Mode Change Sender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">1:Started to 2:Waiting for Response.</span>
 
 ## DMWAREHOUSE
 - LAST_USED_STATION_NO: Aisle Number where a reserved location belongs to
