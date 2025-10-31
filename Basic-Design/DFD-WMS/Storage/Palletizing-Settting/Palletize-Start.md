@@ -410,6 +410,20 @@ This section explains the validations for the whole proccess Palletize Start
 |56| **LAST_UPDATE_PNAME**      | ClassName
 
 # Release Command from Palletize Robot
+  After palletizing is completed, the palletizing robot sends <span style="color:green; font-weight:bold">“Release Command”</span> signal via conveyor interlock.
+
+::: mermaid
+flowchart LR
+
+buttonclicked["Release Command"]
+
+id26msg("
+ID 26
+")
+
+id26-insert[("
+DNARRIVAL
+")]
 
 # Dummy Arrival
 
