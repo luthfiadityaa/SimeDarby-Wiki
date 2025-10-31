@@ -445,20 +445,20 @@ After user clicked on Completion button at Station, AGC will send ID26 to WareNa
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ###<span style="color:skyblue; font-weight:bold">DNArrival</span>
-|NO| **Column Name**            | **Description / Notes**                               |
-|--|----------------------------|-------------------------------------------------------|
-|1 | **ARRIVAL_DATE**           | SYSTIMESTAMP 
-|2 | **STATION_NO**             | Arrival Station Number from ID26 
-|3 | **CARRY_KEY**              | 99999999       
-|4 | **BCR_DATA**               | Barcode information from ID26
-|5 | **CONTROLINFO**            | Control information from ID26
-|6 | **SEND_FLAG**              | 0:Not sent
-|7 | **HEIGHT**                 | Dimension Information from ID26
-|8 | **WIDTH**                  | Dimension Information From ID26
-|9 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
-|10| **REGIST_PNAME**           | ClassName
-|11| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-|12| **LAST_UPDATE_PNAME**      | ClassName
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| **ARRIVAL_DATE**           | SYSTIMESTAMP 
+| **STATION_NO**             | Arrival Station Number from ID26 
+| **CARRY_KEY**              | 99999999       
+| **BCR_DATA**               | Barcode information from ID26
+| **CONTROLINFO**            | Control information from ID26
+| **SEND_FLAG**              | 0:Not sent
+| **HEIGHT**                 | Dimension Information from ID26
+| **WIDTH**                  | Dimension Information From ID26
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
 
 #<span style="color:skyblue; font-weight:bold">Automatic Mode Change Sender</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.AutomaticModeChangeSender &nbsp;</span>
@@ -492,45 +492,45 @@ After successful creation of arrival record in <span style="color:green; font-we
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ###<span style="color:skyblue; font-weight:bold">DMWarehouse</span>
-|NO| **Column Name**            | **Description / Notes**                               |
-|--|----------------------------|-------------------------------------------------------|
-|1 | **LAST_USED_STATION_NO**   | Aisle Number where a reserved location belongs to 
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| **LAST_USED_STATION_NO**   | Aisle Number where a reserved location belongs to 
 
 ###<span style="color:skyblue; font-weight:bold">DMShelf</span>
-|NO| **Column Name**            | **Description / Notes**                               |
-|--|----------------------------|-------------------------------------------------------|
-|1 | STATUS_FLAG                | 2:Reserved Location
-|2 | LAST_UPDATE_DATE           | SYSTIMESTAMP
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| STATUS_FLAG                | 2:Reserved Location
+| LAST_UPDATE_DATE           | SYSTIMESTAMP
 
 ###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-|NO| **Column Name**            | **Description / Notes**                               |
-|--|----------------------------|-------------------------------------------------------|
-|1 | DEST_STATION_NO            | Reserved Location Number
-|2 | AISLE_STATION_NO           | Aisle Number where a reserved location belongs to
-|3 | CMD_STATUS                 | 2:Waiting for response
-|4 | LAST_UPDATE_DATE           | SYSTIMESTAMP
-|5 | LAST_UPDATE_PNAME          | Class name
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| DEST_STATION_NO            | Reserved Location Number
+| AISLE_STATION_NO           | Aisle Number where a reserved location belongs to
+| CMD_STATUS                 | 2:Waiting for response
+| LAST_UPDATE_DATE           | SYSTIMESTAMP
+| LAST_UPDATE_PNAME          | Class name
 
 ###<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
-|NO| **Column Name**            | **Description / Notes**                               |
-|--|----------------------------|-------------------------------------------------------|
-|1 | PLAN_LOCATION_NO           | Reserved Location Number
-|2 | LAST_UPDATE_DATE           | SYSTIMESTAMP
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| PLAN_LOCATION_NO           | Reserved Location Number
+| LAST_UPDATE_DATE           | SYSTIMESTAMP
 
 ###<span style="color:skyblue; font-weight:bold">DNPallet</span>
-|NO| **Column Name**            | **Description / Notes**                               |
-|--|----------------------------|-------------------------------------------------------|
-|1 | CURRENT_STATION_NO         | Reserved Location Number
-|2 | WH_STATION_NO              | 9000
-|3 | LAST_UPDATE_DATE           | SYSTIMESTAMP
-|4 | LAST_UPDATE_PNAME          | Class name
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| CURRENT_STATION_NO         | Reserved Location Number
+| WH_STATION_NO              | 9000
+| LAST_UPDATE_DATE           | SYSTIMESTAMP
+| LAST_UPDATE_PNAME          | Class name
 
 ###<span style="color:skyblue; font-weight:bold">DNStock</span>
-|NO| **Column Name**            | **Description / Notes**                               |
-|--|----------------------------|-------------------------------------------------------|
-|1 | AREA_NO                    | 9000
-|2 | LOCATION_NO                | Reserved Location Number
-|3 | LAST_UPDATE_DATE           | SYSTIMESTAMP
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| AREA_NO                    | 9000
+| LOCATION_NO                | Reserved Location Number
+| LAST_UPDATE_DATE           | SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
 
 ## DNARRIVAL
