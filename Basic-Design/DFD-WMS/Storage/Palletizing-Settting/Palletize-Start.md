@@ -420,8 +420,7 @@ flowchart LR
 
 releaseCommand["
 Release Command from Palletize Robot
-Station Completion 
-button clicked
+After Completion 
 "]
 
 id26msg("
