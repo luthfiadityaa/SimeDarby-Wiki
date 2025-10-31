@@ -288,126 +288,126 @@ This section explains the validations for the whole proccess Palletize Start
 | **LAST_UPDATE_PNAME**          | ClassName
 
 ###<span style="color:skyblue; font-weight:bold">DNWorkList</span>
-|NO| **Column Name**            | **Description / Notes**                               |
-|--|----------------------------|-------------------------------------------------------|
-|1 | **JOB_NO**                 | DNWORKINFO.JOB_NO
-|2 | **CARRY_KEY**              |
-|3 | **SETTING_UNIT_KEY**       | DNWORKINFO.SETTING_UNIT_KEY
-|4 | **COLLECT_JOB_NO**         | DNWORKINFO.COLLECT_JOB_NO
-|5 | **JOB_TYPE**               | DNWORKINFO.JOB_TYPE
-|6 | **PLAN_UKEY**              | DNWORKINFO.PLAN_UKEY
-|7 | **STOCK_ID**               | DNWORKINFO.STOCK_ID
-|8 | **PALLET_ID**              | DNPALLET.PALLET_ID
-|9 | **PLAN_DAY**               | DNWORKINFO.PLAN_DAY
-|10| **COMPANY_CODE**           |
-|11| **COMPANY_NAME**           |
-|12| **SHIP_TICKET_NO**         |
-|13| **SHIP_LINE_NO**           |
-|14| **SHIP_BRANCH_NO**         |
-|15| **BATCH_NO**               | DNWORKINFO.BATCH_NO
-|16| **ORDER_NO**               |
-|17| **PLAN_AREA_NO**           |
-|18| **PLAN_LOCATION_NO**       |
-|19| **MATERIAL_CODE**          | DNWORKINFO.MATERIAL_CODE
-|20| **MATERIAL_NAME**          | DMMASTERIALMASTER.MATERIAL_NAME
-|21| **JAN**                    |
-|22| **CASE_ITF**               |
-|23| **BUNDLE_ITF**             |
-|24| **ENTERING_QTY**           |
-|25| **BUNDLE_ENTERING_QTY**    |
-|26| **PLAN_LOT_NO**            |
-|27| **STORAGE_TYPE**           | DNWORKINFO.STORAGE_TYPE
-|28| **STORAGE_DATE**           | DNSTORAGEPLAN.PLAN_DAY
-|29| **NOTE**                   |
-|30| **PLAN_QTY**               | DNWORKINFO.PLAN_QTY
-|31| **STOCK_QTY**              | 0
-|32| **ALLOCATION_QTY**         | 0
-|33| **WORK_NOTE**              |
-|34| **PRIORITY**               |
-|35| **RETRIEVAL_STATION_NO**   |
-|36| **RETRIEVAL_DETAIL**       |
-|37| **WORK_NO**                |
-|38| **SOURCE_STATION_NO**      |
-|39| **DEST_STATION_NO**        |
-|40| **SCHEDULE_NO**            |
-|41| **SCHEDULE_NO**            |
-|42| **USER_ID**                | DNWORKINFO.USER_ID
-|43| **USER_NAME**              | DCUSER.USER_NAME
-|44| **TERMINAL_NO**            |
-|45| **DOCK_NO**                |
-|46| **TRUCK_PLATE_NO**         |
-|47| **STORING_PAIR_KEY**       |
-|48| **NEW_STORING_PAIR_KEY**   |
-|49| **MSG_ID**                 |
-|50| **MSG_TYPE**               |
-|51| **MSG_ID_ORI**             |
-|52| **ERROR_INDICATION**       |
-|53| **TYPE**                   |
-|54| **MESSAGE_DESC**           |   
-|55| **REGIST_DATE**            |                                                    
-|56| **REGIST_PNAME**           |
-|57| **LAST_UPDATE_DATE**       |
-|58| **LAST_UPDATE_PNAME**      |
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| **JOB_NO**                 | DNWORKINFO.JOB_NO
+| **CARRY_KEY**              |
+| **SETTING_UNIT_KEY**       | DNWORKINFO.SETTING_UNIT_KEY
+| **COLLECT_JOB_NO**         | DNWORKINFO.COLLECT_JOB_NO
+| **JOB_TYPE**               | DNWORKINFO.JOB_TYPE
+| **PLAN_UKEY**              | DNWORKINFO.PLAN_UKEY
+| **STOCK_ID**               | DNWORKINFO.STOCK_ID
+| **PALLET_ID**              | DNPALLET.PALLET_ID
+| **PLAN_DAY**               | DNWORKINFO.PLAN_DAY
+| **COMPANY_CODE**           |
+| **COMPANY_NAME**           |
+| **SHIP_TICKET_NO**         |
+| **SHIP_LINE_NO**           |
+| **SHIP_BRANCH_NO**         |
+| **BATCH_NO**               | DNWORKINFO.BATCH_NO
+| **ORDER_NO**               |
+| **PLAN_AREA_NO**           |
+| **PLAN_LOCATION_NO**       |
+| **MATERIAL_CODE**          | DNWORKINFO.MATERIAL_CODE
+| **MATERIAL_NAME**          | DMMASTERIALMASTER.MATERIAL_NAME
+| **JAN**                    |
+| **CASE_ITF**               |
+| **BUNDLE_ITF**             |
+| **ENTERING_QTY**           |
+| **BUNDLE_ENTERING_QTY**    |
+| **PLAN_LOT_NO**            |
+| **STORAGE_TYPE**           | DNWORKINFO.STORAGE_TYPE
+| **STORAGE_DATE**           | DNSTORAGEPLAN.PLAN_DAY
+| **NOTE**                   |
+| **PLAN_QTY**               | DNWORKINFO.PLAN_QTY
+| **STOCK_QTY**              | 0
+| **ALLOCATION_QTY**         | 0
+| **WORK_NOTE**              |
+| **PRIORITY**               |
+| **RETRIEVAL_STATION_NO**   |
+| **RETRIEVAL_DETAIL**       |
+| **WORK_NO**                |
+| **SOURCE_STATION_NO**      |
+| **DEST_STATION_NO**        |
+| **SCHEDULE_NO**            |
+| **SCHEDULE_NO**            |
+| **USER_ID**                | DNWORKINFO.USER_ID
+| **USER_NAME**              | DCUSER.USER_NAME
+| **TERMINAL_NO**            |
+| **DOCK_NO**                |
+| **TRUCK_PLATE_NO**         |
+| **STORING_PAIR_KEY**       |
+| **NEW_STORING_PAIR_KEY**   |
+| **MSG_ID**                 |
+| **MSG_TYPE**               |
+| **MSG_ID_ORI**             |
+| **ERROR_INDICATION**       |
+| **TYPE**                   |
+| **MESSAGE_DESC**           |   
+| **REGIST_DATE**            |                                                    
+| **REGIST_PNAME**           |
+| **LAST_UPDATE_DATE**       |
+| **LAST_UPDATE_PNAME**      |
 
 ###<span style="color:skyblue; font-weight:bold">DNHostSend</span>
 |NO| **Column Name**            | **Description / Notes**                               |
 |--|----------------------------|-------------------------------------------------------|
-|1 | **WORK_DAY**               | 
-|2 | **JOB_NO**                 | DNWORKINFO.JOB_NO
-|3 | **SETTING_UNIT_KEY**       | DNWORKINFO.SETTING_UNIT_KEY
-|4 | **COLLECT_JOB_NO**         | DNWORKINFO.COLLECT_JOB_NO
-|5 | **JOB_TYPE**               | DNWORKINFO.JOB_TYPE
-|6 | **STATUS_FLAG**            | DNWORKINFO.STATUS_FLAG
-|7 | **HARDWARE_TYPE**          |
-|8 | **PLAN_UKEY**              | DNWORKINFO.PLAN_UKEY
-|9 | **STOCK_ID**               | DNWORKINFO.STOCK_ID
-|10| **SYSTEM_CONN_KEY**        | 
-|11| **PLAN_DAY**               | DNWORKINFO.PLAN_DAY
-|12| **VENDOR_CODE**            |
-|13| **VENDOR_NAME**            |
-|14| **RECEIVE_TICKET_NO**      |
-|15| **RECEIVE_LINE_NO**        |
-|16| **RECEIVE_BRANCH_NO**      |
-|17| **COMPANY_CODE**           |
-|18| **COMPANY_NAME**           |
-|19| **SHIP_TICKET_NO**         |
-|20| **SHIP_LINE_NO**           |
-|21| **SHIP_BRANCH_NO**         |
-|22| **BATCH_NO**               | DNWORKINFO.BATCH_NO
-|23| **ORDER_NO**               |
-|24| **PLAN_AREA_NO**           |
-|25| **PLAN_LOCATION_NO**       |
-|26| **MATERIAL_CODE**          | DNWORKINFO.MATERIAL_CODE
-|27| **MATERIAL_NAME**          | DMMATERIALMASTER.MATERIAL_NAME
-|28| **JAN**                    |
-|29| **CASE_ITF**               |
-|30| **BUNDLE_ITF**             |
-|31| **ENTERING_QTY**           |
-|32| **BUNDLE_ENTERING_QTY**    |
-|33| **PLAN_LOT_NO**            |
-|34| **NOTE**                   |
-|35| **PLAN_QTY**               | DNWORKINFO.PLAN_QTY
-|36| **RESULT_QTY**             |
-|37| **SHORTAGE_QTY**           |
-|38| **RESULT_AREA_NO**         |
-|39| **RESULT_LOCATION_NO**     |
-|40| **RESULT_LOT_NO**          |
-|41| **WORK_NOTE**              |
-|42| **REPORT_FLAG**            | DNSTORAGEPLAN.REPORT_FLAG
-|43| **USER_ID**                | DNWORKINFO.USER_ID
-|44| **USER_NAME**              | DCUSER.USER_NAME
-|45| **TERMINAL_NO**            |
-|46| **WORK_SECOND**            |
-|47| **MSG_ID**                 |
-|48| **MSG_TYPE**               |
-|49| **MSG_ID_ORI**             |
-|50| **ERROR_INDICATION**       |
-|51| **TYPE**                   |
-|52| **MESSAGE_DESC**           |
-|53| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-|54| **REGIST_PNAME**           | ClassName
-|55| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-|56| **LAST_UPDATE_PNAME**      | ClassName
+| **WORK_DAY**               | 
+| **JOB_NO**                 | DNWORKINFO.JOB_NO
+| **SETTING_UNIT_KEY**       | DNWORKINFO.SETTING_UNIT_KEY
+| **COLLECT_JOB_NO**         | DNWORKINFO.COLLECT_JOB_NO
+| **JOB_TYPE**               | DNWORKINFO.JOB_TYPE
+| **STATUS_FLAG**            | DNWORKINFO.STATUS_FLAG
+| **HARDWARE_TYPE**          |
+| **PLAN_UKEY**              | DNWORKINFO.PLAN_UKEY
+| **STOCK_ID**               | DNWORKINFO.STOCK_ID
+| **SYSTEM_CONN_KEY**        | 
+| **PLAN_DAY**               | DNWORKINFO.PLAN_DAY
+| **VENDOR_CODE**            |
+| **VENDOR_NAME**            |
+| **RECEIVE_TICKET_NO**      |
+| **RECEIVE_LINE_NO**        |
+| **RECEIVE_BRANCH_NO**      |
+| **COMPANY_CODE**           |
+| **COMPANY_NAME**           |
+| **SHIP_TICKET_NO**         |
+| **SHIP_LINE_NO**           |
+| **SHIP_BRANCH_NO**         |
+| **BATCH_NO**               | DNWORKINFO.BATCH_NO
+| **ORDER_NO**               |
+| **PLAN_AREA_NO**           |
+| **PLAN_LOCATION_NO**       |
+| **MATERIAL_CODE**          | DNWORKINFO.MATERIAL_CODE
+| **MATERIAL_NAME**          | DMMATERIALMASTER.MATERIAL_NAME
+| **JAN**                    |
+| **CASE_ITF**               |
+| **BUNDLE_ITF**             |
+| **ENTERING_QTY**           |
+| **BUNDLE_ENTERING_QTY**    |
+| **PLAN_LOT_NO**            |
+| **NOTE**                   |
+| **PLAN_QTY**               | DNWORKINFO.PLAN_QTY
+| **RESULT_QTY**             |
+| **SHORTAGE_QTY**           |
+| **RESULT_AREA_NO**         |
+| **RESULT_LOCATION_NO**     |
+| **RESULT_LOT_NO**          |
+| **WORK_NOTE**              |
+| **REPORT_FLAG**            | DNSTORAGEPLAN.REPORT_FLAG
+| **USER_ID**                | DNWORKINFO.USER_ID
+| **USER_NAME**              | DCUSER.USER_NAME
+| **TERMINAL_NO**            |
+| **WORK_SECOND**            |
+| **MSG_ID**                 |
+| **MSG_TYPE**               |
+| **MSG_ID_ORI**             |
+| **ERROR_INDICATION**       |
+| **TYPE**                   |
+| **MESSAGE_DESC**           |
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
 
 #<span style="color:skyblue; font-weight:bold">Release Command from Palletize Robot</span
   After palletizing is completed, the palletizing robot sends <span style="color:green; font-weight:bold">“Release Command”</span> signal via conveyor interlock.
