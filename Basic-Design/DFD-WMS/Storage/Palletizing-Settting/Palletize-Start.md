@@ -66,7 +66,7 @@ This section explains the validations for the whole proccess Palletize Start
   <span style="color:green; font-weight:bold">JOIN DNCARRYINFO.PALLET_ID = DNPALLET.PALLET_ID  
   CONDITION DNPALLET.BCR_DATA = <Pallet Number> </span>  
   So if result > 0, Palletize Start cannot proceed.
-- Material Code exists in **DMMaterialMaster**
+- Material Code exists in <span style="color:green; font-weight:bold">DMMaterialMaster</span>
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
