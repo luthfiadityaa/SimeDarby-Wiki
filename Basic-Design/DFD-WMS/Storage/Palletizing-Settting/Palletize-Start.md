@@ -452,7 +452,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 |----------------------------|-------------------------------------------------------|
 | **ARRIVAL_DATE**           | SYSTIMESTAMP 
 | **STATION_NO**             | Arrival Station Number from ID26 
-| **CARRY_KEY**              | 99999999       
+| **CARRY_KEY**              | DNCARRYINFO.CARRY_KEY       
 | **BCR_DATA**               | Barcode information from ID26
 | **CONTROLINFO**            | Control information from ID26
 | **SEND_FLAG**              | 0:Not sent
@@ -580,8 +580,7 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 flowchart LR
 
 releaseCommand["
-Release Command from Palletize Robot
-After Completion 
+Continue the Process
 "]
 
 id26msg("
