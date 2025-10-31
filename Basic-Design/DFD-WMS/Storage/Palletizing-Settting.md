@@ -1,6 +1,19 @@
 [[_TOC_]]
 [[_TOSP_]]
 
+#Flow
+::: mermaid
+flowchart LR
+    input[Palletize Start]
+    process[Background Process]
+    output[Batch End]
+
+    input --> process --> output
+
+    classDef leftAlign text-align:left;
+    class input leftAlign;
+:::
+
 **The Process Situation Example:**
 *   **Planned Carton Qty:** `200` (Input at screen)    
 *   **Qty crtn/PL:** `12` (Input at screen)
