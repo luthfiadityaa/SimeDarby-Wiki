@@ -442,6 +442,8 @@ After user clicked on Completion button at Station, AGC will send ID26 to WareNa
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
 
+##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+
 ###<span style="color:skyblue; font-weight:bold">DNArrival</span>
 |NO| **Column Name**            | **Description / Notes**                               |
 |--|----------------------------|-------------------------------------------------------|
@@ -514,7 +516,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 |1 | PLAN_LOCATION_NO           | Reserved Location Number
 |2 | LAST_UPDATE_DATE           | SYSTIMESTAMP
 
-## DNPALLET
+### DNPALLET
 - CURRENT_STATION_NO = Reserved Location Number
 - WH_STATION_NO = 9000
 - LAST_UPDATE_DATE = SYSTIMESTAMP
