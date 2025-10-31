@@ -38,7 +38,7 @@ flowchart LR
     ]
 
     tableList-insert[("
-        DNPALLETIZE
+        DNPALLETIZE<br>
         DNSTORAGEPLAN<br>
         DNPALLET<br>
         DNSTOCK<br>
