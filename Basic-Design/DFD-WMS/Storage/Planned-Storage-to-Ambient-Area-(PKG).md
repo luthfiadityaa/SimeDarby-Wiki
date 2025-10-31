@@ -238,64 +238,64 @@ This section explains the validations for the whole proccess Palletize Start
 |29| **LAST_UPDATE_PNAME**      | ClassName
 
 ### DNWorkInfo (INSERT)
-|NO| **Column Name**            | **Description / Notes**                               |
-|--|----------------------------|-------------------------------------------------------|
-|1 | **JOB_NO**                 | Sequence Object
-|2 | **SETTING_UNIT_KEY**       | Sequence Object
-|3 | **COLLECT_JOB_NO**         | Sequence Object
-|4 | **JOB_TYPE**               | 02:Storage
-|5 | **STATUS_FLAG**            | 0:Not Started
-|6 | **RFT_STATUS_FLAG**        |
-|7 | **HARDWARE_TYPE**          | 3:ASRS
-|8 | **PLAN_UKEY**              | DNSTORAGEPLAN.PLAN_UKEY
-|9 | **STOCK_ID**               | Sequence Object
-|10| **SYSTEM_CONN_KEY**        |
-|11| **PLAN_DAY**               | DMWARENAVISYSTEM.WORK_DAY
-|12| **VENDOR_CODE**            | DNSTORAGEPLAN.VENDOR_CODE
-|13| **RECEIVE_TICKET_NO**      | DNSTORAGEPLAN.RECEIVE_TICKET_NO
-|14| **RECEIVE_LINE_NO**        | DNSTORAGEPLAN.RECEIVE_LINE_NO
-|15| **RECEIVE_BRANCH_NO**      |
-|16| **COMPANY_CODE**           | DNSTORAGEPLAN.COMPANY_CODE
-|17| **SHIP_TICKET_NO**         |
-|18| **SHIP_LINE_NO**           |
-|19| **SHIP_BRANCH_NO**         |
-|20| **BATCH_NO**               | Value from screen (Batch #)
-|21| **ORDER_NO**               |
-|22| **ORDER_SERIAL_NO**        |
-|23| **PLAN_AREA_NO**           | DNSTORAGEPLAN.PLAN_AREA_NO
-|24| **PLAN_LOCATION_NO**       | DNSTORAGEPLAN.PLAN_LOCATION_NO
-|25| **MATERIAL_CODE**          | DNSTORAGEPLAN.MATERIAL_CODE
-|26| **PLAN_LOT_NO**            | 
-|27| **NOTE**                   |
-|28| **PLAN_QTY**               | DNSTORAGEPLAN.PLAN_QTY
-|29| **RESULT_QTY**             | DNSTORAGEPLAN.RESULT_QTY
-|30| **SHORTAGE_QTY**           |
-|31| **RESULT_AREA_NO**         |
-|32| **RESULT_LOCATION_NO**     |
-|33| **RESULT_NO**              |
-|34| **WORK_NOTE**              |
-|35| **SKIP_CNT**               |
-|36| **WORK_DAY**               |
-|37| **USER_ID**                | Login Info
-|38| **TERMINAL_NO**            | Login Terminal
-|39| **WORK_SECOND**            |
-|40| **STORAGE_LOCATION_TO**    |
-|41| **STORAGE_LOCATION_FROM**  |
-|42| **DOCK_NO**                |
-|43| **TRUCK_PLATE_NO**         |
-|44| **STORING_PAIR_KEY**       |
-|45| **NEW_STORING_PAIR_KEY**   |
-|46| **PRIORITY_TYPE**          |
-|47| **MSG_ID**                 |
-|48| **MSG_TYPE**               |
-|49| **MSG_ID_ORI**             |
-|50| **ERROR_INDICATION**       |
-|51| **TYPE**                   |
-|52| **MESSAGE_DESC**           |   
-|53| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-|54| **REGIST_PNAME**           | ClassName
-|55| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-|56| **LAST_UPDATE_PNAME**      | ClassName
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| **JOB_NO**                 | Sequence Object
+| **SETTING_UNIT_KEY**       | Sequence Object
+| **COLLECT_JOB_NO**         | Sequence Object
+| **JOB_TYPE**               | 02:Storage
+| **STATUS_FLAG**            | 0:Not Started
+| **RFT_STATUS_FLAG**        |
+| **HARDWARE_TYPE**          | 3:ASRS
+| **PLAN_UKEY**              | DNSTORAGEPLAN.PLAN_UKEY
+| **STOCK_ID**               | Sequence Object
+| **SYSTEM_CONN_KEY**        |
+| **PLAN_DAY**               | DMWARENAVISYSTEM.WORK_DAY
+| **VENDOR_CODE**            | DNSTORAGEPLAN.VENDOR_CODE
+| **RECEIVE_TICKET_NO**      | DNSTORAGEPLAN.RECEIVE_TICKET_NO
+| **RECEIVE_LINE_NO**        | DNSTORAGEPLAN.RECEIVE_LINE_NO
+| **RECEIVE_BRANCH_NO**      |
+| **COMPANY_CODE**           | DNSTORAGEPLAN.COMPANY_CODE
+| **SHIP_TICKET_NO**         |
+| **SHIP_LINE_NO**           |
+| **SHIP_BRANCH_NO**         |
+| **BATCH_NO**               | Value from screen (Batch #)
+| **ORDER_NO**               |
+| **ORDER_SERIAL_NO**        |
+| **PLAN_AREA_NO**           | DNSTORAGEPLAN.PLAN_AREA_NO
+| **PLAN_LOCATION_NO**       | DNSTORAGEPLAN.PLAN_LOCATION_NO
+| **MATERIAL_CODE**          | DNSTORAGEPLAN.MATERIAL_CODE
+| **PLAN_LOT_NO**            | 
+| **NOTE**                   |
+| **PLAN_QTY**               | DNSTORAGEPLAN.PLAN_QTY
+| **RESULT_QTY**             | DNSTORAGEPLAN.RESULT_QTY
+| **SHORTAGE_QTY**           |
+| **RESULT_AREA_NO**         | 9002 (Packaging Material)
+| **RESULT_LOCATION_NO**     | DMWAREHOUSE.WAREHOUSE_NO
+| **RESULT_NO**              |
+| **WORK_NOTE**              |
+| **SKIP_CNT**               |
+| **WORK_DAY**               |
+| **USER_ID**                | Login Info
+| **TERMINAL_NO**            | Login Terminal
+| **WORK_SECOND**            |
+| **STORAGE_LOCATION_TO**    |
+| **STORAGE_LOCATION_FROM**  |
+| **DOCK_NO**                |
+| **TRUCK_PLATE_NO**         |
+| **STORING_PAIR_KEY**       |
+| **NEW_STORING_PAIR_KEY**   |
+| **PRIORITY_TYPE**          |
+| **MSG_ID**                 |
+| **MSG_TYPE**               |
+| **MSG_ID_ORI**             |
+| **ERROR_INDICATION**       |
+| **TYPE**                   |
+| **MESSAGE_DESC**           |   
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
 
 ### DNWorkList (INSERT)
 |NO| **Column Name**            | **Description / Notes**                               |
