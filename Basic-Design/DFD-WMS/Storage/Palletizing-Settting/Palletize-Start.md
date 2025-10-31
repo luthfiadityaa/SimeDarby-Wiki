@@ -75,6 +75,7 @@ This section explains the validations for the whole proccess Palletize Start
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ###<span style="color:skyblue; font-weight:bold">DNPalletize</span>
+
 | **Column Name**                | **Description / Notes**                               |
 |--------------------------------|-------------------------------------------------------|
 | **STATION_NO**                 | Value from screen (Station No)
