@@ -56,7 +56,7 @@ Upon receiving new Plan Storage from Host system, WareNavi will insert related p
 | **FILE_LINE_NO**           |                                                       
 | **STATUS_FLAG**            | 0:Not Started                                                       
 | **CANCEL_FLAG**            | 0:Normal Data                                                      
-| **PLAN_DAY**               |                                                       
+| **PLAN_DAY**               | Value from SAP (Delivery Date)                                                       
 | **VENDOR_CODE**            | Value from SAP (Vendor Code)
 | **VENDOR_NAME**            | Value from SAP (Vendor Name)                                                     
 | **COMPANY_CODE**           | Value from SAP (Company Code)                                                      
@@ -84,7 +84,7 @@ Upon receiving new Plan Storage from Host system, WareNavi will insert related p
 | **ERROR_INDICATION**       | 0:Successfull
 | **TYPE**                   | S: Success
 | **MESSAGE_DESC**           |
-| **REGIST_DATE**            | Delivery Date                                                   
+| **REGIST_DATE**            | SYSTIMESTAMP                                                  
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
@@ -148,7 +148,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **FILE_LINE_NO**           |                                                       
 | **STATUS_FLAG**            | 1:Working                                                       
 | **CANCEL_FLAG**            | 0:Normal Data                                                      
-| **PLAN_DAY**               |                                                       
+| **PLAN_DAY**               |                                                     
 | **VENDOR_CODE**            |     
 | **VENDOR_NAME**            |                                                 
 | **COMPANY_CODE**           |                                                       
@@ -166,7 +166,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **RESULT_QTY**             | Value from screen (Stored Qty)                                                      
 | **SHORTAGE_QTY**           |                                                       
 | **REPORT_FLAG**            | 0:Not Reported                                                      
-| **WORK_DAY**               |                                                       
+| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY                                                      
 | **REGIST_KIND**            |                                                       
 | **BCR_DATA**               | Value from screen (Pallet #)                                                      
 | **STORING_PAIR_KEY**       | Value from screen (Material Code + Batch #)  
@@ -182,60 +182,63 @@ This section explains the validations for the whole proccess Palletize Start
 | **LAST_UPDATE_PNAME**      | ClassName
 
 ### DNPallet (INSERT)
-|NO| **Column Name**            | **Description / Notes**                           |
-|--|----------------------------|-------------------------------------------------------|
-|1 | **PALLET_ID**              | Sequence Object                                                       
-|2 | **CURRENT_STATION_NO**     | Only 1 route station (ST1106)                                                       
-|3 | **WH_STATION_NO**          | 9002                                                      
-|4 | **STATUS_FLAG**            | 1:Reserved for Storage                                                      
-|5 | **ALLOCATION_FLAG**        | 1:Allocated                                                      
-|6 | **EMPTY_FLAG**             | 0:Normal Pallet                                                       
-|7 | **HEIGHT**                 |                                                       
-|8 | **WIDTH**                  |                                                       
-|9 | **SOFTZONE_ID**            |                                                       
-|10| **BCR_DATA**               | Value from screen (Pallet #)                                                     
-|11| **LAST_STORED_DATE**       |                                                       
-|12| **AISLE_DISPERSE_KEY**     |                                                       
-|13| **AISLE_COLLECT_KEY**      |                                                       
-|14| **LEVEL_DISPERSE_KEY**     |                                                       
-|15| **COLLECT_BATCH_NO**       |                                                       
-|16| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-|17| **REGIST_PNAME**           | ClassName
-|18| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-|19| **LAST_UPDATE_PNAME**      | ClassName
+| **Column Name**            | **Description / Notes**                           |
+|----------------------------|-------------------------------------------------------|
+| **PALLET_ID**              | Sequence Object                                                       
+| **CURRENT_STATION_NO**     | Only 1 route station (ST1106)                                                       
+| **WH_STATION_NO**          | 9002                                                      
+| **STATUS_FLAG**            | 1:Reserved for Storage                                                      
+| **ALLOCATION_FLAG**        | 1:Allocated                                                      
+| **EMPTY_FLAG**             | 0:Normal Pallet                                                       
+| **HEIGHT**                 |                                                       
+| **WIDTH**                  |                                                       
+| **SOFTZONE_ID**            |                                                       
+| **BCR_DATA**               | Value from screen (Pallet #)                                                     
+| **LAST_STORED_DATE**       | SYSTIMESTAMP                                                       
+| **AISLE_DISPERSE_KEY**     |                                                       
+| **AISLE_COLLECT_KEY**      |                                                       
+| **LEVEL_DISPERSE_KEY**     |                                                       
+| **COLLECT_BATCH_NO**       |                                                       
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
 
 ### DNStock (INSERT)
-|NO| **Column Name**            | **Description / Notes**                           |
-|--|----------------------------|-------------------------------------------------------|
-|1 | **STOCK_ID**               | WORKINFO.STOCK_ID  
-|2 | **AREA_NO**                | 9001
-|3 | **LOCATION_NO**            | 99999999999
-|4 | **MATERIAL CODE**          | 
-|5 | **LOT_NO**                 | 
-|6 | **STORAGE_TYPE**           | 2:New 
-|7 | **NOTE**                   |
-|8 | **STORAGE_DAY**            |
-|9 | **STORAGE_DATE**           |
-|10| **NEWEST_STORAGE_DATE**    |
-|11| **RETRIEVAL_DAY**          |
-|12| **INVENTORY_DAY**          |
-|13| **STOCK_QTY**              | 0
-|14| **ALLOCATION_QTY**         | 0
-|15| **PLAN_QTY**               | Value from screen (Planned Carton Qty)
-|16| **PALLET_ID**              | Value from screen (Pallet #)
-|17| **QTY_CRTN**               | 
-|18| **BATCH_NO**               | Value from screen (Batch #)
-|19| **STOCK_STATUS**           | UU: Unrestricted Used (Target for normal retrieval)
-|20| **QC_DURATION**            | 
-|21| **TEMPERING_FLAG**         | 
-|22| **QC_FLAG**                | 
-|23| **TEMPERING_PERIOD**       | 
-|24| **STORING_PAIR_KEY**       | Value from screen (Material Code + Batch #)
-|25| **EXPIRY_DATE**            | 
-|26| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-|27| **REGIST_PNAME**           | ClassName
-|28| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-|29| **LAST_UPDATE_PNAME**      | ClassName
+| **Column Name**            | **Description / Notes**                           |
+|----------------------------|-------------------------------------------------------|
+| **STOCK_ID**               | DNWORKINFO.STOCK_ID  
+| **AREA_NO**                | DNSTORAGEPLAN.AREA_NO
+| **LOCATION_NO**            | 99999999999
+| **MATERIAL_CODE**          | DNSTORAGEPLAN.MATERIAL_CODE
+| **COMPANY_CODE**           | DNSTORAGEPLAN.COMPANY_CODE
+| **VENDOR_CODE**            | DNSTORAGEPLAN.VENDOR_CODE
+| **VENDOR_NAME**            | DNSTORAGEPLAN.VENDOR_NAME
+| **LOT_NO**                 | 
+| **STORAGE_TYPE**           | 2:New 
+| **NOTE**                   |
+| **STORAGE_DAY**            | DNSTORAGEPLAN.PLAN_DAY
+| **STORAGE_DATE**           | DNSTORAGEPLAN.REGIST_DATE
+| **NEWEST_STORAGE_DATE**    |
+| **RETRIEVAL_DAY**          |
+| **INVENTORY_DAY**          |
+| **STOCK_QTY**              | 
+| **ALLOCATION_QTY**         | 0
+| **PLAN_QTY**               | Value from screen (Planned Carton Qty)
+| **PALLET_ID**              | DNPALLET.PALLET_ID
+| **QTY_CRTN**               | 
+| **BATCH_NO**               | Value from screen (Batch #)
+| **STOCK_STATUS**           | 
+| **QC_DURATION**            | 
+| **TEMPERING_FLAG**         | 
+| **QC_FLAG**                | 
+| **TEMPERING_PERIOD**       | 
+| **STORING_PAIR_KEY**       | Value from screen (Material Code + Batch #)
+| **EXPIRY_DATE**            | 
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
 
 ### DNWorkInfo (INSERT)
 | **Column Name**            | **Description / Notes**                               |
@@ -250,7 +253,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **PLAN_UKEY**              | DNSTORAGEPLAN.PLAN_UKEY
 | **STOCK_ID**               | Sequence Object
 | **SYSTEM_CONN_KEY**        |
-| **PLAN_DAY**               | DMWARENAVISYSTEM.WORK_DAY
+| **PLAN_DAY**               | DNSTORAGE.PLAN_DAY
 | **VENDOR_CODE**            | DNSTORAGEPLAN.VENDOR_CODE
 | **RECEIVE_TICKET_NO**      | DNSTORAGEPLAN.RECEIVE_TICKET_NO
 | **RECEIVE_LINE_NO**        | DNSTORAGEPLAN.RECEIVE_LINE_NO
@@ -275,7 +278,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **RESULT_NO**              |
 | **WORK_NOTE**              |
 | **SKIP_CNT**               |
-| **WORK_DAY**               |
+| **WORK_DAY**               | DNSTORAGEPLAN.WORK_DAY
 | **USER_ID**                | Login Info
 | **TERMINAL_NO**            | Login Terminal
 | **WORK_SECOND**            |
@@ -283,7 +286,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **STORAGE_LOCATION_FROM**  |
 | **DOCK_NO**                |
 | **TRUCK_PLATE_NO**         |
-| **STORING_PAIR_KEY**       |
+| **STORING_PAIR_KEY**       | Value from screen (Material Code + Batch #)
 | **NEW_STORING_PAIR_KEY**   |
 | **PRIORITY_TYPE**          |
 | **MSG_ID**                 |
@@ -298,66 +301,66 @@ This section explains the validations for the whole proccess Palletize Start
 | **LAST_UPDATE_PNAME**      | ClassName
 
 ### DNWorkList (INSERT)
-|NO| **Column Name**            | **Description / Notes**                               |
-|--|----------------------------|-------------------------------------------------------|
-|1 | **JOB_NO**                 | DNWORKINFO.JOB_NO
-|2 | **CARRY_KEY**              |
-|3 | **SETTING_UNIT_KEY**       | DNWORKINFO.SETTING_UNIT_KEY
-|4 | **COLLECT_JOB_NO**         | DNWORKINFO.COLLECT_JOB_NO
-|5 | **JOB_TYPE**               | DNWORKINFO.JOB_TYPE
-|6 | **PLAN_UKEY**              | DNWORKINFO.PLAN_UKEY
-|7 | **STOCK_ID**               | DNWORKINFO.STOCK_ID
-|8 | **PALLET_ID**              | DNPALLET.PALLET_ID
-|9 | **PLAN_DAY**               | DNWORKINFO.PLAN_DAY
-|10| **COMPANY_CODE**           |
-|11| **COMPANY_NAME**           |
-|12| **SHIP_TICKET_NO**         |
-|13| **SHIP_LINE_NO**           |
-|14| **SHIP_BRANCH_NO**         |
-|15| **BATCH_NO**               | DNWORKINFO.BATCH_NO
-|16| **ORDER_NO**               |
-|17| **PLAN_AREA_NO**           |
-|18| **PLAN_LOCATION_NO**       |
-|19| **MATERIAL_CODE**          | DNWORKINFO.MATERIAL_CODE
-|20| **MATERIAL_NAME**          | DMMASTERIALMASTER.MATERIAL_NAME
-|21| **JAN**                    |
-|22| **CASE_ITF**               |
-|23| **BUNDLE_ITF**             |
-|24| **ENTERING_QTY**           |
-|25| **BUNDLE_ENTERING_QTY**    |
-|26| **PLAN_LOT_NO**            |
-|27| **STORAGE_TYPE**           | DNWORKINFO.STORAGE_TYPE
-|28| **STORAGE_DATE**           | DNSTORAGEPLAN.PLAN_DAY
-|29| **NOTE**                   |
-|30| **PLAN_QTY**               | DNWORKINFO.PLAN_QTY
-|31| **STOCK_QTY**              | 0
-|32| **ALLOCATION_QTY**         | 0
-|33| **WORK_NOTE**              |
-|34| **PRIORITY**               |
-|35| **RETRIEVAL_STATION_NO**   |
-|36| **RETRIEVAL_DETAIL**       |
-|37| **WORK_NO**                |
-|38| **SOURCE_STATION_NO**      |
-|39| **DEST_STATION_NO**        |
-|40| **SCHEDULE_NO**            |
-|41| **SCHEDULE_NO**            |
-|42| **USER_ID**                | DNWORKINFO.USER_ID
-|43| **USER_NAME**              | DCUSER.USER_NAME
-|44| **TERMINAL_NO**            |
-|45| **DOCK_NO**                |
-|46| **TRUCK_PLATE_NO**         |
-|47| **STORING_PAIR_KEY**       | 
-|48| **NEW_STORING_PAIR_KEY**   |
-|49| **MSG_ID**                 |
-|50| **MSG_TYPE**               |
-|51| **MSG_ID_ORI**             |
-|52| **ERROR_INDICATION**       |
-|53| **TYPE**                   |
-|54| **MESSAGE_DESC**           |   
-|55| **REGIST_DATE**            |                                                    
-|56| **REGIST_PNAME**           |
-|57| **LAST_UPDATE_DATE**       |
-|58| **LAST_UPDATE_PNAME**      |
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| **JOB_NO**                 | DNWORKINFO.JOB_NO
+| **CARRY_KEY**              | Sequence Object
+| **SETTING_UNIT_KEY**       | DNWORKINFO.SETTING_UNIT_KEY
+| **COLLECT_JOB_NO**         | DNWORKINFO.COLLECT_JOB_NO
+| **JOB_TYPE**               | DNWORKINFO.JOB_TYPE
+| **PLAN_UKEY**              | DNWORKINFO.PLAN_UKEY
+| **STOCK_ID**               | DNWORKINFO.STOCK_ID
+| **PALLET_ID**              | DNPALLET.PALLET_ID
+| **PLAN_DAY**               | DNWORKINFO.PLAN_DAY
+| **COMPANY_CODE**           | DNSTORAGEPLAN.COMPANY_CODE
+| **COMPANY_NAME**           | 
+| **SHIP_TICKET_NO**         |
+| **SHIP_LINE_NO**           |
+| **SHIP_BRANCH_NO**         |
+| **BATCH_NO**               | DNWORKINFO.BATCH_NO
+| **ORDER_NO**               |
+| **PLAN_AREA_NO**           | DNWORKINFO.PLAN_AREA_NO
+| **PLAN_LOCATION_NO**       | DNWORKINFO.PLAN_LOCATION_NO
+| **MATERIAL_CODE**          | DNWORKINFO.MATERIAL_CODE
+| **MATERIAL_NAME**          | DMMASTERIALMASTER.MATERIAL_NAME
+| **JAN**                    |
+| **CASE_ITF**               |
+| **BUNDLE_ITF**             |
+| **ENTERING_QTY**           |
+| **BUNDLE_ENTERING_QTY**    |
+| **PLAN_LOT_NO**            |
+| **STORAGE_TYPE**           | DNSTORAGEPLAN.STORAGE_TYPE
+| **STORAGE_DATE**           | DNSTORAGEPLAN.STORAGE_DATE
+| **NOTE**                   |
+| **PLAN_QTY**               | DNWORKINFO.PLAN_QTY
+| **STOCK_QTY**              | 0
+| **ALLOCATION_QTY**         | 0
+| **WORK_NOTE**              |
+| **PRIORITY**               |
+| **RETRIEVAL_STATION_NO**   |
+| **RETRIEVAL_DETAIL**       |
+| **WORK_NO**                |
+| **SOURCE_STATION_NO**      |
+| **DEST_STATION_NO**        |
+| **SCHEDULE_NO**            |
+| **SCHEDULE_NO**            |
+| **USER_ID**                | DNWORKINFO.USER_ID
+| **USER_NAME**              | DCUSER.USER_NAME
+| **TERMINAL_NO**            | DNWORKINFO.TERMINAL_NO
+| **DOCK_NO**                |
+| **TRUCK_PLATE_NO**         |
+| **STORING_PAIR_KEY**       | DNWORKINFO.STORING_PAIR_KEY
+| **NEW_STORING_PAIR_KEY**   |
+| **MSG_ID**                 |
+| **MSG_TYPE**               |
+| **MSG_ID_ORI**             |
+| **ERROR_INDICATION**       |
+| **TYPE**                   |
+| **MESSAGE_DESC**           |   
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP 
+| **LAST_UPDATE_PNAME**      | ClassName
 
 ### DNHostSend (INSERT)
 |NO| **Column Name**            | **Description / Notes**                               |
