@@ -89,7 +89,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **QTY_CRTN_PL**                | Value from screen (Qty Crtn/PL)
 | **UOM**                        | Value from screen (UOM)
 | **TEMPERING_PERIOD**           | Value from screen (Tempering Period)
-| **STORAGE_LOCATION**           | Value from screen (Storage Location)
+| **STORAGE_LOCATION**           | Value from screen (Storage Location) ➡️ FGW1 (Ambient/9002) or FGW2 (Tempering/9001)
 | **EXPIRY_DAYS**                | Value from screen (Expiry Days)
 | **STORAGE_QTY**                | PLANNED_CARTON_QTY - TOTAL_ACTUAL_CARTON_QTY
 | **TOTAL_ACTUAL_CARTON_QTY**    | TOTAL_ACTUAL_CARTON_QTY + QTY_KG_CRTN
@@ -116,7 +116,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **RECEIVE_LINE_NO**        |                                                       
 | **RECEIVE_TICKET_DATE**    |                                                       
 | **BRANCH_NO**              |                                                         
-| **PLAN_AREA_NO**           | Value from screen (Storage Location)                                                       
+| **PLAN_AREA_NO**           | Value from screen (Storage Location) ➡️ FGW1 (Ambient/9002) or FGW2 (Tempering/9001)                                                       
 | **PLAN_LOCATION_NO**       |                                                       
 | **MATERIAL_CODE**          | Value from screen (Material Code)                                                      
 | **PLAN_LOT_NO**            |                                                       
@@ -145,8 +145,8 @@ This section explains the validations for the whole proccess Palletize Start
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **PALLET_ID**              | Sequence Object                                                       
-| **CURRENT_STATION_NO**     | Selected Value from screen (1101/1102/1103/1104/1105)                                                       
-| **WH_STATION_NO**          | 9001                                                      
+| **CURRENT_STATION_NO**     | Selected Value from screen ➡️ (1101/1102/1103/1104/1105)                                                       
+| **WH_STATION_NO**          | Value from screen (Storage Location) ➡️ FGW1 (Ambient/9002) or FGW2 (Tempering/9001)                                                      
 | **STATUS_FLAG**            | 1:Reserved for Storage                                                      
 | **ALLOCATION_FLAG**        |                                                       
 | **EMPTY_FLAG**             | 0:Normal Pallet                                                       
