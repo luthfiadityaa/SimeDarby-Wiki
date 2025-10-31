@@ -49,45 +49,45 @@ Upon receiving new Plan Storage from Host system, WareNavi will insert related p
 
 ### DNSTORAGEPLAN (INSERT)
 
-|NO| **Column Name**            | **Description / Notes**                           |
-|--|----------------------------|-------------------------------------------------------|
-|1 | **PLAN_UKEY**              | Sequence Object                                                       
-|2 | **LOAD_UNIT_KEY**          |                                                       
-|3 | **FILE_LINE_NO**           |                                                       
-|4 | **STATUS_FLAG**            | 0:Not Started                                                       
-|5 | **CANCEL_FLAG**            | 0:Normal Data                                                      
-|6 | **PLAN_DAY**               |                                                       
-|7 | **VENDOR_CODE**            | Value from SAP (Vendor Code)
-|8 | **VENDOR_NAME**            | Value from SAP (Vendor Name)                                                     
-|9 | **COMPANY_CODE**           | Value from SAP (Company Code)                                                      
-|10| **RECEIVE_TICKET_NO**      | Value from SAP (Document Number)                                                      
-|11| **RECEIVE_LINE_NO**        | Value from SAP (Item No / Line No)                                                      
-|12| **RECEIVE_TICKET_DATE**    | Value from SAP (Document Date)                                                     
-|13| **BRANCH_NO**              |                                                         
-|14| **PLAN_AREA_NO**           | Value from SAP (Plant)                                                      
-|15| **PLAN_LOCATION_NO**       | DMWAREHOUSE.Warehose_no                                                      
-|16| **MATERIAL_CODE**          | Value from SAP (Material Code)                                                        
-|17| **PLAN_LOT_NO**            |                                                     
-|18| **NOTE**                   |                                                       
-|19| **PLAN_QTY**               | Planned Quantity                                                     
-|20| **PROCESS_QTY**            |                                            
-|21| **RESULT_QTY**             |                                                  
-|22| **SHORTAGE_QTY**           |                                                       
-|23| **REPORT_FLAG**            | 0:Not Reported                                                      
-|24| **WORK_DAY**               |                                                       
-|25| **REGIST_KIND**            | 0:File Loading                                                      
-|26| **BCR_DATA**               |                                    
-|27| **STORING_PAIR_KEY**       | 
-|28| **MSG_ID**                 |
-|29| **MSG_TYPE**               |
-|30| **MSG_ID_ORI**             |
-|31| **ERROR_INDICATION**       | 0:Successfull
-|32| **TYPE**                   | S: Success
-|33| **MESSAGE_DESC**           |
-|34| **REGIST_DATE**            | Delivery Date                                                   
-|35| **REGIST_PNAME**           | ClassName
-|36| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-|37| **LAST_UPDATE_PNAME**      | ClassName
+| **Column Name**            | **Description / Notes**                           |
+|----------------------------|-------------------------------------------------------|
+| **PLAN_UKEY**              | Sequence Object                                                       
+| **LOAD_UNIT_KEY**          |                                                       
+| **FILE_LINE_NO**           |                                                       
+| **STATUS_FLAG**            | 0:Not Started                                                       
+| **CANCEL_FLAG**            | 0:Normal Data                                                      
+| **PLAN_DAY**               |                                                       
+| **VENDOR_CODE**            | Value from SAP (Vendor Code)
+| **VENDOR_NAME**            | Value from SAP (Vendor Name)                                                     
+| **COMPANY_CODE**           | Value from SAP (Company Code)                                                      
+| **RECEIVE_TICKET_NO**      | Value from SAP (Document Number)                                                      
+| **RECEIVE_LINE_NO**        | Value from SAP (Item No / Line No)                                                      
+| **RECEIVE_TICKET_DATE**    | Value from SAP (Document Date)                                                     
+| **BRANCH_NO**              |                                                         
+| **PLAN_AREA_NO**           | Value from SAP (Plant)                                                      
+| **PLAN_LOCATION_NO**       | DMWAREHOUSE.Warehose_no                                                      
+| **MATERIAL_CODE**          | Value from SAP (Material Code)                                                        
+| **PLAN_LOT_NO**            |                                                     
+| **NOTE**                   |                                                       
+| **PLAN_QTY**               | Planned Quantity                                                     
+| **PROCESS_QTY**            |                                            
+| **RESULT_QTY**             |                                                  
+| **SHORTAGE_QTY**           |                                                       
+| **REPORT_FLAG**            | 0:Not Reported                                                      
+| **WORK_DAY**               |                                                       
+| **REGIST_KIND**            | 0:File Loading                                                      
+| **BCR_DATA**               |                                    
+| **STORING_PAIR_KEY**       | 
+| **MSG_ID**                 |
+| **MSG_TYPE**               |
+| **MSG_ID_ORI**             |
+| **ERROR_INDICATION**       | 0:Successfull
+| **TYPE**                   | S: Success
+| **MESSAGE_DESC**           |
+| **REGIST_DATE**            | Delivery Date                                                   
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
 
 # Planned Storage - Set (F2)
 Planned Storage Setting (PKG) is used to set the information of stock which will be entered into ASRS. After **Set(F2)** all item in input text will be process and the result will be posted back to SAP.
@@ -149,7 +149,8 @@ This section explains the validations for the whole proccess Palletize Start
 | **STATUS_FLAG**            | 1:Working                                                       
 | **CANCEL_FLAG**            | 0:Normal Data                                                      
 | **PLAN_DAY**               |                                                       
-| **VENDOR_CODE**            |                                                      
+| **VENDOR_CODE**            |     
+| **VENDOR_NAME**            |                                                 
 | **COMPANY_CODE**           |                                                       
 | **RECEIVE_TICKET_NO**      |                                                       
 | **RECEIVE_LINE_NO**        |                                                       
