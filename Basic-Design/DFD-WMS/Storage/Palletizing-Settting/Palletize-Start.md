@@ -116,7 +116,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **RECEIVE_LINE_NO**        |                                                       
 | **RECEIVE_TICKET_DATE**    |                                                       
 | **BRANCH_NO**              |                                                         
-| **PLAN_AREA_NO**           |                                                       
+| **PLAN_AREA_NO**           | Value from screen (Storage Location)                                                       
 | **PLAN_LOCATION_NO**       |                                                       
 | **MATERIAL_CODE**          | Value from screen (Material Code)                                                      
 | **PLAN_LOT_NO**            |                                                       
@@ -168,8 +168,8 @@ This section explains the validations for the whole proccess Palletize Start
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **STOCK_ID**               | Sequence Object   
-| **AREA_NO**                | 9001
-| **LOCATION_NO**            | 99999999999
+| **AREA_NO**                | DNSTORAGEPLAN.PLAN_AREA_NO
+| **LOCATION_NO**            | 222222222222
 | **LOT_NO**                 | 
 | **STORAGE_TYPE**           | 2:New 
 | **NOTE**                   |
@@ -220,7 +220,7 @@ This section explains the validations for the whole proccess Palletize Start
 |20| **BATCH_NO**               | Value from screen (Batch #)
 |21| **ORDER_NO**               |
 |22| **ORDER_SERIAL_NO**        |
-|23| **PLAN_AREA_NO**           |
+|23| **PLAN_AREA_NO**           | Value from screen (Storage Location)
 |24| **PLAN_LOCATION_NO**       |
 |25| **MATERIAL_CODE**          | Value from screen (Material Code)
 |26| **PLAN_LOT_NO**            |
@@ -238,7 +238,7 @@ This section explains the validations for the whole proccess Palletize Start
 |38| **TERMINAL_NO**            |
 |39| **WORK_SECOND**            |
 |40| **STORAGE_LOCATION_TO**    |
-|41| **STORAGE_LOCATION_FROM**  |
+|41| **STORAGE_LOCATION_FROM**  | Selected Value from screen (1101/1102/1103/1104/1105)
 |42| **DOCK_NO**                |
 |43| **TRUCK_PLATE_NO**         |
 |44| **STORING_PAIR_KEY**       |
@@ -258,21 +258,21 @@ This section explains the validations for the whole proccess Palletize Start
 ###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Column Name**                | **Description / Notes**                               |
 |--------------------------------|-------------------------------------------------------|
-| **CARRY_KEY**                  |  
-| **PALLET_ID**                  |
-| **WORK_TYPE**                  |
+| **CARRY_KEY**                  | Sequence Object  
+| **PALLET_ID**                  | DNPALLET.PALLET_ID
+| **WORK_TYPE**                  | 02:Storage
 | **GROUP_NO**                   |
 | **GROUP_SEQNO**                |
-| **CMD_STATUS**                 |
+| **CMD_STATUS**                 | 1:Started 
 | **NEXT_RESERVE_FLAG**          |
-| **PRIORITY**                   |
-| **RESTORING_FLAG**             |
-| **CARRY_FLAG**                 |
-| **RETRIEVAL_STATION_NO**       |
+| **PRIORITY**                   | 2:Normal
+| **RESTORING_FLAG**             | 0:Not Restore to Original Location
+| **CARRY_FLAG**                 | 1:Storage
+| **RETRIEVAL_STATION_NO**       | 
 | **RETRIEVAL_DETAIL**           |
-| **WORK_NO**                    |
-| **SOURCE_STATION_NO**          |
-| **DEST_STATION_NO**            |
+| **WORK_NO**                    | Sequence Object
+| **SOURCE_STATION_NO**          | DNPALLET.CURRENT_STATION_NO
+| **DEST_STATION_NO**            | 9001
 | **ARRIVAL_DATE**               |
 | **CONTROLINFO**                |
 | **CANCEL_REQUEST**             |
