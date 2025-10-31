@@ -517,11 +517,13 @@ After successful creation of arrival record in <span style="color:green; font-we
 |1 | PLAN_LOCATION_NO           | Reserved Location Number
 |2 | LAST_UPDATE_DATE           | SYSTIMESTAMP
 
-### DNPALLET
-- CURRENT_STATION_NO = Reserved Location Number
-- WH_STATION_NO = 9000
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+###<span style="color:skyblue; font-weight:bold">DNPallet</span>
+|NO| **Column Name**            | **Description / Notes**                               |
+|--|----------------------------|-------------------------------------------------------|
+|1 | CURRENT_STATION_NO         | Reserved Location Number
+|2 | WH_STATION_NO              | 9000
+|3 | LAST_UPDATE_DATE           | SYSTIMESTAMP
+|4 | LAST_UPDATE_PNAME          | Class name
 
 ## DNSTOCK
 - AREA_NO = 9000
