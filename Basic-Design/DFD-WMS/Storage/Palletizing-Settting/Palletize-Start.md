@@ -420,9 +420,6 @@ flowchart LR
 
 releaseCommand["
 Release Command from Palletize Robot
-"]
-
-buttonClicked["
 Station Completion 
 button clicked
 "]
@@ -437,7 +434,7 @@ DNARRIVAL
 
 inoutstationoperator[InOutStationOperator]
 
-releaseCommand-->buttonClicked-->id26msg-->id26process-->inoutstationoperator
+releaseCommand-->id26msg-->id26process-->inoutstationoperator
 inoutstationoperator--I-->id26-insert
 :::
 
