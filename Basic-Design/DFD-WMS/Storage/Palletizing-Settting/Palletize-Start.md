@@ -525,10 +525,12 @@ After successful creation of arrival record in <span style="color:green; font-we
 |3 | LAST_UPDATE_DATE           | SYSTIMESTAMP
 |4 | LAST_UPDATE_PNAME          | Class name
 
-## DNSTOCK
-- AREA_NO = 9000
-- LOCATION_NO = Reserved Location Number
-- LAST_UPDATE_DATE = SYSTIMESTAMP
+###<span style="color:skyblue; font-weight:bold">DNStock</span>
+|NO| **Column Name**            | **Description / Notes**                               |
+|--|----------------------------|-------------------------------------------------------|
+|1 | AREA_NO                    | 9000
+|2 | LOCATION_NO                | Reserved Location Number
+|3 | LAST_UPDATE_DATE           | SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
 
 ## DNARRIVAL
