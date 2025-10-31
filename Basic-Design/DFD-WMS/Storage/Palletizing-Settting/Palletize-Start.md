@@ -8,11 +8,12 @@
 | Palletize Start - Set(F2)[(1)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Palletizing%20Setting&pageId=886&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Epalletizing-setting-set(f2)%3C/span%3E) | INSERT | INSERT | INSERT | INSERT | INSERT | INSERT | INSERT | INSERT | |
 | ID26(2) | | | | | | | | | INSERT |
 | Automatic Mode Change Sender(3) | | | | | | | | | |
-| ID26(4) | | | | | | | | | INSERT |
-| Automatic Mode Change Sender(5 | | | | | | | | | |
-| ID25(6) | | | | | | | | | |
-| ID64(7) | | | | | | | | | |
-| ID33(8) | | | | | | | | | |
+| ID25(4) | | | | | | | | | |
+| ID26(5) | | | | | | | | | INSERT |
+| Automatic Mode Change Sender(6) | | | | | | | | | |
+| ID25(7) | | | | | | | | | |
+| ID64(8) | | | | | | | | | |
+| ID33(9) | | | | | | | | | |
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start - Set(F2)</span>
 
