@@ -415,22 +415,11 @@ This section explains the validations for the whole proccess Palletize Start
 ::: mermaid
 flowchart LR
 
-buttonclicked["Release Command"]
+releaseCommand["
+Release Command from Palletize Robot
+"]
 
-id26msg("
-ID 26
-")
-
-id26-insert[("
-DNARRIVAL
-")]
-
-# Dummy Arrival
-
-::: mermaid
-flowchart LR
-
-buttonclicked["
+buttonClicked["
 Station Completion 
 button clicked
 "]
@@ -445,8 +434,7 @@ DNARRIVAL
 
 inoutstationoperator[InOutStationOperator]
 
-buttonclicked --> id26msg
-id26msg -->id26process-->inoutstationoperator
+releaseCommand-->buttonClicked-->id26msg-->id26process-->inoutstationoperator
 inoutstationoperator--I-->id26-insert
 :::
 
