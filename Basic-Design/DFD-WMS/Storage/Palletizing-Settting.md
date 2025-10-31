@@ -15,6 +15,7 @@ flowchart LR
 :::
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start</span>
+This is only one-time input (no per pallet entry),
 Example Condition:
 - **Planned Carton Qty:** `200` (Input at screen)    
 - **Qty crtn/PL:** `12` (Input at screen)
