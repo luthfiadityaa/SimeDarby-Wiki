@@ -183,7 +183,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **PLAN_QTY**               | Value from screen (Planned Carton Qty)
 | **PALLET_ID**              | Sequence Object
 | **BATCH_NO**               | Value from screen (Batch)
-| **STOCK_STATUS**           | UU: Unrestricted Used (Target for normal retrieval)
+| **STOCK_STATUS**           | UU: Unrestricted Used
 | **QC_DURATION**            | 0: Not Reached
 | **TEMPERING_FLAG**         | 0: Not Reached
 | **QC_FLAG**                | Not Done
