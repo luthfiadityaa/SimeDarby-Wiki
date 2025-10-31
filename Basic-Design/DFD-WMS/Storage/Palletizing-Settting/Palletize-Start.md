@@ -12,8 +12,6 @@
 | ID26(5) | | | | | | | | | INSERT |
 | Automatic Mode Change Sender(6) | | | | | | | | | |
 | ID25(7) | | | | | | | | | |
-| ID64(8) | | | | | | | | | |
-| ID33(9) | | | | | | | | | |
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start - Set(F2)</span>
 
