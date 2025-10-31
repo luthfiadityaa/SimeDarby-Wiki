@@ -237,7 +237,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **USER_ID**                | Login Info
 | **TERMINAL_NO**            |
 | **WORK_SECOND**            |
-| **STORAGE_LOCATION_TO**    |
+| **STORAGE_LOCATION_TO**    | 
 | **STORAGE_LOCATION_FROM**  | Selected Value from screen (1101/1102/1103/1104/1105)
 | **DOCK_NO**                |
 | **TRUCK_PLATE_NO**         |
