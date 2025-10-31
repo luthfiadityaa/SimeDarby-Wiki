@@ -82,7 +82,7 @@ Upon receiving new Plan Storage from Host system, WareNavi will insert related p
 |30| **ERROR_INDICATION**       | 0:Successfull
 |31| **TYPE**                   | S: Success
 |32| **MESSAGE_DESC**           |
-|33| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+|33| **REGIST_DATE**            | Delivery Date                                                   
 |34| **REGIST_PNAME**           | ClassName
 |35| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 |36| **LAST_UPDATE_PNAME**      | ClassName
@@ -173,8 +173,8 @@ This section explains the validations for the whole proccess Palletize Start
 |30| **ERROR_INDICATION**       |
 |31| **TYPE**                   |
 |32| **MESSAGE_DESC**           |
-|33| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-|34| **REGIST_PNAME**           | ClassName
+|33| **REGIST_DATE**            |                                                  
+|34| **REGIST_PNAME**           | 
 |35| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 |36| **LAST_UPDATE_PNAME**      | ClassName
 
@@ -204,33 +204,35 @@ This section explains the validations for the whole proccess Palletize Start
 ### DNStock (INSERT)
 |NO| **Column Name**            | **Description / Notes**                           |
 |--|----------------------------|-------------------------------------------------------|
-|1 | **STOCK_ID**               | Sequence Object   
+|1 | **STOCK_ID**               | WORKINFO.STOCK_ID  
 |2 | **AREA_NO**                | 9001
 |3 | **LOCATION_NO**            | 99999999999
-|4 | **LOT_NO**                 | 
-|5 | **STORAGE_TYPE**           | 2:New 
-|6 | **NOTE**                   |
-|7 | **STORAGE_DAY**            |
-|8 | **STORAGE_DATE**           |
-|9 | **NEWEST_STORAGE_DATE**    |
-|10| **RETRIEVAL_DAY**          |
-|11| **INVENTORY_DAY**          |
-|12| **STOCK_QTY**              | 0
-|13| **ALLOCATION_QTY**         | 0
-|14| **PLAN_QTY**               | Value from screen (Planned Carton Qty)
-|15| **PALLET_ID**              | Value from screen (Pallet #)
-|16| **BATCH_NO**               | Value from screen (Batch #)
-|17| **STOCK_STATUS**           | UU: Unrestricted Used (Target for normal retrieval)
-|18| **QC_DURATION**            | 
-|19| **TEMPERING_FLAG**         | 
-|20| **QC_FLAG**                | 
-|21| **TEMPERING_PERIOD**       | 
-|22| **STORING_PAIR_KEY**       | Value from screen (Material Code + Batch #)
-|23| **EXPIRY_DATE**            | 
-|24| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-|25| **REGIST_PNAME**           | ClassName
-|26| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-|27| **LAST_UPDATE_PNAME**      | ClassName
+|4 | **MATERIAL CODE**          | 
+|5 | **LOT_NO**                 | 
+|6 | **STORAGE_TYPE**           | 2:New 
+|7 | **NOTE**                   |
+|8 | **STORAGE_DAY**            |
+|9 | **STORAGE_DATE**           |
+|10| **NEWEST_STORAGE_DATE**    |
+|11| **RETRIEVAL_DAY**          |
+|12| **INVENTORY_DAY**          |
+|13| **STOCK_QTY**              | 0
+|14| **ALLOCATION_QTY**         | 0
+|15| **PLAN_QTY**               | Value from screen (Planned Carton Qty)
+|16| **PALLET_ID**              | Value from screen (Pallet #)
+|17| **QTY_CRTN**               | 
+|18| **BATCH_NO**               | Value from screen (Batch #)
+|19| **STOCK_STATUS**           | UU: Unrestricted Used (Target for normal retrieval)
+|20| **QC_DURATION**            | 
+|21| **TEMPERING_FLAG**         | 
+|22| **QC_FLAG**                | 
+|23| **TEMPERING_PERIOD**       | 
+|24| **STORING_PAIR_KEY**       | Value from screen (Material Code + Batch #)
+|25| **EXPIRY_DATE**            | 
+|26| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+|27| **REGIST_PNAME**           | ClassName
+|28| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+|29| **LAST_UPDATE_PNAME**      | ClassName
 
 ### DNWorkInfo (INSERT)
 |NO| **Column Name**            | **Description / Notes**                               |
@@ -241,29 +243,29 @@ This section explains the validations for the whole proccess Palletize Start
 |4 | **JOB_TYPE**               | 02:Storage
 |5 | **STATUS_FLAG**            | 0:Not Started
 |6 | **RFT_STATUS_FLAG**        |
-|7 | **HARDWARE_TYPE**          |
+|7 | **HARDWARE_TYPE**          | 3:ASRS
 |8 | **PLAN_UKEY**              | DNSTORAGEPLAN.PLAN_UKEY
 |9 | **STOCK_ID**               | Sequence Object
 |10| **SYSTEM_CONN_KEY**        |
 |11| **PLAN_DAY**               | DMWARENAVISYSTEM.WORK_DAY
-|12| **VENDOR_CODE**            |
-|13| **RECEIVE_TICKET_NO**      |
-|14| **RECEIVE_LINE_NO**        |
+|12| **VENDOR_CODE**            | DNSTORAGEPLAN.VENDOR_CODE
+|13| **RECEIVE_TICKET_NO**      | DNSTORAGEPLAN.RECEIVE_TICKET_NO
+|14| **RECEIVE_LINE_NO**        | DNSTORAGEPLAN.RECEIVE_LINE_NO
 |15| **RECEIVE_BRANCH_NO**      |
-|16| **COMPANY_CODE**           |
+|16| **COMPANY_CODE**           | DNSTORAGEPLAN.COMPANY_CODE
 |17| **SHIP_TICKET_NO**         |
 |18| **SHIP_LINE_NO**           |
 |19| **SHIP_BRANCH_NO**         |
 |20| **BATCH_NO**               | Value from screen (Batch #)
 |21| **ORDER_NO**               |
 |22| **ORDER_SERIAL_NO**        |
-|23| **PLAN_AREA_NO**           |
-|24| **PLAN_LOCATION_NO**       |
-|25| **MATERIAL_CODE**          | 
-|26| **PLAN_LOT_NO**            |
+|23| **PLAN_AREA_NO**           | DNSTORAGEPLAN.PLAN_AREA_NO
+|24| **PLAN_LOCATION_NO**       | DNSTORAGEPLAN.PLAN_LOCATION_NO
+|25| **MATERIAL_CODE**          | DNSTORAGEPLAN.MATERIAL_CODE
+|26| **PLAN_LOT_NO**            | 
 |27| **NOTE**                   |
-|28| **PLAN_QTY**               | Value from screen (Planned Carton Qty)
-|29| **RESULT_QTY**             | Value from screen (Stored Qty)
+|28| **PLAN_QTY**               | DNSTORAGEPLAN.PLAN_QTY
+|29| **RESULT_QTY**             | DNSTORAGEPLAN.RESULT_QTY
 |30| **SHORTAGE_QTY**           |
 |31| **RESULT_AREA_NO**         |
 |32| **RESULT_LOCATION_NO**     |
@@ -272,7 +274,7 @@ This section explains the validations for the whole proccess Palletize Start
 |35| **SKIP_CNT**               |
 |36| **WORK_DAY**               |
 |37| **USER_ID**                | Login Info
-|38| **TERMINAL_NO**            |
+|38| **TERMINAL_NO**            | Login Terminal
 |39| **WORK_SECOND**            |
 |40| **STORAGE_LOCATION_TO**    |
 |41| **STORAGE_LOCATION_FROM**  |
@@ -341,7 +343,7 @@ This section explains the validations for the whole proccess Palletize Start
 |44| **TERMINAL_NO**            |
 |45| **DOCK_NO**                |
 |46| **TRUCK_PLATE_NO**         |
-|47| **STORING_PAIR_KEY**       |
+|47| **STORING_PAIR_KEY**       | 
 |48| **NEW_STORING_PAIR_KEY**   |
 |49| **MSG_ID**                 |
 |50| **MSG_TYPE**               |
