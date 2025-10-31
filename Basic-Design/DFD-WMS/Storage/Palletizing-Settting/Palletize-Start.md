@@ -260,7 +260,7 @@ This section explains the validations for the whole proccess Palletize Start
 |--------------------------------|-------------------------------------------------------|
 | **CARRY_KEY**                  | Sequence Object  
 | **PALLET_ID**                  | DNPALLET.PALLET_ID
-| **WORK_TYPE**                  | 02:Storage
+| **WORK_TYPE**                  | 26:Direct Transfer
 | **GROUP_NO**                   |
 | **GROUP_SEQNO**                |
 | **CMD_STATUS**                 | 1:Started 
