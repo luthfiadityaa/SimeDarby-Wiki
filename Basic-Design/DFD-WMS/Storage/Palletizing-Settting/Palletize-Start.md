@@ -128,7 +128,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **REPORT_FLAG**            | 0:Not Reported                                                      
 | **WORK_DAY**               |                                                       
 | **REGIST_KIND**            |                                                       
-| **BCR_DATA**               |                                                       
+| **BCR_DATA**               | Value from Barcode Scanner                                                       
 | **STORING_PAIR_KEY**       | Value from screen (Material Code + Batch #)  
 | **MSG_ID**                 |
 | **MSG_TYPE**               |
