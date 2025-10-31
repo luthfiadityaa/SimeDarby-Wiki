@@ -1,5 +1,5 @@
-[__TOC__]
-[__TOSP__]
+[[_TOC_]]
+[[_TOSP_]]
 
 #Flow 2 (Refer to AGC Linkage Specs)
 ##ID64
