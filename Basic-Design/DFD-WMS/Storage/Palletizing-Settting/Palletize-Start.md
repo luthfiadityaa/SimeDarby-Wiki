@@ -153,7 +153,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **HEIGHT**                 |                                                       
 | **WIDTH**                  |                                                       
 | **SOFTZONE_ID**            |                                                       
-| **BCR_DATA**               | System generated (Sequence Number)                                                      
+| **BCR_DATA**               | Value from Barcode Scanner                                                      
 | **LAST_STORED_DATE**       |                                                       
 | **AISLE_DISPERSE_KEY**     |                                                       
 | **AISLE_COLLECT_KEY**      |                                                       
