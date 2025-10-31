@@ -495,8 +495,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 ###<span style="color:skyblue; font-weight:bold">DMWarehouse</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
-| **STATION_NO**             | 
-| **LAST_USED_STATION_NO**   | Aisle Number where a reserved location belongs to 
+| **LAST_USED_STATION_NO**   |  Aisle Number where a reserved location belongs to 
 
 ###<span style="color:skyblue; font-weight:bold">DMShelf</span>
 | **Column Name**            | **Description / Notes**                               |
@@ -507,7 +506,6 @@ After successful creation of arrival record in <span style="color:green; font-we
 ###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
-| DEST_STATION_NO            | Reserved Location Number
 | AISLE_STATION_NO           | Aisle Number where a reserved location belongs to
 | CMD_STATUS                 | 2:Waiting for response
 | LAST_UPDATE_DATE           | SYSTIMESTAMP
@@ -523,25 +521,27 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | CURRENT_STATION_NO         | Reserved Location Number
-| WH_STATION_NO              | 9000
+| WH_STATION_NO              | DNCARRYINFO.END_STATION_NO
 | LAST_UPDATE_DATE           | SYSTIMESTAMP
 | LAST_UPDATE_PNAME          | Class name
 
 ###<span style="color:skyblue; font-weight:bold">DNStock</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
-| AREA_NO                    | 9000
+| AREA_NO                    | DNCARRYINFO.END_STATION_NO
 | LOCATION_NO                | Reserved Location Number
 | LAST_UPDATE_DATE           | SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+| LAST_UPDATE_PNAME          | Class name
 
-## DNARRIVAL
-- CARRY_KEY = DNCARRYINFO.CARRY_KEY
-- SEND_FLAG = 1:Sent
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+##<span style="color:skyblue; font-weight:bold">DNArrival</span>
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| CARRY_KEY                  | DNCARRYINFO.CARRY_KEY
+| SEND_FLAG                  | 1:Sent
+| LAST_UPDATE_DATE           | SYSTIMESTAMP
+| LAST_UPDATE_PNAME          | Class name
 
-# ID25
+####<span style="color:skyblue; font-weight:bold">ID25</span>
 
 jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process
 
