@@ -5,7 +5,7 @@
 |Action Name| DNSTORAGEPLAN | DNPALLET | DNWORKINFO | DNWORKLIST | DNCARRYINFO | DNSTOCK | DNHOSTSEND |
 |-----------|--|--|--|--|--|--|--|
 | [Planned Storage from Host](#planned-storage-from-host) | INSERT| | | | | | |
-| Planned Storage - Set (F2) | UPDATE| INSERT | INSERT | INSERT | INSERT | INSERT | INSERT |
+| [Planned Storage - Set (F2)](#planned-storage---set-(f2)) | UPDATE| INSERT | INSERT | INSERT | INSERT | INSERT | INSERT |
 
 # Planned Storage from Host
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
