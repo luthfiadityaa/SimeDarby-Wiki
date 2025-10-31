@@ -40,6 +40,7 @@ FileExchange--INSERT-->FileExchange-insert
 - Document Date
 - Item No / Line No
 - Plant
+- Material Code
 - Planned Quantity
 - Uom
 - Delivery Date
@@ -65,7 +66,7 @@ Upon receiving new Plan Storage from Host system, WareNavi will insert related p
 |13| **BRANCH_NO**              |                                                         
 |14| **PLAN_AREA_NO**           | Value from SAP (Plant)                                                      
 |15| **PLAN_LOCATION_NO**       | DMWAREHOUSE.Warehose_no                                                      
-|16| **MATERIAL_CODE**          |                                                      
+|16| **MATERIAL_CODE**          | Value from SAP (Material Code)                                                        
 |17| **PLAN_LOT_NO**            |                                                     
 |18| **NOTE**                   |                                                       
 |19| **PLAN_QTY**               | Planned Quantity                                                     
