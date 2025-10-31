@@ -272,7 +272,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **RETRIEVAL_DETAIL**           |
 | **WORK_NO**                    | Sequence Object
 | **SOURCE_STATION_NO**          | DNPALLET.CURRENT_STATION_NO
-| **DEST_STATION_NO**            | DNWORKINFO.PLAN_AREA_NO
+| **DEST_STATION_NO**            | Decided Value based on from SOURCE_STATION_NO ➡️ (1111/1112/1113/1114/1115)
 | **ARRIVAL_DATE**               |
 | **CONTROLINFO**                |
 | **CANCEL_REQUEST**             | 0:Not Requested
@@ -438,7 +438,7 @@ releaseCommand-->id26msg-->id26process-->inoutstationoperator
 inoutstationoperator--I-->id26-insert
 :::
 
-After user clicked on Completion button at Station, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
+After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
 
