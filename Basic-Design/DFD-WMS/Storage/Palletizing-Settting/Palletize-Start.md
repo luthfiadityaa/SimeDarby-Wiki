@@ -127,7 +127,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **WORK_DAY**               |                                                       
 | **REGIST_KIND**            |                                                       
 | **BCR_DATA**               | Value from Barcode Scanner                                                       
-| **STORING_PAIR_KEY**       | Value from screen (Material Code + Batch #)  
+| **STORING_PAIR_KEY**       | <span style="color:yellow; font-weight:bold">Value from screen (Material Code + Batch #)</span>  
 | **MSG_ID**                 |
 | **MSG_TYPE**               |
 | **MSG_ID_ORI**             |
