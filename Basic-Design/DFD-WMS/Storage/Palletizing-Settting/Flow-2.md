@@ -76,6 +76,30 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
+##<span style="color:skyblue; font-weight:bold">Automatic Mode Change Sender&nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.AutomaticModeChangeSender &nbsp;</span>
+
+::: mermaid
+flowchart LR
+automaticmodechangesender-update[("
+DNARRIVAL
+DNCARRYINFO
+DNPALLET
+DNSTOCK
+")]
+automaticmodechangesender-input[("
+DNARRIVAL
+DNCARRYINFO
+")]
+
+id05msg("
+ID 05
+")
+
+automaticmodechangesender-input-->automaticmodechangesender-->id05msg
+automaticmodechangesender--> |UPDATE| automaticmodechangesender-update
+:::
+
 After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, Automatic Mode Change Sender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">3: Commanded to 2: Waiting for Response.</span>
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
