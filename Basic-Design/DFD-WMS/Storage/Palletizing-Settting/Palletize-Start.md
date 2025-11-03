@@ -491,8 +491,8 @@ After successful creation of arrival record in <span style="color:green; font-we
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
-| **WORK_TYPE**                  | 26:Direct Transfer
-| **CMD_STATUS**                 | 2:Waiting for response
+| **WORK_TYPE**                  | 26: Direct Transfer
+| **CMD_STATUS**                 | 2: Waiting for response
 | **DEST_STATION_NO**            | <span style="color:yellow; font-weight:bold">SOURCE_STATION_NO where a reserved location belongs to ⟶ (8101/8102/8103)</span>
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
