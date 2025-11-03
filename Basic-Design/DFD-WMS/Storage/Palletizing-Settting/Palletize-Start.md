@@ -194,7 +194,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **LAST_UPDATE_PNAME**      | ClassName
 
 ###<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
-| **Column Name**            | **Description / Notes**                               |
+| **Filed Name**            | **Insert Value**                               |
 | ----------------------------|-------------------------------------------------------|
 | **JOB_NO**                 | Sequence Object
 | **SETTING_UNIT_KEY**       | Sequence Object
@@ -215,15 +215,15 @@ This section explains the validations for the whole proccess Palletize Start
 | **SHIP_TICKET_NO**         |
 | **SHIP_LINE_NO**           |
 | **SHIP_BRANCH_NO**         |
-| **BATCH_NO**               | Value from screen (Batch #)
+| **BATCH_NO**               | DNPALLETIZE.BATCH_NO
 | **ORDER_NO**               |
 | **ORDER_SERIAL_NO**        |
-| **PLAN_AREA_NO**           | Value from screen (Storage Location)
+| **PLAN_AREA_NO**           | DNPALLETIZE.STORAGE_LOCATION 
 | **PLAN_LOCATION_NO**       |
-| **MATERIAL_CODE**          | Value from screen (Material Code)
+| **MATERIAL_CODE**          | DNPALLETIZE.MATERIAL_CODE 
 | **PLAN_LOT_NO**            |
 | **NOTE**                   |
-| **PLAN_QTY**               | Value from screen (Planned Carton Qty)
+| **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL 
 | **RESULT_QTY**             | 
 | **SHORTAGE_QTY**           |
 | **RESULT_AREA_NO**         |
