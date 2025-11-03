@@ -377,7 +377,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **SHIP_BRANCH_NO**         |
 | **BATCH_NO**               | DNWORKINFO.BATCH_NO
 | **ORDER_NO**               |
-| **PLAN_AREA_NO**           |
+| **PLAN_AREA_NO**           | DNWORKINFO.PLAN_AREA_NO
 | **PLAN_LOCATION_NO**       |
 | **MATERIAL_CODE**          | DNWORKINFO.MATERIAL_CODE
 | **MATERIAL_NAME**          | DMMATERIALMASTER.MATERIAL_NAME
