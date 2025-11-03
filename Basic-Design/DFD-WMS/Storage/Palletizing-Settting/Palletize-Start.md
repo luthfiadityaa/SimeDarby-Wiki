@@ -188,7 +188,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **CARRY_FLAG**                 | 1:Storage
 | **WORK_NO**                    | Sequence Object
 | **SOURCE_STATION_NO**          | DNPALLET.CURRENT_STATION_NO
-| **DEST_STATION_NO**            | <span style="color:yellow; font-weight:bold">Decided Value based on from SOURCE_STATION_NO ⟶ (1111/1112/1113/1114/1115)</span>
+| **DEST_STATION_NO**            | <span style="color:yellow; font-weight:bold">SOURCE_STATION_NO where a reserved location belongs to ⟶ (1111/1112/1113/1114/1115)</span>
 | **CANCEL_REQUEST**             | 0:Not Requested
 | **SCHEDULE_NO**                | Sequence Object
 | **END_STATION_NO**             | DNWORKINFO.PLAN_AREA_NO
