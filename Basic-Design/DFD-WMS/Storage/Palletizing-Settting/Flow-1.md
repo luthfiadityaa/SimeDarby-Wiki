@@ -240,45 +240,53 @@ id33process-.D.->id33-delete
 ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage operation of the pallet is completed by SRM.
 
 ####<span style="color:skyblue; font-weight:bold">DMShelf</span>
-| **Field Name**            | **Insert Value**                               |
+| **Field Name**             | **Insert Value**                                      |
 |----------------------------|-------------------------------------------------------|
 | **STATUS_FLAG**       | 1: Occupied
 | **LAST_UPDATE_DATE**  | SYSTIMESTAMP
 
-## DNPALLET
-- CURRENT_STATION_NO = Location Number information from ID33
-- STATUS_FLAG = 2:Occupied
-- ALLOCATION_FLAG = 0:Not allocated
-- LAST_STORED_DATE = SYSTIMESTAMP
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+####<span style="color:skyblue; font-weight:bold">DNPallet</span>
+| **Field Name**             | **Insert Value**                                      |
+|----------------------------|-------------------------------------------------------|
+| **CURRENT_STATION_NO**     | Location Number information from ID33
+| **STATUS_FLAG**            | 2:Occupied
+| **ALLOCATION_FLAG**        | 0:Not allocated
+| **LAST_STORED_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | Class name
 
-## DNWORKINFO
-- RESULT_QTY = DNWORKINFO.PLAN_QTY
-- RESULT_AREA_NO = DNWORKINFO.PLAN_AREA_NO
-- RESULT_LOCATION_NO = DNWORKINFO.PLAN_LOCATION_NO
-- RESULT_LOT_NO = DNWORKINFO.PLAN_LOT_NO
-- WORK_DAY = DMWARENAVISYSTEM.WORK_DAY
-- STATUS_FLAG = 4:Completed
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
+| **Field Name**             | **Insert Value**                                      |
+|----------------------------|-------------------------------------------------------|
+| **RESULT_QTY**             | DNWORKINFO.PLAN_QTY
+| **RESULT_AREA_NO**         | DNWORKINFO.PLAN_AREA_NO
+| **RESULT_LOCATION_NO**     | DNWORKINFO.PLAN_LOCATION_NO
+| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
+| **STATUS_FLAG**            | 4:Completed
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | Class name
 
-## DNSTOCK
-- STORAGE_DAY = DMWARENAVISYSTEM.WORK_DAY
-- NEWEST_STORAGE_DATE = SYSTIMESTAMP
-- STOCK_QTY = DNSTOCK.PLAN_QTY
-- ALLOCATION_QTY = DNWORKINFO.RESULT_QTY
-- PLAN_QTY = 0
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+####<span style="color:skyblue; font-weight:bold">DNStock</span>
+| **Field Name**             | **Insert Value**                                      |
+|----------------------------|-------------------------------------------------------|
+| **STORAGE_DAY**            | DMWARENAVISYSTEM.WORK_DAY
+| **NEWEST_STORAGE_DATE**    | SYSTIMESTAMP
+| **STOCK_QTY**              | DNSTOCK.PLAN_QTY
+| **ALLOCATION_QTY**         | DNWORKINFO.RESULT_QTY
+| **PLAN_QTY**               | 0
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME        | Class name
 
-## DNSTORAGEPLAN (If DNSTORAGEPLAN.RESULT_QTY = DNSTORAGEPLAN.PLAN_QTY then update Status to completed)
-- STATUS_FLAG = 4:Completed
-- RESULT_QTY = DNSTORAGEPLAN.RESULT_QTY + DNWORKINFO.RESULT_QTY
-- SHORTAGE_QTY = DNSTORAGEPLAN.SHORTAGE_QTY + DNWORKINFO.SHORTAGE_QTY
-- WORK_DAY = DMWARENAVISYSTEM.WORK_DAY
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+####<span style="color:skyblue; font-weight:bold"> DNStoragePlan </span>
+<span style="color:red; font-weight:bold">*(If DNSTORAGEPLAN.RESULT_QTY = DNSTORAGEPLAN.PLAN_QTY then update Status to completed)</span
+| **Field Name**             | **Insert Value**                                      |
+|----------------------------|-------------------------------------------------------|
+| **STATUS_FLAG**            | 4:Completed
+| **RESULT_QTY**             | DNSTORAGEPLAN.RESULT_QTY + DNWORKINFO.RESULT_QTY
+| **SHORTAGE_QTY**           | DNSTORAGEPLAN.SHORTAGE_QTY + DNWORKINFO.SHORTAGE_QTY
+| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | Class name
 
 ## DNSTOCKHISTORY
 - WORK_DAY = DMWARENAVISYSTEM.WORK_DAY
