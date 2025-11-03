@@ -336,7 +336,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_USED_STATION_NO**   |  Aisle Number where a reserved location belongs to 
 
 ####<span style="color:skyblue; font-weight:bold">DMShelf</span>
-| **Filed Name**            | **Insert Value**                               |
+| **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
 | **STATUS_FLAG**                | 2:Reserved Location
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
