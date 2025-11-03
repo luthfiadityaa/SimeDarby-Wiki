@@ -356,12 +356,12 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
-| **Column Name**            | **Description / Notes**                               |
+| **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
-| CURRENT_STATION_NO         | Reserved Location Number
-| WH_STATION_NO              | DNCARRYINFO.END_STATION_NO
-| LAST_UPDATE_DATE           | SYSTIMESTAMP
-| LAST_UPDATE_PNAME          | Class name
+| **CURRENT_STATION_NO**         | Reserved Location Number
+| **WH_STATION_NO**              | DNCARRYINFO.END_STATION_NO
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**          | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
 | **Column Name**            | **Description / Notes**                               |
