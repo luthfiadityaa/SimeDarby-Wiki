@@ -398,8 +398,8 @@ DNARRIVAL
 ")]
 
 id25-->id25process
-id25process-.U.->id25-update
-id25process-.D.->id25-delete
+id25process--> |UPDATE| id25-update
+id25process--> |DELETE| id25-delete
 :::
 
 ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
