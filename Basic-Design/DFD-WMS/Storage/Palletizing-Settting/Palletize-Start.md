@@ -488,7 +488,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **WORK_TYPE**                  | 26: Direct Transfer
 | **CMD_STATUS**                 | 2: Waiting for response
 | **CARRY_FLAG**                 | 3: Direct Transfer
-| **DEST_STATION_NO**            | <span style="color:yellow; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (7101, 7102, 7103, 7104, 7105, 7106, 7107, 7108, 7109, 7110, 7207, 7208, 7209, 7210)</span>
+| **DEST_STATION_NO**            | <span style="color:yellow; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (7101, 7102, 7103, 7104, 7105, 7106, 7107, 7108, 7109, 7110)</span>
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
 
