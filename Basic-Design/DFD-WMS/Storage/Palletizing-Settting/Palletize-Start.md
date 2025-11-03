@@ -126,7 +126,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **REPORT_FLAG**            | 0:Not Reported                                                      
 | **WORK_DAY**               |                                                       
 | **REGIST_KIND**            |                                                       
-| **BCR_DATA**               | Value from Barcode Scanner                                                       
+| **BCR_DATA**               |                                                        
 | **STORING_PAIR_KEY**       | <span style="color:yellow; font-weight:bold">Value from screen (Material Code + Batch #)</span>  
 | **MSG_ID**                 |
 | **MSG_TYPE**               |
@@ -151,7 +151,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **HEIGHT**                 |                                                       
 | **WIDTH**                  |                                                       
 | **SOFTZONE_ID**            |                                                       
-| **BCR_DATA**               | Value from Barcode Scanner                                                      
+| **BCR_DATA**               | System generated (YYXXXXXXXX, XXXXXXXX represents sequence number)                                                      
 | **LAST_STORED_DATE**       |                                                       
 | **AISLE_DISPERSE_KEY**     |                                                       
 | **AISLE_COLLECT_KEY**      |                                                       
