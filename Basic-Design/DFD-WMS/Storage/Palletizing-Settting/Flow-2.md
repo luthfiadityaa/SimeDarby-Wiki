@@ -242,7 +242,6 @@ Upon equipment <span style="color:green; font-weight:bold">STV</span> have picke
 | **LAST_UPDATE_PNAME** 	| Class name
 
 ##<span style="color:skyblue; font-weight:bold">ID26</span>
-##<span style="color:skyblue; font-weight:bold">ID26</span>
 
 ::: mermaid
 flowchart LR
