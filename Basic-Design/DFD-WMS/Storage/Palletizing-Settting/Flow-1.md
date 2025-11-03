@@ -289,35 +289,34 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **LAST_UPDATE_PNAME**      | Class name
 
 ## DNSTOCKHISTORY
-- WORK_DAY = DMWARENAVISYSTEM.WORK_DAY
-- INC_DEC_TYPE = 1:Stock Increase
-- JOB_TYPE = 22:Unplanned Storage
-- UPDATE_STOCK_QTY = DNSTOCK.STOCK_QTY
-- INC_DEC_QTY = DNSTOCK.STOCK_QTY
-- STOCK_ID = DNSTOCK.STOCK_ID
-- AREA_NO = DNSTOCK.AREA_NO
-- LOCATION_NO = DNSTOCK.LOCATION_NO
-- LOT_NO = DNSTOCK.LOT_NO
-- STORAGE_DAY = DNSTOCK.STORAGE_DAY
-- STORAGE_DATE = DNSTOCK.STORAGE_DATE
-- NEWEST_STORAGE_DATE = DNSTOCK.NEWEST_STORAGE_DATE
-- ITEM_CODE = DNSTOCK.ITEM_CODE
-- SECOND_ITEM_CODE = DMITEM.SECOND_ITEM_CODE
-- PALLET_ID = DNSTOCK.PALLET_ID
-- BCR_DATA = DNPALLET.BCR_DATA
-- AREA_TYPE = DMAREA_AREA_TYPE
-- ITEM_NAME = DMITEM.ITEM_NAME
-- ENTERING_QTY = DMITEM.ENTERING_QTY
-- BUNDLE_ENTERING_QTY = DMITEM.BUNDLE_ENTERING_QTY
-- USER_ID = Login info
-- USER_NAME = Login info
-- TERMINAL_NO = Login info
-- TERMINAL_NAME = Login info
-- IP_ADDRESS = Login info
+| **Field Name**             | **Insert Value**                                      |
+|----------------------------|-------------------------------------------------------|
+| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
+| **INC_DEC_TYPE**           | 1: Stock Increase
+| **JOB_TYPE**               | 2: Storage
+| **UPDATE_STOCK_QTY**       | DNSTOCK.STOCK_QTY
+| **INC_DEC_QTY**            | DNSTOCK.STOCK_QTY
+| **STOCK_ID**               | DNSTOCK.STOCK_ID
+| **AREA_NO**                | DNSTOCK.AREA_NO
+| **LOCATION_NO**            | DNSTOCK.LOCATION_NO
+| **STORAGE_DAY**            | DNSTOCK.STORAGE_DAY
+| **STORAGE_DATE**           | DNSTOCK.STORAGE_DATE
+| **NEWEST_STORAGE_DATE**    | DNSTOCK.NEWEST_STORAGE_DATE
+| **MATERIAL_CODE            | DNSTOCK.MATERIAL_CODE
+| **PALLET_ID**              | DNSTOCK.PALLET_ID
+| **BCR_DATA**               | DNPALLET.BCR_DATA
+| **AREA_TYPE**              | DMAREA_AREA_TYPE
+| **MATERIAL_NAME**          | DMMATERIALMASTER.MATERIAL_NAME
+| **ENTERING_QTY**           | DMMATERIALMASTER.QTY_CRTN
+| **USER_ID**                | Login info
+| **USER_NAME**              | Login info
+| **TERMINAL_NO**            | Login info
+| **TERMINAL_NAME**          | Login info
+| **IP_ADDRESS**             | Login info
 - MANUFACTURING_DATE = DNSTOCK.MANUFACTURING_DATE
 - EXPIRY_DATE = DNSTOCK.EXPIRY_DATE
-- REGIST_DATE = SYSTIMESTAMP
-- REGIST_PNAME = Class name
+| **REGIST_DATE**            | SYSTIMESTAMP
+| **REGIST_PNAME**           | Class name
 
 ## DNINOUTRESULT
 - RESULT_KIND = 1:Storage(Stock+)
