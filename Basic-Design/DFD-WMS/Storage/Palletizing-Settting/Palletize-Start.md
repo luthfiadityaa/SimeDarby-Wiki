@@ -186,7 +186,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **TEMPERING_FLAG**         | <span style="color:yellow; font-weight:bold">0: Not Reached</span>
 | **QC_FLAG**                | <span style="color:yellow; font-weight:bold">Not Done</span>
 | **TEMPERING_PERIOD**       | Value from screen (Tempering Period)
-| **STORING_PAIR_KEY**       | Value from screen (Material Code + Batch #)
+| **STORING_PAIR_KEY**       | <span style="color:yellow; font-weight:bold">Value from screen (Material Code + Batch #)</span>
 | **EXPIRY_DATE**            | Value from Screen (Expiry Days)
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
