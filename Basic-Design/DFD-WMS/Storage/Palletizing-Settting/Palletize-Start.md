@@ -346,10 +346,10 @@ This section explains the validations for the whole proccess Palletize Start
 | **ERROR_INDICATION**       |
 | **TYPE**                   |
 | **MESSAGE_DESC**           |   
-| **REGIST_DATE**            |                                                    
-| **REGIST_PNAME**           |
-| **LAST_UPDATE_DATE**       |
-| **LAST_UPDATE_PNAME**      |
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
 
 ###<span style="color:skyblue; font-weight:bold">DNHostSend</span>
 | **Column Name**            | **Description / Notes**                               |
