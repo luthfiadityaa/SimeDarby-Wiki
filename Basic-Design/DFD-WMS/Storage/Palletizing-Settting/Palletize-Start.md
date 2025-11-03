@@ -364,7 +364,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_UPDATE_PNAME**          | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
-| **Column Name**            | **Description / Notes**                               |
+| **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
 | AREA_NO                    | DNCARRYINFO.END_STATION_NO
 | LOCATION_NO                | Reserved Location Number
@@ -372,7 +372,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | LAST_UPDATE_PNAME          | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNArrival</span>
-| **Column Name**            | **Description / Notes**                               |
+| **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
 | CARRY_KEY                  | DNCARRYINFO.CARRY_KEY
 | SEND_FLAG                  | 1:Sent
