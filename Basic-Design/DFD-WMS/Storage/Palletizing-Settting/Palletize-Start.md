@@ -442,10 +442,20 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ####<span style="color:skyblue; font-weight:bold">DNArrival</span>
-| **Column Name**            | **Description / Notes**                               |
+| **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
 | **ARRIVAL_DATE**           | SYSTIMESTAMP 
 | **STATION_NO**             | Arrival Station Number from ID26 
+| **CARRY_KEY**              | DNCARRYINFO.CARRY_KEY       
+| **BCR_DATA**               | Barcode information from ID26
+| **CONTROLINFO**            | Control information from ID26
+| **SEND_FLAG**              | 0:Not sent
+| **HEIGHT**                 | Dimension Information from ID26
+| **WIDTH**                  | Dimension Information From ID26
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
 
 ##<span style="color:skyblue; font-weight:bold">Automatic Mode Change Sender</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.AutomaticModeChangeSender &nbsp;</span>
