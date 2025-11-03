@@ -141,10 +141,6 @@ This section explains the validations for the whole proccess Palletize Start
 | **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL 
 | **PALLET_ID**              | Sequence Object
 | **BATCH_NO**               | DNPALLETIZE.BATCH_NO 
-| **STOCK_STATUS**           | <span style="color:yellow; font-weight:bold">UU: Unrestricted Used</span>
-| **QC_DURATION**            | <span style="color:yellow; font-weight:bold">0: Not Reached</span>
-| **TEMPERING_FLAG**         | <span style="color:yellow; font-weight:bold">0: Not Reached</span>
-| **QC_FLAG**                | <span style="color:yellow; font-weight:bold">Not Done</span>
 | **TEMPERING_PERIOD**       | DNPALLETIZE.TEMPERING_PERIOD
 | **STORING_PAIR_KEY**       | <span style="color:yellow; font-weight:bold">DNPALLETIZE.MATERIAL_CODE + DNPALLETIZE.BATCH_NO </span>
 | **EXPIRY_DATE**            | DNPALLETIZE.EXPIRY_DAYS
