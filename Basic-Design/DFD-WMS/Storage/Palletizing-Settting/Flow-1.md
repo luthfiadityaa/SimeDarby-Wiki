@@ -214,3 +214,5 @@ Upon equipment <span style="color:green; font-weight:bold">SRM</span> have picke
 | **LAST_UPDATE_PNAME** 	| Class name
 
 ##<span style="color:skyblue; font-weight:bold">[Continue Process to ID33](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/874/Batch-End?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid33%3C/span%3E)</span>
+
+##<span style="color:skyblue; font-weight:bold">[Send Report as Production Storage Result - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result))</span>
