@@ -5,6 +5,10 @@
 |-----------|--|--|--|--|--|--|--|--|--|--|
 | [ID26]() | | | | | | | | INSERT | | |
 | [Automatic Mode Change Sender]() | | UPDATE | UPDATE | | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE |
+| [ID25]() | | | | | UPDATE | | | UPDATE | | |
+| [ID64]() | | | | | | | | | | |
+
+This Storage Flow is refer to AGC linkage Specification.
 
 #<span style="color:skyblue; font-weight:bold">ID26</span>
 
@@ -137,7 +141,8 @@ After successful creation of arrival record in <span style="color:green; font-we
 
 #<span style="color:skyblue; font-weight:bold">ID25</span>
 
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process &nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process` &nbsp;</span>
 
 ::: mermaid
 flowchart LR
@@ -169,3 +174,4 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 | ERROR_CODE                 | 0
 | LAST_UPDATE_DATE           | SYSTIMESTAMP
 | LAST_UPDATE_PNAME          | Class name
+
