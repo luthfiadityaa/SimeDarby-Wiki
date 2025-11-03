@@ -284,7 +284,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ####<span style="color:skyblue; font-weight:bold">DNArrival</span>
-| **Column Name**            | **Description / Notes**                               |
+| **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
 | **ARRIVAL_DATE**           | SYSTIMESTAMP 
 | **STATION_NO**             | Arrival Station Number from ID26 
@@ -331,7 +331,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ####<span style="color:skyblue; font-weight:bold">DMWarehouse</span>
-| **Column Name**            | **Description / Notes**                               |
+| **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
 | **LAST_USED_STATION_NO**   |  Aisle Number where a reserved location belongs to 
 
