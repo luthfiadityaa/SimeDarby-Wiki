@@ -147,7 +147,8 @@ This section explains the validations for the whole proccess Storage Packaging M
   So if result > 0, Palletize Start cannot proceed.
 
 # <span style="color:skyblue; font-weight:bold">Storage Process flow</span>
-This section explains the Storage flow after the operation of Planned Storage Packaging Material is Start
+This section explains the Storage flow after the operation of Planned Storage Packaging Material is started.
+##[Storage Flow](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/942/Storage-Flow-(Packaging-Material))
 
 
 # <span style="color:skyblue; font-weight:bold">Table Value</span>
