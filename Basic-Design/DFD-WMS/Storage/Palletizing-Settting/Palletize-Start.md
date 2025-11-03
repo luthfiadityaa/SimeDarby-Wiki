@@ -354,7 +354,7 @@ This section explains the validations for the whole proccess Palletize Start
 ###<span style="color:skyblue; font-weight:bold">DNHostSend</span>
 | **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
-| **WORK_DAY**               | 
+| **WORK_DAY**               | DNWORK_INFO.WORK_DAY
 | **JOB_NO**                 | DNWORKINFO.JOB_NO
 | **SETTING_UNIT_KEY**       | DNWORKINFO.SETTING_UNIT_KEY
 | **COLLECT_JOB_NO**         | DNWORKINFO.COLLECT_JOB_NO
