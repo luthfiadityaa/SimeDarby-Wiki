@@ -288,7 +288,7 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | Class name
 
-## DNSTOCKHISTORY  
+####<span style="color:skyblue; font-weight:bold">DNStockHistory </span> 
 <span style="color:red; font-weight:bold; font-size:12px">*Tempering Flag is only valid for Storage location: Tempering</span>
 | **Field Name**             | **Insert Value**                                      |
 |----------------------------|-------------------------------------------------------|
@@ -322,30 +322,34 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **REGIST_DATE**            | SYSTIMESTAMP
 | **REGIST_PNAME**           | Class name
 
-## DNINOUTRESULT
-- RESULT_KIND = 1:Storage(Stock+)
-- STATION_NO = DNCARRYINFO.SOURCE_STATION_NO
-- LOCATION_NO = DNCARRYINFO.DEST_STATION_NO
-- WH_STATION_NO = DNPALLET.WH_STATION_NO
-- AISLE_STATION_NO = DNCARRYINFO.AISLE_STATION_NO
-- WORK_TYPE = DNCARRYINFO.WORK_TYPE
-- RETRIEVAL_DETAIL = DNCARRYINFO.RETRIEVAL_DETAIL
-- WORK_NO = DNCARRYINFO.WORK_NO
-- PALLET_ID = DNPALLET.PALLET_ID
-- CARRY_KEY = DNCARRYINFO.CARRY_KEY
-- RESTORING_FLAG = DNCARRYINFO.RESTORING_FLAG
-- WORK_DAY = DMWARENAVISYSTEM.WORK_DAY
-- REMOVE_FLAG = 00:Normal
-- REGIST_PNAME = Class name
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+####<span style="color:skyblue; font-weight:bold">DNInOutResult</span>
+| **Field Name**             | **Insert Value**                                      |
+|----------------------------|-------------------------------------------------------|
+| **RESULT_KIND**            | 1:Storage(Stock+)
+| **STATION_NO**             | DNCARRYINFO.SOURCE_STATION_NO
+| **LOCATION_NO**            | DNCARRYINFO.DEST_STATION_NO
+| **WH_STATION_NO**          | DNPALLET.WH_STATION_NO
+| **AISLE_STATION_NO**       | DNCARRYINFO.AISLE_STATION_NO
+| **WORK_TYPE**              | DNCARRYINFO.WORK_TYPE
+| **RETRIEVAL_DETAIL**       | DNCARRYINFO.RETRIEVAL_DETAIL
+| **WORK_NO**                | DNCARRYINFO.WORK_NO
+| **PALLET_ID**              | DNPALLET.PALLET_ID
+| **CARRY_KEY**              | DNCARRYINFO.CARRY_KEY
+| **RESTORING_FLAG**         | DNCARRYINFO.RESTORING_FLAG
+| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
+| **REMOVE_FLAG**            | 00:Normal
+| **REGIST_PNAME**           | Class name
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | Class name
 
-## DNHOSTSEND
-- WORK_DAY = DNWORKINFO.WORK_DAY
-- JOB_NO = DNWORKINFO.JOB_NO
-- COLLECT_JOB_NO = DNWORKINFO.COLLECT_JOB_NO
-- SETTING_UNIT_KEY = DNWORKINFO.SETTING_UNIT_KEY
-- JOB_TYPE = DNWORKINFO.JOB_TYPE
+####<span style="color:skyblue; font-weight:bold">DNHostSend</span>
+| **Field Name**             | **Insert Value**                                      |
+|----------------------------|-------------------------------------------------------|
+| **WORK_DAY**               | DNWORKINFO.WORK_DAY
+| **JOB_NO**                 | DNWORKINFO.JOB_NO
+| **COLLECT_JOB_NO**         | DNWORKINFO.COLLECT_JOB_NO
+| **SETTING_UNIT_KEY**       | DNWORKINFO.SETTING_UNIT_KEY
+| **JOB_TYPE**               | DNWORKINFO.JOB_TYPE
 - STATUS_FLAG = DNWORKINFO.STATUS_FLAG
 - HARDWARE_TYPE = DNWORKINFO.HARDWARE_TYPE
 - PLAN_UKEY = DNWORKINFO.PLAN_UKEY
