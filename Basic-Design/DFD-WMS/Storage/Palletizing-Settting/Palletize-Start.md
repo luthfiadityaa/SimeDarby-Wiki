@@ -100,7 +100,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **LAST_UPDATE_PNAME**          | ClassName
 
 ###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
-| **Column Name**            | **Description / Notes**                               |
+| **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
 | **PLAN_UKEY**              | Sequence Object                                                       
 | **LOAD_UNIT_KEY**          |                                                       
@@ -140,7 +140,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **LAST_UPDATE_PNAME**      | ClassName
 
 ###<span style="color:skyblue; font-weight:bold">DNPallet</span>
-| **Column Name**            | **Description / Notes**                               |
+| **Field Name**            | **Insert Vlaue**                               |
 |----------------------------|-------------------------------------------------------|
 | **PALLET_ID**              | Sequence Object                                                       
 | **CURRENT_STATION_NO**     | <span style="color:yellow; font-weight:bold">Selected Value from screen ➡️ (1101/1102/1103/1104/1105)</span>                                                       
