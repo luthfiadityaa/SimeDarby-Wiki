@@ -106,8 +106,9 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **WORK_TYPE**                  | 2: Storage
 | **CMD_STATUS**                 | 1: Started
 | **CARRY_FLAG**                 | 1: Storage
+| **AISLE_STATION_NO**           | Aisle Number where a reserved location belongs to
 | **SOURCE_STATION_NO**          | DNARRIVAL.STATION_NO
-| **DEST_STATION_NO**            | Aisle Number where a reserved location belongs to
+| **DEST_STATION_NO**            | Reserved Location Number
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
 
@@ -117,12 +118,15 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **STATUS_FALG**       | 1: Working 
 | **SYSTEM_CONN_KEY**   | Sequence object
 | **HARDWARE_TYPE**     | 3: ASRS
+| **PLAN_LOCATION_NO**  | Reserved Location Number
 | **LAST_UPDATE_DATE**  | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME   | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
 | **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
+| CURRENT_STATION_NO             | Reserved Location Number
+| WH_STATION_NO                  | Reserved Area Number
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
 
