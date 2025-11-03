@@ -336,10 +336,10 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_USED_STATION_NO**   |  Aisle Number where a reserved location belongs to 
 
 ####<span style="color:skyblue; font-weight:bold">DMShelf</span>
-| **Column Name**            | **Description / Notes**                               |
+| **Filed Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
-| STATUS_FLAG                | 2:Reserved Location
-| LAST_UPDATE_DATE           | SYSTIMESTAMP
+| **STATUS_FLAG**                | 2:Reserved Location
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Column Name**            | **Description / Notes**                               |
