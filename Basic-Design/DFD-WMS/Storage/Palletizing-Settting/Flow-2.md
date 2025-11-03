@@ -213,3 +213,25 @@ inoutstationoperator[InOutStationOperator]
 releaseCommand-->id26msg-->id26process-->inoutstationoperator
 inoutstationoperator--> |INSERT| id26-insert
 :::
+
+Continue the process <span style="color:green; font-weight:bold">Direct Transfer</span>, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
+
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+
+####<span style="color:skyblue; font-weight:bold">DNArrival</span>
+| **Field Name**            | **Insert Value**                               |
+|----------------------------|-------------------------------------------------------|
+| **ARRIVAL_DATE**           | SYSTIMESTAMP 
+| **STATION_NO**             | Arrival Station Number from ID26 
+| **CARRY_KEY**              | DNCARRYINFO.CARRY_KEY       
+| **BCR_DATA**               | Barcode information from ID26
+| **CONTROLINFO**            | Control information from ID26
+| **SEND_FLAG**              | 0:Not sent
+| **HEIGHT**                 | Dimension Information from ID26
+| **WIDTH**                  | Dimension Information From ID26
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
