@@ -542,17 +542,19 @@ DNARRIVAL
 ")]
 
 id25-->id25process
-id25process-.U.->id25-update
-id25process-.D.->id25-delete
+id25process--> |UPDATE| id25-update
+id25process--> |DELETE| id25-delete
 :::
 
 ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-#### DNCARRYINFO
-- CMD_STATUS: 3: Commanded
-- ERROR_CODE: 0
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+| **Field Name**            | **Insert Value**                               |
+|----------------------------|-------------------------------------------------------|
+| **CMD_STATUS**        | 3:Commanded
+| **ERROR_CODE**        | 0
+| **LAST_UPDATE_DATE**  | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME** |Class name
 
 ##Continue Process with
 ###[Flow 1 - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/938/Flow-1)
