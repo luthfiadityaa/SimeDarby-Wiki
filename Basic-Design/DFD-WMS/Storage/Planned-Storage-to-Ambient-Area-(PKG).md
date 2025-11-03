@@ -9,6 +9,7 @@
 | [ID26](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/882/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20to%20Ambient%20Area%20(PKG)&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid26%3C/span%3E) | | | | | | | | INSERT | | |
 | [Automatic Mode Change Sender](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20to%20Ambient%20Area%20(PKG)&pageId=882&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eautomatic-mode-change-sender%3C/span%3E) | | UPDATE | UPDATE | | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE |
 
+
 #<span style="color:skyblue; font-weight:bold">Planned Storage from Host</span>
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
@@ -494,7 +495,8 @@ inoutstationoperator--I-->id26-insert
 
 After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
 
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.asrs.communication.id.recv.As21Id26` &nbsp;</span>
 
 # <span style="color:skyblue; font-weight:bold">Table Value</span>
 
@@ -515,7 +517,9 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **LAST_UPDATE_PNAME**      | ClassName
 
 ##<span style="color:skyblue; font-weight:bold">Automatic Mode Change Sender</span>
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.AutomaticModeChangeSender &nbsp;</span>
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.asrs.transmission.AutomaticModeChangeSender` &nbsp;</span>
 
 ::: mermaid
 flowchart LR
