@@ -114,7 +114,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **RECEIVE_LINE_NO**        |                                                       
 | **RECEIVE_TICKET_DATE**    |                                                       
 | **BRANCH_NO**              |                                                         
-| **PLAN_AREA_NO**           | ⟶ <span style="color:yellow; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>                                                       
+| **PLAN_AREA_NO**           | Value from screen (Storage Location) ⟶ <span style="color:yellow; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>                                                       
 | **PLAN_LOCATION_NO**       |                                                       
 | **MATERIAL_CODE**          | Value from screen (Material Code)                                                      
 | **PLAN_LOT_NO**            |                                                       
