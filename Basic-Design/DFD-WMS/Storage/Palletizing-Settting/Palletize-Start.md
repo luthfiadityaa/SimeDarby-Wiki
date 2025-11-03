@@ -167,7 +167,7 @@ This section explains the validations for the whole proccess Palletize Start
 |----------------------------|-------------------------------------------------------|
 | **STOCK_ID**               | Sequence Object   
 | **AREA_NO**                | DNSTORAGEPLAN.PLAN_AREA_NO
-| **LOCATION_NO**            | 222222222222
+| **LOCATION_NO**            |
 | **LOT_NO**                 | 
 | **STORAGE_TYPE**           | 2:New 
 | **NOTE**                   |
@@ -181,10 +181,10 @@ This section explains the validations for the whole proccess Palletize Start
 | **PLAN_QTY**               | Value from screen (Planned Carton Qty)
 | **PALLET_ID**              | Sequence Object
 | **BATCH_NO**               | Value from screen (Batch)
-| **STOCK_STATUS**           | UU: Unrestricted Used
-| **QC_DURATION**            | 0: Not Reached
-| **TEMPERING_FLAG**         | 0: Not Reached
-| **QC_FLAG**                | Not Done
+| **STOCK_STATUS**           | <span style="color:yellow; font-weight:bold">UU: Unrestricted Used</span>
+| **QC_DURATION**            | <span style="color:yellow; font-weight:bold">0: Not Reached</span>
+| **TEMPERING_FLAG**         | <span style="color:yellow; font-weight:bold">0: Not Reached</span>
+| **QC_FLAG**                | <span style="color:yellow; font-weight:bold">Not Done</span>
 | **TEMPERING_PERIOD**       | Value from screen (Tempering Period)
 | **STORING_PAIR_KEY**       | Value from screen (Material Code + Batch #)
 | **EXPIRY_DATE**            | Value from Screen (Expiry Days)
