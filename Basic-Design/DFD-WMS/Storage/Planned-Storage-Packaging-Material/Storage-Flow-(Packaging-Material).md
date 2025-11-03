@@ -4,7 +4,7 @@
 |Action Name| DNSTORAGEPLAN | DNPALLET | DNWORKINFO | DNWORKLIST | DNCARRYINFO | DNSTOCK | DNHOSTSEND | DNARRIVAL | DMWAREHOUSE | DMSHELF |
 |-----------|--|--|--|--|--|--|--|--|--|--|
 | [ID26]() | | | | | | | | INSERT | | |
-| [Automatic Mode Change Sender]() | | UPDATE | UPDATE | | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE |
+| [StorageStationOperator]() | | UPDATE | UPDATE | | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE |
 | [ID25]() | | | | | UPDATE | | | UPDATE | | |
 | [ID64]() | | | | | UPDATE | | | | | |
 
@@ -26,15 +26,16 @@ ID 26
 
 id26-insert[("
 DNARRIVAL
+StationOperator.registArrival()
 ")]
 
-inoutstationoperator[InOutStationOperator]
+StorageStationOperator[StorageStationOperator]
 
-releaseCommand-->id26msg-->id26process-->inoutstationoperator
-inoutstationoperator--I-->id26-insert
+releaseCommand-->id26msg-->id26process-->StorageStationOperator
+StorageStationOperator--> |INSERT| id26-insert
 :::
 
-After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
+After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let StorageStationOperator picks up the data.
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.asrs.communication.id.recv.As21Id26` &nbsp;</span>
@@ -57,14 +58,14 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-#<span style="color:skyblue; font-weight:bold">Automatic Mode Change Sender</span>
+#<span style="color:skyblue; font-weight:bold">StorageSender</span>
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.asrs.transmission.AutomaticModeChangeSender` &nbsp;</span>
+`jp.co.daifuku.asrs.transmission.StorageSender` &nbsp;</span>
 
 ::: mermaid
 flowchart LR
-automaticmodechangesender-update[("
+StorageSender-update[("
 DNARRIVAL
 DNCARRYINFO
 DMWAREHOUSE
@@ -73,7 +74,7 @@ DNPALLET
 DNSTOCK
 DNWORKINFO
 ")]
-automaticmodechangesender-input[("
+StorageSender-input[("
 DNARRIVAL
 DNCARRYINFO
 ")]
@@ -82,8 +83,8 @@ id05msg("
 ID 05
 ")
 
-automaticmodechangesender-input-->automaticmodechangesender-->id05msg
-automaticmodechangesender--> |UPDATE| automaticmodechangesender-update
+StorageSender-input-->StorageSender-->id05msg
+StorageSender--> |UPDATE| StorageSender-update
 :::
 
 After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, Automatic Mode Change Sender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">1:Started to 2:Waiting for Response.</span>
@@ -207,3 +208,20 @@ Upon equipment have picked up the Pallet successfully, ID64 will be sent from AG
 | LAST_UPDATE_PNAME          | Class name
 
 #<span style="color:skyblue; font-weight:bold">ID26</span>
+::: mermaid
+flowchart LR
+
+
+id26msg("
+ID 26
+")
+
+id26-insert[("
+DNARRIVAL
+")]
+
+inoutstationoperator[InOutStationOperator]
+
+id26msg-->id26process-->inoutstationoperator
+inoutstationoperator--INSERT-->id26-insert
+:::
