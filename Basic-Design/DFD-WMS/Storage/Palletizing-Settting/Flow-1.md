@@ -120,7 +120,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **HARDWARE_TYPE**     | 3: ASRS
 | **PLAN_LOCATION_NO**  | Reserved Location Number
 | **LAST_UPDATE_DATE**  | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME   | Class name
+| **LAST_UPDATE_PNAME**   | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
 | **Field Name**            | **Insert Value**                               |
@@ -239,9 +239,11 @@ id33process-.D.->id33-delete
 
 ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage operation of the pallet is completed by SRM.
 
-## DMSHELF
-- STATUS_FLAG = 1:Occupied
-- LAST_UPDATE_DATE = SYSTIMESTAMP
+####<span style="color:skyblue; font-weight:bold">DMShelf</span>
+| **Field Name**            | **Insert Value**                               |
+|----------------------------|-------------------------------------------------------|
+| **STATUS_FLAG**       | 1: Occupied
+| **LAST_UPDATE_DATE**  | SYSTIMESTAMP
 
 ## DNPALLET
 - CURRENT_STATION_NO = Location Number information from ID33
