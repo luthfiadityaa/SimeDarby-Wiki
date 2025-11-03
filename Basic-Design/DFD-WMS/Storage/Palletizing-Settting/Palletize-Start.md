@@ -231,7 +231,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **RESULT_NO**              |
 | **WORK_NOTE**              |
 | **SKIP_CNT**               |
-| **WORK_DAY**               |
+| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **USER_ID**                | Login Info
 | **TERMINAL_NO**            |
 | **WORK_SECOND**            |
