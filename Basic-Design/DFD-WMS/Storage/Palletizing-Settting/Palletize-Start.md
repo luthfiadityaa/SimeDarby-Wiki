@@ -74,7 +74,7 @@ This section explains the validations for the whole proccess Palletize Start
 
 ###<span style="color:skyblue; font-weight:bold">DNPalletize</span>
 
-| **Column Name**                | **Description / Notes**                               |
+| **Field Name**                | **Insert Value**                               |
 |--------------------------------|-------------------------------------------------------|
 | **STATION_NO**                 | Value from screen (Station No)
 | **CURRENT_STATUS**             | Value from screen (Current Status)
