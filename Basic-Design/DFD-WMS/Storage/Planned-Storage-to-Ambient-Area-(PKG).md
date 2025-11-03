@@ -1,13 +1,15 @@
 [[_TOC_]]
 
-# Planned Storage Setting (PKG) database flow
+#<span style="color:skyblue; font-weight:bold">Planned Storage Setting (PKG) database flow</span>
 
-|Action Name| DNSTORAGEPLAN | DNPALLET | DNWORKINFO | DNWORKLIST | DNCARRYINFO | DNSTOCK | DNHOSTSEND |
-|-----------|--|--|--|--|--|--|--|
+|Action Name| DNSTORAGEPLAN | DNPALLET | DNWORKINFO | DNWORKLIST | DNCARRYINFO | DNSTOCK | DNHOSTSEND | DNARRIVAL |
+|-----------|--|--|--|--|--|--|--|--|
 | [Planned Storage from Host](#planned-storage-from-host) | INSERT| | | | | | |
-| [Planned Storage - Set (F2)](#planned-storage---set-(f2)) | UPDATE| INSERT | INSERT | INSERT | INSERT | INSERT | INSERT |
+| [Planned Storage - Set (F2)](#planned-storage---set-(f2)) | UPDATE| INSERT | INSERT | INSERT | INSERT | INSERT | INSERT | |
+| [ID26](#ID26) | | | | | | | | INSERT |
 
-# Planned Storage from Host
+#<span style="color:skyblue; font-weight:bold">Planned Storage from Host</span>
+
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wms.web.display.storage.plannedstoragepkg.PlannedStoragePkgSCH` &nbsp;</span>
 
@@ -32,7 +34,7 @@ HostCommExecutor-->FileExchange
 FileExchange--INSERT-->FileExchange-insert
 :::
 
-## StoragePlanPkgDataLoader
+##<span style="color:skyblue; font-weight:bold">StoragePlanPkgDataLoader</span>
 - Document Number
 - Company Code
 - Vendor
@@ -47,9 +49,9 @@ FileExchange--INSERT-->FileExchange-insert
 
 Upon receiving new Plan Storage from Host system, WareNavi will insert related planned information to DNSTORAGEPLAN database table.
 
-### DNSTORAGEPLAN (INSERT)
+### <span style="color:skyblue; font-weight:bold">DNSTORAGEPLAN (INSERT)</span>
 
-| **Column Name**            | **Description / Notes**                           |
+| **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **PLAN_UKEY**              | Sequence Object                                                       
 | **LOAD_UNIT_KEY**          |                                                       
@@ -89,7 +91,7 @@ Upon receiving new Plan Storage from Host system, WareNavi will insert related p
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-# Planned Storage - Set (F2)
+#<span style="color:skyblue; font-weight:bold">Planned Storage - Set (F2)</span>
 Planned Storage Setting (PKG) is used to set the information of stock which will be entered into ASRS. After **Set(F2)** all item in input text will be process and the result will be posted back to SAP.
 ![image.png](/.attachments/image-731303e9-dc65-4f98-ba82-ba6d13a6c58b.png)
 
@@ -133,14 +135,20 @@ flowchart LR
 
 :::
 
-# **Validations**
+# <span style="color:skyblue; font-weight:bold">Validations</span>
 This section explains the validations for the whole proccess Palletize Start
+- AGC is online.  <span style="color:green; font-weight:bold">(DMGroupController.STATUS_FLAG.ONLINE)</span>
 - Material Code exists in **DMMaterialMaster**
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
+- Pallet Information does not exist in <span style="color:green; font-weight:bold">DNCARRYINFO.</span>  
+  To check for Pallet Information:  
+  <span style="color:green; font-weight:bold">JOIN DNCARRYINFO.PALLET_ID = DNPALLET.PALLET_ID  
+  CONDITION DNPALLET.BCR_DATA = <Pallet Number> </span>  
+  So if result > 0, Palletize Start cannot proceed.
 
-# **Table Value**
+# <span style="color:skyblue; font-weight:bold">Table Value</span>
 
-### DNSTORAGEPLAN (UPDATE)
+### <span style="color:skyblue; font-weight:bold">DNSTORAGEPLAN (UPDATE)</span>
 | **Column Name**            | **Description / Notes**                           |
 |----------------------------|---------------------------------------------------|
 | **PLAN_UKEY**              | Sequence Object                                                       
@@ -181,7 +189,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-### DNPallet (INSERT)
+### <span style="color:skyblue; font-weight:bold">DNPallet (INSERT)</span>
 | **Column Name**            | **Description / Notes**                           |
 |----------------------------|-------------------------------------------------------|
 | **PALLET_ID**              | Sequence Object                                                       
@@ -204,7 +212,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-### DNWorkInfo (INSERT)
+### <span style="color:skyblue; font-weight:bold">DNWorkInfo (INSERT)</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **JOB_NO**                 | Sequence Object
@@ -265,7 +273,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-### DNWorkList (INSERT)
+### <span style="color:skyblue; font-weight:bold">DNWorkList (INSERT)</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **JOB_NO**                 | DNWORKINFO.JOB_NO
@@ -327,7 +335,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP 
 | **LAST_UPDATE_PNAME**      | ClassName
 
-### DNCarryInfo (INSERT)
+### <span style="color:skyblue; font-weight:bold">DNCarryInfo (INSERT)</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **CARRY_KEY**              | DNWORKINFO.SYSTEM_CONN_KEY
@@ -363,8 +371,8 @@ This section explains the validations for the whole proccess Palletize Start
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-### DNStock (INSERT)
-| **Column Name**            | **Description / Notes**                           |
+### <span style="color:skyblue; font-weight:bold">DNStock (INSERT)</span>
+| **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **STOCK_ID**               | DNWORKINFO.STOCK_ID  
 | **AREA_NO**                | DNSTORAGEPLAN.AREA_NO
@@ -399,7 +407,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-### DNHostSend (INSERT)
+### <span style="color:skyblue; font-weight:bold">DNHostSend (INSERT)</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **WORK_DAY**               | DNWORKINFO.WORK_DAY
@@ -459,6 +467,33 @@ This section explains the validations for the whole proccess Palletize Start
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
+##<span style="color:skyblue; font-weight:bold">ID26</span>
+
+::: mermaid
+flowchart LR
+
+releaseCommand["
+Release Command from Palletize Robot
+After Completion 
+"]
+
+id26msg("
+ID 26
+")
+
+id26-insert[("
+DNARRIVAL
+")]
+
+inoutstationoperator[InOutStationOperator]
+
+releaseCommand-->id26msg-->id26process-->inoutstationoperator
+inoutstationoperator--I-->id26-insert
+:::
+
+After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
 
 # User Story
   - [DFD Storage Packaging Material](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5784)
