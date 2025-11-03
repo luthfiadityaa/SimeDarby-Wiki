@@ -254,7 +254,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **LAST_UPDATE_PNAME**      | ClassName
 
 ###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Column Name**                | **Description / Notes**                               |
+| **Field Name**                | **Insert Value**                               |
 |--------------------------------|-------------------------------------------------------|
 | **CARRY_KEY**                  | Sequence Object  
 | **PALLET_ID**                  | DNPALLET.PALLET_ID
