@@ -185,7 +185,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **CMD_STATUS**                 | 1:Started 
 | **PRIORITY**                   | 2:Normal
 | **RESTORING_FLAG**             | 0:Not Restore to Original Location
-| **CARRY_FLAG**                 | 1:Storage
+| **CARRY_FLAG**                 | 3: Direct Transfer
 | **WORK_NO**                    | Sequence Object
 | **SOURCE_STATION_NO**          | DNPALLET.CURRENT_STATION_NO
 | **DEST_STATION_NO**            | <span style="color:yellow; font-weight:bold">SOURCE_STATION_NO where a reserved location belongs to ⟶ (1111/1112/1113/1114/1115)</span>
@@ -493,29 +493,30 @@ After successful creation of arrival record in <span style="color:green; font-we
 |----------------------------|-------------------------------------------------------|
 | **WORK_TYPE**                  | 26: Direct Transfer
 | **CMD_STATUS**                 | 2: Waiting for response
+| **CARRY_FLAG**                 | 3: Direct Transfer
 | **DEST_STATION_NO**            | <span style="color:yellow; font-weight:bold">SOURCE_STATION_NO where a reserved location belongs to ⟶ (8101/8102/8103)</span>
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
-| **Column Name**            | **Description / Notes**                               |
+| **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
-| LAST_UPDATE_DATE           | SYSTIMESTAMP
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
-| **Column Name**            | **Description / Notes**                               |
+| **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
-| LAST_UPDATE_DATE           | SYSTIMESTAMP
-| LAST_UPDATE_PNAME          | Class name
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**          | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
-| **Column Name**            | **Description / Notes**                               |
+| **Fiekd Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
-| LAST_UPDATE_DATE           | SYSTIMESTAMP
-| LAST_UPDATE_PNAME          | Class name
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**          | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNArrival</span>
-| **Column Name**            | **Description / Notes**                               |
+| **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
 | CARRY_KEY                  | DNCARRYINFO.CARRY_KEY
 | SEND_FLAG                  | 1:Sent
