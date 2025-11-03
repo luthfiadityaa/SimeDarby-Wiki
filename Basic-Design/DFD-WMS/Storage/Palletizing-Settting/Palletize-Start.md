@@ -290,7 +290,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **LAST_UPDATE_PNAME**          | ClassName
 
 ###<span style="color:skyblue; font-weight:bold">DNWorkList</span>
-| **Column Name**            | **Description / Notes**                               |
+| **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
 | **JOB_NO**                 | DNWORKINFO.JOB_NO
 | **CARRY_KEY**              | DNCARRYINFO.CARRY_KEY
