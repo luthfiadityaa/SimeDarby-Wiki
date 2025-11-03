@@ -585,62 +585,6 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 | **LAST_UPDATE_DATE**  	| SYSTIMESTAMP
 | **LAST_UPDATE_PNAME** 	|Class name
 
-
-###<span style="color:skyblue; font-weight:bold">ID64</span>
-jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process
-
-::: mermaid
-flowchart LR
-
-id64("
-ID 64
-")
-
-id64-update[("
-DNCARRYINFO
-")]
-
-id64-->id64process
-id64process--> |UPDATE| id64-update
-:::
-
-Upon equipment <span style="color:green; font-weight:bold">SRM</span> have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
-###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Field Name**            | **Insert Value**                               |
-|---------------------------|-----------------------------------------------|
-| **CMD_STATUS**            | 4:Pickup completed
-| **LAST_UPDATE_DATE**      | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME** 	| Class name
-
-##<span style="color:skyblue; font-weight:bold">ID64</span>
-jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process
-
-::: mermaid
-flowchart LR
-
-id64("
-ID 64
-")
-
-id64-update[("
-DNCARRYINFO
-")]
-
-id64-->id64process
-id64process--> |UPDATE| id64-update
-:::
-
-Upon equipment <span style="color:green; font-weight:bold">STV</span> have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
-###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Field Name**            | **Insert Value**                              |
-|---------------------------|-----------------------------------------------|
-| **CMD_STATUS**            | 4:Pickup completed
-| **LAST_UPDATE_DATE**      | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME** 	| Class name
-
-##<span style="color:skyblue; font-weight:bold">ID26</span>
 ##<span style="color:skyblue; font-weight:bold">ID25</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process &nbsp;</span>
 
