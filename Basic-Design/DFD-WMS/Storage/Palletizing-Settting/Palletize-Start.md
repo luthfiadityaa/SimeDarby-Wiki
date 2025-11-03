@@ -270,7 +270,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **RETRIEVAL_DETAIL**           |
 | **WORK_NO**                    | Sequence Object
 | **SOURCE_STATION_NO**          | DNPALLET.CURRENT_STATION_NO
-| **DEST_STATION_NO**            | Decided Value based on from SOURCE_STATION_NO ⟶ (1111/1112/1113/1114/1115)
+| **DEST_STATION_NO**            | <span style="color:yellow; font-weight:bold">Decided Value based on from SOURCE_STATION_NO ⟶ (1111/1112/1113/1114/1115)</span>
 | **ARRIVAL_DATE**               |
 | **CONTROLINFO**                |
 | **CANCEL_REQUEST**             | 0:Not Requested
