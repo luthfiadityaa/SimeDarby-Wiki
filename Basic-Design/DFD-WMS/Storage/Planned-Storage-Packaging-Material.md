@@ -151,7 +151,7 @@ This section explains the Storage flow after the operation of Planned Storage Pa
 ##[Storage Flow](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/942/Storage-Flow-(Packaging-Material))
 
 
-# <span style="color:skyblue; font-weight:bold">Table Value</span>
+## <span style="color:skyblue; font-weight:bold">Table Value</span>
 
 ### <span style="color:skyblue; font-weight:bold">DNSTORAGEPLAN (UPDATE)</span>
 | **Column Name**            | **Description / Notes**                           |
