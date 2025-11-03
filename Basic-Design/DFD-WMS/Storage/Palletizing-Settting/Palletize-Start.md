@@ -418,7 +418,7 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 flowchart LR
 
 releaseCommand["
-Continue the Process
+Continue the Process Direct Transfer
 "]
 
 id26msg("
