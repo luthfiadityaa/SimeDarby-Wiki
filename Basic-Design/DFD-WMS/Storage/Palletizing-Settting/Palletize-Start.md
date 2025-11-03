@@ -143,8 +143,8 @@ This section explains the validations for the whole proccess Palletize Start
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **PALLET_ID**              | Sequence Object                                                       
-| **CURRENT_STATION_NO**     | Selected Value from screen ➡️ (1101/1102/1103/1104/1105)                                                       
-| **WH_STATION_NO**          | Value from screen (Storage Location) ➡️ FGW1 (Ambient/9002) or FGW2 (Tempering/9001)                                                      
+| **CURRENT_STATION_NO**     | <span style="color:yellow; font-weight:bold">Selected Value from screen ➡️ (1101/1102/1103/1104/1105)</span>                                                       
+| **WH_STATION_NO**          | <span style="color:yellow; font-weight:bold">Value from screen (Storage Location) ➡️ FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>                                                      
 | **STATUS_FLAG**            | 1:Reserved for Storage                                                      
 | **ALLOCATION_FLAG**        |                                                       
 | **EMPTY_FLAG**             | 0:Normal Pallet                                                       
