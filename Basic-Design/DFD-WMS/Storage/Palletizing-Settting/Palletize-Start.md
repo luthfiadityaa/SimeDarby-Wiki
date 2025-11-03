@@ -163,10 +163,10 @@ This section explains the validations for the whole proccess Palletize Start
 | **LAST_UPDATE_PNAME**      | ClassName
 
 ###<span style="color:skyblue; font-weight:bold">DNStock</span>
-| **Column Name**            | **Description / Notes**                               |
+| **field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
 | **STOCK_ID**               | Sequence Object   
-| **AREA_NO**                | <span style="color:yellow; font-weight:bold">
+| **AREA_NO**                | DNPALLETIZE.STORAGE_LOCATION
 | **LOCATION_NO**            |
 | **LOT_NO**                 | 
 | **STORAGE_TYPE**           | 2:New 
@@ -178,16 +178,16 @@ This section explains the validations for the whole proccess Palletize Start
 | **INVENTORY_DAY**          |
 | **STOCK_QTY**              | 0
 | **ALLOCATION_QTY**         | 0
-| **PLAN_QTY**               | Value from screen (Planned Carton Qty)
+| **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL 
 | **PALLET_ID**              | Sequence Object
-| **BATCH_NO**               | Value from screen (Batch)
+| **BATCH_NO**               | DNPALLETIZE.BATCH_NO 
 | **STOCK_STATUS**           | <span style="color:yellow; font-weight:bold">UU: Unrestricted Used</span>
 | **QC_DURATION**            | <span style="color:yellow; font-weight:bold">0: Not Reached</span>
 | **TEMPERING_FLAG**         | <span style="color:yellow; font-weight:bold">0: Not Reached</span>
 | **QC_FLAG**                | <span style="color:yellow; font-weight:bold">Not Done</span>
-| **TEMPERING_PERIOD**       | Value from screen (Tempering Period)
-| **STORING_PAIR_KEY**       | <span style="color:yellow; font-weight:bold">Value from screen (Material Code + Batch #)</span>
-| **EXPIRY_DATE**            | Value from Screen (Expiry Days)
+| **TEMPERING_PERIOD**       | DNPALLETIZE.TEMPERING_PERIOD
+| **STORING_PAIR_KEY**       | <span style="color:yellow; font-weight:bold">DNPALLETIZE.MATERIAL_CODE + DNPALLETIZE.BATCH_NO </span>
+| **EXPIRY_DATE**            | DNPALLETIZE.EXPIRY_DAYS
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
