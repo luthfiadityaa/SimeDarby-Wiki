@@ -110,7 +110,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
 | **WORK_TYPE**                  | 2: Storage
-| **CMD_STATUS**                 | 1: Started
+| **CMD_STATUS**                 | 2: Waiting for Response
 | **CARRY_FLAG**                 | 1: Storage
 | **AISLE_STATION_NO**           | Aisle Number where a reserved location belongs to
 | **SOURCE_STATION_NO**          | DNARRIVAL.STATION_NO
