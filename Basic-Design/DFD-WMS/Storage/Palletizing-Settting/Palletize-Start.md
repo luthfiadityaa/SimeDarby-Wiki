@@ -107,27 +107,27 @@ This section explains the validations for the whole proccess Palletize Start
 | **FILE_LINE_NO**           |                                                       
 | **STATUS_FLAG**            | 1:Working                                                       
 | **CANCEL_FLAG**            | 0:Normal Data                                                      
-| **PLAN_DAY**               | Value from screen (Storage Date/Time)                                                      
+| **PLAN_DAY**               | DNPALLETIZE.BATCH_PALLET_START                                                      
 | **VENDOR_CODE**            |                                                       
 | **COMPANY_CODE**           |                                                       
 | **RECEIVE_TICKET_NO**      |                                                       
 | **RECEIVE_LINE_NO**        |                                                       
 | **RECEIVE_TICKET_DATE**    |                                                       
 | **BRANCH_NO**              |                                                         
-| **PLAN_AREA_NO**           | Value from screen (Storage Location) ⟶ <span style="color:yellow; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>                                                       
+| **PLAN_AREA_NO**           | DNPALLETIZE.STORAGE_LOCATION                                                       
 | **PLAN_LOCATION_NO**       |                                                       
-| **MATERIAL_CODE**          | Value from screen (Material Code)                                                      
+| **MATERIAL_CODE**          | DNPALLETIZE.MATERIAL_CODE                                                      
 | **PLAN_LOT_NO**            |                                                       
 | **NOTE**                   |                                                       
-| **PLAN_QTY**               | Value from screen (Planned Carton Qty)                                                       
-| **PROCESS_QTY**            | Value from screen (Qty crtn/PL)                                         
+| **PLAN_QTY**               | DNPALLETIZE.PLANNED_CARTON_QTY                                                       
+| **PROCESS_QTY**            | DNPALLETIZE.QTY_CRTN_PL                                         
 | **RESULT_QTY**             |                                                       
 | **SHORTAGE_QTY**           |                                                       
 | **REPORT_FLAG**            | 0:Not Reported                                                      
 | **WORK_DAY**               |                                                       
 | **REGIST_KIND**            |                                                       
 | **BCR_DATA**               |                                                        
-| **STORING_PAIR_KEY**       | <span style="color:yellow; font-weight:bold">Value from screen (Material Code + Batch #)</span>  
+| **STORING_PAIR_KEY**       | <span style="color:yellow; font-weight:bold">DNPALLETIZE.MATERIAL_CODE + DNPALLETIZE.BATCH_NO</span>  
 | **MSG_ID**                 |
 | **MSG_TYPE**               |
 | **MSG_ID_ORI**             |
@@ -143,8 +143,8 @@ This section explains the validations for the whole proccess Palletize Start
 | **Field Name**            | **Insert Vlaue**                               |
 |----------------------------|-------------------------------------------------------|
 | **PALLET_ID**              | Sequence Object                                                       
-| **CURRENT_STATION_NO**     | <span style="color:yellow; font-weight:bold">Selected Value from screen ➡️ (1101/1102/1103/1104/1105)</span>                                                       
-| **WH_STATION_NO**          | <span style="color:yellow; font-weight:bold">Value from screen (Storage Location) ➡️ FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>                                                      
+| **CURRENT_STATION_NO**     | DNPALLETIZE.STATION_NO                                                       
+| **WH_STATION_NO**          | DNPALLETIZE.STORAGE_LOCATION                                                      
 | **STATUS_FLAG**            | 1:Reserved for Storage                                                      
 | **ALLOCATION_FLAG**        |                                                       
 | **EMPTY_FLAG**             | 0:Normal Pallet                                                       
@@ -166,7 +166,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **STOCK_ID**               | Sequence Object   
-| **AREA_NO**                | DNSTORAGEPLAN.PLAN_AREA_NO
+| **AREA_NO**                | <span style="color:yellow; font-weight:bold">
 | **LOCATION_NO**            |
 | **LOT_NO**                 | 
 | **STORAGE_TYPE**           | 2:New 
