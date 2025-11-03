@@ -103,3 +103,54 @@ automaticmodechangesender-input-->automaticmodechangesender-->id05msg
 automaticmodechangesender--> |UPDATE| automaticmodechangesender-update
 :::
 
+##<span style="color:skyblue; font-weight:bold">ID25</span>
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id25("
+ID 25
+")
+
+id25-update[("
+DNCARRYINFO
+")]
+id25-delete[("
+DNARRIVAL
+")]
+
+id25-->id25process
+id25process--> |UPDATE| id25-update
+id25process--> |DELETE| id25-delete
+:::
+
+ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+| **Field Name**            | **Insert Value**                               |
+|----------------------------|-------------------------------------------------------|
+| **CMD_STATUS**        | 3:Commanded
+| **ERROR_CODE**        | 0
+| **LAST_UPDATE_DATE**  | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME** |Class name
+
+
+###<span style="color:skyblue; font-weight:bold">ID64</span>
+jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process
+
+::: mermaid
+flowchart LR
+
+id64("
+ID 64
+")
+
+id64-update[("
+DNCARRYINFO
+")]
+
+id64-->id64process
+id64process--> |UPDATE| id64-update
+:::
