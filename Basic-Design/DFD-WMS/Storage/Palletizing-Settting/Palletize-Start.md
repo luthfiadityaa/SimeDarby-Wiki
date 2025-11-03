@@ -270,7 +270,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **RETRIEVAL_DETAIL**           |
 | **WORK_NO**                    | Sequence Object
 | **SOURCE_STATION_NO**          | DNPALLET.CURRENT_STATION_NO
-| **DEST_STATION_NO**            | Decided Value based on from SOURCE_STATION_NO ➡️ (1111/1112/1113/1114/1115)
+| **DEST_STATION_NO**            | Decided Value based on from SOURCE_STATION_NO ⟶ (1111/1112/1113/1114/1115)
 | **ARRIVAL_DATE**               |
 | **CONTROLINFO**                |
 | **CANCEL_REQUEST**             | 0:Not Requested
@@ -293,7 +293,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **JOB_NO**                 | DNWORKINFO.JOB_NO
-| **CARRY_KEY**              |
+| **CARRY_KEY**              | DNCARRYINFO.CARRY_KEY
 | **SETTING_UNIT_KEY**       | DNWORKINFO.SETTING_UNIT_KEY
 | **COLLECT_JOB_NO**         | DNWORKINFO.COLLECT_JOB_NO
 | **JOB_TYPE**               | DNWORKINFO.JOB_TYPE
