@@ -278,7 +278,7 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **LAST_UPDATE_PNAME        | Class name
 
 ####<span style="color:skyblue; font-weight:bold"> DNStoragePlan </span>
-<span style="color:red; font-weight:bold; font-size:12px">*(If DNSTORAGEPLAN.RESULT_QTY = DNSTORAGEPLAN.PLAN_QTY then update Status to completed)</span>
+<span style="color:red; font-weight:bold; font-size:12px">*If DNSTORAGEPLAN.RESULT_QTY = DNSTORAGEPLAN.PLAN_QTY then update Status to completed</span>
 | **Field Name**             | **Insert Value**                                      |
 |----------------------------|-------------------------------------------------------|
 | **STATUS_FLAG**            | 4: Completed
@@ -288,7 +288,8 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | Class name
 
-## DNSTOCKHISTORY
+## DNSTOCKHISTORY  
+<span style="color:red; font-weight:bold; font-size:12px">*Tempering Flag is only valid for Storage location: Tempering</span>
 | **Field Name**             | **Insert Value**                                      |
 |----------------------------|-------------------------------------------------------|
 | **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
@@ -313,8 +314,11 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **TERMINAL_NO**            | Login info
 | **TERMINAL_NAME**          | Login info
 | **IP_ADDRESS**             | Login info
-- MANUFACTURING_DATE = DNSTOCK.MANUFACTURING_DATE
-- EXPIRY_DATE = DNSTOCK.EXPIRY_DATE
+| **STOCK_STATUS**           | <span style="color:yellow; font-weight:bold">UU: Unrestricted Used</span>
+| **QC_DURATION**            | <span style="color:yellow; font-weight:bold">0: Not Reached</span>
+| **TEMPERING_FLAG**         | <span style="color:yellow; font-weight:bold">0: Not Reached</span>
+| **QC_FLAG**                | <span style="color:yellow; font-weight:bold">Not Done</span>
+| **EXPIRY_DATE**            | DNWORKINFO.EXPIRY_DAYS
 | **REGIST_DATE**            | SYSTIMESTAMP
 | **REGIST_PNAME**           | Class name
 
