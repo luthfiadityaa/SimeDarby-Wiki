@@ -342,7 +342,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Column Name**            | **Description / Notes**                               |
+| **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
 | AISLE_STATION_NO           | Aisle Number where a reserved location belongs to
 | CMD_STATUS                 | 2:Waiting for response
@@ -350,10 +350,10 @@ After successful creation of arrival record in <span style="color:green; font-we
 | LAST_UPDATE_PNAME          | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
-| **Column Name**            | **Description / Notes**                               |
+| **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
-| PLAN_LOCATION_NO           | Reserved Location Number
-| LAST_UPDATE_DATE           | SYSTIMESTAMP
+| **PLAN_LOCATION_NO**       | Reserved Location Number
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
 | **Column Name**            | **Description / Notes**                               |
