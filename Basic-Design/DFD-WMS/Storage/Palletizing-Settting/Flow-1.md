@@ -30,7 +30,7 @@ Upon equipment have picked up the Pallet successfully, ID64 will be sent from AG
 flowchart LR
 
 releaseCommand["
-Continue the Process Direct Transfer
+Continue the Process from Direct Transfer
 "]
 
 id26msg("
@@ -96,24 +96,29 @@ automaticmodechangesender-input-->automaticmodechangesender-->id05msg
 automaticmodechangesender--> |UPDATE| automaticmodechangesender-update
 :::
 
-After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, Automatic Mode Change Sender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">3: Commanded to 2: Waiting for Response.</span>
+After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, Automatic Mode Change Sender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">3: Commanded to 1: Started. </span>
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
-| **WORK_TYPE**                  | 26: Direct Transfer
-| **CMD_STATUS**                 | 2: Waiting for response
-| **CARRY_FLAG**                 | 3: Direct Transfer
-| **DEST_STATION_NO**            | <span style="color:yellow; font-weight:bold">SOURCE_STATION_NO where a reserved location belongs to ⟶ (7101, 7102, 7103, 7104, 7105, 7106, 7107, 7108, 7109, 7110) </span>
+| **WORK_TYPE**                  | 2: Storage
+| **CMD_STATUS**                 | 1: Started
+| **CARRY_FLAG**                 | 1: Storage
+| **SOURCE_STATION_NO**          | DNARRIVAL.STATION_NO
+| **DEST_STATION_NO**            | Aisle Number where a reserved location belongs to
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 | **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+| **STATUS_FALG**       | 1: Working 
+| **SYSTEM_CONN_KEY**   | Sequence object
+| **HARDWARE_TYPE**     | 3: ASRS
+| **LAST_UPDATE_DATE**  | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME   | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
 | **Field Name**            | **Insert Value**                               |
