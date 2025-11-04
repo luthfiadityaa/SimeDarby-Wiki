@@ -80,9 +80,14 @@ flowchart LR
         DNWORKLIST 
     ")]
 
+     tableList-select[("
+        DMMATERIALMASTER
+    ")]
+
     className[PalletizingSettingSCH]
 
     input --> className --> |INSERT| tableList-insert
+    className --> |SELECT| tableList-select
 
     classDef leftAlign text-align:left;
     class input leftAlign;
