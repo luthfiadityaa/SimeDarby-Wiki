@@ -14,6 +14,7 @@
 - WRHS : DMWAREHOUSE
 - SHLF : DMSHELF
 - MTMS : DMATERIALMASTER
+- STSN : DMSTATION
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start database flow</span>
 | Action Name                        | PLTZ | STRP | WRKI | WRKL | PLLT | CRYI | STCK | HSTS | ARRVL | WRHS | SHLF | MTMS |
