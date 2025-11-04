@@ -112,6 +112,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **STATUS_FLAG**            | 0:Not Started
 | **PLAN_UKEY**              | Sequence Object
 | **STOCK_ID**               | Sequence Object
+| **PLAN_AREA_NO**           | Value from screen (Storage Location) ⟶ <span style="color:yellow; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>
 | **PLAN_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **BATCH_NO**               | Value from screen (Batch No)
 | **MATERIAL_CODE**          | Value from screen (Material Code) 
