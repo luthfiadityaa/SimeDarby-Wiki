@@ -18,7 +18,17 @@
 | ID25 |
 | ID64 |
 | **Flow 2** |
-
+| ID64 |
+| ID26 |
+| Automatic Mode Change Sender |
+| ID25 |
+| ID64 |
+| ID64 |
+| ID26 |
+| Automatic Mode Change Sender |
+| ID25 |
+| ID64 |
+| ID33 |
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start - Set(F2)</span>
 
