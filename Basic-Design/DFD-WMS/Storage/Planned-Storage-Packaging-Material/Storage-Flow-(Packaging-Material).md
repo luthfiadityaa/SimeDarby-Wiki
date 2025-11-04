@@ -227,3 +227,67 @@ id26msg-->id26process-->StorageStationOperator
 StorageStationOperator--> |INSERT| id26-insert
 :::
 
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.asrs.communication.id.recv.As21Id26` &nbsp;</span>
+
+##<span style="color:skyblue; font-weight:bold">Table Value</span>
+
+####<span style="color:skyblue; font-weight:bold">DNARRIVAL (INSERT)</span>
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| **ARRIVAL_DATE**           | SYSTIMESTAMP 
+| **STATION_NO**             | Arrival Station Number from ID26 
+| **CARRY_KEY**              | DNCARRYINFO.CARRY_KEY       
+| **BCR_DATA**               | Barcode information from ID26
+| **CONTROLINFO**            | Control information from ID26
+| **HEIGHT**                 | Dimension Information from ID26
+| **WIDTH**                  | Dimension Information From ID26
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
+
+#<span style="color:skyblue; font-weight:bold">ID33</span>
+
+::: mermaid
+flowchart LR
+id33-insert[("
+DNHOSTSEND
+DNSTOCKHISTORY
+")]
+id33-update[("
+DNPALLET
+DMSHELF
+DNWORKINFO
+DNSTORAGEPLAN
+")]
+id33-delete[("
+DNCARRYINFO
+")]
+
+id33msg-->id33process
+id33process--INSERT-->id33-insert
+id33process-.UPDATE.->id33-update
+id33process--DELETE--xid33-delet
+:::
+
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.asrs.communication.id.recv.As21Id26` &nbsp;</span>
+
+##<span style="color:skyblue; font-weight:bold">Table Value</span>
+
+####<span style="color:skyblue; font-weight:bold">DNARRIVAL (INSERT)</span>
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| **ARRIVAL_DATE**           | SYSTIMESTAMP 
+| **STATION_NO**             | Arrival Station Number from ID26 
+| **CARRY_KEY**              | DNCARRYINFO.CARRY_KEY       
+| **BCR_DATA**               | Barcode information from ID26
+| **CONTROLINFO**            | Control information from ID26
+| **HEIGHT**                 | Dimension Information from ID26
+| **WIDTH**                  | Dimension Information From ID26
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
