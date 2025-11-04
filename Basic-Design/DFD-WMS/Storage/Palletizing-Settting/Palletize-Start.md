@@ -255,15 +255,16 @@ ID 26
 
 id26-insert[("
 DNARRIVAL
+DNCARRYINFO
 ")]
 
-inoutstationoperator[InOutStationOperator]
+inoutstationoperator[StorageStationOperator]
 
 releaseCommand-->id26msg-->id26process-->inoutstationoperator
 inoutstationoperator--> |INSERT| id26-insert
 :::
 
-After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
+After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and Storage Station Operator will execute the receive task based on information in received ID26. While Storage Station Operator processes ID26, it will create an Arrival record.
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
 
