@@ -550,14 +550,14 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 | **LAST_UPDATE_DATE**  | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME** |Class name
 
-##Continue Process with
-###[Flow 1 - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/938/Flow-1)
-###[Flow 2 - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/940/Flow-2)
+#<span style="color:skyblue; font-weight:bold">Continue Process with</span>
+- ###[Flow 1 - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/938/Flow-1)
+- ###[Flow 2 - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/940/Flow-2)
 
-#User Story
+#<span style="color:skyblue; font-weight:bold">User Story</span>
 - [DFD Storage from Palletizing Area](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5783)
 
-#Related DFD
+#<span style="color:skyblue; font-weight:bold">Related DFD</span>
 - [Flow 1 - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/938/Flow-1)
 - [Flow 2 - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/940/Flow-2)
 - [Batch End - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/874/Batch-End)
