@@ -260,7 +260,7 @@ DNARRIVAL
 DNCARRYINFO
 ")]
 
-inoutstationoperator[StorageStationOperator]
+storageStationOperator[StorageStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
@@ -444,7 +444,7 @@ id26-insert[("
 DNARRIVAL
 ")]
 
-inoutstationoperator[InOutStationOperator]
+storageStationOperator[storageStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
@@ -819,7 +819,7 @@ id26-insert[("
 DNARRIVAL
 ")]
 
-inoutstationoperator[InOutStationOperator]
+storageStationOperator[storageStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
@@ -1015,7 +1015,7 @@ id26-insert[("
 DNARRIVAL
 ")]
 
-inoutstationoperator[InOutStationOperator]
+storageStationOperator[storageStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
