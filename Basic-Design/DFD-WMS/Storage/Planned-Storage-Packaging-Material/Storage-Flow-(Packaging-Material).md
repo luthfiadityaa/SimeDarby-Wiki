@@ -216,11 +216,13 @@ flowchart LR
 id33-insert[("
 DNHOSTSEND
 DNSTOCKHISTORY
+DNINOUTRESULT
 ")]
 id33-update[("
 DNPALLET
 DMSHELF
 DNWORKINFO
+DNSTOCK
 DNSTORAGEPLAN
 ")]
 id33-delete[("
@@ -239,17 +241,143 @@ id33process--DELETE--xid33-delete
 
 ##<span style="color:skyblue; font-weight:bold">Table Value</span>
 
-####<span style="color:skyblue; font-weight:bold">DNARRIVAL (INSERT)</span>
-| **Column Name**            | **Description / Notes**                               |
+####<span style="color:skyblue; font-weight:bold">DNHOSTSEND (INSERT)</span>
+| **Field Name**             | **Insert Value**                                      |
 |----------------------------|-------------------------------------------------------|
-| **ARRIVAL_DATE**           | SYSTIMESTAMP 
-| **STATION_NO**             | Arrival Station Number from ID26 
-| **CARRY_KEY**              | DNCARRYINFO.CARRY_KEY       
-| **BCR_DATA**               | Barcode information from ID26
-| **CONTROLINFO**            | Control information from ID26
-| **HEIGHT**                 | Dimension Information from ID26
-| **WIDTH**                  | Dimension Information From ID26
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
+| **WORK_DAY**               | DNWORKINFO.WORK_DAY
+| **JOB_NO**                 | DNWORKINFO.JOB_NO
+| **COLLECT_JOB_NO**         | DNWORKINFO.COLLECT_JOB_NO
+| **SETTING_UNIT_KEY**       | DNWORKINFO.SETTING_UNIT_KEY
+| **JOB_TYPE**               | DNWORKINFO.JOB_TYPE
+| **STATUS_FLAG**            | DNWORKINFO.STATUS_FLAG
+| **HARDWARE_TYPE**          | DNWORKINFO.HARDWARE_TYPE
+| **PLAN_UKEY**              | DNWORKINFO.PLAN_UKEY
+| **STOCK_ID**               | DNWORKINFO.STOCK_ID
+| **SYSTEM_CONN_KEY**        | DNWORKINFO.SYSTEM_CONN_KEY
+| **PLAN_DAY**               | DNWORKINFO.PLAN_DAY
+| **BATCH_NO**               | DNWORKINFO.BATCH_NO
+| **PLAN_AREA_NO**           | DNWORKINFO.PLAN_AREA_NO
+| **PLAN_LOCATION_NO**       | DNWORKINFO.PLAN_LOCATION_NO
+| **MATERIAL_CODE**          | DNWORKINFO.MATERIAL_CODE
+| **MATERIAL_NAME**          | DMMATERIALMASTER.MATERIAL_NAME
+| **UOM**                    | MMATERIALMASTER.UOM
+| **ENTERING_QTY**           | DMMATERIALMASTER.QTY_CRTN
+| **BUNDLE_ENTERING_QTY**    | DNPALLETIZE.PLANNED_CARTON_QTY
+| **PLAN_QTY**               | DNWORKINFO.PLAN_QTY
+| **RESULT_QTY**             | DNWORKINFO.RESULT_QTY
+| **SHORTAGE_QTY**           | DNWORKINFO.SHORTAGE_QTY
+| **RESULT_AREA_NO**         | DNWORKINFO.RESULT_AREA_NO
+| **RESULT_LOCATION_NO**     | DNWORKINFO.RESULT_LOCATION_NO
+| **RESULT_LOT_NO**          | DNWORKINFO.RESULT_LOT_NO
+| **USER_ID**                | DNWORKINFO.USER_ID
+| **TERMINAL_NO**            | DNWORKINFO.TERMINAL_NO
+| **WORK_SECOND**            | DNWORKINFO.WORK_SECOND
+| **USER_NAME**              | DCUSER.USERNAME
+| **REPORT_FLAG**            | 1:Reported
+| **REGIST_DATE**            | SYSTIMESTAMP
+| **REGIST_PNAME**           | Class name
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
+| **LAST_UPDATE_PNAME**      | Class name
+
+####<span style="color:skyblue; font-weight:bold">DNSTOCKHISTORY (INSERT) </span> 
+| **Field Name**             | **Insert Value**                                      |
+|----------------------------|-------------------------------------------------------|
+| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
+| **INC_DEC_TYPE**           | 1: Stock Increase
+| **JOB_TYPE**               | 2: Storage
+| **UPDATE_STOCK_QTY**       | DNSTOCK.STOCK_QTY
+| **INC_DEC_QTY**            | DNSTOCK.STOCK_QTY
+| **STOCK_ID**               | DNSTOCK.STOCK_ID
+| **AREA_NO**                | DNSTOCK.AREA_NO
+| **LOCATION_NO**            | DNSTOCK.LOCATION_NO
+| **STORAGE_DAY**            | DNSTOCK.STORAGE_DAY
+| **STORAGE_DATE**           | DNSTOCK.STORAGE_DATE
+| **NEWEST_STORAGE_DATE**    | DNSTOCK.NEWEST_STORAGE_DATE
+| **MATERIAL_CODE**          | DNSTOCK.MATERIAL_CODE
+| **PALLET_ID**              | DNSTOCK.PALLET_ID
+| **BCR_DATA**               | DNPALLET.BCR_DATA
+| **AREA_TYPE**              | DMAREA_AREA_TYPE
+| **MATERIAL_NAME**          | DMMATERIALMASTER.MATERIAL_NAME
+| **ENTERING_QTY**           | DMMATERIALMASTER.QTY_CRTN
+| **USER_ID**                | Login info
+| **USER_NAME**              | Login info
+| **TERMINAL_NO**            | Login info
+| **TERMINAL_NAME**          | Login info
+| **IP_ADDRESS**             | Login info
+| **STOCK_STATUS**           | UU: Unrestricted Used
+| **TEMPERING_FLAG**         | 0: Not Reached 
+| **QC_FLAG**                | 0: Not Done
+| **EXPIRY_DATE**            | DNWORKINFO.EXPIRY_DAYS
+| **REGIST_DATE**            | SYSTIMESTAMP
+| **REGIST_PNAME**           | Class name
+
+####<span style="color:skyblue; font-weight:bold">DNINOUTRESULT (INSERT)</span>
+| **Field Name**             | **Insert Value**                                      |
+|----------------------------|-------------------------------------------------------|
+| **RESULT_KIND**            | 1:Storage
+| **STATION_NO**             | DNCARRYINFO.SOURCE_STATION_NO
+| **LOCATION_NO**            | DNCARRYINFO.DEST_STATION_NO
+| **WH_STATION_NO**          | DNPALLET.WH_STATION_NO
+| **AISLE_STATION_NO**       | DNCARRYINFO.AISLE_STATION_NO
+| **WORK_TYPE**              | DNCARRYINFO.WORK_TYPE
+| **RETRIEVAL_DETAIL**       | DNCARRYINFO.RETRIEVAL_DETAIL
+| **WORK_NO**                | DNCARRYINFO.WORK_NO
+| **PALLET_ID**              | DNPALLET.PALLET_ID
+| **CARRY_KEY**              | DNCARRYINFO.CARRY_KEY
+| **RESTORING_FLAG**         | DNCARRYINFO.RESTORING_FLAG
+| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
+| **REMOVE_FLAG**            | 00:Normal
+| **REGIST_PNAME**           | Class name
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | Class name
+
+####<span style="color:skyblue; font-weight:bold">DNPALLET (UPDATE)</span>
+| **Field Name**             | **Insert Value**                                      |
+|----------------------------|-------------------------------------------------------|
+| **CURRENT_STATION_NO**     | Location Number information from ID33
+| **STATUS_FLAG**            | 2:Occupied
+| **ALLOCATION_FLAG**        | 0:Not allocated
+| **LAST_STORED_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | Class name
+
+####<span style="color:skyblue; font-weight:bold">DMSHELF (UPDATE)</span>
+| **Field Name**             | **Insert Value**                                      |
+|----------------------------|-------------------------------------------------------|
+| **STATUS_FLAG**            | 1: Occupied
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+
+####<span style="color:skyblue; font-weight:bold">DNWORKINFO (UPDATE)</span>
+| **Field Name**             | **Insert Value**                                      |
+|----------------------------|-------------------------------------------------------|
+| **RESULT_QTY**             | DNWORKINFO.PLAN_QTY
+| **RESULT_AREA_NO**         | DNWORKINFO.PLAN_AREA_NO
+| **RESULT_LOCATION_NO**     | DNWORKINFO.PLAN_LOCATION_NO
+| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
+| **STATUS_FLAG**            | 4:Completed
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | Class name
+
+####<span style="color:skyblue; font-weight:bold">DNSTOCK (UPDATE)</span>
+| **Field Name**             | **Insert Value**                                      |
+|----------------------------|-------------------------------------------------------|
+| **STORAGE_DAY**            | DMWARENAVISYSTEM.WORK_DAY
+| **NEWEST_STORAGE_DATE**    | SYSTIMESTAMP
+| **STOCK_QTY**              | DNSTOCK.PLAN_QTY
+| **ALLOCATION_QTY**         | DNWORKINFO.RESULT_QTY
+| **PLAN_QTY**               | 0
+| **STOCK_STATUS**           | UU: Unrestricted Used
+| **TEMPERING_FLAG**         | 0: Not Reached
+| **QC_FLAG**                | 0: Not Done
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | Class name
+
+####<span style="color:skyblue; font-weight:bold"> DNSTORAGEPLAN (UPDATE)</span>
+| **Field Name**             | **Insert Value**                                      |
+|----------------------------|-------------------------------------------------------|
+| **STATUS_FLAG**            | 4: Completed
+| **RESULT_QTY**             | DNSTORAGEPLAN.RESULT_QTY + DNWORKINFO.RESULT_QTY
+| **SHORTAGE_QTY**           | DNSTORAGEPLAN.SHORTAGE_QTY + DNWORKINFO.SHORTAGE_QTY
+| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | Class name
