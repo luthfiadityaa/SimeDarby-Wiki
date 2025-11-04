@@ -87,6 +87,7 @@ This section explains the validations for the whole proccess Palletize Start
 |----------------------------|-----------------------------------------------|
 | **STOCK_ID**               | Sequence Object   
 | **AREA_NO**                | Value from screen (Storage Location) ⟶ <span style="color:yellow; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>
+| **LOCATION_NO**            | 22222222
 | **STORAGE_TYPE**           | 2:New 
 | **STOCK_QTY**              | 0
 | **ALLOCATION_QTY**         | 0
@@ -107,14 +108,13 @@ This section explains the validations for the whole proccess Palletize Start
 | **JOB_NO**                 | Sequence Object
 | **SETTING_UNIT_KEY**       | Sequence Object
 | **COLLECT_JOB_NO**         | Sequence Object
-| **JOB_TYPE**               | 02:Storage
+| **JOB_TYPE**               | 22:Unplanned Storage
 | **STATUS_FLAG**            | 0:Not Started
-| **PLAN_UKEY**              | DNSTORAGEPLAN.PLAN_UKEY
+| **PLAN_UKEY**              | Sequence Object
 | **STOCK_ID**               | Sequence Object
 | **PLAN_DAY**               | DMWARENAVISYSTEM.WORK_DAY
-| **BATCH_NO**               | DNPALLETIZE.BATCH_NO
-| **PLAN_AREA_NO**           | DNPALLETIZE.STORAGE_LOCATION 
-| **MATERIAL_CODE**          | DNPALLETIZE.MATERIAL_CODE 
+| **BATCH_NO**               | Value from screen (Batch No)
+| **MATERIAL_CODE**          | Value from screen (Material Code) 
 | **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL 
 | **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **USER_ID**                | Login Info
