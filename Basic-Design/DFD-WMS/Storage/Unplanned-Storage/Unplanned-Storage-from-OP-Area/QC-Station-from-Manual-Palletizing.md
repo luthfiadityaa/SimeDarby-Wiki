@@ -138,7 +138,7 @@
 flowchart LR
 
 releaseCommand["
-   User clicked the Completion Button
+   Operator clicked the Completion Button
 "]
 
 id26msg("
