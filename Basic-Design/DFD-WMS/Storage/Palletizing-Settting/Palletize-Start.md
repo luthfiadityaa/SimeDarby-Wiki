@@ -17,7 +17,7 @@
 #<span style="color:skyblue; font-weight:bold">Palletize Start database flow</span>
 | Action Name                        | PLTZ | STRP | WRKI | WRKL | PLLT | CRYI | STCK | HSTS | ARRVL | WRHS | SHLF |
 |-|-|-|-|-|-|-|-|-|-|-|-|
-| Palletize Start - Set(F2)[(1)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Epalletize-start---set(f2)%3C/span%3E) | INSERT | INSERT | INSERT | INSERT | INSERT | INSERT | INSERT | INSERT | | | |
+| Palletize Start - Set(F2)[(1)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Epalletize-start---set(f2)%3C/span%3E) | INSERT | INSERT | INSERT | INSERT | INSERT |  | INSERT | INSERT | | | |
 | ID26[(2)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid26%3C/span%3E) | | | | | | | | | INSERT | | |
 | Automatic Mode Change Sender[(3)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eautomatic-mode-change-sender%3C/span%3E) | | | UPDATE | | UPDATE | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE | UPDATE
 | ID25[(4)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid25%3C/span%3E) | | | | | | UPDATE | | | DELETE | | |
@@ -76,7 +76,7 @@ flowchart LR
         DNPALLET
         DNSTOCK
         DNWORKINFO
-       
+        DNWORKLIST 
     ")]
 
     className[PalletizingSettingSCH]
@@ -201,27 +201,6 @@ This section explains the validations for the whole proccess Palletize Start
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
-
-###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Field Name**                | **Insert Value**                               |
-|--------------------------------|-----------------------------------------------|
-| **CARRY_KEY**                  | Sequence Object  
-| **PALLET_ID**                  | DNPALLET.PALLET_ID
-| **WORK_TYPE**                  | 26:Direct Transfer
-| **CMD_STATUS**                 | 1:Started 
-| **PRIORITY**                   | 2:Normal
-| **RESTORING_FLAG**             | 0:Not Restore to Original Location
-| **CARRY_FLAG**                 | 3: Direct Transfer
-| **WORK_NO**                    | Sequence Object
-| **SOURCE_STATION_NO**          | DNPALLET.CURRENT_STATION_NO
-| **DEST_STATION_NO**            | <span style="color:yellow; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (1111/1112/1113/1114/1115)</span>
-| **CANCEL_REQUEST**             | 0:Not Requested
-| **SCHEDULE_NO**                | Sequence Object
-| **END_STATION_NO**             | DNWORKINFO.PLAN_AREA_NO
-| **REGIST_DATE**                | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**               | ClassName
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | ClassName
 
 ###<span style="color:skyblue; font-weight:bold">DNWorkList</span>
 | **Field Name**            | **Insert Value**                               |
