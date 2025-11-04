@@ -170,7 +170,6 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **STOCK_STATUS**           | <span style="color:yellow; font-weight:bold">UU: Unrestricted Used</span>
 | **QC_DURATION**            | <span style="color:yellow; font-weight:bold">0: Not Reached</span>
 | **TEMPERING_FLAG**         | <span style="color:yellow; font-weight:bold; background-color:grey">0: Not Reached </span>
-
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | Class name
 
@@ -212,8 +211,8 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **TERMINAL_NAME**          | Login info
 | **IP_ADDRESS**             | Login info
 | **STOCK_STATUS**           | <span style="color:yellow; font-weight:bold">UU: Unrestricted Used</span>
-| **QC_DURATION**            | <span style="color:yellow; font-weight:bold">0: Not Reached</span>
 | **TEMPERING_FLAG**         | <span style="color:yellow; font-weight:bold; background-color:grey">0: Not Reached </span>
+| **QC_DURATION**            | <span style="color:yellow; font-weight:bold">0: Not Reached</span>
 | **QC_FLAG**                | <span style="color:yellow; font-weight:bold">Not Done</span>
 | **EXPIRY_DATE**            | DNWORKINFO.EXPIRY_DAYS
 | **REGIST_DATE**            | SYSTIMESTAMP
