@@ -262,8 +262,8 @@ DNCARRYINFO
 
 inoutstationoperator[StorageStationOperator]
 
-releaseCommand-->id26msg-->id26process-->inoutstationoperator
-inoutstationoperator--> |INSERT| id26-insert
+releaseCommand-->id26msg-->id26process-->storageStationOperator
+storageStationOperator--> |INSERT| id26-insert
 :::
 
 After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and Storage Station Operator will execute the receive task based on information in received ID26. While Storage Station Operator processes ID26, it will create an Arrival record.
@@ -446,8 +446,8 @@ DNARRIVAL
 
 inoutstationoperator[InOutStationOperator]
 
-releaseCommand-->id26msg-->id26process-->inoutstationoperator
-inoutstationoperator--> |INSERT| id26-insert
+releaseCommand-->id26msg-->id26process-->storageStationOperator
+storageStationOperator--> |INSERT| id26-insert
 :::
 
 Continue the process <span style="color:green; font-weight:bold">Direct Transfer</span>, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
@@ -603,8 +603,8 @@ DNARRIVAL
 
 inoutstationoperator[InOutStationOperator]
 
-releaseCommand-->id26msg-->id26process-->inoutstationoperator
-inoutstationoperator--> |INSERT| id26-insert
+releaseCommand-->id26msg-->id26process-->storageStationOperator
+storageStationOperator--> |INSERT| id26-insert
 :::
 
 Continue the process <span style="color:green; font-weight:bold">Direct Transfer</span>, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
@@ -821,8 +821,8 @@ DNARRIVAL
 
 inoutstationoperator[InOutStationOperator]
 
-releaseCommand-->id26msg-->id26process-->inoutstationoperator
-inoutstationoperator--> |INSERT| id26-insert
+releaseCommand-->id26msg-->id26process-->storageStationOperator
+storageStationOperator--> |INSERT| id26-insert
 :::
 
 Continue the process <span style="color:green; font-weight:bold">Direct Transfer</span>, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
@@ -1017,8 +1017,8 @@ DNARRIVAL
 
 inoutstationoperator[InOutStationOperator]
 
-releaseCommand-->id26msg-->id26process-->inoutstationoperator
-inoutstationoperator--> |INSERT| id26-insert
+releaseCommand-->id26msg-->id26process-->storageStationOperator
+storageStationOperator--> |INSERT| id26-insert
 :::
 
 Continue the process <span style="color:green; font-weight:bold">Direct Transfer</span>, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
