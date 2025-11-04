@@ -366,7 +366,6 @@ id33process--DELETE--xid33-delete
 | **STOCK_QTY**              | DNSTOCK.PLAN_QTY
 | **ALLOCATION_QTY**         | DNWORKINFO.RESULT_QTY
 | **PLAN_QTY**               | 0
-| **STOCK_STATUS**           | UU: Unrestricted Used
 | **TEMPERING_FLAG**         | 0: Not Reached
 | **QC_FLAG**                | 0: Not Done
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
@@ -377,7 +376,6 @@ id33process--DELETE--xid33-delete
 |----------------------------|-------------------------------------------------------|
 | **STATUS_FLAG**            | 4: Completed
 | **RESULT_QTY**             | DNSTORAGEPLAN.RESULT_QTY + DNWORKINFO.RESULT_QTY
-| **SHORTAGE_QTY**           | DNSTORAGEPLAN.SHORTAGE_QTY + DNWORKINFO.SHORTAGE_QTY
 | **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | Class name
