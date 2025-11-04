@@ -1,6 +1,9 @@
 [[_TOC_]]
 [[_TOSP_]]
 
+#QC Station from Manual Palletizing
+If a downtime occurs on one of the lines, manual palletizing will be carried out in the blue box. Once palletizing is complete, the items will be transferred to the inbound station, which is the same station used for QC.
+
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage database flow</span>
 | Action Name                        | DNWORKINFO | DNWORKLIST | DNPALLET | DNCARRYINFO | DNSTOCK | DNHOSTSEND | DNARRIVAL | DMWAREHOUSE | DMSHELF |
 |-|-|-|-|-|-|-|-|-|-|
