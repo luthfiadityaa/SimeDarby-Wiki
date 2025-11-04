@@ -115,10 +115,10 @@ This section explains the validations for the whole proccess Palletize Start
 | **PLAN_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **BATCH_NO**               | Value from screen (Batch No)
 | **MATERIAL_CODE**          | Value from screen (Material Code) 
-| **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL 
+| **PLAN_QTY**               | Value from screen (Storage Qty) 
 | **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **USER_ID**                | Login Info
-| **STORAGE_LOCATION_FROM**  | DNPALLETIZE.STATION_NO 
+| **STORAGE_LOCATION_FROM**  | Value from screen (Storage Location) ⟶ <span style="color:yellow; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span> 
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
