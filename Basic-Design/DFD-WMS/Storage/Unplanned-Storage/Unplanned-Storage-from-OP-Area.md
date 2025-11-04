@@ -40,12 +40,12 @@ flowchart LR
     ]
 
     tableList-insert[("
-        DNPALLET<br>
-        DNSTOCK<br>
-        DNWORKINFO<br>
-        DNWORKLIST<br>
-        DNHOSTSEND<br>
-        DNCARRYINFO<br>
+        DNPALLET
+        DNSTOCK
+        DNWORKINFO
+        DNWORKLIST
+        DNHOSTSEND
+        DNCARRYINFO
     ")]
 
     className[UnplannedStorageSCH]
