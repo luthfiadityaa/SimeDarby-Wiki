@@ -308,11 +308,11 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **LAST_UPDATE_PNAME**          | ClassName
 
 ##<span style="color:skyblue; font-weight:bold">Storage Sender</span>
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.AutomaticModeChangeSender &nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
 
 ::: mermaid
 flowchart LR
-automaticmodechangesender-update[("
+storageSender-update[("
 DNARRIVAL
 DNCARRYINFO
 DMWAREHOUSE
@@ -321,7 +321,7 @@ DNPALLET
 DNSTOCK
 DNWORKINFO
 ")]
-automaticmodechangesender-input[("
+storageSender-input[("
 DNARRIVAL
 DNCARRYINFO
 ")]
@@ -330,8 +330,8 @@ id05msg("
 ID 05
 ")
 
-automaticmodechangesender-input-->automaticmodechangesender-->id05msg
-automaticmodechangesender--> |UPDATE| automaticmodechangesender-update
+storageSender-input-->storageSender-->id05msg
+storageSsender--> |UPDATE| storageSender-update
 :::
 
 After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, Automatic Mode Change Sender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">1:Started to 2:Waiting for Response.</span>
