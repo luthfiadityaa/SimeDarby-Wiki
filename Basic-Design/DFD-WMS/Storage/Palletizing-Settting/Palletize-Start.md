@@ -41,20 +41,20 @@ Palletize Start is used to set the information of stock which will be palletized
 ::: mermaid
 flowchart LR
     input[
-        Station<br>
-        Current Status<br>
-        Material Code<br>
-        Material Name<br>
-        Material Type<br>
-        Batch #<br>
-        Planned Carton Qty<br>
-        Storage Date/Time<br>
-        Qty kg/crtn<br>
-        Qty crtn/PL<br>
-        UOM<br>
-        Tempering Period<br>
-        Storage Location<br>
-        Expiry Days<br>
+        Station
+        Current Status
+        Material Code
+        Material Name
+        Material Type
+        Batch #
+        Planned Carton Qty
+        Storage Date/Time
+        Qty kg/crtn
+        Qty crtn/PL
+        UOM
+        Tempering Period
+        Storage Location
+        Expiry Days
     ]
 
     tableList-insert[("
