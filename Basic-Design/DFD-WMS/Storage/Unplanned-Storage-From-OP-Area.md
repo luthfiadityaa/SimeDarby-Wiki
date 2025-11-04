@@ -47,7 +47,7 @@ flowchart LR
         DNCARRYINFO<br>
     ")]
 
-    className[PalletizingSettingSCH]
+    className[UnplannedStorageSCH]
 
     input --> className --> |INSERT| tableList-insert
 
