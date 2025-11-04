@@ -2,6 +2,15 @@
 [[_TOSP_]]
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage database flow</span>
+| Action Name                        | DNWORKINFO | DNWORKLIST | DNPALLET | DNCARRYINFO | DNSTOCK | DNHOSTSEND | DNARRIVAL | DMWAREHOUSE | DMSHELF |
+|-|-|-|-|-|-|-|-|-|-|
+| Palletize Start - Set(F2)[(1)]| INSERT | INSERT | INSERT | INSERT | INSERT | INSERT | | | |
+| ID26[(2)] | | | | | | | INSERT | | |
+| Automatic Mode Change Sender[(3)] | UPDATE | | UPDATE | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE | UPDATE
+| ID25[(4)] | | | | UPDATE | | | DELETE | | |
+| ID26[(5)] | | | | | | | INSERT | | |
+| Automatic Mode Change Sender[(6)] | | | UPDATE | UPDATE | UPDATE | | UPDATE | | |
+| ID25[(7)] | | | | UPDATE | | | | | |
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage - Set(F2)</span>
  
