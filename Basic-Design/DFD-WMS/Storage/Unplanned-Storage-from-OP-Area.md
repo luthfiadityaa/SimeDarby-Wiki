@@ -65,3 +65,7 @@ This section explains the validations for the whole proccess Palletize Start
   So if result > 0, Palletize Start cannot proceed.
 - Material Code exists in <span style="color:green; font-weight:bold">DMMaterialMaster</span>
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
+
+#<span style="color:skyblue; font-weight:bold"> Continue process based on </span>
+-##<span style="color:skyblue; font-weight:bold">Unplanned Storage - Set(F2)</span>
+-##<span style="color:skyblue; font-weight:bold">Unplanned Storage - Set(F2)</span>
