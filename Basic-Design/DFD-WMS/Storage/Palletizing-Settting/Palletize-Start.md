@@ -18,17 +18,17 @@
 | ID25[(11)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3E%26nbsp%3Bid25%26nbsp%3B%3C/span%3E) | | | | | | UPDATE | | | DELETE | |
 | ID64[(12)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3E%26nbsp%3Bid64%26nbsp%3B%3C/span%3E) | | | | | | UPDATE | | | | |
 | **Flow 2** |
-| ID64[(8)] |
-| ID26 |
-| Automatic Mode Change Sender |
-| ID25 |
-| ID64 |
-| ID64 |
-| ID26 |
-| Automatic Mode Change Sender |
-| ID25 |
-| ID64 |
-| ID33 |
+| ID64[(8)]() |
+| ID26[(9)]() |
+| Automatic Mode Change Sender[(10)]() |
+| ID25[(11)]() |
+| ID64[(12)]() |
+| ID64[(13)]() |
+| ID26[(14)]() |
+| Automatic Mode Change Sender[(15)]() |
+| ID25[(16)]() |
+| ID64[(17)]() |
+| ID33[(18)]() |
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start - Set(F2)</span>
 
