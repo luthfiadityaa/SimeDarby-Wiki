@@ -4,6 +4,9 @@
 [[_TOC_]]
 [[_TOSP_]]
 
+#
+![image.png](/.attachments/image-31228a41-0618-46d0-acf0-93f1edd79e4e.png)
+
 #<span style="color:skyblue; font-weight:bold">Batch End database flow</span>
 
 | Action Name                        | DNPALLETIZE | DNSTORAGEPLAN | DNWORKINFO | DNWORKLIST | DNPALLET | DNSTOCK | DNHOSTSEND   | 
@@ -13,8 +16,6 @@
 #<span style="color:skyblue; font-weight:bold">Batch End - Set(F2)</span>
   
 Batch End is used to set qty of stock on the last pallet of current Batch and set the palletizing work to stop. After **Set(F2)**, all items in input text will be added into a Pallet Number. The result will be posted back to SAP as Production Storage Result.
-
-![image.png](/.attachments/image-afd50f57-e0f4-49c3-bea7-73a1dad10869.png)
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.storage.palletizingsetting.PalletizingSettingSCH &nbsp;</span>
 
@@ -269,6 +270,8 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **REGIST_PNAME**           | Class name
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | Class name
+
+![image.png](/.attachments/image-1de466bf-fb93-4371-8c45-00cb7a5a5f29.png)
 
 ##<span style="color:skyblue; font-weight:bold">[Send Report as Production Storage Result - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)</span>
 
