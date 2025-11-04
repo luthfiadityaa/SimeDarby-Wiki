@@ -2,6 +2,7 @@
 [[_TOSP_]]
 
 #QC Station from Manual Palletizing
+![==image_0==.png](/.attachments/==image_0==-479f50f3-14b1-4640-8413-8645cc9ed164.png) 
 If a downtime occurs on one of the lines, manual palletizing will be carried out in the blue box. Once palletizing is complete, the items will be transferred to the inbound station, which is the same station used for QC.
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage database flow</span>
