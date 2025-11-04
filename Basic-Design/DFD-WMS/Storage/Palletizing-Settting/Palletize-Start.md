@@ -82,6 +82,7 @@ flowchart LR
 
      tableList-select[("
         DMMATERIALMASTER
+        DMSTATION
     ")]
 
     className[PalletizingSettingSCH]
