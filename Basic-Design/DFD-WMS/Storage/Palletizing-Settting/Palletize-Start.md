@@ -236,31 +236,6 @@ This section explains the validations for the whole proccess Palletize Start
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-###<span style="color:skyblue; font-weight:bold">DNHostSend</span>
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-----------------------------------------------|
-| **WORK_DAY**               | DNWORK_INFO.WORK_DAY
-| **JOB_NO**                 | DNWORKINFO.JOB_NO
-| **SETTING_UNIT_KEY**       | DNWORKINFO.SETTING_UNIT_KEY
-| **COLLECT_JOB_NO**         | DNWORKINFO.COLLECT_JOB_NO
-| **JOB_TYPE**               | DNWORKINFO.JOB_TYPE
-| **STATUS_FLAG**            | DNWORKINFO.STATUS_FLAG
-| **PLAN_UKEY**              | DNWORKINFO.PLAN_UKEY
-| **STOCK_ID**               | DNWORKINFO.STOCK_ID
-| **PLAN_DAY**               | DNWORKINFO.PLAN_DAY
-| **BATCH_NO**               | DNWORKINFO.BATCH_NO
-| **PLAN_AREA_NO**           | DNWORKINFO.PLAN_AREA_NO
-| **MATERIAL_CODE**          | DNWORKINFO.MATERIAL_CODE
-| **MATERIAL_NAME**          | DMMATERIALMASTER.MATERIAL_NAME
-| **PLAN_QTY**               | DNWORKINFO.PLAN_QTY
-| **REPORT_FLAG**            | DNSTORAGEPLAN.REPORT_FLAG
-| **USER_ID**                | DNWORKINFO.USER_ID
-| **USER_NAME**              | DCUSER.USER_NAME
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
-
 #<span style="color:skyblue; font-weight:bold">Release Command from Palletize Robot</span>
   After palletizing is completed, the palletizing robot sends <span style="color:green; font-weight:bold">“Release Command”</span> signal via conveyor interlock.
 
