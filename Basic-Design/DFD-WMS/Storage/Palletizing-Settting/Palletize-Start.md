@@ -14,7 +14,7 @@
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start - Set(F2)</span>
 
-Palletize Start is used to set the information of stock which will be palletized by robot automatically. After **Set(F2)**, all items in input text will be added into a Pallet Number. The result will be posted back to SAP as Production Storage Result.
+Palletize Start is used to set the information of stock which will be palletized by robot automatically. After **Set(F2)**, all items in input text will be added into a Pallet Number. The result will be posted back to SAP as [Production Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)
 
 ![image.png](/.attachments/image-cf980be6-3128-4022-828d-b2a0fa92b1a6.png)
 
