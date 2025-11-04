@@ -242,7 +242,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-##<span style="color:skyblue; font-weight:bold">Automatic Mode Change Sender</span>
+#<span style="color:skyblue; font-weight:bold">Automatic Mode Change Sender</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.AutomaticModeChangeSender &nbsp;</span>
 
 ::: mermaid
@@ -322,7 +322,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**         | Class name
 
-##<span style="color:skyblue; font-weight:bold">ID25</span>
+#<span style="color:skyblue; font-weight:bold">ID25</span>
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process &nbsp;</span>
 
