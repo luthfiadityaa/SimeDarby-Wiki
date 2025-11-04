@@ -7,7 +7,7 @@
 | [StorageSender]() | | UPDATE | UPDATE | | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE | |
 | [ID25]() | | | | | UPDATE | | | UPDATE | | | |
 | [ID64]() | | | | | UPDATE | | | | | | |
-| [ID33]() | UPDATE | UPDATE | UPDATE | | DELETE | | INSERT | | | UPDATE | INSERT |
+| [ID33]() | UPDATE | UPDATE | UPDATE | | DELETE | UPDATE | INSERT | | | UPDATE | INSERT |
 
 This Storage Flow is refer to AGC linkage Specification.
 
