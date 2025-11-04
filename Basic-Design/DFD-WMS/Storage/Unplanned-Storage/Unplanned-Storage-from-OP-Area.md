@@ -8,9 +8,6 @@
 | ID26[(2)] | | | | | | | INSERT | | |
 | Automatic Mode Change Sender[(3)] | UPDATE | | UPDATE | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE | UPDATE
 | ID25[(4)] | | | | UPDATE | | | DELETE | | |
-| ID26[(5)] | | | | | | | INSERT | | |
-| Automatic Mode Change Sender[(6)] | | | UPDATE | UPDATE | UPDATE | | UPDATE | | |
-| ID25[(7)] | | | | UPDATE | | | | | |
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage - Set(F2)</span>
 ![image.png](/.attachments/image-6293c4f4-5fd4-4247-8cbc-fbcc6d9cf3a5.png)
