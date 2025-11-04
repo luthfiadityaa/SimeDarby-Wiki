@@ -313,17 +313,21 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 ::: mermaid
 flowchart LR
 storageSender-update[("
-DNARRIVAL
 DNCARRYINFO
-DMWAREHOUSE
-DMSHELF
+DNWORKINFO
 DNPALLET
 DNSTOCK
-DNWORKINFO
+DMSHELF
+DNARRIVAL
+DMWAREHOUSE
 ")]
 storageSender-input[("
 DNARRIVAL
 DNCARRYINFO
+")]
+
+storageSender-select[("
+DMSTATION
 ")]
 
 id05msg("
