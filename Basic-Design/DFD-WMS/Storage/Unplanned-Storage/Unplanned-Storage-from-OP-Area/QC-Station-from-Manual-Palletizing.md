@@ -294,3 +294,6 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 #<span style="color:skyblue; font-weight:bold">Continue Process with</span>
 - ###[Flow 1 - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/938/Flow-1)
 - ###[Flow 2 - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/940/Flow-2)
+
+#<span style="color:skyblue; font-weight:bold">Storage Flag Condition</span>
+![image.png](/.attachments/image-31228a41-0618-46d0-acf0-93f1edd79e4e.png)
