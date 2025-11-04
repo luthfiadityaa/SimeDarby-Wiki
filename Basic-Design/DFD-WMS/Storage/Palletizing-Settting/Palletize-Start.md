@@ -1,6 +1,19 @@
 [[_TOC_]]
 [[_TOSP_]]
 
+#<span style="color:skyblue; font-weight:bold">Abbreviation</span>
+- PLTZ : DNPALLETIZE
+- STRP : DNSTORAGEPLAN
+- WRKI : DNWORKINFO
+- WRKL : DNWORKINFOLIST
+- PLLT : DNPALLET
+- CRYI : DNCARRYINFO
+- STCK : DNSTOCK
+- HSTS : DNHOSTSEND
+- ARVL : DNARRIVAL
+- WRHS : DMWAREHOUSE
+- SHLF : DMSHELF
+
 #<span style="color:skyblue; font-weight:bold">Palletize Start database flow</span>
 | Action Name                        | DNPALLETIZE | DNSTORAGEPLAN | DNWORKINFO | DNWORKLIST | DNPALLET | DNCARRYINFO | DNSTOCK | DNHOSTSEND | DNARRIVAL | DMWAREHOUSE | DMSHELF |
 |-|-|-|-|-|-|-|-|-|-|-|-|
