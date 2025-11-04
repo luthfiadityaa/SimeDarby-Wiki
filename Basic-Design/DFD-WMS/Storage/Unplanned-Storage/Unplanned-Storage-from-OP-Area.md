@@ -68,4 +68,3 @@ This section explains the validations for the whole proccess Palletize Start
 
 #<span style="color:skyblue; font-weight:bold"> Continue process based on </span>
 - [QC Station](/Basic-Design/DFD-WMS/Storage/Unplanned-Storage/Unplanned-Storage-from-OP-Area/QC-Station-from-Manual-Palletizing)
-- [Palletizing Station - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/944/Palletizing-Station)
