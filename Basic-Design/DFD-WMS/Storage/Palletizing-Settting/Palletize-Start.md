@@ -741,7 +741,7 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 | **LAST_UPDATE_PNAME** 	|Class name
 
 
-###<span style="color:skyblue; font-weight:bold">ID64</span>
+##<span style="color:skyblue; font-weight:bold">ID64</span>
 jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process
 
 ::: mermaid
