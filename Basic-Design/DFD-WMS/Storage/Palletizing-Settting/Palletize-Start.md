@@ -76,8 +76,7 @@ flowchart LR
         DNPALLET
         DNSTOCK
         DNWORKINFO
-        DNWORKLIST        
-        DNCARRYINFO
+       
     ")]
 
     className[PalletizingSettingSCH]
