@@ -90,12 +90,12 @@ This section explains the validations for the whole proccess Palletize Start
 | **STORAGE_TYPE**           | 2:New 
 | **STOCK_QTY**              | 0
 | **ALLOCATION_QTY**         | 0
-| **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL 
+| **PLAN_QTY**               | Value from screen (Storage Qty) 
 | **PALLET_ID**              | Sequence Object
-| **BATCH_NO**               | DNPALLETIZE.BATCH_NO 
-| **TEMPERING_PERIOD**       | DNPALLETIZE.TEMPERING_PERIOD
+| **BATCH_NO**               | Value from screen (Batch No) 
+| **TEMPERING_PERIOD**       | Value from screen (Tempering Period)
 | **STORING_PAIR_KEY**       | <span style="color:yellow; font-weight:bold">DNPALLETIZE.MATERIAL_CODE + DNPALLETIZE.BATCH_NO </span>
-| **EXPIRY_DATE**            | DNPALLETIZE.EXPIRY_DAYS
+| **EXPIRY_DATE**            | Value from screen (Expiry Days)
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
