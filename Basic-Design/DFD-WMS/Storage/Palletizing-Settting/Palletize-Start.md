@@ -656,8 +656,6 @@ flowchart LR
 automaticmodechangesender-update[("
 DNARRIVAL
 DNCARRYINFO
-DMWAREHOUSE
-DMSHELF
 DNPALLET
 DNSTOCK
 DNWORKINFO
