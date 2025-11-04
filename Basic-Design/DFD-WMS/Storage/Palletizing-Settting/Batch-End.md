@@ -278,8 +278,6 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | Class name
 
-![image.png](/.attachments/image-1de466bf-fb93-4371-8c45-00cb7a5a5f29.png)
-
 ##<span style="color:skyblue; font-weight:bold">[Send Report as Production Storage Result - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)</span>
 
 #User Story
