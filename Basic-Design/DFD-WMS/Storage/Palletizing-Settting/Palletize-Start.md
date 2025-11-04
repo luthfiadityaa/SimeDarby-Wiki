@@ -543,17 +543,18 @@ id25process--> |DELETE| id25-delete
 ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
+| **Field Name**        | **Insert Value**                                      |
+|---------------------- |-------------------------------------------------------|
 | **CMD_STATUS**        | 3:Commanded
 | **ERROR_CODE**        | 0
 | **LAST_UPDATE_DATE**  | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME** |Class name
 
 #<span style="color:skyblue; font-weight:bold">Continue Process with</span>
-- ###[Flow 1 - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/938/Flow-1)
+- ###[Flow 1 - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Palletizing%20Settting/Palletize%20Start&pageId=886&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eflow-1-(refer-to-agc-linkage-specs)%3C/span%3E)
 - ###[Flow 2 - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/940/Flow-2)
 
+<hr>
 
 #<span style="color:skyblue; font-weight:bold">Flow 1 (Refer to AGC Linkage Specs)</span>
 [AGCⅦA Linkage Specs_1.2.7_AF954201_SimeDarby_v1.1.xlsx - Storage Section - 05 Sheets](https://daifuku.sharepoint.com/:x:/r/sites/jp0211039/Shared%20Documents/PTDI/Projects/PT.%20Guthrie%20Indonesia%20Sei%20Mangkei%20Refinery(Sime%20Darby)/Garuda%20Project/F.%20Basic%20Design/A.%20AGC%20Linkage%20Specs/AGC%E2%85%A6A%20Linkage%20Specs_1.2.7_AF954201_SimeDarby_v1.1.xlsx?d=w31ccf4d7958e4ea989446a6ac5a1a566&csf=1&web=1&e=J2FP9Y)
