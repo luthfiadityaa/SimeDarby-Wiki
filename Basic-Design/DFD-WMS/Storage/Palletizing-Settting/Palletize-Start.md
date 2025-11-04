@@ -15,8 +15,8 @@
 | ID64[(8)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid64%3C/span%3E) | | | | | | UPDATE | | | | |
 | ID26[(9)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3E%26nbsp%3Bid26%3C/span%3E) | | | | | | | | | INSERT | |
 | Automatic Mode Change Sender[(10)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3E%26nbsp%3Bautomatic-mode-change-sender%26nbsp%3B%3C/span%3E)  | | | UPDATE | | UPDATE | UPDATE | UPDATE | | UPDATE | |
-| ID25[(11)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3E%26nbsp%3Bid25%26nbsp%3B%3C/span%3E) | | | | | | | UPDATE | | DELETE | |
-| ID64[(12)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3E%26nbsp%3Bid64%26nbsp%3B%3C/span%3E) | | | | | | | UPDATE | | | |
+| ID25[(11)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3E%26nbsp%3Bid25%26nbsp%3B%3C/span%3E) | | | | | | UPDATE | | | DELETE | |
+| ID64[(12)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3E%26nbsp%3Bid64%26nbsp%3B%3C/span%3E) | | | | | | UPDATE | | | | |
 | **Flow 2** |
 | ID64 |
 | ID26 |
