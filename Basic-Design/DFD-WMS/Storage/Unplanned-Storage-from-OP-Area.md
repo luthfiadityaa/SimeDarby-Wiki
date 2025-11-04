@@ -67,5 +67,5 @@ This section explains the validations for the whole proccess Palletize Start
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
 #<span style="color:skyblue; font-weight:bold"> Continue process based on </span>
--##<span style="color:skyblue; font-weight:bold">Unplanned Storage - Set(F2)</span>
--##<span style="color:skyblue; font-weight:bold">Unplanned Storage - Set(F2)</span>
+-
+-
