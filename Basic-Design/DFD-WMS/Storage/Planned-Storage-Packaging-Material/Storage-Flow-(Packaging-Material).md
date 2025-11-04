@@ -1,12 +1,13 @@
 [[_TOC_]]
 
 #<span style="color:skyblue; font-weight:bold">Storage Flow</span>
-|Action Name| DNSTORAGEPLAN | DNPALLET | DNWORKINFO | DNWORKLIST | DNCARRYINFO | DNSTOCK | DNHOSTSEND | DNARRIVAL | DMWAREHOUSE | DMSHELF |
-|-----------|--|--|--|--|--|--|--|--|--|--|
-| [ID26]() | | | | | | | | INSERT | | |
-| [StorageSender]() | | UPDATE | UPDATE | | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE |
-| [ID25]() | | | | | UPDATE | | | UPDATE | | |
-| [ID64]() | | | | | UPDATE | | | | | |
+|Action Name| DNSTORAGEPLAN | DNPALLET | DNWORKINFO | DNWORKLIST | DNCARRYINFO | DNSTOCK | DNHOSTSEND | DNARRIVAL | DMWAREHOUSE | DMSHELF | DNSTOCKHISTORY |
+|-----------|--|--|--|--|--|--|--|--|--|--|--|
+| [ID26]() | | | | | | | | INSERT | | | |
+| [StorageSender]() | | UPDATE | UPDATE | | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE | |
+| [ID25]() | | | | | UPDATE | | | UPDATE | | | |
+| [ID64]() | | | | | UPDATE | | | | | | |
+| [ID33]() | UPDATE | UPDATE | UPDATE | | DELETE | | INSERT | | | UPDATE | INSERT |
 
 This Storage Flow is refer to AGC linkage Specification.
 
@@ -207,45 +208,6 @@ Upon equipment have picked up the Pallet successfully, ID64 will be sent from AG
 | LAST_UPDATE_DATE           | SYSTIMESTAMP
 | LAST_UPDATE_PNAME          | Class name
 
-#<span style="color:skyblue; font-weight:bold">ID26</span>
-
-::: mermaid
-flowchart LR
-
-id26msg("
-ID 26
-")
-
-id26-insert[("
-DNARRIVAL
-StationOperator.registArrival()
-")]
-
-StorageStationOperator[StorageStationOperator]
-
-id26msg-->id26process-->StorageStationOperator
-StorageStationOperator--> |INSERT| id26-insert
-:::
-
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.asrs.communication.id.recv.As21Id26` &nbsp;</span>
-
-##<span style="color:skyblue; font-weight:bold">Table Value</span>
-
-####<span style="color:skyblue; font-weight:bold">DNARRIVAL (INSERT)</span>
-| **Column Name**            | **Description / Notes**                               |
-|----------------------------|-------------------------------------------------------|
-| **ARRIVAL_DATE**           | SYSTIMESTAMP 
-| **STATION_NO**             | Arrival Station Number from ID26 
-| **CARRY_KEY**              | DNCARRYINFO.CARRY_KEY       
-| **BCR_DATA**               | Barcode information from ID26
-| **CONTROLINFO**            | Control information from ID26
-| **HEIGHT**                 | Dimension Information from ID26
-| **WIDTH**                  | Dimension Information From ID26
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
 
 #<span style="color:skyblue; font-weight:bold">ID33</span>
 
@@ -268,12 +230,12 @@ DNCARRYINFO
 id33msg-->id33process
 id33process--INSERT-->id33-insert
 id33process-.UPDATE.->id33-update
-id33process--DELETE--xid33-delet
+id33process--DELETE--xid33-delete
 :::
 
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.asrs.communication.id.recv.As21Id26` &nbsp;</span>
+`jp.co.daifuku.wcs.mc.as21.communication.control.Id33Process` &nbsp;</span>
 
 ##<span style="color:skyblue; font-weight:bold">Table Value</span>
 
