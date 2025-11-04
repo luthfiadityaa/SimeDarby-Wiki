@@ -768,6 +768,10 @@ Upon equipment <span style="color:green; font-weight:bold">SRM</span> have picke
 | **LAST_UPDATE_DATE**      | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**     | Class name
 
+<hr>
+
+<hr>
+
 #<span style="color:skyblue; font-weight:bold">User Story</span>
 - [DFD Storage from Palletizing Area](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5783)
 
