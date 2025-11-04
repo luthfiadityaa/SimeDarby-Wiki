@@ -86,7 +86,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **field Name**            | **Insert Value**                               |
 |----------------------------|-----------------------------------------------|
 | **STOCK_ID**               | Sequence Object   
-| **AREA_NO**                | DNPALLETIZE.STORAGE_LOCATION
+| **AREA_NO**                | Value from screen (Storage Location) ⟶ <span style="color:yellow; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>
 | **STORAGE_TYPE**           | 2:New 
 | **STOCK_QTY**              | 0
 | **ALLOCATION_QTY**         | 0
