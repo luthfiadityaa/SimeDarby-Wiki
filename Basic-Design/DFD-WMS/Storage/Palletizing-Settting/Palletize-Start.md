@@ -1175,6 +1175,10 @@ Upon equipment <span style="color:green; font-weight:bold">SRM</span> have picke
 
 <hr>
 
+#<span style="color:skyblue; font-weight:bold">Storage Flag Condition</span>
+![image.png](/.attachments/image-31228a41-0618-46d0-acf0-93f1edd79e4e.png)
+
+
 #<span style="color:skyblue; font-weight:bold">User Story</span>
 - [DFD Storage from Palletizing Area](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5783)
 
