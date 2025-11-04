@@ -65,7 +65,8 @@ Upon receiving new Plan Storage from Host system, WareNavi will insert related p
 | **RECEIVE_TICKET_DATE**    | Value from SAP (Document Date)                                                                                                              
 | **PLAN_AREA_NO**           | Value from SAP (Plant)                                                      
 | **PLAN_LOCATION_NO**       | DMWAREHOUSE.Warehose_no                                                      
-| **MATERIAL_CODE**          | Value from SAP (Material Code)                                                                                                               
+| **MATERIAL_CODE**          | Value from SAP (Material Code)     
+| **UOM**                    | Value from SAP (UOM)                                                                                                                         
 | **PLAN_QTY**               | Planned Quantity                                                                                                            
 | **REPORT_FLAG**            | 0:Not Reported                                                                                                           
 | **REGIST_KIND**            | 0:File Loading                                                      
