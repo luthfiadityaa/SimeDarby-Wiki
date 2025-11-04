@@ -876,6 +876,7 @@ DNARRIVAL
 DNCARRYINFO
 DNPALLET
 DNSTOCK
+DNWORKINFO
 ")]
 automaticmodechangesender-input[("
 DNARRIVAL
