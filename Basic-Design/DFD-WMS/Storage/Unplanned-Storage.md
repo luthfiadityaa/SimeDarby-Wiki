@@ -13,20 +13,18 @@ This screen mainly uses when there are some troubles with Host System Linkage(ir
 ::: mermaid
 flowchart LR
     input[
-        Station<br>
-        Current Status<br>
+        Pallet ID<br>
         Material Code<br>
         Material Name<br>
         Material Type<br>
-        Batch #<br>
-        Planned Carton Qty<br>
-        Storage Date/Time<br>
         Qty kg/crtn<br>
         Qty crtn/PL<br>
+        Batch #<br>
+        Storage Qty<br>        
         UOM<br>
         Tempering Period<br>
-        Storage Location<br>
         Expiry Days<br>
+        Storage Location<br>        
     ]
 
     tableList-insert[("
