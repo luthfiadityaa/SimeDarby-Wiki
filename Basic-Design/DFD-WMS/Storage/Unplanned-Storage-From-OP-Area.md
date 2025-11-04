@@ -29,11 +29,12 @@ flowchart LR
         Qty kg/crtn<br>
         Qty crtn/PL<br>
         Batch #<br>
-        Storage Qty <br>        
+        Storage Qty<br>
         UOM<br>
         Tempering Period<br>
         Expiry Days<br>
-        Storage Location<br>        
+        Storage Location From<br>
+        Storage Location To<br>        
     ]
 
     tableList-insert[("
