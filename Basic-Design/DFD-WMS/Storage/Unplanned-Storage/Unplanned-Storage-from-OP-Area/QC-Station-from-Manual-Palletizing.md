@@ -131,18 +131,14 @@
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
-
-#<span style="color:skyblue; font-weight:bold">Release Command from Palletize Robot</span>
-  After palletizing is completed, the palletizing robot sends <span style="color:green; font-weight:bold">“Release Command”</span> signal via conveyor interlock.
-
-##<span style="color:skyblue; font-weight:bold">ID26</span>
+ 
+#<span style="color:skyblue; font-weight:bold">ID26</span>
 
 ::: mermaid
 flowchart LR
 
 releaseCommand["
-Release Command from Palletize Robot
-After Completion 
+   User clicked the Completion Button
 "]
 
 id26msg("
