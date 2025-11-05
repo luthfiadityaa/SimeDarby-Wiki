@@ -9,9 +9,7 @@
 
 #<span style="color:skyblue; font-weight:bold">Batch End database flow</span>
 
-| Action Name                        | DNPALLETIZE | DNSTORAGEPLAN | DNWORKINFO | DNWORKLIST | DNPALLET | DNSTOCK | DNHOSTSEND   | 
-|------------------------------------|-------------|---------------|------------|------------|----------|---------|--------------|
-| [Batch End - Set(F2)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/874/Batch-End?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Ebatch-end-database-flow%3C/span%3E)      |  UPDATE |  INSERT  |   INSERT   |   INSERT   |   INSERT   |     INSERT    |     INSERT    |
+![image.png](/.attachments/image-87d0cf7e-7929-4423-aff7-58eada529398.png)
 
 #<span style="color:skyblue; font-weight:bold">Batch End - Set(F2)</span>
   
