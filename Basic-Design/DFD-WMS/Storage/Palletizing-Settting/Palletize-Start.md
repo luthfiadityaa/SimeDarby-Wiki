@@ -17,7 +17,7 @@
 - STSN : DMSTATION
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start database flow</span>
-| Action Name                        | PLTZ | STRP | WRKI | WRKL | PLLT | CRYI | STCK | HSTS | ARRVL | WRHS | SHLF | MTMS | DMSTATION
+| Action Name                        | PLTZ | STRP | WRKI | WRKL | PLLT | CRYI | STCK | HSTS | ARRVL | WRHS | SHLF | MTMS | STSN
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|
 | Palletize Start - Set(F2)[(1)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Epalletize-start---set(f2)%3C/span%3E) | INSERT | INSERT | INSERT | INSERT | INSERT | | INSERT | | | | | SELECT | SELECT
 | ID26[(2)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid26%3C/span%3E) | | | | | | INSERT | | | INSERT | | |
