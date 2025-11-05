@@ -2,7 +2,7 @@
 [[_TOSP_]]
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start database flow</span>
-![image.png](/.attachments/image-7124bdb7-1bfc-4c26-85f4-9aa1ed5efab9.png)
+![image.png](/.attachments/image-241f9f7b-936a-4b5b-a146-a788eaf4e4b4.png)
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start - Set(F2)</span>
 
