@@ -1,49 +1,8 @@
 [[_TOC_]]
 [[_TOSP_]]
 
-#<span style="color:skyblue; font-weight:bold">Abbreviation</span>
-- PLTZ : DNPALLETIZE
-- STRP : DNSTORAGEPLAN
-- WRKI : DNWORKINFO
-- WRKL : DNWORKINFOLIST
-- PLLT : DNPALLET
-- CRYI : DNCARRYINFO
-- STCK : DNSTOCK
-- HSTS : DNHOSTSEND
-- ARVL : DNARRIVAL
-- WRHS : DMWAREHOUSE
-- SHLF : DMSHELF
-- MTMS : DMATERIALMASTER
-- STSN : DMSTATION
-
 #<span style="color:skyblue; font-weight:bold">Palletize Start database flow</span>
-| Action Name                        | PLTZ | STRP | WRKI | WRKL | PLLT | CRYI | STCK | HSTS | ARRVL | WRHS | SHLF | MTMS | STSN
-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
-| Palletize Start - Set(F2)[(1)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Epalletize-start---set(f2)%3C/span%3E) | INSERT | INSERT | INSERT | INSERT | INSERT | | INSERT | | | | | SELECT | SELECT
-| ID26[(2)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid26%3C/span%3E) | | | | | | INSERT | | | INSERT | | |
-| Storage Sender[(3)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Estorage-sender%3C/span%3E) | | | UPDATE | | UPDATE | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE | | SELECT
-| ID25[(4)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid25%3C/span%3E) | | | | | | UPDATE | | | DELETE | | |
-| ID26[(5)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid26%26nbsp%3B%3C/span%3E) | | | | | | | | | INSERT | | |
-| Storage Sender[(6)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eautomatic-mode-change-sender%26nbsp%3B%3C/span%3E) | | | | |  | UPDATE | | | UPDATE | | |
-| ID25[(7)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid25%26nbsp%3B%3C/span%3E) | | | | | | UPDATE | | | DELETE | | |
-|<span style="color:black; font-weight:bold; background-color: #FFFF00; padding: 10px;">Flow 1</span> |
-| ID64[(8)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid64%3C/span%3E) | | | | | | UPDATE | | | | |
-| ID26[(9)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3E%26nbsp%3Bid26%3C/span%3E) | | | | | | | | | INSERT | |
-| Storage Sender[(10)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3E%26nbsp%3Bautomatic-mode-change-sender%26nbsp%3B%3C/span%3E)  | | | UPDATE | | UPDATE | UPDATE | UPDATE | | UPDATE | |
-| ID25[(11)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3E%26nbsp%3Bid25%26nbsp%3B%3C/span%3E) | | | | | | UPDATE | | | DELETE | |
-| ID64[(12)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3E%26nbsp%3Bid64%26nbsp%3B%3C/span%3E) | | | | | | UPDATE | | | | |
-| <span style="color:black; font-weight:bold; background-color: #FFFF00; padding: 10px;">Flow 2</span> |
-| ID64[(8)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid64%26nbsp%3B%26nbsp%3B%3C/span%3E) | | | | | | UPDATE | | | | |
-| ID26[(9)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid26%26nbsp%3B%26nbsp%3B%3C/span%3E) | | | | | | | | | INSERT | |
-| Storage Sender[(10)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eautomatic-mode-change-sender%26nbsp%3B%26nbsp%3B%3C/span%3E) | | | UPDATE | | UPDATE | UPDATE | UPDATE | | UPDATE | |
-| ID25[(11)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid25%26nbsp%3B%26nbsp%3B%3C/span%3E) | | | | | | UPDATE | | | DELETE | |
-| ID64[(12)]() |
-| ID64[(13)]() |
-| ID26[(14)]() |
-| Storage Sender[(15)]() |
-| ID25[(16)]() |
-| ID64[(17)]() |
-| ID33[(18)]() |
+![image.png](/.attachments/image-8082b6fb-4322-4b91-9187-a42ab22ceca5.png)
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start - Set(F2)</span>
 
