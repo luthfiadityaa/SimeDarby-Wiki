@@ -175,3 +175,4 @@ This section explains the Storage flow after the operation of Planned Storage Pa
 
 #<span style="color:skyblue; font-weight:bold">Related DFD</span>
 - [Storage Flow (Packaging Material) - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/942/Storage-Flow-(Packaging-Material))
+- [Production Storage Result - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)
