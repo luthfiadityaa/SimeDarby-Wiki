@@ -13,7 +13,7 @@
 
 #<span style="color:skyblue; font-weight:bold">Batch End - Set(F2)</span>
   
-Batch End is used to set qty of stock on the last pallet of current Batch and set the palletizing work to stop. After **Set(F2)**, all items in input text will be added into a Pallet Number. The result will be posted back to SAP as Production Storage Result.
+Batch End is used to set qty of stock on the last pallet of current Batch and set the palletizing work to stop. After **Set(F2)**, all items in input text will be added into a Pallet Number. The result will be posted back to SAP as [Production Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)
 
 ![image.png](/.attachments/image-afd50f57-e0f4-49c3-bea7-73a1dad10869.png)
 
