@@ -573,14 +573,13 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-###<span style="color:skyblue; font-weight:bold">DNPallet</span>
-| **Field Name**            | **Insert Vlaue**                               |
-|----------------------------|-----------------------------------------------|                                                
-| **CURRENT_STATION_NO**     | DNARRIVAL.STATION_NO                                          
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
+####<span style="color:skyblue; font-weight:bold">DNPallet</span>
+| **Field Name**            | **Insert Value**                               |
+|----------------------------|-------------------------------------------------------|
+| **CURRENT_STATION_NO**         | Reserved Location Number
+| **WH_STATION_NO**              | Reserved Area Number
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**          | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**                 | **Insert Value**                               |
@@ -590,7 +589,6 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 | **CARRY_FLAG**                 | 1:Storage
 | **AISLE_STATION_NO**           | Aisle Number where a reserved location belongs to
 | **SOURCE_STATION_NO**          | DNARRIVAL.STATION_NO
-| **DEST_STATION_NO**            | Reserved Location Number
 | **DEST_STATION_NO**            | Reserved Location Number
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
@@ -624,18 +622,6 @@ After successful creation of arrival record in <span style="color:green; font-we
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
-####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
-| **WORK_TYPE**                  | 2: Storage
-| **CMD_STATUS**                 | 2: Waiting for Response
-| **CARRY_FLAG**                 | 1: Storage
-| **AISLE_STATION_NO**           | Aisle Number where a reserved location belongs to
-| **SOURCE_STATION_NO**          | DNARRIVAL.STATION_NO
-| **DEST_STATION_NO**            | Reserved Location Number
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | Class name
-
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 | **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
@@ -645,14 +631,6 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **PLAN_LOCATION_NO**  | Reserved Location Number
 | **LAST_UPDATE_DATE**  | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**   | Class name
-
-####<span style="color:skyblue; font-weight:bold">DNPallet</span>
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
-| **CURRENT_STATION_NO**         | Reserved Location Number
-| **WH_STATION_NO**              | Reserved Area Number
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
 | **Fiekd Name**            | **Insert Value**                               |
