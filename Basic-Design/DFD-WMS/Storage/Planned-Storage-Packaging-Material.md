@@ -264,7 +264,7 @@ This section explains the Storage flow after the operation of Planned Storage Pa
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-### <span style="color:skyblue; font-weight:bold">DNSTOCK (INSERT)</span>
+### <span style="color:skyblue; font-weight:bold">DNSTOCK</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **STOCK_ID**               | DNWORKINFO.STOCK_ID  
@@ -287,7 +287,7 @@ This section explains the Storage flow after the operation of Planned Storage Pa
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-### <span style="color:skyblue; font-weight:bold">DNHOSTSEND (INSERT)</span>
+### <span style="color:skyblue; font-weight:bold">DNHOSTSEND</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **WORK_DAY**               | DNWORKINFO.WORK_DAY
