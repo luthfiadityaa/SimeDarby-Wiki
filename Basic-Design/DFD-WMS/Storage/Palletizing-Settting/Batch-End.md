@@ -116,7 +116,7 @@ This section explains the validations for the whole proccess Batch End
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-##<span style="color:skyblue; font-weight:bold">[Continue flow Release Command from Palletize Robot](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Erelease-command-from-palletize-robot%3C/span%3E)</span>
+##<span style="color:skyblue; font-weight:bold">[Continue flow Release Command from Palletize Robot - Dummy Arrival](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Erelease-command-from-palletize-robot---dummy-arrival%3C/span%3E)</span>
 
 ##<span style="color:skyblue; font-weight:bold">ID33</span>
 jp.co.daifuku.wcs.mc.as21.communication.control.Id33Process
