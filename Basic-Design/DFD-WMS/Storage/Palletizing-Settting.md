@@ -21,6 +21,7 @@ Example Condition:
 - **Qty crtn/PL:** `12` (Input at screen)
 
 ##<span style="color:skyblue; font-weight:bold">Background Process</span>
+Example Condition:
 - System auto-calculates `200 ÷ 12 = 16 pallets (plus 1 partial)`.    
 - Then it auto-creates **detail records** in background:
     
@@ -32,6 +33,7 @@ Example Condition:
     | 17 | 8 | 200 |
 
 ##<span style="color:skyblue; font-weight:bold">Batch End</span>
+Example Condition:
 - **Storage Qty:** `8` (Value set by system or Input at screen) 
 
 #<span style="color:skyblue; font-weight:bold">Detail Flow</span>
