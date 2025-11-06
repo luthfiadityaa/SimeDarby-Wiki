@@ -124,14 +124,10 @@ flowchart LR
         DNSTORAGEPLAN
     ")]
 
-    tableList-insert[("
-        DNPALLET
-    ")]
-
     className[PlannedStoragePkgSCH]
 
-    input --> className--> |INSERT| tableList-insert
-    tableList-select-->|SELECT |className --> |UPDATE| tableList-update
+    input --> className--> |UPDATE| tableList-update
+    tableList-select--> |SELECT| className 
 
 :::
 
