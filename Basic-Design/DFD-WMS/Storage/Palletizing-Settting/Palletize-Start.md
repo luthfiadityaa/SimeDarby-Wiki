@@ -100,8 +100,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **PLAN_DAY**               | DNPALLETIZE.BATCH_PALLET_START                                                       
 | **PLAN_AREA_NO**           | DNPALLETIZE.STORAGE_LOCATION                             
 | **MATERIAL_CODE**          | DNPALLETIZE.MATERIAL_CODE                                                  
-| **PLAN_QTY**               | DNPALLETIZE.PLANNED_CARTON_QTY                                                       
-| **PROCESS_QTY**            | DNPALLETIZE.QTY_CRTN_PL                                                 
+| **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL                                                 
 | **REPORT_FLAG**            | 0:Not Reported                                                   
 | **STORING_PAIR_KEY**       | <span style="color:yellow; font-weight:bold">DNPALLETIZE.MATERIAL_CODE + DNPALLETIZE.BATCH_NO</span>
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
