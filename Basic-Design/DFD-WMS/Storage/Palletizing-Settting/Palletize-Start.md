@@ -247,19 +247,11 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 flowchart LR
 storageSender-update[("
 DNCARRYINFO
-DNWORKINFO
-DNSTOCK
-DMSHELF
 DNARRIVAL
-DMWAREHOUSE
 ")]
 storageSender-input[("
 DNARRIVAL
 DNCARRYINFO
-")]
-
-storageSender-select[("
-DMSTATION
 ")]
 
 id05msg("
@@ -268,7 +260,6 @@ ID 05
 
 storageSender-input-->storageSender-->id05msg
 storageSender--> |UPDATE| storageSender-update
-storageSender--> |SELECT| storageSender-select
 :::
 
 After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, StorageSender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">1:Started to 2:Waiting for Response.</span>
