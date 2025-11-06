@@ -621,36 +621,21 @@ After successful creation of arrival record in <span style="color:green; font-we
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
-####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**            | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
-| **STATUS_FALG**       | 1: Working 
-| **SYSTEM_CONN_KEY**   | Sequence object
-| **HARDWARE_TYPE**     | 3: ASRS
-| **PLAN_LOCATION_NO**  | Reserved Location Number
-| **LAST_UPDATE_DATE**  | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**   | Class name
-
-####<span style="color:skyblue; font-weight:bold">DNStock</span>
-| **Fiekd Name**            | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
-| **AREA_NO**                    | Reserved Area Number
-| **LOCATION_NO**                | Reserved Location Number
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | Class name
+|---------------------------|------------------------------------------------|
+| **CMD_STATUS**            | 2: Waiting for response
+| **LAST_UPDATE_DATE**      | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**     | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNArrival</span>
 | **Field Name**            | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
-| **CARRY_KEY**                  | DNCARRYINFO.CARRY_KEY
-| **SEND_FLAG**                  | 1:Sent
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | Class name
+|---------------------------|------------------------------------------------|
+| **CARRY_KEY**             | DNCARRYINFO.CARRY_KEY
+| **SEND_FLAG**             | 1:Sent
+| **LAST_UPDATE_DATE**      | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**     | Class name
 
-####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 
 ##<span style="color:skyblue; font-weight:bold">&nbsp;ID25&nbsp;</span>
 
