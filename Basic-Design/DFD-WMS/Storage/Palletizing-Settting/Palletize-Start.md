@@ -273,8 +273,6 @@ After successful creation of arrival record in <span style="color:green; font-we
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
-
-
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**            | **Insert Value**                               |
 |---------------------------|-----------------------------------------------|
