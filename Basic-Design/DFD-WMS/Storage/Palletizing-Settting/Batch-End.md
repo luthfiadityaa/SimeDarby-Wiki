@@ -39,15 +39,12 @@ flowchart LR
 
     tableList-insert-select[("
         DNPALLETIZE
+        DMSTATION
+        DMMATERIALMASTER
     ")]
 
     tableList-insert[("
         DNSTORAGEPLAN
-        DNPALLET
-        DNSTOCK
-        DNWORKINFO
-        DNWORKLIST
-        DNHOSTSEND
     ")]
 
     className[PalletizingSettingSCH]
