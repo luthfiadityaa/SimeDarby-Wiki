@@ -791,6 +791,9 @@ ID 26
 
 id26-insert[("
 DNARRIVAL
+")]
+
+id26-update[("
 DNPALLET
 DNCARRYINFO
 ")]
@@ -799,6 +802,7 @@ storageStationOperator[storageStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
+storageStationOperator--> |UPDATE| id26-update
 :::
 
 Continue the process <span style="color:green; font-weight:bold">Direct Transfer</span>, AGC will send ID26 to WareNavi and Storage Station Operator will execute the receive task based on information in received ID26. While Storage Station Operator processes ID26, it will create an Arrival record..
