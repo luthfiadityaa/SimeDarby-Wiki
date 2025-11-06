@@ -63,7 +63,7 @@ flowchart LR
 :::
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
-This section explains the validations for the whole proccess Palletize Start
+This section explains the validations for the whole proccess Batch End
 - Total Actual Carton Qty <span style="color:red; font-weight:bold;">=</span> Planned Carton Qty
 - Storage Qty = Planned Carton Qty <span style="color:red; font-weight:bold;">-</span> Total Actual Carton Qty 
 
