@@ -130,7 +130,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **STATUS_FLAG**                | 2:Reserved Location
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 
-####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+####<span style="color:skyblue; font-weight:bold">DNCARRYINFO (UPDATE)</span>
 | **Field Name**                     | **Description / Notes**                                  |
 |------------------------------------|-----------------------------------------------|
 | **AISLE_STATION_NO**               | Aisle Number where a reserved location belongs to
@@ -139,7 +139,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_UPDATE_PNAME**              | Class name
 
 
-####<span style="color:skyblue; font-weight:bold">DNWORKINFO (INSERT)</span>
+####<span style="color:skyblue; font-weight:bold">DNWORKINFO (UPDATE)</span>
 | **Field Name**                 | **Description / Notes**                                  |
 |--------------------------------|-------------------------------------------------------|
 | **STATUS_FLAG**                | 1: Working 
@@ -147,7 +147,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
 
-####<span style="color:skyblue; font-weight:bold">DNPALLET (INSERT)</span>
+####<span style="color:skyblue; font-weight:bold">DNPALLET (UPDATE)</span>
 | **Column Name**                | **Description / Notes**                               |
 |--------------------------------|-------------------------------------------------------|
 | **CURRENT_STATION_NO**         | Reserved Location Number
@@ -155,7 +155,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
 
-####<span style="color:skyblue; font-weight:bold">DNSTOCK (INSERT)</span>
+####<span style="color:skyblue; font-weight:bold">DNSTOCK (UPDATE)</span>
 | **Column Name**                | **Description / Notes**                               |
 |--------------------------------|-------------------------------------------------------|
 | **AREA_NO**                    | DNCARRYINFO.END_STATION_NO
@@ -163,7 +163,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
 
-####<span style="color:skyblue; font-weight:bold">DNARRIVAL (INSERT)</span>
+####<span style="color:skyblue; font-weight:bold">DNARRIVAL (UPDATE)</span>
 | **Column Name**                | **Description / Notes**                               |
 |--------------------------------|-------------------------------------------------------|
 | **CARRY_KEY**                  | DNCARRYINFO.CARRY_KEY
