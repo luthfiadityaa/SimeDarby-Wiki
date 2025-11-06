@@ -794,7 +794,6 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**                | **Insert Value**                               |
 |--------------------------------|-----------------------------------------------|
@@ -838,22 +837,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
-| **WORK_TYPE**                  | 26: Direct Transfer
 | **CMD_STATUS**                 | 2: Waiting for response
-| **CARRY_FLAG**                 | 3: Direct Transfer
-| **DEST_STATION_NO**            | <span style="color:yellow; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (7211, 7112, 7113, 7114)</span>
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | Class name
-
-####<span style="color:skyblue; font-weight:bold">DNPallet</span>
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | Class name
-
-####<span style="color:skyblue; font-weight:bold">DNStock</span>
-| **Fiekd Name**            | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
 
@@ -864,11 +848,6 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **SEND_FLAG**                  | 1:Sent
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
-
-####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 
 ##<span style="color:skyblue; font-weight:bold">ID25&nbsp;</span>
 
