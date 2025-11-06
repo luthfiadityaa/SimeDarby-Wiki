@@ -104,6 +104,7 @@ flowchart LR
         DNPALLET<br>
         DNSTOCK<br>
         DNWORKINFO<br>
+        DNCARRYINFO<br>
         DNWORKLIST<br>
         DNHOSTSEND<br>
     ")]
