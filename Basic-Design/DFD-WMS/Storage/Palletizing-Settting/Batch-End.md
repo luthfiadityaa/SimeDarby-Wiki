@@ -22,35 +22,35 @@ Batch End is used to set qty of stock on the last pallet of current Batch and se
 ::: mermaid
 flowchart LR
     input[
-        Station<br>
-        Current Status<br>
-        Material Code<br>
-        Material Name<br>
-        Material Type<br>
-        Batch #<br>
-        Storage Qty<br>
-        Planned Carton Qty<br>
-        Total Actual Carton Qty<br>
-        Storage Date/Time<br>
-        Qty kg/crtn<br>
-        Qty crtn/PL<br>
-        UOM<br>
-        Tempering Period<br>
-        Storage Location<br>
-        Expiry Days<br>
+        Station
+        Current Status
+        Material Code
+        Material Name
+        Material Type
+        Batch #
+        Storage Qty
+        Planned Carton Qty
+        Total Actual Carton Qty
+        Storage Date/Time
+        Qty kg/crtn
+        Qty crtn/PL
+        UOM
+        Tempering Period
+        Storage Location
+        Expiry Days
     ]
 
     tableList-insert-select[("
-        DNPALLETIZE<br>
+        DNPALLETIZE
     ")]
 
     tableList-insert[("
-        DNSTORAGEPLAN<br>
-        DNPALLET<br>
-        DNSTOCK<br>
-        DNWORKINFO<br>
-        DNWORKLIST<br>
-        DNHOSTSEND<br>
+        DNSTORAGEPLAN
+        DNPALLET
+        DNSTOCK
+        DNWORKINFO
+        DNWORKLIST
+        DNHOSTSEND
     ")]
 
     className[PalletizingSettingSCH]
