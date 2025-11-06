@@ -583,7 +583,7 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 | **LAST_UPDATE_PNAME**      | ClassName
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Field Name**                | **Insert Value**                               |
+| **Field Name**                 | **Insert Value**                               |
 |--------------------------------|-----------------------------------------------|
 | **WORK_TYPE**                  | 2: Storage
 | **CMD_STATUS**                 | 1:Started 
