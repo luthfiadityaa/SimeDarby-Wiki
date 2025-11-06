@@ -543,6 +543,8 @@ ID 26
 
 id26-insert[("
 DNARRIVAL
+DNPALLET
+DNCARRYINFO
 ")]
 
 storageStationOperator[storageStationOperator]
