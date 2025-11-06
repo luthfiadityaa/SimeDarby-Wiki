@@ -162,6 +162,20 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
+###<span style="color:skyblue; font-weight:bold">DNPallet</span>
+| **Field Name**            | **Insert Vlaue**                               |
+|----------------------------|-----------------------------------------------|
+| **PALLET_ID**              | Sequence Object                                                       
+| **CURRENT_STATION_NO**     | DNPALLETIZE.STATION_NO                                                       
+| **WH_STATION_NO**          | DNPALLETIZE.STORAGE_LOCATION                                                      
+| **STATUS_FLAG**            | 1:Reserved for Storage                                                     
+| **EMPTY_FLAG**             | 0:Normal Pallet                                                        
+| **BCR_DATA**               | System generated (YYXXXXXXXX, XXXXXXXX represents sequence number)                                                 
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
+
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**                | **Insert Value**                               |
 |--------------------------------|-----------------------------------------------|
@@ -182,21 +196,6 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **REGIST_PNAME**               | ClassName
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | ClassName
-
-
-###<span style="color:skyblue; font-weight:bold">DNPallet</span>
-| **Field Name**            | **Insert Vlaue**                               |
-|----------------------------|-----------------------------------------------|
-| **PALLET_ID**              | Sequence Object                                                       
-| **CURRENT_STATION_NO**     | DNPALLETIZE.STATION_NO                                                       
-| **WH_STATION_NO**          | DNPALLETIZE.STORAGE_LOCATION                                                      
-| **STATUS_FLAG**            | 1:Reserved for Storage                                                     
-| **EMPTY_FLAG**             | 0:Normal Pallet                                                        
-| **BCR_DATA**               | System generated (YYXXXXXXXX, XXXXXXXX represents sequence number)                                                 
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
 
 ###<span style="color:skyblue; font-weight:bold">DNStock</span>
 | **field Name**            | **Insert Value**                               |
