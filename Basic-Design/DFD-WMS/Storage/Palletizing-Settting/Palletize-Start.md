@@ -413,24 +413,32 @@ After successful creation of arrival record in <span style="color:green; font-we
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ####<span style="color:skyblue; font-weight:bold">DMWarehouse</span>
-| **Field Name**             | **Insert Value**                               |
+| **Field Name**             | **Insert Value**                              |
 |----------------------------|-----------------------------------------------|
 | **LAST_USED_STATION_NO**   | Aisle Number where a reserved location belongs to 
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DMShelf</span>
-| **Field Name**             | **Insert Value**                               |
+| **Field Name**             | **Insert Value**                              |
 |----------------------------|-----------------------------------------------|
 | **STATUS_FLAG**            | 2:Reserved Location
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Field Name**            | **Insert Value**                               |
+| **Field Name**            | **Insert Value**                              |
 |---------------------------|-----------------------------------------------|
 | **AISLE_STATION_NO**      | Aisle Number where a reserved location belongs to
 | **CMD_STATUS**            | 2:Waiting for response
+| **LAST_UPDATE_DATE**      | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**     | Class name
+
+####<span style="color:skyblue; font-weight:bold">DNStock</span>
+| **Field Name**            | **Insert Value**                               |
+|---------------------------|------------------------------------------------|
+| **AREA_NO**               | DNCARRYINFO.END_STATION_NO
+| **LOCATION_NO**           | Reserved Location Number
 | **LAST_UPDATE_DATE**      | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**     | Class name
 
