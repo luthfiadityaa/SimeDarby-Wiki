@@ -4,9 +4,6 @@
 [[_TOC_]]
 [[_TOSP_]]
 
-#<span style="color:skyblue; font-weight:bold">Storage Flag Condition</span>
-![image.png](/.attachments/image-31228a41-0618-46d0-acf0-93f1edd79e4e.png)
-
 #<span style="color:skyblue; font-weight:bold">Batch End database flow</span>
 
 ![image.png](/.attachments/image-394228b1-fda1-490a-a907-8b3d831b389d.png)
