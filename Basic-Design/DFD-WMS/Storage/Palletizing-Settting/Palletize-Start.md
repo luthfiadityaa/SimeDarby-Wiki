@@ -34,10 +34,6 @@ flowchart LR
     tableList-insert[("
         DNPALLETIZE
         DNSTORAGEPLAN
-        DNPALLET
-        DNSTOCK
-        DNWORKINFO
-        DNWORKLIST 
     ")]
 
      tableList-select[("
@@ -108,90 +104,6 @@ This section explains the validations for the whole proccess Palletize Start
 | **PROCESS_QTY**            | DNPALLETIZE.QTY_CRTN_PL                                                 
 | **REPORT_FLAG**            | 0:Not Reported                                                   
 | **STORING_PAIR_KEY**       | <span style="color:yellow; font-weight:bold">DNPALLETIZE.MATERIAL_CODE + DNPALLETIZE.BATCH_NO</span>
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
-
-###<span style="color:skyblue; font-weight:bold">DNPallet</span>
-| **Field Name**            | **Insert Vlaue**                               |
-|----------------------------|-----------------------------------------------|
-| **PALLET_ID**              | Sequence Object                                                       
-| **CURRENT_STATION_NO**     | DNPALLETIZE.STATION_NO                                                       
-| **WH_STATION_NO**          | DNPALLETIZE.STORAGE_LOCATION                                                      
-| **STATUS_FLAG**            | 1:Reserved for Storage                                                     
-| **EMPTY_FLAG**             | 0:Normal Pallet                                                        
-| **BCR_DATA**               | System generated (YYXXXXXXXX, XXXXXXXX represents sequence number)                                                 
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
-
-###<span style="color:skyblue; font-weight:bold">DNStock</span>
-| **field Name**            | **Insert Value**                               |
-|----------------------------|-----------------------------------------------|
-| **STOCK_ID**               | Sequence Object   
-| **AREA_NO**                | DNPALLETIZE.STORAGE_LOCATION
-| **STORAGE_TYPE**           | 2:New 
-| **STOCK_QTY**              | 0
-| **ALLOCATION_QTY**         | 0
-| **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL 
-| **PALLET_ID**              | Sequence Object
-| **BATCH_NO**               | DNPALLETIZE.BATCH_NO 
-| **TEMPERING_PERIOD**       | DNPALLETIZE.TEMPERING_PERIOD
-| **STORING_PAIR_KEY**       | <span style="color:yellow; font-weight:bold">DNPALLETIZE.MATERIAL_CODE + DNPALLETIZE.BATCH_NO </span>
-| **EXPIRY_DATE**            | DNPALLETIZE.EXPIRY_DAYS
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
-
-###<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
-| **Filed Name**            | **Insert Value**                               |
-| ----------------------------|----------------------------------------------|
-| **JOB_NO**                 | Sequence Object
-| **SETTING_UNIT_KEY**       | Sequence Object
-| **COLLECT_JOB_NO**         | Sequence Object
-| **JOB_TYPE**               | 02:Storage
-| **STATUS_FLAG**            | 0:Not Started
-| **PLAN_UKEY**              | DNSTORAGEPLAN.PLAN_UKEY
-| **STOCK_ID**               | Sequence Object
-| **PLAN_DAY**               | DMWARENAVISYSTEM.WORK_DAY
-| **BATCH_NO**               | DNPALLETIZE.BATCH_NO
-| **PLAN_AREA_NO**           | DNPALLETIZE.STORAGE_LOCATION 
-| **MATERIAL_CODE**          | DNPALLETIZE.MATERIAL_CODE 
-| **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL 
-| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
-| **USER_ID**                | Login Info
-| **STORAGE_LOCATION_FROM**  | DNPALLETIZE.STATION_NO 
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
-
-###<span style="color:skyblue; font-weight:bold">DNWorkList</span>
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-----------------------------------------------|
-| **JOB_NO**                 | DNWORKINFO.JOB_NO
-| **CARRY_KEY**              | DNCARRYINFO.CARRY_KEY
-| **SETTING_UNIT_KEY**       | DNWORKINFO.SETTING_UNIT_KEY
-| **COLLECT_JOB_NO**         | DNWORKINFO.COLLECT_JOB_NO
-| **JOB_TYPE**               | DNWORKINFO.JOB_TYPE
-| **PLAN_UKEY**              | DNWORKINFO.PLAN_UKEY
-| **STOCK_ID**               | DNWORKINFO.STOCK_ID
-| **PALLET_ID**              | DNPALLET.PALLET_ID
-| **PLAN_DAY**               | DNWORKINFO.PLAN_DAY
-| **BATCH_NO**               | DNWORKINFO.BATCH_NO
-| **PLAN_AREA_NO**           | DNPALLETITZE.PLAN_AREA_NO
-| **MATERIAL_CODE**          | DNWORKINFO.MATERIAL_CODE
-| **MATERIAL_NAME**          | DMMASTERIALMASTER.MATERIAL_NAME
-| **STORAGE_TYPE**           | DNWORKINFO.STORAGE_TYPE
-| **STORAGE_DATE**           | DNSTORAGEPLAN.PLAN_DAY
-| **PLAN_QTY**               | DNWORKINFO.PLAN_QTY
-| **STOCK_QTY**              | 0
-| **ALLOCATION_QTY**         | 0
-| **USER_ID**                | DNWORKINFO.USER_ID
-| **USER_NAME**              | DCUSER.USER_NAME
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
