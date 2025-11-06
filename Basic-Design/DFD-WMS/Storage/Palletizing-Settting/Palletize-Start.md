@@ -170,7 +170,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **WH_STATION_NO**          | DNPALLETIZE.STORAGE_LOCATION                                                      
 | **STATUS_FLAG**            | 1:Reserved for Storage                                                     
 | **EMPTY_FLAG**             | 0:Normal Pallet                                                        
-| **BCR_DATA**               | System generated (YYXXXXXXXX, XXXXXXXX represents sequence number)                                                 
+| **BCR_DATA**               | DNARRIVAL.BCR_DATA                                                 
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
