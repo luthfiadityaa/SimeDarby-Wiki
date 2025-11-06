@@ -4,7 +4,7 @@
 |Action Name| DNSTORAGEPLAN | DNPALLET | DNWORKINFO | DNWORKLIST | DNCARRYINFO | DNSTOCK | DNHOSTSEND | DNARRIVAL | DMWAREHOUSE | DMSHELF | DNSTOCKHISTORY |
 |-----------|--|--|--|--|--|--|--|--|--|--|--|
 | [ID26 - Dummy Arrival](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/942/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20Packaging%20Material/Storage%20Flow%20(Packaging%20Material)&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid26---dummy-arrival%3C/span%3E) | | | | |INSERT | | | INSERT | | | |
-| [Automatic Mode Change Sender](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/942/Storage-Flow-(Packaging-Material)?_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eautomatic-mode-change-sender%3C/span%3E) | | UPDATE | UPDATE | | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE | |
+| [Automatic Mode Change Sender](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/942/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20Packaging%20Material/Storage%20Flow%20(Packaging%20Material)&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eautomatic-mode-change-sender%3C/span%3E) | | UPDATE | UPDATE | | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE | |
 | [ID25]() | | | | | UPDATE | | | UPDATE | | | |
 | [ID64]() | | | | | UPDATE | | | | | | |
 | [ID26]() | | | | |INSERT | | | INSERT | | | |
