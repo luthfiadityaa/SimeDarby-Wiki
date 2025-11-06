@@ -73,6 +73,7 @@ This section explains the validations for the whole proccess Palletize Start
 
 | **Field Name**                 | **Insert Value**                               |
 |--------------------------------|------------------------------------------------|
+| **PALLETIZE_ID**               | Sequence Object
 | **STATION_NO**                 | Value from screen (Station No)
 | **CURRENT_STATUS**             | Value from screen (Current Status)
 | **MATERIAL_CODE**              | Value from screen (Material Code)
