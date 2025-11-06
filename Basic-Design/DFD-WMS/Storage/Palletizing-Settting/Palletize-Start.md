@@ -936,7 +936,7 @@ Upon equipment <span style="color:green; font-weight:bold">STV</span> have picke
 | **LAST_UPDATE_DATE**      | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME** 	| Class name
 
-##<span style="color:skyblue; font-weight:bold">ID26</span>
+##<span style="color:skyblue; font-weight:bold">ID26&nbsp;&nbsp;</span>
 
 ::: mermaid
 flowchart LR
@@ -951,6 +951,8 @@ ID 26
 
 id26-insert[("
 DNARRIVAL
+DNPALLET
+DNCARRYINFO
 ")]
 
 storageStationOperator[storageStationOperator]
@@ -959,7 +961,7 @@ releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
 :::
 
-Continue the process <span style="color:green; font-weight:bold">Direct Transfer</span>, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
+Continue the process <span style="color:green; font-weight:bold">Direct Transfer</span>, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record.
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
 
@@ -981,7 +983,27 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-##<span style="color:skyblue; font-weight:bold">Storage Sender</span>
+####<span style="color:skyblue; font-weight:bold">DNPallet</span>
+| **Field Name**             | **Insert Value**                               |
+|----------------------------|-------------------------------------------------------|
+| **CURRENT_STATION_NO**         | Reserved Location Number
+| **WH_STATION_NO**              | Reserved Area Number
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**          | Class name
+
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+| **Field Name**                 | **Insert Value**                               |
+|--------------------------------|-----------------------------------------------|
+| **WORK_TYPE**                  | 2:Storage
+| **CMD_STATUS**                 | 1:Started 
+| **CARRY_FLAG**                 | 1:Storage
+| **AISLE_STATION_NO**           | Aisle Number where a reserved location belongs to
+| **SOURCE_STATION_NO**          | DNARRIVAL.STATION_NO
+| **DEST_STATION_NO**            | Reserved Location Number
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**          | Class name
+
+##<span style="color:skyblue; font-weight:bold">StorageSender&nbsp;&nbsp;</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
 
 ::: mermaid
@@ -989,11 +1011,6 @@ flowchart LR
 automaticmodechangesender-update[("
 DNARRIVAL
 DNCARRYINFO
-DMWAREHOUSE
-DMSHELF
-DNPALLET
-DNSTOCK
-DNWORKINFO
 ")]
 automaticmodechangesender-input[("
 DNARRIVAL
@@ -1008,57 +1025,28 @@ automaticmodechangesender-input-->storageSender-->id05msg
 storageSender--> |UPDATE| automaticmodechangesender-update
 :::
 
-After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, Storage Sender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">3: Commanded to 2: Waiting for Response. </span>
+After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, StorageSender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">1:Started to 2:Waiting for Response.</span>
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**            | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
-| **WORK_TYPE**                  | 2: Storage
-| **CMD_STATUS**                 | 2: Waiting for Response
-| **CARRY_FLAG**                 | 1: Storage
-| **AISLE_STATION_NO**           | Aisle Number where a reserved location belongs to
-| **SOURCE_STATION_NO**          | DNARRIVAL.STATION_NO
-| **DEST_STATION_NO**            | Reserved Location Number
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | Class name
-
-####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
-| **STATUS_FALG**       | 1: Working 
-| **SYSTEM_CONN_KEY**   | Sequence object
-| **HARDWARE_TYPE**     | 3: ASRS
-| **PLAN_LOCATION_NO**  | Reserved Location Number
-| **LAST_UPDATE_DATE**  | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**   | Class name
-
-####<span style="color:skyblue; font-weight:bold">DNPallet</span>
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
-| **CURRENT_STATION_NO**         | Reserved Location Number
-| **WH_STATION_NO**              | Reserved Area Number
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | Class name
-
-####<span style="color:skyblue; font-weight:bold">DNStock</span>
-| **Fiekd Name**            | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
-| **AREA_NO**                    | Reserved Area Number
-| **LOCATION_NO**                | Reserved Location Number
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | Class name
+|---------------------------|------------------------------------------------|
+| **CMD_STATUS**            | 2: Waiting for response
+| **LAST_UPDATE_DATE**      | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**     | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNArrival</span>
 | **Field Name**            | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
-| **CARRY_KEY**                  | DNCARRYINFO.CARRY_KEY
-| **SEND_FLAG**                  | 1:Sent
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | Class name
+|---------------------------|------------------------------------------------|
+| **CARRY_KEY**             | DNCARRYINFO.CARRY_KEY
+| **SEND_FLAG**             | 1:Sent
+| **LAST_UPDATE_DATE**      | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**     | Class name
 
-##<span style="color:skyblue; font-weight:bold">ID25</span>
+
+##<span style="color:skyblue; font-weight:bold">&nbsp;ID25&nbsp;</span>
+
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process &nbsp;</span>
 
 ::: mermaid
@@ -1082,16 +1070,15 @@ id25process--> |DELETE| id25-delete
 
 ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Field Name**            | **Insert Value**                              |
-|---------------------------|-----------------------------------------------|
+| **Field Name**            | **Insert Value**                                      |
+|---------------------------|-------------------------------------------------------|
 | **CMD_STATUS**            | 3:Commanded
 | **ERROR_CODE**            | 0
 | **LAST_UPDATE_DATE**      | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**     | Class name
+| **LAST_UPDATE_PNAME**     |Class name
 
-##<span style="color:skyblue; font-weight:bold">ID64</span>
+##<span style="color:skyblue; font-weight:bold">ID64&nbsp;&nbsp;</span>
 jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process
 
 ::: mermaid
@@ -1111,12 +1098,12 @@ id64process--> |UPDATE| id64-update
 
 Upon equipment <span style="color:green; font-weight:bold">SRM</span> have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Field Name**            | **Insert Value**                              |
+####<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+| **Field Name**            | **Insert Value**                               |
 |---------------------------|-----------------------------------------------|
 | **CMD_STATUS**            | 4:Pickup completed
 | **LAST_UPDATE_DATE**      | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME** 	| Class name
+| **LAST_UPDATE_PNAME**     | Class name
 
 
 <hr>
