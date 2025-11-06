@@ -14,6 +14,12 @@ flowchart LR
     class input leftAlign;
 :::
 
+::: mermaid
+flowchart TD  
+P1[Palletizing Start]-->P2[ID26]-->P3[StorageSender]-->P4[ID25]
+P4[ID25]-->P5[ID26]-->P6[StorageSender]-->P7[ID25]
+:::
+
 #<span style="color:skyblue; font-weight:bold">Palletize Start</span>
 This is only one-time input (no per pallet entry).<br>
 Example Condition:
