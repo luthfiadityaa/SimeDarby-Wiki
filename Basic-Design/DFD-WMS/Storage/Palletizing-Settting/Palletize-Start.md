@@ -333,7 +333,7 @@ ID 26
 ")
 
 id26-insert[("
-DNARRIVAl
+DNARRIVAL
 ")]
 
 id26-update[("
