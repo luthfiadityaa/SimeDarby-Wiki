@@ -1296,12 +1296,12 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 |--------------------------------|------------------------------------------------|
 | **PALLETIZE_ID**               | DNPALLETIZE.PALLETIZE_ID
 | **STATION_NO**                 | DNPALLETIZE.STATION_NO
-| **CURRENT_STATUS**             | DNPALLETIZE.STATION_NO
-| **MATERIAL_CODE**              | DNPALLETIZE.STATION_NO
-| **MATERIAL_NAME**              | DNPALLETIZE.STATION_NO
-| **MATERIAL_TYPE**              | DNPALLETIZE.STATION_NO
-| **BATCH_NO**                   | DNPALLETIZE.STATION_NO
-| **PLANNED_CARTON_QTY**         | DNPALLETIZE.STATION_NO
+| **CURRENT_STATUS**             | DNPALLETIZE.CURRENT_STATUS
+| **MATERIAL_CODE**              | DNPALLETIZE.MATERIAL_CODE
+| **MATERIAL_NAME**              | DNPALLETIZE.MATERIAL_NAME
+| **MATERIAL_TYPE**              | DNPALLETIZE.MATERIAL_TYPE
+| **BATCH_NO**                   | DNPALLETIZE.BATCH_NO
+| **PLANNED_CARTON_QTY**         | DNPALLETIZE.PLANNED_CARTON_QTY
 | **QTY_KG_CRTN**                | DNPALLETIZE.STATION_NO
 | **QTY_CRTN_PL**                | DNPALLETIZE.STATION_NO
 | **UOM**                        | DNPALLETIZE.STATION_NO
