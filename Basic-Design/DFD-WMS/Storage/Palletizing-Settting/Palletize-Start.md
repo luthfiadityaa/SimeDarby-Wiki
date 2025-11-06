@@ -333,10 +333,13 @@ ID 26
 ")
 
 id26-insert[("
-DNARRIVAL
+DNARRIVAl
+")]
+
+id26-update[("
 DNPALLET
 DNCARRYINFO
-")]
+")];
 
 storageStationOperator[storageStationOperator]
 
