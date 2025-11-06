@@ -585,15 +585,15 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**                | **Insert Value**                               |
 |--------------------------------|-----------------------------------------------|
-| **WORK_TYPE**                  | 26:Direct Transfer
+| **WORK_TYPE**                  | 2: Storage
 | **CMD_STATUS**                 | 1:Started 
-| **CARRY_FLAG**                 | 3: Direct Transfer
+| **CARRY_FLAG**                 | 1: Storage
+| **AISLE_STATION_NO**           | Aisle Number where a reserved location belongs to
 | **SOURCE_STATION_NO**          | DNARRIVAL.STATION_NO
-| **DEST_STATION_NO**            | <span style="color:yellow; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (7101, 7102, 7103, 7104, 7105, 7106, 7107, 7108, 7109, 7110)</span>
-| **REGIST_DATE**                | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**               | ClassName
+| **DEST_STATION_NO**            | 
+| **DEST_STATION_NO**            | Reserved Location Number
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | ClassName
+| **LAST_UPDATE_PNAME**          | Class name
 
 ##<span style="color:skyblue; font-weight:bold">&nbsp;StorageSender&nbsp;</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
