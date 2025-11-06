@@ -21,7 +21,7 @@
 ##<span style="color:Green; font-weight:bold">Inbound Table Data Flow </span>
 |Action Name| SRTP | PLLT | WRKI | WRKL | CRYI | STCK | HSTS | ARVL | WRHS | SHLF | STCH | MTST | STSN |
 |-----------|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| [ID26 - Dummy Arrival](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/942/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20Packaging%20Material/Storage%20Flow%20(Packaging%20Material)&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid26---dummy-arrival%3C/span%3E) | | | | |INSERT | | | INSERT | | | |
+| [ID26 - Dummy Arrival](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/942/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20Packaging%20Material/Storage%20Flow%20(Packaging%20Material)&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid26---dummy-arrival%3C/span%3E) | | INSERT | INSERT | |INSERT | | | INSERT | | | |
 | [Automatic Mode Change Sender](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/942/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20Packaging%20Material/Storage%20Flow%20(Packaging%20Material)&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eautomatic-mode-change-sender%3C/span%3E) | | UPDATE | UPDATE | | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE | |
 | [ID25](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/942/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20Packaging%20Material/Storage%20Flow%20(Packaging%20Material)&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid25%3C/span%3E) | | | | | UPDATE | | | UPDATE | | | |
 | [ID64](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20Packaging%20Material/Storage%20Flow%20(Packaging%20Material)&pageId=942&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid64%3C/span%3E) | | | | | UPDATE | | | | | | |
@@ -327,13 +327,18 @@ ID 26
 
 id26-insert[("
 DNARRIVAL
+")]
+
+id26-update[("
 DNCARRYINFO
+DNPALLET
 ")]
 
 storageStationOperator[storageStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
+storageStationOperator--> |update| id26-update
 :::
 
 Continue the process  <span style="color:green; font-weight:bold">storage</span> , AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
@@ -375,10 +380,16 @@ Continue the process  <span style="color:green; font-weight:bold">storage</span
 | **CANCEL_REQUEST**             | 0:Not Requested
 | **SCHEDULE_NO**                | Sequence Object
 | **END_STATION_NO**             | DNWORKINFO.PLAN_AREA_NO
-| **REGIST_DATE**                | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**               | ClassName
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | ClassName
+
+### <span style="color:skyblue; font-weight:bold">DNPALLET</span>
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|                                                       
+| **CURRENT_STATION_NO**     | DNARRIVAL.STATION_NO                                                       
+| **WH_STATION_NO**          | 9002                                                                                                                                                         
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
 
 ##<span style="color:skyblue; font-weight:bold">Storage Sender</span>
 
