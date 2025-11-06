@@ -40,7 +40,7 @@ flowchart LR
         Expiry Days<br>
     ]
 
-    tableList-insert-update[("
+    tableList-insert-select[("
         DNPALLETIZE<br>
     ")]
 
@@ -56,7 +56,7 @@ flowchart LR
     className[PalletizingSettingSCH]
 
     input --> className --> |INSERT| tableList-insert
-    className --> |UPDATE| tableList-insert-update
+    className --> |SELECT| tableList-insert-select
 
     classDef leftAlign text-align:left;
     class input leftAlign;
