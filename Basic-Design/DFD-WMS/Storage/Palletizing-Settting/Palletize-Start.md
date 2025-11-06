@@ -377,10 +377,7 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 | **CMD_STATUS**                 | 1:Started 
 | **CARRY_FLAG**                 | 3: Direct Transfer
 | **SOURCE_STATION_NO**          | DNPALLET.CURRENT_STATION_NO
-| **DEST_STATION_NO**            | <span style="color:yellow; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (1111/1112/1113/1114/1115)</span>
-| **CANCEL_REQUEST**             | 0:Not Requested
-| **SCHEDULE_NO**                | Sequence Object
-| **END_STATION_NO**             | DNWORKINFO.PLAN_AREA_NO
+| **DEST_STATION_NO**            |  <span style="color:yellow; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (7101, 7102, 7103, 7104, 7105, 7106, 7107, 7108, 7109, 7110)</span>
 | **REGIST_DATE**                | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**               | ClassName
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
@@ -392,8 +389,12 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 ::: mermaid
 flowchart LR
 automaticmodechangesender-update[("
+DMWAREHOUSE
+DMSHELF
+DNSTOCK
 DNARRIVAL
 DNCARRYINFO
+DNWORKINFO
 ")]
 automaticmodechangesender-input[("
 DNARRIVAL
