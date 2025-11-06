@@ -1279,7 +1279,7 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **TERMINAL_NO**            | DNWORKINFO.TERMINAL_NO
 | **WORK_SECOND**            | DNWORKINFO.WORK_SECOND
 | **USER_NAME**              | DCUSER.USERNAME
-| **REPORT_FLAG**            | 1:Reported
+| **REPORT_FLAG**            | 0: Not Reported
 | **REGIST_DATE**            | SYSTIMESTAMP
 | **REGIST_PNAME**           | Class name
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
