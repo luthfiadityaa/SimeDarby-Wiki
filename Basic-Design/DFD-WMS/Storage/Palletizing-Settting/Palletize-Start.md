@@ -1294,24 +1294,24 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 
 | **Field Name**                 | **Insert Value**                               |
 |--------------------------------|------------------------------------------------|
-| **PALLETIZE_ID**               | Sequence Object
-| **STATION_NO**                 | Value from screen (Station No)
-| **CURRENT_STATUS**             | Value from screen (Current Status)
-| **MATERIAL_CODE**              | Value from screen (Material Code)
-| **MATERIAL_NAME**              | Value from screen (Material Name)
-| **MATERIAL_TYPE**              | Value from screen (Material Type)
-| **BATCH_NO**                   | Value from screen (BATCH_NO)
-| **PLANNED_CARTON_QTY**         | Value from screen (PLANNED CARTON QTY)
-| **QTY_KG_CRTN**                | Value from screen (Qty Kg/Crtn)
-| **QTY_CRTN_PL**                | Value from screen (Qty Crtn/PL)
-| **UOM**                        | Value from screen (UOM)
-| **TEMPERING_PERIOD**           | Value from screen (Tempering Period)
-| **STORAGE_LOCATION**           | Value from screen (Storage Location) ⟶ <span style="color:yellow; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>
-| **EXPIRY_DAYS**                | Value from screen (Expiry Days)
-| **STORAGE_QTY**                | <span style="color:yellow; font-weight:bold">PLANNED_CARTON_QTY - TOTAL_ACTUAL_CARTON_QTY</span>
-| **TOTAL_ACTUAL_CARTON_QTY**    | <span style="color:yellow; font-weight:bold">TOTAL_ACTUAL_CARTON_QTY + QTY_KG_CRTN</span>
-| **MAX_PALLET_BATCH_END**       | <span style="color:yellow; font-weight:bold">PLANNED_CARTON_QTY / QTY_CRTN_PL</span> 
-| **BATCH_PALLET_START**         | <span style="color:yellow; font-weight:bold">Value from screen (Storage Date/Time) + TimeStamp (System Generated)</span>
+| **PALLETIZE_ID**               | DNPALLETIZE.PALLETIZE_ID
+| **STATION_NO**                 | DNPALLETIZE.STATION_NO
+| **CURRENT_STATUS**             | DNPALLETIZE.STATION_NO
+| **MATERIAL_CODE**              | DNPALLETIZE.STATION_NO
+| **MATERIAL_NAME**              | DNPALLETIZE.STATION_NO
+| **MATERIAL_TYPE**              | DNPALLETIZE.STATION_NO
+| **BATCH_NO**                   | DNPALLETIZE.STATION_NO
+| **PLANNED_CARTON_QTY**         | DNPALLETIZE.STATION_NO
+| **QTY_KG_CRTN**                | DNPALLETIZE.STATION_NO
+| **QTY_CRTN_PL**                | DNPALLETIZE.STATION_NO
+| **UOM**                        | DNPALLETIZE.STATION_NO
+| **TEMPERING_PERIOD**           | DNPALLETIZE.STATION_NO
+| **STORAGE_LOCATION**           | DNPALLETIZE.STATION_NO
+| **EXPIRY_DAYS**                | DNPALLETIZE.STATION_NO
+| **STORAGE_QTY**                | DNPALLETIZE.STATION_NO
+| **TOTAL_ACTUAL_CARTON_QTY**    | DNPALLETIZE.STATION_NO
+| **MAX_PALLET_BATCH_END**       | DNPALLETIZE.STATION_NO 
+| **BATCH_PALLET_START**         | DNPALLETIZE.STATION_NO
 | **REGIST_DATE**                | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**               | ClassName
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
