@@ -163,13 +163,8 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 
 ###<span style="color:skyblue; font-weight:bold">DNPallet</span>
 | **Field Name**            | **Insert Vlaue**                               |
-|----------------------------|-----------------------------------------------|
-| **PALLET_ID**              | Sequence Object                                                       
-| **CURRENT_STATION_NO**     | DNPALLETIZE.STATION_NO                                                       
-| **WH_STATION_NO**          | DNPALLETIZE.STORAGE_LOCATION                                                      
-| **STATUS_FLAG**            | 1:Reserved for Storage                                                     
-| **EMPTY_FLAG**             | 0:Normal Pallet                                                        
-| **BCR_DATA**               | DNARRIVAL.BCR_DATA                                                 
+|----------------------------|-----------------------------------------------|                                                
+| **CURRENT_STATION_NO**     | DNARRIVAL.STATION_NO                                               
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
@@ -367,6 +362,25 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
+
+
+
+
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+| **Field Name**                | **Insert Value**                               |
+|--------------------------------|-----------------------------------------------|
+| **WORK_TYPE**                  | 26:Direct Transfer
+| **CMD_STATUS**                 | 1:Started 
+| **CARRY_FLAG**                 | 3: Direct Transfer
+| **SOURCE_STATION_NO**          | DNPALLET.CURRENT_STATION_NO
+| **DEST_STATION_NO**            | <span style="color:yellow; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (1111/1112/1113/1114/1115)</span>
+| **CANCEL_REQUEST**             | 0:Not Requested
+| **SCHEDULE_NO**                | Sequence Object
+| **END_STATION_NO**             | DNWORKINFO.PLAN_AREA_NO
+| **REGIST_DATE**                | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**               | ClassName
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**          | ClassName
 
 ##<span style="color:skyblue; font-weight:bold">Storage Sender&nbsp;</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
