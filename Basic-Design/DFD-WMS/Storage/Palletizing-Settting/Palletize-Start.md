@@ -1250,7 +1250,7 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 ####<span style="color:skyblue; font-weight:bold">DNHostSend</span>
 | **Field Name**             | **Insert Value**                                      |
 |----------------------------|-------------------------------------------------------|
-| **WORK_DAY**               | DNWORKINFO.WORK_DAY
+| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **JOB_NO**                 | DNWORKINFO.JOB_NO
 | **COLLECT_JOB_NO**         | DNWORKINFO.COLLECT_JOB_NO
 | **SETTING_UNIT_KEY**       | DNWORKINFO.SETTING_UNIT_KEY
