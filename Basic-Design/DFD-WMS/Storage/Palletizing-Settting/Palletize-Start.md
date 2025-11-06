@@ -585,12 +585,12 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**                 | **Insert Value**                               |
 |--------------------------------|-----------------------------------------------|
-| **WORK_TYPE**                  | 2: Storage
+| **WORK_TYPE**                  | 2:Storage
 | **CMD_STATUS**                 | 1:Started 
-| **CARRY_FLAG**                 | 1: Storage
+| **CARRY_FLAG**                 | 1:Storage
 | **AISLE_STATION_NO**           | Aisle Number where a reserved location belongs to
 | **SOURCE_STATION_NO**          | DNARRIVAL.STATION_NO
-| **DEST_STATION_NO**            | 
+| **DEST_STATION_NO**            | Reserved Location Number
 | **DEST_STATION_NO**            | Reserved Location Number
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
