@@ -15,7 +15,15 @@ flowchart LR
 :::
 
 ::: mermaid
-flowchart TD  
+flowchart TD
+
+ input[Palletize Start]
+    process[Background Process]
+    output[Batch End]
+
+    input --> process --> output
+<br>
+  
 P1[Palletizing Start]-->P2[ID26]-->P3[StorageSender]-->P4[ID25]
 P4[ID25]-->P5[ID26]-->P6[StorageSender]-->P7[ID25]
 P7[ID25]-->Cond1{Flow?} 
