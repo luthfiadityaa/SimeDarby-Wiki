@@ -1193,7 +1193,7 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 |----------------------------|-------------------------------------------------------|
 | **STORAGE_DAY**            | DMWARENAVISYSTEM.WORK_DAY
 | **NEWEST_STORAGE_DATE**    | SYSTIMESTAMP
-| **STOCK_QTY**              | DNSTOCK.PLAN_QTY
+| **STOCK_QTY**              | DNWORKINFO.RESULT_QTY
 | **ALLOCATION_QTY**         | DNWORKINFO.RESULT_QTY
 | **PLAN_QTY**               | 0
 | **STOCK_STATUS**           | <span style="color:yellow; font-weight:bold">UU: Unrestricted Used</span>
