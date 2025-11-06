@@ -552,10 +552,6 @@ id26-insert[("
 DNARRIVAL
 ")]
 
-id26-update[(
-DNPALLET
-DNCARRYINFO
-")]
 
 storageStationOperator[storageStationOperator]
 
