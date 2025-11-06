@@ -143,7 +143,7 @@ This section explains the Storage flow after the operation of Planned Storage Pa
 
 ## <span style="color:skyblue; font-weight:bold">Table Value</span>
 
-### <span style="color:skyblue; font-weight:bold">DNSTORAGEPLAN (UPDATE)</span>
+### <span style="color:skyblue; font-weight:bold">DNSTORAGEPLAN</span>
 | **Column Name**            | **Description / Notes**                           |
 |----------------------------|---------------------------------------------------|
 | **PLAN_UKEY**              | Sequence Object                                                                                                             
@@ -159,7 +159,7 @@ This section explains the Storage flow after the operation of Planned Storage Pa
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-### <span style="color:skyblue; font-weight:bold">DNPallet (INSERT)</span>
+### <span style="color:skyblue; font-weight:bold">DNPALLET</span>
 | **Column Name**            | **Description / Notes**                           |
 |----------------------------|-------------------------------------------------------|
 | **PALLET_ID**              | Sequence Object                                                       
