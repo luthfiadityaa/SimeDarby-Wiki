@@ -65,12 +65,13 @@ flowchart LR
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
 This section explains the validations for the whole proccess Palletize Start
 - Total Actual Carton Qty <span style="color:red; font-weight:bold;">=</span> Planned Carton Qty
- 
+```java 
   If Planned Qty > Actual Qty 
      → Show warning message before Batch End.
 
   If Planned Qty < Actual Qty 
      → Consider as Data Error at ID26 on St.1101-05
+```
 - Storage Qty = Planned Carton Qty <span style="color:red; font-weight:bold;">-</span> Total Actual Carton Qty 
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
