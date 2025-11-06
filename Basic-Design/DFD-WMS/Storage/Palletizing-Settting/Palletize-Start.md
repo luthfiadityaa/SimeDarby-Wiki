@@ -274,15 +274,16 @@ After successful creation of arrival record in <span style="color:green; font-we
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ####<span style="color:skyblue; font-weight:bold">DMWarehouse</span>
-| **Field Name**            | **Insert Value**                               |
+| **Field Name**             | **Insert Value**                               |
 |----------------------------|-----------------------------------------------|
-| **LAST_USED_STATION_NO**   |  Aisle Number where a reserved location belongs to 
+| **LAST_USED_STATION_NO**   | Aisle Number where a reserved location belongs to 
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 
 ####<span style="color:skyblue; font-weight:bold">DMShelf</span>
-| **Field Name**            | **Insert Value**                               |
+| **Field Name**             | **Insert Value**                               |
 |----------------------------|-----------------------------------------------|
-| **STATUS_FLAG**                | 2:Reserved Location
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+| **STATUS_FLAG**            | 2:Reserved Location
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**            | **Insert Value**                               |
