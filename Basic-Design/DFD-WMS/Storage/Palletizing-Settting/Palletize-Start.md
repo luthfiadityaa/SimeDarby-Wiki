@@ -951,7 +951,8 @@ Upon equipment <span style="color:green; font-weight:bold">STV</span> have picke
 flowchart LR
 
 releaseCommand["
-Continue the Process from Direct Transfer
+Continue the Process from 
+Direct Transfer
 "]
 
 id26msg("
