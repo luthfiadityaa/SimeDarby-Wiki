@@ -176,6 +176,29 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
+###<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
+| **Filed Name**            | **Insert Value**                               |
+| ----------------------------|----------------------------------------------|
+| **JOB_NO**                 | Sequence Object
+| **SETTING_UNIT_KEY**       | Sequence Object
+| **COLLECT_JOB_NO**         | Sequence Object
+| **JOB_TYPE**               | 02:Storage
+| **STATUS_FLAG**            | 0:Not Started
+| **PLAN_UKEY**              | DNSTORAGEPLAN.PLAN_UKEY
+| **STOCK_ID**               | Sequence Object
+| **PLAN_DAY**               | DMWARENAVISYSTEM.WORK_DAY
+| **BATCH_NO**               | DNPALLETIZE.BATCH_NO
+| **PLAN_AREA_NO**           | DNPALLETIZE.STORAGE_LOCATION 
+| **MATERIAL_CODE**          | DNPALLETIZE.MATERIAL_CODE 
+| **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL 
+| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
+| **USER_ID**                | Login Info
+| **STORAGE_LOCATION_FROM**  | DNPALLETIZE.STATION_NO 
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
+
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**                | **Insert Value**                               |
 |--------------------------------|-----------------------------------------------|
@@ -211,29 +234,6 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **TEMPERING_PERIOD**       | DNPALLETIZE.TEMPERING_PERIOD
 | **STORING_PAIR_KEY**       | <span style="color:yellow; font-weight:bold">DNPALLETIZE.MATERIAL_CODE + DNPALLETIZE.BATCH_NO </span>
 | **EXPIRY_DATE**            | DNPALLETIZE.EXPIRY_DAYS
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
-
-###<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
-| **Filed Name**            | **Insert Value**                               |
-| ----------------------------|----------------------------------------------|
-| **JOB_NO**                 | Sequence Object
-| **SETTING_UNIT_KEY**       | Sequence Object
-| **COLLECT_JOB_NO**         | Sequence Object
-| **JOB_TYPE**               | 02:Storage
-| **STATUS_FLAG**            | 0:Not Started
-| **PLAN_UKEY**              | DNSTORAGEPLAN.PLAN_UKEY
-| **STOCK_ID**               | Sequence Object
-| **PLAN_DAY**               | DMWARENAVISYSTEM.WORK_DAY
-| **BATCH_NO**               | DNPALLETIZE.BATCH_NO
-| **PLAN_AREA_NO**           | DNPALLETIZE.STORAGE_LOCATION 
-| **MATERIAL_CODE**          | DNPALLETIZE.MATERIAL_CODE 
-| **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL 
-| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
-| **USER_ID**                | Login Info
-| **STORAGE_LOCATION_FROM**  | DNPALLETIZE.STATION_NO 
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
