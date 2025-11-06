@@ -64,8 +64,8 @@ flowchart LR
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
 This section explains the validations for the whole proccess Palletize Start
-- Storage Qty = Planned Carton Qty <span style="color:red">-</span> Total Actual Carton Qty
-- Total Actual Carton Qty <span style="color:red"><=</span> Planned Carton Qty  
+- Storage Qty = Planned Carton Qty <span style="color:red; font-weight:bold;">-</span> Total Actual Carton Qty
+- Total Actual Carton Qty <span style="color:red; font-weight:bold;"><=</span> Planned Carton Qty  
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
