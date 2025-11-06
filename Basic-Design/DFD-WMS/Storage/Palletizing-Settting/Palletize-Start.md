@@ -1123,7 +1123,8 @@ Upon equipment <span style="color:green; font-weight:bold">SRM</span> have picke
 
 <hr>
 
-##<span style="color:skyblue; font-weight:bold">[Continue flow If Batch End Process](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Erelease-command-from-palletize-robot---dummy-arrival%3C/span%3E)</span>
+##<span style="color:skyblue; font-weight:bold">[Continue flow If Batch End Process](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Erelease-command-from-palletize-robot---dummy-arrival%3C/span%3E)</span><br>
+<hr>
 
 #<span style="color:skyblue; font-weight:bold">Storage Flag Condition</span>
 ![image.png](/.attachments/image-31228a41-0618-46d0-acf0-93f1edd79e4e.png)
