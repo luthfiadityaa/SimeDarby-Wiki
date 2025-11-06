@@ -49,7 +49,7 @@ FileExchange--INSERT-->FileExchange-insert
 
 Upon receiving new Plan Storage from Host system, WareNavi will insert related planned information to DNSTORAGEPLAN database table.
 
-### <span style="color:skyblue; font-weight:bold">DNSTORAGEPLAN (INSERT)</span>
+### <span style="color:skyblue; font-weight:bold">DNSTORAGEPLAN</span>
 
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
@@ -133,8 +133,8 @@ This section explains the validations for the whole proccess Storage Packaging M
   <span style="color:green; font-weight:bold">JOIN DNCARRYINFO.PALLET_ID = DNPALLET.PALLET_ID  
   CONDITION DNPALLET.BCR_DATA = <Pallet Number> </span>  
   So if result > 0, Palletize Start cannot proceed.
-- Station <span style="color:green; font-weight:bold">(ST1106)</span> is not suspended
-- Station <span style="color:green; font-weight:bold">(ST1106)</span> is not disconnected
+- Station <span style="color:green; font-weight:bold">(ST1106)</span> is not suspended <span style="color:green; font-weight:bold">(DMSTATION.SUSPEND.OFF)</span>
+- Station <span style="color:green; font-weight:bold">(ST1106)</span> is not disconnected <span style="color:green; font-weight:bold">(DMSTATION.STATUS_FLAG.ACTIVE)</span>
 
 # <span style="color:skyblue; font-weight:bold">Storage Process flow</span>
 This section explains the Storage flow after the operation of Planned Storage Packaging Material is started.
