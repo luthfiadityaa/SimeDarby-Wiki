@@ -81,7 +81,7 @@ Cond1 -->|Yes| Await[Await] --> Cond1
 Cond1 -->|No| Cond2{Is No Read?}  
 Cond2 -->|Yes| Move1[ID05 ControlInfo:NoRead]  
 Cond2 -->|No| Cond3{Is Batch Started?}  
-Cond3 -->|Yes| Cond4{Planned Qty >= Actual Qty + Qty/PL?}  
+Cond3 -->|Yes| Cond4{Total Actual Carton Qty != Planned Carton Qty ?}  
 Cond3 -->|No| DataError1[Data Error]  
 DataError1[Data Error] --> BatchStart[Batch Start] --> Cond4  
 Cond4 -->|Yes| Move2[ID05]  
