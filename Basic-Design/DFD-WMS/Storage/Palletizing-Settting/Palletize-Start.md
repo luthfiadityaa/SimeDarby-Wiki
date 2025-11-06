@@ -1124,6 +1124,9 @@ Upon equipment <span style="color:green; font-weight:bold">SRM</span> have picke
 
 #<span style="color:skyblue; font-weight:bold">Storage Flag Condition</span>
 ![image.png](/.attachments/image-31228a41-0618-46d0-acf0-93f1edd79e4e.png)
+Table effect:
+- DNStock
+- DNStockHistory
 
 ##<span style="color:skyblue; font-weight:bold">ID33</span>
 jp.co.daifuku.wcs.mc.as21.communication.control.Id33Process
