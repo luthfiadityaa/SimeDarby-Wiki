@@ -175,7 +175,7 @@ This section explains the Storage flow after the operation of Planned Storage Pa
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-### <span style="color:skyblue; font-weight:bold">DNWorkInfo (INSERT)</span>
+### <span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **JOB_NO**                 | Sequence Object
