@@ -1,4 +1,4 @@
-[[_TOC_]]
+ [[_TOC_]]
 [[_TOSP_]]
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start database flow</span>
