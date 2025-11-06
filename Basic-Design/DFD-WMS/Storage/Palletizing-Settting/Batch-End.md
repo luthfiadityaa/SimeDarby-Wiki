@@ -327,7 +327,6 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **LAST_UPDATE_PNAME**      | ClassName
 
 ###<span style="color:skyblue; font-weight:bold">DNPalletizeHistory</span>
-
 | **Field Name**                 | **Insert Value**                               |
 |--------------------------------|------------------------------------------------|
 | **PALLETIZE_ID**               | DNPALLETIZE.PALLETIZE_ID
