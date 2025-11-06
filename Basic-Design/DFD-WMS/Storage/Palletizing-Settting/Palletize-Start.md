@@ -127,8 +127,11 @@ ID 26
 ")
 
 id26-insert[("
-DNARRIVAL
-DNCARRYINFO
+   DNARRIVAL
+   DNWORKINFO
+   DNPALLET
+   DNCARRYINFO
+   DNSTOCK		
 ")]
 
 storageStationOperator[StorageStationOperator]
