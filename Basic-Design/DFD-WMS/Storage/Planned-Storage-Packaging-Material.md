@@ -78,7 +78,8 @@ Upon receiving new Plan Storage from Host system, WareNavi will insert related p
 | **LAST_UPDATE_PNAME**      | ClassName
 
 #<span style="color:skyblue; font-weight:bold">Planned Storage - Set (F2)</span>
-Planned Storage Setting (PKG) is used to set the information of stock which will be entered into ASRS. After **Set(F2)** all item in input text will be process and the result will be posted back to SAP.
+Planned Storage Setting (PKG) is used to set the information of stock which will be entered into ASRS. After **Set(F2)** all item in input text will be process and The result will be posted back to SAP as [Production Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)
+
 ![image.png](/.attachments/image-731303e9-dc65-4f98-ba82-ba6d13a6c58b.png)
 
 ::: mermaid
@@ -131,6 +132,8 @@ This section explains the validations for the whole proccess Storage Packaging M
   <span style="color:green; font-weight:bold">JOIN DNCARRYINFO.PALLET_ID = DNPALLET.PALLET_ID  
   CONDITION DNPALLET.BCR_DATA = <Pallet Number> </span>  
   So if result > 0, Palletize Start cannot proceed.
+- Station <span style="color:green; font-weight:bold">(ST1106)</span> is not suspended
+- Station <span style="color:green; font-weight:bold">(ST1106)</span> is not disconnected
 
 # <span style="color:skyblue; font-weight:bold">Storage Process flow</span>
 This section explains the Storage flow after the operation of Planned Storage Packaging Material is started.
@@ -206,7 +209,7 @@ This section explains the Storage flow after the operation of Planned Storage Pa
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-### <span style="color:skyblue; font-weight:bold">DNWorkList (INSERT)</span>
+### <span style="color:skyblue; font-weight:bold">DNWORKLIST (INSERT)</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **JOB_NO**                 | DNWORKINFO.JOB_NO
@@ -239,7 +242,7 @@ This section explains the Storage flow after the operation of Planned Storage Pa
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP 
 | **LAST_UPDATE_PNAME**      | ClassName
 
-### <span style="color:skyblue; font-weight:bold">DNCarryInfo (INSERT)</span>
+### <span style="color:skyblue; font-weight:bold">DNCARRYINFO (INSERT)</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **CARRY_KEY**              | DNWORKINFO.SYSTEM_CONN_KEY
@@ -260,7 +263,7 @@ This section explains the Storage flow after the operation of Planned Storage Pa
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-### <span style="color:skyblue; font-weight:bold">DNStock (INSERT)</span>
+### <span style="color:skyblue; font-weight:bold">DNSTOCK (INSERT)</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **STOCK_ID**               | DNWORKINFO.STOCK_ID  
@@ -283,7 +286,7 @@ This section explains the Storage flow after the operation of Planned Storage Pa
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-### <span style="color:skyblue; font-weight:bold">DNHostSend (INSERT)</span>
+### <span style="color:skyblue; font-weight:bold">DNHOSTSEND (INSERT)</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **WORK_DAY**               | DNWORKINFO.WORK_DAY
