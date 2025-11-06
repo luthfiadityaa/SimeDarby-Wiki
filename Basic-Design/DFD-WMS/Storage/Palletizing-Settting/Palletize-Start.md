@@ -839,8 +839,8 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 | **WORK_TYPE**                  | 26:Direct Transfer
 | **CMD_STATUS**                 | 1:Started 
 | **CARRY_FLAG**                 | 3: Direct Transfer
-| **SOURCE_STATION_NO**          | DNARRIVAL.STATION_NO
-| **DEST_STATION_NO**            | <span style="color:yellow; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (7101, 7102, 7103, 7104, 7105, 7106, 7107, 7108, 7109, 7110)</span>
+| **SOURCE_STATION_NO**          | DNARRIVAL.STATION_NO ⟶ (7107, 7108, 7109, 7110)
+| **DEST_STATION_NO**            | <span style="color:yellow; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (7211, 7212, 7213, 7214)</span>
 | **REGIST_DATE**                | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**               | ClassName
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
