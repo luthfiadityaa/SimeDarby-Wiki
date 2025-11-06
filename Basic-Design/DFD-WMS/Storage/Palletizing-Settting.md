@@ -14,7 +14,7 @@ flowchart LR
     class input leftAlign;
 :::
 
-#Detail Flow
+#<span style="color:skyblue; font-weight:bold">Detail Flow</span>
 ::: mermaid
 flowchart TD
   
