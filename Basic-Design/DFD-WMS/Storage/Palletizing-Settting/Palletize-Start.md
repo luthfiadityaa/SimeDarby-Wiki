@@ -366,7 +366,7 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 ###<span style="color:skyblue; font-weight:bold">DNPallet</span>
 | **Field Name**            | **Insert Vlaue**                               |
 |----------------------------|-----------------------------------------------|                                                
-| **CURRENT_STATION_NO**     | Reserved Location Number                                               
+| **CURRENT_STATION_NO**     | DNARRIVAL.STATION_NO                                          
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
