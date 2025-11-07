@@ -1,3 +1,4 @@
+#<span style="color:skyblue; font-weight:bold">Detail Flow</span>
 ::: mermaid
 flowchart TD  
 ArrivalAt1101[ID26] --> Cond1{Is Location Full?}  
