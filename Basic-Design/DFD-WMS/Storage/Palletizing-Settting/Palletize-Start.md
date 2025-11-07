@@ -1133,6 +1133,7 @@ Upon equipment <span style="color:green; font-weight:bold">SRM</span> have picke
 Table effect:
 - DNStock
 - DNStockHistory
+- DNSTORAGEPLAN
 
 ##<span style="color:skyblue; font-weight:bold">ID33</span>
 jp.co.daifuku.wcs.mc.as21.communication.control.Id33Process
