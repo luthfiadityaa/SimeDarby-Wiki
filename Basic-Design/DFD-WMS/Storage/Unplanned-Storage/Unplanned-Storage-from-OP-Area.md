@@ -1082,7 +1082,7 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **STORAGE_DAY**            | DNSTOCK.STORAGE_DAY
 | **STORAGE_DATE**           | DNSTOCK.STORAGE_DATE
 | **NEWEST_STORAGE_DATE**    | DNSTOCK.NEWEST_STORAGE_DATE
-| **MATERIAL_CODE**            | DNSTOCK.MATERIAL_CODE
+| **MATERIAL_CODE**          | DNSTOCK.MATERIAL_CODE
 | **PALLET_ID**              | DNSTOCK.PALLET_ID
 | **BCR_DATA**               | DNPALLET.BCR_DATA
 | **AREA_TYPE**              | DMAREA_AREA_TYPE
