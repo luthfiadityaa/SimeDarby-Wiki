@@ -6,12 +6,7 @@
 If a downtime occurs on one of the lines, manual palletizing will be carried out in the blue box. Once palletizing is complete, the items will be transferred to the inbound station, which is the same station used for QC.
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage database flow</span>
-| Action Name                        | DNWORKINFO | DNWORKLIST | DNPALLET | DNCARRYINFO | DNSTOCK | DNHOSTSEND | DNARRIVAL | DMWAREHOUSE | DMSHELF |
-|-|-|-|-|-|-|-|-|-|-|
-| Unplanned Storage - Set(F2)[(1)]| INSERT | INSERT | INSERT | INSERT | INSERT | INSERT | | | |
-| ID26[(2)] | | | | | | | INSERT | | |
-| Automatic Mode Change Sender[(3)] | UPDATE | | UPDATE | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE | UPDATE
-| ID25[(4)] | | | | UPDATE | | | DELETE | | |
+-
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage - Set(F2)</span>
 ![image.png](/.attachments/image-6293c4f4-5fd4-4247-8cbc-fbcc6d9cf3a5.png)
