@@ -1124,16 +1124,15 @@ Upon equipment <span style="color:green; font-weight:bold">SRM</span> have picke
 | **LAST_UPDATE_PNAME**     | Class name
 
 <hr>
-
-##<span style="color:skyblue; font-weight:bold">[Continue flow, If comming from Batch End Process](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/874/Batch-End?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid33%3C/span%3E)</span><br>
-<hr>
-
-#<span style="color:skyblue; font-weight:bold">Storage Flag Condition</span>
+#<span style="color:skyblue; font-weight:bold">!Storage Flag Condition</span>
 ![image.png](/.attachments/image-31228a41-0618-46d0-acf0-93f1edd79e4e.png)
 Table effect:
 - DNStock
 - DNStockHistory
 - DNSTORAGEPLAN
+
+##<span style="color:skyblue; font-weight:bold">[Continue flow, If comming from Batch End Process](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/874/Batch-End?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid33%3C/span%3E)</span><br>
+<hr>
 
 ##<span style="color:skyblue; font-weight:bold">ID33</span>
 jp.co.daifuku.wcs.mc.as21.communication.control.Id33Process
