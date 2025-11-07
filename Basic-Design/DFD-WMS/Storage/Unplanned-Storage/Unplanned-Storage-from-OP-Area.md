@@ -98,7 +98,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **PALLET_ID**              | Sequence Object
 | **BATCH_NO**               | Value from screen (Batch No) 
 | **TEMPERING_PERIOD**       | Value from screen (Tempering Period)
-| **STORING_PAIR_KEY**       | <span style="color:yellow; font-weight:bold">DNPALLETIZE.MATERIAL_CODE + DNPALLETIZE.BATCH_NO </span>
+| **STORING_PAIR_KEY**       | <span style="color:green; font-weight:bold">DNPALLETIZE.MATERIAL_CODE + DNPALLETIZE.BATCH_NO </span>
 | **EXPIRY_DATE**            | Value from screen (Expiry Days)
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
