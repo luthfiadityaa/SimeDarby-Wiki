@@ -711,6 +711,8 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | LAST_UPDATE_DATE           | SYSTIMESTAMP
 | LAST_UPDATE_PNAME          | Class name
 
+##<span style="color:skyblue; font-weight:bold">[Planned Storage PKG - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/836/Planned-Storage-PKG)</span>
+
 # User Story
   - [DFD Storage Packaging Material](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5784)
 
