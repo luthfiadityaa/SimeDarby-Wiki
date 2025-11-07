@@ -344,7 +344,7 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 ##<span style="color:skyblue; font-weight:bold">[Send Report as Production Storage Result - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)</span><br>
 <hr>
 
-#User Story
+#<span style="color:skyblue; font-weight:bold">User Story</span>
 - [DFD Storage from Palletizing Area](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5783)
 
 #<span style="color:skyblue; font-weight:bold">Related DFD</span>
