@@ -109,7 +109,7 @@ This section explains the validations for the whole proccess Batch End
 | **MATERIAL_CODE**          | DNPALLETIZE.MATERIAL_CODE                                                  
 | **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL                                                 
 | **REPORT_FLAG**            | 0:Not Reported                                                   
-| **STORING_PAIR_KEY**       | <span style="color:yellow; font-weight:bold">DNPALLETIZE.MATERIAL_CODE + DNPALLETIZE.BATCH_NO</span>
+| **STORING_PAIR_KEY**       | <span style="color:green; font-weight:bold">DNPALLETIZE.MATERIAL_CODE + DNPALLETIZE.BATCH_NO</span>
 | **PALLETIZE_ID**           | DNPALLETIZE.ID
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
