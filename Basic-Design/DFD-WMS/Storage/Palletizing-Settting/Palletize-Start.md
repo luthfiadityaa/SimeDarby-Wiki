@@ -109,6 +109,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **REPORT_FLAG**            | 0:Not Reported                                                   
 | **STORING_PAIR_KEY**       | <span style="color:green; font-weight:bold">DNPALLETIZE.MATERIAL_CODE + DNPALLETIZE.BATCH_NO</span>
 | **PALLETIZE_ID**           | DNPALLETIZE.ID
+| **EXPIRY_DAYS**            | DNPALLETIZE.EXPIRY_DAYS
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
