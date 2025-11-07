@@ -241,7 +241,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **PALLET_ID**              | Sequence Object
 | **BATCH_NO**               | DNPALLETIZE.BATCH_NO 
 | **TEMPERING_PERIOD**       | DNPALLETIZE.TEMPERING_PERIOD
-| **STORING_PAIR_KEY**       | <span style="color:yellow; font-weight:bold">DNSTORAGEPLAN.STORING_PAIR_KEY</span>
+| **STORING_PAIR_KEY**       | <span style="color:green; font-weight:bold">DNSTORAGEPLAN.STORING_PAIR_KEY</span>
 | **EXPIRY_DATE**            | DNPALLETIZE.EXPIRY_DAYS
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
