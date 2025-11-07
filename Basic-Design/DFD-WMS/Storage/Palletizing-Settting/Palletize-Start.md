@@ -87,10 +87,10 @@ This section explains the validations for the whole proccess Palletize Start
 | **TEMPERING_PERIOD**           | Value from screen (Tempering Period)
 | **STORAGE_LOCATION**           | Value from screen (Storage Location) ⟶ <span style="color:green; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>
 | **EXPIRY_DAYS**                | Value from screen (Expiry Days)
-| **STORAGE_QTY**                | <span style="color:yellow; font-weight:bold">PLANNED_CARTON_QTY - TOTAL_ACTUAL_CARTON_QTY</span>
-| **TOTAL_ACTUAL_CARTON_QTY**    | <span style="color:yellow; font-weight:bold">TOTAL_ACTUAL_CARTON_QTY + QTY_KG_CRTN</span>
-| **MAX_PALLET_BATCH_END**       | <span style="color:yellow; font-weight:bold">PLANNED_CARTON_QTY / QTY_CRTN_PL</span> 
-| **BATCH_PALLET_START**         | <span style="color:yellow; font-weight:bold">Value from screen (Storage Date/Time) + TimeStamp (System Generated)</span>
+| **STORAGE_QTY**                | <span style="color:green; font-weight:bold">PLANNED_CARTON_QTY - TOTAL_ACTUAL_CARTON_QTY</span>
+| **TOTAL_ACTUAL_CARTON_QTY**    | <span style="color:green; font-weight:bold">TOTAL_ACTUAL_CARTON_QTY + QTY_KG_CRTN</span>
+| **MAX_PALLET_BATCH_END**       | <span style="color:green; font-weight:bold">PLANNED_CARTON_QTY / QTY_CRTN_PL</span> 
+| **BATCH_PALLET_START**         | <span style="color:green; font-weight:bold">Value from screen (Storage Date/Time) + TimeStamp (System Generated)</span>
 | **REGIST_DATE**                | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**               | ClassName
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
