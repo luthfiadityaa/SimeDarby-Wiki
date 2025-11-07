@@ -54,6 +54,17 @@ flowchart LR
     class input leftAlign;
 :::
 
+# <span style="color:skyblue; font-weight:bold">Validations</span>
+This section explains the validations for the whole proccess Storage Packaging Material
+- AGC is online.  <span style="color:green; font-weight:bold">(DMGroupController.STATUS_FLAG.ONLINE)</span>
+- Material Code exists in **DMMaterialMaster**
+- Material Code filtered with <span style="color:green; font-weight:bold">MATERIALCODE.EMP_PB</span> 
+- Input text with red asterisk <span style="color:red">(*)</span> is not empty
+- Pallet Information does not exist in <span style="color:green; font-weight:bold">DNCARRYINFO.</span>  
+  To check for Pallet Information:  
+  <span style="color:green; font-weight:bold">JOIN DNCARRYINFO.PALLET_ID = DNPALLET.PALLET_ID  
+  CONDITION DNPALLET.BCR_DATA = <Pallet Number> </span>  
+  So if result > 0, Palletize Start cannot proceed.
 
 
 
