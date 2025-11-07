@@ -424,7 +424,7 @@ DNCARRYINFO
 ")]
 
 
-storageStationOperator[storageStationOperator]
+storageStationOperator[InOutStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
@@ -631,7 +631,7 @@ DNPALLET
 DNCARRYINFO
 ")]
 
-storageStationOperator[storageStationOperator]
+storageStationOperator[InOutStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
@@ -834,7 +834,7 @@ DNPALLET
 DNCARRYINFO
 ")]
 
-storageStationOperator[storageStationOperator]
+storageStationOperator[InOutStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
