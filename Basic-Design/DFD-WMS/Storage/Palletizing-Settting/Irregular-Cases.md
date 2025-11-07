@@ -18,3 +18,5 @@ Cond4 -->|No| DataError2[Data Error] --> BatchEnd[Batch End] --> Move2[ID05]
 :::
 
 ##<span style="color:skyblue; font-weight:bold">No-Read (Go to Reject station)</span>
+
+##<span style="color:skyblue; font-weight:bold">Batch Start - Data Error</span>
