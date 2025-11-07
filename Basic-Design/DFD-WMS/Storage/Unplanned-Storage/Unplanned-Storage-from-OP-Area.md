@@ -48,10 +48,16 @@ flowchart LR
         DNCARRYINFO
     ")]
 
+    tableList-select[("
+        DMSTATION
+        DMTOSTATION
+    ")]
+
 
     className[UnplannedStorageSCH]
 
     input --> className --> |INSERT| tableList-insert
+    className --> |SELECT| tableList-select
 
     classDef leftAlign text-align:left;
     class input leftAlign;
