@@ -1,3 +1,6 @@
+[[_TOC_]]
+[[_TOSP_]]
+
 #<span style="color:skyblue; font-weight:bold">Detail Flow</span>
 ::: mermaid
 flowchart TD  
