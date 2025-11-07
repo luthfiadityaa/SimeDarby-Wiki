@@ -1057,23 +1057,12 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 |----------------------------|-------------------------------------------------------|
 | **STORAGE_DAY**            | DMWARENAVISYSTEM.WORK_DAY
 | **NEWEST_STORAGE_DATE**    | SYSTIMESTAMP
-| **STOCK_QTY**              | DNSTOCK.PLAN_QTY
+| **STOCK_QTY**              | DNWORKINFO.RESULT_QTY
 | **ALLOCATION_QTY**         | DNWORKINFO.RESULT_QTY
 | **PLAN_QTY**               | 0
 | **STOCK_STATUS**           | <span style="color:yellow; font-weight:bold">UU: Unrestricted Used</span>
 | **TEMPERING_FLAG**         | <span style="color:yellow; font-weight:bold; background-color:grey">0: Not Reached </span>
 | **QC_FLAG**                | <span style="color:yellow; font-weight:bold">0: Not Done</span>
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | Class name
-
-####<span style="color:skyblue; font-weight:bold"> DNStoragePlan </span>
-<span style="color:red; font-weight:bold; font-size:12px">*If DNSTORAGEPLAN.RESULT_QTY = DNSTORAGEPLAN.PLAN_QTY then update Status to completed</span>
-| **Field Name**             | **Insert Value**                                      |
-|----------------------------|-------------------------------------------------------|
-| **STATUS_FLAG**            | 4: Completed
-| **RESULT_QTY**             | DNSTORAGEPLAN.RESULT_QTY + DNWORKINFO.RESULT_QTY
-| **SHORTAGE_QTY**           | DNSTORAGEPLAN.SHORTAGE_QTY + DNWORKINFO.SHORTAGE_QTY
-| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | Class name
 
@@ -1111,30 +1100,10 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **REGIST_DATE**            | SYSTIMESTAMP
 | **REGIST_PNAME**           | Class name
 
-####<span style="color:skyblue; font-weight:bold">DNInOutResult</span>
-| **Field Name**             | **Insert Value**                                      |
-|----------------------------|-------------------------------------------------------|
-| **RESULT_KIND**            | 1:Storage(Stock+)
-| **STATION_NO**             | DNCARRYINFO.SOURCE_STATION_NO
-| **LOCATION_NO**            | DNCARRYINFO.DEST_STATION_NO
-| **WH_STATION_NO**          | DNPALLET.WH_STATION_NO
-| **AISLE_STATION_NO**       | DNCARRYINFO.AISLE_STATION_NO
-| **WORK_TYPE**              | DNCARRYINFO.WORK_TYPE
-| **RETRIEVAL_DETAIL**       | DNCARRYINFO.RETRIEVAL_DETAIL
-| **WORK_NO**                | DNCARRYINFO.WORK_NO
-| **PALLET_ID**              | DNPALLET.PALLET_ID
-| **CARRY_KEY**              | DNCARRYINFO.CARRY_KEY
-| **RESTORING_FLAG**         | DNCARRYINFO.RESTORING_FLAG
-| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
-| **REMOVE_FLAG**            | 00:Normal
-| **REGIST_PNAME**           | Class name
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | Class name
-
 ####<span style="color:skyblue; font-weight:bold">DNHostSend</span>
 | **Field Name**             | **Insert Value**                                      |
 |----------------------------|-------------------------------------------------------|
-| **WORK_DAY**               | DNWORKINFO.WORK_DAY
+| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **JOB_NO**                 | DNWORKINFO.JOB_NO
 | **COLLECT_JOB_NO**         | DNWORKINFO.COLLECT_JOB_NO
 | **SETTING_UNIT_KEY**       | DNWORKINFO.SETTING_UNIT_KEY
@@ -1163,8 +1132,28 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **TERMINAL_NO**            | DNWORKINFO.TERMINAL_NO
 | **WORK_SECOND**            | DNWORKINFO.WORK_SECOND
 | **USER_NAME**              | DCUSER.USERNAME
-| **REPORT_FLAG**            | 1:Reported
+| **REPORT_FLAG**            | 0: Not Reported
 | **REGIST_DATE**            | SYSTIMESTAMP
+| **REGIST_PNAME**           | Class name
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | Class name
+
+####<span style="color:skyblue; font-weight:bold">DNInOutResult</span>
+| **Field Name**             | **Insert Value**                                      |
+|----------------------------|-------------------------------------------------------|
+| **RESULT_KIND**            | 1:Storage(Stock+)
+| **STATION_NO**             | DNCARRYINFO.SOURCE_STATION_NO
+| **LOCATION_NO**            | DNCARRYINFO.DEST_STATION_NO
+| **WH_STATION_NO**          | DNPALLET.WH_STATION_NO
+| **AISLE_STATION_NO**       | DNCARRYINFO.AISLE_STATION_NO
+| **WORK_TYPE**              | DNCARRYINFO.WORK_TYPE
+| **RETRIEVAL_DETAIL**       | DNCARRYINFO.RETRIEVAL_DETAIL
+| **WORK_NO**                | DNCARRYINFO.WORK_NO
+| **PALLET_ID**              | DNPALLET.PALLET_ID
+| **CARRY_KEY**              | DNCARRYINFO.CARRY_KEY
+| **RESTORING_FLAG**         | DNCARRYINFO.RESTORING_FLAG
+| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
+| **REMOVE_FLAG**            | 00:Normal
 | **REGIST_PNAME**           | Class name
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | Class name
