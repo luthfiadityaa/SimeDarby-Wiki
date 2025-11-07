@@ -140,7 +140,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **CARRY_FLAG**                 | 3: Direct Transfer
 | **WORK_NO**                    | Sequence Object
 | **SOURCE_STATION_NO**          | DNPALLET.CURRENT_STATION_NO
-| **DEST_STATION_NO**            | <span style="color:yellow; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (7207, 7208, 7209, 7210, 7211, 7212, 7213, 7214)</span>
+| **DEST_STATION_NO**            | <span style="color:green; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (7207, 7208, 7209, 7210, 7211, 7212, 7213, 7214)</span>
 | **CANCEL_REQUEST**             | 0:Not Requested
 | **SCHEDULE_NO**                | Sequence Object
 | **END_STATION_NO**             | DNWORKINFO.PLAN_AREA_NO
