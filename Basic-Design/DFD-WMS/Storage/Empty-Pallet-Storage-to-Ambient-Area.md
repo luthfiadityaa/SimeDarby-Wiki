@@ -23,8 +23,36 @@
 
 #<span style="color:skyblue; font-weight:bold">Empty Pallet - Set (F2)</span>
 ![image.png](/.attachments/image-ae0da33c-5f36-45e7-ad8d-527f6a9e9325.png)
-The Empty Pallet 
+The Empty Pallet Setting Screen uses for storage the empty pallet to ASRS.
 
+::: mermaid
+flowchart LR
+    input[
+        Pallet #      
+    ]
+
+    tableList-insert[("
+        DNPALLET
+        DNSTOCK
+        DNWORKINFO
+        DNWORKLIST
+        DNCARRYINFO
+    ")]
+
+    tableList-select[("
+        DMSTATION
+        DMMASTERMATERIAL
+    ")]
+
+
+    className[UnplannedStorageSCH]
+
+    input --> className --> |INSERT| tableList-insert
+    tableList-select --> |SELECT| className
+
+    classDef leftAlign text-align:left;
+    class input leftAlign;
+:::
 
 
 
