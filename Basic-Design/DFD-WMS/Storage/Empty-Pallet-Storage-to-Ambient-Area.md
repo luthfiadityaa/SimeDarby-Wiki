@@ -45,7 +45,7 @@ flowchart LR
     ")]
 
 
-    className[UnplannedStorageSCH]
+    className[EmptyPalletSettingSCH]
 
     input --> className --> |INSERT| tableList-insert
     tableList-select --> |SELECT| className
