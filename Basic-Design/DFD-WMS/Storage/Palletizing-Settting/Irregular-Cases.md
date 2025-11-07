@@ -16,3 +16,5 @@ DataError1[Data Error] --> BatchStart[Batch Start] --> Cond4
 Cond4 -->|Yes| Move2[ID05]  
 Cond4 -->|No| DataError2[Data Error] --> BatchEnd[Batch End] --> Move2[ID05]
 :::
+
+##<span style="color:skyblue; font-weight:bold">No-Read</span>
