@@ -1124,8 +1124,8 @@ Upon equipment <span style="color:green; font-weight:bold">SRM</span> have picke
 | **LAST_UPDATE_PNAME**     | Class name
 
 <hr>
-#<span style="color:skyblue; font-weight:bold">!Storage Flag Condition</span>
-![image.png](/.attachments/image-31228a41-0618-46d0-acf0-93f1edd79e4e.png)
+#<span style="color:skyblue; font-weight:bold"> !Storage Flag Condition</span>
+[image.png](/.attachments/image-31228a41-0618-46d0-acf0-93f1edd79e4e.png)
 Table effect:
 - DNStock
 - DNStockHistory
