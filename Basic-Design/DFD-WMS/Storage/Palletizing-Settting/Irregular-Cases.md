@@ -67,7 +67,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **STATION_NO**             | Arrival Station Number from ID26 
 | **CARRY_KEY**              | 99999999       
 | **BCR_DATA**               | <span style="color:red; font-weight:bold">&nbsp;??</span>
-| **CONTROLINFO**            | Control information from ID26
+| **CONTROLINFO**            | Control information from ID26 -> 
 | **SEND_FLAG**              | 0:Not sent
 | **HEIGHT**                 | Dimension Information from ID26
 | **WIDTH**                  | Dimension Information From ID26
@@ -158,7 +158,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 ###<span style="color:skyblue; font-weight:bold">ID54</span>
 
 # ID54
-jp.co.daifuku.asrs.communication.id.sendAs21Id54
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.sendAs21Id54</span>
 ::: mermaid
 flowchart LR
 
@@ -167,8 +167,8 @@ ID 54
 ")
 
 buttonlight["
-Station Completion button
-Light Up
+The signal tower lights.
+The buzzer sounds.
 "]
 
 id50msg --> As21Id54
