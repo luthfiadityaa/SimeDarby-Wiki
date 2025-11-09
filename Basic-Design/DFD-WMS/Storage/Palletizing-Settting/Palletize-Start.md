@@ -60,10 +60,9 @@ This section explains the validations for the whole proccess Palletize Start
   <span style="color:green; font-weight:bold">JOIN DNCARRYINFO.PALLET_ID = DNPALLET.PALLET_ID  
   CONDITION DNPALLET.BCR_DATA = <Pallet Number> </span>  
   So if result > 0, Palletize Start cannot proceed.
-- Planned Carton > 0
-  Qty crt/PL > 0
-  Planned Carton > Qty crt/PL
-
+- **Planned Carton** must be greater than **0**.
+- **Quantity (Carton per Pallet)** must be greater than **0**.
+- **Planned Carton** must be greater than or equal to **Quantity (Carton per Pallet)**.
 - Material Code exists in <span style="color:green; font-weight:bold">DMMaterialMaster</span>
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
