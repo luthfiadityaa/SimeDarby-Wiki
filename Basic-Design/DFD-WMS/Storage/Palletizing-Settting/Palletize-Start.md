@@ -5,7 +5,7 @@
 | Action Name                 | PLTZ   | STRP   | WRKI   | WRKL   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | PLTZH  |
 |-----------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
 | Palletize Start - SetF2(1)  | INSERT | INSERT |        |        |        |        |        |        |        |        |        |        | SELECT | SELECT |        |
-| ID26(2)                     |        |        | INSERT |        | INSERT | INSERT |        |        | INSERT |        |        |        |        |        |        |
+| ID26(2)                     |        |        | INSERT |        | INSERT | INSERT | INSERT |        | INSERT |        |        |        |        |        |        |
 | Storage Sender(3)           |        |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |        |
 | ID25(4)                     |        |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |        |
 | ID26(5)                     |        |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |        |
