@@ -449,6 +449,9 @@ storageStationOperator[StorageStationOperator]
 
 releaseCommand2["
 Press the completion button after removing the pallet.
+"]
+
+releaseCommand3["
 Clear the operation indication. 
 "]
 
