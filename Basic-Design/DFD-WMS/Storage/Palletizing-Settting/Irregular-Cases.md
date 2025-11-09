@@ -448,8 +448,8 @@ id26-insert[("
 storageStationOperator[StorageStationOperator]
 
 releaseCommand2["
-The completion button flashes.
-AGC turns on the signal tower of No-Read based on the Control Information. 
+Press the completion button after removing the pallet.
+Clear the operation indication. 
 "]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
