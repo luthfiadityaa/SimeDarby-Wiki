@@ -56,7 +56,7 @@ storageStationOperator--> |INSERT| id26-insert
 
 After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and Storage Station Operator will execute the receive task based on information in received ID26. While Storage Station Operator processes ID26, it will create an Arrival record.
 
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
 
 ####<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
@@ -66,7 +66,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **ARRIVAL_DATE**           | SYSTIMESTAMP 
 | **STATION_NO**             | Arrival Station Number from ID26 
 | **CARRY_KEY**              | 99999999       
-| **BCR_DATA**               | Barcode information from ID26
+| **BCR_DATA**               | <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;??</span>
 | **CONTROLINFO**            | Control information from ID26
 | **SEND_FLAG**              | 0:Not sent
 | **HEIGHT**                 | Dimension Information from ID26
