@@ -165,6 +165,10 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 
 ###<span style="color:skyblue; font-weight:bold">ID54</span>
 
+###<span style="color:skyblue; font-weight:bold">Storage Sender</span>
+
+###<span style="color:skyblue; font-weight:bold">ID25</span>
+
 <hr>
 
 ##<span style="color:skyblue; font-weight:bold">Wait for Batch Start. Treat as Data Error</span>
