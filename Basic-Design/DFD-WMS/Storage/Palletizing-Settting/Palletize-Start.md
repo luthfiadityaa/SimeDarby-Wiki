@@ -19,7 +19,7 @@
 | ID64(12)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |        |
 | **Flow 2**                  |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
 | ID64(8)                     |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |        |
-| ID26(9)                     |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | DELETE |        |        |        |        |        |        |
+| ID26(9)                     |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |        |
 | Storage Sender(10)          |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | UPDATE |        |        |        |        |        |        |
 | ID25(11)                    |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | DELETE |        |        |        |        |        |        |
 | ID64(12)                    |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | UPDATE |        |        |        |        |        |        |
