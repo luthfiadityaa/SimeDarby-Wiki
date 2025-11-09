@@ -252,6 +252,14 @@ DNPALLET
 DNCARRYINFO
 ")];
 
+releaseCommand2["
+Wait until an empty location becomes available because all locations are full.
+"]
+
+releaseCommand3["
+Clear the operation indication. 
+"]
+
 storageStationOperator[storageStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
