@@ -455,7 +455,7 @@ releaseCommand3["
 Clear the operation indication. 
 "]
 
-releaseCommand-->releaseCommand2
+releaseCommand-->releaseCommand2-->releaseCommand3
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
 :::
