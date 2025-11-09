@@ -66,7 +66,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **ARRIVAL_DATE**           | SYSTIMESTAMP 
 | **STATION_NO**             | Arrival Station Number from ID26 
 | **CARRY_KEY**              | 99999999       
-| **BCR_DATA**               | <span style="color:red; font-weight:bold">&nbsp;??</span>
+| **BCR_DATA**               | <span style="color:red; font-weight:bold">??</span>
 | **CONTROLINFO**            | Control information from ID26 
 | **SEND_FLAG**              | 0:Not sent
 | **HEIGHT**                 | Dimension Information from ID26
@@ -286,13 +286,18 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ####<span style="color:skyblue; font-weight:bold">DNArrival</span>
+- Control Information = "110"
+Palletizing Skip("1": Skip),
+No Read("1":Error),
+Palletizing Completion("0":Normal Completion)
+
 | **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
 | **ARRIVAL_DATE**           | SYSTIMESTAMP 
 | **STATION_NO**             | Arrival Station Number from ID26 
 | **CARRY_KEY**              | 99999999      
-| **BCR_DATA**               | Barcode information from ID26
-| **CONTROLINFO**            | Control information from ID26
+| **BCR_DATA**               | <span style="color:red; font-weight:bold">??</span>
+| **CONTROLINFO**            | Control information from ID26 
 | **SEND_FLAG**              | 0:Not sent
 | **HEIGHT**                 | Dimension Information from ID26
 | **WIDTH**                  | Dimension Information From ID26
