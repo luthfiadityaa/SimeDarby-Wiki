@@ -24,12 +24,12 @@
 
 | Action Name                 | PLTZ   | STRP   | WRKI   | WRKL   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | PLTZH  |
 |-----------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
-| Palletize Start - SetF2(1)  | INSERT | INSERT |        |        |        |        |        |        |        |        |        |        | SELECT | SELECT |        |
+| Palletize Start - SetF2(1)  | SELECT | INSERT |        |        |        |        |        |        |        |        |        |        | SELECT | SELECT |        |
 | ID26(2)                     |        |        | INSERT |        | INSERT | INSERT | INSERT |        | INSERT |        |        |        |        |        |        |
 | Storage Sender(3)           |        |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |        |
 | ID25(4)                     |        |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |        |
 | ID26(5)                     |        |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |        |
-| Storage Sender(6)           |        |        | UPDATE |        |        | UPDATE | UPDATE |        | UPDATE | UPDATE | UPDATE |        |        |        |        |
+| Storage Sender(6)           | UPDATE | UPDATE |        | UPDATE |        |        | UPDATE | UPDATE |        | UPDATE | UPDATE | UPDATE |        |        |        |        |
 | ID25(7)                     |        |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |        |
 | **Flow 1**                  |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
 | ID64(8)                     |        |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |        |
