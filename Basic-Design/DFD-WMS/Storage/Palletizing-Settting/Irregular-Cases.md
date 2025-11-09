@@ -163,7 +163,7 @@ jp.co.daifuku.asrs.communication.id.sendAs21Id54
 flowchart LR
 
 id50msg("
-ID 50
+ID 54
 ")
 
 buttonlight["
@@ -171,8 +171,8 @@ Station Completion button
 Light Up
 "]
 
-id50msg --> As21Id50
-As21Id50 --> buttonlight
+id50msg --> As21Id54
+As21Id54 --> buttonlight
 :::
 
 After user clicked **Set(F2)** button at ASRS Storage Start, ID 50 will be sent to AGC where Completion button at selected station will light up. User is required to click on the light up Completion button at related Station to start transport of Pallet.
