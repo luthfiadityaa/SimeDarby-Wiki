@@ -5,8 +5,51 @@
 [[_TOSP_]]
 
 #<span style="color:skyblue; font-weight:bold">Batch End database flow</span>
+**Abbreviation:**
+- **PLTZ** : DNPALLETIZE  
+- **STRP** : DNSTORAGEPLAN  
+- **WRKI** : DNWORKINFO  
+- **WRKL** : DNWORKINFOLIST  
+- **PLLT** : DNPALLET  
+- **CRYI** : DNCARRYINFO  
+- **STCK** : DNSTOCK  
+- **HSTS** : DNHOSTSEND  
+- **ARVL** : DNARRIVAL  
+- **WRHS** : DMWAREHOUSE  
+- **SHLF** : DMSHELF  
+- **MTMS** : DMATERIALMASTER  
+- **STSN** : DMSTATION  
+- **STCH** : DNSTOCKHISTORY  
+- **PLTZH** : DNPALLETIZEHISTORY  
 
-![image.png](/.attachments/image-f616afda-7ac5-46b5-a895-14b4e5ee3c1a.png)
+| Action Name                 | PLTZ   | STRP   | WRKI   | WRKL   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | PLTZH  |
+|-----------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| Palletize Start - SetF2(1)  | INSERT | INSERT |        |        |        |        |        |        |        |        |        |        | SELECT | SELECT |        |
+| ID26(2)                     |        |        | INSERT |        | INSERT | INSERT | INSERT |        | INSERT |        |        |        |        |        |        |
+| Storage Sender(3)           |        |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |        |
+| ID25(4)                     |        |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |        |
+| ID26(5)                     |        |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |        |
+| Storage Sender(6)           |        |        | UPDATE |        |        | UPDATE | UPDATE |        | UPDATE | UPDATE | UPDATE |        |        |        |        |
+| ID25(7)                     |        |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |        |
+| **Flow 1**                  |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
+| ID64(8)                     |        |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |        |
+| ID26(9)                     |        |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |        |
+| Storage Sender(10)          |        |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |        |
+| ID25(11)                    |        |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |        |
+| ID64(12)                    |        |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |        |
+| **Flow 2**                  |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
+| ID64(8)                     |        |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |        |
+| ID26(9)                     |        |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |        |
+| Storage Sender(10)          |        |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |        |
+| ID25(11)                    |        |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |        |
+| ID64(12)                    |        |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |        |
+| ID64(13)                    |        |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |        |
+| ID26(14)                    |        |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |        |
+| Storage Sender(15)          |        |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |        |
+| ID25(16)                    |        |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |        |
+| ID64(17)                    |        |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |        |
+| **Last Process**            |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
+| ID33(18)                    | UPDATE | UPDATE | UPDATE | INSERT | UPDATE | DELETE | UPDATE | INSERT |        |        | UPDATE | INSERT |        |        | INSERT |
 
 #<span style="color:skyblue; font-weight:bold">Batch End - Set(F2)</span>
   
