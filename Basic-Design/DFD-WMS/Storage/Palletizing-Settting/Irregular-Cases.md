@@ -56,9 +56,9 @@ After the process is completed, the conveyor receives a signal and begins transf
 
 #####<span style="color:skyblue; font-weight:bold">DNArrival</span>
 
-- <span style="color:red; font-weight:bold">Control Information = "11␣"
-Palletizing Skip("1": Skip),
-No Read("1":Error)</span>
+- <span style="color:red; font-weight:bold">Control Information = "00␣"
+Palletizing Skip("0": None),
+No Read("0":None)</span>
 
 | **Field Name**            | **Insert Value**                               |
 |----------------------------|-----------------------------------------------|
