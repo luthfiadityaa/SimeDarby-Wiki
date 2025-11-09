@@ -553,7 +553,7 @@ As21Id54 --> buttonlight
 
 After WareNavi receives information from **ID26** indicating a barcode NO-READ, it automatically sends **ID54** to the AGC. At the designated station, the signal tower lights up and the buzzer sounds, and initiate pallet transport.
 
-##<span style="color:skyblue; font-weight:bold">Storage Sender</span>
+###<span style="color:skyblue; font-weight:bold">Storage Sender</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
 
 ::: mermaid
@@ -577,9 +577,8 @@ storageSender--> |UPDATE| storageSender-update
 
 After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, StorageSender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">1:Started to 2:Waiting for Response.</span>
 
-###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-
-####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+####<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+#####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**            | **Insert Value**                              |
 |---------------------------|-----------------------------------------------|
 | **CMD_STATUS**            | 2:Waiting for response
@@ -596,7 +595,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**         | Class name
 
-##<span style="color:skyblue; font-weight:bold">ID25</span>
+###<span style="color:skyblue; font-weight:bold">ID25</span>
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process &nbsp;</span>
 
@@ -620,8 +619,8 @@ id25process--> |DELETE| id25-delete
 :::
 
 ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
-###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+####<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+#####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**         | **Insert Value**                               |
 |-----------------------|-------------------------------------------------|
 | **CMD_STATUS**        | 3:Commanded
