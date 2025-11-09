@@ -514,6 +514,14 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_UPDATE_DATE**      | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**     | Class name
 
+####<span style="color:skyblue; font-weight:bold">DNPALLETIZE</span>
+| **Field Name**             | **Insert Value**                              |
+|----------------------------|-----------------------------------------------|
+
+####<span style="color:skyblue; font-weight:bold">DNSTORAGEPLAN</span>
+| **Field Name**             | **Insert Value**                              |
+|----------------------------|-----------------------------------------------|
+
 ##<span style="color:skyblue; font-weight:bold">ID25&nbsp;</span>
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process &nbsp;</span>
