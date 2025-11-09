@@ -519,7 +519,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 |----------------------------|-----------------------------------------------|
 | **STORAGE_DATE_TIME**      | <span style="color:green; font-weight:bold">DNPALLETIZE.STORAGE_DATE_TIME + Time value (HH:MM:SS.sss)->(System Generated)</span>
 
-####<span style="color:skyblue; font-weight:bold">DNSTORAGEPL</span>
+####<span style="color:skyblue; font-weight:bold">DNSTORAGEPLAN</span>
 | **Field Name**             | **Insert Value**                              |
 |----------------------------|-----------------------------------------------|
 | **LAST_UPDATE_DATE**        | <span style="color:green; font-weight:bold">DNPALLETIZE.STORAGE_DATE_TIME</span>
