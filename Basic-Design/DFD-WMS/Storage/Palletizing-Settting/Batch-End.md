@@ -102,20 +102,11 @@ flowchart LR
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
 This section explains the validations for the whole proccess Batch End
 
-- **Total Actual Carton Qty** should be **equal to** the **Planned Carton Qty**.  
+- **Total Actual Carton Qty** should be **less than or equal to** the **Planned Carton Qty**.  
   (This ensures that all planned cartons have been processed.)
-
 - **Storage Qty** is calculated as:  
   **Storage Qty = Planned Carton Qty − Total Actual Carton Qty**  
   (This shows how many cartons are still remaining or unprocessed.)
-
-```java 
-  If Planned Qty > Actual Qty 
-     → Show warning message before Batch End.
-
-  If Planned Qty < Actual Qty 
-     → Consider as Data Error at ID26 on St.1101-05
-```
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
