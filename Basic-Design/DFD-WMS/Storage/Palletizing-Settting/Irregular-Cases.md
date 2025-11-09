@@ -451,7 +451,7 @@ id26-insert[("
    DNARRIVAL		
 ")]
 
-id26-delete[("L
+id26-delete[("
    DNWORKINFO
    DNPALLET
    DNCARRYINFO
@@ -477,25 +477,6 @@ storageStationOperator--> |DELETE| id26-delete
 After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and Storage Station Operator will execute the receive task based on information in received ID26. While Storage Station Operator processes ID26, it will create an Arrival record.
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
-
-####<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-
-#####<span style="color:skyblue; font-weight:bold">DNArrival</span>
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-----------------------------------------------|
-| **ARRIVAL_DATE**           | SYSTIMESTAMP 
-| **STATION_NO**             | Arrival Station Number from ID26 
-| **CARRY_KEY**              | 99999999       
-| **BCR_DATA**               | <span style="color:red; font-weight:bold">??</span>
-| **CONTROLINFO**            | Control information from ID26 
-| **SEND_FLAG**              | 0:Not sent
-| **HEIGHT**                 | Dimension Information from ID26
-| **WIDTH**                  | Dimension Information From ID26
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
-
 
 <hr>
 
