@@ -125,7 +125,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **MATERIAL_TYPE**              | Value from screen (Material Type)
 | **BATCH_NO**                   | Value from screen (BATCH_NO)
 | **PLANNED_CARTON_QTY**         | Value from screen (PLANNED CARTON QTY)
-| **STORAGE_DATE_TIME**          | Value from screen (Storage Date/Time)
+| **STORAGE_DATE_TIME**          | <span style="color:green; font-weight:bold">Value from screen (Storage Date/Time) + TimeStamp (System Generated)</span>
 | **QTY_KG_CRTN**                | Value from screen (Qty Kg/Crtn)
 | **QTY_CRTN_PL**                | Value from screen (Qty Crtn/PL)
 | **UOM**                        | Value from screen (UOM)
