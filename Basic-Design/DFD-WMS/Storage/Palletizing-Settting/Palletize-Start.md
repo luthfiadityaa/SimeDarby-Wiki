@@ -365,10 +365,13 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 | **LAST_UPDATE_DATE**  | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME** |Class name
 
-<hr>
+<br>
+<hr style="border: 2px solid red;">
 
-<hr>
-
+#Irregular Cases - [Wait for available location if full](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/951/Irregular-Cases?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Ewait-for-available-location-if-full%3C/span%3E)
+<br>
+<hr style="border: 2px solid red;">
+<br>
 
 ##<span style="color:skyblue; font-weight:bold">ID26&nbsp;</span>
 
