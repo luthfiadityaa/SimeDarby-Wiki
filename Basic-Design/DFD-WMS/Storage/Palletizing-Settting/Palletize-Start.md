@@ -522,6 +522,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 ####<span style="color:skyblue; font-weight:bold">DNSTORAGEPL</span>
 | **Field Name**             | **Insert Value**                              |
 |----------------------------|-----------------------------------------------|
+| **LAST_UPDATE_DATE**        | <span style="color:green; font-weight:bold">DNPALLETIZE.STORAGE_DATE_TIME</span>
 
 ##<span style="color:skyblue; font-weight:bold">ID25&nbsp;</span>
 
