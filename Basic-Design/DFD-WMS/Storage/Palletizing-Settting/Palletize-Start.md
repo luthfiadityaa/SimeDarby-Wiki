@@ -6,7 +6,7 @@
 |-----------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
 | Palletize Start - SetF2(1)  | INSERT | INSERT |        |        |        |        |        |        |        |        |        | SELECT | SELECT |        |
 | ID26(2)                     |        |        | INSERT | INSERT | INSERT |        |        | INSERT |        |        |        |        |        |        |
-| Storage Sender(3)           |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | DELETE |        |        |        |        |        |        |
+| Storage Sender(3)           |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |        |
 | ID25(4)                     |        |        |        |        |        |        |        | INSERT |        |        |        |        |        |        |
 | ID26(5)                     |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | UPDATE |        |        |        |        |        |        |
 | Storage Sender(6)           |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | UPDATE |        |        |        |        |        |        |
