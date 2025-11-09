@@ -2,6 +2,23 @@
 [[_TOSP_]]
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start database flow</span>
+**Abbreviation:**
+- **PLTZ** : DNPALLETIZE  
+- **STRP** : DNSTORAGEPLAN  
+- **WRKI** : DNWORKINFO  
+- **WRKL** : DNWORKINFOLIST  
+- **PLLT** : DNPALLET  
+- **CRYI** : DNCARRYINFO  
+- **STCK** : DNSTOCK  
+- **HSTS** : DNHOSTSEND  
+- **ARVL** : DNARRIVAL  
+- **WRHS** : DMWAREHOUSE  
+- **SHLF** : DMSHELF  
+- **MTMS** : DMATERIALMASTER  
+- **STSN** : DMSTATION  
+- **STCH** : DNSTOCKHISTORY  
+- **PLTZH** : DNPALLETIZEHISTORY  
+
 | Action Name                 | PLTZ   | STRP   | WRKI   | WRKL   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | PLTZH  |
 |-----------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
 | Palletize Start - SetF2(1)  | INSERT | INSERT |        |        |        |        |        |        |        |        |        |        | SELECT | SELECT |        |
