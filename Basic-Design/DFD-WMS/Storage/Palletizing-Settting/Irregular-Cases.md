@@ -257,7 +257,7 @@ Wait until an empty location becomes available because all locations are full.
 "]
 
 releaseCommand3["
-Clear the operation indication. 
+An empty location becomes available. 
 "]
 
 storageStationOperator[storageStationOperator]
