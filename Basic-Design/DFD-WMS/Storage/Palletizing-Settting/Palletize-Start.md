@@ -2,34 +2,34 @@
 [[_TOSP_]]
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start database flow</span>
-| Action Name                 | PLTZ   | STRP   | WRKI   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | PLTZH  |
-|-----------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
-| Palletize Start - SetF2(1)  | INSERT | INSERT |        |        |        |        |        |        |        |        |        | SELECT | SELECT |        |
-| ID26(2)                     |        |        | INSERT | INSERT | INSERT |        |        | INSERT |        |        |        |        |        |        |
+| Action Name                 | PLTZ   | STRP   | WRKI   | WRKL   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | PLTZH  |
+|-----------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| Palletize Start - SetF2(1)  | INSERT | INSERT |        |        |        |        |        |        |        |        |        |        | SELECT | SELECT |        |
+| ID26(2)                     |        |        | INSERT |        | INSERT | INSERT |        |        | INSERT |        |        |        |        |        |        |
 | Storage Sender(3)           |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |        |
 | ID25(4)                     |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |        |
-| ID26(5)                     |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |        |
+| ID26(5)                     |        |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |        |
 | Storage Sender(6)           |        |        | UPDATE |        | UPDATE | UPDATE |        | UPDATE | UPDATE | UPDATE |        |        |        |        |
 | ID25(7)                     |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |        |
 | **Flow 1**                  |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
 | ID64(8)                     |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |        |
-| ID26(9)                     |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |        |
+| ID26(9)                     |        |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |        |
 | Storage Sender(10)          |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |        |
 | ID25(11)                    |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |        |
 | ID64(12)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |        |
 | **Flow 2**                  |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
 | ID64(8)                     |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |        |
-| ID26(9)                     |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |        |
+| ID26(9)                     |        |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |        |
 | Storage Sender(10)          |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |        |
 | ID25(11)                    |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |        |
 | ID64(12)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |        |
 | ID64(13)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |        |
-| ID26(14)                    |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |        |
+| ID26(14)                    |        |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |        |
 | Storage Sender(15)          |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |        |
 | ID25(16)                    |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |        |
 | ID64(17)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |        |
 | **Last Process**            |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
-| ID33(18)                    | UPDATE | UPDATE | UPDATE | DELETE | UPDATE | INSERT | UPDATE | INSERT |        |        |        |        |        | INSERT |
+| ID33(18)                    | UPDATE | UPDATE | UPDATE | INSERT | DELETE | UPDATE | INSERT | UPDATE | INSERT |        |        |        |        |        | INSERT |
 
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start - Set(F2)</span>
