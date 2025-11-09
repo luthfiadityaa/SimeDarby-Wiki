@@ -61,7 +61,7 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 | **STATION_NO**             | Arrival Station Number from ID26 
 | **CARRY_KEY**              | 99999999      
 | **BCR_DATA**               | Barcode information from ID26
-| **CONTROLINFO**            | Control Information = "110"
+| **CONTROLINFO**            | <span style="color:red; font-weight:bold">Control Information = "110"</span>
 
 
 
