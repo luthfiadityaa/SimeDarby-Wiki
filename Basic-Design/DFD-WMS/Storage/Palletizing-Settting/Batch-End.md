@@ -101,8 +101,13 @@ flowchart LR
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
 This section explains the validations for the whole proccess Batch End
-- Total Actual Carton Qty <span style="color:red; font-weight:bold;">=</span> Planned Carton Qty
-- Storage Qty = Planned Carton Qty <span style="color:red; font-weight:bold;">-</span> Total Actual Carton Qty 
+
+- **Total Actual Carton Qty** should be **equal to** the **Planned Carton Qty**.  
+  (This ensures that all planned cartons have been processed.)
+
+- **Storage Qty** is calculated as:  
+  **Storage Qty = Planned Carton Qty − Total Actual Carton Qty**  
+  (This shows how many cartons are still remaining or unprocessed.)
 
 ```java 
   If Planned Qty > Actual Qty 
