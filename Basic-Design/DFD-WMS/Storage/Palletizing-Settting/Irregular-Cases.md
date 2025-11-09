@@ -278,7 +278,7 @@ Palletizing Completion("0":Normal Completion)</span>
 | **ARRIVAL_DATE**           | SYSTIMESTAMP 
 | **STATION_NO**             | Arrival Station Number from ID26 
 | **CARRY_KEY**              | 99999999      
-| **BCR_DATA**               | <span style="color:red; font-weight:bold">??</span>
+| **BCR_DATA**               |Barcode information from ID26
 | **CONTROLINFO**            | <span style="color:red; font-weight:bold">Control information from ID26<span> 
 | **SEND_FLAG**              | 0:Not sent
 | **HEIGHT**                 | Dimension Information from ID26
