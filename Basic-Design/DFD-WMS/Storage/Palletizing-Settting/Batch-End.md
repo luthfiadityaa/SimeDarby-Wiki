@@ -156,10 +156,16 @@ This section explains the validations for the whole proccess Batch End
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
+<br>
+<hr style="border: 2px solid red;">
+
+#Irregular Cases
+- [Reverse – Batch End Not Executed Despite Force Completion. Treat as Data Error](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/951/Irregular-Cases?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Ereverse-%E2%80%93-batch-end-not-executed-despite-force-completion.-treat-as-data-error%3C/span%3E)
+<hr style="border: 2px solid red;">
+
 <hr>
 
 ##<span style="color:skyblue; font-weight:bold">[Continue flow Release Command from Palletize Robot - Dummy Arrival](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Erelease-command-from-palletize-robot---dummy-arrival%3C/span%3E)</span><br>
-
 <hr>
 
 ##<span style="color:skyblue; font-weight:bold">ID33</span>
