@@ -190,6 +190,7 @@ DNPALLETIZEHISTORY
 ")]
 id33-delete[("
 DNCARRYINFO
+DNPALLETIZE
 ")]
 
 id33-->id33process
