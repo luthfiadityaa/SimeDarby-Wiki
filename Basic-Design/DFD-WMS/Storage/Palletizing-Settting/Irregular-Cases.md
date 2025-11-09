@@ -430,6 +430,9 @@ flowchart LR
 
 releaseCommand["
 The completion button flashes.
+"]
+
+releaseCommand0["
 AGC turns on the signal tower of No-Read based on the Control Information. 
 "]
 
