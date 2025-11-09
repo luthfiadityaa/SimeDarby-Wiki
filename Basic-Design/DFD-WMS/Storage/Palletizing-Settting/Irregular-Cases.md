@@ -156,8 +156,6 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **LAST_UPDATE_PNAME**      | ClassName
 
 ###<span style="color:skyblue; font-weight:bold">ID54</span>
-
-# ID54
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.sendAs21Id54&nbsp;</span>
 ::: mermaid
 flowchart LR
@@ -175,7 +173,7 @@ id50msg --> As21Id54
 As21Id54 --> buttonlight
 :::
 
-After user clicked **Set(F2)** button at ASRS Storage Start, ID 50 will be sent to AGC where Completion button at selected station will light up. User is required to click on the light up Completion button at related Station to start transport of Pallet.
+After WareNavi receives information from **ID26** indicating a barcode NO-READ, it automatically sends **ID54** to the AGC. At the designated station, the signal tower lights up and the buzzer sounds, and initiate pallet transport.
 
 ###<span style="color:skyblue; font-weight:bold">Storage Sender</span>
 
