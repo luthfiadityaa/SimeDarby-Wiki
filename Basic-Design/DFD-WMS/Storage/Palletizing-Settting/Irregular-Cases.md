@@ -361,7 +361,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**         | Class name
 
-##<span style="color:skyblue; font-weight:bold">ID25</span>
+###<span style="color:skyblue; font-weight:bold">ID25</span>
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process &nbsp;</span>
 
@@ -385,8 +385,8 @@ id25process--> |DELETE| id25-delete
 :::
 
 ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
-###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+####<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+#####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**         | **Insert Value**                               |
 |-----------------------|-------------------------------------------------|
 | **CMD_STATUS**        | 3:Commanded
