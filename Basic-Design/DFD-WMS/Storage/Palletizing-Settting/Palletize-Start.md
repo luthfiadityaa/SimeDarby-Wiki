@@ -2,7 +2,35 @@
 [[_TOSP_]]
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start database flow</span>
-![image.png](/.attachments/image-6deb8c68-a25d-4a1d-963c-50ebf7607974.png)
+| Action Name                 | PLTZ   | STRP   | WRKI   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | PLTZH  |
+|-----------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| Palletize Start - SetF2(1)  | INSERT | INSERT |        |        |        |        |        |        |        |        |        | SELECT | SELECT |        |
+| ID26(2)                     |        |        | INSERT | INSERT | INSERT |        |        | INSERT |        |        |        |        |        |        |
+| Storage Sender(3)           |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | DELETE |        |        |        |        |        |        |
+| ID25(4)                     |        |        |        |        |        |        |        | INSERT |        |        |        |        |        |        |
+| ID26(5)                     |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | UPDATE |        |        |        |        |        |        |
+| Storage Sender(6)           |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | UPDATE |        |        |        |        |        |        |
+| ID25(7)                     |        |        |        |        |        |        |        | DELETE |        |        |        |        |        |        |
+| **Flow 1**                  |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
+| ID64(8)                     |        |        |        |        |        |        |        | INSERT |        |        |        |        |        | SELECT |
+| ID26(9)                     |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | DELETE |        |        |        |        |        |        |
+| Storage Sender(10)          |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | UPDATE |        |        |        |        |        |        |
+| ID25(11)                    |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | DELETE |        |        |        |        |        |        |
+| ID64(12)                    |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | UPDATE |        |        |        |        |        |        |
+| **Flow 2**                  |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
+| ID64(8)                     |        |        |        |        |        |        |        | INSERT |        |        |        |        |        | SELECT |
+| ID26(9)                     |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | DELETE |        |        |        |        |        |        |
+| Storage Sender(10)          |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | UPDATE |        |        |        |        |        |        |
+| ID25(11)                    |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | DELETE |        |        |        |        |        |        |
+| ID64(12)                    |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | UPDATE |        |        |        |        |        |        |
+| ID64(13)                    |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | UPDATE |        |        |        |        |        |        |
+| ID26(14)                    |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | DELETE |        |        |        |        |        |        |
+| Storage Sender(15)          |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | UPDATE |        |        |        |        |        |        |
+| ID25(16)                    |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | DELETE |        |        |        |        |        |        |
+| ID64(17)                    |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | UPDATE |        |        |        |        |        |        |
+| **Last Process**            |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
+| ID33(18)                    | UPDATE | UPDATE | UPDATE | DELETE | UPDATE | INSERT | UPDATE | INSERT |        |        |        |        |        | INSERT |
+
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start - Set(F2)</span>
 
