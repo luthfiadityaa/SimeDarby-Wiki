@@ -185,7 +185,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 |---------------------------|-----------------------------------------------|
 | **CMD_STATUS**            | 2:Waiting for response
 | **CONTROL_INFO**          | <span style="color:red; font-weight:bold">DNARRIVAL.CONTROL_INFO</span>
-| **REJECT_FACTOR**         | <span style="color:red; font-weight:bold">01:BCR No-read</span>
+| **REJECT_FACTOR**         | <span style="color:red; font-weight:bold">08:Location Full</span>
 | **LAST_UPDATE_DATE**      | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**     | Class name
 
