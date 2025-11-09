@@ -441,7 +441,10 @@ ID 26
 ")
 
 id26-insert[("
-   DNARRIVAL
+   DNARRIVAL		
+")]
+
+id26-delete[("L
    DNWORKINFO
    DNPALLET
    DNCARRYINFO
