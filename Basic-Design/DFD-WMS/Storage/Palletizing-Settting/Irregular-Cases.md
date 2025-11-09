@@ -67,7 +67,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **STATION_NO**             | Arrival Station Number from ID26 
 | **CARRY_KEY**              | 99999999       
 | **BCR_DATA**               | <span style="color:red; font-weight:bold">&nbsp;??</span>
-| **CONTROLINFO**            | Control information from ID26 -> 
+| **CONTROLINFO**            | Control information from ID26 
 | **SEND_FLAG**              | 0:Not sent
 | **HEIGHT**                 | Dimension Information from ID26
 | **WIDTH**                  | Dimension Information From ID26
