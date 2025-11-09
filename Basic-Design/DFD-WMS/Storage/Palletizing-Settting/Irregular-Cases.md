@@ -431,6 +431,7 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 | **LAST_UPDATE_PNAME** |Class name
 
 ###<span style="color:skyblue; font-weight:bold">ID26</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
 
 ::: mermaid
 flowchart LR
@@ -470,8 +471,6 @@ storageStationOperator--> |DELETE| id26-delete
 :::
 
 After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and Storage Station Operator will execute the receive task based on information in received ID26. While Storage Station Operator processes ID26, it will create an Arrival record.
-
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
 
 <hr>
 
