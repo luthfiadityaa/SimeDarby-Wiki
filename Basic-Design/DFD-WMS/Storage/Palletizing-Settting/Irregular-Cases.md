@@ -175,11 +175,162 @@ As21Id54 --> buttonlight
 
 After WareNavi receives information from **ID26** indicating a barcode NO-READ, it automatically sends **ID54** to the AGC. At the designated station, the signal tower lights up and the buzzer sounds, and initiate pallet transport.
 
-###<span style="color:skyblue; font-weight:bold">Storage Sender</span>
+##<span style="color:skyblue; font-weight:bold">Storage Sender</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
 
-###<span style="color:skyblue; font-weight:bold">ID25</span>
+::: mermaid
+flowchart LR
+storageSender-update[("
+DNCARRYINFO
+DNARRIVAL
+")]
+storageSender-input[("
+DNARRIVAL
+DNCARRYINFO
+")]
 
-###<span style="color:skyblue; font-weight:bold">ID26</span>
+id05msg("
+ID 05
+")
+
+storageSender-input-->storageSender-->id05msg
+storageSender--> |UPDATE| storageSender-update
+:::
+
+After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, StorageSender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">1:Started to 2:Waiting for Response.</span>
+
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+| **Field Name**            | **Insert Value**                              |
+|---------------------------|-----------------------------------------------|
+| **CMD_STATUS**            | 2:Waiting for response
+| **LAST_UPDATE_DATE**      | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**     | Class name
+
+####<span style="color:skyblue; font-weight:bold">DNArrival</span>
+| **Field Name**            | **Insert Value**                               |
+|----------------------------|-------------------------------------------------------|
+| **CARRY_KEY**                  | DNCARRYINFO.CARRY_KEY
+| **SEND_FLAG**                  | 1:Sent
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**         | Class name
+
+##<span style="color:skyblue; font-weight:bold">ID25</span>
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id25("
+ID 25
+")
+
+id25-update[("
+DNCARRYINFO
+")]
+id25-delete[("
+DNARRIVAL
+")]
+
+id25-->id25process
+id25process--> |UPDATE| id25-update
+id25process--> |DELETE| id25-delete
+:::
+
+ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+| **Field Name**         | **Insert Value**                               |
+|-----------------------|-------------------------------------------------|
+| **CMD_STATUS**        | 3:Commanded
+| **ERROR_CODE**        | 0
+| **LAST_UPDATE_DATE**  | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME** |Class name
+
+<br>
+<hr style="border: 2px solid red;">
+
+#Irregular Cases
+Continue this flow if occurs. 
+- [Wait for available location if full](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/951/Irregular-Cases?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Ewait-for-available-location-if-full%3C/span%3E)
+<hr style="border: 2px solid red;">
+
+##<span style="color:skyblue; font-weight:bold">ID26&nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+releaseCommand["
+Continue the Process Direct 
+Transfer
+"]
+
+id26msg("
+ID 26
+")
+
+id26-insert[("
+DNARRIVAL
+")]
+
+id26-update[("
+DNPALLET
+DNCARRYINFO
+")];
+
+storageStationOperator[storageStationOperator]
+
+releaseCommand-->id26msg-->id26process-->storageStationOperator
+storageStationOperator--> |INSERT| id26-insert
+storageStationOperator--> |UPDATE| id26-update
+:::
+
+Continue the process <span style="color:green; font-weight:bold">Direct Transfer</span>, AGC will send ID26 to WareNavi and Storage Station Operator will execute the receive task based on information in received ID26. While Storage Station Operator processes ID26, it will create an Arrival record..
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
+
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+
+####<span style="color:skyblue; font-weight:bold">DNArrival</span>
+| **Field Name**            | **Insert Value**                               |
+|----------------------------|-------------------------------------------------------|
+| **ARRIVAL_DATE**           | SYSTIMESTAMP 
+| **STATION_NO**             | Arrival Station Number from ID26 
+| **CARRY_KEY**              | 99999999      
+| **BCR_DATA**               | Barcode information from ID26
+| **CONTROLINFO**            | Control information from ID26
+| **SEND_FLAG**              | 0:Not sent
+| **HEIGHT**                 | Dimension Information from ID26
+| **WIDTH**                  | Dimension Information From ID26
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
+
+####<span style="color:skyblue; font-weight:bold">DNPallet</span>
+| **Field Name**            | **Insert Vlaue**                               |
+|----------------------------|-----------------------------------------------|                                                
+| **CURRENT_STATION_NO**     | DNARRIVAL.STATION_NO                                          
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
+
+
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+| **Field Name**                | **Insert Value**                               |
+|--------------------------------|-----------------------------------------------|
+| **WORK_TYPE**                  | 26:Direct Transfer
+| **CMD_STATUS**                 | 1:Started 
+| **CARRY_FLAG**                 | 3: Direct Transfer
+| **SOURCE_STATION_NO**          | DNARRIVAL.STATION_NO ⟶ <span style="color:green; font-weight:bold">(1111, 1112, 1113, 1114, 1115)</span>
+| **DEST_STATION_NO**            | <span style="color:green; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (7101, 7102, 7103, 7104, 7105, 7106, 7107, 7108, 7109, 7110)</span>
+| **REGIST_DATE**                | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**               | ClassName
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**          | ClassName
 
 ###<span style="color:skyblue; font-weight:bold">ID54</span>
 
