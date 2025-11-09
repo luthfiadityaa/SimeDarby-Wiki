@@ -210,7 +210,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **Field Name**            | **Insert Value**                              |
 |---------------------------|-----------------------------------------------|
 | **CMD_STATUS**            | 2:Waiting for response
-| **REJECT_FACTOR**         | 01:BCR No-read
+| **REJECT_FACTOR**         | <span style="color:red; font-weight:bold">01:BCR No-read</span>
 | **LAST_UPDATE_DATE**      | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**     | Class name
 
