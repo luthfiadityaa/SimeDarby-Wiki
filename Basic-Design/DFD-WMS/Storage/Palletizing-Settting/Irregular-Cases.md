@@ -305,7 +305,7 @@ Palletizing Completion("0":Normal Completion)</span>
 | **CMD_STATUS**                 | 1:Started 
 | **CARRY_FLAG**                 | 3: Direct Transfer
 | **SOURCE_STATION_NO**          | DNARRIVAL.STATION_NO ⟶ <span style="color:green; font-weight:bold">(1111, 1112, 1113, 1114, 1115)</span>
-| **DEST_STATION_NO**            | <span style="color:green; font-weight:bold">1303</span>
+| **DEST_STATION_NO**            | <span style="color:green; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (1111/1112/1113/1114/1115)</span>
 | **REGIST_DATE**                | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**               | ClassName
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
