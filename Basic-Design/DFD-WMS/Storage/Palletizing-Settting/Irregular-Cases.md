@@ -429,8 +429,8 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 flowchart LR
 
 releaseCommand["
-Release Command from Palletize Robot
-After Completion 
+The completion button flashes.
+AGC turns on the signal tower of No-Read based on the Control Information. 
 "]
 
 id26msg("
@@ -446,6 +446,11 @@ id26-insert[("
 ")]
 
 storageStationOperator[StorageStationOperator]
+
+releaseCommand2["
+The completion button flashes.
+AGC turns on the signal tower of No-Read based on the Control Information. 
+"]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
