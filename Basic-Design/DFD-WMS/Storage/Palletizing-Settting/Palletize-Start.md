@@ -10,10 +10,10 @@
 | ID25(4)                     |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |        |
 | ID26(5)                     |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |        |
 | Storage Sender(6)           |        |        | UPDATE |        | UPDATE | UPDATE |        | UPDATE | UPDATE | UPDATE |        |        |        |        |
-| ID25(7)                     |        |        |        |        |        |        |        | DELETE |        |        |        |        |        |        |
+| ID25(7)                     |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |        |
 | **Flow 1**                  |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
-| ID64(8)                     |        |        |        |        |        |        |        | INSERT |        |        |        |        |        | SELECT |
-| ID26(9)                     |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | DELETE |        |        |        |        |        |        |
+| ID64(8)                     |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |        |
+| ID26(9)                     |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |        |
 | Storage Sender(10)          |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | UPDATE |        |        |        |        |        |        |
 | ID25(11)                    |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | DELETE |        |        |        |        |        |        |
 | ID64(12)                    |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | UPDATE |        |        |        |        |        |        |
