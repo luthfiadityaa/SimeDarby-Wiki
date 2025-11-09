@@ -19,7 +19,7 @@ Cond4 -->|No| DataError2[Data Error] --> BatchEnd[Batch End] --> Move2[ID05]
 
 ##<span style="color:skyblue; font-weight:bold">Wait for available location if full</span>
 
-jp.co.daifuku.as21.common.location.decide.LocationManager
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.as21.common.location.decide.LocationManager&nbsp;</span>
 
 - [Continue Flow to Storage Sender](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Estorage-sender%26nbsp%3B%3C/span%3E)
 
