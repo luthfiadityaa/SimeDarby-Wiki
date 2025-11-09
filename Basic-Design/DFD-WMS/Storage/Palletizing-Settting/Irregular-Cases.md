@@ -346,8 +346,8 @@ ID 54
 ")
 
 buttonlight["
-The signal tower lights.
-The buzzer sounds.
+The signal tower turns off.
+The buzzer stops.
 "]
 
 id50msg --> As21Id54
