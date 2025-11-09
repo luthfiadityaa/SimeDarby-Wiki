@@ -72,7 +72,7 @@ No Read("1":Error)</span>
 | **STATION_NO**             | Arrival Station Number from ID26 
 | **CARRY_KEY**              | 99999999       
 | **BCR_DATA**               | <span style="color:red; font-weight:bold">??</span>
-| **CONTROLINFO**            | Control information from ID26 
+| **CONTROLINFO**            | <span style="color:red; font-weight:bold">Control information from ID26</span> 
 | **SEND_FLAG**              | 0:Not sent
 | **HEIGHT**                 | Dimension Information from ID26
 | **WIDTH**                  | Dimension Information From ID26
