@@ -62,12 +62,6 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 | **CARRY_KEY**              | 99999999      
 | **BCR_DATA**               | Barcode information from ID26
 | **CONTROLINFO**            | <span style="color:red; font-weight:bold">Control Information = "110"</span>
-
-
-
-
-
-
 | **SEND_FLAG**              | 0:Not sent
 | **HEIGHT**                 | Dimension Information from ID26
 | **WIDTH**                  | Dimension Information From ID26
@@ -75,11 +69,6 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
-
-
-
-
-
 
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
 | **Field Name**            | **Insert Vlaue**                               |
