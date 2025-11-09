@@ -54,7 +54,7 @@ releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
 :::
 
-After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and Storage Station Operator will execute the receive task based on information in received ID26. While Storage Station Operator processes ID26, it will create an Arrival record.
+After the process is completed, the conveyor receives a signal and begins transferring the pallet. The AGC then sends ID26 to WareNavi, prompting the Storage Station Operator to execute the receiving task based on the information contained in ID26. During this process, the Storage Station Operator creates an Arrival record. However, if the barcode data check results in a No-Read, the system will handle it accordingly.
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
 
