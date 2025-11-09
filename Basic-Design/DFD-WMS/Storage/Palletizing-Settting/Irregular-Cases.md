@@ -61,7 +61,7 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 | **STATION_NO**             | Arrival Station Number from ID26 
 | **CARRY_KEY**              | 99999999      
 | **BCR_DATA**               | Barcode information from ID26
-| **CONTROLINFO**            | <span style="color:red; font-weight:bold">Control Information = "110"</span>
+| **CONTROLINFO**            | <span style="color:red; font-weight:bold">Control Information = "110" Palletizing Skip("1": Skip), No Read("1":Error), Palletizing Completion("0":Normal Completion)</span>
 | **SEND_FLAG**              | 0:Not sent
 | **HEIGHT**                 | Dimension Information from ID26
 | **WIDTH**                  | Dimension Information From ID26
