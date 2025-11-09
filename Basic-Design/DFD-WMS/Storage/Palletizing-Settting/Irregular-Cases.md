@@ -452,6 +452,7 @@ Press the completion button after removing the pallet.
 Clear the operation indication. 
 "]
 
+releaseCommand-->releaseCommand2
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
 :::
