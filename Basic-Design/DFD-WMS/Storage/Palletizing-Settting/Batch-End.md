@@ -29,7 +29,7 @@
 | Storage Sender(3)           |        |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |        |
 | ID25(4)                     |        |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |        |
 | ID26(5)                     |        |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |        |
-| Storage Sender(6)           | UPDATE | UPDATE |        | UPDATE |        | UPDATE | UPDATE |        |        | UPDATE | UPDATE | UPDATE |        |        |        |        
+| Storage Sender(6)           | UPDATE | UPDATE | UPDATE |        |        | UPDATE | UPDATE |        |        | UPDATE | UPDATE | UPDATE |        |        |        |        
 | ID25(7)                     |        |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |        |
 | **Flow 1**                  |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
 | ID64(8)                     |        |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |        |
@@ -49,7 +49,7 @@
 | ID25(16)                    |        |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |        |
 | ID64(17)                    |        |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |        |
 | **Last Process**            |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
-| ID33(18)                    | DELETE | UPDATE | UPDATE | UPDATE | UPDATE | DELETE | UPDATE | INSERT |        |        | UPDATE | INSERT |        |        | UPDATE |
+| ID33(18)                    | DELETE | UPDATE | UPDATE | INSERT | UPDATE | DELETE | UPDATE | INSERT |        |        | UPDATE | INSERT |        |        | UPDATE |
 
 #<span style="color:skyblue; font-weight:bold">Batch End - Set(F2)</span>
   
