@@ -1171,7 +1171,7 @@ Upon equipment <span style="color:green; font-weight:bold">SRM</span> have picke
 ![image.png](/.attachments/image-0f17bef0-54b4-4a5a-9227-3908b6fe5b7f.png)
 
 
-Table effect:
+Table Impact:
 - DNStock
 - DNStockHistory
 - DNSTORAGEPLAN
