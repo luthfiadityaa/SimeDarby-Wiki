@@ -158,7 +158,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 ###<span style="color:skyblue; font-weight:bold">ID54</span>
 
 # ID54
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.sendAs21Id54</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.sendAs21Id54&nbsp;</span>
 ::: mermaid
 flowchart LR
 
