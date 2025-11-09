@@ -628,7 +628,7 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 | **LAST_UPDATE_DATE**  | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME** |Class name
 
-##<span style="color:skyblue; font-weight:bold">ID26&nbsp;</span>
+###<span style="color:skyblue; font-weight:bold">ID26&nbsp;</span>
 
 ::: mermaid
 flowchart LR
@@ -662,9 +662,9 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
 
-###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
-####<span style="color:skyblue; font-weight:bold">DNArrival</span>
+#####<span style="color:skyblue; font-weight:bold">DNArrival</span>
 - <span style="color:red; font-weight:bold">Control Information = "110"
 Palletizing Skip("1": Skip),
 No Read("1":Error),
