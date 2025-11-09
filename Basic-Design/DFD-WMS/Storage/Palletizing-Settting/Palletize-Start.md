@@ -516,6 +516,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_UPDATE_DATE**      | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**     | Class name
 
+<span style="color:green; font-weight:bold">Storage Date will be update by the system in this section.</span>
 ####<span style="color:skyblue; font-weight:bold">DNPALLETIZE</span>
 | **Field Name**             | **Insert Value**                              |
 |----------------------------|-----------------------------------------------|
