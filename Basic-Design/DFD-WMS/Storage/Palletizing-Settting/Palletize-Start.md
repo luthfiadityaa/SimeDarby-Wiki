@@ -27,7 +27,7 @@
 | ID26(14)                    |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |        |
 | Storage Sender(15)          |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |        |
 | ID25(16)                    |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |        |
-| ID64(17)                    |        |        | UPDATE |        | UPDATE | UPDATE | UPDATE | UPDATE |        |        |        |        |        |        |
+| ID64(17)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |        |
 | **Last Process**            |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
 | ID33(18)                    | UPDATE | UPDATE | UPDATE | DELETE | UPDATE | INSERT | UPDATE | INSERT |        |        |        |        |        | INSERT |
 
