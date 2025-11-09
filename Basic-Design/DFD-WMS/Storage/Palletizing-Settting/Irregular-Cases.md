@@ -447,10 +447,6 @@ id26msg("
 ID 26
 ")
 
-id26-insert[("
-   DNARRIVAL		
-")]
-
 id26-delete[("
    DNWORKINFO
    DNPALLET
@@ -470,7 +466,6 @@ Clear the operation indication.
 
 releaseCommand-->releaseCommand2-->releaseCommand3
 releaseCommand-->releaseCommand0-->id26msg-->id26process-->storageStationOperator
-storageStationOperator--> |INSERT| id26-insert
 storageStationOperator--> |DELETE| id26-delete
 :::
 
