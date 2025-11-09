@@ -272,9 +272,9 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
 
-###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+#####<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
-####<span style="color:skyblue; font-weight:bold">DNArrival</span>
+#####<span style="color:skyblue; font-weight:bold">DNArrival</span>
 - <span style="color:red; font-weight:bold">Control Information = "110"
 Palletizing Skip("1": Skip),
 No Read("1":Error),
@@ -295,7 +295,7 @@ Palletizing Completion("0":Normal Completion)</span>
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-####<span style="color:skyblue; font-weight:bold">DNPallet</span>
+#####<span style="color:skyblue; font-weight:bold">DNPallet</span>
 | **Field Name**            | **Insert Vlaue**                               |
 |----------------------------|-----------------------------------------------|                                                
 | **CURRENT_STATION_NO**     | DNARRIVAL.STATION_NO                                          
@@ -304,8 +304,7 @@ Palletizing Completion("0":Normal Completion)</span>
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-
-####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+#####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**                | **Insert Value**                               |
 |--------------------------------|-----------------------------------------------|
 | **WORK_TYPE**                  | 26:Direct Transfer
@@ -318,7 +317,7 @@ Palletizing Completion("0":Normal Completion)</span>
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | ClassName
 
-##<span style="color:skyblue; font-weight:bold">Storage Sender</span>
+###<span style="color:skyblue; font-weight:bold">Storage Sender</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
 
 ::: mermaid
@@ -342,9 +341,9 @@ storageSender--> |UPDATE| storageSender-update
 
 After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, StorageSender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">1:Started to 2:Waiting for Response.</span>
 
-###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
-####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+#####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**            | **Insert Value**                              |
 |---------------------------|-----------------------------------------------|
 | **CMD_STATUS**            | 2:Waiting for response
@@ -354,7 +353,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_UPDATE_DATE**      | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**     | Class name
 
-####<span style="color:skyblue; font-weight:bold">DNArrival</span>
+#####<span style="color:skyblue; font-weight:bold">DNArrival</span>
 | **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
 | **CARRY_KEY**                  | DNCARRYINFO.CARRY_KEY
