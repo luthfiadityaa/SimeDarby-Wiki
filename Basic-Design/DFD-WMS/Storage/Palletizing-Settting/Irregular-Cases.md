@@ -464,6 +464,7 @@ Clear the operation indication.
 releaseCommand-->releaseCommand2-->releaseCommand3
 releaseCommand-->releaseCommand0-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
+storageStationOperator--> |DELETE| id26-delete
 :::
 
 After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and Storage Station Operator will execute the receive task based on information in received ID26. While Storage Station Operator processes ID26, it will create an Arrival record.
