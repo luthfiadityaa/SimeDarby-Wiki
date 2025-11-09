@@ -157,6 +157,26 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 
 ###<span style="color:skyblue; font-weight:bold">ID54</span>
 
+# ID50
+jp.co.daifuku.wcs.mc.as21.communication.id.send.As21Id50
+::: mermaid
+flowchart LR
+
+id50msg("
+ID 50
+")
+
+buttonlight["
+Station Completion button
+Light Up
+"]
+
+id50msg --> As21Id50
+As21Id50 --> buttonlight
+:::
+
+After user clicked **Set(F2)** button at ASRS Storage Start, ID 50 will be sent to AGC where Completion button at selected station will light up. User is required to click on the light up Completion button at related Station to start transport of Pallet.
+
 ###<span style="color:skyblue; font-weight:bold">Storage Sender</span>
 
 ###<span style="color:skyblue; font-weight:bold">ID25</span>
