@@ -159,12 +159,11 @@ This section explains the validations for the whole proccess Palletize Start
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-<br>
-<hr style="border: 2px solid red;">
-
 #<span style="color:skyblue; font-weight:bold">Release Command from Palletize Robot - Dummy Arrival</span>
   After palletizing is completed, the palletizing robot sends <span style="color:green; font-weight:bold">“Release Command”</span> signal via conveyor interlock.
 
+<br>
+<hr style="border: 2px solid red;">
 #Irregular Cases
 Continue this flow if occurs.
 - [No-Read (Go to Reject station)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/951/Irregular-Cases?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eno-read-(go-to-reject-station)%3C/span%3E)
