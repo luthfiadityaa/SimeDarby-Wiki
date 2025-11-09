@@ -62,7 +62,7 @@ This section explains the validations for the whole proccess Palletize Start
   So if result > 0, Palletize Start cannot proceed.
 - <span style="color:green; font-weight:bold">Planned Carton</span> must be greater than <span style="color:green; font-weight:bold">0</span>.
 - <span style="color:green; font-weight:bold">Quantity (Carton per Pallet)</span> must be greater than <span style="color:green; font-weight:bold">0</span>.
-- **Planned Carton** must be greater than or equal to **Quantity (Carton per Pallet)**.
+- <span style="color:green; font-weight:bold">Planned Carton</span> must be greater than or equal to <span style="color:green; font-weight:bold">Quantity (Carton per Pallet)</span>.
 - Material Code exists in <span style="color:green; font-weight:bold">DMMaterialMaster</span>
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
