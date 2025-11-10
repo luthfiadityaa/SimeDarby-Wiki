@@ -854,8 +854,8 @@ After the process is completed, the conveyor receives a signal and begins transf
 | **PLAN_UKEY**              | DNSTORAGEPLAN.PLAN_UKEY
 | **STOCK_ID**               | Sequence Object
 | **PLAN_DAY**               | DMWARENAVISYSTEM.WORK_DAY
-| **BATCH_NO**               | DNPALLETIZE.BATCH_NO
-| **PLAN_AREA_NO**           | DNPALLETIZE.STORAGE_LOCATION 
+| **BATCH_NO**               | DNSTORAGEPLAN.BATCH_NO
+| **PLAN_AREA_NO**           | DNSTORAGEPLAN.PLAN_AREA_NO
 | **MATERIAL_CODE**          | DNPALLETIZE.MATERIAL_CODE 
 | **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL 
 | **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
