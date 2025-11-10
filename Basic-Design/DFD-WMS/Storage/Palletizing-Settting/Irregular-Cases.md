@@ -767,7 +767,7 @@ releaseCommand-->releaseCommand0-->id26msg-->id26process-->storageStationOperato
 storageStationOperator--> |DELETE| id26-delete
 :::
 
-After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and Storage Station Operator will execute the receive task based on information in received ID26. While Storage Station Operator processes ID26, it will create an Arrival record.
+After the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. At the same time, the AGC activates the signal tower for No-Read based on control information, sending ID 26 to the `id26process`, which then passes data to `StorageStationOperator` to delete related records from DNWORKINFO, DNPALLET, DNCARRYINFO, and DNSTOCK.
 
 <hr>
 
