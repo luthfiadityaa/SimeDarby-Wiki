@@ -3,21 +3,21 @@
 
 #<span style="color:skyblue; font-weight:bold">Planned Storage Setting (PKG) database flow</span>
 ##<span style="color:Green; font-weight:bold">Abbreviation</span>
-| CODE | TABLE NAME       |
-|------|------------------|
-| STRP | DNSTORAGEPLAN    | 
-| PLLT | DNPALLET         | 
-| WRKI | DNWORKINFO       | 
-| WRKL | DNWORKLIST       | 
-| CRYI | DNCARRYINFO      | 
-| STCK | DNSTOCK          | 
-| HSTS | DNHOSTSEND       |
-| ARVL | DNARRIVAL        |
-| WRHS | DMWAREHOUSE      |
-| SHLF | DMSHELF          |
-| STCH | DNSTOCKHISTORY   |
-| MTMS | DMMASTERMATERIAL |
-| STSN | DMSTATION        |
+| **CODE** | TABLE NAME       |
+|----------|------------------|
+| **STRP** | DNSTORAGEPLAN    | 
+| **PLLT** | DNPALLET         | 
+| **WRKI** | DNWORKINFO       | 
+| **WRKL** | DNWORKLIST       | 
+| **CRYI** | DNCARRYINFO      | 
+| **STCK** | DNSTOCK          | 
+| **HSTS** | DNHOSTSEND       |
+| **ARVL** | DNARRIVAL        |
+| **WRHS** | DMWAREHOUSE      |
+| **SHLF** | DMSHELF          |
+| **STCH** | DNSTOCKHISTORY   |
+| **MTMS** | DMMASTERMATERIAL |
+| **STSN** | DMSTATION        |
 
 ##<span style="color:Green; font-weight:bold">Inbound Table Data Flow </span>
 |Action Name| SRTP | PLLT | WRKI | WRKL | CRYI | STCK | HSTS | ARVL | WRHS | SHLF | STCH | MTST | STSN |
