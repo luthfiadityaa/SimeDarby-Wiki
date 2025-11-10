@@ -40,8 +40,6 @@ flowchart LR
 
     tableList-select[("
         DMMATERIALMASTER
-        DMSTATION
-        DMTOSTATION
     ")]
 
 
