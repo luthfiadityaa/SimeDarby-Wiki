@@ -1182,7 +1182,7 @@ DNCARRYINFO
 ")];
 
 releaseCommand2["
-Wait until an empty location becomes available because all locations are full.
+Force Complete.
 "]
 
 releaseCommand3["
