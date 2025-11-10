@@ -230,6 +230,7 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **LAST_UPDATE_PNAME**      | Class name
 
 ####<span style="color:skyblue; font-weight:bold"> DNStoragePlan </span>
+Storage Date will be update by the system in this section represent by <span style="color:green; font-weight:bold">LAST_UPDATE_DATE</span>
 <span style="color:red; font-weight:bold; font-size:12px">*If DNSTORAGEPLAN.RESULT_QTY = DNSTORAGEPLAN.PLAN_QTY then update Status to completed</span>
 | **Field Name**             | **Insert Value**                                      |
 |----------------------------|-------------------------------------------------------|
