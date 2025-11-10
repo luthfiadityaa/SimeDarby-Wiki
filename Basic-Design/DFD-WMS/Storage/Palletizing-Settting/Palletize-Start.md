@@ -237,7 +237,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **BATCH_NO**               | DNSTORAGEPLAN.BATCH_NO
 | **PLAN_AREA_NO**           | DNSTORAGEPLAN.PLAN_AREA_NO_NO   
 | **MATERIAL_CODE**          | DNSTORAGEPLAN.MATERIAL_CODE 
-| **PLAN_QTY**               | DNSTORAGEPLAN.QTY_CRTN_PL 
+| **PLAN_QTY**               | DNSTORAGEPLAN.PLAN_QTY 
 | **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **USER_ID**                | Login Info
 | **STORAGE_LOCATION_FROM**  | DNSTORAGEPLAN.STATION_NO 
