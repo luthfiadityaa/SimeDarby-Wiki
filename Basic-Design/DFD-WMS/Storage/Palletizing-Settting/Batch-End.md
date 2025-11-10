@@ -117,8 +117,8 @@ This section explains the validations for the whole proccess Batch End
 | **CURRENT_STATUS**         | Data Last Pallet (CURRENT_STATUS)                                                     
 | **STATUS_FLAG**            | 1:Working                                                       
 | **CANCEL_FLAG**            | 0:Normal Data                                                      
-| **PLAN_DAY**               | Data Last Pallet                                                       
-| **PLAN_AREA_NO**           | Data Last Pallet
+| **PLAN_DAY**               | Data Last Pallet (STORAGE_DATE_TIME)                                                       
+| **PLAN_AREA_NO**           | Data Last Pallet (STORAGE_LOCATION)
 | **PLANNED_CARTON_QTY**     | Data Last Pallet
 | **QTY_KG_CRTN**            | Data Last Pallet                             
 | **MATERIAL_CODE**          | Data Last Pallet 
