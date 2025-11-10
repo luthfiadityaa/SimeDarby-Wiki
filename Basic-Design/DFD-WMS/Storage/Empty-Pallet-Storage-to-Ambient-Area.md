@@ -15,7 +15,7 @@
 | **WRHS** | DMWAREHOUSE      |
 | **SHLF** | DMSHELF          |
 | **STCH** | DNSTOCKHISTORY   |
-| **MTMS** | DMMASTERMATERIAL |
+| MTMS | DMMASTERMATERIAL |
 | **STSN** | DMSTATION        |
 
 
@@ -552,12 +552,12 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 ##<span style="color:skyblue; font-weight:bold">Table Value</span>
 
 ####<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
-| **Column Name**            | **Description / Notes**                               |
-|----------------------------|-------------------------------------------------------|
-| CMD_STATUS                 | 3:Commanded
-| ERROR_CODE                 | 0
-| LAST_UPDATE_DATE           | SYSTIMESTAMP
-| LAST_UPDATE_PNAME          | Class name
+| **Column Name**                | **Description / Notes**                               |
+|--------------------------------|-------------------------------------------------------|
+| **CMD_STATUS**                 | 3:Commanded
+| **ERROR_CODE**                 | 0
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**          | Class name
 
 #<span style="color:skyblue; font-weight:bold">ID64 </span>
 
@@ -584,11 +584,11 @@ Upon equipment <span style="color:green; font-weight:bold">(SRM)</span> have pic
 ##<span style="color:skyblue; font-weight:bold">Table Value</span>
 
 ####<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
-| **Column Name**            | **Description / Notes**                              |
-|----------------------------|-------------------------------------------------------|
-| CMD_STATUS                 | 4:Pickup completed
-| LAST_UPDATE_DATE           | SYSTIMESTAMP
-| LAST_UPDATE_PNAME          | Class name
+| **Column Name**                | **Description / Notes**                              |
+|--------------------------------|-------------------------------------------------------|
+| **CMD_STATUS**                 | 4:Pickup completed
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**          | Class name
 
 #<span style="color:skyblue; font-weight:bold">ID33</span>
 
@@ -625,35 +625,35 @@ id33process--> |DELETE| id33-delete
 ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage operation of the pallet is completed by SRM.
 
 ####<span style="color:skyblue; font-weight:bold">DMSHELF</span>
-| **Column Name**            | **Description / Notes**                               |
-|----------------------------|-------------------------------------------------------|
-| STATUS_FLAG                | 1: Occupied
-| LAST_UPDATE_DATE           | SYSTIMESTAMP
+| **Column Name**                | **Description / Notes**                               |
+|--------------------------------|-------------------------------------------------------|
+| **STATUS_FLAG**                | 1: Occupied
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 
 ####<span style="color:skyblue; font-weight:bold">DNPALLET</span>
-| **Column Name**            | **Description / Notes**                               |
-|----------------------------|-------------------------------------------------------|
-| CURRENT_STATION_NO         | Location Number information from ID33
-| STATUS_FLAG                | 2:Occupied
-| ALLOCATION_FLAG            | 0:Not allocated
-| LAST_STORED_DATE           | SYSTIMESTAMP
-| LAST_UPDATE_DATE           | SYSTIMESTAMP
-| LAST_UPDATE_PNAME          | Class name
+| **Column Name**                | **Description / Notes**                               |
+|--------------------------------|-------------------------------------------------------|
+| **CURRENT_STATION_NO**         | Location Number information from ID33
+| **STATUS_FLAG**                | 2:Occupied
+| **ALLOCATION_FLAG**            | 0:Not allocated
+| **LAST_STORED_DATE**           | SYSTIMESTAMP
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**          | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
-| **Column Name**            | **Description / Notes**                               |
-|----------------------------|-------------------------------------------------------|
-| RESULT_AREA_NO             | DNWORKINFO.PLAN_AREA_NO
-| RESULT_LOCATION_NO         | DNWORKINFO.PLAN_LOCATION_NO
-| WORK_DAY                   | DMWARENAVISYSTEM.WORK_DAY
-| STATUS_FLAG                | 4:Completed
-| LAST_UPDATE_DATE           | SYSTIMESTAMP
+| **Column Name**                | **Description / Notes**                               |
+|--------------------------------|-------------------------------------------------------|
+| **RESULT_AREA_NO**             | DNWORKINFO.PLAN_AREA_NO
+| **RESULT_LOCATION_NO**         | DNWORKINFO.PLAN_LOCATION_NO
+| **WORK_DAY**                   | DMWARENAVISYSTEM.WORK_DAY
+| **STATUS_FLAG**                | 4:Completed
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNSTOCK</span>
 
-| **Column Name**            | **Description / Notes**                               |
-|----------------------------|-------------------------------------------------------|
+| **Column Name**                | **Description / Notes**                               |
+|--------------------------------|-------------------------------------------------------|
 | **STORAGE_DAY**                | DMWARENAVISYSTEM.WORK_DAY
 | **NEWEST_STORAGE_DATE**        | SYSTIMESTAMP
 | **STOCK_QTY**                  | 1
@@ -663,8 +663,8 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 
 ####<span style="color:skyblue; font-weight:bold">DNSTOCKHISTORY</span>
 
-| **Column Name**            | **Description / Notes**                               |
-|----------------------------|-------------------------------------------------------|
+| **Column Name**                | **Description / Notes**                               |
+|--------------------------------|-------------------------------------------------------|
 | **WORK_DAY**                   | DMWARENAVISYSTEM.WORK_DAY
 | **INC_DEC_TYPE**               | 1: Stock Increase
 | **JOB_TYPE**                   | 2: Storage
@@ -686,8 +686,8 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **REGIST_PNAME**               | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNINOUTRESULT</span>
-| **Column Name**            | **Description / Notes**                               |
-|----------------------------|-------------------------------------------------------|
+| **Column Name**                | **Description / Notes**                               |
+|--------------------------------|-------------------------------------------------------|
 | **RESULT_KIND**                | 1:Storage(Stock+)
 | **STATION_NO**                 | DNCARRYINFO.SOURCE_STATION_NO
 | **LOCATION_NO**                | DNCARRYINFO.DEST_STATION_NO
