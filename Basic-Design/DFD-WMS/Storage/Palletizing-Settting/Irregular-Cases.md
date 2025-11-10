@@ -1185,13 +1185,8 @@ releaseCommand2["
 Force Complete.
 "]
 
-releaseCommand3["
-An empty location becomes available. 
-"]
-
 storageStationOperator[storageStationOperator]
 
-releaseCommand-->releaseCommand3
 releaseCommand-->releaseCommand2-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
 storageStationOperator--> |UPDATE| id26-update
@@ -1256,8 +1251,8 @@ ID 54
 ")
 
 buttonlight["
-The signal tower lights.
-The buzzer sounds.
+The signal tower turns off.
+The buzzer stops..
 "]
 
 id50msg --> As21Id54
