@@ -272,7 +272,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **field Name**            | **Insert Value**                               |
 |----------------------------|-----------------------------------------------|
 | **STOCK_ID**               | Sequence Object   
-| **AREA_NO**                | DNPALLETIZE.STORAGE_LOCATION
+| **AREA_NO**                | DNSTORAGEPLAN.PLAN_AREA_NO   
 | **STORAGE_TYPE**           | 2:New 
 | **STOCK_QTY**              | 0
 | **ALLOCATION_QTY**         | 0
