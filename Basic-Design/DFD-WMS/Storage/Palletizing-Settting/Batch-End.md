@@ -129,9 +129,8 @@ This section explains the validations for the whole proccess Batch End
 | **REPORT_FLAG**            | 0:Not Reported                                                   
 | **STORING_PAIR_KEY**       | Data Last Pallet (MATERIAL_CODE + BATCH_NO)
 | **UOM**                    | Data Last Pallet (UOM)
-| **TEMPERING_PERIOD**       | Data Last Pallet 
-| **STORAGE_LOCATION**       | Data Last Pallet
-| **EXPIRY_DAYS**            | Data Last Pallet
+| **TEMPERING_PERIOD**       | Data Last Pallet (TEMPERING PERIOD)
+| **EXPIRY_DAYS**            | Data Last Pallet (EXPIRY_DAYS)
 | **STORAGE_QTY**            | Value set by system or Input at screen 
 | **TOTAL_ACTUAL_CARTON_QTY**| Data Last Pallet
 | **MAX_PALLET_BATCH_END**   | Data Last Pallet
