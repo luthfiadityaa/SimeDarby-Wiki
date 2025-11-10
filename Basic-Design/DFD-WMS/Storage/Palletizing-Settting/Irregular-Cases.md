@@ -1191,7 +1191,7 @@ An empty location becomes available.
 
 storageStationOperator[storageStationOperator]
 
-releaseCommand-->releaseCommand2-->releaseCommand3
+releaseCommand-->releaseCommand3
 releaseCommand-->releaseCommand2-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
 storageStationOperator--> |UPDATE| id26-update
