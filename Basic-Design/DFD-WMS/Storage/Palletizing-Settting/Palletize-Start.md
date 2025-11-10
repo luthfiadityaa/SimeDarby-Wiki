@@ -123,7 +123,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **MATERIAL_CODE**          | DNPALLETIZE.MATERIAL_CODE                                                  
 | **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL                                                 
 | **REPORT_FLAG**            | 0:Not Reported                                                   
-| **STORING_PAIR_KEY**       | <span style="color:green; font-weight:bold">DNPALLETIZE.MATERIAL_CODE + DNPALLETIZE.BATCH_NO</span>
+| **STORING_PAIR_KEY**       | Value from screen <span style="color:green; font-weight:bold"> (Material Code) + (Batch_No)</span>
 | **STATION_NO**                 | Value from screen (Station No)
 | **CURRENT_STATUS**             | Value from screen (Current Status)
 | **MATERIAL_CODE**              | Value from screen (Material Code)
