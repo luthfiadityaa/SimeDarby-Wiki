@@ -233,6 +233,7 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 <span style="color:red; font-weight:bold; font-size:12px">*If DNSTORAGEPLAN.RESULT_QTY = DNSTORAGEPLAN.PLAN_QTY then update Status to completed</span>
 | **Field Name**             | **Insert Value**                                      |
 |----------------------------|-------------------------------------------------------|
+| **DELETE_FLAG**            | 1:Yes   
 | **STATUS_FLAG**            | 4: Completed
 | **RESULT_QTY**             | DNSTORAGEPLAN.RESULT_QTY + DNWORKINFO.RESULT_QTY
 | **SHORTAGE_QTY**           | DNSTORAGEPLAN.SHORTAGE_QTY + DNWORKINFO.SHORTAGE_QTY
