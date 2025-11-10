@@ -270,7 +270,7 @@ storageStationOperator[storageStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert-->releaseCommand4
-storageStationOperator--> |UPDATE| id26-update-->releaseCommand2
+storageStationOperator--> |UPDATE| id26-update-->releaseCommand4
 releaseCommand4-->releaseCommand2-->releaseCommand3
 :::
 
