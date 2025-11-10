@@ -330,7 +330,7 @@ Storage Date will be update by the system in this section represent by <span sty
 | **PALLET_ID**              | DNPALLET.PALLET_ID
 | **PLAN_DAY**               | DNWORKINFO.PLAN_DAY
 | **BATCH_NO**               | DNWORKINFO.BATCH_NO
-| **PLAN_AREA_NO**           | DNPALLETITZE.PLAN_AREA_NO
+| **PLAN_AREA_NO**           | DNWORKINFO.PLAN_AREA_NO
 | **MATERIAL_CODE**          | DNWORKINFO.MATERIAL_CODE
 | **MATERIAL_NAME**          | DMMASTERIALMASTER.MATERIAL_NAME
 | **STORAGE_TYPE**           | DNWORKINFO.STORAGE_TYPE
