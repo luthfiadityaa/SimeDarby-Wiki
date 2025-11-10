@@ -258,6 +258,10 @@ releaseCommand2["
 Wait until an empty location becomes available because all locations are full.
 "]
 
+releaseCommand4["
+LocationManager
+"]
+
 releaseCommand3["
 An empty location becomes available. 
 "]
