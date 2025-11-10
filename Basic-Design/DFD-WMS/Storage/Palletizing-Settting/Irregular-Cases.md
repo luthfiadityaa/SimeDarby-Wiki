@@ -79,8 +79,8 @@ No Read("0":None)</span>
 | **Field Name**            | **Insert Vlaue**                               |
 |----------------------------|-----------------------------------------------|
 | **PALLET_ID**              | Sequence Object                                                       
-| **CURRENT_STATION_NO**     | DNPALLETIZE.STATION_NO                                                       
-| **WH_STATION_NO**          | DNPALLETIZE.STORAGE_LOCATION                                                      
+| **CURRENT_STATION_NO**     | DNSTORAGEPLAN.STATION_NO                                                       
+| **WH_STATION_NO**          | DNSTORAGEPLAN.PLAN_AREA_NO                                                      
 | **STATUS_FLAG**            | 1:Reserved for Storage                                                     
 | **EMPTY_FLAG**             | 0:Normal Pallet 
 | **ALLOCATION_FLAG**        | 1:Allocated
