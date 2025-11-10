@@ -128,7 +128,7 @@ This section explains the validations for the whole proccess Batch End
 | **PLAN_QTY**               | Data Last Pallet (QTY_CRTN_PL)                                               
 | **REPORT_FLAG**            | 0:Not Reported                                                   
 | **STORING_PAIR_KEY**       | Data Last Pallet (MATERIAL_CODE + BATCH_NO)
-| **UOM**                    | Data Last Pallet
+| **UOM**                    | Data Last Pallet (UOM)
 | **TEMPERING_PERIOD**       | Data Last Pallet 
 | **STORAGE_LOCATION**       | Data Last Pallet
 | **EXPIRY_DAYS**            | Data Last Pallet
