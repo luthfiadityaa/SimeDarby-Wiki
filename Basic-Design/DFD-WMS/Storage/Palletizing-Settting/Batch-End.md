@@ -24,11 +24,11 @@
 |-----------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
 | Palletize Start - SetF2[(1)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/874/Batch-End?_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Ebatch-end---set(f2)%3C/span%3E)  | SELECT |        |        |        |        |        |        |        |        |        |        | SELECT | SELECT |
 | ID26(2)                     |        | INSERT |        |        | INSERT | INSERT |        | INSERT |        |        |        |        |        |
-| Storage Sender(3)           |        |        |        |        |        | UPDATE |        | UPDATE |        |        |        |        |
-| ID25(4)                     |        |        |        |        |        | UPDATE |        | DELETE |        |        |        |        |
-| ID26(5)                     |        |        |        |        | UPDATE | UPDATE |        | INSERT |        |        |        |        |  
+| Storage Sender(3)           |        |        |        |        |        | UPDATE |        | UPDATE |        |        |        |        |        |
+| ID25(4)                     |        |        |        |        |        | UPDATE |        | DELETE |        |        |        |        |        |
+| ID26(5)                     |        |        |        |        | UPDATE | UPDATE |        | INSERT |        |        |        |        |        |
 | Storage Sender(6)           |        |        |        | UPDATE | UPDATE | UPDATE |        | UPDATE | UPDATE | UPDATE |        |        |        | 
-| ID25(7)                     |        |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |  
+| ID25(7)                     |        |        |        |        |        | UPDATE |        | DELETE |        |        |        |        |        |
 | **Flow 1**                  |        |        |        |        |        |        |        |        |        |        |        |        |        |  
 | ID64(8)                     |        |        |        |        |        | UPDATE |        |        |        |        |        |        |        |  
 | ID26(9)                     |        |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |  
