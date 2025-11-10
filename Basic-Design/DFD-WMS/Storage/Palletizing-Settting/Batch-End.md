@@ -6,7 +6,6 @@
 
 #<span style="color:skyblue; font-weight:bold">Batch End database flow</span>
 **Abbreviation:**
-- **PLTZ** : DNPALLETIZE  
 - **STRP** : DNSTORAGEPLAN  
 - **WRKI** : DNWORKINFO  
 - **WRKL** : DNWORKINFOLIST  
@@ -20,7 +19,6 @@
 - **MTMS** : DMATERIALMASTER  
 - **STSN** : DMSTATION  
 - **STCH** : DNSTOCKHISTORY  
-- **PLTZH** : DNPALLETIZEHISTORY  
 
 | Action Name                 | PLTZ   | STRP   | WRKI   | WRKL   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | PLTZH  |
 |-----------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
