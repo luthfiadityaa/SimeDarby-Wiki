@@ -28,7 +28,7 @@
 | ID25(4)                     |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
 | ID26(5)                     |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |   
 | Storage Sender(6)           |        |        |        | UPDATE | UPDATE | UPDATE |        | UPDATE | UPDATE | UPDATE |        |        |        | 
-| ID25(7)                     |        |        |        |        |        | UPDATE |        | DELETE |        |        |        |        |        |
+| ID25(7)                     |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
 | **Flow 1**                  |        |        |        |        |        |        |        |        |        |        |        |        |        |  
 | ID64(8)                     |        |        |        |        | UPDATE |        |        |        |        |        |        |        |  
 | ID26(9)                     |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |  
