@@ -920,7 +920,7 @@ id50msg --> As21Id54
 As21Id54 --> buttonlight
 :::
 
-After WareNavi receives information from **ID26** indicating a **Batch Start** is not ececuted yet. This leads the Data Error., it automatically sends **ID54** to the AGC. At the designated station, the signal tower lights up and the buzzer sounds.
+After WareNavi receives information from **ID26** indicating a **Batch Start** is not executed yet. This leads the Data Error. It automatically sends **ID54** to the AGC. At the designated station, the signal tower lights up and the buzzer sounds.
 
 
 ###<span style="color:skyblue; font-weight:bold">ID54</span>
