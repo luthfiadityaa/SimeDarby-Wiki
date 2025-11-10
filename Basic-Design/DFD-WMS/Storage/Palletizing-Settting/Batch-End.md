@@ -79,7 +79,6 @@ flowchart LR
     ]
 
     tableList-insert-select[("
-        DNPALLETIZE
         DMSTATION
         DMMATERIALMASTER
     ")]
