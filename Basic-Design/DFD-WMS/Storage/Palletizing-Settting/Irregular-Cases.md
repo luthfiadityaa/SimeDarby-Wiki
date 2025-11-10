@@ -920,7 +920,10 @@ id50msg --> As21Id54
 As21Id54 --> buttonlight
 :::
 
-After WareNavi receives information from **ID26** indicating a barcode NO-READ, it automatically sends **ID54** to the AGC. At the designated station, the signal tower lights up and the buzzer sounds, and initiate pallet transport.
+After WareNavi receives information from **ID26** indicating a barcode NO-READ, it automatically sends **ID54** to the AGC. At the designated station, the signal tower lights up and the buzzer sounds.
+
+"Batch Start" is not ececuted yet.
+This leads the Data Error.
 
 ###<span style="color:skyblue; font-weight:bold">ID54</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.sendAs21Id54&nbsp;</span>
@@ -940,7 +943,7 @@ id50msg --> As21Id54
 As21Id54 --> buttonlight
 :::
 
-After WareNavi receives information from **ID26** indicating a barcode NO-READ, it automatically sends **ID54** to the AGC. At the designated station, the signal tower lights up and the buzzer sounds, and initiate pallet transport.
+After WareNavi receives information from **ID26** indicating a barcode NO-READ, it automatically sends **ID54** to the AGC. At the designated station, the signal tower turns off and the buzzer stop, and initiate pallet transport.
 
 ###<span style="color:skyblue; font-weight:bold">Storage Sender</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
