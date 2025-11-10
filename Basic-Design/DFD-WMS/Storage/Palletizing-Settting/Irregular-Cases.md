@@ -831,8 +831,8 @@ After the process is completed, the conveyor receives a signal and begins transf
 | **Field Name**            | **Insert Vlaue**                               |
 |----------------------------|-----------------------------------------------|
 | **PALLET_ID**              | Sequence Object                                                       
-| **CURRENT_STATION_NO**     | DNPALLETIZE.STATION_NO                                                       
-| **WH_STATION_NO**          | DNPALLETIZE.STORAGE_LOCATION                                                      
+| **CURRENT_STATION_NO**     | DNSTORAGEPLAN.STATION_NO                                                       
+| **WH_STATION_NO**          | DNSTORAGEPLAN.STORAGE_LOCATION                                                      
 | **STATUS_FLAG**            | 1:Reserved for Storage                                                     
 | **EMPTY_FLAG**             | 0:Normal Pallet 
 | **ALLOCATION_FLAG**        | 1:Allocated
