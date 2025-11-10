@@ -115,7 +115,8 @@ This section explains the validations for the whole proccess Palletize Start
 |----------------------------|-----------------------------------------------|
 | **PLAN_UKEY**              | Sequence Object                                                      
 | **STATUS_FLAG**            | 1:Working                                                       
-| **CANCEL_FLAG**            | 0:Normal Data                                                      
+| **CANCEL_FLAG**            | 0:Normal Data
+| **DELETE_FLAG**            | 0:No                                                         
 | **PLAN_DAY**               | Value from screen (Storage Date/Time)                                                       
 | **PLAN_AREA_NO**           | Value from screen (Storage Location) ⟶ <span style="color:green; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>                             
 | **MATERIAL_CODE**          | Value from screen (Material Code)                                                  
