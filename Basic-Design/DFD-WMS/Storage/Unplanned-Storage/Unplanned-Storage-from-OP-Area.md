@@ -32,19 +32,14 @@ flowchart LR
         Expiry Days
         Storage Location From
         Storage Location To 
-        Station No       
     ]
 
     tableList-insert[("
-        DNPALLET
-        DNSTOCK
         DNWORKINFO
-        DNWORKLIST
-        DNHOSTSEND
-        DNCARRYINFO
     ")]
 
     tableList-select[("
+        DMMATERIALMASTER
         DMSTATION
         DMTOSTATION
     ")]
