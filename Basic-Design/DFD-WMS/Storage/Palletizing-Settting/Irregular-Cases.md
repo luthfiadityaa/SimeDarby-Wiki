@@ -808,17 +808,13 @@ After the process is completed, the conveyor receives a signal and begins transf
 
 #####<span style="color:skyblue; font-weight:bold">DNArrival</span>
 
-- <span style="color:red; font-weight:bold">Control Information = "11␣"
-Palletizing Skip("1": Skip),
-No Read("1":Error)</span>
-
 | **Field Name**            | **Insert Value**                               |
 |----------------------------|-----------------------------------------------|
 | **ARRIVAL_DATE**           | SYSTIMESTAMP 
 | **STATION_NO**             | Arrival Station Number from ID26 
 | **CARRY_KEY**              | 99999999       
 | **BCR_DATA**               | Barcode Information from ID26
-| **CONTROLINFO**            | <span style="color:red; font-weight:bold">Control information from ID26</span> 
+| **CONTROLINFO**            | Control information from ID26
 | **SEND_FLAG**              | 0:Not sent
 | **HEIGHT**                 | Dimension Information from ID26
 | **WIDTH**                  | Dimension Information From ID26
