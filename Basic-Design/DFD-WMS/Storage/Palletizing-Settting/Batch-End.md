@@ -344,32 +344,6 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-###<span style="color:skyblue; font-weight:bold">DNPalletizeHistory</span>
-| **Field Name**                 | **Insert Value**                               |
-|--------------------------------|------------------------------------------------|
-| **PALLETIZE_ID**               | DNPALLETIZE.PALLETIZE_ID
-| **STATION_NO**                 | DNPALLETIZE.STATION_NO
-| **CURRENT_STATUS**             | DNPALLETIZE.CURRENT_STATUS
-| **MATERIAL_CODE**              | DNPALLETIZE.MATERIAL_CODE
-| **MATERIAL_NAME**              | DNPALLETIZE.MATERIAL_NAME
-| **MATERIAL_TYPE**              | DNPALLETIZE.MATERIAL_TYPE
-| **BATCH_NO**                   | DNPALLETIZE.BATCH_NO
-| **PLANNED_CARTON_QTY**         | DNPALLETIZE.PLANNED_CARTON_QTY
-| **QTY_KG_CRTN**                | DNPALLETIZE.STATION_NO
-| **QTY_CRTN_PL**                | DNPALLETIZE.STATION_NO
-| **UOM**                        | DNPALLETIZE.STATION_NO
-| **TEMPERING_PERIOD**           | DNPALLETIZE.STATION_NO
-| **STORAGE_LOCATION**           | DNPALLETIZE.STATION_NO
-| **EXPIRY_DAYS**                | DNPALLETIZE.STATION_NO
-| **STORAGE_QTY**                | DNPALLETIZE.STATION_NO
-| **TOTAL_ACTUAL_CARTON_QTY**    | DNPALLETIZE.STATION_NO
-| **MAX_PALLET_BATCH_END**       | DNPALLETIZE.STATION_NO 
-| **BATCH_PALLET_START**         | DNPALLETIZE.STATION_NO
-| **REGIST_DATE**                | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**               | ClassName
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | ClassName
-
 <hr>
 
 ##<span style="color:skyblue; font-weight:bold">[Send Report as Production Storage Result - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)</span><br>
