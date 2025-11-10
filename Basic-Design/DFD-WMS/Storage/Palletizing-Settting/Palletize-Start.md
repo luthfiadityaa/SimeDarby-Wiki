@@ -77,7 +77,6 @@ flowchart LR
     ]
 
     tableList-insert[("
-        DNPALLETIZE
         DNSTORAGEPLAN
     ")]
 
