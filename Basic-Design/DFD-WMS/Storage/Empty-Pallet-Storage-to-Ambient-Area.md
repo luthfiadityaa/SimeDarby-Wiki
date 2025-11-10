@@ -648,60 +648,61 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | WORK_DAY                   | DMWARENAVISYSTEM.WORK_DAY
 | STATUS_FLAG                | 4:Completed
 | LAST_UPDATE_DATE           | SYSTIMESTAMP
-| LAST_UPDATE_PNAME          | Class name
+| **LAST_UPDATE_PNAME**          | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNSTOCK</span>
 
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
-| STORAGE_DAY                | DMWARENAVISYSTEM.WORK_DAY
-| NEWEST_STORAGE_DATE        | SYSTIMESTAMP
-| STOCK_QTY                  | 1
-| LAST_UPDATE_DATE           | SYSTIMESTAMP
-| LAST_UPDATE_PNAME          | Class name
+| **STORAGE_DAY**                | DMWARENAVISYSTEM.WORK_DAY
+| **NEWEST_STORAGE_DATE**        | SYSTIMESTAMP
+| **STOCK_QTY**                  | 1
+| **ALLOCATION_QTY**             | 1
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**          | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNSTOCKHISTORY</span>
 
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
-| WORK_DAY                   | DMWARENAVISYSTEM.WORK_DAY
-| INC_DEC_TYPE               | 1: Stock Increase
-| JOB_TYPE                   | 2: Storage
-| STOCK_ID                   | DNSTOCK.STOCK_ID
-| AREA_NO                    | DNSTOCK.AREA_NO
-| LOCATION_NO                | DNSTOCK.LOCATION_NO
-| STORAGE_DAY                | DNSTOCK.STORAGE_DAY
-| STORAGE_DATE               | DNSTOCK.STORAGE_DATE
-| NEWEST_STORAGE_DATE        | DNSTOCK.NEWEST_STORAGE_DATE
-| PALLET_ID                  | DNSTOCK.PALLET_ID
-| BCR_DATA                   | DNPALLET.BCR_DATA
-| AREA_TYPE                  | DMAREA_AREA_TYPE
-| USER_ID                    | Login info
-| USER_NAME                  | Login info
-| TERMINAL_NO                | Login info
-| TERMINAL_NAME              | Login info
-| IP_ADDRESS                 | Login info
-| REGIST_DATE                | SYSTIMESTAMP
-| REGIST_PNAME               | Class name
+| **WORK_DAY**                   | DMWARENAVISYSTEM.WORK_DAY
+| **INC_DEC_TYPE**               | 1: Stock Increase
+| **JOB_TYPE**                   | 2: Storage
+| **STOCK_ID**                   | DNSTOCK.STOCK_ID
+| **AREA_NO**                    | DNSTOCK.AREA_NO
+| **LOCATION_NO**                | DNSTOCK.LOCATION_NO
+| **STORAGE_DAY**                | DNSTOCK.STORAGE_DAY
+| **STORAGE_DATE**               | DNSTOCK.STORAGE_DATE
+| **NEWEST_STORAGE_DATE**        | DNSTOCK.NEWEST_STORAGE_DATE
+| **PALLET_ID**                  | DNSTOCK.PALLET_ID
+| **BCR_DATA**                   | DNPALLET.BCR_DATA
+| **AREA_TYPE**                  | DMAREA_AREA_TYPE
+| **USER_ID**                    | Login info
+| **USER_NAME**                  | Login info
+| **TERMINAL_NO**                | Login info
+| **TERMINAL_NAME**              | Login info
+| **IP_ADDRESS**                 | Login info
+| **REGIST_DATE**                | SYSTIMESTAMP
+| **REGIST_PNAME**               | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNINOUTRESULT</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
-| RESULT_KIND                | 1:Storage(Stock+)
-| STATION_NO                 | DNCARRYINFO.SOURCE_STATION_NO
-| LOCATION_NO                | DNCARRYINFO.DEST_STATION_NO
-| WH_STATION_NO              | DNPALLET.WH_STATION_NO
-| AISLE_STATION_NO           | DNCARRYINFO.AISLE_STATION_NO
-| WORK_TYPE                  | DNCARRYINFO.WORK_TYPE
-| WORK_NO                    | DNCARRYINFO.WORK_NO
-| PALLET_ID                  | DNPALLET.PALLET_ID
-| CARRY_KEY                  | DNCARRYINFO.CARRY_KEY
-| RESTORING_FLAG             | DNCARRYINFO.RESTORING_FLAG
-| WORK_DAY                   | DMWARENAVISYSTEM.WORK_DAY
-| REMOVE_FLAG                | 00:Normal
-| REGIST_PNAME               | Class name
-| LAST_UPDATE_DATE           | SYSTIMESTAMP
-| LAST_UPDATE_PNAME          | Class name
+| **RESULT_KIND**                | 1:Storage(Stock+)
+| **STATION_NO**                 | DNCARRYINFO.SOURCE_STATION_NO
+| **LOCATION_NO**                | DNCARRYINFO.DEST_STATION_NO
+| **WH_STATION_NO**              | DNPALLET.WH_STATION_NO
+| **AISLE_STATION_NO**           | DNCARRYINFO.AISLE_STATION_NO
+| **WORK_TYPE**                  | DNCARRYINFO.WORK_TYPE
+| **WORK_NO**                    | DNCARRYINFO.WORK_NO
+| **PALLET_ID**                  | DNPALLET.PALLET_ID
+| **CARRY_KEY**                  | DNCARRYINFO.CARRY_KEY
+| **RESTORING_FLAG**             | DNCARRYINFO.RESTORING_FLAG
+| **WORK_DAY**                   | DMWARENAVISYSTEM.WORK_DAY
+| **REMOVE_FLAG**                | 00:Normal
+| **REGIST_PNAME**               | Class name
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**          | Class name
 
 #User Story
 - [DFD Storage Stacked Empty Pallet](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5787)
