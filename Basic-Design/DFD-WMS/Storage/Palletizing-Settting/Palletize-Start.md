@@ -19,7 +19,7 @@
 
 | Action Name                 | STRP   | WRKI   | WRKL   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | 
 |-----------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
-| Palletize Start - SetF2(1)  | INSERT |        |        |        |        |        |        |        |        |        |        | SELECT | SELECT |    
+| Palletize Start - SetF2[(1)](#ID26)  | INSERT |        |        |        |        |        |        |        |        |        |        | SELECT | SELECT |    
 | ID26(2)                     |        | INSERT |        | INSERT | INSERT | INSERT |        | INSERT |        |        |        |        |        |    
 | Storage Sender(3)           |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |    
 | ID25(4)                     |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |    
