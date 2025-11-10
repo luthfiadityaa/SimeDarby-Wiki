@@ -47,7 +47,7 @@
 | ID25(16)                    |        |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |   
 | ID64(17)                    |        |        |        |        |        | UPDATE |        |        |        |        |        |        |        |  
 | **Last Process**            |        |        |        |        |        |        |        |        |        |        |        |        |        |  
-| ID33(18)                    | DELETE | UPDATE | UPDATE | INSERT | UPDATE | DELETE | UPDATE | INSERT |        |        | UPDATE | INSERT |        |  
+| ID33(18)                    | UPDATE | UPDATE | UPDATE | INSERT | UPDATE | DELETE | UPDATE | INSERT |        |        | UPDATE | INSERT |        |  
 
 #<span style="color:skyblue; font-weight:bold">Batch End - Set(F2)</span>
   
