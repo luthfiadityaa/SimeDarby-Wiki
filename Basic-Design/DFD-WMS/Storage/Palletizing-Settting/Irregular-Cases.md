@@ -416,7 +416,7 @@ No Read("1":Error)</span>
 | **PLAN_QTY**               | DNSTORAGEPLAN.PLAN_QTY 
 | **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **USER_ID**                | Login Info
-| **STORAGE_LOCATION_FROM**  | DNSTORAGEPLAN.STATION_NO 
+| **STORAGE_LOCATION_FROM**  | DNSTORAGEPLAN.STATION 
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
@@ -447,7 +447,7 @@ No Read("1":Error)</span>
 | **field Name**            | **Insert Value**                               |
 |----------------------------|-----------------------------------------------|
 | **STOCK_ID**               | Sequence Object   
-| **AREA_NO**                | DNPALLETIZE.STORAGE_LOCATION
+| **AREA_NO**                | DNSTORAGEPLAN.PLAN_AREA_NO
 | **STORAGE_TYPE**           | 2:New 
 | **STOCK_QTY**              | 0
 | **ALLOCATION_QTY**         | 0
