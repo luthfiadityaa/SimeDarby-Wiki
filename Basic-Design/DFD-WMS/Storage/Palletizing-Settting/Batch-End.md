@@ -112,7 +112,7 @@ This section explains the validations for the whole proccess Batch End
 ###<span style="color:skyblue; font-weight:bold">DNPalletize</span>
 | **Column Name**                | **Description / Notes**                               |
 |--------------------------------|-------------------------------------------------------|
-| **STATION_NO**                 | Data Last Pallet
+| **STATION_NO**                 | 
 | **CURRENT_STATUS**             | Data Last Pallet
 | **MATERIAL_CODE**              | 
 | **MATERIAL_NAME**              | Data Last Pallet
@@ -139,7 +139,8 @@ This section explains the validations for the whole proccess Batch End
 ###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
 | **Field Name**            | **Insert Value**                               |
 |----------------------------|-----------------------------------------------|
-| **PLAN_UKEY**              | Sequence Object                                                      
+| **PLAN_UKEY**              | Sequence Object
+| **STATION_NO**             | Data Last Pallet                                                     
 | **STATUS_FLAG**            | 1:Working                                                       
 | **CANCEL_FLAG**            | 0:Normal Data                                                      
 | **PLAN_DAY**               | Data Last Pallet                                                       
