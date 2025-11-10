@@ -46,7 +46,7 @@
 | ID25(16)                    |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
 | ID64(17)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
 | **Last Process**            |        |        |        |        |        |        |        |        |        |        |        |        |        |   
-| ID33(18)                    | UPDATE | UPDATE | UPDATE | UPDATE | UPDATE | DELETE | INSERT |        |        |        | INSERT |        |        |  
+| ID33(18)                    | UPDATE | UPDATE | UPDATE | UPDATE | DELETE | DELETE | INSERT |        |        |        | INSERT |        |        |  
 
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start - Set(F2)</span>
