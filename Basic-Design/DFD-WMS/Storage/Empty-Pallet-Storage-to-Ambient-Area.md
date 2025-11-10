@@ -3,23 +3,26 @@
 
 #<span style="color:skyblue; font-weight:bold">Empty Pallet Storage database flow</span>
 ##<span style="color:Green; font-weight:bold">Abbreviation</span>
-| CODE | TABLE NAME       |
-|------|------------------|
-| PLLT | DNPALLET         | 
-| WRKI | DNWORKINFO       | 
-| WRKL | DNWORKLIST       | 
-| CRYI | DNCARRYINFO      | 
-| STCK | DNSTOCK          | 
-| STCH | DNSTOCKHISTORY   |
-| HSTS | DNHOSTSEND       |
-| MTMS | DMMASTERMATERIAL |
-| STSN | DMSTATION        |
+| **CODE** | TABLE NAME       |
+|----------|------------------|
+| **PLLT** | DNPALLET         | 
+| **WRKI** | DNWORKINFO       | 
+| **WRKL** | DNWORKLIST       | 
+| **CRYI** | DNCARRYINFO      | 
+| **STCK** | DNSTOCK          | 
+| **HSTS** | DNHOSTSEND       |
+| **ARVL** | DNARRIVAL        |
+| **WRHS** | DMWAREHOUSE      |
+| **SHLF** | DMSHELF          |
+| **STCH** | DNSTOCKHISTORY   |
+| **MTMS** | DMMASTERMATERIAL |
+| **STSN** | DMSTATION        |
 
 
 ##<span style="color:Green; font-weight:bold">Inbound Table Data Flow </span>
-|Action Name| PLLT | WRKI | WRKL | CRYI | STCK | HSTS | MTMS | STSN |
-|-----------|--|--|--|--|--|--|--|--|
-| [Empty Pallet - Set (F2)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Empty%20Pallet%20Storage%20to%20Ambient%20Area&pageId=884&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eempty-pallet---set-(f2)%3C/span%3E) |  | | | | | | SELECT | SELECT |
+|Action Name| PLLT | WRKI | WRKL | CRYI | STCK | HSTS | ARVL | WRHS | SHLF | STCH | MTST | STSN |
+|-----------|--|--|--|--|--|--|--|--|--|--|--|--|
+| [Empty Pallet - Set (F2)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Empty%20Pallet%20Storage%20to%20Ambient%20Area&pageId=884&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eempty-pallet---set-(f2)%3C/span%3E) | INSERT | | | | | | | | | | SELECT | SELECT |
 
 #<span style="color:skyblue; font-weight:bold">Empty Pallet - Set (F2)</span>
 ![image.png](/.attachments/image-ae0da33c-5f36-45e7-ad8d-527f6a9e9325.png)
@@ -33,10 +36,6 @@ flowchart LR
 
     tableList-insert[("
         DNPALLET
-        DNSTOCK
-        DNWORKINFO
-        DNWORKLIST
-        DNCARRYINFO
     ")]
 
     tableList-select[("
@@ -65,7 +64,8 @@ This section explains the validations for the whole proccess Storage Packaging M
   <span style="color:green; font-weight:bold">JOIN DNCARRYINFO.PALLET_ID = DNPALLET.PALLET_ID  
   CONDITION DNPALLET.BCR_DATA = <Pallet Number> </span>  
   So if result > 0, Palletize Start cannot proceed.
-
+- Station <span style="color:green; font-weight:bold">(ST1301)</span> is not suspended <span style="color:green; font-weight:bold">(DMSTATION.SUSPEND.OFF)</span>
+- Station <span style="color:green; font-weight:bold">(ST1302)</span> is not disconnected <span style="color:green; font-weight:bold">(DMSTATION.STATUS_FLAG.ACTIVE)</span>
 
 
 
