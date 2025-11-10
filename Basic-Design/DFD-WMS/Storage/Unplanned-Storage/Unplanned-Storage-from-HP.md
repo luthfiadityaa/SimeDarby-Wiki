@@ -74,7 +74,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **Field Name**            | **Insert Vlaue**                               |
 |----------------------------|-----------------------------------------------|
 | **PALLET_ID**              | Sequence Object                                                       
-| **CURRENT_STATION_NO**     | 1303                                                      
+| **CURRENT_STATION_NO**     | 1301 or 1302                                                      
 | **WH_STATION_NO**          | Value from screen (Storage Location) ⟶ <span style="color:green; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>                                                     
 | **STATUS_FLAG**            | 1:Reserved for Storage                                                     
 | **EMPTY_FLAG**             | 0:Normal Pallet                                                        
