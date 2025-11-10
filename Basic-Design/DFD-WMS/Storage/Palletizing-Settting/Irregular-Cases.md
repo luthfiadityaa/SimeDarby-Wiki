@@ -416,7 +416,7 @@ No Read("1":Error)</span>
 | **PLAN_QTY**               | DNSTORAGEPLAN.PLAN_QTY 
 | **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **USER_ID**                | Login Info
-| **STORAGE_LOCATION_FROM**  | DNPALLETIZE.STATION_NO 
+| **STORAGE_LOCATION_FROM**  | DNSTORAGEPLAN.STATION_NO 
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
