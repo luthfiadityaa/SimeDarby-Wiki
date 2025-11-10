@@ -114,20 +114,20 @@ This section explains the validations for the whole proccess Batch End
 |--------------------------------|-------------------------------------------------------|
 | **STATION_NO**                 | Data Last Pallet
 | **CURRENT_STATUS**             | Data Last Pallet
-| **MATERIAL_CODE**              | Data Last Pallet
+| **MATERIAL_CODE**              | 
 | **MATERIAL_NAME**              | Data Last Pallet
 | **MATERIAL_TYPE**              | Data Last Pallet
 | **BATCH_NO**                   | Data Last Pallet
 | **PLANNED_CARTON_QTY**         | Data Last Pallet
 | **QTY_KG_CRTN**                | Data Last Pallet
-| **QTY_CRTN_PL**                | Data Last Pallet
+| **QTY_CRTN_PL**                | 
 | **UOM**                        | Data Last Pallet
 | **TEMPERING_PERIOD**           | Data Last Pallet 
 | **STORAGE_LOCATION**           | Data Last Pallet
 | **EXPIRY_DAYS**                | Data Last Pallet
 | **STORAGE_QTY**                | Value set by system or Input at screen 
 | **TOTAL_ACTUAL_CARTON_QTY**    | Data Last Pallet
-| **STORAGE_DATE_TIME**          | Data Last Pallet
+| **STORAGE_DATE_TIME**          |
 | **MAX_PALLET_BATCH_END**       | Data Last Pallet
 | **BATCH_PALLET_START**         | Data Last Pallet
 | **BATCH_PALLET_END**           | SYSTIMESTAMP
@@ -142,13 +142,12 @@ This section explains the validations for the whole proccess Batch End
 | **PLAN_UKEY**              | Sequence Object                                                      
 | **STATUS_FLAG**            | 1:Working                                                       
 | **CANCEL_FLAG**            | 0:Normal Data                                                      
-| **PLAN_DAY**               | DNPALLETIZE.BATCH_PALLET_START                                                       
-| **PLAN_AREA_NO**           | DNPALLETIZE.STORAGE_LOCATION                             
-| **MATERIAL_CODE**          | DNPALLETIZE.MATERIAL_CODE                                                  
-| **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL                                                 
+| **PLAN_DAY**               | Data Last Pallet                                                       
+| **PLAN_AREA_NO**           | Data Last Pallet                             
+| **MATERIAL_CODE**          | Data Last Pallet                                                  
+| **PLAN_QTY**               | Data Last Pallet                                                
 | **REPORT_FLAG**            | 0:Not Reported                                                   
-| **STORING_PAIR_KEY**       | <span style="color:green; font-weight:bold">DNPALLETIZE.MATERIAL_CODE + DNPALLETIZE.BATCH_NO</span>
-| **PALLETIZE_ID**           | DNPALLETIZE.ID
+| **STORING_PAIR_KEY**       | Data Last Pallet
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
