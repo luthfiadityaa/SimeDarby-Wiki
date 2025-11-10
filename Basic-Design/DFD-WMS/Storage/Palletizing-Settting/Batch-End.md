@@ -132,7 +132,7 @@ This section explains the validations for the whole proccess Batch End
 | **TEMPERING_PERIOD**       | Data Last Pallet (TEMPERING PERIOD)
 | **EXPIRY_DAYS**            | Data Last Pallet (EXPIRY_DAYS)
 | **STORAGE_QTY**            | Value set by system or Input at screen 
-| **TOTAL_ACTUAL_CARTON_QTY**| Data Last Pallet
+| **TOTAL_ACTUAL_CARTON_QTY**| Data Last Pallet (TOTAL_ACTUAL_CARTON_QTY - QTY_CRTN)
 | **MAX_PALLET_BATCH_END**   | Data Last Pallet
 | **BATCH_PALLET_START**     | Data Last Pallet
 | **BATCH_PALLET_END**       | SYSTIMESTAMP
