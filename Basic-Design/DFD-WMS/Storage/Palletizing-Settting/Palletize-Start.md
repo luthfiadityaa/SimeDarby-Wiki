@@ -276,7 +276,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **STORAGE_TYPE**           | 2:New 
 | **STOCK_QTY**              | 0
 | **ALLOCATION_QTY**         | 0
-| **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL 
+| **PLAN_QTY**               | DNSTORAGEPLAN.QTY_CRTN_PL 
 | **PALLET_ID**              | Sequence Object
 | **BATCH_NO**               | DNPALLETIZE.BATCH_NO 
 | **TEMPERING_PERIOD**       | DNPALLETIZE.TEMPERING_PERIOD
