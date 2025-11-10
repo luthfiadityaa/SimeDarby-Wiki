@@ -900,7 +900,7 @@ After the process is completed, the conveyor receives a signal and begins transf
 | **BATCH_NO**               | DNSTORAGEPLAN.BATCH_NO 
 | **TEMPERING_PERIOD**       | DNSTORAGEPLAN.TEMPERING_PERIOD
 | **STORING_PAIR_KEY**       | <span style="color:green; font-weight:bold">DNSTORAGEPLAN.STORING_PAIR_KEY</span>
-| **EXPIRY_DATE**            | DNPALLETIZE.EXPIRY_DAYS
+| **EXPIRY_DATE**            | DNSTORAGEPLAN.EXPIRY_DAYS
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
