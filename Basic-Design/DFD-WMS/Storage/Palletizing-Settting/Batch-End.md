@@ -115,8 +115,8 @@ This section explains the validations for the whole proccess Batch End
 | **STATION_NO**                 | 
 | **CURRENT_STATUS**             | 
 | **MATERIAL_CODE**              | 
-| **MATERIAL_NAME**              | Data Last Pallet
-| **MATERIAL_TYPE**              | Data Last Pallet
+| **MATERIAL_NAME**              | 
+| **MATERIAL_TYPE**              | 
 | **BATCH_NO**                   | Data Last Pallet
 | **PLANNED_CARTON_QTY**         | Data Last Pallet
 | **QTY_KG_CRTN**                | Data Last Pallet
@@ -146,7 +146,10 @@ This section explains the validations for the whole proccess Batch End
 | **CANCEL_FLAG**            | 0:Normal Data                                                      
 | **PLAN_DAY**               | Data Last Pallet                                                       
 | **PLAN_AREA_NO**           | Data Last Pallet                             
-| **MATERIAL_CODE**          | Data Last Pallet                                                  
+| **MATERIAL_CODE**          | Data Last Pallet 
+| **MATERIAL_NAME**          | Data Last Pallet 
+| **MATERIAL_TYPE**          | Data Last Pallet
+| **BATCH_NO**               | Data Last Pallet                                                     
 | **PLAN_QTY**               | Data Last Pallet                                                
 | **REPORT_FLAG**            | 0:Not Reported                                                   
 | **STORING_PAIR_KEY**       | Data Last Pallet
