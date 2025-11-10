@@ -1,7 +1,7 @@
 [[_TOC_]]
 [[_TOSP_]]
 
-#<span style="color:skyblue; font-weight:bold">QC Station from 1301 & 1302</span>
+#<span style="color:skyblue; font-weight:bold">Storage from 1301 & 1302</span>
 -
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage database flow</span>
