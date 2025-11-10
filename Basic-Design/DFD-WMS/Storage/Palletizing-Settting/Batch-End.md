@@ -113,7 +113,7 @@ This section explains the validations for the whole proccess Batch End
 | **Column Name**                | **Description / Notes**                               |
 |--------------------------------|-------------------------------------------------------|
 | **STATION_NO**                 | 
-| **CURRENT_STATUS**             | Data Last Pallet
+| **CURRENT_STATUS**             | 
 | **MATERIAL_CODE**              | 
 | **MATERIAL_NAME**              | Data Last Pallet
 | **MATERIAL_TYPE**              | Data Last Pallet
@@ -140,7 +140,8 @@ This section explains the validations for the whole proccess Batch End
 | **Field Name**            | **Insert Value**                               |
 |----------------------------|-----------------------------------------------|
 | **PLAN_UKEY**              | Sequence Object
-| **STATION_NO**             | Data Last Pallet                                                     
+| **STATION_NO**             | Data Last Pallet
+| **CURRENT_STATUS**         | Data Last Pallet                                                     
 | **STATUS_FLAG**            | 1:Working                                                       
 | **CANCEL_FLAG**            | 0:Normal Data                                                      
 | **PLAN_DAY**               | Data Last Pallet                                                       
