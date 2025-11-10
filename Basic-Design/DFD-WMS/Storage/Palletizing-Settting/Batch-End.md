@@ -242,7 +242,7 @@ Storage Date will be update by the system in this section represent by <span sty
 | **STOCK_STATUS**           | <span style="color:green; font-weight:bold">UU: Unrestricted Used</span>
 | **TEMPERING_FLAG**         | <span style="color:yellow; font-weight:bold; background-color:grey">0: Not Reached </span>
 | **QC_FLAG**                | <span style="color:green; font-weight:bold">0: Not Done</span>
-| **LAST_UPDATE_DATE**       | DNSTORAGEPLAN.PLAN_DAY + Time value (HH:MM:SS.sss)->(System Generated)
+| **LAST_UPDATE_DATE**       | <span style="color:green; font-weight:bold">DNSTORAGEPLAN.PLAN_DAY + Time value (HH:MM:SS.sss)->(System Generated)</span>
 | **LAST_UPDATE_PNAME**      | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNStockHistory </span> 
