@@ -1250,9 +1250,14 @@ id50msg("
 ID 54
 ")
 
+buttonlightStart["
+The signal tower lights.
+The buzzer sounds.
+"]
+
 buttonlight["
 The signal tower turns off.
-The buzzer stops..
+The buzzer stops.
 "]
 
 id50msg --> As21Id54
