@@ -857,10 +857,10 @@ After the process is completed, the conveyor receives a signal and begins transf
 | **BATCH_NO**               | DNSTORAGEPLAN.BATCH_NO
 | **PLAN_AREA_NO**           | DNSTORAGEPLAN.PLAN_AREA_NO
 | **MATERIAL_CODE**          | DNSTORAGEPLAN.MATERIAL_CODE 
-| **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL 
+| **PLAN_QTY**               | DNSTORAGEPLAN.PLAN_QTY 
 | **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **USER_ID**                | Login Info
-| **STORAGE_LOCATION_FROM**  | DNPALLETIZE.STATION_NO 
+| **STORAGE_LOCATION_FROM**  | DNSTORAGEPLAN.STATION_NO 
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
