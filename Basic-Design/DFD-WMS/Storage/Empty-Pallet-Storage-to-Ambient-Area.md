@@ -67,6 +67,18 @@ This section explains the validations for the whole proccess Storage Packaging M
 - Station <span style="color:green; font-weight:bold">(ST1301)</span> is not suspended <span style="color:green; font-weight:bold">(DMSTATION.SUSPEND.OFF)</span>
 - Station <span style="color:green; font-weight:bold">(ST1302)</span> is not disconnected <span style="color:green; font-weight:bold">(DMSTATION.STATUS_FLAG.ACTIVE)</span>
 
+## <span style="color:skyblue; font-weight:bold">Table Value</span>
+
+### <span style="color:skyblue; font-weight:bold">DNPALLET</span>
+| **Column Name**            | **Description / Notes**                           |
+|----------------------------|---------------------------------------------------|
+| **PALLET_ID**              | Sequence Object                                                                                                         
+| **EMPTY_FLAG**             | 1: EMPTY PALLET                                                                                                               
+| **BCR_DATA**               | Value from Screen (Pallet #)                                                   
+| **REGIST_DATE**            | SYSTIMESTAMP
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
 
 
 
