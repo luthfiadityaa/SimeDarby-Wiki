@@ -120,7 +120,7 @@ This section explains the validations for the whole proccess Batch End
 | **PLAN_DAY**               | Data Last Pallet (STORAGE_DATE_TIME)                                                       
 | **PLAN_AREA_NO**           | Data Last Pallet (STORAGE_LOCATION)
 | **PLANNED_CARTON_QTY**     | Data Last Pallet (PLANNED_CARTON_QTY)
-| **QTY_KG_CRTN**            | Data Last Pallet                             
+| **QTY_KG_CRTN**            | Data Last Pallet (QTY_KG_CRTN)                             
 | **MATERIAL_CODE**          | Data Last Pallet 
 | **MATERIAL_NAME**          | Data Last Pallet 
 | **MATERIAL_TYPE**          | Data Last Pallet
