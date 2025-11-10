@@ -31,12 +31,12 @@
 | **Flow 1**                  |        |        |        |        |        |        |        |        |        |        |        |        |        |
 | ID64(8)                     |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
 | ID26(9)                     |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |  
-| Storage Sender(10)          |        |        |        |        |        | UPDATE |        | UPDATE |        |        |        |        |        |
-| ID25(11)                    |        |        |        |        |        | UPDATE |        | DELETE |        |        |        |        |        |
-| ID64(12)                    |        |        |        |        |        | UPDATE |        |        |        |        |        |        |        |  
+| Storage Sender(10)          |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |
+| ID25(11)                    |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
+| ID64(12)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |  
 | **Flow 2**                  |        |        |        |        |        |        |        |        |        |        |        |        |        |   
-| ID64(8)                     |        |        |        |        |        | UPDATE |        |        |        |        |        |        |        |   
-| ID26(9)                     |        |        |        |        | UPDATE | UPDATE |        | INSERT |        |        |        |        |        |
+| ID64(8)                     |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |   
+| ID26(9)                     |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |
 | Storage Sender(10)          |        |        |        |        |        | UPDATE |        | UPDATE |        |        |        |        |        | 
 | ID25(11)                    |        |        |        |        |        | UPDATE |        | DELETE |        |        |        |        |        |
 | ID64(12)                    |        |        |        |        |        | UPDATE |        |        |        |        |        |        |        |   
