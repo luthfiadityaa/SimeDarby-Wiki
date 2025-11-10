@@ -113,19 +113,11 @@ This section explains the validations for the whole proccess Palletize Start
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
-###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
+###<span style="color:skyblue; font-weight:bold">DNPalletize</span>
+
 | **Field Name**                 | **Insert Value**                               |
-|--------------------------------|-----------------------------------------------|
-| **PLAN_UKEY**                  | Sequence Object                                                      
-| **STATUS_FLAG**                | 1:Working                                                       
-| **CANCEL_FLAG**                | 0:Normal Data                                                      
-| **PLAN_DAY**                   | DNPALLETIZE.BATCH_PALLET_START                                                       
-| **PLAN_AREA_NO**               | DNPALLETIZE.STORAGE_LOCATION                             
-| **MATERIAL_CODE**              | DNPALLETIZE.MATERIAL_CODE                                                  
-| **PLAN_QTY**                   | DNPALLETIZE.QTY_CRTN_PL                                                 
-| **REPORT_FLAG**                | 0:Not Reported                                                   
-| **STORING_PAIR_KEY**           | <span style="color:green; font-weight:bold">DNPALLETIZE.MATERIAL_CODE + DNPALLETIZE.BATCH_NO</span>
-| **PALLETIZE_ID**               | DNPALLETIZE.ID
+|--------------------------------|------------------------------------------------|
+| **PALLETIZE_ID**               | Sequence Object
 | **STATION_NO**                 | Value from screen (Station No)
 | **CURRENT_STATUS**             | Value from screen (Current Status)
 | **MATERIAL_CODE**              | Value from screen (Material Code)
@@ -148,6 +140,24 @@ This section explains the validations for the whole proccess Palletize Start
 | **REGIST_PNAME**               | ClassName
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | ClassName
+
+###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
+| **Field Name**            | **Insert Value**                               |
+|----------------------------|-----------------------------------------------|
+| **PLAN_UKEY**              | Sequence Object                                                      
+| **STATUS_FLAG**            | 1:Working                                                       
+| **CANCEL_FLAG**            | 0:Normal Data                                                      
+| **PLAN_DAY**               | DNPALLETIZE.BATCH_PALLET_START                                                       
+| **PLAN_AREA_NO**           | DNPALLETIZE.STORAGE_LOCATION                             
+| **MATERIAL_CODE**          | DNPALLETIZE.MATERIAL_CODE                                                  
+| **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL                                                 
+| **REPORT_FLAG**            | 0:Not Reported                                                   
+| **STORING_PAIR_KEY**       | <span style="color:green; font-weight:bold">DNPALLETIZE.MATERIAL_CODE + DNPALLETIZE.BATCH_NO</span>
+| **PALLETIZE_ID**           | DNPALLETIZE.ID
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
 
 #<span style="color:skyblue; font-weight:bold">Release Command from Palletize Robot - Dummy Arrival</span>
   After palletizing is completed, the palletizing robot sends <span style="color:green; font-weight:bold">“Release Command”</span> signal via conveyor interlock.
