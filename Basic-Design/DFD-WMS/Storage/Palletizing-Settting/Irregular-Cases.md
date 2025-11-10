@@ -1070,16 +1070,16 @@ No Read("0":None)</span>
 | **field Name**            | **Insert Value**                               |
 |----------------------------|-----------------------------------------------|
 | **STOCK_ID**               | Sequence Object   
-| **AREA_NO**                | DNPALLETIZE.STORAGE_LOCATION
+| **AREA_NO**                | DNSTORAGEPLAN.PLAN_AREA_NO
 | **STORAGE_TYPE**           | 2:New 
 | **STOCK_QTY**              | 0
 | **ALLOCATION_QTY**         | 0
-| **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL 
+| **PLAN_QTY**               | DNSTORAGEPLAN.PLAN_QTY 
 | **PALLET_ID**              | Sequence Object
-| **BATCH_NO**               | DNPALLETIZE.BATCH_NO 
-| **TEMPERING_PERIOD**       | DNPALLETIZE.TEMPERING_PERIOD
+| **BATCH_NO**               | DNSTORAGEPLAN.BATCH_NO 
+| **TEMPERING_PERIOD**       | DNSTORAGEPLAN.TEMPERING_PERIOD
 | **STORING_PAIR_KEY**       | <span style="color:green; font-weight:bold">DNSTORAGEPLAN.STORING_PAIR_KEY</span>
-| **EXPIRY_DATE**            | DNPALLETIZE.EXPIRY_DAYS
+| **EXPIRY_DATE**            | DNSTORAGEPLAN.EXPIRY_DAYS
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
