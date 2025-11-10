@@ -241,7 +241,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **PLAN_QTY**               | DNSTORAGEPLAN.QTY_CRTN_PL 
 | **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **USER_ID**                | Login Info
-| **STORAGE_LOCATION_FROM**  | DNPALLETIZE.STATION_NO 
+| **STORAGE_LOCATION_FROM**  | DNSTORAGEPLAN.STATION_NO 
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
