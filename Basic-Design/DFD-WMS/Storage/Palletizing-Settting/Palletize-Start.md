@@ -41,7 +41,7 @@
 | ID25(11)                    |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
 | ID64(12)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
 | ID64(13)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
-| ID26(14)                    |        |        |        |        | UPDATE | UPDATE |        | INSERT |        |        |        |        |        |
+| ID26(14)                    |        |        |        | UPDATE | UPDATE |        | INSERT |        |        |        |        |        |        |
 | Storage Sender(15)          |        |        |        |        |        | UPDATE |        | UPDATE |        |        |        |        |        |
 | ID25(16)                    |        |        |        |        |        | UPDATE |        | DELETE |        |        |        |        |        |
 | ID64(17)                    |        |        |        |        |        | UPDATE |        |        |        |        |        |        |        |  
