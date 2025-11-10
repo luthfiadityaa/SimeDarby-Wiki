@@ -47,7 +47,7 @@
 | ID25[(16)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3E%26nbsp%3Bid25%26nbsp%3B%3C/span%3E)                    |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
 | ID64[(17)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid64%26nbsp%3B%26nbsp%3B%3C/span%3E)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
 | **Last Process**            |        |        |        |        |        |        |        |        |        |        |        |        |        |  
-| ID33[(18)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/874/Batch-End?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid33%3C/span%3E)                    | UPDATE | UPDATE | INSERT | UPDATE | UPDATE | DELETE | UPDATE | INSERT |        | UPDATE | UPDATE | INSERT |        |  
+| ID33[(18)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/874/Batch-End?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid33%3C/span%3E)                    | UPDATE | UPDATE | INSERT | UPDATE | UPDATE | DELETE | UPDATE |        |        | UPDATE | UPDATE |        |        |  
 
 #<span style="color:skyblue; font-weight:bold">Batch End - Set(F2)</span>
   
