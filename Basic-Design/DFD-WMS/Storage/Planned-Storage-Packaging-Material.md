@@ -573,18 +573,18 @@ After successful creation of arrival record in <span style="color:green; font-we
 ##<span style="color:skyblue; font-weight:bold">Table Value</span>
 
 ####<span style="color:skyblue; font-weight:bold">DMWAREHOUSE (UPDATE)</span>
-| **Field Name**                 | **Insert Value**                               |
+| **Column Name**                | **Description / Notes**                        |
 |--------------------------------|------------------------------------------------|
 | **LAST_USED_STATION_NO_PM**    |  Aisle Number where a reserved location belongs to 
 
 ####<span style="color:skyblue; font-weight:bold">DMSHELF (UPDATE)</span>
-| **Field Name**                 | **Insert Value**                              |
+| **Column Name**                | **Description / Notes**                       |
 |--------------------------------|-----------------------------------------------|
 | **STATUS_FLAG**                | 2:Reserved Location
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 
 ####<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
-| **Field Name**                 | **Insert Value**                               |
+| **Column Name**                | **Description / Notes**                        |
 |--------------------------------|------------------------------------------------|
 | **AISLE_STATION_NO**           | Aisle Number where a reserved location belongs to
 | **CMD_STATUS**                 | 2:Waiting for response
@@ -592,13 +592,13 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_UPDATE_PNAME**          | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
-| **Field Name**                 | **Insert Value**                              |
+| **Column Name**                | **Description / Notes**                       |
 |--------------------------------|-----------------------------------------------|
 | **PLAN_LOCATION_NO**           | Reserved Location Number
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 
 ####<span style="color:skyblue; font-weight:bold">DNPALLET</span>
-| **Field Name**                 | **Insert Value**                               |
+| **Column Name**                | **Description / Notes**                        |
 |--------------------------------|------------------------------------------------|
 | **CURRENT_STATION_NO**         | Reserved Location Number
 | **WH_STATION_NO**              | DNCARRYINFO.END_STATION_NO
@@ -606,7 +606,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_UPDATE_PNAME**          | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNSTOCK</span>
-| **Field Name**                 | **Insert Value**                               |
+| **Column Name**                | **Description / Notes**                        |
 |--------------------------------|------------------------------------------------|
 | **AREA_NO**                    | DNCARRYINFO.END_STATION_NO
 | **LOCATION_NO**                | Reserved Location Number
@@ -614,7 +614,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_UPDATE_PNAME**          | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNARRIVAL</span>
-| **Field Name**                 | **Insert Value**                               |
+| **Column Name**                | **Description / Notes**                        |
 |--------------------------------|------------------------------------------------|
 | **CARRY_KEY**                  | DNCARRYINFO.CARRY_KEY
 | **SEND_FLAG**                  | 1:Sent
