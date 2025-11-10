@@ -891,7 +891,7 @@ After the process is completed, the conveyor receives a signal and begins transf
 | **field Name**            | **Insert Value**                               |
 |----------------------------|-----------------------------------------------|
 | **STOCK_ID**               | Sequence Object   
-| **AREA_NO**                | DNPALLETIZE.STORAGE_LOCATION
+| **AREA_NO**                | DNSTORAGEPLAN.PLAN_AREA_NO
 | **STORAGE_TYPE**           | 2:New 
 | **STOCK_QTY**              | 0
 | **ALLOCATION_QTY**         | 0
