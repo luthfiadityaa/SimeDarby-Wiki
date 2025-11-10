@@ -1171,6 +1171,8 @@ Table Impact:
 - DNStockHistory
 - DNSTORAGEPLAN
 
+<hr>
+
 ##<span style="color:skyblue; font-weight:bold">[Click this to Continue flow, If comming from Batch End Process](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/874/Batch-End?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid33%3C/span%3E)</span><br>
 <hr>
 
