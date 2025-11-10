@@ -113,8 +113,8 @@ This section explains the validations for the whole proccess Batch End
 | **Field Name**            | **Insert Value**                               |
 |----------------------------|-----------------------------------------------|
 | **PLAN_UKEY**              | Sequence Object
-| **STATION_NO**             | Data Last Pallet
-| **CURRENT_STATUS**         | Data Last Pallet                                                     
+| **STATION_NO**             | Data Last Pallet (STATION_NO)
+| **CURRENT_STATUS**         | Data Last Pallet (CURRENT_STATUS)                                                     
 | **STATUS_FLAG**            | 1:Working                                                       
 | **CANCEL_FLAG**            | 0:Normal Data                                                      
 | **PLAN_DAY**               | Data Last Pallet                                                       
