@@ -119,8 +119,8 @@ This section explains the validations for the whole proccess Batch End
 | **CANCEL_FLAG**            | 0:Normal Data                                                      
 | **PLAN_DAY**               | Data Last Pallet                                                       
 | **PLAN_AREA_NO**           | Data Last Pallet
-| **PLANNED_CARTON_QTY**         | Data Last Pallet
-| **QTY_KG_CRTN**                | Data Last Pallet                             
+| **PLANNED_CARTON_QTY**     | Data Last Pallet
+| **QTY_KG_CRTN**            | Data Last Pallet                             
 | **MATERIAL_CODE**          | Data Last Pallet 
 | **MATERIAL_NAME**          | Data Last Pallet 
 | **MATERIAL_TYPE**          | Data Last Pallet
@@ -128,15 +128,15 @@ This section explains the validations for the whole proccess Batch End
 | **PLAN_QTY**               | Data Last Pallet                                                
 | **REPORT_FLAG**            | 0:Not Reported                                                   
 | **STORING_PAIR_KEY**       | Data Last Pallet
-| **UOM**                        | Data Last Pallet
-| **TEMPERING_PERIOD**           | Data Last Pallet 
-| **STORAGE_LOCATION**           | Data Last Pallet
-| **EXPIRY_DAYS**                | Data Last Pallet
-| **STORAGE_QTY**                | Value set by system or Input at screen 
-| **TOTAL_ACTUAL_CARTON_QTY**    | Data Last Pallet
-| **MAX_PALLET_BATCH_END**       | Data Last Pallet
-| **BATCH_PALLET_START**         | Data Last Pallet
-| **BATCH_PALLET_END**           | SYSTIMESTAMP
+| **UOM**                    | Data Last Pallet
+| **TEMPERING_PERIOD**       | Data Last Pallet 
+| **STORAGE_LOCATION**       | Data Last Pallet
+| **EXPIRY_DAYS**            | Data Last Pallet
+| **STORAGE_QTY**            | Value set by system or Input at screen 
+| **TOTAL_ACTUAL_CARTON_QTY**| Data Last Pallet
+| **MAX_PALLET_BATCH_END**   | Data Last Pallet
+| **BATCH_PALLET_START**     | Data Last Pallet
+| **BATCH_PALLET_END**       | SYSTIMESTAMP
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
