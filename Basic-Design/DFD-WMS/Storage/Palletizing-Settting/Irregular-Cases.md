@@ -856,7 +856,7 @@ After the process is completed, the conveyor receives a signal and begins transf
 | **PLAN_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **BATCH_NO**               | DNSTORAGEPLAN.BATCH_NO
 | **PLAN_AREA_NO**           | DNSTORAGEPLAN.PLAN_AREA_NO
-| **MATERIAL_CODE**          | DNPALLETIZE.MATERIAL_CODE 
+| **MATERIAL_CODE**          | DNSTORAGEPLAN.MATERIAL_CODE 
 | **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL 
 | **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **USER_ID**                | Login Info
