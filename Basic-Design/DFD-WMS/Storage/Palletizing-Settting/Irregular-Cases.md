@@ -767,7 +767,7 @@ releaseCommand-->releaseCommand0-->id26msg-->id26process-->storageStationOperato
 storageStationOperator--> |DELETE| id26-delete
 :::
 
-After the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. At the same time, the AGC activates the signal tower for No-Read based on control information, sending ID 26 to the `id26process`, which then passes data to `StorageStationOperator` to delete related records from DNWORKINFO, DNPALLET, DNCARRYINFO, and DNSTOCK.
+After the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. At the same time, the AGC activates the signal tower for No-Read based on control information, sending ID 26 to the `id26process`, then delete related records from DNWORKINFO, DNPALLET, DNCARRYINFO, and DNSTOCK.
 
 <hr>
 
