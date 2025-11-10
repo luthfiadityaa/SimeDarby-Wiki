@@ -134,7 +134,7 @@ This section explains the validations for the whole proccess Batch End
 | **STORAGE_QTY**            | Data Last Pallet (PLANNED_CARTON_QTY - TOTAL_ACTUAL_CARTON_QTY)
 | **TOTAL_ACTUAL_CARTON_QTY**| Data Last Pallet (TOTAL_ACTUAL_CARTON_QTY - QTY_CRTN)
 | **MAX_PALLET_BATCH_END**   | Data Last Pallet (PALLET_CARTON_QTY / QTY_CRTN_PL)
-| **BATCH_PALLET_START**     | Data Last Pallet
+| **BATCH_PALLET_START**     | Data Last Pallet (STORAGE-DATE_TIME + Time value (System Generated))
 | **BATCH_PALLET_END**       | SYSTIMESTAMP
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
