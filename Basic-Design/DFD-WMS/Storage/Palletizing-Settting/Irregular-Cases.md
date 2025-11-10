@@ -267,6 +267,7 @@ storageStationOperator[storageStationOperator]
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert-->releaseCommand2
 storageStationOperator--> |UPDATE| id26-update-->releaseCommand2
+releaseCommand2-->releaseCommand3
 :::
 
 Continue the process <span style="color:green; font-weight:bold">Direct Transfer</span>, AGC will send ID26 to WareNavi and Storage Station Operator will execute the receive task based on information in received ID26. While Storage Station Operator processes ID26, it will create an Arrival record..
