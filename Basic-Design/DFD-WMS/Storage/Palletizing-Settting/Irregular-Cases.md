@@ -1260,7 +1260,7 @@ The signal tower turns off.
 The buzzer stops.
 "]
 
-id50msg --> As21Id54
+buttonlightStart-->id50msg --> As21Id54
 As21Id54 --> buttonlight
 :::
 
