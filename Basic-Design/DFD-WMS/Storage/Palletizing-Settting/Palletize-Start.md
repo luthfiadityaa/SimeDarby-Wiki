@@ -447,7 +447,6 @@ DNSTOCK
 DNARRIVAL
 DNCARRYINFO
 DNWORKINFO
-DNPALLETIZE
 DNSTORAGEPLAN
 ")]
 automaticmodechangesender-input[("
@@ -510,17 +509,6 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **SEND_FLAG**             | 1:Sent
 | **LAST_UPDATE_DATE**      | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**     | Class name
-
-<span style="color:green; font-weight:bold">Storage Date will be update by the system in this section.</span>
-####<span style="color:skyblue; font-weight:bold">DNPALLETIZE</span>
-| **Field Name**             | **Insert Value**                              |
-|----------------------------|-----------------------------------------------|
-| **STORAGE_DATE_TIME**      | <span style="color:green; font-weight:bold">DNPALLETIZE.STORAGE_DATE_TIME + Time value (HH:MM:SS.sss)->(System Generated)</span>
-
-####<span style="color:skyblue; font-weight:bold">DNSTORAGEPLAN</span>
-| **Field Name**             | **Insert Value**                              |
-|----------------------------|-----------------------------------------------|
-| **LAST_UPDATE_DATE**        | <span style="color:green; font-weight:bold">DNPALLETIZE.STORAGE_DATE_TIME</span>
 
 ##<span style="color:skyblue; font-weight:bold">ID25&nbsp;</span>
 
