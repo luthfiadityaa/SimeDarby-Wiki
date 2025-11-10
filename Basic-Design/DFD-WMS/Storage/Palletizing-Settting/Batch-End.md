@@ -124,8 +124,8 @@ This section explains the validations for the whole proccess Batch End
 | **MATERIAL_CODE**          | Data Last Pallet (MATERIAL_CODE)
 | **MATERIAL_NAME**          | Data Last Pallet (MATERIAL_NAME)
 | **MATERIAL_TYPE**          | Data Last Pallet (MATERIAL_TYPE)
-| **BATCH_NO**               | Data Last Pallet                                                     
-| **PLAN_QTY**               | Data Last Pallet                                                
+| **BATCH_NO**               | Data Last Pallet (BATCH_NO)                                                    
+| **PLAN_QTY**               | Data Last Pallet (QTY_CRTN_PL)                                               
 | **REPORT_FLAG**            | 0:Not Reported                                                   
 | **STORING_PAIR_KEY**       | Data Last Pallet
 | **UOM**                    | Data Last Pallet
