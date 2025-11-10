@@ -2,7 +2,7 @@
 [[_TOSP_]]
 
 #<span style="color:skyblue; font-weight:bold">Storage from 1301 & 1302</span>
--
+![image.png](/.attachments/image-0a629e0c-d766-4b61-aba2-f968f908bd60.png)
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage database flow</span>
 -
