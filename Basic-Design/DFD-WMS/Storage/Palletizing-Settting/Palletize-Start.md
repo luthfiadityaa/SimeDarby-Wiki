@@ -132,7 +132,6 @@ This section explains the validations for the whole proccess Palletize Start
 | **PLANNED_CARTON_QTY**     | Value from screen (Planned Carton Qty)
 | **STORAGE_DATE_TIME**      | Value from screen (Storage Date/Time) 
 | **QTY_KG_CRTN**            | Value from screen (Qty Kg/Crtn)
-| **QTY_CRTN_PL**            | 
 | **UOM**                    | Value from screen (UOM)
 | **TEMPERING_PERIOD**       | Value from screen (Tempering Period)
 | **EXPIRY_DAYS**            | Value from screen (Expiry Days)
