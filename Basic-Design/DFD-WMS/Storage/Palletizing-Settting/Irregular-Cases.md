@@ -1204,10 +1204,10 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 #####<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 #####<span style="color:skyblue; font-weight:bold">DNArrival</span>
-- <span style="color:red; font-weight:bold">Control Information = "110"
-Palletizing Skip("1": Skip),
-No Read("1":Error),
-Palletizing Completion("0":Normal Completion)</span>
+- <span style="color:red; font-weight:bold">Control Information = "001"
+Palletizing Skip("0": None),
+No Read("0":None),
+Palletizing Completion("1":Force Completion)</span>
 
 | **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
