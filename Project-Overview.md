@@ -1,6 +1,11 @@
 [[_TOC_]]
 
+# Schedule
 ![image.png](/.attachments/image-21e549c9-736f-442d-9072-c41a2683a0e2.png)
+
+# Layouts
+![image.png](/.attachments/image-26a3012a-c929-4720-b855-d1ace53a2af2.png)  
+![image.png](/.attachments/image-66baeeb4-b157-44ba-ab6a-5a087e0bbc2f.png =320x)  
 
 # Documents List
 Documents for SimeDerby Oil are mainly managed in SharePoint.
