@@ -1113,7 +1113,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **CMD_STATUS**            | 2:Waiting for response
 | **CONTROL_INFO**          | <span style="color:red; font-weight:bold">DNARRIVAL.CONTROL_INFO</span>
 | **REJECT_FACTOR**         | <span style="color:red; font-weight:bold">06:No Storage Data</span>
-| **WAIT_REASON**           | <span style="color:red; font-weight:bold">07:No Available Storage Location</span>
+| **WAIT_REASON**           | <span style="color:red; font-weight:bold">16:Waiting for Completion</span>
 | **LAST_UPDATE_DATE**      | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**     | Class name
 
