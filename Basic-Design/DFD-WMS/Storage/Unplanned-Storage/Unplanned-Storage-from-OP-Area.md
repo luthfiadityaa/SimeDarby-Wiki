@@ -31,7 +31,8 @@ flowchart LR
         Tempering Period
         Expiry Days
         Storage Location From
-        Storage Location To        
+        Storage Location To 
+        Station No       
     ]
 
     tableList-insert[("
