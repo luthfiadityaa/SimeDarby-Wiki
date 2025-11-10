@@ -120,20 +120,19 @@ This section explains the validations for the whole proccess Palletize Start
 | **CANCEL_FLAG**            | 0:Normal Data                                                      
 | **PLAN_DAY**               | DNPALLETIZE.BATCH_PALLET_START                                                       
 | **PLAN_AREA_NO**           | Value from screen (Storage Location) ⟶ <span style="color:green; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>                             
-| **MATERIAL_CODE**          | DNPALLETIZE.MATERIAL_CODE                                                  
-| **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL                                                 
+| **MATERIAL_CODE**          | Value from screen (Material Code)                                                  
+| **PLAN_QTY**               | Value from screen (Qty Crtn/PL)                                                 
 | **REPORT_FLAG**            | 0:Not Reported                                                   
 | **STORING_PAIR_KEY**       | Value from screen <span style="color:green; font-weight:bold"> (Material Code) + (Batch_No)</span>
 | **STATION_NO**             | Value from screen (Station No)
 | **CURRENT_STATUS**         | Value from screen (Current Status)
-| **MATERIAL_CODE**          | Value from screen (Material Code)
 | **MATERIAL_NAME**          | Value from screen (Material Name)
 | **MATERIAL_TYPE**          | Value from screen (Material Type)
 | **BATCH_NO**               | Value from screen (Batch_No)
 | **PLANNED_CARTON_QTY**     | Value from screen (Planned Carton Qty)
 | **STORAGE_DATE_TIME**      | Value from screen (Storage Date/Time) 
 | **QTY_KG_CRTN**            | Value from screen (Qty Kg/Crtn)
-| **QTY_CRTN_PL**            | Value from screen (Qty Crtn/PL)
+| **QTY_CRTN_PL**            | 
 | **UOM**                    | Value from screen (UOM)
 | **TEMPERING_PERIOD**       | Value from screen (Tempering Period)
 | **STORAGE_LOCATION**       | 
