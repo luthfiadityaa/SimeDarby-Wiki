@@ -102,13 +102,13 @@ No Read("0":None)</span>
 | **PLAN_UKEY**              | DNSTORAGEPLAN.PLAN_UKEY
 | **STOCK_ID**               | Sequence Object
 | **PLAN_DAY**               | DMWARENAVISYSTEM.WORK_DAY
-| **BATCH_NO**               | DNPALLETIZE.BATCH_NO
-| **PLAN_AREA_NO**           | DNPALLETIZE.STORAGE_LOCATION 
-| **MATERIAL_CODE**          | DNPALLETIZE.MATERIAL_CODE 
-| **PLAN_QTY**               | DNPALLETIZE.QTY_CRTN_PL 
+| **BATCH_NO**               | DNSTORAGEPLAN.BATCH_NO
+| **PLAN_AREA_NO**           | DNSTORAGEPLAN.STORAGE_LOCATION 
+| **MATERIAL_CODE**          | DNSTORAGEPLAN.MATERIAL_CODE 
+| **PLAN_QTY**               | DNSTORAGEPLAN.QTY_CRTN_PL 
 | **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **USER_ID**                | Login Info
-| **STORAGE_LOCATION_FROM**  | DNPALLETIZE.STATION_NO 
+| **STORAGE_LOCATION_FROM**  | DNSTORAGEPLAN.STATION_NO 
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
