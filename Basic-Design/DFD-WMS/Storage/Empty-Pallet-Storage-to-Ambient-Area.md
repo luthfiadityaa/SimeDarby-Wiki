@@ -37,6 +37,10 @@
 ![image.png](/.attachments/image-ae0da33c-5f36-45e7-ad8d-527f6a9e9325.png)
 The Empty Pallet Setting Screen uses for storage the empty pallet to ASRS.
 
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wms.web.display.storage.emptypalletsetting.EmptyPalletSettingSCH` &nbsp;</span>
+
+
 ::: mermaid
 flowchart LR
     input[
