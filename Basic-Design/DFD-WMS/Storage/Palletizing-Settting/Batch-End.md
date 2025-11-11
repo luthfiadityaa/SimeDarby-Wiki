@@ -98,7 +98,7 @@ flowchart LR
 
     tableList-insert-select[("
         DMSTATION
-        DMMATERIALMASTER
+        DMITEM
     ")]
 
     tableList-insert[("
@@ -283,8 +283,8 @@ Storage Date will be update by the system in this section represent by <span sty
 | **PALLET_ID**              | DNSTOCK.PALLET_ID
 | **BCR_DATA**               | DNPALLET.BCR_DATA
 | **AREA_TYPE**              | DMAREA_AREA_TYPE
-| **MATERIAL_NAME**          | DMMATERIALMASTER.MATERIAL_NAME
-| **ENTERING_QTY**           | DMMATERIALMASTER.QTY_CRTN
+| **MATERIAL_NAME**          | DMITEM.MATERIAL_NAME
+| **ENTERING_QTY**           | DNSTORAGEPLAN.QTY_CRTN_PL
 | **USER_ID**                | Login info
 | **USER_NAME**              | Login info
 | **TERMINAL_NO**            | Login info
