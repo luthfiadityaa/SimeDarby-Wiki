@@ -9,7 +9,7 @@ If a downtime occurs on one of the lines, manual palletizing will be carried out
 | Action Name                    | WRKI   | WRKL   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | 
 |--------------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
 | ID63(1)                        |        |        |        |        |        |        |        |        |        |        |        | UPDATE | 
-| Unplanned Storage - SetF2(1)   | INSERT |        |        |        |        |        |        |        |        |        | SELECT |        |  
+| Unplanned Storage - SetF2[(1)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/880/Unplanned-Storage-from-OP-Area?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eunplanned-storage---set(f2)%3C/span%3E)   | INSERT |        |        |        |        |        |        |        |        |        | SELECT |        |  
 | ID26[(2)                       |        |        | INSERT | INSERT | INSERT |        | INSERT |        |        |        |        | SELECT |  
 | Automatic Change Sender(3)     | UPDATE |        | UPDATE | UPDATE | UPDATE |        | UPDATE | UPDATE | UPDATE |        |        |        |    
 | ID25[(4)                       |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |         
