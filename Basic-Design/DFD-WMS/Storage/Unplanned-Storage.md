@@ -5,7 +5,7 @@
 ::: mermaid
 flowchart TD
   
-P1[FROM OP - QC STATION]-->P2[ID26]-->P3[AutomaticChangeSender]-->P4[ID25]-->P7[ID25]
+P1[FROM OP STATION - QC STATION]-->P2[ID26]-->P3[AutomaticChangeSender]-->P4[ID25]-->P7[ID25]
 P7[ID25]-->Cond1{Flow?} 
 Cond1 --> |Flow 1| P8[ID64]
 Cond1 --> |Flow 2| P9[ID64]
