@@ -58,9 +58,9 @@ flowchart LR
         DNWORKINFO
     ")]
 
-    tableList-select[("
+    tableList-update[("
         DMMATERIALMASTER
-        DMTOSTATION
+        DMSTATION
     ")]
 
 
