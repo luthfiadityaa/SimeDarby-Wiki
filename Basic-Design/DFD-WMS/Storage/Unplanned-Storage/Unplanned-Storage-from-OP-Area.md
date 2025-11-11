@@ -966,7 +966,7 @@ Upon equipment <span style="color:green; font-weight:bold">SRM</span> have picke
 <hr>
 
 ##<span style="color:skyblue; font-weight:bold">ID33</span>
-jp.co.daifuku.wcs.mc.as21.communication.control.Id33Process
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.wcs.mc.as21.communication.control.Id33Process&nbsp;</span>
 
 ::: mermaid
 flowchart LR
