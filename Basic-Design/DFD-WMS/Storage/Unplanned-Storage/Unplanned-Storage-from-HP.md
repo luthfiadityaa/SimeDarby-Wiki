@@ -47,6 +47,7 @@
 | ID33(18)                       | UPDATE | INSERT | UPDATE | DELETE | UPDATE | INSERT |        |        | UPDATE | INSERT |        |        |
 
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
+##<span style="color:skyblue; font-weight:bold">ID61</span>
 If the station mode is **Retrieval Mode**, change the mode of the station to **Storage mode**.
 ::: mermaid
 flowchart LR
@@ -54,15 +55,17 @@ flowchart LR
         Operators pressed the storage mode button on the operation box.      
     ]
 
+    id61msg("
+     ID 61
+    ")
     tableList-update[("
         DMSTATION
     ")]
 
 
-    className[UnplannedStorageSCH]
+    className[StationOperator]
 
-    input --> className --> |INSERT| tableList-insert
-    className --> |SELECT| tableList-select
+    input -->id61msg-->id61process--> className --> |UPDATE| tableList-update
 
     classDef leftAlign text-align:left;
     class input leftAlign;
