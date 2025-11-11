@@ -112,6 +112,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **MATERIAL_CODE**          | Value from screen (Material Code)
 | **MATERIAL_NAME**          | Value from screen (Material Name)  
 | **PLAN_QTY**               | Value from screen (Storage Qty) 
+| **QTY_KG_CRTN**            | Value from screen (Qty kg/crtn) 
 | **BCR_DATA**               |Value from screen (Pallet ID)
 | **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **USER_ID**                | Login Info
