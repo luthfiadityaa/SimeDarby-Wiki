@@ -1132,8 +1132,8 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **PALLET_ID**              | DNSTOCK.PALLET_ID
 | **BCR_DATA**               | DNPALLET.BCR_DATA
 | **AREA_TYPE**              | DMAREA_AREA_TYPE
-| **MATERIAL_NAME**          | DMMATERIALMASTER.MATERIAL_NAME
-| **ENTERING_QTY**           | DMMATERIALMASTER.QTY_CRTN
+| **MATERIAL_NAME**          | DMITEM.MATERIAL_NAME
+| **ENTERING_QTY**           | DNSTORAGEPLAN.QTY_CRTN_PL
 | **USER_ID**                | Login info
 | **USER_NAME**              | Login info
 | **TERMINAL_NO**            | Login info
