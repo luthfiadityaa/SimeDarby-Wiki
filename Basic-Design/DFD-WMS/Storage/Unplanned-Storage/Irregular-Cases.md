@@ -507,7 +507,7 @@ Storage plan is imported.
 Correct BC label.
 "]
 
-buttonlight3-->buttonlight3-->buttonlight1
+buttonlight3-->buttonlight2-->buttonlight1
 :::
-
+- [Continue to Normal Flow FROM HP AREA -> Automatic Change Sender](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/948/Unplanned-Storage-from-HP?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eautomatic-mode-change-sender%3C/span%3E)
 
