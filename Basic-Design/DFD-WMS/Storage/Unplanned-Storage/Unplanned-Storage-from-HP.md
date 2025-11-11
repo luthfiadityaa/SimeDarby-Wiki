@@ -283,6 +283,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **Field Name**             | **Insert Value**                               |
 |----------------------------|-----------------------------------------------|
 | **PLAN_LOCATION_NO**       | Reserved Location Number
+| **STORAGE_LOCATION_TO**    | Value from screen (Storage Location To) ⟶ <span style="color:green; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span> 
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
