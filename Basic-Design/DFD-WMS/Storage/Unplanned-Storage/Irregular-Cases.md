@@ -478,6 +478,30 @@ The signal tower lights.
 The buzzer sounds.
 "]
 
+buttonlight1["
+Conveyor reverse back
+"]
+
+id50msg --> As21Id54
+As21Id54 --> buttonlight --> buttonlight1
+:::
+
+After WareNavi receives information from **ID26** indicating a barcode NO-READ, it automatically sends **ID54** to the AGC. At the designated station, the signal tower lights up and the buzzer sounds, and initiate pallet transport.
+Press the completion button.
+
+###Manual Operation
+::: mermaid
+flowchart LR
+
+id50msg("
+ID 54
+")
+
+buttonlight["
+The signal tower lights.
+The buzzer sounds.
+"]
+
 buttonlight["
 Conveyor reverse back
 "]
@@ -490,10 +514,6 @@ Correct BC label.
 id50msg --> As21Id54
 As21Id54 --> buttonlight
 :::
-
-After WareNavi receives information from **ID26** indicating a barcode NO-READ, it automatically sends **ID54** to the AGC. At the designated station, the signal tower lights up and the buzzer sounds, and initiate pallet transport.
 Press the completion button.
-
-###Manual Operation
 
 
