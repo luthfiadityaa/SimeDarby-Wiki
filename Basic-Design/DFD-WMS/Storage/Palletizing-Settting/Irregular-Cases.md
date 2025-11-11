@@ -659,7 +659,7 @@ After WareNavi receives information from **ID26** indicating a barcode NO-READ, 
 the buzzer stops, and initiate pallet transport.
 
 ###<span style="color:skyblue; font-weight:bold">Storage Sender</span>
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.AutomaticChangeSender &nbsp;</span>
 
 ::: mermaid
 flowchart LR
