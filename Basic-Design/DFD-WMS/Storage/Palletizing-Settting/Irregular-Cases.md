@@ -1086,7 +1086,7 @@ No Read("0":None)</span>
 | **LAST_UPDATE_PNAME**      | ClassName
 
 ###<span style="color:skyblue; font-weight:bold">Storage Sender</span>
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.AutomaticChangeSender &nbsp;</span>
 
 ::: mermaid
 flowchart LR
