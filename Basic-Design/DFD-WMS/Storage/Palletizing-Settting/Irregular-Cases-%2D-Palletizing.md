@@ -1,7 +1,7 @@
 [[_TOC_]]
 [[_TOSP_]]
 
-
+#<span style="color:skyblue; font-weight:bold">Summary Flow</span>
 ::: mermaid
 flowchart TD  
 ArrivalAt1101[ID26] --> Cond1{Is Location Full?}  
@@ -15,9 +15,10 @@ Cond3 -->|No| DataError1[Data Error]
 DataError1[Data Error] --> BatchStart[Batch Start] --> Cond4  
 Cond4 -->|Yes| Move2[ID05]  
 Cond4 -->|No| DataError2[Data Error] --> BatchEnd[Batch End] --> Move2[ID05]
-:::
+::: 
 
-#<span style="color:skyblue; font-weight:bold">Palletize Start database flow</span>
+##<span style="color:skyblue; font-weight:bold">Wait for available location if full</span>
+###<span style="color:skyblue; font-weight:bold">Database flow</span>
 **Abbreviation:**
 - **STRP** : DNSTORAGEPLAN  
 - **WRKI** : DNWORKINFO  
@@ -25,11 +26,7 @@ Cond4 -->|No| DataError2[Data Error] --> BatchEnd[Batch End] --> Move2[ID05]
 - **CRYI** : DNCARRYINFO  
 - **STCK** : DNSTOCK  
 - **ARVL** : DNARRIVAL  
-- **STSN** : DMSTATION    
-
-
-
-##<span style="color:skyblue; font-weight:bold">Wait for available location if full</span>
+- **STSN** : DMSTATION 
 
 | Action Name                 | STRP   | WRKI   | PLLT   | CRYI   | STCK   | ARRVL  | STSN   | 
 |-----------------------------|--------|--------|--------|--------|--------|--------|--------|
