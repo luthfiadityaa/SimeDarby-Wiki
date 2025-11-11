@@ -32,8 +32,8 @@
 | Automatic Change Sender(10)    |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        | 
 | ID25(11)                       |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        | 
 | ID64(12)                       |        |        |        | UPDATE |        |        |        |        |        |        |        |        | 
-| **Flow 2**                     |        |        |        |        |        |        |        |        |        |        |        |        |        |   
-| ID64(8)                        |        |        |        |        | |        |        |        |        |        |        |        |        |   
+| **Flow 2**                     |        |        |        |        |        |        |        |        |        |        |        |        |  
+| ID64(8)                        |        |        |        |        |        |        |        |        |        |        |        |        | 
 
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage - Set(F2)</span>
