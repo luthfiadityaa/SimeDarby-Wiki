@@ -149,7 +149,7 @@ No Read("0":None)</span>
 | **LAST_UPDATE_PNAME**      | ClassName
 
 ###<span style="color:skyblue; font-weight:bold">Storage Sender</span>
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.AutomaticChangeSender &nbsp;</span>
 
 ::: mermaid
 flowchart LR
@@ -170,7 +170,7 @@ storageSender-input-->storageSender-->id05msg
 storageSender--> |UPDATE| storageSender-update
 :::
 
-After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, StorageSender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">1:Started to 2:Waiting for Response.</span>
+After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, AutomaticChangeSender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">1:Started to 2:Waiting for Response.</span>
 
 ####<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
