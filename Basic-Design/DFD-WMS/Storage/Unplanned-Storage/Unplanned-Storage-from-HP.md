@@ -109,7 +109,8 @@ This section explains the validations for the whole proccess Palletize Start
 | **PLAN_AREA_NO**           | Value from screen (Storage Location To) ⟶ <span style="color:green; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>
 | **PLAN_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **BATCH_NO**               | Value from screen (Batch No)
-| **MATERIAL_CODE**          | Value from screen (Material Code) 
+| **MATERIAL_CODE**          | Value from screen (Material Code)
+| **MATERIAL_NAME**          | Value from screen (Material Name)  
 | **PLAN_QTY**               | Value from screen (Storage Qty) 
 | **BCR_DATA**               |Value from screen (Pallet ID)
 | **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
