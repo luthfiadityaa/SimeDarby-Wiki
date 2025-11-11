@@ -359,13 +359,13 @@ Palletizing Completion("0":Normal Completion)</span>
 |-----------------------------|--------|--------|--------|--------|--------|--------|
 | ID26(1)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
 | ID54(2)                     |        |        |        |        |        |        |
-| StorageSender(2)            |        |        | UPDATE |        | UPDATE |        |
-| ID25(3)                     |        |        | UPDATE |        | DELETE |        |
-| ID26(4)                     |        | UPDATE | UPDATE |        | INSERT |        |
-| ID54(5)                     |        |        |        |        |        |        |
-| StorageSender(6)            |        |        | UPDATE |        | UPDATE |        |
-| ID25(7)                     |        |        | UPDATE |        | DELETE |        |
-| ID26(8)                     | DELETE | DELETE | DELETE | DELETE | DELETE |        |
+| StorageSender(3)            |        |        | UPDATE |        | UPDATE |        |
+| ID25(4)                     |        |        | UPDATE |        | DELETE |        |
+| ID26(5)                     |        | UPDATE | UPDATE |        | INSERT |        |
+| ID54(6)                     |        |        |        |        |        |        |
+| StorageSender(7)            |        |        | UPDATE |        | UPDATE |        |
+| ID25(8)                     |        |        | UPDATE |        | DELETE |        |
+| ID26(9)                     | DELETE | DELETE | DELETE | DELETE | DELETE |        |
 
 ###<span style="color:skyblue; font-weight:bold">ID26</span>
 
