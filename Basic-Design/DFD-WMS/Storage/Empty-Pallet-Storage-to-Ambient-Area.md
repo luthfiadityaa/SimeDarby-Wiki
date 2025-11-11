@@ -213,8 +213,8 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **STOCK_ID**               | DNSTOCK.STOCK_ID
 | **SYSTEM_CONN_KEY**        | Sequence Object
 | **PLAN_DAY**               | DMWARENAVISYSTEM.WORK_DAY
-| **PLAN_AREA_NO**           | WAREHOUSE_STATION_NO where a reserved location belongs to
-| **PLAN_LOCATION_NO**       | AISLE_STATION_NO where a reserved location belongs to
+| **PLAN_AREA_NO**           | Warehouse Number where a reserved location belongs to
+| **PLAN_LOCATION_NO**       | Aisle Number where a reserved location belongs to
 | **PLAN_QTY**               | 1
 | **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **USER_ID**                | Login Info
