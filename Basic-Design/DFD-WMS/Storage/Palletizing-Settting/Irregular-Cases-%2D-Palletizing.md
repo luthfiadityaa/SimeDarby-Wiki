@@ -30,7 +30,7 @@ Cond4 -->|No| DataError2[Data Error] --> BatchEnd[Batch End] --> Move2[ID05]
 
 | Action Name                 | WRKI   | PLLT   | CRYI   | STCK   | ARRVL  | STSN   | 
 |-----------------------------|--------|--------|--------|--------|--------|--------|
-| ID26(1)                     | INSERT | INSERT | INSERT | INSERT | INSERT | INSERT |
+| ID26(1)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
 | StorageSender(2)            |
 | ID25(3)                     |
 | ID26(4)                     |
