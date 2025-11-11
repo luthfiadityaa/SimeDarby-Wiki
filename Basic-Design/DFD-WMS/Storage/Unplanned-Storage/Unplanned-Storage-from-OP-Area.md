@@ -152,7 +152,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 |----------------------------|-----------------------------------------------|
 | **ARRIVAL_DATE**           | SYSTIMESTAMP 
 | **STATION_NO**             | Arrival Station Number from ID26 
-| **CARRY_KEY**              | DNCARRYINFO.CARRY_KEY       
+| **CARRY_KEY**              | 99999999       
 | **BCR_DATA**               | Barcode information from ID26
 | **CONTROLINFO**            | Control information from ID26
 | **SEND_FLAG**              | 0:Not sent
@@ -167,8 +167,8 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **Field Name**            | **Insert Vlaue**                               |
 |----------------------------|-----------------------------------------------|
 | **PALLET_ID**              | Sequence Object                                                       
-| **CURRENT_STATION_NO**     | 1303                                                      
-| **WH_STATION_NO**          | Value from screen (Storage Location) ⟶ <span style="color:green; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>                                                     
+| **CURRENT_STATION_NO**     | DNARRIVAL.STATION_NO -> <span style="color:green; font-weight:bold">1301 or 1302</span>                                                      
+| **WH_STATION_NO**          | Value from screen (Storage Location To) ⟶ <span style="color:green; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>                                                     
 | **STATUS_FLAG**            | 1:Reserved for Storage                                                     
 | **EMPTY_FLAG**             | 0:Normal Pallet                                                        
 | **BCR_DATA**               | Value from screen (Pallet ID)                                                 
@@ -181,16 +181,17 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **field Name**            | **Insert Value**                               |
 |----------------------------|-----------------------------------------------|
 | **STOCK_ID**               | Sequence Object   
-| **AREA_NO**                | Value from screen (Storage Location) ⟶ <span style="color:green; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>
+| **AREA_NO**                | Value from screen (Storage Location To) ⟶ <span style="color:green; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>
 | **LOCATION_NO**            | 22222222
 | **STORAGE_TYPE**           | 2:New 
-| **STOCK_QTY**              | Value from screen (Qty crtn/PL)
+| **QTY_CRTN_PL**            | Value from screen (Qty crtn/PL)
+| **QTY_KG_CRTN**            | Value from screen (Qty kg/crtn)
 | **ALLOCATION_QTY**         | 0
 | **PLAN_QTY**               | Value from screen (Storage Qty) 
 | **PALLET_ID**              | Sequence Object
 | **BATCH_NO**               | Value from screen (Batch No) 
 | **TEMPERING_PERIOD**       | Value from screen (Tempering Period)
-| **STORING_PAIR_KEY**       | <span style="color:green; font-weight:bold">DNPALLETIZE.MATERIAL_CODE + DNPALLETIZE.BATCH_NO </span>
+| **STORING_PAIR_KEY**       | <span style="color:green; font-weight:bold">DNWORKINFO.MATERIAL_CODE + DNWORKINFO.BATCH_NO </span>
 | **EXPIRY_DATE**            | Value from screen (Expiry Days)
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
@@ -209,7 +210,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **CARRY_FLAG**                 | 3: Direct Transfer
 | **WORK_NO**                    | Sequence Object
 | **SOURCE_STATION_NO**          | DNPALLET.CURRENT_STATION_NO
-| **DEST_STATION_NO**            | <span style="color:green; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (7101, 7102, 7103, 7104, 7105, 7106, 7107, 7108, 7109, 7110)</span>
+| **DEST_STATION_NO**            | <span style="color:green; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (7207, 7208, 7209, 7210, 7211, 7212, 7213, 7214)</span>
 | **CANCEL_REQUEST**             | 0:Not Requested
 | **SCHEDULE_NO**                | Sequence Object
 | **END_STATION_NO**             | DNWORKINFO.PLAN_AREA_NO
