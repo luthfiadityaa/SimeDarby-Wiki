@@ -96,7 +96,7 @@ flowchart LR
     ")]
 
      tableList-select[("
-        DMMATERIALMASTER
+        DMITEM
         DMSTATION
     ")]
 
@@ -122,7 +122,7 @@ This section explains the validations for the whole proccess Palletize Start
 - <span style="color:green; font-weight:bold">Planned Carton</span> must be greater than <span style="color:green; font-weight:bold">0</span>.
 - <span style="color:green; font-weight:bold">Quantity (Carton per Pallet)</span> must be greater than <span style="color:green; font-weight:bold">0</span>.
 - <span style="color:green; font-weight:bold">Planned Carton</span> must be greater than or equal to <span style="color:green; font-weight:bold">Quantity (Carton per Pallet)</span>.
-- Material Code exists in <span style="color:green; font-weight:bold">DMMaterialMaster</span>
+- Material Code exists in <span style="color:green; font-weight:bold">DMITEM</span>
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
@@ -231,7 +231,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **STATUS_FLAG**            | 1:Reserved for Storage                                                     
 | **EMPTY_FLAG**             | 0:Normal Pallet 
 | **ALLOCATION_FLAG**        | 1:Allocated
-| **SOFT_ZONE_ID**           | DMMATERIALMASTER.SOFT_ZONE_ID                                                       
+| **SOFT_ZONE_ID**           | DMITEM.SOFT_ZONE_ID                                                       
 | **BCR_DATA**               | DNARRIVAL.BCR_DATA                                                 
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
@@ -1306,8 +1306,8 @@ Storage Date will be update by the system in this section represent by <span sty
 | **PALLET_ID**              | DNSTOCK.PALLET_ID
 | **BCR_DATA**               | DNPALLET.BCR_DATA
 | **AREA_TYPE**              | DMAREA_AREA_TYPE
-| **MATERIAL_NAME**          | DMMATERIALMASTER.MATERIAL_NAME
-| **ENTERING_QTY**           | DMMATERIALMASTER.QTY_CRTN
+| **MATERIAL_NAME**          | DMMITEM.MATERIAL_NAME
+| **ENTERING_QTY**           | DMITEM.PLAN_QTY
 | **USER_ID**                | Login info
 | **USER_NAME**              | Login info
 | **TERMINAL_NO**            | Login info
