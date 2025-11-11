@@ -33,6 +33,35 @@ If a downtime occurs on one of the lines, manual palletizing will be carried out
 | **Last Process**               |        |        |        |        |        |        |        |        |        |        |        |        |   
 | ID33[(18)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/880/Unplanned-Storage-from-OP-Area?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid33%3C/span%3E)                       | UPDATE | INSERT | UPDATE | DELETE | UPDATE | INSERT |        |        | UPDATE | INSERT |        |        |
 
+#<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
+##<span style="color:skyblue; font-weight:bold">ID63</span>
+If the station mode is **Retrieval Mode**, change the mode of the station to **Storage mode**.
+::: mermaid
+flowchart LR
+    input[
+        Operators pressed the storage mode button on the operation box.      
+    ]
+
+    id61msg("
+     ID63
+    ")
+    tableList-update[("
+        DMSTATION
+    ")]
+
+    input -->id61msg-->id63process--> |UPDATE| tableList-update
+
+    classDef leftAlign text-align:left;
+    class input leftAlign;
+:::
+
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+
+####<span style="color:skyblue; font-weight:bold">DMSTATION</span>
+| **Filed Name**            | **Insert Value**                               |
+| --------------------------|----------------------------------------------|
+| **CURRENT_MODE**          | 1:Storage Mode
+
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage - Set(F2)</span>
 ![image.png](/.attachments/image-6293c4f4-5fd4-4247-8cbc-fbcc6d9cf3a5.png)
  
