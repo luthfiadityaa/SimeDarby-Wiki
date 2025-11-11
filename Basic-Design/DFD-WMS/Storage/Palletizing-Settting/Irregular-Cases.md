@@ -350,7 +350,7 @@ id26-insert[("
    DNSTOCK		
 ")]
 
-storageStationOperator[StorageStationOperator]
+storageStationOperator[InOutStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
@@ -580,7 +580,7 @@ DNPALLET
 DNCARRYINFO
 ")];
 
-storageStationOperator[storageStationOperator]
+storageStationOperator[InOutStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
@@ -756,7 +756,7 @@ id26-delete[("
    DNSTOCK		
 ")]
 
-storageStationOperator[StorageStationOperator]
+storageStationOperator[InOutStationOperator]
 
 releaseCommand2["
 Press the completion button after removing the pallet.
@@ -798,7 +798,7 @@ id26-insert[("
    DNSTOCK		
 ")]
 
-storageStationOperator[StorageStationOperator]
+storageStationOperator[InOutStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
