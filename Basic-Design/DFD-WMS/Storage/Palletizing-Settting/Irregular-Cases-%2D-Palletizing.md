@@ -33,7 +33,7 @@ Cond4 -->|No| DataError2[Data Error] --> BatchEnd[Batch End] --> Move2[ID05]
 | ID26(1)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
 | StorageSender(2)            |        |        | UPDATE |        | UPDATE |        |
 | ID25(3)                     |        |        | UPDATE |        | DELETE |        |
-| ID26(4)                     |
+| ID26(4)                     |        | UPDATE | UPDATE |        | INSERT |        |
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.as21.common.location.decide.LocationManager&nbsp;</span>
 
