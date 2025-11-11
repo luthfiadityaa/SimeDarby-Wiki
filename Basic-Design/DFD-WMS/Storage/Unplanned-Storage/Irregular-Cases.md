@@ -489,7 +489,7 @@ As21Id54 --> buttonlight --> buttonlight1
 After WareNavi receives information from **ID26** indicating a barcode NO-READ, it automatically sends **ID54** to the AGC. At the designated station, the signal tower lights up and the buzzer sounds, and initiate pallet transport.
 Press the completion button.
 
-###Manual Operation
+###<span style="color:skyblue; font-weight:bold">Manual Operation</span>
 ::: mermaid
 flowchart LR
 
