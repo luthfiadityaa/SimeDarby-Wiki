@@ -114,7 +114,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **PLAN_QTY**               | Value from screen (Storage Qty) 
 | **QTY_KG_CRTN**            | Value from screen (Qty kg/crtn)
 | **QTY_CRTN_PL**            | Value from screen (Qty crtn/PL)  
-| **UOM**            | Value from screen (Qty crtn/PL)
+| **UOM**                    | Value from screen (Qty crtn/PL)
 | **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **USER_ID**                | Login Info
 | **STORAGE_LOCATION_FROM**  | Value from screen (Storage Location From) ⟶ <span style="color:green; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span> 
