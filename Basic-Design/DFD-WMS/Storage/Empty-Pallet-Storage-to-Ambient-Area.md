@@ -23,7 +23,7 @@
 |Action Name| PLLT | WRKI | WRKL | CRYI | STCK | HSTS | ARVL | WRHS | SHLF | STCH | ITEM | STSN |
 |-----------|--|--|--|--|--|--|--|--|--|--|--|--|
 | [Empty Pallet - Set (F2)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Empty%20Pallet%20Storage%20to%20Ambient%20Area&pageId=884&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eempty-pallet---set-(f2)%3C/span%3E) | INSERT | | | | | | | | | | SELECT | SELECT |
-| [ID26](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/884/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Empty%20Pallet%20Storage%20to%20Ambient%20Area&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid26%3C/span%3E) | | INSERT | | INSERT |INSERT | | INSERT | | | | |
+| [ID26](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/884/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Empty%20Pallet%20Storage%20to%20Ambient%20Area&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid26%3C/span%3E) | | INSERT | INSERT | INSERT |INSERT | | INSERT | | | | |
 | [Automatic Mode Change Sender](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/884/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Empty%20Pallet%20Storage%20to%20Ambient%20Area&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eautomatic-mode-change-sender%3C/span%3E) | | UPDATE | | | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE | |
 | [ID25](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/884/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Empty%20Pallet%20Storage%20to%20Ambient%20Area&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid25%3C/span%3E) | | | | | UPDATE | | | UPDATE | | | |
 | [ID64](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Empty%20Pallet%20Storage%20to%20Ambient%20Area&pageId=884&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid64%3C/span%3E) | | | | | UPDATE | | | | | | |
@@ -218,6 +218,38 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **PLAN_QTY**               | 1
 | **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **USER_ID**                | Login Info
+| **TERMINAL_NO**            | Login Terminal
+| **REGIST_DATE**            | SYSTIMESTAMP                                                    
+| **REGIST_PNAME**           | ClassName
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
+
+### <span style="color:skyblue; font-weight:bold">DNWORKLIST</span>
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| **JOB_NO**                 | DNWORKINFO.JOB_NO
+| **CARRY_KEY**              | DNWORKINFO.SYSTEM_CONN_KEY
+| **SETTING_UNIT_KEY**       | DNWORKINFO.SETTING_UNIT_KEY
+| **COLLECT_JOB_NO**         | DNWORKINFO.COLLECT_JOB_NO
+| **JOB_TYPE**               | DNWORKINFO.JOB_TYPE
+| **PLAN_UKEY**              | DNWORKINFO.PLAN_UKEY
+| **STOCK_ID**               | DNWORKINFO.STOCK_ID
+| **PALLET_ID**              | DNCARRYINFO.PALLET_ID
+| **PLAN_DAY**               | DNWORKINFO.PLAN_DAY
+| **PLAN_AREA_NO**           | DNWORKINFO.PLAN_AREA_NO
+| **PLAN_LOCATION_NO**       | DNWORKINFO.PLAN_LOCATION_NO
+| **STORAGE_TYPE**           | 2:New
+| **STORAGE_DATE**           | SYSTIMESTAMP
+| **PLAN_QTY**               | DNWORKINFO.PLAN_QTY
+| **PRIORITY**               | DNCARRYINFO.PRIORITY
+| **WORK_NO**                | DNCARRYINFO.WORK_NO
+| **PRIORITY**               | DNCARRYINFO.PRIORITY
+| **SOURCE_STATION_NO**      | DNCARRYINFO.SOURCE_STATION_NO
+| **DEST_STATION_NO**        | DNCARRYINFO.DEST_STATION_NO
+| **SCHEDULE_NO**            | DNCARRYINFO.SCHEDULE_NO
+| **END_STATION_NO**         | DNCARRYINFO.END_STATION_NO
+| **USER_ID**                | Login Info
+| **USER_NAME**              | Login Info
 | **TERMINAL_NO**            | Login Terminal
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
