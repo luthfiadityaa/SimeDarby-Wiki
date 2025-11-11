@@ -1189,7 +1189,7 @@ releaseCommand2["
 Force Complete.
 "]
 
-storageStationOperator[storageStationOperator]
+storageStationOperator[InOutStationOperator]
 
 releaseCommand-->releaseCommand2-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
