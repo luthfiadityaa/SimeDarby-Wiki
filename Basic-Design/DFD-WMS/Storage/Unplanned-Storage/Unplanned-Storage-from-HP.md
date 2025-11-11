@@ -24,16 +24,16 @@
 |--------------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
 | Unplanned Storage - SetF2(1)   | INSERT |        |        |        |        |        |        |        |        |        | SELECT |        |  
 | ID26[(2)                       |        |        | INSERT | INSERT | INSERT |        | INSERT |        |        |        |        | SELECT |  
-| Automatic Change Sender(3)     | UPDATE |        | UPDATE | UPDATE | UPDATE |        | UPDATE |        |        |        |        |        |    
+| Automatic Change Sender(3)     | UPDATE |        | UPDATE | UPDATE | UPDATE |        | UPDATE | UPDATE | UPDATE |        |        |        |    
 | ID25[(4)                       |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |         
 | **Flow 1**                     |        |        |        |        |        |        |        |        |        |        |        |        | 
-| ID64[(8)]                      |        |        |        | UPDATE | UPDATE |        |        |        |        |        |        |        | 
-| ID26(9)                        |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        | 
-| Storage Sender(10)             |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |  
-| ID25(11)                       |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |  
-| ID64(12)                       |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
+| ID64[(8)]                      |        |        |        | UPDATE |        |        |        |        |        |        |        |        | 
+| ID26(9)                        |        |        | UPDATE | UPDATE |        |        | |         |        |        |        | 
+| Storage Sender(10)             |        |        |        |        |  |        |        |  |        |        |        |        |  
+| ID25(11)                       |        |        |        |        | |        |        |  |        |        |        |        |  
+| ID64(12)                       |        |        |        |        |  |        |        |        |        |        |        |        |        |
 | **Flow 2**                     |        |        |        |        |        |        |        |        |        |        |        |        |        |   
-| ID64(8)                        |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |   
+| ID64(8)                        |        |        |        |        | |        |        |        |        |        |        |        |        |   
 
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage - Set(F2)</span>
