@@ -830,13 +830,7 @@ After the completion button flashes, the operator removes the pallet and presses
 | ID26(1)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
 | ID54(2)                     |        |        |        |        |        |        |
 | ID54(3)                     |        |        |        |        |        |        |
-| StorageSender(2)            |        |        | UPDATE |        | UPDATE |        |
-| ID25(3)                     |        |        | UPDATE |        | DELETE |        |
-| ID26(4)                     |        | UPDATE | UPDATE |        | INSERT |        |
-| ID54(5)                     |        |        |        |        |        |        |
-| StorageSender(6)            |        |        | UPDATE |        | UPDATE |        |
-| ID25(7)                     |        |        | UPDATE |        | DELETE |        |
-| ID26(8)                     | DELETE | DELETE | DELETE | DELETE | DELETE |        |
+
 ###<span style="color:skyblue; font-weight:bold">ID26</span>
 
 ::: mermaid
