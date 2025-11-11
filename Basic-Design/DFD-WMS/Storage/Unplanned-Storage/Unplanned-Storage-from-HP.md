@@ -43,8 +43,8 @@
 | Automatic Change Sender(15)    |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |
 | ID25(16)                       |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
 | ID64(17)                       |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
-| **Last Process**               |        |        |        |        |        |        |        |        |        |        |        |        |        |   
-| ID33(18)                       | UPDATE | UPDATE | UPDATE | DELETE | UPDATE | INSERT |        |        |        | INSERT |        |        |
+| **Last Process**               |        |        |        |        |        |        |        |        |        |        |        |        |   
+| ID33(18)                       | UPDATE | UPDATE | UPDATE | DELETE | UPDATE | INSERT |        |        | UPDATE | INSERT |        |        |
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage - Set(F2)</span>
 ![image.png](/.attachments/image-6293c4f4-5fd4-4247-8cbc-fbcc6d9cf3a5.png)
