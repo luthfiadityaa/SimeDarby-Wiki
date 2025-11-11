@@ -116,6 +116,7 @@ DNCARRYINFO
 DNPALLET
 DNSTOCK
 DNWORKINFO
+DNWORKLIST
 ")]
 
 InOutStationOperator[InOutStationOperator]
@@ -275,6 +276,7 @@ DNWORKINFO
 automaticmodechangesender-input[("
 DNARRIVAL
 DNCARRYINFO
+DMSTATION
 ")]
 
 id05msg("
