@@ -105,9 +105,10 @@ Upon receiving new Plan Storage from Host system, WareNavi will insert related p
 | **LAST_UPDATE_PNAME**      | ClassName
 
 #<span style="color:skyblue; font-weight:bold">Planned Storage - Set (F2)</span>
-Planned Storage Setting (PKG) is used to set the information of stock which will be entered into ASRS. After **Set(F2)** all item in input text will be process and The result will be posted back to SAP as [Production Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)
-
 ![image.png](/.attachments/image-731303e9-dc65-4f98-ba82-ba6d13a6c58b.png)
+Planned Storage Setting (PKG) is used to set the information of stock which will be entered into ASRS. After **Set(F2)** all item in input text will be process and The result will be posted back to SAP as [Production Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wms.web.display.storage.plannedstoragepkg` &nbsp;</span>
 
 ::: mermaid
 flowchart LR
