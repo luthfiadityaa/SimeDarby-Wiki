@@ -28,8 +28,8 @@
 | ID25[(4)                       |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |         
 | **Flow 1**                     |        |        |        |        |        |        |        |        |        |        |        |        | 
 | ID64[(8)]                      |        |        |        | UPDATE |        |        |        |        |        |        |        |        | 
-| ID26(9)                        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        | 
-| Storage Sender(10)             |        |        |        | UPDATE |        |        | UPDATE |        |        |  |        |        |        |        |  
+| ID26(9)                        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |
+| Storage Sender(10)             |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |  
 | ID25(11)                       |        |        |        |        | |        |        |  |        |        |        |        |  
 | ID64(12)                       |        |        |        |        |  |        |        |        |        |        |        |        |        |
 | **Flow 2**                     |        |        |        |        |        |        |        |        |        |        |        |        |        |   
