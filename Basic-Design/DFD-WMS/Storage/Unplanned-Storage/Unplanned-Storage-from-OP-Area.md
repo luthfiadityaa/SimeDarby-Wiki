@@ -1150,7 +1150,7 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **MATERIAL_CODE**          | DNWORKINFO.MATERIAL_CODE
 | **MATERIAL_NAME**          | DMITEM.MATERIAL_NAME
 | **UOM**                    | MMATERIALMASTER.UOM
-| **ENTERING_QTY**           | DNSTORAGEPLAN.QTY_CRTN
+| **ENTERING_QTY**           | DNSTORAGEPLAN.QTY_CRTN_PL
 | **BUNDLE_ENTERING_QTY**    | DNPALLETIZE.PLANNED_CARTON_QTY
 | **PLAN_QTY**               | DNWORKINFO.PLAN_QTY
 | **RESULT_QTY**             | DNWORKINFO.RESULT_QTY
