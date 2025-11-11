@@ -946,7 +946,7 @@ As21Id54 --> buttonlight
 
 After indicating a *Batch Start* is executed, it automatically sends **ID54** to the AGC. At the designated station, the signal tower turns off and the buzzer stop, and initiate pallet transport.
 
-- [Continue to Normal Flow -> Automatic Change Sender](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Estorage-sender%3C/span%3E)
+- [Continue to Normal Flow -> StorageSender](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Estorage-sender%3C/span%3E)
 
 <hr>
 
