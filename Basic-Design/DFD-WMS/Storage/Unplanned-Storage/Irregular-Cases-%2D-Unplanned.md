@@ -29,10 +29,6 @@ Cond2 -->|No| Move2[ID05]
 | AutomaticChangeSender(2)    |        |        | UPDATE |        | UPDATE |        |
 | ID25(4)                     |        |        | UPDATE |        | DELETE |        |
 | ID26(5)                     |        | UPDATE | UPDATE |        | INSERT |        |
-| ID54(6)                     |        |        |        |        |        |        |
-| StorageSender(7)            |        |        | UPDATE |        | UPDATE |        |
-| ID25(8)                     |        |        | UPDATE |        | DELETE |        |
-| ID26(9)                     | DELETE | DELETE | DELETE | DELETE | DELETE |        |
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.as21.common.location.decide.LocationManager&nbsp;</span>
 
