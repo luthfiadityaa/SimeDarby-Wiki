@@ -582,7 +582,6 @@ Upon equipment <span style="color:green; font-weight:bold">(STV)</span> have pic
 
 ##<span style="color:skyblue; font-weight:bold">ID26&nbsp;&nbsp;</span>
 
-
 ::: mermaid
 flowchart LR
 
