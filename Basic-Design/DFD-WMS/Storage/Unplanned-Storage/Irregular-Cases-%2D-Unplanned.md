@@ -348,6 +348,28 @@ Palletizing Completion("0":Normal Completion)</span>
 <hr>
 
 ##<span style="color:skyblue; font-weight:bold">No-Read</span>
+
+###<span style="color:skyblue; font-weight:bold">Database flow</span>
+**Abbreviation:**
+- **STRP** : DNSTORAGEPLAN  
+- **WRKI** : DNWORKINFO  
+- **PLLT** : DNPALLET  
+- **CRYI** : DNCARRYINFO  
+- **STCK** : DNSTOCK  
+- **ARVL** : DNARRIVAL  
+- **STSN** : DMSTATION 
+
+| Action Name                 | WRKI   | PLLT   | CRYI   | STCK   | ARRVL  | STSN   | 
+|-----------------------------|--------|--------|--------|--------|--------|--------|
+| ID26(1)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
+| AutomaticChangeSender(2)    |        |        | UPDATE |        | UPDATE |        |
+| ID25(4)                     |        |        | UPDATE |        | DELETE |        |
+| ID26(5)                     |        | UPDATE | UPDATE |        | INSERT |        |
+| ID54(6)                     |        |        |        |        |        |        |
+| StorageSender(7)            |        |        | UPDATE |        | UPDATE |        |
+| ID25(8)                     |        |        | UPDATE |        | DELETE |        |
+| ID26(9)                     | DELETE | DELETE | DELETE | DELETE | DELETE |        |
+
 ###<span style="color:skyblue; font-weight:bold">ID26</span>
 
 ::: mermaid
