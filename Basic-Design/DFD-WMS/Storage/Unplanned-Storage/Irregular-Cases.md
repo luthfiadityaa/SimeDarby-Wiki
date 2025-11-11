@@ -119,8 +119,8 @@ No Read("0":None)</span>
 | **RESTORING_FLAG**             | 0:Not Restore to Original Location
 | **CARRY_FLAG**                 | 3: Direct Transfer
 | **WORK_NO**                    | Sequence Object
-| **SOURCE_STATION_NO**          | DNPALLET.CURRENT_STATION_NO ⟶ <span style="color:green; font-weight:bold">(1301, 1302) or (1303)</span>
-| **DEST_STATION_NO**            | <span style="color:green; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (7101, 7102, 7103, 7104, 7105, 7106, 7107, 7108, 7109, 7110) or (7207, 7208, 7209, 7210, 7211, 7213, 7214)</span>
+| **SOURCE_STATION_NO**          | DNPALLET.CURRENT_STATION_NO ⟶ <span style="color:green; font-weight:bold">P(1301, 1302) or T(1303)</span>
+| **DEST_STATION_NO**            | <span style="color:green; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ P(7101, 7102, 7103, 7104, 7105, 7106, 7107, 7108, 7109, 7110) or T(7207, 7208, 7209, 7210, 7211, 7213, 7214)</span>
 | **CANCEL_REQUEST**             | 0:Not Requested
 | **SCHEDULE_NO**                | Sequence Object
 | **END_STATION_NO**             | DNWORKINFO.PLAN_AREA_NO
