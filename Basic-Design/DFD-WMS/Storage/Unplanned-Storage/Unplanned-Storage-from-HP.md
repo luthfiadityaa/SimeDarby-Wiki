@@ -51,7 +51,7 @@ If the station mode is **Retrieval Mode**, change the mode of the station to **S
 ::: mermaid
 flowchart LR
     input[
-        Operators press Storage Mode Button       
+        Operators pressed the storage mode button on the operation box.      
     ]
 
     tableList-insert[("
