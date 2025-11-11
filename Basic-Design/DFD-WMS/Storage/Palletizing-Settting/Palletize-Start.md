@@ -1307,7 +1307,7 @@ Storage Date will be update by the system in this section represent by <span sty
 | **BCR_DATA**               | DNPALLET.BCR_DATA
 | **AREA_TYPE**              | DMAREA_AREA_TYPE
 | **MATERIAL_NAME**          | DMMITEM.MATERIAL_NAME
-| **ENTERING_QTY**           | DMITEM.PLAN_QTY
+| **ENTERING_QTY**           | DNSTORAGEPLAN.QTY_CRTN_PL
 | **USER_ID**                | Login info
 | **USER_NAME**              | Login info
 | **TERMINAL_NO**            | Login info
