@@ -15,7 +15,7 @@
 | **WRHS** | DMWAREHOUSE      |
 | **SHLF** | DMSHELF          |
 | **STCH** | DNSTOCKHISTORY   |
-| MTMS | DMMASTERMATERIAL |
+| **MTMS** | DMMASTERMATERIAL |
 | **STSN** | DMSTATION        |
 
 
