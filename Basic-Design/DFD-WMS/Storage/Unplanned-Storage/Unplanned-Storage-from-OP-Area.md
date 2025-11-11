@@ -125,7 +125,7 @@ This section explains the validations for the whole proccess Palletize Start
 flowchart LR
 
 releaseCommand["
-   Operator clicked the Completion Button
+Operator puts the pallet onto Conveyor
 "]
 
 id26msg("
@@ -134,6 +134,9 @@ ID 26
 
 id26-insert[("
 DNARRIVAL
+DNPALLET
+DNSTOCK
+DNCARRYINFO
 ")]
 
 inoutstationoperator[InOutStationOperator]
