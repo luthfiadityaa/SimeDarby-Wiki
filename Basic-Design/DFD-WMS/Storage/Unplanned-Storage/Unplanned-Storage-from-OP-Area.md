@@ -6,7 +6,31 @@
 If a downtime occurs on one of the lines, manual palletizing will be carried out in the blue box. Once palletizing is complete, the items will be transferred to the inbound station, which is the same station used for QC.
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage database flow</span>
--
+| Action Name                    | WRKI   | WRKL   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | 
+|--------------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| Unplanned Storage - SetF2(1)   | INSERT |        |        |        |        |        |        |        |        |        | SELECT |        |  
+| ID26[(2)                       |        |        | INSERT | INSERT | INSERT |        | INSERT |        |        |        |        | SELECT |  
+| Automatic Change Sender(3)     | UPDATE |        | UPDATE | UPDATE | UPDATE |        | UPDATE | UPDATE | UPDATE |        |        |        |    
+| ID25[(4)                       |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |         
+| **Flow 1**                     |        |        |        |        |        |        |        |        |        |        |        |        | 
+| ID64[(8)]                      |        |        |        | UPDATE |        |        |        |        |        |        |        |        | 
+| ID26(9)                        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |
+| Automatic Change Sender(10)    |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        | 
+| ID25(11)                       |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        | 
+| ID64(12)                       |        |        |        | UPDATE |        |        |        |        |        |        |        |        | 
+| **Flow 2**                     |        |        |        |        |        |        |        |        |        |        |        |        |  
+| ID64(8)                        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |   
+| ID26(9)                        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |
+| Automatic Change Sender(10)    |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        | 
+| ID25(11)                       |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
+| ID64(12)                       |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
+| ID64(13)                       |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
+| ID26(14)                       |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |       
+| Automatic Change Sender(15)    |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |
+| ID25(16)                       |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
+| ID64(17)                       |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
+| **Last Process**               |        |        |        |        |        |        |        |        |        |        |        |        |   
+| ID33(18)                       | UPDATE | INSERT | UPDATE | DELETE | UPDATE | INSERT |        |        | UPDATE | INSERT |        |        |
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage - Set(F2)</span>
 ![image.png](/.attachments/image-6293c4f4-5fd4-4247-8cbc-fbcc6d9cf3a5.png)
