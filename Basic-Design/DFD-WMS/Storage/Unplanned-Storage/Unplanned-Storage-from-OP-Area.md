@@ -31,7 +31,7 @@ If a downtime occurs on one of the lines, manual palletizing will be carried out
 | ID25[(16)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/880/Unplanned-Storage-from-OP-Area?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3E%26nbsp%3Bid25%26nbsp%3B%3C/span%3E)                       |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
 | ID64[(17)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/880/Unplanned-Storage-from-OP-Area?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid64%26nbsp%3B%26nbsp%3B%3C/span%3E)                       |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
 | **Last Process**               |        |        |        |        |        |        |        |        |        |        |        |        |   
-| ID33(18)                       | UPDATE | INSERT | UPDATE | DELETE | UPDATE | INSERT |        |        | UPDATE | INSERT |        |        |
+| ID33[(18)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/880/Unplanned-Storage-from-OP-Area?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid33%3C/span%3E)                       | UPDATE | INSERT | UPDATE | DELETE | UPDATE | INSERT |        |        | UPDATE | INSERT |        |        |
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage - Set(F2)</span>
 ![image.png](/.attachments/image-6293c4f4-5fd4-4247-8cbc-fbcc6d9cf3a5.png)
