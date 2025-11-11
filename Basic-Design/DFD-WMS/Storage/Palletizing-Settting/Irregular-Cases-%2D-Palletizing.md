@@ -815,6 +815,27 @@ After the completion button flashes, the operator removes the pallet and presses
 <hr>
 
 ##<span style="color:skyblue; font-weight:bold">Wait for Batch Start. Treat as Data Error</span>
+###<span style="color:skyblue; font-weight:bold">Database flow</span>
+**Abbreviation:**
+- **STRP** : DNSTORAGEPLAN  
+- **WRKI** : DNWORKINFO  
+- **PLLT** : DNPALLET  
+- **CRYI** : DNCARRYINFO  
+- **STCK** : DNSTOCK  
+- **ARVL** : DNARRIVAL  
+- **STSN** : DMSTATION 
+
+| Action Name                 | WRKI   | PLLT   | CRYI   | STCK   | ARRVL  | STSN   | 
+|-----------------------------|--------|--------|--------|--------|--------|--------|
+| ID26(1)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
+| ID54(2)                     |        |        |        |        |        |        |
+| StorageSender(2)            |        |        | UPDATE |        | UPDATE |        |
+| ID25(3)                     |        |        | UPDATE |        | DELETE |        |
+| ID26(4)                     |        | UPDATE | UPDATE |        | INSERT |        |
+| ID54(5)                     |        |        |        |        |        |        |
+| StorageSender(6)            |        |        | UPDATE |        | UPDATE |        |
+| ID25(7)                     |        |        | UPDATE |        | DELETE |        |
+| ID26(8)                     | DELETE | DELETE | DELETE | DELETE | DELETE |        |
 ###<span style="color:skyblue; font-weight:bold">ID26</span>
 
 ::: mermaid
