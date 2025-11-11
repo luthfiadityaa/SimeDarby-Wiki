@@ -35,10 +35,10 @@ Cond4 -->|No| DataError2[Data Error] --> BatchEnd[Batch End] --> Move2[ID05]
 
 | Action Name                 | STRP   | WRKI   | WRKL   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | 
 |-----------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
-|ID26|
-|StorageSender|
-|ID25|
-|ID26|
+| ID26(1)                     |
+| StorageSender(2)            |
+| ID25(3)                     |
+| ID26(4)                     |
 
 ##<span style="color:skyblue; font-weight:bold">Wait for available location if full</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.as21.common.location.decide.LocationManager&nbsp;</span>
