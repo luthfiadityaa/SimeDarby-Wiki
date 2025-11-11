@@ -973,7 +973,7 @@ id26-insert[("
    DNSTOCK		
 ")]
 
-storageStationOperator[StorageStationOperator]
+storageStationOperator[InOutStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
