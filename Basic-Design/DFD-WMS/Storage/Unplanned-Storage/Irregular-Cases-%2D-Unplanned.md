@@ -428,7 +428,7 @@ No Read("1":Error)</span>
 | **STATUS_FLAG**            | 1:Reserved for Storage                                                     
 | **EMPTY_FLAG**             | 0:Normal Pallet 
 | **ALLOCATION_FLAG**        | 1:Allocated
-| **SOFT_ZONE_ID**           | DMMATERIALMASTER.SOFT_ZONE_ID                                                       
+| **SOFT_ZONE_ID**           | DMITEM.SOFT_ZONE_ID                                                       
 | **BCR_DATA**               | DNARRIVAL.BCR_DATA                                                 
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
