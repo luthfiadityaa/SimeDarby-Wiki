@@ -56,7 +56,7 @@ flowchart LR
     ]
 
     id61msg("
-     ID 61
+     ID61
     ")
     tableList-update[("
         DMSTATION
