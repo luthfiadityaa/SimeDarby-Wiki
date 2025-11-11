@@ -48,6 +48,30 @@
 
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
 If the station mode is **Retrieval Mode**, change the mode of the station to **Storage mode**.
+::: mermaid
+flowchart LR
+    input[
+        Operators press Storage Mode Button       
+    ]
+
+    tableList-insert[("
+        DNWORKINFO
+    ")]
+
+    tableList-select[("
+        DMMATERIALMASTER
+        DMTOSTATION
+    ")]
+
+
+    className[UnplannedStorageSCH]
+
+    input --> className --> |INSERT| tableList-insert
+    className --> |SELECT| tableList-select
+
+    classDef leftAlign text-align:left;
+    class input leftAlign;
+:::
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage - Set(F2)</span>
 ![image.png](/.attachments/image-6293c4f4-5fd4-4247-8cbc-fbcc6d9cf3a5.png)
