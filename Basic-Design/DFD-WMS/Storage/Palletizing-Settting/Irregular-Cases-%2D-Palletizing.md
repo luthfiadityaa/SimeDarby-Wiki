@@ -1024,9 +1024,7 @@ After indicating a *Batch Start* is executed, it automatically sends **ID54** to
 | ID25(3)                     |        |        | UPDATE |        | DELETE |        |
 | ID26(4)                     |        | UPDATE | UPDATE |        | INSERT |        |
 | ID54(5)                     |        |        |        |        |        |        |
-| StorageSender(6)            |        |        | UPDATE |        | UPDATE |        |
-| ID25(7)                     |        |        | UPDATE |        | DELETE |        |
-| ID26(8)                     | DELETE | DELETE | DELETE | DELETE | DELETE |        |
+
 ###<span style="color:skyblue; font-weight:bold">ID26</span>
 
 ::: mermaid
