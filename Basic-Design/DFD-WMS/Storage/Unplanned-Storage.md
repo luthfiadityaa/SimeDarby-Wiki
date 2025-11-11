@@ -3,7 +3,7 @@
 
 #<span style="color:skyblue; font-weight:bold">Summary Flow</span>
 ::: mermaid
-flowchart TD
+flowchart LR
   
 P1[FROM OP STATION - QC STATION]-->P2[ID26]-->P3[AutomaticChangeSender]-->P4[ID25]-->P7[ID25]
 P7[ID25]-->Cond1{Flow?} 
