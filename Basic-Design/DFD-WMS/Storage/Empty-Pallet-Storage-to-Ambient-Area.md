@@ -114,6 +114,7 @@ id26-insert[("
 DNARRIVAL
 DNCARRYINFO
 DNPALLET
+DNSTOCK
 DNWORKINFO
 ")]
 
@@ -150,18 +151,19 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **Column Name**                | **Description / Notes**                       |
 |--------------------------------|-----------------------------------------------|
 | **CARRY_KEY**                  | Sequence Object  
-| **PALLET_ID**                  | DNPALLET.PALLET_ID
+| **PALLET_ID**                  | Sequence Object
 | **WORK_TYPE**                  | 26:Direct Transfer
 | **CMD_STATUS**                 | 1:Started 
-| **PRIORITY**                   | 2:Normal
+| **PRIORITY**                   | 1:Urgent
 | **RESTORING_FLAG**             | 0:Not Restore to Original Location
-| **CARRY_FLAG**                 | 3: Direct Transfer
+| **CARRY_FLAG**                 | 1:Storage
 | **WORK_NO**                    | Sequence Object
 | **SOURCE_STATION_NO**          | DNPALLET.CURRENT_STATION_NO ⟶ **1301/1302**
 | **DEST_STATION_NO**            | Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ **(7207/7208/7209/7210)**
 | **CANCEL_REQUEST**             | 0:Not Requested
 | **SCHEDULE_NO**                | Sequence Object
-| **END_STATION_NO**             | DNWORKINFO.PLAN_AREA_NO
+| **AISLE_STATION_NO**           | DNWORKINFO.AISLE_STATION_NO
+| **END_STATION_NO**             | DNWORKINFO.PLAN_LOCATION_NO
 | **REGIST_DATE**                | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**               | ClassName
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
@@ -183,21 +185,38 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
+####<span style="color:skyblue; font-weight:bold">DNSTOCK</span>
+| **Column Name**                | **Description / Notes**                               |
+|--------------------------------|-------------------------------------------------------|
+| **STOCK_ID**                   | Sequence Object
+| **AREA_NO**                    | DNWORKINFO.PLAN_AREA_NO
+| **LOCATION_NO**                | DNWORKINFO.PLAN_LOCATION_NO
+| **STORAGE_TYPE**               | 2:NEW
+| **STORAGE_DATE**               | SYSTIMESTAMP
+| **PLAN_QTY**                   | DNWORKINFO.PLAN_QTY
+| **PALLET_ID**                  | DNPALLET.PALLET_ID
+| **REGIST_DATE**                | SYSTIMESTAMP
+| **REGIST_PNAME**               | Class name
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**          | Class name
+
 ### <span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **JOB_NO**                 | Sequence Object
 | **SETTING_UNIT_KEY**       | Sequence Object
 | **COLLECT_JOB_NO**         | Sequence Object
-| **JOB_TYPE**               | 02:Storage
-| **STATUS_FLAG**            | 0:Not Started
+| **JOB_TYPE**               | 26: Direct Transfer
+| **STATUS_FLAG**            | 1: WORKING
 | **HARDWARE_TYPE**          | 3:ASRS
-| **PLAN_UKEY**              | DNSTORAGEPLAN.PLAN_UKEY
-| **STOCK_ID**               | Sequence Object
+| **PLAN_UKEY**              | Sequence Object
+| **STOCK_ID**               | DNSTOCK.STOCK_ID
 | **SYSTEM_CONN_KEY**        | Sequence Object
-| **RESULT_AREA_NO**         | DMWAREHOUSE.AREA_NO ⟶ **9002**
-| **RESULT_LOCATION_NO**     | DMWAREHOUSE.WAREHOUSE_NO
-| **WORK_DAY**               | DNSTORAGEPLAN.WORK_DAY
+| **PLAN_DAY**               | DMWARENAVISYSTEM.WORK_DAY
+| **PLAN_AREA_NO**           | WAREHOUSE_STATION_NO where a reserved location belongs to
+| **PLAN_LOCATION_NO**       | AISLE_STATION_NO where a reserved location belongs to
+| **PLAN_QTY**               | 1
+| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **USER_ID**                | Login Info
 | **TERMINAL_NO**            | Login Terminal
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
