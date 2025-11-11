@@ -135,6 +135,9 @@ ID 26
 
 id26-insert[("
 DNARRIVAL
+DNPALLET
+DNSTOCK
+DNCARRYINFO
 ")]
 
 inoutstationoperator[InOutStationOperator]
