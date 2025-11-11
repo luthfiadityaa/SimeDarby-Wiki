@@ -17,6 +17,25 @@ Cond4 -->|Yes| Move2[ID05]
 Cond4 -->|No| DataError2[Data Error] --> BatchEnd[Batch End] --> Move2[ID05]
 :::
 
+#<span style="color:skyblue; font-weight:bold">Palletize Start database flow</span>
+**Abbreviation:**
+- **STRP** : DNSTORAGEPLAN  
+- **WRKI** : DNWORKINFO  
+- **WRKL** : DNWORKINFOLIST  
+- **PLLT** : DNPALLET  
+- **CRYI** : DNCARRYINFO  
+- **STCK** : DNSTOCK  
+- **HSTS** : DNHOSTSEND  
+- **ARVL** : DNARRIVAL  
+- **WRHS** : DMWAREHOUSE  
+- **SHLF** : DMSHELF  
+- **MTMS** : DMATERIALMASTER  
+- **STSN** : DMSTATION  
+- **STCH** : DNSTOCKHISTORY  
+
+| Action Name                 | STRP   | WRKI   | WRKL   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | 
+|-----------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+
 ##<span style="color:skyblue; font-weight:bold">Wait for available location if full</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.as21.common.location.decide.LocationManager&nbsp;</span>
 
