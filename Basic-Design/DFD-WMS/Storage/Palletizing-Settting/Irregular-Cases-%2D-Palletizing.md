@@ -1,7 +1,7 @@
 [[_TOC_]]
 [[_TOSP_]]
 
-#<span style="color:skyblue; font-weight:bold">Summary Flow</span>
+
 ::: mermaid
 flowchart TD  
 ArrivalAt1101[ID26] --> Cond1{Is Location Full?}  
@@ -27,6 +27,10 @@ Cond4 -->|No| DataError2[Data Error] --> BatchEnd[Batch End] --> Move2[ID05]
 - **ARVL** : DNARRIVAL  
 - **STSN** : DMSTATION    
 
+
+
+##<span style="color:skyblue; font-weight:bold">Wait for available location if full</span>
+
 | Action Name                 | STRP   | WRKI   | PLLT   | CRYI   | STCK   | ARRVL  | STSN   | 
 |-----------------------------|--------|--------|--------|--------|--------|--------|--------|
 | ID26(1)                     |
@@ -34,7 +38,6 @@ Cond4 -->|No| DataError2[Data Error] --> BatchEnd[Batch End] --> Move2[ID05]
 | ID25(3)                     |
 | ID26(4)                     |
 
-##<span style="color:skyblue; font-weight:bold">Wait for available location if full</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.as21.common.location.decide.LocationManager&nbsp;</span>
 
 ###<span style="color:skyblue; font-weight:bold">ID26</span>
