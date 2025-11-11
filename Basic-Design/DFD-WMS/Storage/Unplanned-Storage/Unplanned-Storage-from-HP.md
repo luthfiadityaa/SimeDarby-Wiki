@@ -59,7 +59,6 @@ flowchart LR
     ")]
 
     tableList-update[("
-        DMMATERIALMASTER
         DMSTATION
     ")]
 
