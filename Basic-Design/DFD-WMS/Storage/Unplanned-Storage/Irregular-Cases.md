@@ -494,12 +494,12 @@ Press the completion button.
 flowchart LR
 
 buttonlight2["
-The signal tower lights.
-The buzzer sounds.
+The signal tower turns off.
+The buzzer stops.
 "]
 
 buttonlight1["
-Conveyor reverse back
+Press the completion button.
 "]
 
 buttonlight3["
@@ -507,8 +507,7 @@ Storage plan is imported.
 Correct BC label.
 "]
 
-buttonlight1-->buttonlight2-->buttonlight3
+buttonlight3-->buttonlight3-->buttonlight1
 :::
-Press the completion button.
 
 
