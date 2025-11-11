@@ -1338,9 +1338,9 @@ Storage Date will be update by the system in this section represent by <span sty
 | **PLAN_AREA_NO**           | DNWORKINFO.PLAN_AREA_NO
 | **PLAN_LOCATION_NO**       | DNWORKINFO.PLAN_LOCATION_NO
 | **MATERIAL_CODE**          | DNWORKINFO.MATERIAL_CODE
-| **MATERIAL_NAME**          | DMMATERIALMASTER.MATERIAL_NAME
-| **UOM**                    | MMATERIALMASTER.UOM
-| **ENTERING_QTY**           | DMMATERIALMASTER.QTY_CRTN
+| **MATERIAL_NAME**          | DMITEM.MATERIAL_NAME
+| **UOM**                    | DMITEM.UOM
+| **ENTERING_QTY**           | DNWORKINFO.PLAN_QTY
 | **BUNDLE_ENTERING_QTY**    | DNSTORAGEPLAN.PLANNED_CARTON_QTY
 | **PLAN_QTY**               | DNWORKINFO.PLAN_QTY
 | **RESULT_QTY**             | DNWORKINFO.RESULT_QTY
