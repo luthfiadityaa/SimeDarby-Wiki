@@ -33,8 +33,18 @@
 | ID25(11)                       |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        | 
 | ID64(12)                       |        |        |        | UPDATE |        |        |        |        |        |        |        |        | 
 | **Flow 2**                     |        |        |        |        |        |        |        |        |        |        |        |        |  
-| ID64(8)                        |        |        |        |        |        |        |        |        |        |        |        |        | 
-
+| ID64(8)                        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |   
+| ID26(9)                        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |
+| Automatic Change Sender(10)    |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        | 
+| ID25(11)                       |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
+| ID64(12)                       |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
+| ID64(13)                       |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
+| ID26(14)                       |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |       
+| Automatic Change Sender(15)    |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |
+| ID25(16)                       |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
+| ID64(17)                       |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
+| **Last Process**               |        |        |        |        |        |        |        |        |        |        |        |        |        |   
+| ID33(18)                       | UPDATE | UPDATE | UPDATE | UPDATE | DELETE | UPDATE | INSERT |        |        |        | INSERT |        |        |
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage - Set(F2)</span>
 ![image.png](/.attachments/image-6293c4f4-5fd4-4247-8cbc-fbcc6d9cf3a5.png)
