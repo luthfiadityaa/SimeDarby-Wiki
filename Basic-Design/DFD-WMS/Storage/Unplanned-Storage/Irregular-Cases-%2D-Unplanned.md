@@ -26,7 +26,7 @@ Cond2 -->|No| Move2[ID05]
 | Action Name                 | WRKI   | PLLT   | CRYI   | STCK   | ARRVL  | STSN   | 
 |-----------------------------|--------|--------|--------|--------|--------|--------|
 | ID26(1)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
-| AutomaticChangeSender(2)            |        |        | UPDATE |        | UPDATE |        |
+| AutomaticChangeSender(2)    |        |        | UPDATE |        | UPDATE |        |
 | ID25(4)                     |        |        | UPDATE |        | DELETE |        |
 | ID26(5)                     |        | UPDATE | UPDATE |        | INSERT |        |
 | ID54(6)                     |        |        |        |        |        |        |
