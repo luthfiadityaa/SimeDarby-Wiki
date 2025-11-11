@@ -179,7 +179,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 |----------------------------|-----------------------------------------------|
 | **PALLET_ID**              | Sequence Object                                                       
 | **CURRENT_STATION_NO**     | DNARRIVAL.STATION_NO -> <span style="color:green; font-weight:bold">1301 or 1302</span>                                                      
-| **WH_STATION_NO**          | Value from screen (Storage Location) ⟶ <span style="color:green; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>                                                     
+| **WH_STATION_NO**          | Value from screen (Storage Location To) ⟶ <span style="color:green; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>                                                     
 | **STATUS_FLAG**            | 1:Reserved for Storage                                                     
 | **EMPTY_FLAG**             | 0:Normal Pallet                                                        
 | **BCR_DATA**               | Value from screen (Pallet ID)                                                 
