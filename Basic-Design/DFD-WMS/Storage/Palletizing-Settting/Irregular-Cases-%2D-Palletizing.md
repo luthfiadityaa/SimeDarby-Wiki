@@ -27,8 +27,8 @@ Cond4 -->|No| DataError2[Data Error] --> BatchEnd[Batch End] --> Move2[ID05]
 - **ARVL** : DNARRIVAL  
 - **STSN** : DMSTATION    
 
-| Action Name                 | STRP   | WRKI   | WRKL   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | 
-|-----------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| Action Name                 | STRP   | WRKI   | PLLT   | CRYI   | STCK   | ARRVL  | STSN   | 
+|-----------------------------|--------|--------|--------|--------|--------|--------|--------|
 | ID26(1)                     |
 | StorageSender(2)            |
 | ID25(3)                     |
