@@ -8,6 +8,7 @@ If a downtime occurs on one of the lines, manual palletizing will be carried out
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage database flow</span>
 | Action Name                    | WRKI   | WRKL   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | 
 |--------------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| ID63(1)                        |        |        |        |        |        |        |        |        |        |        |        | UPDATE | 
 | Unplanned Storage - SetF2(1)   | INSERT |        |        |        |        |        |        |        |        |        | SELECT |        |  
 | ID26[(2)                       |        |        | INSERT | INSERT | INSERT |        | INSERT |        |        |        |        | SELECT |  
 | Automatic Change Sender(3)     | UPDATE |        | UPDATE | UPDATE | UPDATE |        | UPDATE | UPDATE | UPDATE |        |        |        |    
