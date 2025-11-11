@@ -31,7 +31,7 @@
 | ID26(9)                        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |
 | Automatic Change Sender(10)    |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        | 
 | ID25(11)                       |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        | 
-| ID64(12)                       |        |        |        |        |  |        |        |        |        |        |        |        |        |
+| ID64(12)                       |        |        |        | UPDATE |        |        |        |        |        |        |        |        | 
 | **Flow 2**                     |        |        |        |        |        |        |        |        |        |        |        |        |        |   
 | ID64(8)                        |        |        |        |        | |        |        |        |        |        |        |        |        |   
 
