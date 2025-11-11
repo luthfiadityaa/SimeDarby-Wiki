@@ -47,7 +47,7 @@
 | ID33(18)                       | UPDATE | INSERT | UPDATE | DELETE | UPDATE | INSERT |        |        | UPDATE | INSERT |        |        |
 
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
-##<span style="color:skyblue; font-weight:bold">ID61</span>
+##<span style="color:skyblue; font-weight:bold">ID63</span>
 If the station mode is **Retrieval Mode**, change the mode of the station to **Storage mode**.
 ::: mermaid
 flowchart LR
@@ -56,16 +56,13 @@ flowchart LR
     ]
 
     id61msg("
-     ID61
+     ID63
     ")
     tableList-update[("
         DMSTATION
     ")]
 
-
-    className[StationOperator]
-
-    input -->id61msg-->id61process--> className --> |UPDATE| tableList-update
+    input -->id61msg-->id63process--> |UPDATE| tableList-update
 
     classDef leftAlign text-align:left;
     class input leftAlign;
