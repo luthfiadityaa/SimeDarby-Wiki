@@ -66,16 +66,10 @@ flowchart LR
     ]
 
     tableList-insert[("
-        DNPALLET
-        DNSTOCK
-        DNWORKINFO
-        DNWORKLIST
-        DNHOSTSEND
         DNCARRYINFO
     ")]
 
     tableList-select[("
-        DMSTATION
         DMTOSTATION
     ")]
 
