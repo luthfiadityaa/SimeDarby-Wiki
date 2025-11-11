@@ -201,7 +201,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **PALLET_ID**              | Sequence Object
 | **BATCH_NO**               | Value from screen (Batch No) 
 | **TEMPERING_PERIOD**       | Value from screen (Tempering Period)
-| **STORING_PAIR_KEY**       | <span style="color:green; font-weight:bold">DNPALLETIZE.MATERIAL_CODE + DNPALLETIZE.BATCH_NO </span>
+| **STORING_PAIR_KEY**       | <span style="color:green; font-weight:bold">DNWORKINFO.MATERIAL_CODE + DNWORKINFO.BATCH_NO </span>
 | **EXPIRY_DATE**            | Value from screen (Expiry Days)
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
