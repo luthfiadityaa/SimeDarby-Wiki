@@ -493,26 +493,21 @@ Press the completion button.
 ::: mermaid
 flowchart LR
 
-id50msg("
-ID 54
-")
-
-buttonlight["
+buttonlight2["
 The signal tower lights.
 The buzzer sounds.
 "]
 
-buttonlight["
+buttonlight1["
 Conveyor reverse back
 "]
 
-buttonlight["
+buttonlight3["
 Storage plan is imported.
 Correct BC label.
 "]
 
-id50msg --> As21Id54
-As21Id54 --> buttonlight
+buttonlight1-->buttonlight2-->buttonlight3
 :::
 Press the completion button.
 
