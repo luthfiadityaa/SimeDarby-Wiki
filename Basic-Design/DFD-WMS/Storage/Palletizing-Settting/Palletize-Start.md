@@ -1340,7 +1340,7 @@ Storage Date will be update by the system in this section represent by <span sty
 | **MATERIAL_CODE**          | DNWORKINFO.MATERIAL_CODE
 | **MATERIAL_NAME**          | DMITEM.MATERIAL_NAME
 | **UOM**                    | DMITEM.UOM
-| **ENTERING_QTY**           | DNWORKINFO.PLAN_QTY
+| **ENTERING_QTY**           | DNSTORAGEPLAN.QTY_CRTN_PL
 | **BUNDLE_ENTERING_QTY**    | DNSTORAGEPLAN.PLANNED_CARTON_QTY
 | **PLAN_QTY**               | DNWORKINFO.PLAN_QTY
 | **RESULT_QTY**             | DNWORKINFO.RESULT_QTY
