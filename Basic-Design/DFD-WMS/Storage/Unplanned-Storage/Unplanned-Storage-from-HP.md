@@ -54,10 +54,6 @@ flowchart LR
         Operators pressed the storage mode button on the operation box.      
     ]
 
-    tableList-insert[("
-        DNWORKINFO
-    ")]
-
     tableList-update[("
         DMSTATION
     ")]
