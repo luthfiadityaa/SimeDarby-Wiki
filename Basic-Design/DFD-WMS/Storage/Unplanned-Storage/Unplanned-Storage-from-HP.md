@@ -116,7 +116,7 @@ This section explains the validations for the whole proccess Palletize Start
 | **QTY_CRTN_PL**            | Value from screen (Qty crtn/PL)  
 | **UOM**                    | Value from screen (UOM)
 | **TEMPERING_PERIOD**       | Value from screen (Tempering Period)
-| **EXPIRY_DAYS**       | Value from screen (Tempering Period)
+| **EXPIRY_DAYS**            | Value from screen (Expiry Days)
 | **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **USER_ID**                | Login Info
 | **STORAGE_LOCATION_FROM**  | Value from screen (Storage Location From) ⟶ <span style="color:green; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span> 
