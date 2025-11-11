@@ -110,7 +110,7 @@ flowchart LR
     ")]
 
     tableList-select[("
-        DMMATERIALMASTER
+        DMITEM
         DMTOSTATION
     ")]
 
