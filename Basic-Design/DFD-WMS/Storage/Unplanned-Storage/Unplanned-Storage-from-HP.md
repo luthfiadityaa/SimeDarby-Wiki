@@ -29,8 +29,8 @@
 | **Flow 1**                     |        |        |        |        |        |        |        |        |        |        |        |        | 
 | ID64[(8)]                      |        |        |        | UPDATE |        |        |        |        |        |        |        |        | 
 | ID26(9)                        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |
-| Automatic Change Sender(10)    |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        | 
-| ID25(11)                       |        |        |        |        | |        |        |  |        |        |        |        |  
+| Automatic Change Sender(10)    |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        | 
+| ID25(11)                       |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        | 
 | ID64(12)                       |        |        |        |        |  |        |        |        |        |        |        |        |        |
 | **Flow 2**                     |        |        |        |        |        |        |        |        |        |        |        |        |        |   
 | ID64(8)                        |        |        |        |        | |        |        |        |        |        |        |        |        |   
