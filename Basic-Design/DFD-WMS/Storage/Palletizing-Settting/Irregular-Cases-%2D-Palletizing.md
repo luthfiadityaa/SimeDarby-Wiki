@@ -365,7 +365,7 @@ Palletizing Completion("0":Normal Completion)</span>
 | ID54(5)                     |        |        |        |        |        |        |
 | StorageSender(6)            |        |        | UPDATE |        | UPDATE |        |
 | ID25(7)                     |        |        | UPDATE |        | DELETE |        |
-| ID26(8)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
+| ID26(8)                     | DELETE | DELETE | DELETE | DELETE | DELETE |        |
 
 ###<span style="color:skyblue; font-weight:bold">ID26</span>
 
