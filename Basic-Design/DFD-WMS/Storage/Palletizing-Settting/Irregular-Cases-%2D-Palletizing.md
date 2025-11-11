@@ -21,17 +21,11 @@ Cond4 -->|No| DataError2[Data Error] --> BatchEnd[Batch End] --> Move2[ID05]
 **Abbreviation:**
 - **STRP** : DNSTORAGEPLAN  
 - **WRKI** : DNWORKINFO  
-- **WRKL** : DNWORKINFOLIST  
 - **PLLT** : DNPALLET  
 - **CRYI** : DNCARRYINFO  
 - **STCK** : DNSTOCK  
-- **HSTS** : DNHOSTSEND  
 - **ARVL** : DNARRIVAL  
-- **WRHS** : DMWAREHOUSE  
-- **SHLF** : DMSHELF  
-- **MTMS** : DMATERIALMASTER  
-- **STSN** : DMSTATION  
-- **STCH** : DNSTOCKHISTORY  
+- **STSN** : DMSTATION    
 
 | Action Name                 | STRP   | WRKI   | WRKL   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | 
 |-----------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
