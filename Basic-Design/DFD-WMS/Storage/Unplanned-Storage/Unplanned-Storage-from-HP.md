@@ -88,7 +88,7 @@ flowchart LR
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
-####<span style="color:skyblue; font-weight:bold">DMSTATION</span>
+####<span style="color:skyblue; font-weight:bold">DMStation</span>
 | **Filed Name**            | **Insert Value**                               |
 | --------------------------|----------------------------------------------|
 | **CURRENT_MODE**          | 1:Storage Mode
