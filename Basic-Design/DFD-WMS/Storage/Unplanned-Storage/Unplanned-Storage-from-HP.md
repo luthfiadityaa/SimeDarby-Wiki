@@ -293,7 +293,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | ClassName
 
-#<span style="color:skyblue; font-weight:bold">Automatic Mode Change Sender</span>
+#<span style="color:skyblue; font-weight:bold">StorageSender</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.AutomaticModeChangeSender &nbsp;</span>
 
 ::: mermaid
