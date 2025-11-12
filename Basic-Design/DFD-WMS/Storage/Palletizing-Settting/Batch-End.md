@@ -65,7 +65,7 @@ P23[ID64]--> |9011-9014| P14[ID33]
 
 | Action Name                                                |STRP|WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|MTMS|STSN| 
 |------------------------------------------------------------|----|----|----|----|----|----|----|-----|----|----|----|----|----|
-| Palletize Start - SetF2 [(1)](#Palletize-Start---Set(F2))  | I  |    |    |    |    |    |    |     |    |    |    | S  | S  |    
+| Palletize Start - SetF2 [(1)](#Palletize-Start---Set(F2))  | S  |    |    |    |    |    |    |     |    |    |    | S  | S  |    
 | ID26 [(2)](#ID26-at-1101-1105)                             |    | I  |    | I  | I  | I  |    | I   |    |    |    |    |    |    
 | Storage Sender [(3)](#Storage-Sender-at-1101-1105)         |    |    |    |    | U  |    |    | U   |    |    |    |    |    |    
 | ID25 [(4)](#ID25-at-1101-1105)                             |    |    |    |    | U  |    |    | D   |    |    |    |    |    |    
@@ -89,7 +89,7 @@ P23[ID64]--> |9011-9014| P14[ID33]
 | ID25 [(16)](#ID25-at-7211-7214)                            |    |    |    |    | U  |    |    | D   |    |    |    |    |    |
 | ID64 [(17)](#ID64-at-SRM-to-9002)                          |    |    |    |    | U  |    |    |     |    |    |    |    |    |
 | **Last Process**                                           |    |    |    |    |    |    |    |     |    |    |    |    |    |
-| ID33 [(18)](#ID33)                                         | U  | U  | U  | U  | D  | U  | I  |     |    |  U | I  |    |    |  
+| ID33 [(18)](#ID33)                                         | U  | U  | I  | U  | D  | U  | I  |     |    |  U | I  |    |    |  
 
 #<span style="color:skyblue; font-weight:bold">Batch End - Set(F2)</span>
   
