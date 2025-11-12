@@ -464,13 +464,9 @@ Continue the process  <span style="color:green; font-weight:bold">storage</span
 | **WORK_TYPE**                  | 2: Storage
 | **CMD_STATUS**                 | 1:Started 
 | **PRIORITY**                   | 2:Normal
-| **RESTORING_FLAG**             | 0:Not Restore to Original Location
 | **CARRY_FLAG**                 | 1: Storage
-| **WORK_NO**                    | Sequence Object
 | **SOURCE_STATION_NO**          | DNPALLET.CURRENT_STATION_NO ⟶ **(7207/7208/7209/7210)**
 | **DEST_STATION_NO**            | Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ **(9007/9008/9009/9010)**
-| **CANCEL_REQUEST**             | 0:Not Requested
-| **SCHEDULE_NO**                | Sequence Object
 | **END_STATION_NO**             | DNWORKINFO.PLAN_AREA_NO
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | ClassName
