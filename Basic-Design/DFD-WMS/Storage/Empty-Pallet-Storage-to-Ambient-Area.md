@@ -163,8 +163,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **DEST_STATION_NO**            | Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ **(7207/7208/7209/7210)**
 | **CANCEL_REQUEST**             | 0:Not Requested
 | **SCHEDULE_NO**                | Sequence Object
-| **AISLE_STATION_NO**           | DNWORKINFO.AISLE_STATION_NO
-| **END_STATION_NO**             | DNWORKINFO.PLAN_LOCATION_NO
+| **END_STATION_NO**             | DNCARRYINFO.DEST_STATION_NO
 | **REGIST_DATE**                | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**               | ClassName
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
@@ -270,7 +269,6 @@ DNCARRYINFO
 DMWAREHOUSE
 DMSHELF
 DNPALLET
-DNWORKINFO
 ")]
 automaticmodechangesender-input[("
 DNARRIVAL
@@ -311,15 +309,6 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **CMD_STATUS**                     | 2:Waiting for response
 | **LAST_UPDATE_DATE**               | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**              | Class name
-
-
-####<span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
-| **Column Name**                | **Description / Notes**                               |
-|--------------------------------|-------------------------------------------------------|
-| **STATUS_FLAG**                | 1: Working 
-| **PLAN_LOCATION_NO**           | Reserved Location Number
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNPALLET</span>
 | **Column Name**                | **Description / Notes**                               |
@@ -467,7 +456,7 @@ Continue the process  <span style="color:green; font-weight:bold">storage</span
 | **CARRY_FLAG**                 | 1: Storage
 | **SOURCE_STATION_NO**          | DNPALLET.CURRENT_STATION_NO ⟶ **(7207/7208/7209/7210)**
 | **DEST_STATION_NO**            | Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ **(9007/9008/9009/9010)**
-| **END_STATION_NO**             | DNWORKINFO.PLAN_AREA_NO
+| **END_STATION_NO**             | DNCARRYINFO.DEST_STATION_NO
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | ClassName
 
