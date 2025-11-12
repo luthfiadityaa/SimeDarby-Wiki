@@ -88,7 +88,7 @@ P23[ID64]--> |9011-9014| P14[ID33]
 | **Last Process**                                            |    |    |    |    |    |    |    |     |    |    |    |    |    |
 | ID33 [(18)](#ID33)                                          | U  | U  | U  | U  | D  | U  | I  |     |    |  U | I  |    |    |  
 | **Host Communication**                                      |    |    |    |    |    |    |    |     |    |    |    |    |    |
-| Production Storage Result [(19)](#Production-Storage-Result)| U  | U  | U  | U  | D  | U  | I  |     |    |  U | I  |    |    | 
+| Production Storage Result [(19)](#Production-Storage-Result)|    |    |    |    |    |    |    |     |    |    |    |    |    | 
 
 #Palletize Start - Set(F2)
 Palletize Start is used to set the information of stock which will be palletized by robot automatically. After **Set(F2)**, all items in input text will be added into a Pallet Number. The result will be posted back to SAP as [Production Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)
