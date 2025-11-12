@@ -32,7 +32,7 @@
 |-----------|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | [Empty Pallet - Set (F2)]() | I| | | | | | | | | | | S | S |
 | [ID26]() | U | I | I | I | I | | I | | | | |
-| [Storage Sender]() | | | | U | | U | U | U | | | |
+| [Storage Sender]() | U | | | U | |  | U | U | U | | |
 | [ID25]() | | | | | UPDATE | | | UPDATE | | | |
 | [ID64]() | | | | | UPDATE | | | | | | |
 | [ID26]() | | | | |INSERT | | | INSERT | | | |
