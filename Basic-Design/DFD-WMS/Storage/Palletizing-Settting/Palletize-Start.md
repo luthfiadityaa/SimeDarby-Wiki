@@ -57,9 +57,9 @@ P23[ID64]-->P14[ID33]
 | ID25 [(11)](#ID25-at-7107---7110)                    |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
 | ID64 [(12)](#ID64-at-STV-from-7107---7110)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
 | ID64 [(13)](#ID64-at-SRM-from-7107---7110)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
-| ID26 [(14)](#ID25-at-7211---7214)                    |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |       
+| ID26 [(14)](#ID26-at-7211---7214)                    |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |       
 | Storage Sender [(15)](#Storage-Sender-at-7211---7214)          |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |
-| ID25 [(16)](#)                    |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
+| ID25 [(16)](#ID25-at-7211---7214)                    |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
 | ID64 [(17)](#)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
 | **Last Process**            |        |        |        |        |        |        |        |        |        |        |        |        |        |   
 | ID33 [(18)](#ID33)                    | UPDATE | UPDATE | UPDATE | UPDATE | DELETE | UPDATE | INSERT |        |        |        | INSERT |        |        |  
