@@ -899,11 +899,9 @@ Upon equipment <span style="color:green; font-weight:bold">STV</span> have picke
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Field Name**            | **Insert Value**                              |
-|---------------------------|-----------------------------------------------|
-| **CMD_STATUS**            | 4:Pickup completed
-| **LAST_UPDATE_DATE**      | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME** 	| Class name
+*   **CMD_STATUS** → 4: Pickup completed    
+*   **LAST_UPDATE_DATE** → SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME** → Class name
 
 ##<span style="color:skyblue; font-weight:bold">ID26&nbsp;&nbsp;</span>
 
