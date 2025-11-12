@@ -27,7 +27,6 @@ P9[ID64]--> |7107-7110| P15[ID26]-->P16[StorageSender]-->P17[ID25]-->P18[ID64]
 ::: mermaid
 flowchart LR
 
-Cond2{Flow?}
 P18[ID64]-->P19[ID64]--> |7211-7212| P20[ID26]-->P21[StorageSender]-->P22[ID25]-->P23[ID64]
 
 P13[ID64]-->P14[ID33]
