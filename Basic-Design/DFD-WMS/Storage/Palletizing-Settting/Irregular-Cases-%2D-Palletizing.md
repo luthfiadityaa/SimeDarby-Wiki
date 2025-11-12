@@ -283,7 +283,7 @@ releaseCommand3["
 An empty location becomes available. 
 "]
 
-storageStationOperator[InOutStationOperator]
+storageStationOperator[StorageStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert-->releaseCommand4
@@ -389,7 +389,7 @@ id26-insert[("
    DNSTOCK		
 ")]
 
-storageStationOperator[InOutStationOperator]
+storageStationOperator[StorageStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
@@ -619,7 +619,7 @@ DNPALLET
 DNCARRYINFO
 ")];
 
-storageStationOperator[InOutStationOperator]
+storageStationOperator[StorageStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
@@ -795,7 +795,7 @@ id26-delete[("
    DNSTOCK		
 ")]
 
-storageStationOperator[InOutStationOperator]
+storageStationOperator[StorageStationOperator]
 
 releaseCommand2["
 Press the completion button after removing the pallet.
@@ -853,7 +853,7 @@ id26-insert[("
    DNSTOCK		
 ")]
 
-storageStationOperator[InOutStationOperator]
+storageStationOperator[StorageStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
@@ -1047,7 +1047,7 @@ id26-insert[("
    DNSTOCK		
 ")]
 
-storageStationOperator[InOutStationOperator]
+storageStationOperator[StorageStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
@@ -1263,7 +1263,7 @@ releaseCommand2["
 Force Complete.
 "]
 
-storageStationOperator[InOutStationOperator]
+storageStationOperator[StorageStationOperator]
 
 releaseCommand-->releaseCommand2-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
