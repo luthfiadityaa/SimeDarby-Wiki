@@ -151,36 +151,34 @@ This section explains the validations for the whole proccess Batch End
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-----------------------------------------------|
-| **PLAN_UKEY**              | Sequence Object
-| **STATION_NO**             | Data Last Pallet (STATION_NO)
-| **CURRENT_STATUS**         | Data Last Pallet (CURRENT_STATUS)                                                     
-| **STATUS_FLAG**            | 1:Working                                                       
-| **CANCEL_FLAG**            | 0:Normal Data                                                      
-| **PLAN_DAY**               | Data Last Pallet (STORAGE_DATE_TIME)                                                       
-| **PLAN_AREA_NO**           | Data Last Pallet (STORAGE_LOCATION)
-| **PLANNED_CARTON_QTY**     | Data Last Pallet (PLANNED_CARTON_QTY)
-| **QTY_KG_CRTN**            | Data Last Pallet (QTY_KG_CRTN)                             
-| **MATERIAL_CODE**          | Data Last Pallet (MATERIAL_CODE)
-| **MATERIAL_NAME**          | Data Last Pallet (MATERIAL_NAME)
-| **MATERIAL_TYPE**          | Data Last Pallet (MATERIAL_TYPE)
-| **BATCH_NO**               | Data Last Pallet (BATCH_NO)                                                    
-| **PLAN_QTY**               | Data Last Pallet (QTY_CRTN_PL)                                               
-| **REPORT_FLAG**            | 0:Not Reported                                                   
-| **STORING_PAIR_KEY**       | Data Last Pallet (MATERIAL_CODE + BATCH_NO)
-| **UOM**                    | Data Last Pallet (UOM)
-| **TEMPERING_PERIOD**       | Data Last Pallet (TEMPERING PERIOD)
-| **EXPIRY_DAYS**            | Data Last Pallet (EXPIRY_DAYS)
-| **STORAGE_QTY**            | <span style="color:green; font-weight:bold"> Data Last Pallet (PLANNED_CARTON_QTY - TOTAL_ACTUAL_CARTON_QTY)</span>
-| **TOTAL_ACTUAL_CARTON_QTY**| <span style="color:green; font-weight:bold"> Data Last Pallet (TOTAL_ACTUAL_CARTON_QTY - QTY_CRTN)</
-| **MAX_PALLET_BATCH_END**   | Data Last Pallet (PALLET_CARTON_QTY / QTY_CRTN_PL)
-| **BATCH_PALLET_START**     | Data Last Pallet (STORAGE_DATE_TIME + Time value (System Generated))
-| **BATCH_PALLET_END**       | <span style="color:green; font-weight:bold">SYSTIMESTAMP</span>
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
+* **PLAN_UKEY**: Sequence Object 
+* **STATION_NO**: Data Last Pallet (STATION_NO) 
+* **CURRENT_STATUS**: Data Last Pallet (CURRENT_STATUS) 
+* **STATUS_FLAG**: 1:Working 
+* **CANCEL_FLAG**: 0:Normal Data 
+* **PLAN_DAY**: Data Last Pallet (STORAGE_DATE_TIME) 
+* **PLAN_AREA_NO**: Data Last Pallet (STORAGE_LOCATION) 
+* **PLANNED_CARTON_QTY**: Data Last Pallet (PLANNED_CARTON_QTY) 
+* **QTY_KG_CRTN**: Data Last Pallet (QTY_KG_CRTN) 
+* **MATERIAL_CODE**: Data Last Pallet (MATERIAL_CODE) 
+* **MATERIAL_NAME**: Data Last Pallet (MATERIAL_NAME) 
+* **MATERIAL_TYPE**: Data Last Pallet (MATERIAL_TYPE)
+* **BATCH_NO**: Data Last Pallet (BATCH_NO) 
+* **PLAN_QTY**: Data Last Pallet (QTY_CRTN_PL) 
+* **REPORT_FLAG**: 0:Not Reported 
+* **STORING_PAIR_KEY**: Data Last Pallet (MATERIAL_CODE + BATCH_NO) 
+* **UOM**: Data Last Pallet (UOM) 
+* **TEMPERING_PERIOD**: Data Last Pallet (TEMPERING PERIOD) 
+* **EXPIRY_DAYS**: Data Last Pallet (EXPIRY_DAYS) 
+* **STORAGE_QTY**: <span style="color:green; font-weight:bold">Data Last Pallet (PLANNED_CARTON_QTY - TOTAL_ACTUAL_CARTON_QTY)</span> 
+* **TOTAL_ACTUAL_CARTON_QTY**: <span style="color:green; font-weight:bold">Data Last Pallet (TOTAL_ACTUAL_CARTON_QTY - QTY_CRTN)</span> 
+* **MAX_PALLET_BATCH_END**: Data Last Pallet (PALLET_CARTON_QTY / QTY_CRTN_PL) 
+* **BATCH_PALLET_START**: Data Last Pallet (STORAGE_DATE_TIME + Time value (System Generated)) 
+* **BATCH_PALLET_END**: <span style="color:green; font-weight:bold">SYSTIMESTAMP</span> 
+* **REGIST_DATE**: SYSTIMESTAMP 
+* **REGIST_PNAME**: ClassName 
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP 
+* **LAST_UPDATE_PNAME**: ClassName
 
 <br>
 <hr style="border: 2px solid red;">
