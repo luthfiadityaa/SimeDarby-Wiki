@@ -549,8 +549,8 @@ Upon equipment <span style="color:green; font-weight:bold">(STV)</span> have pic
 *   **LAST_UPDATE_PNAME** → Class name
 
 #<span style="color:skyblue; font-weight:bold">Continue Process with</span>
-- ###[Flow 1 : not through crane 7-10 ](#Flow-1-:-not-through-crane-7---10)
-- ###[Flow 2 : through crane 7 10](#Flow-2-:-through-crane-7---10)
+- ###[Flow 1 : not through crane 7-10](#Flow-1-:-not-through-crane-7-10)
+- ###[Flow 2 : through crane 7 10](#Flow-2-:-through-crane-7-10)
 
 <hr>
 
