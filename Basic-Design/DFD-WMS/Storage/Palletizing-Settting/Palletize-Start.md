@@ -2,18 +2,18 @@
 [[_TOSP_]]
 
 #<span style="color:skyblue; font-weight:bold">Summary Flow</span>
+**Stage 1**
 ::: mermaid
 flowchart LR
-Stage 1
 
 P1[Palletizing Start]--> |1101-1105| P2[ID26]-->P3[StorageSender]-->P4[ID25]
 P4[ID25]--> |1111-1115| P5[ID26]-->P6[StorageSender]-->P7[ID25]
 P7[ID25]-->Cond1{Flow?} 
 :::
 
+**Stage 2**
 ::: mermaid
 flowchart LR
-Stage 2
 
 Cond2{Flow?}
 
