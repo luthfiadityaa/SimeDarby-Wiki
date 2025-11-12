@@ -4,6 +4,7 @@
 #<span style="color:skyblue; font-weight:bold">Summary Flow</span>
 ::: mermaid
 flowchart LR
+Stage 1
 
 P1[Palletizing Start]--> |1101-1105| P2[ID26]-->P3[StorageSender]-->P4[ID25]
 P4[ID25]--> |1111-1115| P5[ID26]-->P6[StorageSender]-->P7[ID25]
@@ -12,6 +13,7 @@ P7[ID25]-->Cond1{Flow?}
 
 ::: mermaid
 flowchart LR
+Stage 2
 
 Cond2{Flow?}
 
@@ -26,6 +28,7 @@ P9[ID64]--> |7107-7110| P15[ID26]-->P16[StorageSender]-->P17[ID25]-->P18[ID64]
 
 ::: mermaid
 flowchart LR
+Stage 3
 
 P18[ID64]-->P19[ID64]--> |7211-7212| P20[ID26]-->P21[StorageSender]-->P22[ID25]-->P23[ID64]
 
