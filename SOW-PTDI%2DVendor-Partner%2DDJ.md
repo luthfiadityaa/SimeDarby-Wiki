@@ -14,7 +14,7 @@
 |-----------------------|------|----------------|----|
 | Writing Linkage Specs |  ○   |        ○       |    |    
 | File Table Specs      |  ○   |        ○       |    |
-| Data Transition       |  o   |                | ○  |
+| Data Transition       |  ○   |                | ○  |
 | Job Flow              |  ○   |                | ○  |
 
 
@@ -27,8 +27,8 @@
 # Combined Test
 |                  | PTDI | Vendor Partner | DJ |
 |------------------|------|----------------|----|
-| Writing scenario | ○    |       o        |    |
-| Combined Test    | ○    |       o        |    |
+| Writing scenario | ○    |       ○        |    |
+| Combined Test    | ○    |       ○        |    |
 
 # Mockup Test
 |                  | PTDI | Vendor Partner | DJ |
