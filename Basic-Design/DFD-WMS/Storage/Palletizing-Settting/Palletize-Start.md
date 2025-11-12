@@ -38,7 +38,7 @@ P23[ID64]-->P14[ID33]
 | Action Name                 | STRP   | WRKI   | WRKL   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | 
 |-----------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
 | Palletize Start - SetF2 [(1)](#Palletize&nbsp;Start&nbsp;-&nbsp;Set(F2))  | INSERT |        |        |        |        |        |        |        |        |        |        | SELECT | SELECT |    
-| ID26[(2)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid26%3C/span%3E)                     |        | INSERT |        | INSERT | INSERT | INSERT |        | INSERT |        |        |        |        |        |    
+| ID26[(2)](#ID26&nbsp;at&nbsp;1101-1105)                     |        | INSERT |        | INSERT | INSERT | INSERT |        | INSERT |        |        |        |        |        |    
 | Storage Sender[(3)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Estorage-sender%3C/span%3E)           |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |    
 | ID25[(4)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid25%3C/span%3E)                     |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |    
 | ID26[(5)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Palletizing%20Settting/Palletize%20Start&pageId=886&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid26%26nbsp%3B%3C/span%3E)                     |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |    
@@ -172,7 +172,7 @@ Continue this flow if occurs.
 - [Wait for Batch Start. Treat as Data Error](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/951/Irregular-Cases-Palletizing?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Ewait-for-batch-start.-treat-as-data-error%3C/span%3E)
 <hr style="border: 2px solid red;">
 
-##<span style="color:skyblue; font-weight:bold">ID26</span>
+##ID26&nbsp;at&nbsp;1101-1105
 
 ::: mermaid
 flowchart LR
