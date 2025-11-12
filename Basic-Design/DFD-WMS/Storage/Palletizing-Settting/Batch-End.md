@@ -227,10 +227,8 @@ id33process--> |DELETE| id33-delete
 ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage operation of the pallet is completed by SRM.
 
 ####<span style="color:skyblue; font-weight:bold">DMShelf</span>
-| **Field Name**             | **Insert Value**                                      |
-|----------------------------|-------------------------------------------------------|
-| **STATUS_FLAG**            | 1: Occupied
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+* **STATUS_FLAG**: 1: Occupied 
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
 
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
 | **Field Name**             | **Insert Value**                                      |
