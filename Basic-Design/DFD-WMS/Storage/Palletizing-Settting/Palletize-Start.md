@@ -57,7 +57,7 @@ P23[ID64]-->P14[ID33]
 | ID25 [(11)](#ID25-at-7107---7110)                    |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
 | ID64 [(12)](#ID64-at-STV-from-7107---7110)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
 | ID64 [(13)](#ID64-at-SRM-from-7107---7110)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
-| ID26[(14)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Palletizing%20Settting/Palletize%20Start&pageId=886&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid26%26nbsp%3B%26nbsp%3B%3C/span%3E)                    |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |       
+| ID26 [(14)]()                    |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |       
 | Storage Sender [(15)]()          |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |
 | ID25 [(16)](#)                    |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
 | ID64 [(17)](#)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
