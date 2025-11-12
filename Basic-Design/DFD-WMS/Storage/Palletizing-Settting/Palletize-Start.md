@@ -4,12 +4,6 @@
 #<span style="color:skyblue; font-weight:bold">Summary Flow</span>
 ::: mermaid
 flowchart LR
- 
-subgraph Section 1
-P1[Palletizing Start]--> |1101-1105| P2[ID26]-->P3[StorageSender]-->P4[ID25]
-P4[ID25]--> |1111-1115| P5[ID26]-->P6[StorageSender]-->P7[ID25]
-P7[ID25]-->Cond1{Flow?} 
-end  
 
 subgraph Section 2
 direction LR
@@ -26,6 +20,12 @@ P9[ID64]--> |7107-7110| P15[ID26]-->P16[StorageSender]-->P17[ID25]-->P18[ID64]--
 P13[ID64]-->P14[ID33]
 P23[ID64]-->P14[ID33]
 end
+
+subgraph Section 1
+P1[Palletizing Start]--> |1101-1105| P2[ID26]-->P3[StorageSender]-->P4[ID25]
+P4[ID25]--> |1111-1115| P5[ID26]-->P6[StorageSender]-->P7[ID25]
+P7[ID25]-->Cond1{Flow?} 
+end  
 :::
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start database flow</span>
