@@ -774,18 +774,15 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 *   **LAST_UPDATE_PNAME** → ClassName
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Field Name**                | **Insert Value**                               |
-|--------------------------------|-----------------------------------------------|
-| **WORK_TYPE**                  | 26:Direct Transfer
-| **CMD_STATUS**                 | 1:Started 
-| **CARRY_FLAG**                 | 3: Direct Transfer
-| **SOURCE_STATION_NO**          | DNARRIVAL.STATION_NO ⟶ <span style="color:green; font-weight:bold">(7107, 7108, 7109, 7110)</span>
-| **DEST_STATION_NO**            | <span style="color:green; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (7211, 7212, 7213, 7214)</span>
-| **REGIST_DATE**                | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**               | ClassName
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | ClassName
-
+*   **WORK_TYPE** → 26:Direct Transfer    
+*   **CMD_STATUS** → 1:Started    
+*   **CARRY_FLAG** → 3:Direct Transfer    
+*   **SOURCE_STATION_NO** → DNARRIVAL.STATION_NO ⟶ **(7107, 7108, 7109, 7110)**    
+*   **DEST_STATION_NO** → **Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (7211, 7212, 7213, 7214)**    
+*   **REGIST_DATE** → SYSTIMESTAMP    
+*   **REGIST_PNAME** → ClassName    
+*   **LAST_UPDATE_DATE** → SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME** → ClassName
 
 ##<span style="color:skyblue; font-weight:bold">StorageSender&nbsp;&nbsp;</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
