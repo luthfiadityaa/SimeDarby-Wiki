@@ -231,14 +231,12 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
-| **Field Name**             | **Insert Value**                                      |
-|----------------------------|-------------------------------------------------------|
-| **CURRENT_STATION_NO**     | Location Number information from ID33
-| **STATUS_FLAG**            | 2:Occupied
-| **ALLOCATION_FLAG**        | 0:Not allocated
-| **LAST_STORED_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | Class name
+* **CURRENT_STATION_NO**: Location Number information from ID33 
+* **STATUS_FLAG**: 2:Occupied 
+* **ALLOCATION_FLAG**: 0:Not allocated 
+* **LAST_STORED_DATE**: SYSTIMESTAMP 
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP 
+* **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 | **Field Name**             | **Insert Value**                                      |
