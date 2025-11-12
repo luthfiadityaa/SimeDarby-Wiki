@@ -37,7 +37,7 @@ P23[ID64]-->P14[ID33]
 
 | Action Name                 | STRP   | WRKI   | WRKL   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | 
 |-----------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
-| Palletize Start - SetF2 [1](#Palletize Start - SetF2)  | INSERT |        |        |        |        |        |        |        |        |        |        | SELECT | SELECT |    
+| Palletize Start - SetF2 [1](#Palletize&nbsp;Start&nbsp;-&nbsp;Set(F2))  | INSERT |        |        |        |        |        |        |        |        |        |        | SELECT | SELECT |    
 | ID26[(2)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid26%3C/span%3E)                     |        | INSERT |        | INSERT | INSERT | INSERT |        | INSERT |        |        |        |        |        |    
 | Storage Sender[(3)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Estorage-sender%3C/span%3E)           |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |    
 | ID25[(4)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid25%3C/span%3E)                     |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |    
@@ -64,7 +64,7 @@ P23[ID64]-->P14[ID33]
 | **Last Process**            |        |        |        |        |        |        |        |        |        |        |        |        |        |   
 | ID33[(18)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Palletizing%20Settting/Palletize%20Start&pageId=886&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid33%3C/span%3E)                    | UPDATE | UPDATE | UPDATE | UPDATE | DELETE | UPDATE | INSERT |        |        |        | INSERT |        |        |  
 
-#Palletize&nbsp;Start&nbsp;-&nbsp;Set(F2)
+# 
 
 Palletize Start is used to set the information of stock which will be palletized by robot automatically. After **Set(F2)**, all items in input text will be added into a Pallet Number. The result will be posted back to SAP as [Production Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)
 
