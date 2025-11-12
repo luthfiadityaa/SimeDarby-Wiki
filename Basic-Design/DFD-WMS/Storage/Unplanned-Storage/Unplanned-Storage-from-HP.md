@@ -8,7 +8,7 @@
 ::: mermaid
 flowchart LR
   
-P1[FROM HP STATION - 1301 & 1302]-->P2[ID26]-->P3[AutomaticChangeSender]-->P4[ID25]-->P7[ID25]
+P1[FROM HP STATION - 1301 & 1302]-->P2[ID26]-->P3[StorageSender]-->P4[ID25]-->P7[ID25]
 P7[ID25]-->Cond1{Flow?} 
 Cond1 --> |Flow 1: Without going 
 through crane 7~10| P8[ID64]
