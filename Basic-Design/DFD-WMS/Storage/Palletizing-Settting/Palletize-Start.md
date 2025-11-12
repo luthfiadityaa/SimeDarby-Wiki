@@ -1007,7 +1007,6 @@ After successful creation of arrival record in <span style="color:green; font-we
 *   **LAST_UPDATE_PNAME** → Class name
 
 ##ID25 at 7211-7214
-
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process &nbsp;</span>
 
 ::: mermaid
