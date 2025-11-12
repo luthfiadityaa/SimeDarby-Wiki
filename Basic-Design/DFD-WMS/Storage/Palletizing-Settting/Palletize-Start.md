@@ -518,7 +518,7 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 
 #<span style="color:skyblue; font-weight:bold">Continue Process with</span>
 - ###[Flow 1 : not through crane 7-10 ](#Flow-1-:-not-through-crane-7---10)
-- ###[Flow 2](#Flow-2-:-through-crane-7-10)
+- ###[Flow 2 : through crane 7 10](#Flow-2-:-through-crane-7-10)
 
 <hr>
 
