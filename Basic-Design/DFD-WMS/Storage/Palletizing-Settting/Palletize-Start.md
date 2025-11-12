@@ -1078,7 +1078,7 @@ Table Impact:
 ##<span style="color:skyblue; font-weight:bold">[Click this to Continue flow, If comming from Batch End Process](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/874/Batch-End?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid33%3C/span%3E)</span><br>
 <hr>
 
-##<span style="color:skyblue; font-weight:bold">ID33</span>
+##ID33
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.wcs.mc.as21.communication.control.Id33Process&nbsp;</span>
 
 ::: mermaid
