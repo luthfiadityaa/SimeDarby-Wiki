@@ -39,8 +39,8 @@ P23[ID64]-->P14[ID33]
 
 | Action Name                    | WRKI   | WRKL   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | 
 |--------------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
-| ID63[(1)](#ID63)                   |        |        |        |        |        |        |        |        |        |        |        | UPDATE |   
-| Unplanned Storage - Set(F2)[(2)](UnplannedStorage)   | INSERT |        |        |        |        |        |        |        |        |        | SELECT |        |  
+| ID63 [(1)](#ID63)                   |        |        |        |        |        |        |        |        |        |        |        | UPDATE |   
+| Unplanned Storage - Set(F2) [(2)] (#UnplannedStorage)   | INSERT |        |        |        |        |        |        |        |        |        | SELECT |        |  
 | ID26[(2)]()                       |        |        | INSERT | INSERT | INSERT |        | INSERT |        |        |        |        | SELECT |  
 | StorageSender[(3)](#)     | UPDATE |        | UPDATE | UPDATE | UPDATE |        | UPDATE | UPDATE | UPDATE |        |        |        |    
 | ID25[(4)](#)                       |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |         
