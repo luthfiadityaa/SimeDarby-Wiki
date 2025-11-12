@@ -341,6 +341,7 @@ ID 25
 
 id25-update[("
 DNCARRYINFO
+DMPALLET
 ")]
 id25-delete[("
 DNARRIVAL
@@ -359,9 +360,15 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 | **Column Name**                | **Description / Notes**                               |
 |--------------------------------|-------------------------------------------------------|
 | **CMD_STATUS**                 | 3:Commanded
-| **ERROR_CODE**                 | 0
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
+
+### <span style="color:skyblue; font-weight:bold">DNPALLET</span>
+| **Column Name**            | **Description / Notes**                           |
+|----------------------------|-------------------------------------------------------|                                                                                                        
+| **EMPTY_FLAG**             | 1:Empty Pallet                                               
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
 
 #<span style="color:skyblue; font-weight:bold">ID64</span>
 
