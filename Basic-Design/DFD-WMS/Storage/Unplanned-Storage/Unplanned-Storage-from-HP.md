@@ -516,8 +516,8 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
 
-##<span style="color:skyblue; font-weight:bold">AutomaticChangeSender&nbsp;&nbsp;</span>
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.AutomaticChangeSender &nbsp;</span>
+##StorageSender
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
 
 ::: mermaid
 flowchart LR
