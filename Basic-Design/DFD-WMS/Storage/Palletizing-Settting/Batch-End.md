@@ -174,7 +174,7 @@ This section explains the validations for the whole proccess Batch End
 | **EXPIRY_DAYS**            | Data Last Pallet (EXPIRY_DAYS)
 | **STORAGE_QTY**            | <span style="color:green; font-weight:bold"> Data Last Pallet (PLANNED_CARTON_QTY - TOTAL_ACTUAL_CARTON_QTY)</span>
 | **TOTAL_ACTUAL_CARTON_QTY**| <span style="color:green; font-weight:bold"> Data Last Pallet (TOTAL_ACTUAL_CARTON_QTY - QTY_CRTN)</span>
-| **MAX_PALLET_BATCH_END**   | Data Last Pallet (PALLET_CARTON_QTY / QTY_CRTN_PL)
+| **MAX_PALLET_BATCH_END**   | <span style="color:green; font-weight:bold">Data Last Pallet (PALLET_CARTON_QTY / QTY_CRTN_PL)</span>
 | **BATCH_PALLET_START**     | Data Last Pallet (STORAGE_DATE_TIME + Time value (System Generated))
 | **BATCH_PALLET_END**       | SYSTIMESTAMP
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
