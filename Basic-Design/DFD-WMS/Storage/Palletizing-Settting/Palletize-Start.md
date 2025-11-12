@@ -389,7 +389,6 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-
 ####<span style="color:skyblue; font-weight:bold">DNArrival</span>
 | **Field Name**            | **Insert Value**                               |
 |----------------------------|-------------------------------------------------------|
