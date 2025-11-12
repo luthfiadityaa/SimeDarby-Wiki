@@ -178,8 +178,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **WH_STATION_NO**          | 9002                                                      
 | **STATUS_FLAG**            | 1:Reserved for Storage                                                      
 | **ALLOCATION_FLAG**        | 1:Allocated                                                      
-| **EMPTY_FLAG**             | 0:Normal Pallet                                                                                                              
-| **BCR_DATA**               | Barcode information from ID26                                                     
+| **EMPTY_FLAG**             | 0:Normal Pallet                                                 
 | **LAST_STORED_DATE**       | SYSTIMESTAMP                                                                                                           
 | **REGIST_DATE**            | SYSTIMESTAMP                                                    
 | **REGIST_PNAME**           | ClassName
@@ -193,6 +192,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **AREA_NO**                    | DNWORKINFO.PLAN_AREA_NO
 | **LOCATION_NO**                | DNWORKINFO.PLAN_LOCATION_NO
 | **STORAGE_TYPE**               | 2:NEW
+| **STORAGE_DAY**                | DMWARENAVISYSTEM.WORK_DAY
 | **STORAGE_DATE**               | SYSTIMESTAMP
 | **PLAN_QTY**                   | DNWORKINFO.PLAN_QTY
 | **PALLET_ID**                  | DNPALLET.PALLET_ID
@@ -270,7 +270,6 @@ DNCARRYINFO
 DMWAREHOUSE
 DMSHELF
 DNPALLET
-DNSTOCK
 DNWORKINFO
 ")]
 automaticmodechangesender-input[("
@@ -327,17 +326,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 |--------------------------------|-------------------------------------------------------|
 | **CURRENT_STATION_NO**         | Reserved Location Number
 | **WH_STATION_NO**              | DNCARRYINFO.END_STATION_NO
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | Class name
-
-####<span style="color:skyblue; font-weight:bold">DNSTOCK</span>
-| **Column Name**                | **Description / Notes**                               |
-|--------------------------------|-------------------------------------------------------|
-| **AREA_NO**                    | DNCARRYINFO.END_STATION_NO
-| **LOCATION_NO**                | DN
-| **STORAGE_DAY**                | DNSTOCK.STORAGE_DAY
-| **STORAGE_DATE**               | DNSTOCK.STORAGE_DATE
-| **LOCATION_NO**                | Reserved Location Number
+| **BCR_DATA**                   | BCRData of station
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
 
@@ -471,7 +460,6 @@ Continue the process  <span style="color:green; font-weight:bold">storage</span
 ####<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
 | **Column Name**                | **Description / Notes**                                |
 |--------------------------------|-----------------------------------------------|
-| **CARRY_KEY**                  | Sequence Object  
 | **PALLET_ID**                  | DNPALLET.PALLET_ID
 | **WORK_TYPE**                  | 2: Storage
 | **CMD_STATUS**                 | 1:Started 
