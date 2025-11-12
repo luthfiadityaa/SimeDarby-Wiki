@@ -459,11 +459,9 @@ After successful creation of arrival record in <span style="color:green; font-we
 *   **LAST_UPDATE_PNAME** → Class name
 
 ####<span style="color:skyblue; font-weight:bold">DMShelf</span>
-| **Field Name**             | **Insert Value**                              |
-|----------------------------|-----------------------------------------------|
-| **STATUS_FLAG**            | 2:Reserved Location
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | Class name
+*   **STATUS_FLAG** → 2:Reserved Location    
+*   **LAST_UPDATE_DATE** → SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME** → Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**            | **Insert Value**                              |
