@@ -30,7 +30,7 @@
 |Action Name| PLLT | WRKI | WRKL | CRYI | STCK | HSTS | ARVL | WRHS | SHLF | STCH | INOT | ITEM | STSN |
 |-----------|--|--|--|--|--|--|--|--|--|--|--|--|--|
 | [Empty Pallet - Set (F2)]() | INSERT | | | | | | | | | | | SELECT | SELECT |
-| [ID26]() | | INSERT | INSERT | INSERT |INSERT | | INSERT | | | | |
+| [ID26]() | UPDATE | INSERT | INSERT | INSERT | INSERT | | INSERT | | | | |
 | [Storage Sender]() | | UPDATE | | | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE | |
 | [ID25]() | | | | | UPDATE | | | UPDATE | | | |
 | [ID64]() | | | | | UPDATE | | | | | | |
