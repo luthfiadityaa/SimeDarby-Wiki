@@ -213,8 +213,8 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **STOCK_ID**               | DNSTOCK.STOCK_ID
 | **SYSTEM_CONN_KEY**        | Sequence Object
 | **PLAN_DAY**               | DMWARENAVISYSTEM.WORK_DAY
-| **PLAN_AREA_NO**           | Warehouse Number where a reserved location belongs to
-| **PLAN_LOCATION_NO**       | Aisle Number where a reserved location belongs to
+| **PLAN_AREA_NO**           | Area Number where a reserved location belongs to
+| **PLAN_LOCATION_NO**       | Location Number where a reserved location belongs to
 | **PLAN_QTY**               | 1
 | **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
 | **USER_ID**                | Login Info
@@ -369,6 +369,14 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 | **EMPTY_FLAG**             | 1:Empty Pallet                                               
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
+
+### <span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| **STATUS_FLAG**            | 4: Completed
+| **RESULT_AREA_NO**         | DNWORKINFO.PLAN_AREA_NO
+| **RESULT_LOCATION_NO**     | DNWORKINFO.PLAN_LOCATION_NO
+| **RESULT_QTY**             | DNWORKINFO.PLAN_QTY
 
 #<span style="color:skyblue; font-weight:bold">ID64</span>
 
