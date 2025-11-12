@@ -171,7 +171,7 @@ Continue this flow if occurs.
 - [Wait for Batch Start. Treat as Data Error](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/951/Irregular-Cases-Palletizing?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Ewait-for-batch-start.-treat-as-data-error%3C/span%3E)
 <hr style="border: 2px solid red;">
 
-##ID26&nbsp;at&nbsp;1101-1105
+##ID26 at 1101-1105
 
 ::: mermaid
 flowchart LR
