@@ -37,8 +37,8 @@ P23[ID64]-->P14[ID33]
 
 | Action Name                 | STRP   | WRKI   | WRKL   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | 
 |-----------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
-| Palletize Start - SetF2 [(1)](#Palletize-Start---Set(F2))  | INSERT |        |        |        |        |        |        |        |        |        |        | SELECT | SELECT |    
-| ID26 [(2)](#ID26-at-1101---1105)                     |        | INSERT |        | INSERT | INSERT | INSERT |        | INSERT |        |        |        |        |        |    
+| Palletize Start - SetF2 [(1)](#Palletize-Start---Set(F2))  | I |        |        |        |        |        |        |        |        |        |        | SELECT | SELECT |    
+| ID26 [(2)](#ID26-at-1101-1105)                     |        | INSERT |        | INSERT | INSERT | INSERT |        | INSERT |        |        |        |        |        |    
 | Storage Sender [(3)](#Storage-Sender-at-1101---1105)           |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |    
 | ID25 [(4)](#ID25-at-1101---1105)                     |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |    
 | ID26 [(5)](#ID26-at-1111---1115)                     |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |    
