@@ -127,36 +127,34 @@ This section explains the validations for the whole proccess Palletize Start
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-----------------------------------------------|
-| **PLAN_UKEY**              | Sequence Object                                                      
-| **STATUS_FLAG**            | 1:Working                                                       
-| **CANCEL_FLAG**            | 0:Normal Data
-| **DELETE_FLAG**            | 0:No                                                         
-| **PLAN_DAY**               | Value from screen (Storage Date/Time)                                                       
-| **PLAN_AREA_NO**           | Value from screen (Storage Location) ⟶ <span style="color:green; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>                             
-| **MATERIAL_CODE**          | Value from screen (Material Code)                                                  
-| **PLAN_QTY**               | Value from screen (Qty Crtn/PL)                                                 
-| **REPORT_FLAG**            | 0:Not Reported                                                   
-| **STORING_PAIR_KEY**       | Value from screen <span style="color:green; font-weight:bold"> (Material Code) + (Batch_No)</span>
-| **STATION_NO**             | Value from screen (Station No)
-| **CURRENT_STATUS**         | Value from screen (Current Status)
-| **MATERIAL_NAME**          | Value from screen (Material Name)
-| **MATERIAL_TYPE**          | Value from screen (Material Type)
-| **BATCH_NO**               | Value from screen (Batch_No)
-| **PLANNED_CARTON_QTY**     | Value from screen (Planned Carton Qty) 
-| **QTY_KG_CRTN**            | Value from screen (Qty Kg/Crtn)
-| **UOM**                    | Value from screen (UOM)
-| **TEMPERING_PERIOD**       | Value from screen (Tempering Period)
-| **EXPIRY_DAYS**            | Value from screen (Expiry Days)
-| **STORAGE_QTY**            | <span style="color:green; font-weight:bold">PLANNED_CARTON_QTY - TOTAL_ACTUAL_CARTON_QTY</span>
-| **TOTAL_ACTUAL_CARTON_QTY**| <span style="color:green; font-weight:bold">TOTAL_ACTUAL_CARTON_QTY + QTY_KG_CRTN</span>
-| **MAX_PALLET_BATCH_END**   | <span style="color:green; font-weight:bold">PLANNED_CARTON_QTY / QTY_CRTN_PL</span> 
-| **BATCH_PALLET_START**     | <span style="color:green; font-weight:bold">Value from screen (Storage Date/Time) + TimeStamp (System Generated)</span>
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
+*   **PLAN_UKEY** — Sequence Object    
+*   **STATUS_FLAG** — `1: Working`    
+*   **CANCEL_FLAG** — `0: Normal Data`    
+*   **DELETE_FLAG** — `0: No`    
+*   **PLAN_DAY** — Value from screen (**Storage Date/Time**)    
+*   **PLAN_AREA_NO** — Value from screen (**Storage Location**) → **FGW1 (Ambient/9002)** or **FGW2 (Tempering/9001)**    
+*   **MATERIAL_CODE** — Value from screen (**Material Code**)    
+*   **PLAN_QTY** — Value from screen (**Qty Crtn/PL**)    
+*   **REPORT_FLAG** — `0: Not Reported`    
+*   **STORING_PAIR_KEY** — Value from screen **(Material Code + Batch_No)**    
+*   **STATION_NO** — Value from screen (**Station No**)    
+*   **CURRENT_STATUS** — Value from screen (**Current Status**)    
+*   **MATERIAL_NAME** — Value from screen (**Material Name**)    
+*   **MATERIAL_TYPE** — Value from screen (**Material Type**)    
+*   **BATCH_NO** — Value from screen (**Batch_No**)    
+*   **PLANNED_CARTON_QTY** — Value from screen (**Planned Carton Qty**)    
+*   **QTY_KG_CRTN** — Value from screen (**Qty Kg/Crtn**)    
+*   **UOM** — Value from screen (**UOM**)    
+*   **TEMPERING_PERIOD** — Value from screen (**Tempering Period**)    
+*   **EXPIRY_DAYS** — Value from screen (**Expiry Days**)    
+*   **STORAGE_QTY** — **PLANNED_CARTON_QTY - TOTAL_ACTUAL_CARTON_QTY**    
+*   **TOTAL_ACTUAL_CARTON_QTY** — **TOTAL_ACTUAL_CARTON_QTY + QTY_KG_CRTN**    
+*   **MAX_PALLET_BATCH_END** — **PLANNED_CARTON_QTY / QTY_CRTN_PL**    
+*   **BATCH_PALLET_START** — **Value from screen (Storage Date/Time) + System Timestamp**    
+*   **REGIST_DATE** — `SYSTIMESTAMP`    
+*   **REGIST_PNAME** — `ClassName`    
+*   **LAST_UPDATE_DATE** — `SYSTIMESTAMP`    
+*   **LAST_UPDATE_PNAME** — `ClassName`
 
 #<span style="color:skyblue; font-weight:bold">Release Command from Palletize Robot - Dummy Arrival</span>
 After palletizing is completed, the palletizing robot sends <span style="color:green; font-weight:bold">“Release Command”</span> signal via conveyor interlock.
