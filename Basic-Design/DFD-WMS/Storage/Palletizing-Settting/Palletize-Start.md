@@ -878,7 +878,7 @@ Upon equipment <span style="color:green; font-weight:bold">SRM</span> have picke
 | **LAST_UPDATE_DATE**      | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME** 	| Class name
 
-##<span style="color:skyblue; font-weight:bold">ID64</span>
+##ID64 at STV from 9007-9010
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process&nbsp;</span>
 
 ::: mermaid
