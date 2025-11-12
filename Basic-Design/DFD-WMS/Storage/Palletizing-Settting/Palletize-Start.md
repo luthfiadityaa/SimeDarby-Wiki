@@ -33,8 +33,8 @@ flowchart LR
 P18[ID64]-->P19[ID64]--> |7211-7212| P20[ID26]-->P21[StorageSender]-->P22[ID25]-->P23[ID64]
 
 P18[ID64]-->P13[ID64]
-P13[ID64]-->P14[ID33]
-P23[ID64]-->P14[ID33]
+P13[ID64]--> |9001-9010| P14[ID33]
+P23[ID64]--> |9011-9014| P14[ID33]
 :::
 
 #<span style="color:skyblue; font-weight:bold">Palletize Start database flow</span>
