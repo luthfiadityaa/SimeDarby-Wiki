@@ -75,7 +75,7 @@ P23[ID64]-->P14[ID33]
 :::
 
 ## Separate
-
+### Stage 1
 ::: mermaid
 flowchart LR
   
@@ -86,6 +86,7 @@ P7[ID25]-->Cond1{Flow?}
 P24[Batch End]-->P2[ID26]
 :::
 
+### Stage 2
 ::: mermaid
 flowchart LR
 
