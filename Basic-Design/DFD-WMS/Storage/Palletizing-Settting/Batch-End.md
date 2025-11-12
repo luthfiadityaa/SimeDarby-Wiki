@@ -189,7 +189,8 @@ This section explains the validations for the whole proccess Batch End
 
 <hr>
 
-##[Continue flow](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Erelease-command-from-palletize-robot---dummy-arrival%3C/span%3E) to Release Command from Palletize Robot - Dummy Arrival
+##Continue flow
+to [Release Command from Palletize Robot - Dummy Arrival.]((https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Erelease-command-from-palletize-robot---dummy-arrival%3C/span%3E) )
 
 Because the process is same avoid to duplicated writted content please continue in Palletize Start after that bact to this batch with following process.
 
