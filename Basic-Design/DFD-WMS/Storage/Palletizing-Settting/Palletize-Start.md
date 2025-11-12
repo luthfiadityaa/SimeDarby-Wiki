@@ -60,33 +60,35 @@ P23[ID64]--> |9011-9014| P14[ID33]
   - **D** : DELETE
   - **S** : SELECT 
 
-| Action Name                                                |STRP|WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|MTMS|STSN| 
-|------------------------------------------------------------|----|----|----|----|----|----|----|-----|----|----|----|----|----|
-| Palletize Start - SetF2 [(1)](#Palletize-Start---Set(F2))  | I  |    |    |    |    |    |    |     |    |    |    | S  | S  |    
-| ID26 [(2)](#ID26-at-1101-1105)                             |    | I  |    | I  | I  | I  |    | I   |    |    |    |    |    |    
-| Storage Sender [(3)](#Storage-Sender-at-1101-1105)         |    |    |    |    | U  |    |    | U   |    |    |    |    |    |    
-| ID25 [(4)](#ID25-at-1101-1105)                             |    |    |    |    | U  |    |    | D   |    |    |    |    |    |    
-| ID26 [(5)](#ID26-at-1111-1115)                             |    |    |    | U  | U  |    |    | I   |    |    |    |    |    |    
-| Storage Sender [(6)](#Storage-Sender-at-1111-1115)         |    | U  |    |    | U  | U  |    | U   | U  | U  |    |    |    | 
-| ID25 [(7)](#ID25-at-1111-1115)                             |    |    |    |    | U  |    |    | D   |    |    |    |    |    |    
-| ID64 [(8)](#ID64-at-STV-from-1111-1115)                    |    |    |    |    | U  |    |    |     |    |    |    |    |    |
-| **Flow 1**                                                 |    |    |    |    |    |    |    |     |    |    |    |    |    |
-| ID26 [(9)](#ID26-at-7101-7110)                             |    |    |    | U  | U  |    |    | I   |    |    |    |    |    |  
-| Storage Sender [(10)](#Storage-Sender-at-7101-7110)        |    |    |    |    | U  |    |    | U   |    |    |    |    |    |
-| ID25 [(11)](#ID25-at-7101-7110)                            |    |    |    |    | U  |    |    | D   |    |    |    |    |    |
-| ID64 [(12)](#ID64-at-SRM-to-9001-or-9002)                  |    |    |    |    | U  |    |    |     |    |    |    |    |    |
-| **Flow 2**                                                 |    |    |    |    |    |    |    |     |    |    |    |    |    |    
-| ID26 [(9)](#ID26-at-7107-7110)                             |    |    |    | U  | U  |    |    | I   |    |    |    |    |    |
-| Storage Sender [(10)](#Storage-Sender-at-7107-7110)        |    |    |    |    | U  |    |    | U   |    |    |    |    |    | 
-| ID25 [(11)](#ID25-at-7107-7110)                            |    |    |    |    | U  |    |    | D   |    |    |    |    |    |
-| ID64 [(12)](#ID64-at-SRM-from-7107-7110)                   |    |    |    |    | U  |    |    |     |    |    |    |    |    |
-| ID64 [(13)](#ID64-at-STV-from-9007-9010)                |    |    |    |    | U  |    |    |     |    |    |    |    |    |
-| ID26 [(14)](#ID26-at-7211-7214)                            |    |    |    | U  | U  |    |    | I   |    |    |    |    |    |       
-| Storage Sender [(15)](#Storage-Sender-at-7211-7214)        |    |    |    |    | U  |    |    | U   |    |    |    |    |    |
-| ID25 [(16)](#ID25-at-7211-7214)                            |    |    |    |    | U  |    |    | D   |    |    |    |    |    |
-| ID64 [(17)](#ID64-at-SRM-to-9002)                          |    |    |    |    | U  |    |    |     |    |    |    |    |    |
-| **Last Process**                                           |    |    |    |    |    |    |    |     |    |    |    |    |    |
-| ID33 [(18)](#ID33)                                         | U  | U  | U  | U  | D  | U  | I  |     |    |  U | I  |    |    |  
+| Action Name                                                 |STRP|WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|MTMS|STSN| 
+|-------------------------------------------------------------|----|----|----|----|----|----|----|-----|----|----|----|----|----|
+| Palletize Start - SetF2 [(1)](#Palletize-Start---Set(F2))   | I  |    |    |    |    |    |    |     |    |    |    | S  | S  |    
+| ID26 [(2)](#ID26-at-1101-1105)                              |    | I  |    | I  | I  | I  |    | I   |    |    |    |    |    |    
+| Storage Sender [(3)](#Storage-Sender-at-1101-1105)          |    |    |    |    | U  |    |    | U   |    |    |    |    |    |    
+| ID25 [(4)](#ID25-at-1101-1105)                              |    |    |    |    | U  |    |    | D   |    |    |    |    |    |    
+| ID26 [(5)](#ID26-at-1111-1115)                              |    |    |    | U  | U  |    |    | I   |    |    |    |    |    |    
+| Storage Sender [(6)](#Storage-Sender-at-1111-1115)          |    | U  |    |    | U  | U  |    | U   | U  | U  |    |    |    | 
+| ID25 [(7)](#ID25-at-1111-1115)                              |    |    |    |    | U  |    |    | D   |    |    |    |    |    |    
+| ID64 [(8)](#ID64-at-STV-from-1111-1115)                     |    |    |    |    | U  |    |    |     |    |    |    |    |    |
+| **Flow 1**                                                  |    |    |    |    |    |    |    |     |    |    |    |    |    |
+| ID26 [(9)](#ID26-at-7101-7110)                              |    |    |    | U  | U  |    |    | I   |    |    |    |    |    |  
+| Storage Sender [(10)](#Storage-Sender-at-7101-7110)         |    |    |    |    | U  |    |    | U   |    |    |    |    |    |
+| ID25 [(11)](#ID25-at-7101-7110)                             |    |    |    |    | U  |    |    | D   |    |    |    |    |    |
+| ID64 [(12)](#ID64-at-SRM-to-9001-or-9002)                   |    |    |    |    | U  |    |    |     |    |    |    |    |    |
+| **Flow 2**                                                  |    |    |    |    |    |    |    |     |    |    |    |    |    |    
+| ID26 [(9)](#ID26-at-7107-7110)                              |    |    |    | U  | U  |    |    | I   |    |    |    |    |    |
+| Storage Sender [(10)](#Storage-Sender-at-7107-7110)         |    |    |    |    | U  |    |    | U   |    |    |    |    |    | 
+| ID25 [(11)](#ID25-at-7107-7110)                             |    |    |    |    | U  |    |    | D   |    |    |    |    |    |
+| ID64 [(12)](#ID64-at-SRM-from-7107-7110)                    |    |    |    |    | U  |    |    |     |    |    |    |    |    |
+| ID64 [(13)](#ID64-at-STV-from-9007-9010)                    |    |    |    |    | U  |    |    |     |    |    |    |    |    |
+| ID26 [(14)](#ID26-at-7211-7214)                             |    |    |    | U  | U  |    |    | I   |    |    |    |    |    |       
+| Storage Sender [(15)](#Storage-Sender-at-7211-7214)         |    |    |    |    | U  |    |    | U   |    |    |    |    |    |
+| ID25 [(16)](#ID25-at-7211-7214)                             |    |    |    |    | U  |    |    | D   |    |    |    |    |    |
+| ID64 [(17)](#ID64-at-SRM-to-9002)                           |    |    |    |    | U  |    |    |     |    |    |    |    |    |
+| **Last Process**                                            |    |    |    |    |    |    |    |     |    |    |    |    |    |
+| ID33 [(18)](#ID33)                                          | U  | U  | U  | U  | D  | U  | I  |     |    |  U | I  |    |    |  
+| **Host Communication**                                      |    |    |    |    |    |    |    |     |    |    |    |    |    |
+| Production Storage Result [(19)](#Production-Storage-Result)| U  | U  | U  | U  | D  | U  | I  |     |    |  U | I  |    |    | 
 
 #Palletize Start - Set(F2)
 Palletize Start is used to set the information of stock which will be palletized by robot automatically. After **Set(F2)**, all items in input text will be added into a Pallet Number. The result will be posted back to SAP as [Production Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)
