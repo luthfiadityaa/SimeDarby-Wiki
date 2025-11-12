@@ -91,7 +91,7 @@ P23[ID64]--> |9011-9014| P14[ID33]
 | **Last Process**                                           |    |    |    |    |    |    |    |     |    |    |    |    |    |
 | ID33 [(18)](#ID33)                                         | U  | U  | I  | U  | D  | U  | I  |     |    |  U | I  |    |    |  
 
-#<span style="color:skyblue; font-weight:bold">Batch End - Set(F2)</span>
+#Batch End - Set(F2)
   
 Batch End is used to set qty of stock on the last pallet of current Batch and set the palletizing work to stop. After **Set(F2)**, all items in input text will be added into a Pallet Number. The result will be posted back to SAP as [Production Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)
 
