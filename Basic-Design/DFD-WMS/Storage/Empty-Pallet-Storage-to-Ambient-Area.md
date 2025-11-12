@@ -23,15 +23,16 @@
 |----------|------------------|
 | **S**    | SELECT           |
 | **I**    | INSERT           |
+| **U**    | UPDATE           |
 | **D**    | DELETE           |
 
 
 ##<span style="color:Green; font-weight:bold">Inbound Table Data Flow </span>
 |Action Name| PLLT | WRKI | WRKL | CRYI | STCK | HSTS | ARVL | WRHS | SHLF | STCH | INOT | ITEM | STSN |
 |-----------|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| [Empty Pallet - Set (F2)]() | INSERT | | | | | | | | | | | SELECT | SELECT |
-| [ID26]() | UPDATE | INSERT | INSERT | INSERT | INSERT | | INSERT | | | | |
-| [Storage Sender]() | | UPDATE | | | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE | |
+| [Empty Pallet - Set (F2)]() | I| | | | | | | | | | | S | S |
+| [ID26]() | U | I | I | I | I | | I | | | | |
+| [Storage Sender]() | | | | U | | U | U | U | | | |
 | [ID25]() | | | | | UPDATE | | | UPDATE | | | |
 | [ID64]() | | | | | UPDATE | | | | | | |
 | [ID26]() | | | | |INSERT | | | INSERT | | | |
@@ -91,8 +92,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 ### <span style="color:skyblue; font-weight:bold">DNPALLET</span>
 | **Column Name**            | **Description / Notes**                           |
 |----------------------------|---------------------------------------------------|
-| **PALLET_ID**              | Sequence Object                                                                                                         
-| **EMPTY_FLAG**             | 1: EMPTY PALLET                                                                                                               
+| **PALLET_ID**              | Sequence Object                                                                                                              
 | **BCR_DATA**               | Value from Screen (Pallet #)                                                   
 | **REGIST_DATE**            | SYSTIMESTAMP
 | **REGIST_PNAME**           | ClassName
@@ -117,10 +117,13 @@ id26msg("
 ID 26
 ")
 
+id26-update[("
+DNPALLET
+")]
+
 id26-insert[("
 DNARRIVAL
 DNCARRYINFO
-DNPALLET
 DNSTOCK
 DNWORKINFO
 DNWORKLIST
@@ -130,6 +133,7 @@ storageStationOperator[storageStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
+storageStationOperator--> |UPDATE| id26-update
 :::
 
 After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let InOutStationOperator picks up the data.
@@ -138,6 +142,18 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 `jp.co.daifuku.asrs.communication.id.recv.As21Id26` &nbsp;</span>
 
 ##<span style="color:skyblue; font-weight:bold">Table Value</span>
+
+### <span style="color:skyblue; font-weight:bold">DNPALLET</span>
+| **Column Name**            | **Description / Notes**                           |
+|----------------------------|-------------------------------------------------------|                                                     
+| **CURRENT_STATION_NO**     | DNARRIVAL.STATION_NO ⟶ **1301/1302**                                                        
+| **WH_STATION_NO**          | 9002                                                      
+| **STATUS_FLAG**            | 1:Reserved for Storage                                                      
+| **ALLOCATION_FLAG**        | 1:Allocated                                                      
+| **EMPTY_FLAG**             | 0:Normal Pallet                                                 
+| **LAST_STORED_DATE**       | SYSTIMESTAMP                                                                                                           
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
 
 ####<span style="color:skyblue; font-weight:bold">DNARRIVAL</span>
 | **Column Name**            | **Description / Notes**                       |
@@ -175,21 +191,6 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **REGIST_PNAME**               | ClassName
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | ClassName
-
-### <span style="color:skyblue; font-weight:bold">DNPALLET</span>
-| **Column Name**            | **Description / Notes**                           |
-|----------------------------|-------------------------------------------------------|
-| **PALLET_ID**              | Sequence Object                                                       
-| **CURRENT_STATION_NO**     | DNARRIVAL.STATION_NO ⟶ **1301/1302**                                                        
-| **WH_STATION_NO**          | 9002                                                      
-| **STATUS_FLAG**            | 1:Reserved for Storage                                                      
-| **ALLOCATION_FLAG**        | 1:Allocated                                                      
-| **EMPTY_FLAG**             | 0:Normal Pallet                                                 
-| **LAST_STORED_DATE**       | SYSTIMESTAMP                                                                                                           
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
 
 ####<span style="color:skyblue; font-weight:bold">DNSTOCK</span>
 | **Column Name**                | **Description / Notes**                               |
