@@ -51,7 +51,7 @@ P23[ID64]-->P14[ID33]
 | ID25 [(11)](#ID25-at-7101---7110)                    |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
 | ID64 [(12)](#ID64-at-SRM-from-7101---7110)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
 | **Flow 2**                  |        |        |        |        |        |        |        |        |        |        |        |        |        |   
-| ID64 [(8)](#ID64-at-STV-from-7107---7110)                     |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |   
+| ID64 [(8)](#ID64-at-STV-from-1101---1105)                     |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |   
 | ID26 [(9)](#ID26-at-7107---7110)                     |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |
 | Storage Sender [(10)](#Storage-Sender-at-7107---7110)          |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        | 
 | ID25 [(11)](#ID25-at-7107---7110)                    |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
