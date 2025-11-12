@@ -26,7 +26,7 @@
 | **D**    | DELETE           |
 
 
-##<span style="color:Green; font-weight:bold">Inbound Table Data Flow </span>
+## Inbound Table Data Flow
 | Action Name                 | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | ITEM | STSN |
 |-----------------------------|------|------|------|------|------|------|------|------|------|------|------|------|
 | [Empty Pallet - Set (F2)]() |   I  |      |      |      |      |      |      |      |      |      |   S  |   S  |
