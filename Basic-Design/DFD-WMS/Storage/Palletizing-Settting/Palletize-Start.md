@@ -470,11 +470,9 @@ After successful creation of arrival record in <span style="color:green; font-we
 *   **LAST_UPDATE_PNAME** → Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
-| **Field Name**            | **Insert Value**                               |
-|---------------------------|------------------------------------------------|
-| **LOCATION_NO**           | Reserved Location Number
-| **LAST_UPDATE_DATE**      | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**     | Class name
+*   **LOCATION_NO** → Reserved Location Number    
+*   **LAST_UPDATE_DATE** → SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME** → Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 | **Field Name**            | **Insert Value**                              |
