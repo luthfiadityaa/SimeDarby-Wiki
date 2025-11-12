@@ -44,12 +44,12 @@ P23[ID64]-->P14[ID33]
 | ID26 [(5)](#ID26-at-1111---1115)                     |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |    
 | Storage Sender [(6)](#Storage-Sender-at-1111---1115)           |        | UPDATE |        |        | UPDATE | UPDATE |        | UPDATE | UPDATE | UPDATE |        |        |        |    
 | ID25 [(7)](#ID25-at-1111---1115)                     |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |    
-| ID64 [(12)](#ID64-at-STV-from-1111---1115)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
+| ID64 [(8)](#ID64-at-STV-from-1111---1115)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
 | **Flow 1**                  |        |        |        |        |        |        |        |        |        |        |        |        |        |
 | ID26 [(9)](#ID26-at-7101---7110)                     |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |  
 | Storage Sender [(10)](#Storage-Sender-at-7101---7110)          |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        |
 | ID25 [(11)](#ID25-at-7101---7110)                    |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
-| ID64 [(8)](#ID64-at-STV-from-1101---1105)                     |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
+| ID64 [(12)](#ID64-at-STV-from-1101---1105)                     |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
 | **Flow 2**                  |        |        |        |        |        |        |        |        |        |        |        |        |        |    
 | ID26 [(9)](#ID26-at-7107---7110)                     |        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |
 | Storage Sender [(10)](#Storage-Sender-at-7107---7110)          |        |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        | 
