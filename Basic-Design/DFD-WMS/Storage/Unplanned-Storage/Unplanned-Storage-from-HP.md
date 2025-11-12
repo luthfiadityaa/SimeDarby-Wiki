@@ -188,7 +188,7 @@ Continue this flow if occurs.
 - [No-Read (Reverse Back to Previous Station)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/953/Irregular-Cases-Unplanned?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eno-read%3C/span%3E)
 <hr style="border: 2px solid red;">
  
-#<span style="color:skyblue; font-weight:bold">ID26</span>
+#ID26
 
 ::: mermaid
 flowchart LR
