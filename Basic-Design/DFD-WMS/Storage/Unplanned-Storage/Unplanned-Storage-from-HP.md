@@ -316,7 +316,7 @@ id05msg("
 ID 05
 ")
 
-automaticmodechangesender-input-->automaticmodechangesender-->id05msg
+automaticmodechangesender-input-->StorageSender-->id05msg
 automaticmodechangesender--> |UPDATE| automaticmodechangesender-update
 :::
 
