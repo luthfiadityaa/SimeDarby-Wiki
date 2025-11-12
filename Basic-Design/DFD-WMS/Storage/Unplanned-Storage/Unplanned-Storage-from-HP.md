@@ -65,7 +65,7 @@ P23[ID64]-->P14[ID33]
 | ID33[(18)](#)                       | UPDATE | INSERT | UPDATE | DELETE | UPDATE | INSERT |        |        | UPDATE | INSERT |        |        |
 
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
-##<span style="color:skyblue; font-weight:bold">ID63</span>
+##ID63
 If the station mode is **Retrieval Mode**, change the mode of the station to **Storage mode**.
 ::: mermaid
 flowchart LR
