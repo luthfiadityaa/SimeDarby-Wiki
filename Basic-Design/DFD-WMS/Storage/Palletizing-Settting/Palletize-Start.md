@@ -12,6 +12,7 @@ P7[ID25]-->Cond1{Flow?}
 end  
 
 subgraph Section 2
+direction LR
 Cond2{Flow?}
 
 Cond2 --> |Flow 1: Without going 
