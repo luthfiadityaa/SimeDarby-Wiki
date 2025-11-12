@@ -42,7 +42,7 @@ P23[ID64]-->P14[ID33]
 | Storage Sender [(3)](#Storage-Sender-at-1101-1105)         |    |    |    |    | U  |    |    | U   |    |    |    |    |    |    
 | ID25 [(4)](#ID25-at-1101---1105)                           |    |    |    |    | U  |    |    | D   |    |    |    |    |    |    
 | ID26 [(5)](#ID26-at-1111---1115)                           |    |    |    | U  | U  |    |    | I   |    |    |    |    |    |    
-| Storage Sender [(6)](#Storage-Sender-at-1111---1115)           |        | UPDATE |        |        | UPDATE | UPDATE |        | UPDATE | UPDATE | UPDATE |        |        |        |    
+| Storage Sender [(6)](#Storage-Sender-at-1111---1115)       |    | U  |    |    | U  | U  |    | U   | U  | U  |    |    |    | 
 | ID25 [(7)](#ID25-at-1111---1115)                     |        |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |    
 | ID64 [(8)](#ID64-at-STV-from-1111---1115)                    |        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
 | **Flow 1**                  |        |        |        |        |        |        |        |        |        |        |        |        |        |
