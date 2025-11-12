@@ -1056,6 +1056,7 @@ id64process--> |UPDATE| id64-update
 :::
 
 Upon equipment <span style="color:green; font-weight:bold">SRM</span> have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
+
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
 *   **CMD_STATUS** → 4: Pickup completed    
