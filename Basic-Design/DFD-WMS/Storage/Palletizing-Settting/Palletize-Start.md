@@ -161,7 +161,6 @@ This section explains the validations for the whole proccess Palletize Start
 #<span style="color:skyblue; font-weight:bold">Release Command from Palletize Robot - Dummy Arrival</span>
   After palletizing is completed, the palletizing robot sends <span style="color:green; font-weight:bold">“Release Command”</span> signal via conveyor interlock.
 
-<br>
 <hr style="border: 2px solid red;">
 
 #Irregular Cases
