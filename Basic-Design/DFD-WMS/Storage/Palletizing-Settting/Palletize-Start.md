@@ -718,7 +718,6 @@ Refer to AGC Linkage Specs : [AGCⅦA Linkage Specs_1.2.7_AF954201_SimeDarby_v1.
 
 ##ID26 at 7107-7110
 
-
 ::: mermaid
 flowchart LR
 
