@@ -172,7 +172,7 @@ This section explains the validations for the whole proccess Batch End
 | **UOM**                    | Data Last Pallet (UOM)
 | **TEMPERING_PERIOD**       | Data Last Pallet (TEMPERING PERIOD)
 | **EXPIRY_DAYS**            | Data Last Pallet (EXPIRY_DAYS)
-| **STORAGE_QTY**            | Data Last Pallet (PLANNED_CARTON_QTY - TOTAL_ACTUAL_CARTON_QTY)
+| **STORAGE_QTY**            | <span style="color:green; font-weight:bold"> Data Last Pallet (PLANNED_CARTON_QTY - TOTAL_ACTUAL_CARTON_QTY)</span>
 | **TOTAL_ACTUAL_CARTON_QTY**| Data Last Pallet (TOTAL_ACTUAL_CARTON_QTY - QTY_CRTN)
 | **MAX_PALLET_BATCH_END**   | Data Last Pallet (PALLET_CARTON_QTY / QTY_CRTN_PL)
 | **BATCH_PALLET_START**     | Data Last Pallet (STORAGE_DATE_TIME + Time value (System Generated))
