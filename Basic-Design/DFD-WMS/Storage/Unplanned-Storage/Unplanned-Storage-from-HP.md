@@ -926,7 +926,8 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
 
-##StorageSender<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender&nbsp;</span>
+##StorageSender
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender&nbsp;</span>
 
 ::: mermaid
 flowchart LR
