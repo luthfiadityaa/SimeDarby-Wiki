@@ -5,8 +5,8 @@
 ::: mermaid
 flowchart LR
   
-P1[Palletizing Start]-->P2[ID26]-->P3[StorageSender]-->P4[ID25]
-P4[ID25]-->P5[ID26]-->P6[StorageSender]-->P7[ID25]
+P1[Palletizing Start]--> |1101-1105| P2[ID26]-->P3[StorageSender]-->P4[ID25]
+P4[ID25]--> |1111-1115| P5[ID26]-->P6[StorageSender]-->P7[ID25]
 P7[ID25]-->Cond1{Flow?} 
 
 Cond2{Flow?}
