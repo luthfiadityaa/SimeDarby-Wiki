@@ -954,12 +954,10 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 *   **LAST_UPDATE_PNAME** → ClassName
 
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
-| **Field Name**             | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
-| **CURRENT_STATION_NO**         | Reserved Location Number
-| **WH_STATION_NO**              | Reserved Area Number
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | Class name
+*   **CURRENT_STATION_NO** → Reserved Location Number    
+*   **WH_STATION_NO** → Reserved Area Number    
+*   **LAST_UPDATE_DATE** → SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME** → Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**                 | **Insert Value**                               |
