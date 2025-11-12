@@ -54,7 +54,7 @@ id26-insert[("
    DNSTOCK		
 ")]
 
-storageStationOperator[StorageStationOperator]
+storageStationOperator[InOutStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
@@ -278,7 +278,7 @@ releaseCommand3["
 An empty location becomes available. 
 "]
 
-storageStationOperator[storageStationOperator]
+storageStationOperator[InOutStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert-->releaseCommand4
@@ -386,7 +386,7 @@ id26-insert[("
    DNSTOCK		
 ")]
 
-storageStationOperator[StorageStationOperator]
+storageStationOperator[InOutStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
