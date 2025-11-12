@@ -250,18 +250,16 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
 [<span style="color:red; font-weight:bold; font-size:12px">*Tempering Flag is only valid for Storage location: Tempering</span>](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/874/Batch-End?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Estorage-flag-condition%3C/span%3E)
 
-| **Field Name**             | **Insert Value**                                      |
-|----------------------------|-------------------------------------------------------|
-| **STORAGE_DAY**            | DMWARENAVISYSTEM.WORK_DAY
-| **NEWEST_STORAGE_DATE**    | SYSTIMESTAMP
-| **STOCK_QTY**              | DNSTOCK.PLAN_QTY
-| **ALLOCATION_QTY**         | DNWORKINFO.RESULT_QTY
-| **PLAN_QTY**               | 0
-| **STOCK_STATUS**           | <span style="color:green; font-weight:bold">UU: Unrestricted Used</span>
-| **TEMPERING_FLAG**         | <span style="color:yellow; font-weight:bold; background-color:grey">0: Not Reached </span>
-| **QC_FLAG**                | <span style="color:green; font-weight:bold">0: Not Done</span>
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | Class name
+* **STORAGE_DAY**: DMWARENAVISYSTEM.WORK_DAY 
+* **NEWEST_STORAGE_DATE**: SYSTIMESTAMP 
+* **STOCK_QTY**: DNSTOCK.PLAN_QTY 
+* **ALLOCATION_QTY**: DNWORKINFO.RESULT_QTY 
+* **PLAN_QTY**: 0 
+* **STOCK_STATUS**: <span style="color:green; font-weight:bold">UU: Unrestricted Used</span> 
+* **TEMPERING_FLAG**: <span style="color:yellow; font-weight:bold; background-color:grey">0: Not Reached</span> 
+* **QC_FLAG**: <span style="color:green; font-weight:bold">0: Not Done</span> 
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP 
+* **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold"> DNStoragePlan </span>
 Storage Date will be update by the system in this section represent by <span style="color:green; font-weight:bold">LAST_UPDATE_DATE</span>
