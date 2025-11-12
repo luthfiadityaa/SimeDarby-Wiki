@@ -1257,7 +1257,7 @@ Storage Date will be update by the system in this section represent by <span sty
 <hr>
 
 ##Production Storage Result
-After the process complete WareNavi will send result to SAP as [Production Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)
+- After the process complete WareNavi will send result to SAP as [Production Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)
 
 <hr>
 
