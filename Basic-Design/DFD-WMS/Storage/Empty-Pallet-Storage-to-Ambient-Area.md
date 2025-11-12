@@ -15,23 +15,30 @@
 | **WRHS** | DMWAREHOUSE      |
 | **SHLF** | DMSHELF          |
 | **STCH** | DNSTOCKHISTORY   |
+| **INOT** | DNINOUTRESULT    |
 | **ITEM** | DMITEM           |
 | **STSN** | DMSTATION        |
 
+| **CODE** | TABLE NAME       |
+|----------|------------------|
+| **S**    | SELECT           |
+| **I**    | INSERT           |
+| **D**    | DELETE           |
+
 
 ##<span style="color:Green; font-weight:bold">Inbound Table Data Flow </span>
-|Action Name| PLLT | WRKI | WRKL | CRYI | STCK | HSTS | ARVL | WRHS | SHLF | STCH | ITEM | STSN |
-|-----------|--|--|--|--|--|--|--|--|--|--|--|--|
-| [Empty Pallet - Set (F2)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Empty%20Pallet%20Storage%20to%20Ambient%20Area&pageId=884&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eempty-pallet---set-(f2)%3C/span%3E) | INSERT | | | | | | | | | | SELECT | SELECT |
-| [ID26](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/884/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Empty%20Pallet%20Storage%20to%20Ambient%20Area&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid26%3C/span%3E) | | INSERT | INSERT | INSERT |INSERT | | INSERT | | | | |
-| [Automatic Mode Change Sender](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/884/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Empty%20Pallet%20Storage%20to%20Ambient%20Area&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eautomatic-mode-change-sender%3C/span%3E) | | UPDATE | | | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE | |
-| [ID25](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/884/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Empty%20Pallet%20Storage%20to%20Ambient%20Area&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid25%3C/span%3E) | | | | | UPDATE | | | UPDATE | | | |
-| [ID64](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Empty%20Pallet%20Storage%20to%20Ambient%20Area&pageId=884&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid64%3C/span%3E) | | | | | UPDATE | | | | | | |
-| [ID26](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Empty%20Pallet%20Storage%20to%20Ambient%20Area&pageId=884&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid26-%3C/span%3E) | | | | |INSERT | | | INSERT | | | |
-| [Storage Sender](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/884/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Empty%20Pallet%20Storage%20to%20Ambient%20Area&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Estorage-sender%3C/span%3E) | | UPDATE| UPDATE | | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE | |
-| [ID25](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Empty%20Pallet%20Storage%20to%20Ambient%20Area&pageId=884&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid25-%3C/span%3E) | | | | | UPDATE | | | UPDATE | | | |
-| [ID64](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/884/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Empty%20Pallet%20Storage%20to%20Ambient%20Area&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid64-%3C/span%3E) | | | | | UPDATE | | | | | | |
-| [ID33](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Empty%20Pallet%20Storage%20to%20Ambient%20Area&pageId=884&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid33%3C/span%3E) | UPDATE | UPDATE | UPDATE | | DELETE | UPDATE | INSERT | | | UPDATE | INSERT |
+|Action Name| PLLT | WRKI | WRKL | CRYI | STCK | HSTS | ARVL | WRHS | SHLF | STCH | INOT | ITEM | STSN |
+|-----------|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| [Empty Pallet - Set (F2)]() | INSERT | | | | | | | | | | | SELECT | SELECT |
+| [ID26]() | | INSERT | INSERT | INSERT |INSERT | | INSERT | | | | |
+| [Storage Sender]() | | UPDATE | | | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE | |
+| [ID25]() | | | | | UPDATE | | | UPDATE | | | |
+| [ID64]() | | | | | UPDATE | | | | | | |
+| [ID26]() | | | | |INSERT | | | INSERT | | | |
+| [Storage Sender]() | | UPDATE| UPDATE | | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE | |
+| [ID25]() | | | | | UPDATE | | | UPDATE | | | |
+| [ID64]() | | | | | UPDATE | | | | | | |
+| [ID33]() | UPDATE | UPDATE | UPDATE | | DELETE | UPDATE | INSERT | | | UPDATE | INSERT |
 
 #<span style="color:skyblue; font-weight:bold">Empty Pallet - Set (F2)</span>
 ![image.png](/.attachments/image-ae0da33c-5f36-45e7-ad8d-527f6a9e9325.png)
@@ -119,10 +126,10 @@ DNWORKINFO
 DNWORKLIST
 ")]
 
-InOutStationOperator[InOutStationOperator]
+storageStationOperator[storageStationOperator]
 
-releaseCommand-->id26msg-->id26process-->InOutStationOperator
-InOutStationOperator--> |INSERT| id26-insert
+releaseCommand-->id26msg-->id26process-->storageStationOperator
+storageStationOperator--> |INSERT| id26-insert
 :::
 
 After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let InOutStationOperator picks up the data.
@@ -256,21 +263,21 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
-##<span style="color:skyblue; font-weight:bold">Automatic Mode Change Sender</span>
+##<span style="color:skyblue; font-weight:bold">Storage Sender</span>
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.asrs.transmission.AutomaticModeChangeSender` &nbsp;</span>
+`jp.co.daifuku.asrs.transmission.StorageSender` &nbsp;</span>
 
 ::: mermaid
 flowchart LR
-automaticmodechangesender-update[("
-DNARRIVAL
-DNCARRYINFO
+StorageSender-update[("
 DMWAREHOUSE
 DMSHELF
+DNCARRYINFO
 DNPALLET
+DNARRIVAL
 ")]
-automaticmodechangesender-input[("
+StorageSender-input[("
 DNARRIVAL
 DNCARRYINFO
 DMSTATION
@@ -280,8 +287,8 @@ id05msg("
 ID 05
 ")
 
-automaticmodechangesender-input-->automaticmodechangesender-->id05msg
-automaticmodechangesender--> |UPDATE| automaticmodechangesender-update
+StorageSender-input-->StorageSender-->id05msg
+StorageSender--> |UPDATE| StorageSender-update
 :::
 
 After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, Automatic Mode Change Sender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">1:Started to 2:Waiting for Response.</span>
@@ -339,17 +346,25 @@ id25("
 ID 25
 ")
 
+id25-insert[("
+DNINOUTRESULT
+DNSTOCKHISTORY
+")]
+
 id25-update[("
 DNCARRYINFO
-DMPALLET
+DNPALLET
+DNWORKINFO
 ")]
 id25-delete[("
 DNARRIVAL
 ")]
 
 id25-->id25process
+id25process-.INSERT.->id25-insert
 id25process-.UPDATE.->id25-update
 id25process-.DELETE.-xid25-delete
+
 :::
 
 ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
@@ -377,6 +392,61 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 | **RESULT_AREA_NO**         | DNWORKINFO.PLAN_AREA_NO
 | **RESULT_LOCATION_NO**     | DNWORKINFO.PLAN_LOCATION_NO
 | **RESULT_QTY**             | DNWORKINFO.PLAN_QTY
+
+####<span style="color:skyblue; font-weight:bold">DNSTOCK</span>
+| **Column Name**                | **Description / Notes**                               |
+|--------------------------------|-------------------------------------------------------|
+| **STOCK_QTY**                  | DNWORKINFO.PLAN_QTY
+| NEWEST_STORAGE_DATE            | DNSTOCK.NEWEST_STORAGE_DATE
+
+####<span style="color:skyblue; font-weight:bold">DNINOUTRESULT</span>
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| RESULT_KIND                | 1:Storage(Stock+)
+| STATION_NO                 | DNCARRYINFO.SOURCE_STATION_NO
+| LOCATION_NO                | DNCARRYINFO.DEST_STATION_NO
+| WH_STATION_NO              | DNPALLET.WH_STATION_NO
+| AISLE_STATION_NO           | DNCARRYINFO.AISLE_STATION_NO
+| WORK_TYPE                  | DNCARRYINFO.WORK_TYPE
+| RETRIEVAL_DETAIL           | DNCARRYINFO.RETRIEVAL_DETAIL
+| WORK_NO                    | DNCARRYINFO.WORK_NO
+| PALLET_ID                  | DNPALLET.PALLET_ID
+| CARRY_KEY                  | DNCARRYINFO.CARRY_KEY
+| RESTORING_FLAG             | DNCARRYINFO.RESTORING_FLAG
+| WORK_DAY                   | DMWARENAVISYSTEM.WORK_DAY
+| REMOVE_FLAG                | 00:Normal
+| REGIST_DATE                | SYSTIMESTAMP
+| REGIST_PNAME               | Class name
+| LAST_UPDATE_DATE           | SYSTIMESTAMP
+| LAST_UPDATE_PNAME          | Class name
+
+####<span style="color:skyblue; font-weight:bold">DNSTOCKHISTORY</span>
+
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| WORK_DAY                   | DMWARENAVISYSTEM.WORK_DAY
+| INC_DEC_TYPE               | 1: Stock Increase
+| JOB_TYPE                   | 2: Storage
+| UPDATE_STOCK_QTY           | DNSTOCK.STOCK_QTY
+| INC_DEC_QTY                | DNSTOCK.STOCK_QTY
+| STOCK_ID                   | DNSTOCK.STOCK_ID
+| AREA_NO                    | DNSTOCK.AREA_NO
+| LOCATION_NO                | DNSTOCK.LOCATION_NO
+| STORAGE_DAY                | DNSTOCK.STORAGE_DAY
+| STORAGE_DATE               | DNSTOCK.STORAGE_DATE
+| NEWEST_STORAGE_DATE        | DNSTOCK.NEWEST_STORAGE_DATE
+| PALLET_ID                  | DNSTOCK.PALLET_ID
+| BCR_DATA                   | DNPALLET.BCR_DATA
+| AREA_TYPE                  | DMAREA_AREA_TYPE
+| USER_ID                    | Login info
+| USER_NAME                  | Login info
+| TERMINAL_NO                | Login info
+| TERMINAL_NAME              | Login info
+| IP_ADDRESS                 | Login info
+| REGIST_DATE                | SYSTIMESTAMP
+| REGIST_PNAME               | Class name
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | Class name
 
 #<span style="color:skyblue; font-weight:bold">ID64</span>
 
@@ -429,13 +499,16 @@ DNARRIVAL
 id26-update[("
 DNCARRYINFO
 DNPALLET
+DNWORKINFO
+DNSTOCK
+DNWORKLIST
 ")]
 
 storageStationOperator[storageStationOperator]
 
 releaseCommand-->id26msg-->id26process-->storageStationOperator
 storageStationOperator--> |INSERT| id26-insert
-storageStationOperator--> |update| id26-update
+storageStationOperator--> |UPDATE| id26-update
 :::
 
 Continue the process  <span style="color:green; font-weight:bold">storage</span> , AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
@@ -478,8 +551,39 @@ Continue the process  <span style="color:green; font-weight:bold">storage</span
 ### <span style="color:skyblue; font-weight:bold">DNPALLET</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|                                                       
-| **CURRENT_STATION_NO**     | DNARRIVAL.STATION_NO                                                       
-| **WH_STATION_NO**          | 9002                                                                                                                                                         
+| **CURRENT_STATION_NO**     | DNARRIVAL.STATION_NO                                                                                                                                                
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
+
+### <span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| **JOB_TYPE**               | 02:Storage
+| **STATUS_FLAG**            | 1: Working
+| **PLAN_AREA_NO**           | Area Number where a reserved location belongs to
+| **PLAN_LOCATION_NO**       | Location Number where a reserved location belongs to
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
+
+###<span style="color:skyblue; font-weight:bold">DNSTOCK</span>
+| **Column Name**                | **Description / Notes**                               |
+|--------------------------------|-------------------------------------------------------|
+| **AREA_NO**                    | DNWORKINFO.PLAN_AREA_NO
+| **LOCATION_NO**                | DNWORKINFO.PLAN_LOCATION_NO
+| **PLAN_QTY**                   | DNWORKINFO.PLAN_QTY
+| **PALLET_ID**                  | DNPALLET.PALLET_ID
+| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**          | Class name
+
+### <span style="color:skyblue; font-weight:bold">DNWORKLIST</span>
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| **JOB_TYPE**               | DNWORKINFO.JOB_TYPE
+| **PLAN_AREA_NO**           | DNWORKINFO.PLAN_AREA_NO
+| **PLAN_LOCATION_NO**       | DNWORKINFO.PLAN_LOCATION_NO
+| **SOURCE_STATION_NO**      | DNCARRYINFO.SOURCE_STATION_NO
+| **DEST_STATION_NO**        | DNCARRYINFO.DEST_STATION_NO
+| **END_STATION_NO**         | DNCARRYINFO.END_STATION_NO
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | ClassName
 
@@ -516,14 +620,14 @@ After successful creation of arrival record in <span style="color:green; font-we
 
 ##<span style="color:skyblue; font-weight:bold">Table Value</span>
 
-####<span style="color:skyblue; font-weight:bold">DMWAREHOUSE (UPDATE)</span>
+####<span style="color:skyblue; font-weight:bold">DMWAREHOUSE</span>
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **LAST_USED_STATION_NO_EP**| Aisle Number where a reserved location belongs to
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | Class name 
 
-####<span style="color:skyblue; font-weight:bold">DMSHELF (UPDATE)</span>
+####<span style="color:skyblue; font-weight:bold">DMSHELF</span>
 | **Column Name**                | **Description / Notes**                       |
 |--------------------------------|-----------------------------------------------|
 | **STATUS_FLAG**                | 2:Reserved Location
@@ -581,6 +685,10 @@ ID 25
 
 id25-update[("
 DNCARRYINFO
+DNPALLET
+DNWORKINFO
+DNINOUTRESULT
+DNSTOCKHISTORY
 ")]
 id25-delete[("
 DNARRIVAL
@@ -602,6 +710,49 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 | **ERROR_CODE**                 | 0
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
+
+### <span style="color:skyblue; font-weight:bold">DNPALLET</span>
+| **Column Name**            | **Description / Notes**                           |
+|----------------------------|-------------------------------------------------------|                                                                                                        
+| **EMPTY_FLAG**             | 1:Empty Pallet                                               
+| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
+| **LAST_UPDATE_PNAME**      | ClassName
+
+### <span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| **STATUS_FLAG**            | 4: Completed
+| **RESULT_AREA_NO**         | DNWORKINFO.PLAN_AREA_NO
+| **RESULT_LOCATION_NO**     | DNWORKINFO.PLAN_LOCATION_NO
+| **RESULT_QTY**             | DNWORKINFO.PLAN_QTY
+
+####<span style="color:skyblue; font-weight:bold">DNSTOCK</span>
+| **Column Name**                | **Description / Notes**                               |
+|--------------------------------|-------------------------------------------------------|
+| NEWEST_STORAGE_DATE            | DNSTOCK.NEWEST_STORAGE_DATE
+| LAST_UPDATE_DATE               | SYSTIMESTAMP
+| LAST_UPDATE_PNAME              | Class name
+
+####<span style="color:skyblue; font-weight:bold">DNINOUTRESULT</span>
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| STATION_NO                 | DNCARRYINFO.SOURCE_STATION_NO
+| LOCATION_NO                | DNCARRYINFO.DEST_STATION_NO
+| AISLE_STATION_NO           | DNCARRYINFO.AISLE_STATION_NO
+| WORK_TYPE                  | DNCARRYINFO.WORK_TYPE
+| CARRY_KEY                  | DNCARRYINFO.CARRY_KEY
+| LAST_UPDATE_DATE           | SYSTIMESTAMP
+| LAST_UPDATE_PNAME          | Class name
+
+####<span style="color:skyblue; font-weight:bold">DNSTOCKHISTORY</span>
+
+| **Column Name**            | **Description / Notes**                               |
+|----------------------------|-------------------------------------------------------|
+| AREA_NO                    | DNSTOCK.AREA_NO
+| LOCATION_NO                | DNSTOCK.LOCATION_NO
+| NEWEST_STORAGE_DATE        | DNSTOCK.NEWEST_STORAGE_DATE
+| LAST_UPDATE_DATE           | SYSTIMESTAMP
+| LAST_UPDATE_PNAME          | Class name
 
 #<span style="color:skyblue; font-weight:bold">ID64 </span>
 
@@ -646,22 +797,15 @@ id33("
 ID 33
 ")
 
-id33-insert[("
-DNSTOCKHISTORY
-DNINOUTRESULT
-")]
 id33-update[("
 DNPALLET
 DMSHELF
-DNSTOCK
-DNWORKINFO
 ")]
 id33-delete[("
 DNCARRYINFO
 ")]
 
 id33-->id33process
-id33process--> |INSERT| id33-insert
 id33process--> |UPDATE| id33-update
 id33process--> |DELETE| id33-delete
 :::
@@ -681,70 +825,6 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 | **STATUS_FLAG**                | 2:Occupied
 | **ALLOCATION_FLAG**            | 0:Not allocated
 | **LAST_STORED_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | Class name
-
-####<span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
-| **Column Name**                | **Description / Notes**                               |
-|--------------------------------|-------------------------------------------------------|
-| **RESULT_AREA_NO**             | DNWORKINFO.PLAN_AREA_NO
-| **RESULT_LOCATION_NO**         | DNWORKINFO.PLAN_LOCATION_NO
-| **WORK_DAY**                   | DMWARENAVISYSTEM.WORK_DAY
-| **STATUS_FLAG**                | 4:Completed
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | Class name
-
-####<span style="color:skyblue; font-weight:bold">DNSTOCK</span>
-
-| **Column Name**                | **Description / Notes**                               |
-|--------------------------------|-------------------------------------------------------|
-| **STORAGE_DAY**                | DMWARENAVISYSTEM.WORK_DAY
-| **NEWEST_STORAGE_DATE**        | SYSTIMESTAMP
-| **STOCK_QTY**                  | 1
-| **ALLOCATION_QTY**             | 1
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | Class name
-
-####<span style="color:skyblue; font-weight:bold">DNSTOCKHISTORY</span>
-
-| **Column Name**                | **Description / Notes**                               |
-|--------------------------------|-------------------------------------------------------|
-| **WORK_DAY**                   | DMWARENAVISYSTEM.WORK_DAY
-| **INC_DEC_TYPE**               | 1: Stock Increase
-| **JOB_TYPE**                   | 2: Storage
-| **STOCK_ID**                   | DNSTOCK.STOCK_ID
-| **AREA_NO**                    | DNSTOCK.AREA_NO
-| **LOCATION_NO**                | DNSTOCK.LOCATION_NO
-| **STORAGE_DAY**                | DNSTOCK.STORAGE_DAY
-| **STORAGE_DATE**               | DNSTOCK.STORAGE_DATE
-| **NEWEST_STORAGE_DATE**        | DNSTOCK.NEWEST_STORAGE_DATE
-| **PALLET_ID**                  | DNSTOCK.PALLET_ID
-| **BCR_DATA**                   | DNPALLET.BCR_DATA
-| **AREA_TYPE**                  | DMAREA_AREA_TYPE
-| **USER_ID**                    | Login info
-| **USER_NAME**                  | Login info
-| **TERMINAL_NO**                | Login info
-| **TERMINAL_NAME**              | Login info
-| **IP_ADDRESS**                 | Login info
-| **REGIST_DATE**                | SYSTIMESTAMP
-| **REGIST_PNAME**               | Class name
-
-####<span style="color:skyblue; font-weight:bold">DNINOUTRESULT</span>
-| **Column Name**                | **Description / Notes**                               |
-|--------------------------------|-------------------------------------------------------|
-| **RESULT_KIND**                | 1:Storage(Stock+)
-| **STATION_NO**                 | DNCARRYINFO.SOURCE_STATION_NO
-| **LOCATION_NO**                | DNCARRYINFO.DEST_STATION_NO
-| **WH_STATION_NO**              | DNPALLET.WH_STATION_NO
-| **AISLE_STATION_NO**           | DNCARRYINFO.AISLE_STATION_NO
-| **WORK_TYPE**                  | DNCARRYINFO.WORK_TYPE
-| **WORK_NO**                    | DNCARRYINFO.WORK_NO
-| **PALLET_ID**                  | DNPALLET.PALLET_ID
-| **CARRY_KEY**                  | DNCARRYINFO.CARRY_KEY
-| **RESTORING_FLAG**             | DNCARRYINFO.RESTORING_FLAG
-| **WORK_DAY**                   | DMWARENAVISYSTEM.WORK_DAY
-| **REMOVE_FLAG**                | 00:Normal
-| **REGIST_PNAME**               | Class name
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
 
