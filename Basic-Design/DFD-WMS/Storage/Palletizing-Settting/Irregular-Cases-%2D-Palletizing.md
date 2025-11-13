@@ -345,7 +345,7 @@ Palletizing Completion("0":Normal Completion)</span>
 | ID25(8)                     |        |        | UPDATE |        | DELETE |        |
 | ID26(9)                     | DELETE | DELETE | DELETE | DELETE | DELETE |        |
 
-###ID26 at 1101-1105
+###ID26 at (1101-1105)
 
 ::: mermaid
 flowchart LR
