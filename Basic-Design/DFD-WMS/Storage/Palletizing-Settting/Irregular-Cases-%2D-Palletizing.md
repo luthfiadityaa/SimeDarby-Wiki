@@ -488,7 +488,7 @@ As21Id54 --> buttonlight
 
 After WareNavi receives information from **ID26** indicating a barcode NO-READ, it automatically sends **ID54** to the AGC. At the designated station, the signal tower lights up and the buzzer sounds, and initiate pallet transport.
 
-###<span style="color:skyblue; font-weight:bold">StorageSender</span>
+###Storage Sender at [1101-1105]
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
 
 ::: mermaid
