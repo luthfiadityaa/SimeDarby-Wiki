@@ -189,7 +189,7 @@ After palletizing is completed, the palletizing robot sends <span style="color:g
 
 #Irregular Cases
 Continue this flow if occurs.
-- [Wait for available location if full](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/951/Irregular-Cases?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Ewait-for-available-location-if-full%3C/span%3E)
+- [Wait for available location if full](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/951/Irregular-Cases-Palletizing?anchor=wait-for-available-location-if-full)
 - [No-Read (Go to Reject station)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/951/Irregular-Cases?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eno-read-(go-to-reject-station)%3C/span%3E)
 - [Wait for Batch Start. Treat as Data Error](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/951/Irregular-Cases-Palletizing?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Ewait-for-batch-start.-treat-as-data-error%3C/span%3E)
 <hr style="border: 2px solid red;">
