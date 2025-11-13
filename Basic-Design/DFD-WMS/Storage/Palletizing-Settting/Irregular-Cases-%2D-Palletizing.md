@@ -557,7 +557,7 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 *   **LAST_UPDATE_DATE** – `SYSTIMESTAMP`    
 *   **LAST_UPDATE_PNAME** – `Class name`
 
-###<span style="color:skyblue; font-weight:bold">ID26&nbsp;</span>
+###ID26 at [1111-1115]
 
 ::: mermaid
 flowchart LR
