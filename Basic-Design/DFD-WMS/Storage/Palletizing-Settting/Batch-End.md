@@ -196,8 +196,6 @@ This section explains the validations for the whole proccess Batch End
 ##Continue flow
 - to [Release Command from Palletize Robot - Dummy Arrival.](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/886/Palletize-Start?anchor=release-command-from-palletize-robot---dummy-arrival)
 
-Since the process is identical, avoid duplicating content. Begin with the Palletize Start step starting at <span style="color:green; font-weight:bold">ID26</span>, and then return to this page Batch End when approaching the last <span style="color:green; font-weight:bold">ID64</span> to continue with the subsequent process.
-
 <br>
 <hr>
 
