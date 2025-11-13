@@ -105,27 +105,25 @@ No Read("0":None)</span>
 *   **LAST_UPDATE_PNAME** – `ClassName`
 
 #####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
-| **Filed Name**            | **Insert Value**                               |
-| ----------------------------|----------------------------------------------|
-| **JOB_NO**                 | Sequence Object
-| **SETTING_UNIT_KEY**       | Sequence Object
-| **COLLECT_JOB_NO**         | Sequence Object
-| **JOB_TYPE**               | 02:Storage
-| **STATUS_FLAG**            | 0:Not Started
-| **PLAN_UKEY**              | DNSTORAGEPLAN.PLAN_UKEY
-| **STOCK_ID**               | Sequence Object
-| **PLAN_DAY**               | DMWARENAVISYSTEM.WORK_DAY
-| **BATCH_NO**               | DNSTORAGEPLAN.BATCH_NO
-| **PLAN_AREA_NO**           | DNSTORAGEPLAN.STORAGE_LOCATION 
-| **MATERIAL_CODE**          | DNSTORAGEPLAN.MATERIAL_CODE 
-| **PLAN_QTY**               | DNSTORAGEPLAN.QTY_CRTN_PL 
-| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
-| **USER_ID**                | Login Info
-| **STORAGE_LOCATION_FROM**  | DNSTORAGEPLAN.STATION_NO 
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
+*   **JOB_NO** – Sequence Object    
+*   **SETTING_UNIT_KEY** – Sequence Object    
+*   **COLLECT_JOB_NO** – Sequence Object    
+*   **JOB_TYPE** – `02: Storage`    
+*   **STATUS_FLAG** – `0: Not Started`    
+*   **PLAN_UKEY** – `DNSTORAGEPLAN.PLAN_UKEY`    
+*   **STOCK_ID** – Sequence Object    
+*   **PLAN_DAY** – `DMWARENAVISYSTEM.WORK_DAY`    
+*   **BATCH_NO** – `DNSTORAGEPLAN.BATCH_NO`    
+*   **PLAN_AREA_NO** – `DNSTORAGEPLAN.STORAGE_LOCATION`    
+*   **MATERIAL_CODE** – `DNSTORAGEPLAN.MATERIAL_CODE`    
+*   **PLAN_QTY** – `DNSTORAGEPLAN.QTY_CRTN_PL`    
+*   **WORK_DAY** – `DMWARENAVISYSTEM.WORK_DAY`    
+*   **USER_ID** – Login Info    
+*   **STORAGE_LOCATION_FROM** – `DNSTORAGEPLAN.STATION_NO`    
+*   **REGIST_DATE** – `SYSTIMESTAMP`    
+*   **REGIST_PNAME** – `ClassName`    
+*   **LAST_UPDATE_DATE** – `SYSTIMESTAMP`    
+*   **LAST_UPDATE_PNAME** – `ClassName`
 
 #####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**                | **Insert Value**                               |
