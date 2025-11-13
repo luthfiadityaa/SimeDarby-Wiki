@@ -1124,12 +1124,10 @@ After successful creation of arrival record in <span style="color:green; font-we
 *   **LAST_UPDATE_PNAME**: Class namee
 
 #####<span style="color:skyblue; font-weight:bold">DNArrival</span>
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
-| **CARRY_KEY**                  | DNCARRYINFO.CARRY_KEY
-| **SEND_FLAG**                  | 1:Sent
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**         | Class name
+*   **CARRY_KEY**: DNCARRYINFO.CARRY_KEY    
+*   **SEND_FLAG**: 1:Sent    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: Class name
 
 ###<span style="color:skyblue; font-weight:bold">ID25</span>
 
