@@ -434,38 +434,22 @@ No Read("1":Error)</span>
 *   **LAST_UPDATE_PNAME** – `ClassName`
 
 #####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-*   **CARRY_KEY** – Sequence Object
-    
-*   **PALLET_ID** – `DNPALLET.PALLET_ID`
-    
-*   **WORK_TYPE** – `26: Direct Transfer`
-    
-*   **CMD_STATUS** – `1: Started`
-    
-*   **PRIORITY** – `2: Normal`
-    
-*   **RESTORING_FLAG** – `0: Not Restore to Original Location`
-    
-*   **CARRY_FLAG** – `3: Direct Transfer`
-    
-*   **WORK_NO** – Sequence Object
-    
-*   **SOURCE_STATION_NO** – `DNPALLET.CURRENT_STATION_NO` → **<span style="color:green;">(1101/1102/1103/1104/1105)</span>**
-    
-*   **DEST_STATION_NO** – **<span style="color:green;">Based on SOURCE_STATION_NO where a reserved location belongs to → (1111/1112/1113/1114/1115)</span>**
-    
-*   **CANCEL_REQUEST** – `0: Not Requested`
-    
-*   **SCHEDULE_NO** – Sequence Object
-    
-*   **END_STATION_NO** – `DNWORKINFO.PLAN_AREA_NO`
-    
-*   **REGIST_DATE** – `SYSTIMESTAMP`
-    
-*   **REGIST_PNAME** – `ClassName`
-    
-*   **LAST_UPDATE_DATE** – `SYSTIMESTAMP`
-    
+*   **CARRY_KEY** – Sequence Object    
+*   **PALLET_ID** – `DNPALLET.PALLET_ID`    
+*   **WORK_TYPE** – `26: Direct Transfer`    
+*   **CMD_STATUS** – `1: Started`    
+*   **PRIORITY** – `2: Normal`    
+*   **RESTORING_FLAG** – `0: Not Restore to Original Location`    
+*   **CARRY_FLAG** – `3: Direct Transfer`    
+*   **WORK_NO** – Sequence Object    
+*   **SOURCE_STATION_NO** – `DNPALLET.CURRENT_STATION_NO` → **<span style="color:green;">(1101/1102/1103/1104/1105)</span>**    
+*   **DEST_STATION_NO** – **<span style="color:green;">Based on SOURCE_STATION_NO where a reserved location belongs to → (1111/1112/1113/1114/1115)</span>**    
+*   **CANCEL_REQUEST** – `0: Not Requested`    
+*   **SCHEDULE_NO** – Sequence Object    
+*   **END_STATION_NO** – `DNWORKINFO.PLAN_AREA_NO`    
+*   **REGIST_DATE** – `SYSTIMESTAMP`    
+*   **REGIST_PNAME** – `ClassName`    
+*   **LAST_UPDATE_DATE** – `SYSTIMESTAMP`    
 *   **LAST_UPDATE_PNAME** – `ClassName`
 
 #####<span style="color:skyblue; font-weight:bold">DNStock</span>
