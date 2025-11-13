@@ -27,11 +27,10 @@ P9[ID64]--> |7207-7210| P15[ID26]-->P16[StorageSender]-->P17[ID25]--> |SRM| P18[
 
 **Stage 3**
 ::: mermaid
-flowchart LR
-P18[ID64]--> |SRM| P13[ID64]  
+flowchart LR 
 P18[ID64]--> |STV| P19[ID64]--> |7101-7106| P20[ID26]-->P21[StorageSender]-->P22[ID25]--> |SRM| P23[ID64]
 
-P13[ID64]--> |9007-9014| P14[ID33]
+P18[ID64]--> |9007-9014| P14[ID33]
 P23[ID64]--> |9001-9006|P14[ID33]
 :::
 
