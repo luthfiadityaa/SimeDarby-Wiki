@@ -378,7 +378,6 @@ After the process is completed, the conveyor receives a signal and begins transf
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
 
 ####<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-
 #####<span style="color:skyblue; font-weight:bold">DNArrival</span>
 
 - <span style="color:red; font-weight:bold">Control Information = "11␣"
