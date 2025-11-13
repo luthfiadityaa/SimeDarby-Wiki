@@ -18,7 +18,7 @@ flowchart LR
 Cond2{Flow?}
 
 Cond2 --> |Flow 1: Without going 
-through crane 7~10| P8[ID64]
+through crane 7~10| |STV| P8[ID64]
 Cond2 --> |Flow 2: Go through 
 crane 7~10| P9[ID64]
 
