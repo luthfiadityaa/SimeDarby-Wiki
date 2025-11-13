@@ -1019,20 +1019,18 @@ No Read("0":None)</span>
 *   **LAST_UPDATE_PNAME** – `ClassName`
 
 #####<span style="color:skyblue; font-weight:bold">DNPallet</span>
-| **Field Name**            | **Insert Vlaue**                               |
-|----------------------------|-----------------------------------------------|
-| **PALLET_ID**              | Sequence Object                                                       
-| **CURRENT_STATION_NO**     | DNSTORAGEPLAN.STATION_NO                                                       
-| **WH_STATION_NO**          | DNSTORAGEPLAN.PLAN_AREA_NO                                                    
-| **STATUS_FLAG**            | 1:Reserved for Storage                                                     
-| **EMPTY_FLAG**             | 0:Normal Pallet 
-| **ALLOCATION_FLAG**        | 1:Allocated
-| **SOFT_ZONE_ID**           | DMITEM.SOFT_ZONE_ID                                                       
-| **BCR_DATA**               | DNARRIVAL.BCR_DATA                                                 
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
+*   **PALLET_ID** – `Sequence Object`    
+*   **CURRENT_STATION_NO** – `DNSTORAGEPLAN.STATION_NO`    
+*   **WH_STATION_NO** – `DNSTORAGEPLAN.PLAN_AREA_NO`    
+*   **STATUS_FLAG** – `1: Reserved for Storage`    
+*   **EMPTY_FLAG** – `0: Normal Pallet`    
+*   **ALLOCATION_FLAG** – `1: Allocated`    
+*   **SOFT_ZONE_ID** – `DMITEM.SOFT_ZONE_ID`    
+*   **BCR_DATA** – `DNARRIVAL.BCR_DATA`    
+*   **REGIST_DATE** – `SYSTIMESTAMP`    
+*   **REGIST_PNAME** – `ClassName`    
+*   **LAST_UPDATE_DATE** – `SYSTIMESTAMP`    
+*   **LAST_UPDATE_PNAME** – `ClassName`
 
 #####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 | **Filed Name**            | **Insert Value**                               |
