@@ -761,7 +761,7 @@ After the completion button flashes, the operator removes the pallet and presses
 
 <hr>
 
-##<span style="color:skyblue; font-weight:bold">Wait for Batch Start. Treat as Data Error</span>
+##Wait for Batch Start. Treat as Data Error
 ###<span style="color:skyblue; font-weight:bold">Database flow</span>
 **Abbreviation:**
 - **STRP** : DNSTORAGEPLAN  
