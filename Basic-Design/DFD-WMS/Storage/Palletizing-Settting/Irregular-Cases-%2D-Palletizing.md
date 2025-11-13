@@ -964,7 +964,7 @@ After indicating a *Batch Start* is executed, it automatically sends **ID54** to
 | ID26(4)                     |        | UPDATE | UPDATE |        | INSERT |        |
 | ID54(5)                     |        |        |        |        |        |        |
 
-###ID25 at <1101-1105>
+###ID26 at <1101-1105>
 
 ::: mermaid
 flowchart LR
