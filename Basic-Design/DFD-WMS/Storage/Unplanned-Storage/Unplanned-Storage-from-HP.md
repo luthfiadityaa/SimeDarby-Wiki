@@ -29,7 +29,7 @@ P9[ID64]-->P15[ID26]-->P16[StorageSender]-->P17[ID25]-->P18[ID64]
 **Stage 3**
 ::: mermaid
 flowchart LR
-P18[ID64]--->P13[ID64]  
+P18[ID64]---> |SRM| P13[ID64]  
 P18[ID64]-->P19[ID64]-->P20[ID26]-->P21[StorageSender]-->P22[ID25]-->P23[ID64]
 
 P13[ID64]-->P14[ID33]
