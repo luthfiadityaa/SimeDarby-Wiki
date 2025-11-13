@@ -335,7 +335,7 @@ Palletizing Completion("0":Normal Completion)</span>
 
 | Action Name                 | WRKI   | PLLT   | CRYI   | STCK   | ARRVL  | STSN   | 
 |-----------------------------|--------|--------|--------|--------|--------|--------|
-| ID26(1)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
+| ID26[(1)](#ID26-at-1101-1105-)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
 | ID54(2)                     |        |        |        |        |        |        |
 | StorageSender(3)            |        |        | UPDATE |        | UPDATE |        |
 | ID25(4)                     |        |        | UPDATE |        | DELETE |        |
