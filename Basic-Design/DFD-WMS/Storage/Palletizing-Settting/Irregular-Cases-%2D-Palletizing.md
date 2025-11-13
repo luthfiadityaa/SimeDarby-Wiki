@@ -1155,13 +1155,10 @@ id25process--> |DELETE| id25-delete
 ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 ####<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 #####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Field Name**         | **Insert Value**                               |
-|-----------------------|-------------------------------------------------|
-| **CMD_STATUS**        | 3:Commanded
-| **ERROR_CODE**        | 0
-| **LAST_UPDATE_DATE**  | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME** |Class name
-
+*   **CMD_STATUS**: 3:Commanded    
+*   **ERROR_CODE**: 0    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: Class name
 ###<span style="color:skyblue; font-weight:bold">ID26&nbsp;</span>
 
 ::: mermaid
