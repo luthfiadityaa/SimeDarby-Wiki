@@ -920,7 +920,7 @@ As21Id54 --> buttonlight
 
 After WareNavi receives information from **ID26** indicating a **Batch Start** is not executed yet. This leads the Data Error. It automatically sends **ID54** to the AGC. At the designated station, the signal tower lights up and the buzzer sounds.
 
-###<span style="color:skyblue; font-weight:bold">ID54</span>
+###ID54 to Tower Off
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.sendAs21Id54&nbsp;</span>
 ::: mermaid
 flowchart LR
