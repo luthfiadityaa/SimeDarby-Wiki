@@ -958,11 +958,11 @@ After indicating a *Batch Start* is executed, it automatically sends **ID54** to
 
 | Action Name                 | WRKI   | PLLT   | CRYI   | STCK   | ARRVL  | STSN   | 
 |-----------------------------|--------|--------|--------|--------|--------|--------|
-| ID26[(1)](ID26-at-<1101-1105>)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
-| StorageSender[(2)](Storage-Sender-at <1101-1105>)            |        |        | UPDATE |        | UPDATE |        |
-| ID25(3)                     |        |        | UPDATE |        | DELETE |        |
-| ID26(4)                     |        | UPDATE | UPDATE |        | INSERT |        |
-| ID54(5)                     |        |        |        |        |        |        |
+| ID26[(1)](#ID26-at-<1101-1105>)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
+| StorageSender[(2)](#Storage-Sender-at-<1101-1105>)            |        |        | UPDATE |        | UPDATE |        |
+| ID25[(3)](#ID25-at-<1101-1105>)                     |        |        | UPDATE |        | DELETE |        |
+| ID26[(4)](#ID26-at-<1111-1115>)                     |        | UPDATE | UPDATE |        | INSERT |        |
+| ID54[(5)](#ID54-to-<1101-1105>)                     |        |        |        |        |        |        |
 
 ###ID26 at <1101-1105>
 
