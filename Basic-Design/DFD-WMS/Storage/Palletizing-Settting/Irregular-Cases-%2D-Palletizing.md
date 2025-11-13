@@ -17,7 +17,7 @@ Cond4 -->|Yes| Move2[ID05]
 Cond4 -->|No| DataError2[Data Error] --> BatchEnd[Batch End] --> Move2[ID05]
 ::: 
 
-##<span style="color:skyblue; font-weight:bold">Wait for available location if full</span>
+##Wait for available location if full
 ###<span style="color:skyblue; font-weight:bold">Database flow</span>
 **Abbreviation:**
 - **STRP** : DNSTORAGEPLAN  
