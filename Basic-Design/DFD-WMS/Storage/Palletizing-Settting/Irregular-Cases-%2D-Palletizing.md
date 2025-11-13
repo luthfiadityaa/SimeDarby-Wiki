@@ -28,8 +28,8 @@ Cond4 -->|No| DataError2[Data Error] --> BatchEnd[Batch End] --> Move2[ID05]
 - **ARVL** : DNARRIVAL  
 - **STSN** : DMSTATION 
 
-| Action Name                 | WRKI   | PLLT   | CRYI   | STCK   | ARRVL  | STSN   | 
-|-----------------------------|--------|--------|--------|--------|--------|--------|
+| Action Name                                      |WRKI|PLLT|CRYI|STCK| ARRVL  | STSN   | 
+|--------------------------------------------------|----|----|----|----|--------|--------|
 | ID26[(1)](#ID26-at-1101-1115)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
 | StorageSender[(2)](#Storage-Sender-at-1101-11-5)            |        |        | UPDATE |        | UPDATE |        |
 | ID25(3)                     |        |        | UPDATE |        | DELETE |        |
