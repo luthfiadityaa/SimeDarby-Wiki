@@ -31,8 +31,8 @@ flowchart LR
 P18[ID64]--> |SRM| P13[ID64]  
 P18[ID64]--> |STV| P19[ID64]-->P20[ID26]-->P21[StorageSender]-->P22[ID25]-->P23[ID64]
 
-P13[ID64]-->P14[ID33]
-P23[ID64]-->P14[ID33]
+P13[ID64]--> |9007-9014| P14[ID33]
+P23[ID64]--> |9001-9006|P14[ID33]
 :::
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage database flow</span>
