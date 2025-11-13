@@ -385,20 +385,18 @@ After the process is completed, the conveyor receives a signal and begins transf
 Palletizing Skip("1": Skip),
 No Read("1":Error)</span>
 
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-----------------------------------------------|
-| **ARRIVAL_DATE**           | SYSTIMESTAMP 
-| **STATION_NO**             | Arrival Station Number from ID26 
-| **CARRY_KEY**              | 99999999       
-| **BCR_DATA**               | <span style="color:red; font-weight:bold">??</span>
-| **CONTROLINFO**            | <span style="color:red; font-weight:bold">Control information from ID26</span> 
-| **SEND_FLAG**              | 0:Not sent
-| **HEIGHT**                 | Dimension Information from ID26
-| **WIDTH**                  | Dimension Information From ID26
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
+*   **ARRIVAL_DATE** – `SYSTIMESTAMP`    
+*   **STATION_NO** – Arrival Station Number from ID26    
+*   **CARRY_KEY** – `99999999`    
+*   **BCR_DATA** – **<span style="color:red;">??</span>**    
+*   **CONTROLINFO** – **<span style="color:red;">Control information from ID26</span>**    
+*   **SEND_FLAG** – `0: Not sent`    
+*   **HEIGHT** – Dimension information from ID26    
+*   **WIDTH** – Dimension information from ID26    
+*   **REGIST_DATE** – `SYSTIMESTAMP`    
+*   **REGIST_PNAME** – `ClassName`    
+*   **LAST_UPDATE_DATE** – `SYSTIMESTAMP`    
+*   **LAST_UPDATE_PNAME** – `ClassName`
 
 #####<span style="color:skyblue; font-weight:bold">DNPallet</span>
 | **Field Name**            | **Insert Vlaue**                               |
