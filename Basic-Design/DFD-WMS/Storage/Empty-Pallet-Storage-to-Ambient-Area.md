@@ -27,18 +27,18 @@
 
 
 ## Inbound Table Data Flow
-| Action Name                                         | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | ITEM | STSN |
-|-----------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|
-| [Empty Pallet - Set (F2)](#empty-pallet---set-(f2)) |   I  |      |      |      |      |      |      |      |      |      |   S  |   S  |
-| [ID26]()                    |   U  |   I  |   I  |   I  |   I  |   I  |      |      |      |      |      |      |
-| [Storage Sender]()          |   U  |      |      |   U  |      |   U  |   U  |   U  |      |      |      |      |
-| [ID25]()                    |   U  |   U  |      |   U  |      |   D  |      |      |   I  |   I  |      |   S  |
-| [ID64]()                    |      |      |      |   U  |      |      |      |      |      |      |      |      |
-| [ID26]()                    |   U  |   U  |   U  |   U  |   U  |   I  |      |      |      |      |      |      |
-| [Storage Sender]()          |   U  |   U  |      |   U  |   U  |   U  |   U  |   U  |      |      |      |   S  |
-| [ID25]()                    |   U  |   U  |      |   U  |      |   D  |      |      |   U  |   U  |      |      |
-| [ID64]()                    |      |      |      |   U  |      |      |      |      |      |      |      |      |
-| [ID33]()                    |   U  |      |      |   D  |      |      |      |   U  |      |      |      |      |
+| Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | ITEM | STSN |
+|----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|
+| Empty Pallet - Set (F2) [(1)](#empty-pallet---set-(f2))        |   I  |      |      |      |      |      |      |      |      |      |   S  |   S  |
+| ID26 at 1301-1302 [(2)](#id26-at-1301-1302)                    |   U  |   I  |   I  |   I  |   I  |   I  |      |      |      |      |      |      |
+| Storage Sender at 1301-1302 [(3)](#storage-sender-at-1301-1302)|   U  |      |      |   U  |      |   U  |   U  |   U  |      |      |      |      |
+| ID25 at 1301-1302 [(4)](#id25-at-1301-1302)                    |   U  |   U  |      |   U  |      |   D  |      |      |   I  |   I  |      |   S  |
+| ID64 at STV [(5)](#id64-at-stv)                                |      |      |      |   U  |      |      |      |      |      |      |      |      |
+| ID26 at 7207-7210 [(6)](#id26-at-7207-7210)                    |   U  |   U  |   U  |   U  |   U  |   I  |      |      |      |      |      |      |
+| Storage Sender at 7207-7210 [(7)](#storage-sender-at-7207-7210)|   U  |   U  |      |   U  |   U  |   U  |   U  |   U  |      |      |      |   S  |
+| ID25 at 7207-7210 [(8)](#id25-at-7207-7210)                    |   U  |   U  |      |   U  |      |   D  |      |      |   U  |   U  |      |      |
+| ID64 at SRM [(9)](#id64-at-srm)                                |      |      |      |   U  |      |      |      |      |      |      |      |      |
+| ID33 [(10)](#id33)                    |   U  |      |      |   D  |      |      |      |   U  |      |      |      |      |
 
 # Empty Pallet - Set (F2)
 
