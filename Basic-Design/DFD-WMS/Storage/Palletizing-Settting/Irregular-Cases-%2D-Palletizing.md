@@ -342,8 +342,8 @@ Palletizing Completion("0":Normal Completion)</span>
 | ID26[(5)](#ID26-at-[1111-1115])                   |    | U  | U  |    | I   |    |
 | ID54[(6)](#ID54-at-[1111-1115])                   |    |    |    |    |     |    |
 | StorageSender[(7)](#Storage-Sender-at-[1111-1115])|    |    | U  |    | U   |    |
-| ID25[(8)](#ID25-at-[1111-1115])                     |        |        | UPDATE |        | DELETE |        |
-| ID26(9)                     | DELETE | DELETE | DELETE | DELETE | DELETE |        |
+| ID25[(8)](#ID25-at-[1111-1115])                   |    |    | U  |    | D   |    |
+| ID26[(9)](#ID26-at-[1303])                        | D  | D  | D  | D  |     |    |
 
 ###ID26 at [1101-1105]
 
