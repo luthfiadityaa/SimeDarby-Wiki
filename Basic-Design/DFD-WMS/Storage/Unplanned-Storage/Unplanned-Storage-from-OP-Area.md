@@ -10,7 +10,7 @@ If a downtime occurs on one of the lines, manual palletizing will be carried out
 ::: mermaid
 flowchart LR
   
-P1[FROM HP STATION - 1301 & 1302]-->P2[ID26]-->P3[StorageSender]-->P4[ID25]-->Cond1{Flow?} 
+P1[FROM OP STATION - 1303]-->P2[ID26]-->P3[StorageSender]-->P4[ID25]-->Cond1{Flow?} 
 :::
 
 **Stage 2**
