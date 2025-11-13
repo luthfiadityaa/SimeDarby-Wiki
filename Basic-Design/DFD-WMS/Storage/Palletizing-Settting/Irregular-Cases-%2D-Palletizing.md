@@ -333,8 +333,8 @@ Palletizing Completion("0":Normal Completion)</span>
 - **ARVL** : DNARRIVAL  
 - **STSN** : DMSTATION 
 
-| Action Name                 | WRKI   | PLLT   | CRYI   | STCK   | ARRVL  | STSN   | 
-|-----------------------------|--------|--------|--------|--------|--------|--------|
+| Action Name                   | WRKI   | PLLT   | CRYI   | STCK   | ARRVL  | STSN   | 
+|-------------------------------|--------|--------|--------|--------|--------|--------|
 | ID26[(1)](#ID26-at-1101-1105-)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
 | ID54(2)                     |        |        |        |        |        |        |
 | StorageSender(3)            |        |        | UPDATE |        | UPDATE |        |
