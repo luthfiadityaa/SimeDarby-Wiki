@@ -27,9 +27,9 @@
 
 
 ## Inbound Table Data Flow
-| Action Name                 | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | ITEM | STSN |
-|-----------------------------|------|------|------|------|------|------|------|------|------|------|------|------|
-| [Empty Pallet - Set (F2)]() |   I  |      |      |      |      |      |      |      |      |      |   S  |   S  |
+| Action Name                                         | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | ITEM | STSN |
+|-----------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|
+| [Empty Pallet - Set (F2)](#empty-pallet---set-(f2)) |   I  |      |      |      |      |      |      |      |      |      |   S  |   S  |
 | [ID26]()                    |   U  |   I  |   I  |   I  |   I  |   I  |      |      |      |      |      |      |
 | [Storage Sender]()          |   U  |      |      |   U  |      |   U  |   U  |   U  |      |      |      |      |
 | [ID25]()                    |   U  |   U  |      |   U  |      |   D  |      |      |   I  |   I  |      |   S  |
@@ -90,7 +90,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 
 ## DNPALLET
 - PALLET_ID = Sequence Object
-- BCR_DATA = Value from Screen (Pallet #)
+- BCR_DATA = Value from Screen (**Pallet #**)
 - REGIST_DATE = SYSTIMESTAMP
 - REGIST_PNAME = ClassName
 - LAST_UPDATE_DATE = SYSTIMESTAMP
@@ -102,7 +102,7 @@ This storage process flow is refer to AGC linkage Specification
 
 [AGCⅦA Linkage Specs_1.2.7_AF954201_SimeDarby_v1.1.xlsx - Storage Section - 05 Sheets](https://daifuku.sharepoint.com/:x:/r/sites/jp0211039/Shared%20Documents/PTDI/Projects/PT.%20Guthrie%20Indonesia%20Sei%20Mangkei%20Refinery(Sime%20Darby)/Garuda%20Project/F.%20Basic%20Design/A.%20AGC%20Linkage%20Specs/AGC%E2%85%A6A%20Linkage%20Specs_1.2.7_AF954201_SimeDarby_v1.1.xlsx?d=w31ccf4d7958e4ea989446a6ac5a1a566&csf=1&web=1&e=J2FP9Y)
 
-# ID26
+# ID26 at 1301-1302
 
 ::: mermaid
 flowchart LR
@@ -152,13 +152,13 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 
 ## DNARRIVAL
 - ARRIVAL_DATE       = SYSTIMESTAMP 
-- STATION_NO         = Arrival Station Number from ID26
+- STATION_NO         = Arrival Station Number from **ID26**
 - CARRY_KEY          = 99999999
-- BCR_DATA           = Barcode information from ID26
-- CONTROLINFO        = Control information from ID26
+- BCR_DATA           = Barcode information from **ID26**
+- CONTROLINFO        = Control information from **ID26**
 - SEND_FLAG          = 0:Not sent
-- HEIGHT             = Dimension Information from ID26
-- WIDTH              = Dimension Information From ID26
+- HEIGHT             = Dimension Information from **ID26**
+- WIDTH              = Dimension Information From **ID26**
 - REGIST_DATE        = SYSTIMESTAMP
 - REGIST_PNAME       = ClassName
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
@@ -250,7 +250,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 - LAST_UPDATE_PNAME  = ClassName
 
 
-# Storage Sender
+# Storage Sender at 1301-1302
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.asrs.transmission.StorageSender` &nbsp;</span>
@@ -310,7 +310,7 @@ After successful creation of arrival record in **ID26process**, Automatic Mode C
 - LAST_UPDATE_PNAME  = Class name
 
 
-# ID25
+# ID25 at 1301-1302
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process` &nbsp;</span>
@@ -409,7 +409,7 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 - LAST_UPDATE_DATE      = SYSTIMESTAMP
 - LAST_UPDATE_PNAME     = Class name
 
-# ID64
+# ID64 at STV
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process` &nbsp;</span>
@@ -436,7 +436,7 @@ Upon equipment **(STV)** have picked up the Pallet successfully, ID64 will be se
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = Class name
 
-# ID26
+# ID26 at 7207-7210
 
 ::: mermaid
 flowchart LR
@@ -530,7 +530,7 @@ Continue the process **storage**, AGC will send ID26 to WareNavi and WareNavi w
 - LAST_UPDATE_DATE  = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = ClassName
 
-# Storage Sender
+# Storage Sender at 7207-7210
 
 ::: mermaid
 flowchart LR
@@ -599,7 +599,7 @@ After successful creation of arrival record in **ID26process**, Automatic Mode C
 - LAST_UPDATE_DATE  = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
 
-# ID25
+# ID25 at 7207-7210
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process` &nbsp;</span>
@@ -667,7 +667,7 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 - LAST_UPDATE_DATE    = SYSTIMESTAMP
 - LAST_UPDATE_PNAME   = Class name
 
-# ID64
+# ID64 at SRM
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process` &nbsp;</span>
