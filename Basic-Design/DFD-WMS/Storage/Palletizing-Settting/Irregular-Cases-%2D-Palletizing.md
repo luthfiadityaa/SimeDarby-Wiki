@@ -942,7 +942,7 @@ After indicating a *Batch Start* is executed, it automatically sends **ID54** to
 
 <hr>
 
-##<span style="color:skyblue; font-weight:bold">Reverse – Batch End Not Executed Despite Force Completion. Treat as Data Error</span>
+##Reverse – Batch End Not Executed Despite Force Completion. Treat as Data Error
 
 ###<span style="color:skyblue; font-weight:bold">Database flow</span>
 **Abbreviation:**
