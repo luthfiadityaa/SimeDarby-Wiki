@@ -780,7 +780,7 @@ After the completion button flashes, the operator removes the pallet and presses
 | ID54[(2)](#ID54-to-Tower-Lights)|    |    |    |    |     |    |
 | ID54[(3)](#ID54-to-Tower-Off)   |    |    |    |    |     |    |
 
-###<span style="color:skyblue; font-weight:bold">ID26</span>
+###ID26 at (1101-1105)
 
 ::: mermaid
 flowchart LR
