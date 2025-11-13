@@ -76,22 +76,20 @@ FileExchange--INSERT-->FileExchange-insert
 
 Upon receiving new Plan Storage from Host system, WareNavi will insert related planned information to DNSTORAGEPLAN database table.
 
-## DNSTORAGEPLAN
-- PLAN_UKEY            = Sequence Object                                                                                                             
+## DNSTORAGEPLAN                                                                                                           
 - STATUS_FLAG          = 0:Not Started                                                       
 - CANCEL_FLAG          = 0:Normal Data                                                      
-- PLAN_DAY             = Value from SAP (Delivery Date)                                                       
-- VENDOR_CODE          = Value from SAP (Vendor Code)
-- VENDOR_NAME          = Value from SAP (Vendor Name)                                                     
-- COMPANY_CODE         = Value from SAP (Company Code)                                                      
-- RECEIVE_TICKET_NO    = Value from SAP (Document Number)                                                      
-- RECEIVE_LINE_NO      = Value from SAP (Item No / Line No)                                                      
-- RECEIVE_TICKET_DATE  = Value from SAP (Document Date)                                                                                                              
-- PLAN_AREA_NO         = Value from SAP (Plant)                                                      
+- PLAN_DAY             = Value from SAP (**Delivery Date**)                                                       
+- VENDOR_CODE          = Value from SAP (**Vendor Code**)
+- VENDOR_NAME          = Value from SAP (**Vendor Name**)                                                     
+- COMPANY_CODE         = Value from SAP (**Company Code**)                                                      
+- RECEIVE_TICKET_NO    = Value from SAP (**Document Number**)                                                      
+- RECEIVE_LINE_NO      = Value from SAP (**Item No / Line No**)                                                      
+- RECEIVE_TICKET_DATE  = Value from SAP (**Document Date**)                                                                                                              
+- PLAN_AREA_NO         = Value from SAP (**Plant**)                                                      
 - PLAN_LOCATION_NO     = DMWAREHOUSE.Warehose_no                                                      
-- MATERIAL_CODE        = Value from SAP (Material Code)     
-- UOM                  = Value from SAP (UOM)                                                                                                                         
-- PLAN_QTY             = Planned Quantity                                                                                                            
+- MATERIAL_CODE        = Value from SAP (**Material Code**)     
+- UOM                  = Value from SAP (**UOM**)                                                                                                            
 - REPORT_FLAG          = 0:Not Reported                                                                                                           
 - REGIST_KIND          = 0:File Loading                                                      
 - ERROR_INDICATION     = 0:Successfull
@@ -195,6 +193,8 @@ DNARRIVAL
 DNCARRYINFO
 DNPALLET
 DNWORKINFO
+DNSTOCK
+DNWORKLIST
 ")]
 
 StorageStationOperator[StorageStationOperator]
@@ -255,40 +255,92 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = ClassName
 
-### <span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
-| **Column Name**            | **Description / Notes**                               |
-|----------------------------|-------------------------------------------------------|
-| **JOB_NO**                 | Sequence Object
-| **SETTING_UNIT_KEY**       | Sequence Object
-| **COLLECT_JOB_NO**         | Sequence Object
-| **JOB_TYPE**               | 02:Storage
-| **STATUS_FLAG**            | 0:Not Started
-| **HARDWARE_TYPE**          | 3:ASRS
-| **PLAN_UKEY**              | DNSTORAGEPLAN.PLAN_UKEY
-| **STOCK_ID**               | Sequence Object
-| **SYSTEM_CONN_KEY**        | Sequence Object
-| **PLAN_DAY**               | DNSTORAGE.PLAN_DAY
-| **VENDOR_CODE**            | DNSTORAGEPLAN.VENDOR_CODE
-| **VENDOR_NAME**            | DNSTORAGEPLAN.VENDOR_NAME
-| **RECEIVE_TICKET_NO**      | DNSTORAGEPLAN.RECEIVE_TICKET_NO
-| **RECEIVE_LINE_NO**        | DNSTORAGEPLAN.RECEIVE_LINE_NO
-| **COMPANY_CODE**           | DNSTORAGEPLAN.COMPANY_CODE
-| **BATCH_NO**               | DNSTORAGEPLAN.BATCH_NO
-| **PLAN_AREA_NO**           | DNSTORAGEPLAN.PLAN_AREA_NO
-| **PLAN_LOCATION_NO**       | DNSTORAGEPLAN.PLAN_LOCATION_NO
-| **MATERIAL_CODE**          | DNSTORAGEPLAN.MATERIAL_CODE
-| **PLAN_QTY**               | DNSTORAGEPLAN.PLAN_QTY
-| **RESULT_QTY**             | DNSTORAGEPLAN.RESULT_QTY
-| **RESULT_AREA_NO**         | DMWAREHOUSE.AREA_NO ⟶ **9002 (Packaging Material)**
-| **RESULT_LOCATION_NO**     | DMWAREHOUSE.WAREHOUSE_NO
-| **WORK_DAY**               | DNSTORAGEPLAN.WORK_DAY
-| **USER_ID**                | Login Info
-| **TERMINAL_NO**            | Login Terminal
-| **STORING_PAIR_KEY**       | DNSTORAGEPLAN.STORING_PAIR_KEY
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
+## DNWORKINFO
+- JOB_NO             = Sequence Object
+- SETTING_UNIT_KEY   = Sequence Object
+- COLLECT_JOB_NO     = Sequence Object
+- JOB_TYPE           = 02:Storage
+- STATUS_FLAG        = 0:Not Started
+- HARDWARE_TYPE      = 3:ASRS
+- PLAN_UKEY          = DNSTORAGEPLAN.PLAN_UKEY
+- STOCK_ID           = Sequence Object
+- SYSTEM_CONN_KEY    = Sequence Object
+- PLAN_DAY           = DNSTORAGEPLAN.PLAN_DAY
+- VENDOR_CODE        = DNSTORAGEPLAN.VENDOR_CODE
+- VENDOR_NAME        = DNSTORAGEPLAN.VENDOR_NAME
+- RECEIVE_TICKET_NO  = DNSTORAGEPLAN.RECEIVE_TICKET_NO
+- RECEIVE_LINE_NO    = DNSTORAGEPLAN.RECEIVE_LINE_NO
+- COMPANY_CODE       = DNSTORAGEPLAN.COMPANY_CODE
+- BATCH_NO           = DNSTORAGEPLAN.BATCH_NO
+- PLAN_AREA_NO       = DNSTORAGEPLAN.PLAN_AREA_NO
+- PLAN_LOCATION_NO   = DNSTORAGEPLAN.PLAN_LOCATION_NO
+- MATERIAL_CODE      = DNSTORAGEPLAN.MATERIAL_CODE
+- PLAN_QTY           = DNSTORAGEPLAN.PLAN_QTY
+- PROCESS_QTY        = DNSTORAGEPLAN.PROCESS_QTY
+- RESULT_QTY         = DNSTORAGEPLAN.RESULT_QTY
+- RESULT_AREA_NO     = DMWAREHOUSE.AREA_NO ⟶ **9002 (Packaging Material)**
+- RESULT_LOCATION_NO = DMWAREHOUSE.WAREHOUSE_NO
+- WORK_DAY           = DNSTORAGEPLAN.WORK_DAY
+- USER_ID            = Login Info
+- TERMINAL_NO        = Login Terminal
+- STORING_PAIR_KEY   = DNSTORAGEPLAN.STORING_PAIR_KEY
+- REGIST_DATE        = SYSTIMESTAMP                                                    
+- REGIST_PNAME       = ClassName
+- LAST_UPDATE_DATE   = SYSTIMESTAMP
+- LAST_UPDATE_PNAME  = ClassName
+
+## DNSTOCK
+- STOCK_ID           = Sequence Object
+- AREA_NO            = DNWORKINFO.PLAN_AREA_NO
+- LOCATION_NO        = DNWORKINFO.PLAN_LOCATION_NO
+- DNWORKINFO         = DNWORKINFO.DNWORKINFO
+- COMPANY_CODE       = DNWORKINFO.COMPANY_CODE
+- VENDOR_CODE        = DNWORKINFO.VENDOR_CODE
+- VENDOR_NAME        = DNWORKINFO.VENDOR_NAME
+- STORAGE_TYPE       = 2:NEW
+- STORAGE_DAY        = DMWARENAVISYSTEM.WORK_DAY
+- STORAGE_DATE       = SYSTIMESTAMP
+- NEWEST_STORAGE_DATE= DNSTOCK.STORAGE_DATE
+- STOCK_QTY          = DNWORKINFO.PROCESS_QTY + DNWORKINFO.RESULT_QTY
+- PLAN_QTY           = DNWORKINFO.PLAN_QTY
+- PALLET_ID          = DNPALLET.PALLET_ID
+- REGIST_DATE        = SYSTIMESTAMP
+- REGIST_PNAME       = ClassName
+- LAST_UPDATE_DATE   = SYSTIMESTAMP
+- LAST_UPDATE_PNAME  = ClassName
+
+## DNWORKLIST
+- JOB_NO             = DNWORKINFO.JOB_NO
+- CARRY_KEY          = DNWORKINFO.SYSTEM_CONN_KEY
+- SETTING_UNIT_KEY   = DNWORKINFO.SETTING_UNIT_KEY
+- COLLECT_JOB_NO     = DNWORKINFO.COLLECT_JOB_NO
+- JOB_TYPE           = DNWORKINFO.JOB_TYPE
+- PLAN_UKEY          = DNWORKINFO.PLAN_UKEY
+- STOCK_ID           = DNWORKINFO.STOCK_ID
+- PALLET_ID          = DNCARRYINFO.PALLET_ID
+- PLAN_DAY           = DNWORKINFO.PLAN_DAY
+- COMPANY_CODE       = DNWORKINFO.COMPANY_CODE
+- BATCH_NO           = DNWORKINFO.BATCH_NO
+- PLAN_AREA_NO       = DNWORKINFO.PLAN_AREA_NO
+- PLAN_LOCATION_NO   = DNWORKINFO.PLAN_LOCATION_NO
+- MATERIAL_CODE      = DNWORKINFO.MATERIAL_CODE
+- STORAGE_TYPE       = 2:New
+- STORAGE_DATE       = SYSTIMESTAMP
+- PLAN_QTY           = DNWORKINFO.PLAN_QTY
+- STOCK_QTY          = DNWORKINFO.PROCESS_QTY + DNWORKINFO.RESULT_QTY
+- PRIORITY           = DNCARRYINFO.PRIORITY
+- WORK_NO            = DNCARRYINFO.WORK_NO
+- SOURCE_STATION_NO  = DNCARRYINFO.SOURCE_STATION_NO
+- DEST_STATION_NO    = DNCARRYINFO.DEST_STATION_NO
+- SCHEDULE_NO        = DNCARRYINFO.SCHEDULE_NO
+- END_STATION_NO     = DNCARRYINFO.END_STATION_NO
+- USER_ID            = Login Info
+- USER_NAME          = Login Info
+- TERMINAL_NO        = Login Terminal
+- REGIST_DATE        = SYSTIMESTAMP                                                    
+- REGIST_PNAME       = ClassName
+- LAST_UPDATE_DATE   = SYSTIMESTAMP
+- LAST_UPDATE_PNAME  = ClassName
 
 ##<span style="color:skyblue; font-weight:bold">Automatic Mode Change Sender</span>
 
