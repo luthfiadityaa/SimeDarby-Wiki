@@ -1088,7 +1088,7 @@ No Read("0":None)</span>
 *   **LAST_UPDATE_DATE** – `SYSTIMESTAMP`    
 *   **LAST_UPDATE_PNAME** – `ClassName`
 
-###<span style="color:skyblue; font-weight:bold">Storage Sender</span>
+###Storage Sender at <1101-1105>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
 
 ::: mermaid
@@ -1128,7 +1128,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: Class name
 
-###<span style="color:skyblue; font-weight:bold">ID25</span>
+###ID25 at <1101-1105>
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process &nbsp;</span>
 
