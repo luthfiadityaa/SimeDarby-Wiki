@@ -342,14 +342,14 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = ClassName
 
-##<span style="color:skyblue; font-weight:bold">Automatic Mode Change Sender</span>
+# Storage Sender
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.asrs.transmission.AutomaticModeChangeSender` &nbsp;</span>
+`jp.co.daifuku.asrs.transmission.StorageSender` &nbsp;</span>
 
 ::: mermaid
 flowchart LR
-automaticmodechangesender-update[("
+storagesender-update[("
 DNARRIVAL
 DNCARRYINFO
 DMWAREHOUSE
@@ -358,38 +358,37 @@ DNPALLET
 DNSTOCK
 DNWORKINFO
 ")]
-automaticmodechangesender-input[("
+storagesender-input[("
 DNARRIVAL
 DNCARRYINFO
+DMSTATION
 ")]
 
 id05msg("
 ID 05
 ")
 
-automaticmodechangesender-input-->automaticmodechangesender-->id05msg
-automaticmodechangesender--> |UPDATE| automaticmodechangesender-update
+storagesender-input-->storagesender-->id05msg
+storagesender--> |UPDATE| storagesender-update
 :::
 
-After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, Automatic Mode Change Sender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">1:Started to 2:Waiting for Response.</span>
+After successful creation of arrival record in **ID26process**, Automatic Mode Change Sender is the following process where it will send **ID05** to **AGC**. To indicate **ID05** is sent to AGC, **DNCARRYINFO.CMD_STATUS** will be updated from **1:Started to 2:Waiting for Response**.
 
-##<span style="color:skyblue; font-weight:bold">Table Value</span>
-
-####<span style="color:skyblue; font-weight:bold">DMWAREHOUSE</span>
+## DMWAREHOUSE
 | **Column Name**            | **Description / Notes**                               |
 |----------------------------|-------------------------------------------------------|
 | **LAST_USED_STATION_NO_PM**| Aisle Number where a reserved location belongs to
 | **LAST_UPDATE_DATE**       | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**      | Class name 
 
-####<span style="color:skyblue; font-weight:bold">DMSHELF</span>
+## DMSHELF
 | **Column Name**                | **Description / Notes**                                  |
 |--------------------------------|-------------------------------------------------------|
 | **STATUS_FLAG**                | 2:Reserved Location
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**     | Class name
 
-####<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+## DNCARRYINFO
 | **Column Name**                    | **Description / Notes**                                  |
 |------------------------------------|-----------------------------------------------|
 | **AISLE_STATION_NO**               | Aisle Number where a reserved location belongs to
@@ -398,7 +397,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_UPDATE_PNAME**              | Class name
 
 
-####<span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
+## DNWORKINFO
 | **Column Name**                | **Description / Notes**                               |
 |--------------------------------|-------------------------------------------------------|
 | **STATUS_FLAG**                | 1: Working 
@@ -406,7 +405,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
 
-####<span style="color:skyblue; font-weight:bold">DNPALLET</span>
+## DNPALLET
 | **Column Name**                | **Description / Notes**                               |
 |--------------------------------|-------------------------------------------------------|
 | **CURRENT_STATION_NO**         | Reserved Location Number
@@ -414,7 +413,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
 
-####<span style="color:skyblue; font-weight:bold">DNSTOCK</span>
+## DNSTOCK
 | **Column Name**                | **Description / Notes**                               |
 |--------------------------------|-------------------------------------------------------|
 | **AREA_NO**                    | DNCARRYINFO.END_STATION_NO
@@ -422,7 +421,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 | **LAST_UPDATE_DATE**           | SYSTIMESTAMP
 | **LAST_UPDATE_PNAME**          | Class name
 
-####<span style="color:skyblue; font-weight:bold">DNARRIVAL</span>
+## DNARRIVAL
 | **Column Name**                | **Description / Notes**                               |
 |--------------------------------|-------------------------------------------------------|
 | **CARRY_KEY**                  | DNCARRYINFO.CARRY_KEY
