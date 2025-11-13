@@ -776,7 +776,7 @@ After the completion button flashes, the operator removes the pallet and presses
 
 | Action Name                 | WRKI   | PLLT   | CRYI   | STCK   | ARRVL  | STSN   | 
 |-----------------------------|--------|--------|--------|--------|--------|--------|
-| ID26(1)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
+| ID26[(1)](#ID26-at-(1101-1105))                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
 | ID54(2)                     |        |        |        |        |        |        |
 | ID54(3)                     |        |        |        |        |        |        |
 
