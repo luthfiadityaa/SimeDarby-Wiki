@@ -232,6 +232,8 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 
 ###ID26 at 1111-1115
 
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.as21.common.location.decide.LocationManager&nbsp;</span>
+
 ::: mermaid
 flowchart LR
 
