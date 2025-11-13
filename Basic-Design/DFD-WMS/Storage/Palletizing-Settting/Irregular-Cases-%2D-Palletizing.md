@@ -335,7 +335,7 @@ Palletizing Completion("0":Normal Completion)</span>
 
 | Action Name                   | WRKI   | PLLT   | CRYI   | STCK   | ARRVL  | STSN   | 
 |-------------------------------|--------|--------|--------|--------|--------|--------|
-| ID26[(1)](#ID26-at-1101-1105--)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
+| ID26[(1)](#ID26-at-1101-1105)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
 | ID54(2)                     |        |        |        |        |        |        |
 | StorageSender(3)            |        |        | UPDATE |        | UPDATE |        |
 | ID25(4)                     |        |        | UPDATE |        | DELETE |        |
@@ -345,7 +345,7 @@ Palletizing Completion("0":Normal Completion)</span>
 | ID25(8)                     |        |        | UPDATE |        | DELETE |        |
 | ID26(9)                     | DELETE | DELETE | DELETE | DELETE | DELETE |        |
 
-###ID26 at 1101-1105&nbsp;
+###ID26 at 1101-1105
 
 ::: mermaid
 flowchart LR
