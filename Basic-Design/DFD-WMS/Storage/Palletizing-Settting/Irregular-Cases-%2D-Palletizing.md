@@ -515,21 +515,17 @@ After successful creation of arrival record in <span style="color:green; font-we
 
 ####<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 #####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Field Name**            | **Insert Value**                              |
-|---------------------------|-----------------------------------------------|
-| **CMD_STATUS**            | 2:Waiting for response
-| **CONTROL_INFO**          | <span style="color:red; font-weight:bold">DNARRIVAL.CONTROL_INFO</span>
-| **REJECT_FACTOR**         | <span style="color:red; font-weight:bold">01:BCR No-read</span>
-| **LAST_UPDATE_DATE**      | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**     | Class name
+*   **CMD_STATUS** – `2: Waiting for response`    
+*   **CONTROL_INFO** – **<span style="color:red;">DNARRIVAL.CONTROL_INFO</span>**    
+*   **REJECT_FACTOR** – **<span style="color:red;">01: BCR No-read</span>**    
+*   **LAST_UPDATE_DATE** – `SYSTIMESTAMP`    
+*   **LAST_UPDATE_PNAME** – `Class name`
 
 ####<span style="color:skyblue; font-weight:bold">DNArrival</span>
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
-| **CARRY_KEY**                  | DNCARRYINFO.CARRY_KEY
-| **SEND_FLAG**                  | 1:Sent
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**         | Class name
+*   **CARRY_KEY** – `DNCARRYINFO.CARRY_KEY`    
+*   **SEND_FLAG** – `1: Sent`    
+*   **LAST_UPDATE_DATE** – `SYSTIMESTAMP`    
+*   **LAST_UPDATE_PNAME** – `Class name`
 
 ###<span style="color:skyblue; font-weight:bold">ID25</span>
 
