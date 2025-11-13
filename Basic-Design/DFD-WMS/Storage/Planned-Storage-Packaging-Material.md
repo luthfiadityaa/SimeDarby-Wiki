@@ -35,7 +35,7 @@
 | [ID33](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20Packaging%20Material&pageId=882&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid33%3C/span%3E) | UPDATE | UPDATE | UPDATE | | DELETE | UPDATE | INSERT | | | UPDATE | INSERT |
 
 
-#<span style="color:skyblue; font-weight:bold">Planned Storage from Host</span>
+# Planned Storage from Host
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wms.web.display.storage.plannedstoragepkg.PlannedStoragePkgSCH` &nbsp;</span>
@@ -61,7 +61,7 @@ HostCommExecutor-->FileExchange
 FileExchange--INSERT-->FileExchange-insert
 :::
 
-##<span style="color:skyblue; font-weight:bold">StoragePlanPkgDataLoader</span>
+# StoragePlanPkgDataLoader
 - Document Number
 - Company Code
 - Vendor
@@ -76,35 +76,32 @@ FileExchange--INSERT-->FileExchange-insert
 
 Upon receiving new Plan Storage from Host system, WareNavi will insert related planned information to DNSTORAGEPLAN database table.
 
-### <span style="color:skyblue; font-weight:bold">DNSTORAGEPLAN</span>
+## DNSTORAGEPLAN
+- PLAN_UKEY            = Sequence Object                                                                                                             
+- STATUS_FLAG          = 0:Not Started                                                       
+- CANCEL_FLAG          = 0:Normal Data                                                      
+- PLAN_DAY             = Value from SAP (Delivery Date)                                                       
+- VENDOR_CODE          = Value from SAP (Vendor Code)
+- VENDOR_NAME          = Value from SAP (Vendor Name)                                                     
+- COMPANY_CODE         = Value from SAP (Company Code)                                                      
+- RECEIVE_TICKET_NO    = Value from SAP (Document Number)                                                      
+- RECEIVE_LINE_NO      = Value from SAP (Item No / Line No)                                                      
+- RECEIVE_TICKET_DATE  = Value from SAP (Document Date)                                                                                                              
+- PLAN_AREA_NO         = Value from SAP (Plant)                                                      
+- PLAN_LOCATION_NO     = DMWAREHOUSE.Warehose_no                                                      
+- MATERIAL_CODE        = Value from SAP (Material Code)     
+- UOM                  = Value from SAP (UOM)                                                                                                                         
+- PLAN_QTY             = Planned Quantity                                                                                                            
+- REPORT_FLAG          = 0:Not Reported                                                                                                           
+- REGIST_KIND          = 0:File Loading                                                      
+- ERROR_INDICATION     = 0:Successfull
+- TYPE                 = S: Success
+- REGIST_DATE          = SYSTIMESTAMP                                                  
+- REGIST_PNAME         = ClassName
+- LAST_UPDATE_DATE     = SYSTIMESTAMP
+- LAST_UPDATE_PNAME    = ClassName
 
-| **Column Name**            | **Description / Notes**                               |
-|----------------------------|-------------------------------------------------------|
-| **PLAN_UKEY**              | Sequence Object                                                                                                             
-| **STATUS_FLAG**            | 0:Not Started                                                       
-| **CANCEL_FLAG**            | 0:Normal Data                                                      
-| **PLAN_DAY**               | Value from SAP (Delivery Date)                                                       
-| **VENDOR_CODE**            | Value from SAP (Vendor Code)
-| **VENDOR_NAME**            | Value from SAP (Vendor Name)                                                     
-| **COMPANY_CODE**           | Value from SAP (Company Code)                                                      
-| **RECEIVE_TICKET_NO**      | Value from SAP (Document Number)                                                      
-| **RECEIVE_LINE_NO**        | Value from SAP (Item No / Line No)                                                      
-| **RECEIVE_TICKET_DATE**    | Value from SAP (Document Date)                                                                                                              
-| **PLAN_AREA_NO**           | Value from SAP (Plant)                                                      
-| **PLAN_LOCATION_NO**       | DMWAREHOUSE.Warehose_no                                                      
-| **MATERIAL_CODE**          | Value from SAP (Material Code)     
-| **UOM**                    | Value from SAP (UOM)                                                                                                                         
-| **PLAN_QTY**               | Planned Quantity                                                                                                            
-| **REPORT_FLAG**            | 0:Not Reported                                                                                                           
-| **REGIST_KIND**            | 0:File Loading                                                      
-| **ERROR_INDICATION**       | 0:Successfull
-| **TYPE**                   | S: Success
-| **REGIST_DATE**            | SYSTIMESTAMP                                                  
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
-
-#<span style="color:skyblue; font-weight:bold">Planned Storage - Set (F2)</span>
+# Planned Storage - Set (F2)
 ![image.png](/.attachments/image-731303e9-dc65-4f98-ba82-ba6d13a6c58b.png)
 Planned Storage Setting (PKG) is used to set the information of stock which will be entered into ASRS. After **Set(F2)** all item in input text will be process and The result will be posted back to SAP as [Production Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
@@ -144,46 +141,42 @@ flowchart LR
 
 :::
 
-# <span style="color:skyblue; font-weight:bold">Validations</span>
+## Validations
 This section explains the validations for the whole proccess Storage Packaging Material
-- AGC is online.  <span style="color:green; font-weight:bold">(DMGroupController.STATUS_FLAG.ONLINE)</span>
+- AGC is online. (**DMGroupController.STATUS_FLAG.ONLINE**)
 - Material Code exists in **DMMaterialMaster**
-- Material Code filtered with <span style="color:green; font-weight:bold">MaterialType.ZPCK</span> 
+- Material Code filtered with **MaterialType.ZPCK**
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
-- Pallet Information does not exist in <span style="color:green; font-weight:bold">DNCARRYINFO.</span>  
+- Pallet Information does not exist in **DNCARRYINFO** 
   To check for Pallet Information:  
-  <span style="color:green; font-weight:bold">JOIN DNCARRYINFO.PALLET_ID = DNPALLET.PALLET_ID  
-  CONDITION DNPALLET.BCR_DATA = <Pallet Number> </span>  
+  **JOIN DNCARRYINFO.PALLET_ID = DNPALLET.PALLET_ID  
+  CONDITION DNPALLET.BCR_DATA = <Pallet Number>**
   So if result > 0, Palletize Start cannot proceed.
 - Storage Qty, Planned Qty and Stored Qty must be greater than **"0"**
-- Station <span style="color:green; font-weight:bold">(ST1106)</span> is not suspended <span style="color:green; font-weight:bold">(DMSTATION.SUSPEND.OFF)</span>
-- Station <span style="color:green; font-weight:bold">(ST1106)</span> is not disconnected <span style="color:green; font-weight:bold">(DMSTATION.STATUS_FLAG.ACTIVE)</span>
+- Station (**ST1106**) is not suspended (**DMSTATION.SUSPEND.OFF**)
+- Station (**ST1106**) is not disconnected (**DMSTATION.STATUS_FLAG.ACTIVE**)
 
-## <span style="color:skyblue; font-weight:bold">Table Value</span>
-
-### <span style="color:skyblue; font-weight:bold">DNSTORAGEPLAN</span>
-| **Column Name**            | **Description / Notes**                           |
-|----------------------------|---------------------------------------------------|
-| **PLAN_UKEY**              | Sequence Object                                                                                                             
-| **STATUS_FLAG**            | 1:Working                                                       
-| **CANCEL_FLAG**            | 0:Normal Data                                                                                                          
-| **PLAN_QTY**               | Value from screen (Planned Qty)                                                     
-| **PROCESS_QTY**            | Value from screen (Storage Qty)                                                       
-| **RESULT_QTY**             | Value from screen (Stored Qty)                                                                                                            
-| **REPORT_FLAG**            | 0:Not Reported                                                      
-| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY                                                                                                            
-| **BCR_DATA**               | Value from screen (Pallet #)       
-| **BATCH_NO**               | Value from screen (Batch #)                                                   
-| **STORING_PAIR_KEY**       | Value from screen (Material Code + Batch #)  
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
+## DNSTORAGEPLAN
+- PLAN_UKEY         = Sequence Object                                                                                                             
+- STATUS_FLAG       = 1:Working                                                       
+- CANCEL_FLAG       = 0:Normal Data                                                                                                          
+- PLAN_QTY          = Value from screen (**Planned Qty**)                                                     
+- PROCESS_QTY       = Value from screen (**Storage Qty**)                                                       
+- RESULT_QTY        = Value from screen (**Stored Qty**)                                                                                                            
+- REPORT_FLAG       = 0:Not Reported                                                      
+- WORK_DAY          = DMWARENAVISYSTEM.WORK_DAY                                                                                                            
+- BCR_DATA          = Value from screen (**Pallet #**)       
+- BATCH_NO          = Value from screen (**Batch #**)                                                   
+- STORING_PAIR_KEY  = Value from screen (**Material Code + Batch #**)  
+- LAST_UPDATE_DATE  = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = ClassName
 
 
-#<span style="color:skyblue; font-weight:bold">Storage Flow Process</span>
+# Storage Flow Process
 This storage process flow is refer to AGC linkage Specification
 [AGCⅦA Linkage Specs_1.2.7_AF954201_SimeDarby_v1.1.xlsx - Storage Section - 05 Sheets](https://daifuku.sharepoint.com/:x:/r/sites/jp0211039/Shared%20Documents/PTDI/Projects/PT.%20Guthrie%20Indonesia%20Sei%20Mangkei%20Refinery(Sime%20Darby)/Garuda%20Project/F.%20Basic%20Design/A.%20AGC%20Linkage%20Specs/AGC%E2%85%A6A%20Linkage%20Specs_1.2.7_AF954201_SimeDarby_v1.1.xlsx?d=w31ccf4d7958e4ea989446a6ac5a1a566&csf=1&web=1&e=J2FP9Y)
 
-#<span style="color:skyblue; font-weight:bold">ID26 - Dummy Arrival</span>
+# ID26 - Dummy Arrival
 
 ::: mermaid
 flowchart LR
@@ -204,10 +197,10 @@ DNPALLET
 DNWORKINFO
 ")]
 
-InOutStationOperator[InOutStationOperator]
+StorageStationOperator[StorageStationOperator]
 
-releaseCommand-->id26msg-->id26process-->InOutStationOperator
-InOutStationOperator--> |INSERT| id26-insert
+releaseCommand-->id26msg-->id26process-->StorageStationOperator
+StorageStationOperator--> |INSERT| id26-insert
 :::
 
 After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let InOutStationOperator picks up the data.
@@ -215,60 +208,52 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.asrs.communication.id.recv.As21Id26` &nbsp;</span>
 
-##<span style="color:skyblue; font-weight:bold">Table Value</span>
+## DNARRIVAL
+- ARRIVAL_DATE      = SYSTIMESTAMP 
+- STATION_NO        = Arrival Station Number from **ID26** 
+- CARRY_KEY         = 99999999       
+- BCR_DATA          = Barcode information from **ID26**
+- CONTROLINFO       = Control information from **ID26**
+- SEND_FLAG         = 0:Not sent
+- HEIGHT            = Dimension Information from **ID26**
+- WIDTH             = Dimension Information From **ID26**
+- REGIST_DATE       = SYSTIMESTAMP                                                    
+- REGIST_PNAME      = ClassName
+- LAST_UPDATE_DATE  = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = ClassName
 
-####<span style="color:skyblue; font-weight:bold">DNARRIVAL</span>
-| **Column Name**            | **Description / Notes**                       |
-|----------------------------|-----------------------------------------------|
-| **ARRIVAL_DATE**           | SYSTIMESTAMP 
-| **STATION_NO**             | Arrival Station Number from ID26 
-| **CARRY_KEY**              | 99999999       
-| **BCR_DATA**               | Barcode information from ID26
-| **CONTROLINFO**            | Control information from ID26
-| **SEND_FLAG**              | 0:Not sent
-| **HEIGHT**                 | Dimension Information from ID26
-| **WIDTH**                  | Dimension Information From ID26
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
+## DNCARRYINFO
+- CARRY_KEY         = Sequence Object  
+- PALLET_ID         = Sequence Object
+- WORK_TYPE         = 26:Direct Transfer
+- CMD_STATUS        = 1:Started 
+- PRIORITY          = 2:Normal
+- RESTORING_FLAG    = 0:Not Restore to Original Location
+- CARRY_FLAG        = 1:Storage
+- WORK_NO           = Sequence Object
+- SOURCE_STATION_NO = DNPALLET.CURRENT_STATION_NO ⟶ **1106**
+- DEST_STATION_NO   = Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (**7211/7212/7213/7214**)
+- CANCEL_REQUEST    = 0:Not Requested
+- SCHEDULE_NO       = Sequence Object
+- END_STATION_NO    = DNCARRYINFO.DEST_STATION_NO
+- REGIST_DATE       = SYSTIMESTAMP                                                    
+- REGIST_PNAME      = ClassName
+- LAST_UPDATE_DATE  = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = ClassName
 
-####<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
-| **Column Name**                | **Description / Notes**                       |
-|--------------------------------|-----------------------------------------------|
-| **CARRY_KEY**                  | Sequence Object  
-| **PALLET_ID**                  | DNPALLET.PALLET_ID
-| **WORK_TYPE**                  | 26:Direct Transfer
-| **CMD_STATUS**                 | 1:Started 
-| **PRIORITY**                   | 2:Normal
-| **RESTORING_FLAG**             | 0:Not Restore to Original Location
-| **CARRY_FLAG**                 | 3: Direct Transfer
-| **WORK_NO**                    | Sequence Object
-| **SOURCE_STATION_NO**          | DNPALLET.CURRENT_STATION_NO ⟶ **1106**
-| **DEST_STATION_NO**            | Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ **(7211/7212/7213/7214)**
-| **CANCEL_REQUEST**             | 0:Not Requested
-| **SCHEDULE_NO**                | Sequence Object
-| **END_STATION_NO**             | DNWORKINFO.PLAN_AREA_NO
-| **REGIST_DATE**                | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**               | ClassName
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | ClassName
-
-### <span style="color:skyblue; font-weight:bold">DNPALLET</span>
-| **Column Name**            | **Description / Notes**                           |
-|----------------------------|-------------------------------------------------------|
-| **PALLET_ID**              | Sequence Object                                                       
-| **CURRENT_STATION_NO**     | DNARRIVAL.STATION_NO ⟶ **1106**                                                        
-| **WH_STATION_NO**          | 9002                                                      
-| **STATUS_FLAG**            | 1:Reserved for Storage                                                      
-| **ALLOCATION_FLAG**        | 1:Allocated                                                      
-| **EMPTY_FLAG**             | 0:Normal Pallet                                                                                                              
-| **BCR_DATA**               | Barcode information from ID26                                                     
-| **LAST_STORED_DATE**       | SYSTIMESTAMP                                                                                                           
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
+## DNPALLET
+- PALLET_ID          = Sequence Object                                                       
+- CURRENT_STATION_NO = DNARRIVAL.STATION_NO ⟶ **1106**                                                        
+- WH_STATION_NO      = 9002                                                      
+- STATUS_FLAG        = 1:Reserved for Storage                                                      
+- ALLOCATION_FLAG    = 1:Allocated                                                      
+- EMPTY_FLAG         = 0:Normal Pallet                                                                                                              
+- BCR_DATA           = Barcode information from **ID26**                                                     
+- LAST_STORED_DATE   = SYSTIMESTAMP                                                                                                           
+- REGIST_DATE        = SYSTIMESTAMP                                                    
+- REGIST_PNAME       = ClassName
+- LAST_UPDATE_DATE   = SYSTIMESTAMP
+- LAST_UPDATE_PNAME  = ClassName
 
 ### <span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
 | **Column Name**            | **Description / Notes**                               |
