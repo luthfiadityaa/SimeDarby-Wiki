@@ -63,6 +63,8 @@ P23[ID64]--> |9011-9014| P14[ID33]
   - **D** : DELETE
   - **S** : SELECT 
 
+<span style="background-color:yellow; color:black; font-weight:bold">Since the process is identical, avoid duplicating content. Begin with the Palletize Start step starting at <span style="color:green; font-weight:bold">ID26</span>, and then return to this page Batch End when approaching the last <span style="color:green; font-weight:bold">ID64</span> to continue with the subsequent process.</span>
+
 | Action Name                                                 |STRP|WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|MTMS|STSN| 
 |-------------------------------------------------------------|----|----|----|----|----|----|----|-----|----|----|----|----|----|
 | Batch End - SetF2 [(1)](#Batch-End---Set(F2))               | S  |    |    |    |    |    |    |     |    |    |    | S  | S  |    
