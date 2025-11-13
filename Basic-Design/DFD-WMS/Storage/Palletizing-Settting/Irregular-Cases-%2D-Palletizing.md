@@ -320,7 +320,7 @@ Palletizing Completion("0":Normal Completion)</span>
 
 <hr>
 
-##<span style="color:skyblue; font-weight:bold">No-Read (Go to Reject station)</span>
+##No-Read (Go to Reject station)
 ###<span style="color:skyblue; font-weight:bold">Database flow</span>
 **Abbreviation:**
 - **STRP** : DNSTORAGEPLAN  
