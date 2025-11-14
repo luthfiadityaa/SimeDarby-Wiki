@@ -1128,7 +1128,7 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 
 <hr>
 
-##Unplanned-Storage-and-Retrieval-Result
+##Unplanned Storage and Retrieval Result
 - (https://dev.azure.com/DaifukuSW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result) </span>
 
 <hr>
