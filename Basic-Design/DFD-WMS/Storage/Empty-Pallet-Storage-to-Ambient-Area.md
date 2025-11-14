@@ -18,7 +18,7 @@
 | **ITEM** | DMITEM           |
 | **STSN** | DMSTATION        |
 
-| **CODE** | TABLE NAME       |
+| **CODE** | OPERATION NAME   |
 |----------|------------------|
 | **S**    | SELECT           |
 | **I**    | INSERT           |
