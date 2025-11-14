@@ -10,7 +10,6 @@ P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage database flow</span>
 **Abbreviation:**
-- **STRP** : DNSTORAGEPLAN  
 - **WRKI** : DNWORKINFO  
 - **WRKL** : DNWORKINFOLIST  
 - **PLLT** : DNPALLET  
