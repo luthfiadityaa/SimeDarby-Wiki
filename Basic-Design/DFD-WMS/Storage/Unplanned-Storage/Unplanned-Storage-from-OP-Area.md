@@ -563,7 +563,7 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 *   **LAST_UPDATE_DATE** — SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME** — Class name
 
-##<span style="color:skyblue; font-weight:bold">ID64&nbsp;&nbsp;</span>
+##>ID64 at SRM From 7101-7110
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process&nbsp;</span>
 
 ::: mermaid
