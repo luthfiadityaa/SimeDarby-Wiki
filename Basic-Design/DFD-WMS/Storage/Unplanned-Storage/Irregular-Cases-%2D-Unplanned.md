@@ -26,7 +26,7 @@ Cond2 -->|No| Move2[ID05]
 | Action Name                                     |WRK |PLLT|CRYI|STCK|ARRVL|STSN| 
 |-------------------------------------------------|----|----|----|----|-----|----|
 | ID26[(1)](#ID26-at-1301-1303)                   | I  | I  | I  | I  | I   |    |
-| StorageSender[(2)](#StorageSender-at-1301-1303) |    |    | U  |    | U   |    |
+| StorageSender[(2)](#Storage-Sender-at-1301-1303) |    |    | U  |    | U   |    |
 | ID25[(4)](#ID25-at-1301-1303)                   |    |    | U  |    | D   |    |
 | ID26[(5)](#ID26-at-(1301-1303))                 |    | U  | U  |    | I   |    |
 
