@@ -153,10 +153,10 @@ flowchart LR
 *   **STOCK_ID**: DNSTOCK.STOCKID    
 *   **PLAN_AREA_NO**: DNSTOCK.AREANO   
 *   **PLAN_DAY**: DMWARENAVISYSTEM.WORK_DAY    
-*   **BATCH_NO**: Value from screen (Batch No)    
+*   **BATCH_NO**: Value from screen (Batch #)    
 *   **MATERIAL_CODE**: Value from screen (Material Code)    
 *   **MATERIAL_NAME**: Value from screen (Material Name)    
-*   **PLAN_QTY**: Value from screen (Storage Qty)    
+*   **PLAN_QTY**: Value from screen (Retrieval Qty)    
 *   **QTY_KG_CRTN**: Value from screen (Qty kg/crtn)    
 *   **QTY_CRTN_PL**: Value from screen (Qty crtn/PL)    
 *   **UOM**: Value from screen (UOM)    
