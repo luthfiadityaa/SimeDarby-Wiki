@@ -701,8 +701,8 @@ DNCARRYINFO
 ")]
 
 id33-->id33process
-id33process--> |UPDATE| id33-update
-id33process--> |DELETE| id33-delete
+id33process-.UPDATE.->id33-update
+id33process--DELETE-->id33-delete
 :::
 
 ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage operation of the pallet is completed by SRM.
