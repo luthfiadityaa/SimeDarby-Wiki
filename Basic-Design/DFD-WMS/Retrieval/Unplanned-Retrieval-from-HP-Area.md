@@ -151,7 +151,7 @@ flowchart LR
 *   **STATUS_FLAG**: 0:Not Started    
 *   **PLAN_UKEY**: Sequence Object    
 *   **STOCK_ID**: DNSTOCK.STOCKID    
-*   **PLAN_AREA_NO**: Value from screen (Storage Location To) ⟶ **FGW1 (Ambient/9002) or FGW2 (Tempering/9001)**    
+*   **PLAN_AREA_NO**: DNSTOCK.AREANO   
 *   **PLAN_DAY**: DMWARENAVISYSTEM.WORK_DAY    
 *   **BATCH_NO**: Value from screen (Batch No)    
 *   **MATERIAL_CODE**: Value from screen (Material Code)    
