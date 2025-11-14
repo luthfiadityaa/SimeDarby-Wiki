@@ -544,7 +544,7 @@ ID 05
 ")
 
 storageSender-input-->storageSender-->id05msg
-storageSender--> |UPDATE| storageSender-update
+storageSender-.UPDATE.-> storageSender-update
 :::
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
