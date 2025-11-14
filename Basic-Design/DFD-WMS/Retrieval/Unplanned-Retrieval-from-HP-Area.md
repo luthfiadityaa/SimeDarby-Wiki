@@ -92,19 +92,24 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 ::: mermaid
 flowchart LR
     input[
-        Station
-        Current Status
+        All Qty
+        Retrieval Qty
+        Stock Qty
         Material Code
         Material Name
         Material Type
         Batch #
-        Planned Carton Qty
+        Area
+        Loc #
+        Stock Status
         Storage Date/Time
         Qty kg/crtn
         Qty crtn/PL
         UOM
+        Tempering Flag
         Tempering Period
-        Storage Location
+        QC Duration
+        QC Check Flag
         Expiry Days
     ]
 
