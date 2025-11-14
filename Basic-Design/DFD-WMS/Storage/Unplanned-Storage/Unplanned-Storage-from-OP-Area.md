@@ -51,6 +51,12 @@ P23[ID64]--> |9011-9014|P14[ID33]
 - **STSN** : DMSTATION  
 - **STCH** : DNSTOCKHISTORY  
 
+* **Operation Name**
+  - **I** : INSERT  
+  - **U** : UPDATE  
+  - **D** : DELETE
+  - **S** : SELECT 
+
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage database flow</span>
 | Action Name                                                      |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN| 
 |------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|
