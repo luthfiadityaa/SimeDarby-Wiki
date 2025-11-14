@@ -255,25 +255,23 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 *   **LAST_UPDATE_PNAME**: ClassName
 
 ###<span style="color:skyblue; font-weight:bold">DNStock</span>
-| **field Name**            | **Insert Value**                               |
-|----------------------------|-----------------------------------------------|
-| **STOCK_ID**               | Sequence Object   
-| **AREA_NO**                | Value from screen (Storage Location To) ⟶ <span style="color:green; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>
-| **LOCATION_NO**            | 22222222
-| **STORAGE_TYPE**           | 2:New 
-| **QTY_CRTN_PL**            | Value from screen (Qty crtn/PL)
-| **QTY_KG_CRTN**            | Value from screen (Qty kg/crtn)
-| **ALLOCATION_QTY**         | 0
-| **PLAN_QTY**               | Value from screen (Storage Qty) 
-| **PALLET_ID**              | Sequence Object
-| **BATCH_NO**               | Value from screen (Batch No) 
-| **TEMPERING_PERIOD**       | Value from screen (Tempering Period)
-| **STORING_PAIR_KEY**       | <span style="color:green; font-weight:bold">DNWORKINFO.MATERIAL_CODE + DNWORKINFO.BATCH_NO </span>
-| **EXPIRY_DATE**            | Value from screen (Expiry Days)
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
+*   **STOCK_ID**: Sequence Object    
+*   **AREA_NO**: Value from screen (Storage Location To) → **FGW1 (Ambient/9002) or FGW2 (Tempering/9001)**    
+*   **LOCATION_NO**: 22222222    
+*   **STORAGE_TYPE**: 2:New    
+*   **QTY_CRTN_PL**: Value from screen (Qty crtn/PL)    
+*   **QTY_KG_CRTN**: Value from screen (Qty kg/crtn)    
+*   **ALLOCATION_QTY**: 0    
+*   **PLAN_QTY**: Value from screen (Storage Qty)    
+*   **PALLET_ID**: Sequence Object    
+*   **BATCH_NO**: Value from screen (Batch No)    
+*   **TEMPERING_PERIOD**: Value from screen (Tempering Period)    
+*   **STORING_PAIR_KEY**: **DNWORKINFO.MATERIAL_CODE + DNWORKINFO.BATCH_NO**    
+*   **EXPIRY_DATE**: Value from screen (Expiry Days)    
+*   **REGIST_DATE**: SYSTIMESTAMP    
+*   **REGIST_PNAME**: ClassName    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: ClassName
 
 ###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**                | **Insert Value**                               |
