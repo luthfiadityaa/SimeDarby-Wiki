@@ -147,7 +147,7 @@ flowchart LR
 *   **JOB_NO**: Sequence Object    
 *   **SETTING_UNIT_KEY**: Sequence Object    
 *   **COLLECT_JOB_NO**: Sequence Object    
-*   **JOB_TYPE**: 23: Unplanned Retrieval    
+*   **JOB_TYPE**: 23:Unplanned Retrieval    
 *   **STATUS_FLAG**: 0:Not Started    
 *   **PLAN_UKEY**: Sequence Object    
 *   **STOCK_ID**: DNSTOCK.STOCKID    
