@@ -48,7 +48,7 @@ P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9
 
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
 ##ID63
-If the station mode is **Retrieval Mode**, change the mode of the station to **Storage mode**.
+If the station mode is **Storage Mode**, change the mode of the station to **Retrieval mode**.
 ::: mermaid
 flowchart LR
     input[
@@ -70,7 +70,7 @@ flowchart LR
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DMStation</span>
-**CURRENT_MODE**: 1:Storage Mode
+**CURRENT_MODE**: 2: Retrieval Mode
 
 #Inquiry Retrieval Setting - Set(F2)
  ![==image_0==.jpg](/.attachments/==image_0==-58f99576-be7b-41a4-bc02-6cef92ce5b43.jpg) 
