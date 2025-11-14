@@ -152,6 +152,7 @@ flowchart LR
 *   **PLAN_UKEY**: Sequence Object    
 *   **STOCK_ID**: DNSTOCK.STOCKID    
 *   **PLAN_AREA_NO**: DNSTOCK.AREANO   
+*   **PLAN_LOCATION_NO**: DNSTOCK.LOCATION_NO
 *   **PLAN_DAY**: DMWARENAVISYSTEM.WORK_DAY    
 *   **BATCH_NO**: Value from screen (Batch #)    
 *   **MATERIAL_CODE**: Value from screen (Material Code)    
