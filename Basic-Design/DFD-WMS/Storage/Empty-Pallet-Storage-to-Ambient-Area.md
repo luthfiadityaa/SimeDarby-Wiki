@@ -535,13 +535,12 @@ Continue the process **storage**, AGC will send ID26 to WareNavi and WareNavi w
 ::: mermaid
 flowchart LR
 storageSender-update[("
+DMWAREHOUSE
+DMSHELF
 DNCARRYINFO
-DNWORKINFO
 DNPALLET
 DNSTOCK
-DMSHELF
 DNARRIVAL
-DMWAREHOUSE
 ")]
 storageSender-input[("
 DNARRIVAL
@@ -576,10 +575,6 @@ After successful creation of arrival record in **ID26process**, Automatic Mode C
 - CMD_STATUS        = 2:Waiting for response
 - LAST_UPDATE_DATE  = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
-
-## DNWORKINFO
-- PLAN_LOCATION_NO = Reserved Location Number
-- LAST_UPDATE_DATE = SYSTIMESTAMP
 
 ## DNPALLET
 - CURRENT_STATION_NO = Reserved Location Number
