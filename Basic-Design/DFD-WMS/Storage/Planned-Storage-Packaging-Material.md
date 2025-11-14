@@ -47,13 +47,13 @@
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|
 | Planned Storage from Host [(1)](#planned-storage-from-host)    |   I  |      |      |      |      |      |      |      |      |      |      |      |      |
 | Planned Storage - Set (F2) [(2)](#planned-storage---set-(f2))  |   U  |      |      |      |      |      |      |      |      |      |      |   S  |   S  |
-| ID26 - Dummy Arrival [(2)](#id26---dummy-arrival)              |      |   U  |      |      |   I  |      |   I  |      |      |      |      |      |      |
-| Storage Sender at 1301-1302 [(3)](#storage-sender-at-1301-1302)|      |   U  |      |      |   U  |      |   U  |   U  |   U  |      |      |      |      |
-| ID25 at 1301-1302 [(4)](#id25-at-1301-1302)                    |      |   U  |   U  |      |   U  |   U  |   D  |      |      |   I  |   I  |      |   S  |
+| ID26 - Dummy Arrival [(3)](#id26---dummy-arrival)              |      |   U  |      |      |   I  |      |   I  |      |      |      |      |      |      |
+| Storage Sender at 1106 [(4)](#storage-sender-at-1106)|         |   U  |      |      |   U  |      |   U  |   U  |   U  |      |      |      |      |
+| ID25 at 1106 [(5)](#id25-at-1106)                              |      |   U  |   U  |      |   U  |   U  |   D  |      |      |   I  |   I  |      |   S  |
 | ID64 at STV [(5)](#id64-at-stv)                                |      |      |      |      |   U  |      |      |      |      |      |      |      |      |
-| ID26 at 7207-7210 [(6)](#id26-at-7207-7210)                    |      |   U  |   U  |   U  |   U  |   U  |   I  |      |      |      |      |      |      |
-| Storage Sender at 7207-7210 [(7)](#storage-sender-at-7207-7210)|      |   U  |   U  |      |   U  |   U  |   U  |   U  |   U  |      |      |      |   S  |
-| ID25 at 7207-7210 [(8)](#id25-at-7207-7210)                    |      |   U  |   U  |      |   U  |      |   D  |      |      |   U  |   U  |      |      |
+| ID26 at 7211-7214 [(6)](#id26-at-7211-7214)                    |      |   U  |   U  |   U  |   U  |   U  |   I  |      |      |      |      |      |      |
+| Storage Sender at 7211-7214 [(7)](#storage-sender-at-7211-7214)|      |   U  |   U  |      |   U  |   U  |   U  |   U  |   U  |      |      |      |   S  |
+| ID25 at 7211-7214 [(8)](#id25-at-7211-7214)                    |      |   U  |   U  |      |   U  |      |   D  |      |      |   U  |   U  |      |      |
 | ID64 at SRM [(9)](#id64-at-srm)                                |      |      |      |      |   U  |      |      |      |      |      |      |      |      |
 | ID33 [(10)](#id33)                                             |      |   U  |      |      |   D  |      |      |      |   U  |      |      |      |      |
 
@@ -297,7 +297,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = ClassName
 
-# Storage Sender
+# Storage Sender at 1106
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.asrs.transmission.StorageSender` &nbsp;</span>
@@ -372,7 +372,7 @@ After successful creation of arrival record in **ID26process**, Automatic Mode C
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = ClassName
 
-# ID25
+# ID25 at 1106
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process` &nbsp;</span>
@@ -404,7 +404,7 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 - LAST_UPDATE_DATE  = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
 
-# ID64
+# ID64 at STV
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process` &nbsp;</span>
@@ -432,7 +432,7 @@ Upon equipment **(STV)** have picked up the Pallet successfully, ID64 will be se
 - LAST_UPDATE_PNAME   = Class name
 
 
-# ID26
+# ID26 at 7211-7214
 
 ::: mermaid
 flowchart LR
@@ -499,7 +499,7 @@ Continue the process **storage**, AGC will send ID26 to WareNavi and WareNavi w
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = ClassName
 
-# Storage Sender
+# Storage Sender at 7211-7214
 
 ::: mermaid
 flowchart LR
@@ -571,7 +571,7 @@ After successful creation of arrival record in **ID26process**, Automatic Mode C
 - LAST_UPDATE_DATE  = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
 
-# ID25
+# ID25 at 7211-7214
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process` &nbsp;</span>
@@ -603,7 +603,7 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 - LAST_UPDATE_DATE    = SYSTIMESTAMP
 - LAST_UPDATE_PNAME   = Class name
 
-# ID64
+# ID64 at SRM
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process` &nbsp;</span>
