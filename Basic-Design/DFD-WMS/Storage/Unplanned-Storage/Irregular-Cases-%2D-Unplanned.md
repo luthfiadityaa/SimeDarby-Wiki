@@ -223,7 +223,7 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: Class name
 
-###ID26 at 1301-1303_
+###ID26 at (1301-1303)
 (After the await operation completes and the empty locations are identified.)
 
 ::: mermaid
