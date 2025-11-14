@@ -1017,7 +1017,7 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 *   **PLAN_QTY**: 0    
 *   **STOCK_STATUS**: <span style="color:green; font-weight:bold">UU: Unrestricted Used</span>   
 *   **TEMPERING_FLAG**: <span style="color:green; font-weight:bold">0: Not Reached**</span>    
-*   **QC_FLAG**: **0: Not Done**    
+*   **QC_FLAG**: <span style="color:green; font-weight:bold">**0: Not Done**</span>    
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: Class name
 
