@@ -348,20 +348,16 @@ After successful creation of arrival record in <span style="color:green; font-we
 *   **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
-| **AREA_NO**                    | DNCARRYINFO.END_STATION_NO
-| **LOCATION_NO**                | Reserved Location Number
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | Class name
+*   **AREA_NO**: DNCARRYINFO.END_STATION_NO    
+*   **LOCATION_NO**: Reserved Location Number    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNArrival</span>
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
-| **CARRY_KEY**                  | DNCARRYINFO.CARRY_KEY
-| **SEND_FLAG**                  | 1:Sent
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**         | Class name
+*   **CARRY_KEY**: DNCARRYINFO.CARRY_KEY    
+*   **SEND_FLAG**: 1:Sent    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: Class name
 
 #<span style="color:skyblue; font-weight:bold">ID25</span>
 
