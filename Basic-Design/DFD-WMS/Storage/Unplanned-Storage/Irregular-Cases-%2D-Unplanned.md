@@ -25,10 +25,10 @@ Cond2 -->|No| Move2[ID05]
 
 | Action Name                 | WRKI   | PLLT   | CRYI   | STCK   | ARRVL  | STSN   | 
 |-----------------------------|--------|--------|--------|--------|--------|--------|
-| ID26(1)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
-| AutomaticChangeSender(2)    |        |        | UPDATE |        | UPDATE |        |
-| ID25(4)                     |        |        | UPDATE |        | DELETE |        |
-| ID26(5)                     |        | UPDATE | UPDATE |        | INSERT |        |
+| ID26[(1)](#ID26-at-1301-1303)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
+| StorageSender[(2)](#StorageSender-at-1301-1303)    |        |        | UPDATE |        | UPDATE |        |
+| ID25[(4)](#ID25-at-1301-1303)                     |        |        | UPDATE |        | DELETE |        |
+| ID26[(5)](#ID26-at-(1301-1303))                     |        | UPDATE | UPDATE |        | INSERT |        |
 
 ###ID26 at 1301-1303
 ::: mermaid
