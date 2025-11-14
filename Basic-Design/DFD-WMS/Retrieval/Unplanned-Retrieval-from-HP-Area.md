@@ -39,9 +39,9 @@ P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9
 | RetrievalSender[(2)](#ID26-at-1303)                                           |    |    | I  | I  | I  |    | I   |    |    |    |    | S  |  
 | ID32[(3)](#Storage-Sender-at-1301-&-1302)                              | U  |    | U  | U  | U  |    | U   | U  | U  |    |    |    |    
 | ID33[(4)](#ID25-at-1303)                                                        |    |    |    | U  |    |    | D   |    |    |    |    |    |     
-| ID64[(5)](#26)                                                                 | U  | I  | U  | D  | U  | I  |     |    | U  | I  |    |    |
-| ID68[(6)](#26)                                                                 | U  | I  | U  | D  | U  | I  |     |    | U  | I  |    |    |
-| ID26[(7)](#26)                                                                 | U  | I  | U  | D  | U  | I  |     |    | U  | I  |    |    |
+| ID64[(5)](#)                                                                 | U  | I  | U  | D  | U  | I  |     |    | U  | I  |    |    |
+| ID68[(6)](#)                                                                 | U  | I  | U  | D  | U  | I  |     |    | U  | I  |    |    |
+| ID26[(7)](#)                                                                 | U  | I  | U  | D  | U  | I  |     |    | U  | I  |    |    |
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |
 | Unplanned Storage and Retrieval Result[(19)](#Unplanned-Storage-and-Retrieval-Result)     |    |    |    |    |    |    |     |    |    |    |    |    | 
 
