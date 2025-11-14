@@ -51,15 +51,6 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 - AGC is online. <span style="color:green; font-weight:bold">(DMGroupController.STATUS_FLAG.ONLINE)</span>
 - Selected Station Number is NOT under suspend. <span style="color:green; font-weight:bold">(DMStation.SUSPEND.OFF)</span>
 - Selected Station Number is available. <span style="color:green; font-weight:bold">(DMStation.STATUS.NORMAL and DMMachine.STATUS_FLAG.ACTIVE)</span>
-- Pallet Information does not exist in <span style="color:green; font-weight:bold">DNCARRYINFO.</span>  
-  To check for Pallet Information:  
-  <span style="color:green; font-weight:bold">JOIN DNCARRYINFO.PALLET_ID = DNPALLET.PALLET_ID  
-  CONDITION DNPALLET.BCR_DATA = <Pallet Number> </span>  
-  So if result > 0, Palletize Start cannot proceed.
-- <span style="color:green; font-weight:bold">Planned Carton</span> must be greater than <span style="color:green; font-weight:bold">0</span>.
-- <span style="color:green; font-weight:bold">Quantity (Carton per Pallet)</span> must be greater than <span style="color:green; font-weight:bold">0</span>.
-- <span style="color:green; font-weight:bold">Planned Carton</span> must be greater than or equal to <span style="color:green; font-weight:bold">Quantity (Carton per Pallet)</span>.
-- Material Code exists in <span style="color:green; font-weight:bold">DMITEM</span>
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
