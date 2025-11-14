@@ -147,10 +147,10 @@ flowchart LR
 *   **JOB_NO**: Sequence Object    
 *   **SETTING_UNIT_KEY**: Sequence Object    
 *   **COLLECT_JOB_NO**: Sequence Object    
-*   **JOB_TYPE**: 23:Retrieval    
+*   **JOB_TYPE**: 23: Unplanned Retrieval    
 *   **STATUS_FLAG**: 0:Not Started    
 *   **PLAN_UKEY**: Sequence Object    
-*   **STOCK_ID**: Sequence Object    
+*   **STOCK_ID**: DNSTOCK.STOCKID    
 *   **PLAN_AREA_NO**: Value from screen (Storage Location To) ⟶ **FGW1 (Ambient/9002) or FGW2 (Tempering/9001)**    
 *   **PLAN_DAY**: DMWARENAVISYSTEM.WORK_DAY    
 *   **BATCH_NO**: Value from screen (Batch No)    
