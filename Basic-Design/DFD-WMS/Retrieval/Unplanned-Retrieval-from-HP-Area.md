@@ -140,6 +140,8 @@ flowchart LR
     class input leftAlign;
 :::
 
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
 *   **JOB_NO**: Sequence Object    
 *   **SETTING_UNIT_KEY**: Sequence Object    
 *   **COLLECT_JOB_NO**: Sequence Object    
