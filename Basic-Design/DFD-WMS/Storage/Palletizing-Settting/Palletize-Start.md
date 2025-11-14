@@ -49,7 +49,7 @@ P23[ID64]--> |9011-9014| P14[ID33]
   - **ARVL** : DNARRIVAL  
   - **WRHS** : DMWAREHOUSE  
   - **SHLF** : DMSHELF  
-  - **MTMS** : DMATERIALMASTER  
+  - **ITEM** : DMATERIALMASTER  
   - **STSN** : DMSTATION  
   - **STCH** : DNSTOCKHISTORY 
  
@@ -59,7 +59,7 @@ P23[ID64]--> |9011-9014| P14[ID33]
   - **D** : DELETE
   - **S** : SELECT 
 
-| Action Name                                                 |STRP|WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|MTMS|STSN| 
+| Action Name                                                 |STRP|WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN| 
 |-------------------------------------------------------------|----|----|----|----|----|----|----|-----|----|----|----|----|----|
 | Palletize Start - SetF2 [(1)](#Palletize-Start---Set(F2))   | I  |    |    |    |    |    |    |     |    |    |    | S  | S  |    
 | ID26 [(2)](#ID26-at-1101-1105)                              |    | I  |    | I  | I  | I  |    | I   |    |    |    |    |    |    
