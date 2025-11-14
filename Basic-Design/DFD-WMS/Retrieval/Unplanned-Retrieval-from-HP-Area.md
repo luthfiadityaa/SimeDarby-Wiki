@@ -105,7 +105,7 @@ retrievalsender-input-->retrievalsender-.U.->retrievalsender-update
 retrievalsender-->id12msg
 :::
 
-All Carton Picking operation at Unit Load will be retrieved to Station 2111-2113 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
+All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station 1301, 1302, 1205, 1206, 1207, 1208, 1209 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
 
 ## DNCARRYINFO
 - CMD_STATUS = 2:Waiting for response
