@@ -396,52 +396,39 @@ No Read("1":Error)</span>
 *   **LAST_UPDATE_PNAME**: ClassName
 
 #####<span style="color:skyblue; font-weight:bold">DNPallet</span>
-*   **PALLET_ID**: Sequence Object
-    
-*   **CURRENT_STATION_NO**: DNSTORAGEPLAN.STATION_NO
-    
-*   **WH_STATION_NO**: DNSTORAGEPLAN.PLAN_AREA_NO
-    
-*   **STATUS_FLAG**: 1:Reserved for Storage
-    
-*   **EMPTY_FLAG**: 0:Normal Pallet
-    
-*   **ALLOCATION_FLAG**: 1:Allocated
-    
-*   **SOFT_ZONE_ID**: DMITEM.SOFT_ZONE_ID
-    
-*   **BCR_DATA**: DNARRIVAL.BCR_DATA
-    
-*   **REGIST_DATE**: SYSTIMESTAMP
-    
-*   **REGIST_PNAME**: ClassName
-    
-*   **LAST_UPDATE_DATE**: SYSTIMESTAMP
-    
+*   **PALLET_ID**: Sequence Object    
+*   **CURRENT_STATION_NO**: DNSTORAGEPLAN.STATION_NO    
+*   **WH_STATION_NO**: DNSTORAGEPLAN.PLAN_AREA_NO    
+*   **STATUS_FLAG**: 1:Reserved for Storage    
+*   **EMPTY_FLAG**: 0:Normal Pallet    
+*   **ALLOCATION_FLAG**: 1:Allocated    
+*   **SOFT_ZONE_ID**: DMITEM.SOFT_ZONE_ID    
+*   **BCR_DATA**: DNARRIVAL.BCR_DATA    
+*   **REGIST_DATE**: SYSTIMESTAMP    
+*   **REGIST_PNAME**: ClassName    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
 
 #####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
-| **Filed Name**            | **Insert Value**                               |
-| ----------------------------|----------------------------------------------|
-| **JOB_NO**                 | Sequence Object
-| **SETTING_UNIT_KEY**       | Sequence Object
-| **COLLECT_JOB_NO**         | Sequence Object
-| **JOB_TYPE**               | 02:Storage
-| **STATUS_FLAG**            | 0:Not Started
-| **PLAN_UKEY**              | DNSTORAGEPLAN.PLAN_UKEY
-| **STOCK_ID**               | Sequence Object
-| **PLAN_DAY**               | DMWARENAVISYSTEM.WORK_DAY
-| **BATCH_NO**               | DNSTORAGEPLAN.BATCH_NO
-| **PLAN_AREA_NO**           | DNSTORAGEPLAN.PLAN_AREA_NO 
-| **MATERIAL_CODE**          | DNSTORAGEPLAN.MATERIAL_CODE 
-| **PLAN_QTY**               | DNSTORAGEPLAN.PLAN_QTY 
-| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
-| **USER_ID**                | Login Info
-| **STORAGE_LOCATION_FROM**  | DNSTORAGEPLAN.STATION 
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
+*   **JOB_NO**: Sequence Object    
+*   **SETTING_UNIT_KEY**: Sequence Object    
+*   **COLLECT_JOB_NO**: Sequence Object    
+*   **JOB_TYPE**: 02:Storage    
+*   **STATUS_FLAG**: 0:Not Started    
+*   **PLAN_UKEY**: DNSTORAGEPLAN.PLAN_UKEY    
+*   **STOCK_ID**: Sequence Object    
+*   **PLAN_DAY**: DMWARENAVISYSTEM.WORK_DAY    
+*   **BATCH_NO**: DNSTORAGEPLAN.BATCH_NO    
+*   **PLAN_AREA_NO**: DNSTORAGEPLAN.PLAN_AREA_NO    
+*   **MATERIAL_CODE**: DNSTORAGEPLAN.MATERIAL_CODE    
+*   **PLAN_QTY**: DNSTORAGEPLAN.PLAN_QTY    
+*   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY    
+*   **USER_ID**: Login Info    
+*   **STORAGE_LOCATION_FROM**: DNSTORAGEPLAN.STATION    
+*   **REGIST_DATE**: SYSTIMESTAMP    
+*   **REGIST_PNAME**: ClassName    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: ClassName
 
 #####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**                | **Insert Value**                               |
