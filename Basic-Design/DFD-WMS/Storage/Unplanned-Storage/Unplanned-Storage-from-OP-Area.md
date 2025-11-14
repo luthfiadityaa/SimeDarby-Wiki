@@ -437,7 +437,7 @@ Upon equipment <span style="color:green; font-weight:bold">(STV)</span> have pic
 #<span style="color:skyblue; font-weight:bold">Flow 1 (Refer to AGC Linkage Specs)</span>
 [AGCⅦA Linkage Specs_1.2.7_AF954201_SimeDarby_v1.1.xlsx - Storage Section - 05 Sheets](https://daifuku.sharepoint.com/:x:/r/sites/jp0211039/Shared%20Documents/PTDI/Projects/PT.%20Guthrie%20Indonesia%20Sei%20Mangkei%20Refinery(Sime%20Darby)/Garuda%20Project/F.%20Basic%20Design/A.%20AGC%20Linkage%20Specs/AGC%E2%85%A6A%20Linkage%20Specs_1.2.7_AF954201_SimeDarby_v1.1.xlsx?d=w31ccf4d7958e4ea989446a6ac5a1a566&csf=1&web=1&e=J2FP9Y)
 
-##<span style="color:skyblue; font-weight:bold">ID26&nbsp;&nbsp;</span>
+##ID26 at 7101-7110
 
 ::: mermaid
 flowchart LR
@@ -495,7 +495,7 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 *   **LAST_UPDATE_DATE** — SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME** — Class name
 
-##Storage Sender
+##Storage Sender at 7101-7110
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
 
 ::: mermaid
