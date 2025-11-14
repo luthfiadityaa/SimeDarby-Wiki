@@ -88,9 +88,7 @@ flowchart LR
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ####<span style="color:skyblue; font-weight:bold">DMSTATION</span>
-| **Filed Name**            | **Insert Value**                               |
-| --------------------------|----------------------------------------------|
-| **CURRENT_MODE**          | 1:Storage Mode
+**CURRENT_MODE**: 1:Storage Mode
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage - Set(F2)</span>
 ![image.png](/.attachments/image-6293c4f4-5fd4-4247-8cbc-fbcc6d9cf3a5.png)
