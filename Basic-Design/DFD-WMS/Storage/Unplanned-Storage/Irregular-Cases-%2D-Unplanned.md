@@ -170,8 +170,8 @@ id05msg("
 ID 05
 ")
 
-storageSender-input-->AutomaticChangeSender-->id05msg
-AutomaticChangeSender--> |UPDATE| storageSender-update
+storageSender-input-->StorageSender-->id05msg
+StorageSender--> |UPDATE| storageSender-update
 :::
 
 After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, AutomaticChangeSender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">1:Started to 2:Waiting for Response.</span>
