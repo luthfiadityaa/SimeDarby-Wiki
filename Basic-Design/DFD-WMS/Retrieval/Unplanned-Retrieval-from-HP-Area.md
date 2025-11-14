@@ -44,7 +44,7 @@ P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9
 | ID68[(6)](#ID68)                                                                |    |    |    |    |    |    |     |    |    |    |    |    |    | I  |
 | ID26[(7)](#ID26)                                                                | U  | I  | U  | D  | U  | I  |  I  |    | U  | I  |    |    |    |    |
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |
-| Unplanned Storage and Retrieval Result[(19)](#Unplanned-Storage-and-Retrieval-Result)     |    |    |    |    |    |    |     |    |    |    |    |    | 
+| Unplanned Storage and Retrieval Result[(19)](#Unplanned-Storage-and-Retrieval-Result)     |    |    |    | U  |    |    |     |    |    |    |    |    | 
 
 #Inquiry Retrieval Setting - Set(F2)
  ![==image_0==.jpg](/.attachments/==image_0==-58f99576-be7b-41a4-bc02-6cef92ce5b43.jpg) 
