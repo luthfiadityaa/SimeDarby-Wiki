@@ -50,6 +50,12 @@ P23[ID64]--> |9001-9006|P14[ID33]
 - **STSN** : DMSTATION  
 - **STCH** : DNSTOCKHISTORY  
 
+* **Operation Name**
+  - **I** : INSERT  
+  - **U** : UPDATE  
+  - **D** : DELETE
+  - **S** : SELECT 
+
 | Action Name                                                      |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN| 
 |------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|
 | ID63 [(1)](#ID63)                                                |    |    |    |    |    |    |     |    |    |    |    | U  |   
