@@ -153,14 +153,14 @@ This section explains the validations for the whole proccess Palletize Start
 
 ###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
 *   **PLAN_UKEY** : Sequence Object    
-*   **STATUS_FLAG** : `1: Working`    
-*   **CANCEL_FLAG** : `0: Normal Data`    
-*   **DELETE_FLAG** : `0: No`    
+*   **STATUS_FLAG** : 1: Working    
+*   **CANCEL_FLAG** : 0: Normal Data    
+*   **DELETE_FLAG** : 0: No    
 *   **PLAN_DAY** : Value from screen (**Storage Date/Time**)    
 *   **PLAN_AREA_NO** : Value from screen (**Storage Location**) : **FGW1 (Ambient/9002)** or **FGW2 (Tempering/9001)**    
 *   **MATERIAL_CODE** : Value from screen (**Material Code**)    
 *   **PLAN_QTY** : Value from screen (**Qty Crtn/PL**)    
-*   **REPORT_FLAG** : `0: Not Reported`    
+*   **REPORT_FLAG** : 0: Not Reported    
 *   **STORING_PAIR_KEY** : Value from screen **(Material Code + Batch_No)**    
 *   **STATION_NO** : Value from screen (**Station No**)    
 *   **CURRENT_STATUS** : Value from screen (**Current Status**)    
@@ -176,10 +176,10 @@ This section explains the validations for the whole proccess Palletize Start
 *   **TOTAL_ACTUAL_CARTON_QTY** : **TOTAL_ACTUAL_CARTON_QTY + QTY_KG_CRTN**    
 *   **MAX_PALLET_BATCH_END** : **PLANNED_CARTON_QTY / QTY_CRTN_PL**    
 *   **BATCH_PALLET_START** : **Value from screen (Storage Date/Time) + System Timestamp**    
-*   **REGIST_DATE** : `SYSTIMESTAMP`    
-*   **REGIST_PNAME** : `ClassName`    
-*   **LAST_UPDATE_DATE** : `SYSTIMESTAMP`    
-*   **LAST_UPDATE_PNAME** : `ClassName`
+*   **REGIST_DATE** : SYSTIMESTAMP    
+*   **REGIST_PNAME** : ClassName    
+*   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME** : ClassName
 
 #Release Command from Palletize Robot - Dummy Arrival
 After palletizing is completed, the palletizing robot sends <span style="color:green; font-weight:bold">“Release Command”</span> signal via conveyor interlock.
@@ -228,88 +228,88 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ####<span style="color:skyblue; font-weight:bold">DNArrival</span>
-*   **ARRIVAL_DATE** : `SYSTIMESTAMP`    
+*   **ARRIVAL_DATE** : SYSTIMESTAMP    
 *   **STATION_NO** : Arrival Station Number from **ID26**    
-*   **CARRY_KEY** : `99999999`    
+*   **CARRY_KEY** : 99999999    
 *   **BCR_DATA** : Barcode information from **ID26**    
 *   **CONTROLINFO** : Control information from **ID26**    
-*   **SEND_FLAG** : `0: Not sent`    
+*   **SEND_FLAG** : 0: Not sent    
 *   **HEIGHT** : Dimension information from **ID26**    
 *   **WIDTH** : Dimension information from **ID26**    
-*   **REGIST_DATE** : `SYSTIMESTAMP`    
-*   **REGIST_PNAME** : `ClassName`    
-*   **LAST_UPDATE_DATE** : `SYSTIMESTAMP`    
-*   **LAST_UPDATE_PNAME** : `ClassName`
+*   **REGIST_DATE** : SYSTIMESTAMP    
+*   **REGIST_PNAME** : ClassName    
+*   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME** : ClassName
 
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
 *   **PALLET_ID** : Sequence Object    
-*   **CURRENT_STATION_NO** : `DNSTORAGEPLAN.STATION_NO`    
-*   **WH_STATION_NO** : `DNSTORAGEPLAN.PLAN_AREA_NO`    
-*   **STATUS_FLAG** : `1: Reserved for Storage`    
-*   **EMPTY_FLAG** : `0: Normal Pallet`    
-*   **ALLOCATION_FLAG** : `1: Allocated`    
-*   **SOFT_ZONE_ID** : `DMITEM.SOFT_ZONE_ID`    
-*   **BCR_DATA** : `DNARRIVAL.BCR_DATA`    
-*   **REGIST_DATE** : `SYSTIMESTAMP`    
-*   **REGIST_PNAME** : `ClassName`    
-*   **LAST_UPDATE_DATE** : `SYSTIMESTAMP`
+*   **CURRENT_STATION_NO** : DNSTORAGEPLAN.STATION_NO    
+*   **WH_STATION_NO** : DNSTORAGEPLAN.PLAN_AREA_NO    
+*   **STATUS_FLAG** : 1: Reserved for Storage    
+*   **EMPTY_FLAG** : 0: Normal Pallet    
+*   **ALLOCATION_FLAG** : 1: Allocated    
+*   **SOFT_ZONE_ID** : DMITEM.SOFT_ZONE_ID    
+*   **BCR_DATA** : DNARRIVAL.BCR_DATA    
+*   **REGIST_DATE** : SYSTIMESTAMP    
+*   **REGIST_PNAME** : ClassName    
+*   **LAST_UPDATE_DATE** : SYSTIMESTAMP
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 *   **JOB_NO** : Sequence Object    
 *   **SETTING_UNIT_KEY** : Sequence Object    
 *   **COLLECT_JOB_NO** : Sequence Object    
-*   **JOB_TYPE** : `02: Storage`    
-*   **STATUS_FLAG** : `0: Not Started`    
-*   **PLAN_UKEY** : `DNSTORAGEPLAN.PLAN_UKEY`    
+*   **JOB_TYPE** : 02: Storage    
+*   **STATUS_FLAG** : 0: Not Started    
+*   **PLAN_UKEY** : DNSTORAGEPLAN.PLAN_UKEY    
 *   **STOCK_ID** : Sequence Object    
-*   **PLAN_DAY** : `DMWARENAVISYSTEM.WORK_DAY`    
-*   **BATCH_NO** : `DNSTORAGEPLAN.BATCH_NO`    
-*   **PLAN_AREA_NO** : `DNSTORAGEPLAN.PLAN_AREA_NO_NO`    
-*   **MATERIAL_CODE** : `DNSTORAGEPLAN.MATERIAL_CODE`    
-*   **PLAN_QTY** : `DNSTORAGEPLAN.PLAN_QTY`    
-*   **WORK_DAY** : `DMWARENAVISYSTEM.WORK_DAY`    
+*   **PLAN_DAY** : DMWARENAVISYSTEM.WORK_DAY    
+*   **BATCH_NO** : DNSTORAGEPLAN.BATCH_NO    
+*   **PLAN_AREA_NO** : DNSTORAGEPLAN.PLAN_AREA_NO_NO    
+*   **MATERIAL_CODE** : DNSTORAGEPLAN.MATERIAL_CODE    
+*   **PLAN_QTY** : DNSTORAGEPLAN.PLAN_QTY    
+*   **WORK_DAY** : DMWARENAVISYSTEM.WORK_DAY    
 *   **USER_ID** : Login Info    
-*   **STORAGE_LOCATION_FROM** : `DNSTORAGEPLAN.STATION_NO`    
-*   **REGIST_DATE** : `SYSTIMESTAMP`    
-*   **REGIST_PNAME** : `ClassName`    
-*   **LAST_UPDATE_DATE** : `SYSTIMESTAMP`    
-*   **LAST_UPDATE_PNAME** : `ClassName`
+*   **STORAGE_LOCATION_FROM** : DNSTORAGEPLAN.STATION_NO    
+*   **REGIST_DATE** : SYSTIMESTAMP    
+*   **REGIST_PNAME** : ClassName    
+*   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME** : ClassName
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 *   **CARRY_KEY** : Sequence Object    
-*   **PALLET_ID** : `DNPALLET.PALLET_ID`    
-*   **WORK_TYPE** : `26: Direct Transfer`    
-*   **CMD_STATUS** : `1: Started`    
-*   **PRIORITY** : `2: Normal`    
-*   **RESTORING_FLAG** : `0: Not Restore to Original Location`    
-*   **CARRY_FLAG** : `3: Direct Transfer`    
+*   **PALLET_ID** : DNPALLET.PALLET_ID    
+*   **WORK_TYPE** : 26: Direct Transfer    
+*   **CMD_STATUS** : 1: Started    
+*   **PRIORITY** : 2: Normal    
+*   **RESTORING_FLAG** : 0: Not Restore to Original Location    
+*   **CARRY_FLAG** : 3: Direct Transfer    
 *   **WORK_NO** : Sequence Object    
-*   **SOURCE_STATION_NO** : `DNPALLET.CURRENT_STATION_NO` : **(1101 / 1102 / 1103 / 1104 / 1105)**    
+*   **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO : **(1101 / 1102 / 1103 / 1104 / 1105)**    
 *   **DEST_STATION_NO** : **Based on SOURCE_STATION_NO where a reserved location belongs to : (1111 / 1112 / 1113 / 1114 / 1115)**    
-*   **CANCEL_REQUEST** : `0: Not Requested`    
+*   **CANCEL_REQUEST** : 0: Not Requested    
 *   **SCHEDULE_NO** : Sequence Object    
-*   **END_STATION_NO** : `DNWORKINFO.PLAN_AREA_NO`    
-*   **REGIST_DATE** : `SYSTIMESTAMP`    
-*   **REGIST_PNAME** : `ClassName`    
-*   **LAST_UPDATE_DATE** : `SYSTIMESTAMP`    
-*   **LAST_UPDATE_PNAME** : `ClassName`
+*   **END_STATION_NO** : DNWORKINFO.PLAN_AREA_NO    
+*   **REGIST_DATE** : SYSTIMESTAMP    
+*   **REGIST_PNAME** : ClassName    
+*   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME** : ClassName
 
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
 *   **STOCK_ID** : Sequence Object    
-*   **AREA_NO** : `DNSTORAGEPLAN.PLAN_AREA_NO`    
-*   **STORAGE_TYPE** : `2: New`    
-*   **STOCK_QTY** : `0`    
-*   **ALLOCATION_QTY** : `0`    
-*   **PLAN_QTY** : `DNSTORAGEPLAN.PLAN_QTY`    
+*   **AREA_NO** : DNSTORAGEPLAN.PLAN_AREA_NO    
+*   **STORAGE_TYPE** : 2: New    
+*   **STOCK_QTY** : 0    
+*   **ALLOCATION_QTY** : 0    
+*   **PLAN_QTY** : DNSTORAGEPLAN.PLAN_QTY    
 *   **PALLET_ID** : Sequence Object    
-*   **BATCH_NO** : `DNSTORAGEPLAN.BATCH_NO`    
-*   **TEMPERING_PERIOD** : `DNSTORAGEPLAN.TEMPERING_PERIOD`    
-*   **STORING_PAIR_KEY** : `DNSTORAGEPLAN.STORING_PAIR_KEY`    
-*   **EXPIRY_DATE** : `DNSTORAGEPLAN.EXPIRY_DAYS`    
-*   **REGIST_DATE** : `SYSTIMESTAMP`    
-*   **REGIST_PNAME** : `ClassName`    
-*   **LAST_UPDATE_DATE** : `SYSTIMESTAMP`    
-*   **LAST_UPDATE_PNAME** : `ClassName`
+*   **BATCH_NO** : DNSTORAGEPLAN.BATCH_NO    
+*   **TEMPERING_PERIOD** : DNSTORAGEPLAN.TEMPERING_PERIOD    
+*   **STORING_PAIR_KEY** : DNSTORAGEPLAN.STORING_PAIR_KEY    
+*   **EXPIRY_DATE** : DNSTORAGEPLAN.EXPIRY_DAYS    
+*   **REGIST_DATE** : SYSTIMESTAMP    
+*   **REGIST_PNAME** : ClassName    
+*   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME** : ClassName
 
 ##Storage Sender at 1101-1105
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
@@ -338,15 +338,15 @@ After successful creation of arrival record in <span style="color:green; font-we
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-*   **CMD_STATUS** : `2: Waiting for response`    
-*   **LAST_UPDATE_DATE** : `SYSTIMESTAMP`    
-*   **LAST_UPDATE_PNAME** : `ClassName`
+*   **CMD_STATUS** : 2: Waiting for response    
+*   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME** : ClassName
 
 ####<span style="color:skyblue; font-weight:bold">DNArrival</span>
-*   **CARRY_KEY** : `DNCARRYINFO.CARRY_KEY`    
-*   **SEND_FLAG** : `1: Sent`    
-*   **LAST_UPDATE_DATE** : `SYSTIMESTAMP`    
-*   **LAST_UPDATE_PNAME** : `ClassName`
+*   **CARRY_KEY** : DNCARRYINFO.CARRY_KEY    
+*   **SEND_FLAG** : 1: Sent    
+*   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME** : ClassName
 
 ##ID25 at 1101-1105
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process &nbsp;</span>
@@ -374,10 +374,10 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-*   **CMD_STATUS** : `3: Commanded`   
-*   **ERROR_CODE** : `0`    
-*   **LAST_UPDATE_DATE** : `SYSTIMESTAMP`    
-*   **LAST_UPDATE_PNAME** : `ClassName`
+*   **CMD_STATUS** : 3: Commanded   
+*   **ERROR_CODE** : 0    
+*   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME** : ClassName
 
 ##ID26 at 1111-1115
 
@@ -415,37 +415,37 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNArrival</span>
-*   **ARRIVAL_DATE** : `SYSTIMESTAMP`    
+*   **ARRIVAL_DATE** : SYSTIMESTAMP    
 *   **STATION_NO** : Arrival Station Number from **ID26**    
-*   **CARRY_KEY** : `99999999`    
+*   **CARRY_KEY** : 99999999    
 *   **BCR_DATA** : Barcode information from **ID26**    
 *   **CONTROLINFO** : Control information from **ID26**    
-*   **SEND_FLAG** : `0: Not sent`    
+*   **SEND_FLAG** : 0: Not sent    
 *   **HEIGHT** : Dimension information from **ID26**    
 *   **WIDTH** : Dimension information from **ID26**    
-*   **REGIST_DATE** : `SYSTIMESTAMP`    
-*   **REGIST_PNAME** : `ClassName`    
-*   **LAST_UPDATE_DATE** : `SYSTIMESTAMP`    
-*   **LAST_UPDATE_PNAME** : `ClassName`
+*   **REGIST_DATE** : SYSTIMESTAMP    
+*   **REGIST_PNAME** : ClassName    
+*   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME** : ClassName
 
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
-*   **CURRENT_STATION_NO** : `DNARRIVAL.STATION_NO`    
-*   **REGIST_DATE** : `SYSTIMESTAMP`    
-*   **REGIST_PNAME** : `ClassName`    
-*   **LAST_UPDATE_DATE** : `SYSTIMESTAMP`    
-*   **LAST_UPDATE_PNAME** : `ClassName`
+*   **CURRENT_STATION_NO** : DNARRIVAL.STATION_NO    
+*   **REGIST_DATE** : SYSTIMESTAMP    
+*   **REGIST_PNAME** : ClassName    
+*   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME** : ClassName
 
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-*   **WORK_TYPE** : `26: Direct Transfer`    
-*   **CMD_STATUS** : `1: Started`    
-*   **CARRY_FLAG** : `3: Direct Transfer`    
-*   **SOURCE_STATION_NO** : `DNARRIVAL.STATION_NO` : **(1111, 1112, 1113, 1114, 1115)**    
+*   **WORK_TYPE** : 26: Direct Transfer    
+*   **CMD_STATUS** : 1: Started    
+*   **CARRY_FLAG** : 3: Direct Transfer    
+*   **SOURCE_STATION_NO** : DNARRIVAL.STATION_NO : **(1111, 1112, 1113, 1114, 1115)**    
 *   **DEST_STATION_NO** : **Based on SOURCE_STATION_NO where a reserved location belongs to : (7101, 7102, 7103, 7104, 7105, 7106, 7107, 7108, 7109, 7110)**    
-*   **REGIST_DATE** : `SYSTIMESTAMP`    
-*   **REGIST_PNAME** : `ClassName`    
-*   **LAST_UPDATE_DATE** : `SYSTIMESTAMP`    
-*   **LAST_UPDATE_PNAME** : `ClassName`
+*   **REGIST_DATE** : SYSTIMESTAMP    
+*   **REGIST_PNAME** : ClassName    
+*   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME** : ClassName
 
 ##Storage Sender at 1111-1115
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
@@ -1151,109 +1151,109 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 *   **LAST_UPDATE_PNAME** : Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
-* **RESULT_QTY**: `DNWORKINFO.PLAN_QTY`
-* **RESULT_AREA_NO**: `DNWORKINFO.PLAN_AREA_NO`
-* **RESULT_LOCATION_NO**: `DNWORKINFO.PLAN_LOCATION_NO`
-* **WORK_DAY**: `DMWARENAVISYSTEM.WORK_DAY`
-* **STATUS_FLAG**: `4: Completed`
-* **LAST_UPDATE_DATE**: `SYSTIMESTAMP`
-* **LAST_UPDATE_PNAME**: `Class name`
+* **RESULT_QTY**: DNWORKINFO.PLAN_QTY
+* **RESULT_AREA_NO**: DNWORKINFO.PLAN_AREA_NO
+* **RESULT_LOCATION_NO**: DNWORKINFO.PLAN_LOCATION_NO
+* **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY
+* **STATUS_FLAG**: 4: Completed
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
 [<span style="color:red; font-weight:bold; font-size:12px">*Tempering Flag is only valid for Storage location: Tempering</span>](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/874/Batch-End?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Estorage-flag-condition%3C/span%3E)
 
-* **STORAGE_DAY**: `DMWARENAVISYSTEM.WORK_DAY`
-* **NEWEST_STORAGE_DATE**: `SYSTIMESTAMP`
-* **STOCK_QTY**: `DNWORKINFO.RESULT_QTY`
-* **ALLOCATION_QTY**: `DNWORKINFO.RESULT_QTY`
-* **PLAN_QTY**: `0`
+* **STORAGE_DAY**: DMWARENAVISYSTEM.WORK_DAY
+* **NEWEST_STORAGE_DATE**: SYSTIMESTAMP
+* **STOCK_QTY**: DNWORKINFO.RESULT_QTY
+* **ALLOCATION_QTY**: DNWORKINFO.RESULT_QTY
+* **PLAN_QTY**: 0
 * **STOCK_STATUS**: <span style="color:green; font-weight:bold">UU: Unrestricted Used</span>
 * **TEMPERING_FLAG**: <span style="color:yellow; font-weight:bold; background-color:grey">0: Not Reached</span>
 * **QC_FLAG**: <span style="color:green; font-weight:bold">0: Not Done</span>
-* **LAST_UPDATE_DATE**: `SYSTIMESTAMP`
-* **LAST_UPDATE_PNAME**: `Class name`
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold"> DNStoragePlan </span>
 Storage Date will be update by the system in this section represent by <span style="color:green; font-weight:bold">LAST_UPDATE_DATE</span>
 <span style="color:red; font-weight:bold; font-size:12px">*If DNSTORAGEPLAN.RESULT_QTY = DNSTORAGEPLAN.PLAN_QTY then update Status to completed</span>
 
-**STATUS_FLAG**: `4: Completed`
-* **RESULT_QTY**: `DNSTORAGEPLAN.RESULT_QTY + DNWORKINFO.RESULT_QTY`
-* **SHORTAGE_QTY**: `DNSTORAGEPLAN.SHORTAGE_QTY + DNWORKINFO.SHORTAGE_QTY`
-* **WORK_DAY**: `DMWARENAVISYSTEM.WORK_DAY`
+**STATUS_FLAG**: 4: Completed
+* **RESULT_QTY**: DNSTORAGEPLAN.RESULT_QTY + DNWORKINFO.RESULT_QTY
+* **SHORTAGE_QTY**: DNSTORAGEPLAN.SHORTAGE_QTY + DNWORKINFO.SHORTAGE_QTY
+* **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY
 * **STOCK_STATUS**: <span style="color:green; font-weight:bold">UU: Unrestricted Used</span>
 * **TEMPERING_FLAG**: <span style="color:yellow; font-weight:bold; background-color:grey">0: Not Reached</span>
 * **QC_FLAG**: <span style="color:green; font-weight:bold">0: Not Done</span>
 * **LAST_UPDATE_DATE**: <span style="color:green; font-weight:bold">DNSTORAGEPLAN.PLAN_DAY + Time value (HH:MM:SS.sss) : (System Generated)</span>
-* **LAST_UPDATE_PNAME**: `Class name`
+* **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNStockHistory </span> 
 [<span style="color:red; font-weight:bold; font-size:12px">*Tempering Flag is only valid for Storage location: Tempering</span>](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/874/Batch-End?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Estorage-flag-condition%3C/span%3E)
 
-* **WORK_DAY**: `DMWARENAVISYSTEM.WORK_DAY`
-* **INC_DEC_TYPE**: `1: Stock Increase`
-* **JOB_TYPE**: `2: Storage`
-* **UPDATE_STOCK_QTY**: `DNSTOCK.STOCK_QTY`
-* **INC_DEC_QTY**: `DNSTOCK.STOCK_QTY`
-* **STOCK_ID**: `DNSTOCK.STOCK_ID`
-* **AREA_NO**: `DNSTOCK.AREA_NO`
-* **LOCATION_NO**: `DNSTOCK.LOCATION_NO`
-* **STORAGE_DAY**: `DNSTOCK.STORAGE_DAY`
-* **STORAGE_DATE**: `DNSTOCK.STORAGE_DATE`
-* **NEWEST_STORAGE_DATE**: `DNSTOCK.NEWEST_STORAGE_DATE`
-* **MATERIAL_CODE**: `DNSTOCK.MATERIAL_CODE`
-* **PALLET_ID**: `DNSTOCK.PALLET_ID`
-* **BCR_DATA**: `DNPALLET.BCR_DATA`
-* **AREA_TYPE**: `DMAREA_AREA_TYPE`
-* **MATERIAL_NAME**: `DMMITEM.MATERIAL_NAME`
-* **ENTERING_QTY**: `DNSTORAGEPLAN.QTY_CRTN_PL`
-* **USER_ID**: `Login info`
-* **USER_NAME**: `Login info`
-* **TERMINAL_NO**: `Login info`
-* **TERMINAL_NAME**: `Login info`
-* **IP_ADDRESS**: `Login info`
+* **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY
+* **INC_DEC_TYPE**: 1: Stock Increase
+* **JOB_TYPE**: 2: Storage
+* **UPDATE_STOCK_QTY**: DNSTOCK.STOCK_QTY
+* **INC_DEC_QTY**: DNSTOCK.STOCK_QTY
+* **STOCK_ID**: DNSTOCK.STOCK_ID
+* **AREA_NO**: DNSTOCK.AREA_NO
+* **LOCATION_NO**: DNSTOCK.LOCATION_NO
+* **STORAGE_DAY**: DNSTOCK.STORAGE_DAY
+* **STORAGE_DATE**: DNSTOCK.STORAGE_DATE
+* **NEWEST_STORAGE_DATE**: DNSTOCK.NEWEST_STORAGE_DATE
+* **MATERIAL_CODE**: DNSTOCK.MATERIAL_CODE
+* **PALLET_ID**: DNSTOCK.PALLET_ID
+* **BCR_DATA**: DNPALLET.BCR_DATA
+* **AREA_TYPE**: DMAREA_AREA_TYPE
+* **MATERIAL_NAME**: DMMITEM.MATERIAL_NAME
+* **ENTERING_QTY**: DNSTORAGEPLAN.QTY_CRTN_PL
+* **USER_ID**: Login info
+* **USER_NAME**: Login info
+* **TERMINAL_NO**: Login info
+* **TERMINAL_NAME**: Login info
+* **IP_ADDRESS**: Login info
 * **STOCK_STATUS**: <span style="color:green; font-weight:bold">UU: Unrestricted Used</span>
 * **TEMPERING_FLAG**: <span style="color:yellow; font-weight:bold; background-color:grey">0: Not Reached</span>
 * **QC_FLAG**: <span style="color:green; font-weight:bold">0: Not Done</span>
-* **EXPIRY_DATE**: `DNWORKINFO.EXPIRY_DAYS`
-* **REGIST_DATE**: `SYSTIMESTAMP`
-* **REGIST_PNAME**: `Class name
+* **EXPIRY_DATE**: DNWORKINFO.EXPIRY_DAYS
+* **REGIST_DATE**: SYSTIMESTAMP
+* **REGIST_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNHostSend</span>
-* **WORK_DAY**: `DMWARENAVISYSTEM.WORK_DAY`
-* **JOB_NO**: `DNWORKINFO.JOB_NO`
-* **COLLECT_JOB_NO**: `DNWORKINFO.COLLECT_JOB_NO`
-* **SETTING_UNIT_KEY**: `DNWORKINFO.SETTING_UNIT_KEY`
-* **JOB_TYPE**: `DNWORKINFO.JOB_TYPE`
-* **STATUS_FLAG**: `DNWORKINFO.STATUS_FLAG`
-* **HARDWARE_TYPE**: `DNWORKINFO.HARDWARE_TYPE`
-* **PLAN_UKEY**: `DNWORKINFO.PLAN_UKEY`
-* **STOCK_ID**: `DNWORKINFO.STOCK_ID`
-* **SYSTEM_CONN_KEY**: `DNWORKINFO.SYSTEM_CONN_KEY`
-* **PLAN_DAY**: `DNWORKINFO.PLAN_DAY`
-* **BATCH_NO**: `DNWORKINFO.BATCH_NO`
-* **PLAN_AREA_NO**: `DNWORKINFO.PLAN_AREA_NO`
-* **PLAN_LOCATION_NO**: `DNWORKINFO.PLAN_LOCATION_NO`
-* **MATERIAL_CODE**: `DNWORKINFO.MATERIAL_CODE`
-* **MATERIAL_NAME**: `DMITEM.MATERIAL_NAME`
-* **UOM**: `DMITEM.UOM`
-* **ENTERING_QTY**: `DNSTORAGEPLAN.QTY_CRTN_PL`
-* **BUNDLE_ENTERING_QTY**: `DNSTORAGEPLAN.PLANNED_CARTON_QTY`
-* **PLAN_QTY**: `DNWORKINFO.PLAN_QTY`
-* **RESULT_QTY**: `DNWORKINFO.RESULT_QTY`
-* **SHORTAGE_QTY**: `DNWORKINFO.SHORTAGE_QTY`
-* **RESULT_AREA_NO**: `DNWORKINFO.RESULT_AREA_NO`
-* **RESULT_LOCATION_NO**: `DNWORKINFO.RESULT_LOCATION_NO`
-* **RESULT_LOT_NO**: `DNWORKINFO.RESULT_LOT_NO`
-* **USER_ID**: `DNWORKINFO.USER_ID`
-* **TERMINAL_NO**: `DNWORKINFO.TERMINAL_NO`
-* **WORK_SECOND**: `DNWORKINFO.WORK_SECOND`
-* **USER_NAME**: `DCUSER.USERNAME`
-* **REPORT_FLAG**: `0: Not Reported`
-* **REGIST_DATE**: `SYSTIMESTAMP`
-* **REGIST_PNAME**: `Class name`
-* **LAST_UPDATE_DATE**: `SYSTIMESTAMP`
-* **LAST_UPDATE_PNAME**: `Class name`
+* **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY
+* **JOB_NO**: DNWORKINFO.JOB_NO
+* **COLLECT_JOB_NO**: DNWORKINFO.COLLECT_JOB_NO
+* **SETTING_UNIT_KEY**: DNWORKINFO.SETTING_UNIT_KEY
+* **JOB_TYPE**: DNWORKINFO.JOB_TYPE
+* **STATUS_FLAG**: DNWORKINFO.STATUS_FLAG
+* **HARDWARE_TYPE**: DNWORKINFO.HARDWARE_TYPE
+* **PLAN_UKEY**: DNWORKINFO.PLAN_UKEY
+* **STOCK_ID**: DNWORKINFO.STOCK_ID
+* **SYSTEM_CONN_KEY**: DNWORKINFO.SYSTEM_CONN_KEY
+* **PLAN_DAY**: DNWORKINFO.PLAN_DAY
+* **BATCH_NO**: DNWORKINFO.BATCH_NO
+* **PLAN_AREA_NO**: DNWORKINFO.PLAN_AREA_NO
+* **PLAN_LOCATION_NO**: DNWORKINFO.PLAN_LOCATION_NO
+* **MATERIAL_CODE**: DNWORKINFO.MATERIAL_CODE
+* **MATERIAL_NAME**: DMITEM.MATERIAL_NAME
+* **UOM**: DMITEM.UOM
+* **ENTERING_QTY**: DNSTORAGEPLAN.QTY_CRTN_PL
+* **BUNDLE_ENTERING_QTY**: DNSTORAGEPLAN.PLANNED_CARTON_QTY
+* **PLAN_QTY**: DNWORKINFO.PLAN_QTY
+* **RESULT_QTY**: DNWORKINFO.RESULT_QTY
+* **SHORTAGE_QTY**: DNWORKINFO.SHORTAGE_QTY
+* **RESULT_AREA_NO**: DNWORKINFO.RESULT_AREA_NO
+* **RESULT_LOCATION_NO**: DNWORKINFO.RESULT_LOCATION_NO
+* **RESULT_LOT_NO**: DNWORKINFO.RESULT_LOT_NO
+* **USER_ID**: DNWORKINFO.USER_ID
+* **TERMINAL_NO**: DNWORKINFO.TERMINAL_NO
+* **WORK_SECOND**: DNWORKINFO.WORK_SECOND
+* **USER_NAME**: DCUSER.USERNAME
+* **REPORT_FLAG**: 0: Not Reported
+* **REGIST_DATE**: SYSTIMESTAMP
+* **REGIST_PNAME**: Class name
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
 
 <hr>
 
