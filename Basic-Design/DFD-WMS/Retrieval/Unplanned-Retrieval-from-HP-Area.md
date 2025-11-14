@@ -118,6 +118,31 @@ All Carton Retrieval operation at Ambient or Tempering will be retrieved to Stat
 - LAST_UPDATE_PNAME = Class name
 
 #ID32
+<span style="background-color:yellow; color:black; font-weight:bold">jp.co.daifuku.wcs.mc.as21.communication.control.Id32Process</span>
+
+::: mermaid
+flowchart LR
+
+id32("
+ID 32
+")
+
+id32-update[("
+DNCARRYINFO
+")]
+
+id32-->id32process
+id32process-.U.->id32-update
+:::
+
+ID32 sent from AGC to WareNavi indicate AGC responded the retrieval job by WareNavi.
+
+## DNCARRYINFO
+- CMD_STATUS: 3:Commanded
+- ERROR_CODE: 0
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
 
 #ID33
 
