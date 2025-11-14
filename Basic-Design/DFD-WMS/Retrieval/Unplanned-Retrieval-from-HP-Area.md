@@ -6,7 +6,7 @@
 ::: mermaid
 flowchart LR
   
-P1[FROM HP STATION - 1301 & 1302]-->P2[ID26]-->P3[StorageSender]-->P4[ID25]-->Cond1{Flow?} 
+P1[FROM HP STATION - 1301, 1302, 1205, 1206, 1207, 1208, 1209]-->P2[ID26]-->P3[StorageSender]-->P4[ID25]-->Cond1{Flow?} 
 :::
 
 **Stage 2**
