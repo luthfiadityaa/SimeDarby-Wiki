@@ -199,7 +199,6 @@ Upon equipment have picked up the Pallet successfully, ID64 will be sent from AG
 - LAST_UPDATE_DATE = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
 
-
 #ID68
 
 #ID26
