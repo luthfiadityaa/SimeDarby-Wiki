@@ -29,7 +29,7 @@
 ## Inbound Table Data Flow
 | Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | ITEM | STSN |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|
-| Empty Pallet - Set (F2) [(1)](#empty-pallet---set-(f2))        |   I  |      |      |      |      |      |      |      |      |      |   S  |   S  |
+| Empty Pallet - Set (F2) [(1)](#empty-pallet---set-(f2))        |   I  |   I  |   I  |      |   I  |      |      |      |      |      |   S  |   S  |
 | ID26 at 1301-1302 [(2)](#id26-at-1301-1302)                    |   U  |      |      |   I  |      |   I  |      |      |      |      |      |      |
 | Storage Sender at 1301-1302 [(3)](#storage-sender-at-1301-1302)|   U  |      |      |   U  |      |   U  |   U  |   U  |      |      |      |      |
 | ID25 at 1301-1302 [(4)](#id25-at-1301-1302)                    |   U  |   U  |      |   U  |   U  |   D  |      |      |   I  |   I  |      |   S  |
@@ -38,7 +38,7 @@
 | Storage Sender at 7207-7210 [(7)](#storage-sender-at-7207-7210)|   U  |   U  |      |   U  |   U  |   U  |   U  |   U  |      |      |      |   S  |
 | ID25 at 7207-7210 [(8)](#id25-at-7207-7210)                    |   U  |   U  |      |   U  |      |   D  |      |      |   U  |   U  |      |      |
 | ID64 at SRM [(9)](#id64-at-srm)                                |      |      |      |   U  |      |      |      |      |      |      |      |      |
-| ID33 [(10)](#id33)                    |   U  |      |      |   D  |      |      |      |   U  |      |      |      |      |
+| ID33 [(10)](#id33)                                             |   U  |      |      |   D  |      |      |      |   U  |      |      |      |      |
 
 # Empty Pallet - Set (F2)
 
@@ -109,6 +109,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 - PLAN_DAY           = DMWARENAVISYSTEM.WORK_DAY
 - PLAN_AREA_NO       = Area Number where a reserved location belongs to
 - PLAN_LOCATION_NO   = Location Number where a reserved location belongs to
+- PLAN_QTY           = 1
 - WORK_DAY           = DMWARENAVISYSTEM.WORK_DAY
 - USER_ID            = Login Info
 - TERMINAL_NO        = Login Terminal
@@ -118,6 +119,43 @@ This section explains the validations for the whole proccess Storage Packaging M
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = ClassName
 
+## DNWORKLIST
+- JOB_NO             = DNWORKINFO.JOB_NO
+- CARRY_KEY          = DNWORKINFO.SYSTEM_CONN_KEY
+- SETTING_UNIT_KEY   = DNWORKINFO.SETTING_UNIT_KEY
+- COLLECT_JOB_NO     = DNWORKINFO.COLLECT_JOB_NO
+- JOB_TYPE           = DNWORKINFO.JOB_TYPE
+- PLAN_UKEY          = DNWORKINFO.PLAN_UKEY
+- STOCK_ID           = DNWORKINFO.STOCK_ID
+- PALLET_ID          = DNPALLET.PALLET_ID
+- PLAN_DAY           = DNWORKINFO.PLAN_DAY
+- PLAN_AREA_NO       = DNWORKINFO.PLAN_AREA_NO
+- PLAN_LOCATION_NO   = DNWORKINFO.PLAN_LOCATION_NO
+- STORAGE_TYPE       = 2:New
+- STORAGE_DATE       = SYSTIMESTAMP
+- PLAN_QTY           = DNWORKINFO.PLAN_QTY
+- USER_ID            = Login Info
+- USER_NAME          = Login Info
+- TERMINAL_NO        = Login Terminal
+- REGIST_DATE        = SYSTIMESTAMP                                                    
+- REGIST_PNAME       = ClassName
+- LAST_UPDATE_DATE   = SYSTIMESTAMP
+- LAST_UPDATE_PNAME  = ClassName
+
+## DNSTOCK
+- STOCK_ID           = Sequence Object
+- AREA_NO            = DNWORKINFO.PLAN_AREA_NO
+- LOCATION_NO        = DNWORKINFO.PLAN_LOCATION_NO
+- STORAGE_TYPE       = 2:NEW
+- STORAGE_DAY        = DMWARENAVISYSTEM.WORK_DAY
+- STORAGE_DATE       = SYSTIMESTAMP
+- NEWEST_STORAGE_DATE= DNSTOCK.STORAGE_DATE
+- PLAN_QTY           = DNWORKINFO.PLAN_QTY
+- PALLET_ID          = DNPALLET.PALLET_ID
+- REGIST_DATE        = SYSTIMESTAMP
+- REGIST_PNAME       = ClassName
+- LAST_UPDATE_DATE   = SYSTIMESTAMP
+- LAST_UPDATE_PNAME  = ClassName
 
 # Storage Flow Process
 
