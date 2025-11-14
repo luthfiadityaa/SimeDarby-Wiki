@@ -265,6 +265,8 @@ buttonclicked --> id26msg
 id26msg -->id26process
 id26process-->retrievaloperator
 
+retrievaloperator--> |INSERT| id26-insert
+retrievaloperator--> |UPDATE| id26-update
 retrievaloperator--> |DELETE| id26-delete
 :::
 
