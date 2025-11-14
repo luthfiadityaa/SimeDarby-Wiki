@@ -110,7 +110,6 @@ flowchart LR
         Tempering Period
         QC Duration
         QC Check Flag
-        Expiry Days
     ]
 
     tableList-insert[("
