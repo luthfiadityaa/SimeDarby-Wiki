@@ -30,7 +30,7 @@
 | Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | ITEM | STSN |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|
 | Empty Pallet - Set (F2) [(1)](#empty-pallet---set-(f2))        |   I  |      |      |      |      |      |      |      |      |      |   S  |   S  |
-| ID26 at 1301-1302 [(2)](#id26-at-1301-1302)                    |   U  |   I  |   I  |   I  |   I  |   I  |      |      |      |      |      |      |
+| ID26 at 1301-1302 [(2)](#id26-at-1301-1302)                    |   U  |      |      |   I  |      |   I  |      |      |      |      |      |      |
 | Storage Sender at 1301-1302 [(3)](#storage-sender-at-1301-1302)|   U  |      |      |   U  |      |   U  |   U  |   U  |      |      |      |      |
 | ID25 at 1301-1302 [(4)](#id25-at-1301-1302)                    |   U  |   U  |      |   U  |   U  |   D  |      |      |   I  |   I  |      |   S  |
 | ID64 at STV [(5)](#id64-at-stv)                                |      |      |      |   U  |      |      |      |      |      |      |      |      |
@@ -123,9 +123,6 @@ DNPALLET
 id26-insert[("
 DNARRIVAL
 DNCARRYINFO
-DNSTOCK
-DNWORKINFO
-DNWORKLIST
 ")]
 
 storageStationOperator[storageStationOperator]
@@ -179,71 +176,6 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 - SCHEDULE_NO        = Sequence Object
 - END_STATION_NO     = DNCARRYINFO.DEST_STATION_NO
 - REGIST_DATE        = SYSTIMESTAMP
-- REGIST_PNAME       = ClassName
-- LAST_UPDATE_DATE   = SYSTIMESTAMP
-- LAST_UPDATE_PNAME  = ClassName
-
-## DNSTOCK
-- STOCK_ID           = Sequence Object
-- AREA_NO            = DNWORKINFO.PLAN_AREA_NO
-- LOCATION_NO        = DNWORKINFO.PLAN_LOCATION_NO
-- STORAGE_TYPE       = 2:NEW
-- STORAGE_DAY        = DMWARENAVISYSTEM.WORK_DAY
-- STORAGE_DATE       = SYSTIMESTAMP
-- PLAN_QTY           = DNWORKINFO.PLAN_QTY
-- PALLET_ID          = DNPALLET.PALLET_ID
-- REGIST_DATE        = SYSTIMESTAMP
-- REGIST_PNAME       = ClassName
-- LAST_UPDATE_DATE   = SYSTIMESTAMP
-- LAST_UPDATE_PNAME  = ClassName
-
-## DNWORKINFO
-- JOB_NO             = Sequence Object
-- SETTING_UNIT_KEY   = Sequence Object
-- COLLECT_JOB_NO     = Sequence Object
-- JOB_TYPE           = 26:Direct Transfer
-- STATUS_FLAG        = 1:WORKING
-- HARDWARE_TYPE      = 3:ASRS
-- PLAN_UKEY          = Sequence Object
-- STOCK_ID           = DNSTOCK.STOCK_ID
-- SYSTEM_CONN_KEY    = Sequence Object
-- PLAN_DAY           = DMWARENAVISYSTEM.WORK_DAY
-- PLAN_AREA_NO       = Area Number where a reserved location belongs to
-- PLAN_LOCATION_NO   = Location Number where a reserved location belongs to
-- PLAN_QTY           = 1
-- WORK_DAY           = DMWARENAVISYSTEM.WORK_DAY
-- USER_ID            = Login Info
-- TERMINAL_NO        = Login Terminal
-- REGIST_DATE        = SYSTIMESTAMP
-- REGIST_PNAME       = ClassName
-- LAST_UPDATE_DATE   = SYSTIMESTAMP
-- LAST_UPDATE_PNAME  = ClassName
-
-## DNWORKLIST
-- JOB_NO             = DNWORKINFO.JOB_NO
-- CARRY_KEY          = DNWORKINFO.SYSTEM_CONN_KEY
-- SETTING_UNIT_KEY   = DNWORKINFO.SETTING_UNIT_KEY
-- COLLECT_JOB_NO     = DNWORKINFO.COLLECT_JOB_NO
-- JOB_TYPE           = DNWORKINFO.JOB_TYPE
-- PLAN_UKEY          = DNWORKINFO.PLAN_UKEY
-- STOCK_ID           = DNWORKINFO.STOCK_ID
-- PALLET_ID          = DNCARRYINFO.PALLET_ID
-- PLAN_DAY           = DNWORKINFO.PLAN_DAY
-- PLAN_AREA_NO       = DNWORKINFO.PLAN_AREA_NO
-- PLAN_LOCATION_NO   = DNWORKINFO.PLAN_LOCATION_NO
-- STORAGE_TYPE       = 2:New
-- STORAGE_DATE       = SYSTIMESTAMP
-- PLAN_QTY           = DNWORKINFO.PLAN_QTY
-- PRIORITY           = DNCARRYINFO.PRIORITY
-- WORK_NO            = DNCARRYINFO.WORK_NO
-- SOURCE_STATION_NO  = DNCARRYINFO.SOURCE_STATION_NO
-- DEST_STATION_NO    = DNCARRYINFO.DEST_STATION_NO
-- SCHEDULE_NO        = DNCARRYINFO.SCHEDULE_NO
-- END_STATION_NO     = DNCARRYINFO.END_STATION_NO
-- USER_ID            = Login Info
-- USER_NAME          = Login Info
-- TERMINAL_NO        = Login Terminal
-- REGIST_DATE        = SYSTIMESTAMP                                                    
 - REGIST_PNAME       = ClassName
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = ClassName
