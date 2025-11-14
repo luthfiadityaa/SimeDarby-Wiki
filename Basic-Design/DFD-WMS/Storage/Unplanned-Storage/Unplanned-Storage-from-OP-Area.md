@@ -217,20 +217,18 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ####<span style="color:skyblue; font-weight:bold">DNArrival</span>
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-----------------------------------------------|
-| **ARRIVAL_DATE**           | SYSTIMESTAMP 
-| **STATION_NO**             | Arrival Station Number from ID26 
-| **CARRY_KEY**              | 99999999       
-| **BCR_DATA**               | Barcode information from ID26
-| **CONTROLINFO**            | Control information from ID26
-| **SEND_FLAG**              | 0:Not sent
-| **HEIGHT**                 | Dimension Information from ID26
-| **WIDTH**                  | Dimension Information From ID26
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
+*   **ARRIVAL_DATE**: SYSTIMESTAMP    
+*   **STATION_NO**: Arrival Station Number from ID26    
+*   **CARRY_KEY**: 99999999    
+*   **BCR_DATA**: Barcode information from ID26    
+*   **CONTROLINFO**: Control information from ID26    
+*   **SEND_FLAG**: 0: Not sent    
+*   **HEIGHT**: Dimension Information from ID26    
+*   **WIDTH**: Dimension Information From ID26    
+*   **REGIST_DATE**: SYSTIMESTAMP    
+*   **REGIST_PNAME**: ClassName    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: ClassName
 
 ###<span style="color:skyblue; font-weight:bold">DNPallet</span>
 | **Field Name**            | **Insert Vlaue**                               |
