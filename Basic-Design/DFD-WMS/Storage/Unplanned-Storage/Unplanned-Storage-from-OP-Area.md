@@ -113,7 +113,7 @@ flowchart LR
 ####<span style="color:skyblue; font-weight:bold">DMSTATION</span>
 **CURRENT_MODE**: 1:Storage Mode
 
-#<span style="color:skyblue; font-weight:bold">Unplanned Storage - Set(F2)</span>
+#Unplanned Storage - Set(F2)
 ![image.png](/.attachments/image-6293c4f4-5fd4-4247-8cbc-fbcc6d9cf3a5.png)
  
 The Unplanned Storage Setting screen uses for manually set the storage work .
