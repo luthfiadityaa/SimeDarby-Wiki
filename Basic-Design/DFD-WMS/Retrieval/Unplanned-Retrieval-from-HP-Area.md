@@ -227,10 +227,6 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 - LAST_UPDATE_DATE = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
 
-# Work Display
-## Completed Action
-![==image_0==.jpg](/.attachments/==image_0==-4ce6ea84-ed9e-4b03-9bc1-ad17d0282289.jpg) 
-
 #ID26
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.wcs.mc.as21.communication.control.Id26Process&nbsp;</span>
 
