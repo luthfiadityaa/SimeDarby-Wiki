@@ -241,8 +241,10 @@ id26msg("
 ID 26
 ")
 
-id26-update[("
+id26-delete[("
 DNCARRYINFO
+DNPALLET
+DNSTOCK
 ")]
 
 id26process[id26process]
@@ -253,7 +255,7 @@ buttonclicked --> id26msg
 id26msg -->id26process
 id26process-->retrievaloperator
 
-retrievaloperator--> |DELETE| id26-update
+retrievaloperator--> |DELETE| id26-delete
 :::
 
 After the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. At the same time, sending ID 26 to the id26process, then delete related records from DNPALLET, DNCARRYINFO, and DNSTOCK.
