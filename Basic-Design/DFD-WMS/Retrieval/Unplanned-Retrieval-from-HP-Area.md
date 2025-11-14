@@ -77,7 +77,7 @@ flowchart LR
 #Inquiry Retrieval Setting - Set(F2)
  ![==image_0==.jpg](/.attachments/==image_0==-58f99576-be7b-41a4-bc02-6cef92ce5b43.jpg) 
 
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.storage.palletizingsetting.PalletizingSettingSCH &nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.storage.palletizingsetting.InquiryRetrievalSettingSCH &nbsp;</span>
 
 The Inquiry Retrieval Setting screen uses for manually set the retrieval work(UnitRetrieval).​
 This screen uses when there are some troubles with Host System Linkage(Irregular Cases) or when manual operation is necessary.
