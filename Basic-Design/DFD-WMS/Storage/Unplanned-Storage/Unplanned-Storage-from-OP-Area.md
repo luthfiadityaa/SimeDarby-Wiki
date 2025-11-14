@@ -87,7 +87,7 @@ P23[ID64]--> |9011-9014|P14[ID33]
 | Unplanned Storage and Retrieval Result[(19)](#Unplanned-Storage-and-Retrieval-Result)     |    |    |    |    |    |    |     |    |    |    |    |    | 
 
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
-##<span style="color:skyblue; font-weight:bold">ID63</span>
+##ID63
 If the station mode is **Retrieval Mode**, change the mode of the station to **Storage mode**.
 ::: mermaid
 flowchart LR
