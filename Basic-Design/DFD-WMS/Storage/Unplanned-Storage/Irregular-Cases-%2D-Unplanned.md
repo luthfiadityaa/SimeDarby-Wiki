@@ -334,11 +334,6 @@ Palletizing Completion("0":Normal Completion)</span>
 - **ARVL** : DNARRIVAL  
 - **STSN** : DMSTATION 
 
-| Action Name                 | WRKI   | PLLT   | CRYI   | STCK   | ARRVL  | STSN   | 
-|-----------------------------|--------|--------|--------|--------|--------|--------|
-| ID26(1)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
-| ID54(2)                     |        |        |        |        |        |        |
-
 | Action Name                                     |WRK |PLLT|CRYI|STCK|ARRVL|STSN| 
 |-------------------------------------------------|----|----|----|----|-----|----|
 | ID26[(1)](#ID26-at-[1301-1303])                 | I  | I  | I  | I  | I   |    |
