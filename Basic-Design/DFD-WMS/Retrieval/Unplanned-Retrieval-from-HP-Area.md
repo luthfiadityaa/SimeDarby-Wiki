@@ -254,6 +254,13 @@ DNPALLET
 DNSTOCK
 ")]
 
+id26-insert[("
+DNWORKINFO
+DNWORKLIST
+DNHOSTSEND
+DNSHELF
+")]
+
 id26process[id26process]
 retrievaloperator[RetrievalStationOperator]
 
