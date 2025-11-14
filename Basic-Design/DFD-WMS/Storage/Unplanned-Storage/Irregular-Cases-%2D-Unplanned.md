@@ -342,7 +342,7 @@ Palletizing Completion("0":Normal Completion)</span>
 | Action Name                                     |WRK |PLLT|CRYI|STCK|ARRVL|STSN| 
 |-------------------------------------------------|----|----|----|----|-----|----|
 | ID26[(1)](#ID26-at-[1301-1303])                 | I  | I  | I  | I  | I   |    |
-| ID54[(4)](#ID25-at-1301-1303)                   |    |    | U  |    | D   |    |
+| ID54[(4)](#ID25-at-1301-1303)                   |    |    |    |    |     |    |
 
 ###ID26 at [1301-1303]
 
