@@ -53,7 +53,7 @@ P23[ID64]--> |9001-9006|P14[ID33]
 | Action Name                                                      |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN| 
 |------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|
 | ID63 [(1)](#ID63)                                                |    |    |    |    |    |    |     |    |    |    |    | U  |   
-| Unplanned Storage - Set(F2) [(2)](#Unplanned-Storage-Set(F2)) | I  |    |    |    |    |    |     |    |    |    | S  |    |  
+| Unplanned Storage - Set(F2) [(2)](#Unplanned-Storage---Set(F2)) | I  |    |    |    |    |    |     |    |    |    | S  |    |  
 | ID26[(3)](#ID26-at-1301-&-1302)                                  |    |    | I  | I  | I  |    | I   |    |    |    |    | S  |  
 | StorageSender[(4)](#Storage-Sender-at-1301-&-1302)               | U  |    | U  | U  | U  |    | U   | U  | U  |    |    |    |    
 | ID25[(5)](#ID25-at-1301-&-1302)                                  |    |    |    | U  |    |    | D   |    |    |    |    |    |     
