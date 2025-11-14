@@ -92,6 +92,9 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 ::: mermaid
 flowchart LR
     input[
+        Station
+        Pallet #
+        SoftZone
         All Qty
         Retrieval Qty
         Stock Qty
