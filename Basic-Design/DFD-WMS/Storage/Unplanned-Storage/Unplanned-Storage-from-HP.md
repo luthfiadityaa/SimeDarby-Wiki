@@ -46,8 +46,7 @@ P23[ID64]--> |9001-9006|P14[ID33]
 - **ARVL** : DNARRIVAL  
 - **WRHS** : DMWAREHOUSE  
 - **SHLF** : DMSHELF  
-- **MTMS** : DMATERIALMASTER  
-- **STSN** : DMSTATION  
+- **MTMS** : DMATERIALMASTER**STSN** : DMSTATION  
 - **STCH** : DNSTOCKHISTORY  
 
 | Action Name                    | WRKI   | WRKL   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | MTMS   | STSN   | 
