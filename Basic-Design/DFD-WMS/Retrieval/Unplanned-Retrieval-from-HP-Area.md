@@ -256,4 +256,4 @@ id26process-->retrievaloperator
 retrievaloperator--> |DELETE| id26-update
 :::
 
-After the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. At the same time, the AGC activates the signal tower for No-Read based on control information, sending ID 26 to the id26process, then delete related records from DNWORKINFO, DNPALLET, DNCARRYINFO, and DNSTOCK.
+After the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. At the same time, sending ID 26 to the id26process, then delete related records from DNPALLET, DNCARRYINFO, and DNSTOCK.
