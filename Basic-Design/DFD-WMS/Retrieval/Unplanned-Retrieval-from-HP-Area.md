@@ -200,7 +200,7 @@ Upon equipment have picked up the Pallet successfully, ID64 will be sent from AG
 - LAST_UPDATE_PNAME = Class name
 
 #ID68
-jp.co.daifuku.wcs.mc.as21.communication.control.Id68Process
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id68Process &nbsp;</span>
 
 ::: mermaid
 flowchart LR
