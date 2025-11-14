@@ -1,9 +1,6 @@
 [[_TOC_]]
 [[_TOSP_]]
 
-[[_TOC_]]
-[[_TOSP_]]
-
 #<span style="color:skyblue; font-weight:bold">Summary Flow</span>
 **Stage 1**
 ::: mermaid
