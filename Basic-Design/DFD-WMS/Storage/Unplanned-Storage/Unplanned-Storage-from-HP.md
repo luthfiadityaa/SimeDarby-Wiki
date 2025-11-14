@@ -1125,6 +1125,7 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 *   **REGIST_PNAME**: ClassName    
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
+
 <br>
 <hr>
 
