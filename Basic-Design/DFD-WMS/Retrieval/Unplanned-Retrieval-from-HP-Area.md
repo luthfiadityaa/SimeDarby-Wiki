@@ -241,10 +241,6 @@ id26msg("
 ID 26
 ")
 
-id26-insert[("
-DNARRIVAL
-")]
-
 id26-update[("
 DNCARRYINFO
 ")]
@@ -260,23 +256,4 @@ retrievaloperator--I-->id26-insert
 retrievaloperator-.U.->id26-update
 :::
 
-After user clicked on Completion button at Station, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Storage Sender picks up the data.
-
-## DNARRIVAL
-- ARRIVAL_DATE = SYSTIMESTAMP
-- STATION_NO = Arrival Station Number from ID26
-- CARRY_KEY = 99999999
-- BCR_DATA = Barcode information from ID26
-- CONTROLINFO = Control information from ID26
-- SEND_FLAG = 0:Not sent
-- HEIGHT = Dimension Information from ID26
-- WIDTH = Dimension Information From ID26
-- REGIST_DATE = SYSTIMESTAMP
-- REGIST_PNAME = Class name
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
-
-## DNCARRYINFO
-- CMD_STATUS = 1:Started
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+After the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. At the same time, the AGC activates the signal tower for No-Read based on control information, sending ID 26 to the id26process, then delete related records from DNWORKINFO, DNPALLET, DNCARRYINFO, and DNSTOCK.
