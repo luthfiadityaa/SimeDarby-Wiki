@@ -17,6 +17,7 @@
 | **SHLF** | DMSHELF          |
 | **STCH** | DNSTOCKHISTORY   |
 | **INOT** | DNINOUTRESULT    |
+| **HTSD** | DNHOSTSEND       |
 | **ITEM** | DMITEM           |
 | **STSN** | DMSTATION        |
 
@@ -27,35 +28,20 @@
 | **U**    | UPDATE           |
 | **D**    | DELETE           |
 
-# Inbound Table Data Flow
-|Action Name| SRTP | PLLT | WRKI | WRKL | CRYI | STCK | HSTS | ARVL | WRHS | SHLF | STCH | MTST | STSN |
-|-----------|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| [Planned Storage from Host](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/882/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20Packaging%20Material&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eplanned-storage-from-host%3C/span%3E) | INSERT| | | | | |
-| [Planned Storage - Set (F2)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/882/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20Packaging%20Material&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eplanned-storage---set-(f2)%3C/span%3E) | UPDATE | | | | | | | | | | | SELECT | SELECT |
-| [ID26 - Dummy Arrival](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/882/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20Packaging%20Material&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid26---dummy-arrival%3C/span%3E) | | INSERT | INSERT | |INSERT | | | INSERT | | | |
-| [Automatic Mode Change Sender](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20Packaging%20Material&pageId=882&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eautomatic-mode-change-sender%3C/span%3E) | | UPDATE | UPDATE | | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE | |
-| [ID25](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/882/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20Packaging%20Material&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid25%3C/span%3E) | | | | | UPDATE | | | UPDATE | | | |
-| [ID64](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20Packaging%20Material&pageId=882&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid64%3C/span%3E) | | | | | UPDATE | | | | | | |
-| [ID26](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/882/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20Packaging%20Material&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid26%3C/span%3E) | | | | |INSERT | | | INSERT | | | |
-| [Storage Sender](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/882/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20Packaging%20Material&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Estorage-sender%3C/span%3E) | | UPDATE| UPDATE | | UPDATE | UPDATE | | UPDATE | UPDATE | UPDATE | |
-| [ID25](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20Packaging%20Material&pageId=882&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid25-%3C/span%3E) | | | | | UPDATE | | | UPDATE | | | |
-| [ID64](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/882/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20Packaging%20Material&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid64-%3C/span%3E) | | | | | UPDATE | | | | | | |
-| [ID33](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Planned%20Storage%20Packaging%20Material&pageId=882&_a=edit&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eid33%3C/span%3E) | UPDATE | UPDATE | UPDATE | | DELETE | UPDATE | INSERT | | | UPDATE | INSERT |
-
 ## Inbound Table Data Flow
-| Action Name                                                    | STRP | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | ITEM | STSN |
-|----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|
-| Planned Storage from Host [(1)](#planned-storage-from-host)    |   I  |      |      |      |      |      |      |      |      |      |      |      |      |
-| Planned Storage - Set (F2) [(2)](#planned-storage---set-(f2))  |   U  |      |      |      |      |      |      |      |      |      |      |   S  |   S  |
-| ID26 - Dummy Arrival [(3)](#id26---dummy-arrival)              |      |   U  |      |      |   I  |      |   I  |      |      |      |      |      |      |
-| Storage Sender at 1106 [(4)](#storage-sender-at-1106)|         |   U  |      |      |   U  |      |   U  |   U  |   U  |      |      |      |      |
-| ID25 at 1106 [(5)](#id25-at-1106)                              |      |   U  |   U  |      |   U  |   U  |   D  |      |      |   I  |   I  |      |   S  |
-| ID64 at STV [(5)](#id64-at-stv)                                |      |      |      |      |   U  |      |      |      |      |      |      |      |      |
-| ID26 at 7211-7214 [(6)](#id26-at-7211-7214)                    |      |   U  |   U  |   U  |   U  |   U  |   I  |      |      |      |      |      |      |
-| Storage Sender at 7211-7214 [(7)](#storage-sender-at-7211-7214)|      |   U  |   U  |      |   U  |   U  |   U  |   U  |   U  |      |      |      |   S  |
-| ID25 at 7211-7214 [(8)](#id25-at-7211-7214)                    |      |   U  |   U  |      |   U  |      |   D  |      |      |   U  |   U  |      |      |
-| ID64 at SRM [(9)](#id64-at-srm)                                |      |      |      |      |   U  |      |      |      |      |      |      |      |      |
-| ID33 [(10)](#id33)                                             |      |   U  |      |      |   D  |      |      |      |   U  |      |      |      |      |
+| Action Name                                                    | STRP | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT  | HTSD | ITEM | STSN |
+|----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
+| Planned Storage from Host [(1)](#planned-storage-from-host)    |   I  |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| Planned Storage - Set (F2) [(2)](#planned-storage---set-(f2))  |   U  |      |      |      |      |      |      |      |      |      |      |      |   S  |   S  |
+| ID26 - Dummy Arrival [(3)](#id26---dummy-arrival)              |      |   I  |      |      |   I  |   I  |   I  |      |      |      |      |      |      |      |
+| Storage Sender at 1106 [(4)](#storage-sender-at-1106)          |      |   U  |   U  |      |   U  |   U  |   U  |   U  |   U  |      |      |      |      |      |
+| ID25 at 1106 [(5)](#id25-at-1106)                              |      |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |
+| ID64 at STV [(5)](#id64-at-stv)                                |      |      |      |      |   U  |      |      |      |      |      |      |      |      |      |
+| ID26 at 7211-7214 [(6)](#id26-at-7211-7214)                    |      |   U  |   U  |      |   U  |   U  |   I  |      |      |      |      |      |      |      |
+| Storage Sender at 7211-7214 [(7)](#storage-sender-at-7211-7214)|      |   U  |   U  |      |   U  |   U  |   U  |   U  |   U  |      |      |      |      |      |
+| ID25 at 7211-7214 [(8)](#id25-at-7211-7214)                    |      |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |
+| ID64 at SRM [(9)](#id64-at-srm)                                |      |      |      |      |   U  |      |      |      |      |      |      |      |      |      |
+| ID33 [(10)](#id33)                                             |   U  |   U  |   U  |      |   D  |   U  |      |      |   U  |   I  |   I  |   I  |      |      |
 
 
 
