@@ -164,8 +164,7 @@ flowchart LR
 *   **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE    
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY  
 *   **BCR_DATA**: DNPALLET.BCR_DATA  
-*   **USER_ID**: Login Info    
-*   **STORAGE_LOCATION_FROM**: Value from screen (Storage Location From) ⟶ **FGW1 (Ambient/9002) or FGW2 (Tempering/9001)**    
+*   **USER_ID**: Login Info     
 *   **REGIST_DATE**: SYSTIMESTAMP    
 *   **REGIST_PNAME**: ClassName    
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
