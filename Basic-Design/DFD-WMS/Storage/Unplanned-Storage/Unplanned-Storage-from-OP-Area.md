@@ -233,7 +233,7 @@ releaseCommand-->id26msg-->id26process-->inoutstationoperator
 inoutstationoperator--> |INSERT| id26-insert
 :::
 
-After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
+After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Storage Sender picks up the data.
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
 
@@ -303,8 +303,8 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
 
-#<span style="color:skyblue; font-weight:bold">Automatic Mode Change Sender</span>
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.AutomaticModeChangeSender &nbsp;</span>
+#Storage Sender
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
 
 ::: mermaid
 flowchart LR
