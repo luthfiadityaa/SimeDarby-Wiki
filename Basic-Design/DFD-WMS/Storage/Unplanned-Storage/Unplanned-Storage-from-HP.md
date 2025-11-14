@@ -518,19 +518,15 @@ After successful creation of arrival record in <span style="color:green; font-we
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Field Name**            | **Insert Value**                               |
-|---------------------------|------------------------------------------------|
-| **CMD_STATUS**            | 2: Waiting for response
-| **LAST_UPDATE_DATE**      | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**     | Class name
+*   **CMD_STATUS**: 2: Waiting for response    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNArrival</span>
-| **Field Name**            | **Insert Value**                               |
-|---------------------------|------------------------------------------------|
-| **CARRY_KEY**             | DNCARRYINFO.CARRY_KEY
-| **SEND_FLAG**             | 1:Sent
-| **LAST_UPDATE_DATE**      | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**     | Class name
+*   **CARRY_KEY**: DNCARRYINFO.CARRY_KEY    
+*   **SEND_FLAG**: 1: Sent    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: Class name
 
 
 ##<span style="color:skyblue; font-weight:bold">&nbsp;ID25&nbsp;</span>
@@ -559,12 +555,10 @@ id25process--> |DELETE| id25-delete
 ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Field Name**            | **Insert Value**                                      |
-|---------------------------|-------------------------------------------------------|
-| **CMD_STATUS**            | 3:Commanded
-| **ERROR_CODE**            | 0
-| **LAST_UPDATE_DATE**      | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**     |Class name
+*   **CMD_STATUS**: 3: Commanded    
+*   **ERROR_CODE**: 0    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: Class name
 
 ##<span style="color:skyblue; font-weight:bold">ID64&nbsp;&nbsp;</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process&nbsp;</span>
