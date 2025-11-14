@@ -162,7 +162,8 @@ flowchart LR
 *   **UOM**: Value from screen (UOM)    
 *   **TEMPERING_PERIOD**: Value from screen (Tempering Period)    
 *   **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE    
-*   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY    
+*   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY  
+*   **BCR_DATA**: DNPALLET.BCR_DATA  
 *   **USER_ID**: Login Info    
 *   **STORAGE_LOCATION_FROM**: Value from screen (Storage Location From) ⟶ **FGW1 (Ambient/9002) or FGW2 (Tempering/9001)**    
 *   **REGIST_DATE**: SYSTIMESTAMP    
