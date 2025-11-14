@@ -184,7 +184,7 @@ flowchart LR
 *   **RETRIEVAL_STATION_NO**: DNSTOCK.LOCATION_NO
 *   **SOURCE_STATION_NO**: DNPALLET.CURRENT_STATION_NO    
 *   **DEST_STATION_NO**: **<span style="color:green;">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (1301, 1302, 1205, 1206, 1207, 1208, 1209)**    
-*   **PRIORITY**: Value from screen ⟶ **<span style="color:green;">(1:Urgent 2:Normal)</span>
+*   **PRIORITY**: Value from screen ⟶ **<span style="color:green;">(1:Urgent, 2:Normal)</span>
 *   **CANCEL_REQUEST**: 0:Not Requested    
 *   **SCHEDULE_NO**: Sequence Object    
 *   **END_STATION_NO**: DNWORKINFO.PLAN_AREA_NO    
