@@ -35,7 +35,7 @@ Cond2 -->|No| Move2[ID05]
 flowchart LR
 
 releaseCommand["
-Release Command from After Completion 
+Release Command from Conveyor After Completion 
 "]
 
 id26msg("
