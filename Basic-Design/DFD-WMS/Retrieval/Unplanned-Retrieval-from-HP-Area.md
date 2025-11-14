@@ -217,7 +217,7 @@ id68-->id68process
 id68process--I-->id68-insert
 :::
 
-ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related Station in Unit Load ASRS. This does not apply to Stations in Mini Load ASRS. Upon receiving of ID68, insertion of data will be executed for Stations 2111-2113 only.
+ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related Station in ASRS. Upon receiving of ID68, insertion of data will be executed.
 
 ## DNOPERATIONDISPLAY
 - CARRY_KEY = MC Key information from ID68
