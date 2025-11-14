@@ -183,7 +183,7 @@ flowchart LR
 *   **WORK_NO**: Sequence Object    
 *   **RETRIEVAL_STATION_NO**: DNSTOCK.LOCATION_NO
 *   **SOURCE_STATION_NO**: DNPALLET.CURRENT_STATION_NO    
-*   **DEST_STATION_NO**: **Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (7207, 7208, 7209, 7210, 7211, 7212, 7213, 7214)**    
+*   **DEST_STATION_NO**: **Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (1301, 1302, 1205, 1206, 1207, 1208, 1209)**    
 *   **CANCEL_REQUEST**: 0:Not Requested    
 *   **SCHEDULE_NO**: Sequence Object    
 *   **END_STATION_NO**: DNWORKINFO.PLAN_AREA_NO    
