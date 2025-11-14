@@ -76,3 +76,6 @@ flowchart LR
 
 #Inquiry Retrieval Setting - Set(F2)
  ![==image_0==.jpg](/.attachments/==image_0==-58f99576-be7b-41a4-bc02-6cef92ce5b43.jpg) 
+
+The Inquiry Retrieval Setting screen uses for manually set the retrieval work(UnitRetrieval, and Partial Pick).​
+This screen uses when there are some troubles with Host System Linkage(irregularcases) or when manual operation is necessary.
