@@ -286,7 +286,7 @@ Palletizing Completion("0":Normal Completion)</span>
 *   **STATION_NO**: Arrival Station Number from ID26    
 *   **CARRY_KEY**: 99999999    
 *   **BCR_DATA**: Barcode information from ID26    
-*   **CONTROLINFO**: **Control information from ID26** (in bold red)    
+*   **CONTROLINFO**:  <span style="color:red; font-weight:bold">Control information from ID26</span> 
 *   **SEND_FLAG**: 0: Not sent    
 *   **HEIGHT**: Dimension Information from ID26    
 *   **WIDTH**: Dimension Information From ID26    
