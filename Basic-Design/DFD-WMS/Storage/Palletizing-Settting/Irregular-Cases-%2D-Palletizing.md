@@ -871,8 +871,8 @@ After the process is completed, the conveyor receives a signal and begins transf
 *   **RESTORING_FLAG** : 0: Not Restore to Original Location    
 *   **CARRY_FLAG** : 3: Direct Transfer    
 *   **WORK_NO** : Sequence Object    
-*   **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO ⟶ (1101/1102/1103/1104/1105)    
-*   **DEST_STATION_NO** : Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (1111/1112/1113/1114/1115)    
+*   **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO ⟶ **<span style="color:green;">(1101/1102/1103/1104/1105)</span>**    
+*   **DEST_STATION_NO** : **<span style="color:green;">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (1111/1112/1113/1114/1115) </span>**   
 *   **CANCEL_REQUEST** : 0: Not Requested    
 *   **SCHEDULE_NO** : Sequence Object    
 *   **END_STATION_NO** : DNWORKINFO.PLAN_AREA_NO    
@@ -1059,8 +1059,8 @@ No Read("0":None)</span>
 *   **RESTORING_FLAG** : 0: Not Restore to Original Location    
 *   **CARRY_FLAG** : 3: Direct Transfer    
 *   **WORK_NO** : Sequence Object    
-*   **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO → _(1101, 1102, 1103, 1104, 1105)_    
-*   **DEST_STATION_NO** : Based on SOURCE_STATION_NO where a reserved location belongs → _(1111, 1112, 1113, 1114, 1115)_    
+*   **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO → **<span style="color:green;">_(1101, 1102, 1103, 1104, 1105)_</span>**    
+*   **DEST_STATION_NO** : **<span style="color:green;">Based on SOURCE_STATION_NO where a reserved location belongs → _(1111, 1112, 1113, 1114, 1115)_</span>**    
 *   **CANCEL_REQUEST** : 0: Not Requested    
 *   **SCHEDULE_NO** : Sequence Object    
 *   **END_STATION_NO** : DNWORKINFO.PLAN_AREA_NO    
@@ -1068,6 +1068,8 @@ No Read("0":None)</span>
 *   **REGIST_PNAME** : ClassName    
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME** : ClassName
+
+
 
 #####<span style="color:skyblue; font-weight:bold">DNStock</span>
 *   **STOCK_ID** : Sequence Object    
