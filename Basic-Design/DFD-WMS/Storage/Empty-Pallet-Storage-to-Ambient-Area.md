@@ -51,27 +51,27 @@ The Empty Pallet Setting Screen uses for storage the empty pallet to ASRS.
 
 ::: mermaid
 flowchart LR
-    input[
-        Pallet #      
-    ]
+input[
+Pallet #      
+]
 
-    tableList-insert[("
-        DNPALLET
-    ")]
+tableList-insert[("
+DNPALLET
+DNWORKINFO
+DNWORKLIST
+DNSTOCK
+")]
 
-    tableList-select[("
-        DMSTATION
-        DMMASTERMATERIAL
-    ")]
+tableList-select[("
+DMSTATION
+DMMASTERMATERIAL
+")]
 
 
-    className[EmptyPalletSettingSCH]
+className[EmptyPalletSettingSCH]
 
-    input --> className --> |INSERT| tableList-insert
-    tableList-select --> |SELECT| className
-
-    classDef leftAlign text-align:left;
-    class input leftAlign;
+input --> className --> |INSERT| tableList-insert
+tableList-select --> |SELECT| className
 :::
 
 ## Validations
@@ -95,6 +95,29 @@ This section explains the validations for the whole proccess Storage Packaging M
 - REGIST_PNAME = ClassName
 - LAST_UPDATE_DATE = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = ClassName
+
+## DNWORKINFO
+- JOB_NO             = Sequence Object
+- SETTING_UNIT_KEY   = Sequence Object
+- COLLECT_JOB_NO     = Sequence Object
+- JOB_TYPE           = 02:Storage
+- STATUS_FLAG        = 0:Not Started
+- HARDWARE_TYPE      = 3:ASRS
+- PLAN_UKEY          = Sequence Object
+- STOCK_ID           = Sequence Object
+- SYSTEM_CONN_KEY    = Sequence Object
+- PLAN_DAY           = DMWARENAVISYSTEM.WORK_DAY
+- PLAN_AREA_NO       = Area Number where a reserved location belongs to
+- PLAN_LOCATION_NO   = Location Number where a reserved location belongs to
+- WORK_DAY           = DMWARENAVISYSTEM.WORK_DAY
+- USER_ID            = Login Info
+- TERMINAL_NO        = Login Terminal
+- STORING_PAIR_KEY   = DNSTORAGEPLAN.STORING_PAIR_KEY
+- REGIST_DATE        = SYSTIMESTAMP                                                    
+- REGIST_PNAME       = ClassName
+- LAST_UPDATE_DATE   = SYSTIMESTAMP
+- LAST_UPDATE_PNAME  = ClassName
+
 
 # Storage Flow Process
 
