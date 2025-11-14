@@ -282,7 +282,7 @@ After successful creation of arrival record in **ID26process**, Automatic Mode C
 - AISLE_STATION_NO   = Aisle Number where a reserved location belongs to
 - CMD_STATUS         = 2:Waiting for response
 - SOURCE_STATION_NO  = DNPALLET.CURRENT_STATION_NO ⟶ **1301/1302**
-- DEST_STATION_NO    = Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ **(7207/7208/7209/7210)**
+- DEST_STATION_NO    = Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (**7207/7208/7209/7210**)
 - END_STATION_NO     = DNCARRYINFO.DEST_STATION_NO
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = Class name
