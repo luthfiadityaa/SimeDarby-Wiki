@@ -79,3 +79,15 @@ flowchart LR
 
 The Inquiry Retrieval Setting screen uses for manually set the retrieval work(UnitRetrieval).​
 This screen uses when there are some troubles with Host System Linkage(Irregular Cases) or when manual operation is necessary.
+
+#Retrieval-Sender
+
+#ID32
+
+#ID33
+
+#ID64
+
+#ID68
+
+#ID26
