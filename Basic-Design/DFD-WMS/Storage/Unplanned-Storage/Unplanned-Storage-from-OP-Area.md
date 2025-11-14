@@ -593,31 +593,6 @@ Upon equipment <span style="color:green; font-weight:bold">SRM</span> have picke
 #<span style="color:skyblue; font-weight:bold">Flow 2 (Refer to AGC Linkage Specs)</span>
 [AGCⅦA Linkage Specs_1.2.7_AF954201_SimeDarby_v1.1.xlsx - Storage Section - 05 Sheets](https://daifuku.sharepoint.com/:x:/r/sites/jp0211039/Shared%20Documents/PTDI/Projects/PT.%20Guthrie%20Indonesia%20Sei%20Mangkei%20Refinery(Sime%20Darby)/Garuda%20Project/F.%20Basic%20Design/A.%20AGC%20Linkage%20Specs/AGC%E2%85%A6A%20Linkage%20Specs_1.2.7_AF954201_SimeDarby_v1.1.xlsx?d=w31ccf4d7958e4ea989446a6ac5a1a566&csf=1&web=1&e=J2FP9Y)
 
-##<span style="color:skyblue; font-weight:bold">ID64&nbsp;&nbsp;</span>
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process&nbsp;</span>
-
-::: mermaid
-flowchart LR
-
-id64("
-ID 64
-")
-
-id64-update[("
-DNCARRYINFO
-")]
-
-id64-->id64process
-id64process--> |UPDATE| id64-update
-:::
-
-Upon equipment <span style="color:green; font-weight:bold">(STV)</span> have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
-###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-*   **CMD_STATUS** — 4:Pickup completed    
-*   **LAST_UPDATE_DATE** — SYSTIMESTAMP    
-*   **LAST_UPDATE_PNAME** — Class name
-
 ##<span style="color:skyblue; font-weight:bold">ID26&nbsp;&nbsp;</span>
 
 ::: mermaid
