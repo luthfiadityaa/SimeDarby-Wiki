@@ -1016,15 +1016,13 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 *   **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
-| **Field Name**             | **Insert Value**                                      |
-|----------------------------|-------------------------------------------------------|
-| **RESULT_QTY**             | DNWORKINFO.PLAN_QTY
-| **RESULT_AREA_NO**         | DNWORKINFO.PLAN_AREA_NO
-| **RESULT_LOCATION_NO**     | DNWORKINFO.PLAN_LOCATION_NO
-| **WORK_DAY**               | DMWARENAVISYSTEM.WORK_DAY
-| **STATUS_FLAG**            | 4:Completed
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | Class name
+*   **RESULT_QTY**: DNWORKINFO.PLAN_QTY    
+*   **RESULT_AREA_NO**: DNWORKINFO.PLAN_AREA_NO    
+*   **RESULT_LOCATION_NO**: DNWORKINFO.PLAN_LOCATION_NO    
+*   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY    
+*   **STATUS_FLAG**: 4: Completed    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
 [<span style="color:red; font-weight:bold; font-size:12px">*Tempering Flag is only valid for Storage location: Tempering</span>](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/874/Batch-End?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Estorage-flag-condition%3C/span%3E)
