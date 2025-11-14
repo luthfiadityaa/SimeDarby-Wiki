@@ -339,7 +339,7 @@ Palletizing Completion("0":Normal Completion)</span>
 | ID26(1)                     | INSERT | INSERT | INSERT | INSERT | INSERT |        |
 | ID54(2)                     |        |        |        |        |        |        |
 
-###<span style="color:skyblue; font-weight:bold">ID26</span>
+###ID26 at [1301-1303]
 
 ::: mermaid
 flowchart LR
