@@ -121,25 +121,23 @@ No Read("0":None)</span>
 *   **LAST_UPDATE_PNAME**: ClassName
 
 #####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Field Name**                | **Insert Value**                               |
-|--------------------------------|-----------------------------------------------|
-| **CARRY_KEY**                  | Sequence Object  
-| **PALLET_ID**                  | DNPALLET.PALLET_ID
-| **WORK_TYPE**                  | 26:Direct Transfer
-| **CMD_STATUS**                 | 1:Started 
-| **PRIORITY**                   | 2:Normal
-| **RESTORING_FLAG**             | 0:Not Restore to Original Location
-| **CARRY_FLAG**                 | 3: Direct Transfer
-| **WORK_NO**                    | Sequence Object
-| **SOURCE_STATION_NO**          | DNPALLET.CURRENT_STATION_NO ⟶ <span style="color:green; font-weight:bold">P(1301, 1302) or T(1303)</span>
-| **DEST_STATION_NO**            | <span style="color:green; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ P(7101, 7102, 7103, 7104, 7105, 7106, 7107, 7108, 7109, 7110) or T(7207, 7208, 7209, 7210, 7211, 7213, 7214)</span>
-| **CANCEL_REQUEST**             | 0:Not Requested
-| **SCHEDULE_NO**                | Sequence Object
-| **END_STATION_NO**             | DNWORKINFO.PLAN_AREA_NO
-| **REGIST_DATE**                | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**               | ClassName
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | ClassName
+*   **CARRY_KEY**: Sequence Object    
+*   **PALLET_ID**: DNPALLET.PALLET_ID    
+*   **WORK_TYPE**: 26:Direct Transfer    
+*   **CMD_STATUS**: 1:Started    
+*   **PRIORITY**: 2:Normal    
+*   **RESTORING_FLAG**: 0:Not Restore to Original Location    
+*   **CARRY_FLAG**: 3: Direct Transfer    
+*   **WORK_NO**: Sequence Object    
+*   **SOURCE_STATION_NO**: DNPALLET.CURRENT_STATION_NO ⟶ **P(1301, 1302)** or **T(1303)**    
+*   **DEST_STATION_NO**: Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ **P(7101, 7102, 7103, 7104, 7105, 7106, 7107, 7108, 7109, 7110)** or **T(7207, 7208, 7209, 7210, 7211, 7213, 7214)**    
+*   **CANCEL_REQUEST**: 0:Not Requested    
+*   **SCHEDULE_NO**: Sequence Object    
+*   **END_STATION_NO**: DNWORKINFO.PLAN_AREA_NO    
+*   **REGIST_DATE**: SYSTIMESTAMP    
+*   **REGIST_PNAME**: ClassName    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: ClassName
 
 #####<span style="color:skyblue; font-weight:bold">DNStock</span>
 | **field Name**            | **Insert Value**                               |
