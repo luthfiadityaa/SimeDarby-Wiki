@@ -242,7 +242,10 @@ ID 26
 ")
 
 id26-update[("
-
+DNWORKINFO
+DNWORKLIST
+DNHOSTSEND
+DNSHELF
 ")]
 
 id26-delete[("
