@@ -174,7 +174,7 @@ flowchart LR
 
 ###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 *   **CARRY_KEY**: Sequence Object    
-*   **PALLET_ID**: DNPALLET.PALLET_ID    
+*   **PALLET_ID**: DNSTOCK.PALLET_ID    
 *   **WORK_TYPE**: 26:Direct Transfer    
 *   **CMD_STATUS**: 1:Started    
 *   **PRIORITY**: 2:Normal    
