@@ -52,7 +52,7 @@ P23[ID64]--> |9011-9014| P14[ID33]
   - **ARVL** : DNARRIVAL  
   - **WRHS** : DMWAREHOUSE  
   - **SHLF** : DMSHELF  
-  - **ITEM** : DMATERIALMASTER  
+  - **ITEM** : DMITEM
   - **STSN** : DMSTATION  
   - **STCH** : DNSTOCKHISTORY 
  
