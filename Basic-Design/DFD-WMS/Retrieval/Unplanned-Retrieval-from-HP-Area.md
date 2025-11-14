@@ -46,6 +46,22 @@ P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |
 | Unplanned Storage and Retrieval Result[(19)](#Unplanned-Storage-and-Retrieval-Result)     |    |    |    |   |    | U  |    |    |    |    |    |    | 
 
+##<span style="color:skyblue; font-weight:bold">Validations</span>
+This section explains the validations for the whole proccess Palletize Start
+- AGC is online. <span style="color:green; font-weight:bold">(DMGroupController.STATUS_FLAG.ONLINE)</span>
+- Selected Station Number is NOT under suspend. <span style="color:green; font-weight:bold">(DMStation.SUSPEND.OFF)</span>
+- Selected Station Number is available. <span style="color:green; font-weight:bold">(DMStation.STATUS.NORMAL and DMMachine.STATUS_FLAG.ACTIVE)</span>
+- Pallet Information does not exist in <span style="color:green; font-weight:bold">DNCARRYINFO.</span>  
+  To check for Pallet Information:  
+  <span style="color:green; font-weight:bold">JOIN DNCARRYINFO.PALLET_ID = DNPALLET.PALLET_ID  
+  CONDITION DNPALLET.BCR_DATA = <Pallet Number> </span>  
+  So if result > 0, Palletize Start cannot proceed.
+- <span style="color:green; font-weight:bold">Planned Carton</span> must be greater than <span style="color:green; font-weight:bold">0</span>.
+- <span style="color:green; font-weight:bold">Quantity (Carton per Pallet)</span> must be greater than <span style="color:green; font-weight:bold">0</span>.
+- <span style="color:green; font-weight:bold">Planned Carton</span> must be greater than or equal to <span style="color:green; font-weight:bold">Quantity (Carton per Pallet)</span>.
+- Material Code exists in <span style="color:green; font-weight:bold">DMITEM</span>
+- Input text with red asterisk <span style="color:red">(*)</span> is not empty
+
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
 ##ID63
 If the station mode is **Storage Mode**, change the mode of the station to **Retrieval mode**.
