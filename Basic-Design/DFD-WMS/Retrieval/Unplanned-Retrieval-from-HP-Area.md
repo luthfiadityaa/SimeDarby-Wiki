@@ -124,7 +124,7 @@ flowchart LR
         DMSTATION
     ")]
 
-    className[PalletizingSettingSCH]
+    className[InquiryRetrievalSettingSCH]
 
     input --> className --> |INSERT| tableList-insert
     tableList-select --> |SELECT| className
