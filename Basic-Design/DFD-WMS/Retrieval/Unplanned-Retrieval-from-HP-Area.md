@@ -243,8 +243,6 @@ ID 26
 
 id26-update[("
 DNWORKINFO
-DNWORKLIST
-DNHOSTSEND
 DNSHELF
 ")]
 
@@ -255,10 +253,8 @@ DNSTOCK
 ")]
 
 id26-insert[("
-DNWORKINFO
 DNWORKLIST
 DNHOSTSEND
-DNSHELF
 ")]
 
 id26process[id26process]
