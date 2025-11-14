@@ -328,9 +328,9 @@ DNARRIVAL
 ")]
 
 id25-->id25process
-id25process-.INSERT.->id25-insert
+id25process--INSERT-->id25-insert
 id25process-.UPDATE.->id25-update
-id25process-.DELETE.-xid25-delete
+id25process--DELETE--xid25-delete
 
 :::
 
