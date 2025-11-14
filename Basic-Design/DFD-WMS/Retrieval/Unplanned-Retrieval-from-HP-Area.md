@@ -181,6 +181,7 @@ flowchart LR
 *   **RESTORING_FLAG**: 0:Not Restore to Original Location    
 *   **CARRY_FLAG**: 3: Direct Transfer    
 *   **WORK_NO**: Sequence Object    
+*   **RETRIEVAL_STATION_NO**: DNSTOCK.LOCATION_NO
 *   **SOURCE_STATION_NO**: DNPALLET.CURRENT_STATION_NO    
 *   **DEST_STATION_NO**: **Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (7207, 7208, 7209, 7210, 7211, 7212, 7213, 7214)**    
 *   **CANCEL_REQUEST**: 0:Not Requested    
