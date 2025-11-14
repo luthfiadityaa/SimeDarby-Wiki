@@ -161,7 +161,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 ## DNCARRYINFO
 - CARRY_KEY          = Sequence Object
 - PALLET_ID          = Sequence Object
-- WORK_TYPE          = 2
+- WORK_TYPE          = 26:Direct Transfer
 - CMD_STATUS         = 1:Started
 - PRIORITY           = 0:
 - RESTORING_FLAG     = 0:Not Restore to Original Location
