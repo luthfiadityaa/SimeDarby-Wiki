@@ -50,16 +50,16 @@ P23[ID64]--> |9001-9006|P14[ID33]
 - **STSN** : DMSTATION  
 - **STCH** : DNSTOCKHISTORY  
 
-| Action Name                    | WRKI   | WRKL   | PLLT   | CRYI   | STCK   | HSTS   | ARRVL  | WRHS   | SHLF   | STCH   | ITEM   | STSN   | 
-|--------------------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
-| ID63 [(1)](#ID63)                   |        |        |        |        |        |        |        |        |        |        |        | UPDATE |   
-| Unplanned Storage - Set(F2) [(2)] (#)   | INSERT |        |        |        |        |        |        |        |        |        | SELECT |        |  
-| ID26[(2)](#ID26)                       |        |        | INSERT | INSERT | INSERT |        | INSERT |        |        |        |        | SELECT |  
-| StorageSender[(3)](#)     | UPDATE |        | UPDATE | UPDATE | UPDATE |        | UPDATE | UPDATE | UPDATE |        |        |        |    
-| ID25[(4)](#)                       |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |         
-| **Flow 1**                     |        |        |        |        |        |        |        |        |        |        |        |        | 
-| ID64[(8)](#)                      |        |        |        | UPDATE |        |        |        |        |        |        |        |        | 
-| ID26[(9)](#)                        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |
+| Action Name                                                      |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN| 
+|------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|
+| ID63 [(1)](#ID63)                                                |    |    |    |    |    |    |     |    |    |    |    | U  |   
+| Unplanned Storage - Set(F2) [(2)] (#Unplanned-Storage---Set(F2)) | I  |    |    |    |    |    |     |    |    |    | S  |    |  
+| ID26[(2)](#ID26-at-1301-&-1302)                                    |    |    | I  | I  | I  |    | I   |    |    |    |    | S  |  
+| StorageSender[(3)](#Storage-Sender-at-1301-&-1302)                 | U  |    | U  | U  | U  |    | U   | U  | U  |    |    |    |    
+| ID25[(4)](#ID25-at-1301-&-1302)                                    |    |    |    | U  |    |    | D   |    |    |    |    |    |         
+| **Flow 1**                                                       |    |    |    |    |    |    |     |    |    |    |    |    | 
+| ID64[(8)](#ID64-at-STV-From-1301-&-1302)                           |    |    |    | U  |    |    |     |    |    |    |    |    | 
+| ID26[(9)](#ID64-at-STV-From-7207-7214)                        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |
 | StorageSender[(10)](#)    |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        | 
 | ID25[(11)](#)                       |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        | 
 | ID64[(12)](#)                       |        |        |        | UPDATE |        |        |        |        |        |        |        |        | 
