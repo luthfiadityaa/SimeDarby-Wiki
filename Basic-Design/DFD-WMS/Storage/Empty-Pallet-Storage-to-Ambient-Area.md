@@ -30,7 +30,7 @@
 | Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | ITEM | STSN |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|
 | Empty Pallet - Set (F2) [(1)](#empty-pallet---set-(f2))        |   I  |   I  |   I  |   I  |   I  |      |      |      |      |      |   S  |   S  |
-| ID26 at 1301-1302 [(2)](#id26-at-1301-1302)                    |   U  |      |      |   I  |      |   I  |      |      |      |      |      |      |
+| ID26 at 1301-1302 [(2)](#id26-at-1301-1302)                    |   U  |      |      |      |      |   I  |      |      |      |      |      |      |
 | Storage Sender at 1301-1302 [(3)](#storage-sender-at-1301-1302)|   U  |      |      |   U  |      |   U  |   U  |   U  |      |      |      |      |
 | ID25 at 1301-1302 [(4)](#id25-at-1301-1302)                    |   U  |   U  |      |   U  |   U  |   D  |      |      |   I  |   I  |      |   S  |
 | ID64 at STV [(5)](#id64-at-stv)                                |      |      |      |   U  |      |      |      |      |      |      |      |      |
@@ -200,7 +200,6 @@ DNPALLET
 
 id26-insert[("
 DNARRIVAL
-DNCARRYINFO
 ")]
 
 storageStationOperator[storageStationOperator]
