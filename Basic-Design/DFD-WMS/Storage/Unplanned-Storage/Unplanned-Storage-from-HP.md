@@ -778,7 +778,7 @@ Upon equipment <span style="color:green; font-weight:bold">STV</span> have picke
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: Class name
 
-##<span style="color:skyblue; font-weight:bold">ID26&nbsp;&nbsp;</span>
+##ID26 at 7101-7106
 
 ::: mermaid
 flowchart LR
