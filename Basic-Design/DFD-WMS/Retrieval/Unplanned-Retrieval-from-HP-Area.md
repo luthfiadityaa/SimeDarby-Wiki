@@ -165,6 +165,7 @@ flowchart LR
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY  
 *   **BCR_DATA**: DNPALLET.BCR_DATA  
 *   **USER_ID**: Login Info     
+*   **TERMINAL_NO** : Login info
 *   **REGIST_DATE**: SYSTIMESTAMP    
 *   **REGIST_PNAME**: ClassName    
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
