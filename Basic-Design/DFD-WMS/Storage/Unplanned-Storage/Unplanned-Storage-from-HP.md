@@ -60,7 +60,7 @@ P23[ID64]--> |9001-9006|P14[ID33]
 | **Flow 1**                                                       |    |    |    |    |    |    |     |    |    |    |    |    | 
 | ID64[(8)](#ID64-at-STV-From-1301-&-1302)                         |    |    |    | U  |    |    |     |    |    |    |    |    | 
 | ID26[(9)](#ID64-at-7207-7214)                                    |    |    | U  | U  |    |    | I   |    |    |    |    |    |
-| StorageSender[(10)](#Storage-Sender-at-7207-7214)  |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        | 
+| StorageSender[(10)](#Storage-Sender-at-7207-7214)                |    |    |    | U  |    |    | U   |    |    |    |    |    | 
 | ID25[(11)](#)                       |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        | 
 | ID64[(12)](#)                       |        |        |        | UPDATE |        |        |        |        |        |        |        |        | 
 | **Flow 2**                     |        |        |        |        |        |        |        |        |        |        |        |        |  
