@@ -46,5 +46,31 @@ P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |
 | Unplanned Storage and Retrieval Result[(19)](#Unplanned-Storage-and-Retrieval-Result)     |    |    |    | U  |    |    |     |    |    |    |    |    | 
 
+#<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
+##ID63
+If the station mode is **Retrieval Mode**, change the mode of the station to **Storage mode**.
+::: mermaid
+flowchart LR
+    input[
+        Operators pressed the storage mode button on the operation box.      
+    ]
+
+    id61msg("
+     ID63
+    ")
+    tableList-update[("
+        DMSTATION
+    ")]
+
+    input -->id61msg-->id63process--> |UPDATE| tableList-update
+
+    classDef leftAlign text-align:left;
+    class input leftAlign;
+:::
+
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">DMStation</span>
+**CURRENT_MODE**: 1:Storage Mode
+
 #Inquiry Retrieval Setting - Set(F2)
  ![==image_0==.jpg](/.attachments/==image_0==-58f99576-be7b-41a4-bc02-6cef92ce5b43.jpg) 
