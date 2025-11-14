@@ -161,7 +161,7 @@ flowchart LR
 *   **QTY_CRTN_PL**: Value from screen (Qty crtn/PL)    
 *   **UOM**: Value from screen (UOM)    
 *   **TEMPERING_PERIOD**: Value from screen (Tempering Period)    
-*   **EXPIRY_DAYS**: Value from screen (Expiry Days)    
+*   **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE    
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY    
 *   **USER_ID**: Login Info    
 *   **STORAGE_LOCATION_FROM**: Value from screen (Storage Location From) ⟶ **FGW1 (Ambient/9002) or FGW2 (Tempering/9001)**    
