@@ -89,7 +89,7 @@ P23[ID64]--> |9011-9014| P14[ID33]
 | **Last Process**                                            |    |    |    |    |    |    |    |     |    |    |    |    |    |
 | ID33 [(18)](#ID33)                                          | U  | U  | I  | U  | D  | U  | I  |     |    |  U | I  |    |    |
 | **Host Communication**                                      |    |    |    |    |    |    |    |     |    |    |    |    |    |
-| Production Storage Result [(19)](#Production-Storage-Result)|    |    |    |    |    |    |    |     |    |    |    |    |    |   
+| Production Storage Result [(19)](#Production-Storage-Result)|    |    |    |    |    |    | U   |     |    |    |    |    |    |   
 
 #Batch End - Set(F2)
   
