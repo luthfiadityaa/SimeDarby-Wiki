@@ -81,6 +81,39 @@ The Inquiry Retrieval Setting screen uses for manually set the retrieval work(Un
 This screen uses when there are some troubles with Host System Linkage(Irregular Cases) or when manual operation is necessary.
 
 #Retrieval-Sender
+jp.co.daifuku.wcs.mc.as21.transmission.RetrievalSender
+
+::: mermaid
+flowchart LR
+
+retrievalsender-input[("
+DNCARRYINFO
+")]
+
+retrievalsender-update[("
+DNCARRYINFO
+DNPALLET
+")]
+
+id12msg("
+ID 12
+")
+
+retrievalsender-input-->retrievalsender-.U.->retrievalsender-update
+retrievalsender-->id12msg
+:::
+
+All Carton Picking operation at Unit Load will be retrieved to Station 2111-2113 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
+
+## DNCARRYINFO
+- CMD_STATUS = 2:Waiting for response
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
+## DNPALLET
+- STATUS_FLAG = 4:Being retrieved
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
 
 #ID32
 
