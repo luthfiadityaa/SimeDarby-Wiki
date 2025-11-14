@@ -89,6 +89,44 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 - Selected Station Number is available. <span style="color:green; font-weight:bold">(DMStation.STATUS.NORMAL and DMMachine.STATUS_FLAG.ACTIVE)</span>
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
+::: mermaid
+flowchart LR
+    input[
+        Station
+        Current Status
+        Material Code
+        Material Name
+        Material Type
+        Batch #
+        Planned Carton Qty
+        Storage Date/Time
+        Qty kg/crtn
+        Qty crtn/PL
+        UOM
+        Tempering Period
+        Storage Location
+        Expiry Days
+    ]
+
+    tableList-insert[("
+        DNSTORAGEPLAN
+    ")]
+
+     tableList-select[("
+        DMITEM
+        DMSTATION
+    ")]
+
+    className[PalletizingSettingSCH]
+
+    input --> className --> |INSERT| tableList-insert
+    tableList-select --> |SELECT| className
+
+    classDef leftAlign text-align:left;
+    class input leftAlign;
+:::
+
+
 #Retrieval-Sender
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.wcs.mc.as21.transmission.RetrievalSender&nbsp;</span>
 
