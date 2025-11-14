@@ -56,16 +56,15 @@ P23[ID64]--> |9001-9006|P14[ID33]
 | Unplanned Storage - Set(F2) [(2)] (#Unplanned-Storage---Set(F2)) | I  |    |    |    |    |    |     |    |    |    | S  |    |  
 | ID26[(2)](#ID26-at-1301-&-1302)                                  |    |    | I  | I  | I  |    | I   |    |    |    |    | S  |  
 | StorageSender[(3)](#Storage-Sender-at-1301-&-1302)               | U  |    | U  | U  | U  |    | U   | U  | U  |    |    |    |    
-| ID25[(4)](#ID25-at-1301-&-1302)                                  |    |    |    | U  |    |    | D   |    |    |    |    |    |         
+| ID25[(4)](#ID25-at-1301-&-1302)                                  |    |    |    | U  |    |    | D   |    |    |    |    |    |     
+| ID64[(8)](#ID64-at-STV-From-1301-&-1302)                         |    |    |    | U  |    |    |     |    |    |    |    |    |     
 | **Flow 1**                                                       |    |    |    |    |    |    |     |    |    |    |    |    | 
-| ID64[(8)](#ID64-at-STV-From-1301-&-1302)                         |    |    |    | U  |    |    |     |    |    |    |    |    | 
 | ID26[(9)](#ID64-at-7207-7214)                                    |    |    | U  | U  |    |    | I   |    |    |    |    |    |
 | StorageSender[(10)](#Storage-Sender-at-7207-7214)                |    |    |    | U  |    |    | U   |    |    |    |    |    | 
 | ID25[(11)](#ID25-at-7207-7214)                                   |    |    |    | U  |    |    | D   |    |    |    |    |    | 
-| ID64[(12)](#ID64-at-STV-From-7207-7214)                       |        |        |        | UPDATE |        |        |        |        |        |        |        |        | 
-| **Flow 2**                     |        |        |        |        |        |        |        |        |        |        |        |        |  
-| ID64[(8)](#)                        |        |        |        | UPDATE |        |        |        |        |        |        |        |        |   
-| ID26[(9)](#)                        |        |        | UPDATE | UPDATE |        |        | INSERT |        |        |        |        |        |
+| ID64[(12)](#ID64-at-STV-From-7207-7214)                          |    |    |    | U  |    |    |     |    |    |    |    |    | 
+| **Flow 2**                                                       |    |    |    |    |    |    |     |    |    |    |    |    | 
+| ID26[(9)](#ID64-at-7207-7210)                                    |    |    | U  | U  |    |    | I   |    |    |    |    |    |
 | StorageSender[(10)](#)    |        |        |        | UPDATE |        |        | UPDATE |        |        |        |        |        | 
 | ID25[(11)](#)                       |        |        |        | UPDATE |        |        | DELETE |        |        |        |        |        |
 | ID64[(12)](#)                       |        |        |        | UPDATE |        |        |        |        |        |        |        |        |
