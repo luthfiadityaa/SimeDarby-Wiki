@@ -81,7 +81,7 @@ The Inquiry Retrieval Setting screen uses for manually set the retrieval work(Un
 This screen uses when there are some troubles with Host System Linkage(Irregular Cases) or when manual operation is necessary.
 
 #Retrieval-Sender
-jp.co.daifuku.wcs.mc.as21.transmission.RetrievalSender
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.wcs.mc.as21.transmission.RetrievalSender&nbsp;</span>
 
 ::: mermaid
 flowchart LR
