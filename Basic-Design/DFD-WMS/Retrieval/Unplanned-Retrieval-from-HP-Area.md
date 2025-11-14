@@ -327,7 +327,7 @@ DNOPERATIONDISPLAY
 ")]
 
 id68-->id68process
-id68process--I-->id68-insert
+id68process--> |INSERT| id68-insert
 :::
 
 ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related Station in ASRS. Upon receiving of ID68, insertion of data will be executed.
