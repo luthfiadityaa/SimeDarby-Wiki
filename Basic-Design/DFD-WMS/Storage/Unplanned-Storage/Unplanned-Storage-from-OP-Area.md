@@ -330,7 +330,7 @@ automaticmodechangesender-input-->StorageSender-->id05msg
 Storageender--> |UPDATE| automaticmodechangesender-update
 :::
 
-After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>,Storage Sender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">1:Started to 2:Waiting for Response.</span>
+After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, Storage Sender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">1:Started to 2:Waiting for Response.</span>
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
@@ -494,7 +494,7 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 *   **LAST_UPDATE_DATE** — SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME** — Class name
 
-##<span style="color:skyblue; font-weight:bold">AutomaticChangeSender&nbsp;&nbsp;</span>
+##Storage Sender
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.AutomaticChangeSender &nbsp;</span>
 
 ::: mermaid
