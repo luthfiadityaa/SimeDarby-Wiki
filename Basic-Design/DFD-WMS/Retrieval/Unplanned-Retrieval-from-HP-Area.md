@@ -22,6 +22,7 @@ P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9
 - **ITEM** : DMITEM
 - **STSN** : DMSTATION  
 - **STCH** : DNSTOCKHISTORY  
+- **TTSN** : DMToSTATION 
 
 * **Operation Name**
   - **I** : INSERT  
@@ -30,12 +31,12 @@ P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9
   - **S** : SELECT 
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage database flow</span>
-| Action Name                                                                     |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN| 
+| Action Name                                                                     |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN|STSN| 
 |---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|
 | **Only For 1301 & 1302**                                                        |    |    |    |    |    |    |     |    |    |    |    |    |
 | ID63 [(1)](#ID63)                                                               |    |    |    |    |    |    |     |    |    |    |    | U  |  
 | **Directly For 1205,1206,1207,1208,1209**                                       |    |    |    |    |    |    |     |    |    |    |    |    | 
-| Inquiry Retrieval Setting - Set(F2) [(1)](#Inquiry-Retrieval-Setting---Set(F2)) | I  |    |    |    |    |    |     |    |    |    | S  |    |  
+| Inquiry Retrieval Setting - Set(F2) [(1)](#Inquiry-Retrieval-Setting---Set(F2)) | I  |    | S  | I  | S  |    |     | S  | S  |    | S  |    |  
 | RetrievalSender[(2)](#ID26-at-1303)                                             |    |    | I  | I  | I  |    | I   |    |    |    |    | S  |  
 | ID32[(3)](#Storage-Sender-at-1301-&-1302)                                       | U  |    | U  | U  | U  |    | U   | U  | U  |    |    |    |    
 | ID33[(4)](#ID25-at-1303)                                                        |    |    |    | U  |    |    | D   |    |    |    |    |    |     
