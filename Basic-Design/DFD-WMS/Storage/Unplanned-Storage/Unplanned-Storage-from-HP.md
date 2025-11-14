@@ -75,6 +75,8 @@ P23[ID64]--> |9001-9006|P14[ID33]
 | ID64[(17)]((#ID64-at-SRM-From-7101-7106)                         |    |    |    | U  |    |    |     |    |    |    |    |    |
 | **Last Process**                                                 |    |    |    |    |    |    |     |    |    |    |    |    |    
 | ID33[(18)](#)                                                    | U  | I  | U  | D  | U  | I  |     |    | U  | I  |    |    |
+| **Host Communication**                                      |    |    |    |    |    |    |    |     |    |    |    |    |    |
+| Production Storage Result [(19)](#Production-Storage-Result)|    |    |    |    |    |    |    |     |    |    |    |    |    | 
 
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
 ##ID63
