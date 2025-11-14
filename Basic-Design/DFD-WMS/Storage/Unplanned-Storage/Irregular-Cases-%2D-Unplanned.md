@@ -23,6 +23,12 @@ Cond2 -->|No| Move2[ID05]
 - **ARVL** : DNARRIVAL  
 - **STSN** : DMSTATION 
 
+* **Operation Name**
+  - **I** : INSERT  
+  - **U** : UPDATE  
+  - **D** : DELETE
+  - **S** : SELECT 
+
 | Action Name                                     |WRK |PLLT|CRYI|STCK|ARRVL|STSN| 
 |-------------------------------------------------|----|----|----|----|-----|----|
 | ID26[(1)](#ID26-at-1301-1303)                   | I  | I  | I  | I  | I   |    |
