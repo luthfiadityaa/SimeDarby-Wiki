@@ -84,7 +84,7 @@ P23[ID64]--> |9011-9014|P14[ID33]
 | **Last Process**                                                 |    |    |    |    |    |    |     |    |    |    |    |    |    
 | ID33[(15)](#)                                                    | U  | I  | U  | D  | U  | I  |     |    | U  | I  |    |    |
 | **Host Communication**                                           |    |    |    |    |    |    |     |    |    |    |    |    |
-| Unplanned Storage and Retrieval Result[(19)](#Unplanned-Storage-and-Retrieval-Result)     |    |    |    |    |    |    |     |    |    |    |    |    | 
+| Unplanned Storage and Retrieval Result[(19)](#Unplanned-Storage-and-Retrieval-Result)     |    |    |    |    |    | U   |     |    |    |    |    |    | 
 
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
 ##ID63
