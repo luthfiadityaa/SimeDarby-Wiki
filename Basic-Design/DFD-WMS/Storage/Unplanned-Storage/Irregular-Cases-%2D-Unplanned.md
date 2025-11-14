@@ -11,7 +11,7 @@ Cond2 -->|Yes| Move1[ID05 ControlInfo:NoRead]
 Cond2 -->|No| Move2[ID05]
 :::
 
-##<span style="color:skyblue; font-weight:bold">Wait for available location if full</span>
+##Wait for available location if full
 
 ###<span style="color:skyblue; font-weight:bold">Database flow</span>
 **Abbreviation:**
