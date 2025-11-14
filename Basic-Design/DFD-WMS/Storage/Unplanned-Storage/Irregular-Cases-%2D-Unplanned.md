@@ -30,15 +30,12 @@ Cond2 -->|No| Move2[ID05]
 | ID25(4)                     |        |        | UPDATE |        | DELETE |        |
 | ID26(5)                     |        | UPDATE | UPDATE |        | INSERT |        |
 
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.as21.common.location.decide.LocationManager&nbsp;</span>
-
 ###ID26 at 1301-1303
 ::: mermaid
 flowchart LR
 
 releaseCommand["
-Release Command from Palletize Robot
-After Completion 
+Release Command from After Completion 
 "]
 
 id26msg("
