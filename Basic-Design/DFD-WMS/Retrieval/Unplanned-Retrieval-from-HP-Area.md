@@ -272,7 +272,7 @@ DNCARRYINFO
 ")]
 
 id33-->id33process
-id33process-.U.->id33-update
+id33process--> |UPDATE| id33-update
 :::
 
 ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi that the Pallet/Bin is out of rack and is being transferred to related Station.
