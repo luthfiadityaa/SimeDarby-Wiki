@@ -30,7 +30,7 @@ P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9
   - **D** : DELETE
   - **S** : SELECT 
 
-#<span style="color:skyblue; font-weight:bold">Unplanned Storage database flow</span>
+#<span style="color:skyblue; font-weight:bold">Unplanned Retrieval database flow</span>
 | Action Name                                                                     |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN|TTSN|OPRD| 
 |---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|
 | **Only For 1301 & 1302**                                                        |    |    |    |    |    |    |     |    |    |    |    |    |    |    |
