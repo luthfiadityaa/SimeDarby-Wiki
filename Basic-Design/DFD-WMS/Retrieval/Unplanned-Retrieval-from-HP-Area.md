@@ -144,7 +144,7 @@ ID32 sent from AGC to WareNavi indicate AGC responded the retrieval job by WareN
 - LAST_UPDATE_PNAME = Class name
 
 #ID33
-jp.co.daifuku.wcs.mc.as21.communication.control.Id33Process
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.wcs.mc.as21.communication.control.Id33Process</span>
 
 ::: mermaid
 flowchart LR
