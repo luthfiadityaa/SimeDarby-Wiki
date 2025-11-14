@@ -314,7 +314,7 @@ Palletizing Completion("0":Normal Completion)</span>
 
 **IF FROM HP AREA**
 
-- [Continue to Normal Flow FROM HP AREA -> StorageSender](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/948/Unplanned-Storage-from-HP?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eautomatic-mode-change-sender%3C/span%3E)
+- [Continue to Normal Flow FROM HP AREA -> StorageSender](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/948/Unplanned-Storage-from-HP?anchor=storage-sender-at-1301-%26-1302)
 
 **ELSE IF FROM OP AREA**
 
