@@ -275,4 +275,5 @@ After the completion button flashes, the operator removes the pallet and presses
 ## DMSHELF
 ## DNWORKINFO
 ## DNWORKLIST
+## DNHOSTSEND
 
