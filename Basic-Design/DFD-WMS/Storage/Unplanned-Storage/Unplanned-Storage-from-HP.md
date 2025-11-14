@@ -1046,7 +1046,7 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 *   **TERMINAL_NO**: Login info    
 *   **TERMINAL_NAME**: Login info    
 *   **IP_ADDRESS**: Login info    
-*   **STOCK_STATUS**: **UU: Unrestricted Used**    
+*   **STOCK_STATUS**: <span style="color:green; font-weight:bold">**UU: Unrestricted Used**</span>    
 *   **TEMPERING_FLAG**: **0: Not Reached**    
 *   **QC_FLAG**: **0: Not Done**    
 *   **EXPIRY_DATE**: DNWORKINFO.EXPIRY_DAYS    
