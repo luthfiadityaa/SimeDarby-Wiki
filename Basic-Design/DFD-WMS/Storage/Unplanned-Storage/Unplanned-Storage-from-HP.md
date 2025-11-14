@@ -274,25 +274,23 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 *   **LAST_UPDATE_PNAME**: ClassName
 
 ###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Field Name**                | **Insert Value**                               |
-|--------------------------------|-----------------------------------------------|
-| **CARRY_KEY**                  | Sequence Object  
-| **PALLET_ID**                  | DNPALLET.PALLET_ID
-| **WORK_TYPE**                  | 26:Direct Transfer
-| **CMD_STATUS**                 | 1:Started 
-| **PRIORITY**                   | 2:Normal
-| **RESTORING_FLAG**             | 0:Not Restore to Original Location
-| **CARRY_FLAG**                 | 3: Direct Transfer
-| **WORK_NO**                    | Sequence Object
-| **SOURCE_STATION_NO**          | DNPALLET.CURRENT_STATION_NO
-| **DEST_STATION_NO**            | <span style="color:green; font-weight:bold">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (7207, 7208, 7209, 7210, 7211, 7212, 7213, 7214)</span>
-| **CANCEL_REQUEST**             | 0:Not Requested
-| **SCHEDULE_NO**                | Sequence Object
-| **END_STATION_NO**             | DNWORKINFO.PLAN_AREA_NO
-| **REGIST_DATE**                | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**               | ClassName
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | ClassName
+*   **CARRY_KEY**: Sequence Object    
+*   **PALLET_ID**: DNPALLET.PALLET_ID    
+*   **WORK_TYPE**: 26:Direct Transfer    
+*   **CMD_STATUS**: 1:Started    
+*   **PRIORITY**: 2:Normal    
+*   **RESTORING_FLAG**: 0:Not Restore to Original Location    
+*   **CARRY_FLAG**: 3: Direct Transfer    
+*   **WORK_NO**: Sequence Object    
+*   **SOURCE_STATION_NO**: DNPALLET.CURRENT_STATION_NO    
+*   **DEST_STATION_NO**: **Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (7207, 7208, 7209, 7210, 7211, 7212, 7213, 7214)**    
+*   **CANCEL_REQUEST**: 0:Not Requested    
+*   **SCHEDULE_NO**: Sequence Object    
+*   **END_STATION_NO**: DNWORKINFO.PLAN_AREA_NO    
+*   **REGIST_DATE**: SYSTIMESTAMP    
+*   **REGIST_PNAME**: ClassName    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: ClassName
 
 #StorageSender
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
@@ -326,23 +324,17 @@ After successful creation of arrival record in <span style="color:green; font-we
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ####<span style="color:skyblue; font-weight:bold">DMWarehouse</span>
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-----------------------------------------------|
-| **LAST_USED_STATION_NO**   |  Aisle Number where a reserved location belongs to 
+*   **LAST_USED_STATION_NO**: Aisle Number where a reserved location belongs to
 
 ####<span style="color:skyblue; font-weight:bold">DMShelf</span>
-| **Field Name**            | **Insert Value**                               |
-|----------------------------|-----------------------------------------------|
-| **STATUS_FLAG**                | 2:Reserved Location
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
+*   **STATUS_FLAG**: 2:Reserved Location    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Field Name**            | **Insert Value**                               |
-|---------------------------|-----------------------------------------------|
-| **AISLE_STATION_NO**           | Aisle Number where a reserved location belongs to
-| **CMD_STATUS**                 | 2:Waiting for response
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | Class name
+*   **AISLE_STATION_NO**: Aisle Number where a reserved location belongs to    
+*   **CMD_STATUS**: 2:Waiting for response    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 | **Field Name**             | **Insert Value**                               |
