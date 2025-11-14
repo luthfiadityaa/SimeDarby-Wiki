@@ -450,38 +450,26 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ####<span style="color:skyblue; font-weight:bold">DNArrival</span>
-*   **ARRIVAL_DATE** — SYSTIMESTAMP    
-*   **STATION_NO** — Arrival Station Number from ID26    
-*   **CARRY_KEY** — 99999999    
-*   **BCR_DATA** — Barcode information from ID26    
-*   **CONTROLINFO** — Control information from ID26    
-*   **SEND_FLAG** — 0:Not sent    
-*   **HEIGHT** — Dimension Information from ID26    
-*   **WIDTH** — Dimension Information from ID26    
-*   **REGIST_DATE** — SYSTIMESTAMP    
-*   **REGIST_PNAME** — ClassName    
+*   **CURRENT_STATION_NO** — Reserved Location Number    
+*   **WH_STATION_NO** — Reserved Area Number    
 *   **LAST_UPDATE_DATE** — SYSTIMESTAMP    
-*   **LAST_UPDATE_PNAME** — ClassName
+*   **LAST_UPDATE_PNAME** — Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
-| **Field Name**             | **Insert Value**                               |
-|----------------------------|-------------------------------------------------------|
-| **CURRENT_STATION_NO**         | Reserved Location Number
-| **WH_STATION_NO**              | Reserved Area Number
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | Class name
+*   **CURRENT_STATION_NO** — Reserved Location Number    
+*   **WH_STATION_NO** — Reserved Area Number    
+*   **LAST_UPDATE_DATE** — SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME** — Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-| **Field Name**                 | **Insert Value**                               |
-|--------------------------------|-----------------------------------------------|
-| **WORK_TYPE**                  | 2:Storage
-| **CMD_STATUS**                 | 1:Started 
-| **CARRY_FLAG**                 | 1:Storage
-| **AISLE_STATION_NO**           | Aisle Number where a reserved location belongs to
-| **SOURCE_STATION_NO**          | DNARRIVAL.STATION_NO
-| **DEST_STATION_NO**            | Reserved Location Number
-| **LAST_UPDATE_DATE**           | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**          | Class name
+*   **WORK_TYPE** — 2:Storage    
+*   **CMD_STATUS** — 1:Started    
+*   **CARRY_FLAG** — 1:Storage    
+*   **AISLE_STATION_NO** — Aisle Number where a reserved location belongs to    
+*   **SOURCE_STATION_NO** — DNARRIVAL.STATION_NO    
+*   **DEST_STATION_NO** — Reserved Location Number    
+*   **LAST_UPDATE_DATE** — SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME** — Class name
 
 ##<span style="color:skyblue; font-weight:bold">AutomaticChangeSender&nbsp;&nbsp;</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.AutomaticChangeSender &nbsp;</span>
