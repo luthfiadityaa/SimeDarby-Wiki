@@ -193,7 +193,7 @@ This section explains the validations for the whole proccess Palletize Start
 
 #Irregular Cases
 Continue this flow if occurs.
-- [Wait for available location if full](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/953/Irregular-Cases?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Ewait-for-available-location-if-full%3C/span%3E)
+- [Wait for available location if full](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&pagePath=/Basic%20Design/DFD%20WMS/Storage/Unplanned%20Storage/Irregular%20Cases%20%252D%20Unplanned&pageId=953&_a=edit&anchor=wait-for-available-location-if-full)
 - [No-Read (Reverse Back to Previous Station)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/953/Irregular-Cases-Unplanned?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Eno-read%3C/span%3E)
 <hr style="border: 2px solid red;">
  
