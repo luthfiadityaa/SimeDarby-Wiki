@@ -186,11 +186,10 @@ flowchart LR
 *   **PRIORITY**: Value from screen ⟶ **<span style="color:green;">(1:Urgent, 2:Normal)</span>
 *   **CANCEL_REQUEST**: 0:Not Requested    
 *   **SCHEDULE_NO**: Sequence Object    
-*   CARRY_FLAG = 2:Retrieval
-*   CANCEL_REQUEST = 0:Not requested
-*   AISLE_STATION_NO = DMSHELF.PARENT_STATION_NO
-*   END_STATION_NO = DNCARRYINFO.DEST_STATION_NO
-  
+*   **CARRY_FLAG**: 2:Retrieval
+*   **CANCEL_REQUEST**: 0:Not requested
+*   **AISLE_STATION_NO**: DMSHELF.PARENT_STATION_NO
+*   **END_STATION_NO**: DNCARRYINFO.DEST_STATION_NO  
 *   **REGIST_DATE**: SYSTIMESTAMP    
 *   **REGIST_PNAME**: ClassName    
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
