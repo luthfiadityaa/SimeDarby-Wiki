@@ -140,6 +140,31 @@ flowchart LR
     class input leftAlign;
 :::
 
+*   **JOB_NO**: Sequence Object    
+*   **SETTING_UNIT_KEY**: Sequence Object    
+*   **COLLECT_JOB_NO**: Sequence Object    
+*   **JOB_TYPE**: 22:Unplanned Storage    
+*   **STATUS_FLAG**: 0:Not Started    
+*   **PLAN_UKEY**: Sequence Object    
+*   **STOCK_ID**: Sequence Object    
+*   **PLAN_AREA_NO**: Value from screen (Storage Location To) ⟶ **FGW1 (Ambient/9002) or FGW2 (Tempering/9001)**    
+*   **PLAN_DAY**: DMWARENAVISYSTEM.WORK_DAY    
+*   **BATCH_NO**: Value from screen (Batch No)    
+*   **MATERIAL_CODE**: Value from screen (Material Code)    
+*   **MATERIAL_NAME**: Value from screen (Material Name)    
+*   **PLAN_QTY**: Value from screen (Storage Qty)    
+*   **QTY_KG_CRTN**: Value from screen (Qty kg/crtn)    
+*   **QTY_CRTN_PL**: Value from screen (Qty crtn/PL)    
+*   **UOM**: Value from screen (UOM)    
+*   **TEMPERING_PERIOD**: Value from screen (Tempering Period)    
+*   **EXPIRY_DAYS**: Value from screen (Expiry Days)    
+*   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY    
+*   **USER_ID**: Login Info    
+*   **STORAGE_LOCATION_FROM**: Value from screen (Storage Location From) ⟶ **FGW1 (Ambient/9002) or FGW2 (Tempering/9001)**    
+*   **REGIST_DATE**: SYSTIMESTAMP    
+*   **REGIST_PNAME**: ClassName    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: ClassName
 
 #Retrieval-Sender
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.wcs.mc.as21.transmission.RetrievalSender&nbsp;</span>
