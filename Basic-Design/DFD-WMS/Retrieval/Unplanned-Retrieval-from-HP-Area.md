@@ -49,6 +49,7 @@ P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
 ##ID63
 If the station mode is **Storage Mode**, change the mode of the station to **Retrieval mode**.
+
 ::: mermaid
 flowchart LR
     input[
