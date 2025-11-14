@@ -296,13 +296,11 @@ Palletizing Completion("0":Normal Completion)</span>
 *   **LAST_UPDATE_PNAME**: ClassName
 
 #####<span style="color:skyblue; font-weight:bold">DNPallet</span>
-| **Field Name**            | **Insert Vlaue**                               |
-|----------------------------|-----------------------------------------------|                                                
-| **CURRENT_STATION_NO**     | DNARRIVAL.STATION_NO                                          
-| **REGIST_DATE**            | SYSTIMESTAMP                                                    
-| **REGIST_PNAME**           | ClassName
-| **LAST_UPDATE_DATE**       | SYSTIMESTAMP
-| **LAST_UPDATE_PNAME**      | ClassName
+*   **CURRENT_STATION_NO**: DNARRIVAL.STATION_NO    
+*   **REGIST_DATE**: SYSTIMESTAMP    
+*   **REGIST_PNAME**: ClassName    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: ClassName
 
 #####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 | **Field Name**                | **Insert Value**                               |
