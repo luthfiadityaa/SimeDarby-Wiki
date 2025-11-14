@@ -31,7 +31,7 @@ P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9
   - **S** : SELECT 
 
 #<span style="color:skyblue; font-weight:bold">Unplanned Storage database flow</span>
-| Action Name                                                                     |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN|STSN| 
+| Action Name                                                                     |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN|TTSN| 
 |---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|
 | **Only For 1301 & 1302**                                                        |    |    |    |    |    |    |     |    |    |    |    |    |
 | ID63 [(1)](#ID63)                                                               |    |    |    |    |    |    |     |    |    |    |    | U  |  
