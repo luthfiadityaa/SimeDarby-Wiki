@@ -241,6 +241,10 @@ id26msg("
 ID 26
 ")
 
+id26-update[("
+
+")]
+
 id26-delete[("
 DNCARRYINFO
 DNPALLET
