@@ -175,6 +175,30 @@ ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi
 - LAST_UPDATE_PNAME = Class name
 
 #ID64
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process&nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id64("
+ID 64
+")
+
+id64-update[("
+DNCARRYINFO
+")]
+
+id64-->id64process
+id64process-.U.->id64-update
+:::
+
+Upon equipment have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
+
+## DNCARRYINFO
+- CMD_STATUS = 4:Pickup completed
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
 
 #ID68
 
