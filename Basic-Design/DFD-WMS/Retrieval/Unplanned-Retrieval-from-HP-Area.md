@@ -95,6 +95,8 @@ flowchart LR
         Station
         Pallet #
         SoftZone
+        Priority
+        To Location
         All Qty
         Retrieval Qty
         Stock Qty
@@ -116,12 +118,14 @@ flowchart LR
     ]
 
     tableList-insert[("
-        DNSTORAGEPLAN
+        DNWORKINFO
     ")]
 
      tableList-select[("
+        DNPALLET
         DMITEM
         DMSTATION
+        DMTOSTATION
     ")]
 
     className[InquiryRetrievalSettingSCH]
