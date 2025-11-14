@@ -46,13 +46,6 @@ P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |
 | Unplanned Storage and Retrieval Result[(19)](#Unplanned-Storage-and-Retrieval-Result)     |    |    |    |   |    | U  |    |    |    |    |    |    | 
 
-##<span style="color:skyblue; font-weight:bold">Validations</span>
-This section explains the validations for the whole proccess Unplanned Retrieval
-- AGC is online. <span style="color:green; font-weight:bold">(DMGroupController.STATUS_FLAG.ONLINE)</span>
-- Selected Station Number is NOT under suspend. <span style="color:green; font-weight:bold">(DMStation.SUSPEND.OFF)</span>
-- Selected Station Number is available. <span style="color:green; font-weight:bold">(DMStation.STATUS.NORMAL and DMMachine.STATUS_FLAG.ACTIVE)</span>
-- Input text with red asterisk <span style="color:red">(*)</span> is not empty
-
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
 ##ID63
 If the station mode is **Storage Mode**, change the mode of the station to **Retrieval mode**.
@@ -88,6 +81,13 @@ flowchart LR
  ![==image_0==.jpg](/.attachments/==image_0==-58f99576-be7b-41a4-bc02-6cef92ce5b43.jpg) 
 
 The Inquiry Retrieval Setting screen uses for manually set the retrieval work(UnitRetrieval).​ This screen uses when there are some troubles with Host System Linkage(Irregular Cases) or when manual operation is necessary.
+
+##<span style="color:skyblue; font-weight:bold">Validations</span>
+This section explains the validations for the whole proccess Unplanned Retrieval
+- AGC is online. <span style="color:green; font-weight:bold">(DMGroupController.STATUS_FLAG.ONLINE)</span>
+- Selected Station Number is NOT under suspend. <span style="color:green; font-weight:bold">(DMStation.SUSPEND.OFF)</span>
+- Selected Station Number is available. <span style="color:green; font-weight:bold">(DMStation.STATUS.NORMAL and DMMachine.STATUS_FLAG.ACTIVE)</span>
+- Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
 #Retrieval-Sender
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.wcs.mc.as21.transmission.RetrievalSender&nbsp;</span>
