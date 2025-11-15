@@ -15,7 +15,6 @@ P1[FROM AISLE STATION - 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID32]
 ## Abbreviation
 | **CODE** | TABLE NAME       |
 |----------|------------------|
-| **RTPN** | DNRETRIEVALPLAN  | 
 | **PLLT** | DNPALLET         | 
 | **WRKI** | DNWORKINFO       | 
 | **WRKL** | DNWORKLIST       | 
@@ -27,8 +26,10 @@ P1[FROM AISLE STATION - 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID32]
 | **STCH** | DNSTOCKHISTORY   |
 | **INOT** | DNINOUTRESULT    |
 | **HTSD** | DNHOSTSEND       |
+| **OPRR** | DNOPERATIONRESULT|
 | **ITEM** | DMITEM           |
 | **STSN** | DMSTATION        |
+| **TTSN** | DMTOSTATION      |
 
 | **CODE** | OPERATION NAME   |
 |----------|------------------|
@@ -38,10 +39,39 @@ P1[FROM AISLE STATION - 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID32]
 | **D**    | DELETE           |
 
 ## Inbound Table Data Flow
-| Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT  | HTSD | ITEM | STSN |
-|----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|
-| Inquiry Retrieval - Set (F2) [(1)](#inquiry-retrieval---set-(f2))|      |   I  |      |   I  |      |      |      |      |      |      |      |      |      |
-| Retrieval Sender [(2)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |
+| Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HTSD | OPRR | ITEM | STSN | TTSN |
+|----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
+| Inquiry Retrieval - Set (F2) [(1)](#inquiry-retrieval---set-(f2))|   S  |      |   I  |   I  |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   S  | 
+| Retrieval Sender [(2)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID32 [(3)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID33 [(4)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
+| ID68 [(5)](#id68)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
+| ID26 [(6)](#id26)                                              |   D  |   U  |   I  |   D  |   D  |      |      |  U   |      |      |   I  |      |      |      |      |
+
+# Mode Change Station
+##ID63
+If the station mode is **Storage Mode**, change the mode of the station to **Retrieval mode**.
+**Only For 1301 & 1302**. If not, start from [Inquiry Retrieval Setting - Set(F2)](#inquiry-retrieval---set-(f2))
+
+::: mermaid
+flowchart LR
+    input[
+        Operators pressed the storage mode button on the operation box.      
+    ]
+
+    id61msg("
+     ID63
+    ")
+    tableList-update[("
+        DMSTATION
+    ")]
+
+    input -->id61msg-->id63process--> |UPDATE| tableList-update
+
+    classDef leftAlign text-align:left;
+    class input leftAlign;
+:::
+
 
 # Inquiry Retrieval - Set (F2)
 
@@ -176,6 +206,7 @@ DNCARRYINFO
 retrievalsender-update[("
 DNCARRYINFO
 DNPALLET
+DNSTOCK
 ")]
 
 id12msg("
@@ -198,8 +229,141 @@ The Retrieval operation at **Packaging Material zone (9002: Ambient)** will be r
 - LAST_UPDATE_DATE = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
 
+# ID32
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.communication.control.Id32Proces` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id32("
+ID 32
+")
+
+id32-update[("
+DNCARRYINFO
+")]
+
+id32-->id32process
+id32process-.UPDATE.->id32-update
+:::
+
+ID32 sent from AGC to WareNavi indicate AGC responded the retrieval job by WareNavi.
+
+## DNCARRYINFO
+- CMD_STATUS: 3:Commanded
+- ERROR_CODE: 0
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
+# ID33
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.communication.control.Id33Process` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id33("
+ID 33
+")
+
+id33-update[("
+DMSHELF
+DNCARRYINFO
+")]
+
+id33-->id33process
+id33process--> |UPDATE| id33-update
+:::
+
+ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi that the Pallet/Bin is out of rack and is being transferred to related Station.
+
+## DMSHELF
+- STATUS_FLAG = 0:Empty
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+
+## DNCARRYINFO
+- CMD_STATUS = 5:Retrieval completed
+- RETRIEVAL_STATION_NO = DMSHELF.STATION_NO
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
+# ID68
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.communication.control.Id68Process` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id68("
+ID 68
+")
+
+id68-insert[("
+DNOPERATIONDISPLAY
+")]
+
+id68-->id68process
+id68process--> |INSERT| id68-insert
+:::
+
+ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related Station in ASRS. Upon receiving of ID68, insertion of data will be executed.
+
+## DNOPERATIONDISPLAY
+- CARRY_KEY = MC Key information from ID68
+- STATION_NO = Station information from ID68
+- ARRIAL_DATE = SYSTIMESTAMP
+- REGIST_PNAME = Class name
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
+#ID26
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.wcs.mc.as21.communication.control.Id26Process&nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+buttonclicked["
+Pallet is arrived at station
+"]
+
+id26msg("
+ID 26
+")
+
+id26-update[("
+DNWORKINFO
+DMSHELF
+")]
+
+id26-delete[("
+DNCARRYINFO
+DNPALLET
+DNSTOCK
+")]
+
+id26-insert[("
+DNWORKLIST
+DNHOSTSEND
+")]
+
+id26process[id26process]
+retrievaloperator[RetrievalStationOperator]
 
 
+buttonclicked --> id26msg
+id26msg -->id26process
+id26process-->retrievaloperator
+
+retrievaloperator--> |INSERT| id26-insert
+retrievaloperator--> |UPDATE| id26-update
+retrievaloperator--> |DELETE| id26-delete
+:::
+
+<span style="color:black; font-weight:bold; color:red">*The operator performs the operation according to the work display on the work terminal.</span>
+
+After the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. At the same time, sending ID 26 to the id26process, then delete related records from DNPALLET, DNCARRYINFO, and DNSTOCK.
 
 # User Story
   - #5776
