@@ -41,12 +41,13 @@ P1[FROM AISLE STATION - 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID32]
 ## Inbound Table Data Flow
 | Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HTSD | OPRR | ITEM | STSN | TTSN |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
-| Inquiry Retrieval - Set (F2) [(1)](#inquiry-retrieval---set-(f2))|   S  |      |   I  |   I  |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   S  | 
-| Retrieval Sender [(2)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
-| ID32 [(3)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
-| ID33 [(4)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
-| ID68 [(5)](#id68)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
-| ID26 [(6)](#id26)                                              |   D  |   U  |   I  |   D  |   D  |      |      |  U   |      |      |   I  |      |      |      |      |
+| ID63 [(1)](#id63)                                              |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| Inquiry Retrieval - Set (F2) [(2)](#inquiry-retrieval---set-(f2))|   S  |      |   I  |   I  |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   S  | 
+| Retrieval Sender [(3)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID32 [(4)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID33 [(5)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
+| ID68 [(6)](#id68)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
+| ID26 [(7)](#id26)                                              |   D  |   U  |   I  |   D  |   D  |      |      |  U   |      |      |   I  |      |      |      |      |
 
 # Mode Change Station
 ##ID63
@@ -72,6 +73,8 @@ flowchart LR
     class input leftAlign;
 :::
 
+## DMSTATION
+- CURRENT_MODE = 2:Retrieval Mode
 
 # Inquiry Retrieval - Set (F2)
 
