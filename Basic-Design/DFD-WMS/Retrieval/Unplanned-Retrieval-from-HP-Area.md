@@ -416,7 +416,8 @@ retrievaloperator--> |DELETE| id26-delete
 
 After the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. At the same time, sending ID 26 to the id26process, then delete related records from DNPALLET, DNCARRYINFO, and DNSTOCK.
 
-## DNWORKINFO
+##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###<span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
 *   STATUS_FLAG = 4:Completed
 *   SHORTAGE_QTY = DNWORKINFO.PLAN_QTY - DNWORKINFO.RESULT_QTY
 *   RESULT_AREA_NO = DNWORKINFO.PLAN_AREA_NO
@@ -428,8 +429,8 @@ After the completion button flashes, the operator removes the pallet and presses
 *   LAST_UPDATE_DATE = SYSTIMESTAMP
 *   LAST_UPDATE_PNAME = Class name
 
-## DNWORKLIST
-## DNHOSTSEND
+###<span style="color:skyblue; font-weight:bold">DNWORKLIST</span>
+###<span style="color:skyblue; font-weight:bold">DNHOSTSEND</span>
 ##<span style="color:skyblue; font-weight:bold">DNHostSend</span>
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY    
 *   **JOB_NO**: DNWORKINFO.JOB_NO    
