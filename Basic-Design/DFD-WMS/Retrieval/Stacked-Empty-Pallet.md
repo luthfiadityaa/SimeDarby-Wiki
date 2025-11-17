@@ -30,6 +30,27 @@ P1[FROM AISLE STATION - 9007, 9008, 9009, 9010]-->P2[RetrievalSender]-->P3[ID66]
 
 #ID66
 
+
+::: mermaid
+flowchart LR
+    input[
+        Operators pressed the storage mode button on the operation box.      
+    ]
+
+    id66msg("
+     ID66
+    ")
+    tableList-update[("
+        DMSTATION
+    ")]
+
+    input -->id66msg-->id63process--> |UPDATE| tableList-update
+
+    classDef leftAlign text-align:left;
+    class input leftAlign;
+:::
+
+
 #ID12
 
 #ID64
