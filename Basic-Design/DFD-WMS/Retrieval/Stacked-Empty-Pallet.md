@@ -58,6 +58,31 @@ flowchart LR
 
 #Retrieval Trigger Allocator
 
+::: mermaid
+flowchart LR    
+
+    tableList-insert[("
+        DNWORKINFO
+        DNCARRYINFO
+    ")]
+
+     tableList-select[("
+        DMWAREHOUSE
+        DMSHELF
+        DNPALLET
+        DMITEM
+        DMSTATION
+    ")]
+
+    className[RetrievalTriggerAllocator]
+
+    className --> |INSERT| tableList-insert
+    tableList-select --> |SELECT| className
+
+    classDef leftAlign text-align:left;
+    class input leftAlign;
+:::
+
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
 *   **JOB_NO**: Sequence Object    
