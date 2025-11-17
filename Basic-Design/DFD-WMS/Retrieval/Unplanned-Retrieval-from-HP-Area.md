@@ -217,7 +217,7 @@ id12msg("
 ID 12
 ")
 
-retrievalsender-input-->retrievalsender-.U.->retrievalsender-update
+retrievalsender-input-->retrievalsender--> |UPDATE| retrievalsender-update
 retrievalsender-->id12msg
 :::
 
