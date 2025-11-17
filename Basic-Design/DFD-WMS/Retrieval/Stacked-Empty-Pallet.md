@@ -93,7 +93,6 @@ flowchart LR
 *   **RETRIEVAL_STATION_NO**: DNSTOCK.LOCATION_NO
 *   **SOURCE_STATION_NO**: DNPALLET.CURRENT_STATION_NO    
 *   **DEST_STATION_NO**: **<span style="color:green;">1210**    
-*   **PRIORITY**: Value from screen ⟶ **<span style="color:green;">(1:Urgent, 2:Normal)</span>**
 *   **CANCEL_REQUEST**: 0:Not Requested    
 *   **SCHEDULE_NO**: Sequence Object    
 *   **CARRY_FLAG**: 2:Retrieval
