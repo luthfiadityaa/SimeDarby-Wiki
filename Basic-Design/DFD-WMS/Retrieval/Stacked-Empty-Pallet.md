@@ -384,8 +384,6 @@ After the completion button flashes, the operator removes the pallet and presses
 *   **STORAGE_DATE**: DNSTORAGEPLAN.PLAN_DAY    
 *   **PLAN_QTY**: DNWORKINFO.PLAN_QTY    
 *   **STOCK_QTY**: DNWORKINFO.STOCK_QTY   
-*   **DOCK_NO**: DNWORKINFO.DOCK_NO
-*   **TRUCK_PLATE_NO**: DNWORKINFO.TRUCK_PLATE_NO 
 *   **USER_ID**: DNWORKINFO.USER_ID    
 *   **USER_NAME**: DCUSER.USER_NAME    
 *   **REGIST_DATE**: SYSTIMESTAMP    
@@ -420,8 +418,6 @@ After the completion button flashes, the operator removes the pallet and presses
 *   **RESULT_AREA_NO**: DNWORKINFO.RESULT_AREA_NO    
 *   **RESULT_LOCATION_NO**: DNWORKINFO.RESULT_LOCATION_NO    
 *   **RESULT_LOT_NO**: DNWORKINFO.RESULT_LOT_NO
-*   **DOCK_NO**: **DNWORKINFO.DOCK_NO**
-*   **TRUCK_PLATE_NO**: **DNWORKINFO.TRUCK_PLATE_NO**   
 *   **USER_ID**: DNWORKINFO.USER_ID    
 *   **TERMINAL_NO**: DNWORKINFO.TERMINAL_NO    
 *   **WORK_SECOND**: DNWORKINFO.WORK_SECOND    
