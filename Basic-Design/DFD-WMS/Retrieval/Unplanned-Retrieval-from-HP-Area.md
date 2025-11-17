@@ -216,7 +216,7 @@ flowchart LR
 
     className[InquiryRetrievalSettingSCH]
 
-    tableList-select --> className --> |DELETE| tableList-delete
+    tableList-select --> |SELECT| className --> |DELETE| tableList-delete
 
     classDef leftAlign text-align:left;
     class input leftAlign;
