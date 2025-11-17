@@ -278,14 +278,14 @@ id33process--> |UPDATE| id33-update
 ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi that the Pallet/Bin is out of rack and is being transferred to related Station.
 
 ## DMSHELF
-- STATUS_FLAG = 0:Empty
-- LAST_UPDATE_DATE = SYSTIMESTAMP
+* **STATUS_FLAG**: 0:Empty
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
 
 ## DNCARRYINFO
-- CMD_STATUS = 5:Retrieval completed
-- RETRIEVAL_STATION_NO = DMSHELF.STATION_NO
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+* **CMD_STATUS**: 5:Retrieval completed
+* **RETRIEVAL_STATION_NO**: DMSHELF.STATION_NO
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
 
 #ID64
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process &nbsp;</span>
