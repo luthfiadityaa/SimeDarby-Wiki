@@ -222,6 +222,8 @@ flowchart LR
     class input leftAlign;
 :::
 
+To cancel entries, the InquiryRetrievalSettingSCH component first reads data from the DNWORKINFO and DNCARRYINFO tables, then deletes those records after processing.
+
 #Retrieval-Sender
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.wcs.mc.as21.transmission.RetrievalSender&nbsp;</span>
 
