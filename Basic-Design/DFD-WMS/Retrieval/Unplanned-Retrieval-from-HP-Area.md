@@ -164,7 +164,9 @@ flowchart LR
 *   **MATERIAL_TYPE**: Value from screen (Material Type) 
 *   **PLAN_QTY**: Value from screen (Retrieval Qty / Stock Qty)    
 *   **TEMPERING_PERIOD**: Value from screen (Tempering Period)    
-*   **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE    
+*   **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE
+*   **QC_DURATION**: DNSTOCK.QC_DURATION
+    **QC_CHECK_FLAG**: DNSTOCK_QC_CHECK_FLAG    
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY  
 *   **BCR_DATA**: DNPALLET.BCR_DATA  
 *   **STORAGE_LOCATION_TO**: Value from Screen (To Location)
