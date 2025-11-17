@@ -31,7 +31,7 @@ P1[FROM AISLE STATION - 9007, 9008, 9009, 9010]-->P2[ID66]-->P3[RetrievalTrigger
 #<span style="color:skyblue; font-weight:bold">Empty Stacked database flow</span>
 | Action Name                                                                     |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN|TTSN|OPRD|INOUT| 
 |---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|----|
-| ID66 [(1)](#I66)                                                                | I  |    | S  | I  | S  |    |     | S  | S  |    | S  | S  | S  |    |    |
+| ID66 [(1)](#I66)                                                                |    |    |    |    |    |    |     |    |    |    |    | U  |    |    |    |
 | Retrieval Trigger Allocator [(2)](#Retrieval-Trigger-Allocator))                | I  |    | S  | I  | S  |    |     | S  | S  |    | S  | S  | S  |    |    |
 | RetrievalSender[(3)](#Retrieval-Sender)                                         |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |    |  
 | ID32[(4)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |    
