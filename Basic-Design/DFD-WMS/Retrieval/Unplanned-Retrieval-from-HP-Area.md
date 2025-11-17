@@ -261,7 +261,7 @@ All Carton Retrieval operation at Ambient or Tempering will be retrieved to Stat
 * **LAST_UPDATE_PNAME**: Class name
 
 #ID32
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id32Process&nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id32Process&nbsp;</span>
 
 ::: mermaid
 flowchart LR
