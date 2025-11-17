@@ -4,7 +4,7 @@ flowchart LR
   
 P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID32]-->P4[ID33]-->P5[ID64]-->P6[ID68]-->P7[ID26]-->P8[To STATION - 1205, 1206, 
 1207, 1208, 1209, 1301, 
-1302] 
+1302, 1303] 
 :::
 
 #<span style="color:skyblue; font-weight:bold">Specific Location Retrieval Setting database flow</span>
