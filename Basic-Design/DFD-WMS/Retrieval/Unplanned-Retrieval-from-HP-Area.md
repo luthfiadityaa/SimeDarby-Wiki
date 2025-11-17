@@ -251,10 +251,10 @@ id32process-.U.->id32-update
 ID32 sent from AGC to WareNavi indicate AGC responded the retrieval job by WareNavi.
 
 ## DNCARRYINFO
-- CMD_STATUS: 3:Commanded
-- ERROR_CODE: 0
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+* **CMD_STATUS**: 3:Commanded
+* **ERROR_CODE**: 0
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
 
 #ID33
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.wcs.mc.as21.communication.control.Id33Process&nbsp;</span>
