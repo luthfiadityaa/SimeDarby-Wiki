@@ -200,7 +200,7 @@ flowchart LR
 
 #Inquiry Retrieval Setting - Cancel Entries(F11)
 
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.storage.palletizingsetting.InquiryRetrievalSettingSCH &nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.InquiryRetrievalSettingSCH &nbsp;</span>
 
 ::: mermaid
 flowchart LR
