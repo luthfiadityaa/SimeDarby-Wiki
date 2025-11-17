@@ -40,14 +40,16 @@ P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9
 | RetrievalSender[(2)](#Retrieval-Sender)                                         |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |    |  
 | ID32[(3)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |    
 | ID33[(4)](#ID33)                                                                |    |    |    | U  |    |    |     |    | U  |    |    |    |    |    |    |     
+| **Flow 1: Thorugh crane 7-10 only for 1303**                                       |    |    |    |    |    |    |
 | ID64[(5)](#ID64)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
-| **Flow 1**                                       |    |    |    |    |    |    |
 | ID26                                       |    |    |    |    |    |    | 
 | Retrieval Sender                                       |    |    |    |    |    |    |
 | ID25                                       |    |    |    |    |    |    |
 | ID64                                       |    |    |    |    |    |    |
 | ID64                                       |    |    |    |    |    |    |
-| **Flow 2**                                       |    |    |    |    |    |    |
+| **Flow 2: can not through crane 7-10**                                       |    |    |    |    |    |    |
+| ID64[(5)](#ID64)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
+| **Flow 3: Only for 1201-1204**                                       |    |    |    |    |    |    |
 | ID68[(6)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |    |
 | ID26[(7)](#ID26)                                                                | U  | I  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I  |
  
