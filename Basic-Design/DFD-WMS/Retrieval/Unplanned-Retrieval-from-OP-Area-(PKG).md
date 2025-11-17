@@ -46,7 +46,7 @@ P1[FROM AISLE STATION - 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID32]
 | ID32 [(3)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
 | ID33 [(4)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
 | ID68 [(5)](#id68)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
-| ID26 [(6)](#id26)                                              |   D  |   U  |   I  |   D  |   D  |      |      |  U   |      |      |   I  |      |      |      |      |
+| ID26 [(6)](#id26)                                              |   D  |   U  |   I  |   D  |   D  |      |      |  U   |      |   I  |   I  |      |      |      |      |
 
 # Inquiry Retrieval - Set (F2)
 
@@ -324,6 +324,7 @@ DNSTOCK
 id26-insert[("
 DNWORKLIST
 DNHOSTSEND
+DNINOUTRESULT
 ")]
 
 id26process[id26process]
@@ -343,6 +344,22 @@ retrievaloperator--> |DELETE| id26-delete
 
 After the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. At the same time, sending ID 26 to the id26process, then delete related records from DNPALLET, DNCARRYINFO, and DNSTOCK.
 
+## DNWORKINFO
+- STATUS_FLAG = 4:Completed
+- RESULT_AREA_NO = DNWORKINFO.PLAN_AREA_NO
+- RESULT_LOCATION_NO = DNWORKINFO.PLAN_LOCATION_NO
+- RESULT_LOT_NO = DNWORKINFO.PLAN_LOT_NO
+- WORK_DAY = DMWARENAVISYSTEM.WORK_DAY
+- USER_ID = Login info
+- TERMINAL_NO = Login info
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
+## DMSHELF
+- STATUS_FLAG        = 0:Empty Location
+- LAST_UPDATE_DATE   = SYSTIMESTAMP
+- LAST_UPDATE_PNAME  = Class name
+
 ## DNWORKLIST
 - JOB_NO             = DNWORKINFO.JOB_NO
 - CARRY_KEY          = DNWORKINFO.SYSTEM_CONN_KEY
@@ -358,6 +375,7 @@ After the completion button flashes, the operator removes the pallet and presses
 - PLAN_AREA_NO       = DNWORKINFO.PLAN_AREA_NO
 - PLAN_LOCATION_NO   = DNWORKINFO.PLAN_LOCATION_NO
 - MATERIAL_CODE      = DNWORKINFO.MATERIAL_CODE
+- MATERIAL_NAME      = DMITEM.MATERIAL_NAME
 - ALLOCATION_QTY     = 1
 - RETRIEVAL_STATION_NO = Arrival Station Number from **ID26** 
 - RETRIEVAL_DETAIL   = 1:Unit Retrieval
@@ -374,6 +392,54 @@ After the completion button flashes, the operator removes the pallet and presses
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = ClassName
 
+## DNHOSTSEND
+- WORK_DAY = DMWARENAVISYSTEM.WORK_DAY    
+- JOB_NO = DNWORKINFO.JOB_NO    
+- COLLECT_JOB_NO = DNWORKINFO.COLLECT_JOB_NO    
+- SETTING_UNIT_KEY = DNWORKINFO.SETTING_UNIT_KEY    
+- JOB_TYPE = DNWORKINFO.JOB_TYPE    
+- STATUS_FLAG = DNWORKINFO.STATUS_FLAG    
+- HARDWARE_TYPE = DNWORKINFO.HARDWARE_TYPE    
+- PLAN_UKEY = DNWORKINFO.PLAN_UKEY    
+- STOCK_ID = DNWORKINFO.STOCK_ID    
+- SYSTEM_CONN_KEY = DNWORKINFO.SYSTEM_CONN_KEY    
+- PLAN_DAY = DNWORKINFO.PLAN_DAY    
+- BATCH_NO = DNWORKINFO.BATCH_NO    
+- PLAN_AREA_NO = DNWORKINFO.PLAN_AREA_NO    
+- PLAN_LOCATION_NO = DNWORKINFO.PLAN_LOCATION_NO    
+- MATERIAL_CODE = DNWORKINFO.MATERIAL_CODE    
+- MATERIAL_NAME = DMITEM.MATERIAL_NAME    
+- RESULT_QTY = 1
+- RESULT_AREA_NO = DNWORKINFO.RESULT_AREA_NO    
+- RESULT_LOCATION_NO = DNWORKINFO.RESULT_LOCATION_NO    
+- RESULT_LOT_NO = DNWORKINFO.RESULT_LOT_NO
+- USER_ID = DNWORKINFO.USER_ID    
+- TERMINAL_NO = DNWORKINFO.TERMINAL_NO    
+- WORK_SECOND = DNWORKINFO.WORK_SECOND    
+- USER_NAME = DCUSER.USERNAME    
+- REPORT_FLAG = 0:Not Reported    
+- REGIST_DATE = SYSTIMESTAMP    
+- REGIST_PNAME = Class name    
+- LAST_UPDATE_DATE = SYSTIMESTAMP    
+- LAST_UPDATE_PNAME = Class name
+
+## DNINOUTRESULT
+- RESULT_KIND = 2:Retrieval(Stock-)
+- STATION_NO = DNCARRYINFO.DEST_STATION_NO
+- LOCATION_NO = DNPALLET.CURRENT_STATION_NO
+- WH_STATION_NO = DNPALLET.WH_STATION_NO
+- AISLE_STATION_NO = DNCARRYINFO.AISLE_STATION_NO
+- WORK_TYPE = DNCARRYINFO.WORK_TYPE
+- RETRIEVAL_DETAIL = DNCARRYINFO.RETRIEVAL_DETAIL
+- WORK_NO = DNCARRYINFO.WORK_NO
+- PALLET_ID = DNPALLET.PALLET_ID
+- CARRY_KEY = DNCARRYINFO.CARRY_KEY
+- RESTORING_FLAG = DNCARRYINFO.RESTORING_FLAG
+- WORK_DAY = DMWARENAVISYSTEM.WORK_DAY
+- REMOVE_FLAG = 00: Normal
+- REGIST_PNAME = Class name
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
 
 # User Story
   - #5776
