@@ -5,11 +5,16 @@
 ![image.png](/.attachments/image-da2c69da-502e-434b-8de2-eafe8b266f4f.png)
 
 # Summary Flow
+### Stage 1 - Retrieval Operation
 ::: mermaid
 flowchart LR
   
 P1[FROM AISLE STATION - 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID32]-->P4[ID33]-->P5[ID64]-->P6[ID68]-->P7[ID26]-->P8[To STATION - 1301, 1302]
 :::
+
+### Stage 2 - Restorage Operation
+
+
 
 ## Abbreviation
 | **CODE** | TABLE NAME       |
@@ -42,6 +47,11 @@ P1[FROM AISLE STATION - 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014]-->P2[Ret
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
 | Inquiry Retrieval - Set(F2) [(1)](#inventory-check---set(f2))  |   U  |   I  |   I  |   I  |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   I  |
 | Retrieval Sender [(2)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+|      |      |      |      |      |      |      |
+| ID32 [(3)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID33 [(4)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
+| ID68 [(5)](#id68)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
+
 # Inventory Check - Set(F2)
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wms.web.display.retrieval.inventorycheck.InventoryCheckSCH` &nbsp;</span>
@@ -314,6 +324,48 @@ ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi
 - LAST_UPDATE_DATE = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
 
+# ID68
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.communication.control.Id68Process` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id68("
+ID 68
+")
+
+id68-insert[("
+DNOPERATIONDISPLAY
+")]
+
+id68-->id68process
+id68process--> |INSERT| id68-insert
+:::
+
+ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related Station in ASRS. Upon receiving of ID68, insertion of data will be executed.
+
+## DNOPERATIONDISPLAY
+- CARRY_KEY = MC Key information from ID68
+- STATION_NO = Station information from ID68
+- MATERIAL_CODE = DNWORKINFO.MATERIAL_CODE
+- RETRIEVAL_QTY = DNWORKINFO.STOCK_QTY
+- DOCK_NO = DNWORKINFO.DOCK_NO
+- TRUCK_PLATE_NO = DNWORKINFO.TRUCK_PLATE_NO
+- ARRIVAL_DATE = SYSTIMESTAMP
+- REGIST_PNAME = Class name
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
+##LED DISPLAY
+[Display information]
+- Job Type
+- Material Code
+- Qty
+- Dock Type
+- Truck_Plate_no
+
+![image.png](/.attachments/image-1e56dc6e-657e-47ff-9a47-575b04705583.png)
 
 # User Story
   - #5795
