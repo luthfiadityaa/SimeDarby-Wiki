@@ -230,9 +230,9 @@ All Carton Retrieval operation at Ambient or Tempering will be retrieved to Stat
 * **LAST_UPDATE_PNAME**: Class name
 
 ###<span style="color:skyblue; font-weight:bold">DNPALLET</span>
-- STATUS_FLAG = 4:Being retrieved
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+* **STATUS_FLAG**: 4:Being retrieved
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
 
 #ID32
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id32Process&nbsp;</span>
