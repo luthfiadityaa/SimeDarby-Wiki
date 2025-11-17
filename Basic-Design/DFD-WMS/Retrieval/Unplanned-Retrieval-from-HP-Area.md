@@ -418,16 +418,16 @@ After the completion button flashes, the operator removes the pallet and presses
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ###<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
-*   STATUS_FLAG = 4:Completed
-*   SHORTAGE_QTY = DNWORKINFO.PLAN_QTY - DNWORKINFO.RESULT_QTY
-*   RESULT_AREA_NO = DNWORKINFO.PLAN_AREA_NO
-*   RESULT_LOCATION_NO = DNWORKINFO.PLAN_LOCATION_NO
-*   RESULT_LOT_NO = DNWORKINFO.PLAN_LOT_NO
-*   WORK_DAY = DMWARENAVISYSTEM.WORK_DAY
-*   USER_ID = Login info
-*   TERMINAL_NO = Login info
-*   LAST_UPDATE_DATE = SYSTIMESTAMP
-*   LAST_UPDATE_PNAME = Class name
+*   **STATUS_FLAG**: 4:Completed
+*   **SHORTAGE_QTY**: DNWORKINFO.PLAN_QTY - DNWORKINFO.RESULT_QTY
+*   **RESULT_AREA_NO**: DNWORKINFO.PLAN_AREA_NO
+*   **RESULT_LOCATION_NO**: DNWORKINFO.PLAN_LOCATION_NO
+*   **RESULT_LOT_NO**: DNWORKINFO.PLAN_LOT_NO
+*   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY
+*   **USER_ID**: Login info
+*   **TERMINAL_NO**: Login info
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP
+*   **LAST_UPDATE_PNAME**: Class name
 
 ###<span style="color:skyblue; font-weight:bold">DNWorkList</span>
 *   **JOB_NO**: DNWORKINFO.JOB_NO    
