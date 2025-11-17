@@ -172,7 +172,7 @@ flowchart LR
 *   **BCR_DATA**: DNPALLET.BCR_DATA  
 *   **STORAGE_LOCATION_TO**: Value from Screen (To Location)
 *   **DOCK_NO**: Value from Screen (Dock No)
-*   **TRUCK_PLATE_NO**: Value from Screen (Trck Plate No)
+*   **TRUCK_PLATE_NO**: Value from Screen (Truck Plate No)
 *   **USER_ID**: Login Info     
 *   **TERMINAL_NO**: Login info
 *   **REGIST_DATE**: SYSTIMESTAMP    
