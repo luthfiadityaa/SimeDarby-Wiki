@@ -368,6 +368,29 @@ retrievaloperator--> |DELETE| id26-delete
 
 After the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. At the same time, sending ID 26 to the id26process, then delete related records from DNPALLET, DNCARRYINFO, and DNSTOCK.
 
+## DNWORKINFO
+- JOB_NO = Sequence Object
+- SETTING_UNIT_KEY = 
+- COLLECT_JOB_NO = Sequence Object
+- JOB_TYPE = 02:Storage
+- STATUS_FLAG = 4:Completed
+- HARDWARE_TYPE = 3:ASRS
+- PLAN_UKEY = Sequence Object
+- STOCK_ID = DNSTOCK.STOCK_ID
+- SYSTEM_CONN_KEY = DNCARRYINFO.CARRY_KEY
+- PLAN_DAY = DMWARENAVISYSTEM.WORK_DAY
+- PLAN_AREA_NO = Area Number where a reserved location belongs to
+- PLAN_LOCATION_NO = DNCARRYINFO.
+- PLAN_QTY = 1
+- WORK_DAY = DMWARENAVISYSTEM.WORK_DAY
+- USER_ID = Login Info
+- TERMINAL_NO = Login Terminal
+- STORING_PAIR_KEY =
+- REGIST_DATE = SYSTIMESTAMP
+- REGIST_PNAME = ClassName
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = ClassName
+
 # User Story
   - #5776
 
