@@ -295,7 +295,7 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 - STATION_NO = Station information from ID68
 - MATERIAL_CODE = DNWORKINFO.MATERIAL_CODE
 - RETRIEVAL_QTY = DNWORKINFO.STOCK_QTY
-- ARRIAL_DATE = SYSTIMESTAMP
+- ARRIVAL_DATE = SYSTIMESTAMP
 - REGIST_PNAME = Class name
 - LAST_UPDATE_DATE = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
