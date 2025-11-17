@@ -152,16 +152,16 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 - WORK_TYPE = 23:Unplanned Retrieval    
 - CMD_STATUS = 1:Started    
 - PRIORITY = 2:Normal    
-- RESTORING_FLAG = 0 : Not Restore to Original Location  
+- RESTORING_FLAG = 0 :Not Restore to Original Location  
 - WORK_NO = Sequence Object    
 - RETRIEVAL_STATION_NO = DNSTOCK.LOCATION_NO
 - SOURCE_STATION_NO = DNPALLET.CURRENT_STATION_NO    
 - DEST_STATION_NO = Based on **SOURCE_STATION_NO** where a reserved location belongs to ⟶ **(1201, 1202, 1203, 1204**)
 - PRIORITY = Value from screen **(Dropdown ⟶ 1:Urgent / 2: Normal)**
-- CANCEL_REQUEST = 0 =Not Requested    
+- CANCEL_REQUEST = 0: Not Requested    
 - SCHEDULE_NO = Sequence Object    
-- CARRY_FLAG = 2 =Retrieval
-- CANCEL_REQUEST = 0 =Not requested
+- CARRY_FLAG = 2: Retrieval
+- CANCEL_REQUEST = 0: Not requested
 - AISLE_STATION_NO = DMSHELF.PARENT_STATION_NO
 - END_STATION_NO = DNCARRYINFO.DEST_STATION_NO  
 - REGIST_DATE = SYSTIMESTAMP    
