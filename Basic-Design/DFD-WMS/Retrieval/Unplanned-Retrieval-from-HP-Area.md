@@ -454,7 +454,7 @@ After the completion button flashes, the operator removes the pallet and presses
 *   **SHORTAGE_QTY**: DNWORKINFO.PLAN_QTY - DNWORKINFO.RESULT_QTY
 *   **RESULT_AREA_NO**: DNWORKINFO.PLAN_AREA_NO
 *   **RESULT_LOCATION_NO**: DNWORKINFO.PLAN_LOCATION_NO
-*   **RESULT_LOT_NO**: DNWORKINFO.PLAN_LOT_NO
+*   **RESULT_BATCH_NO**: DNWORKINFO.BATCH_NO
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY
 *   **USER_ID**: Login info
 *   **TERMINAL_NO**: Login info
