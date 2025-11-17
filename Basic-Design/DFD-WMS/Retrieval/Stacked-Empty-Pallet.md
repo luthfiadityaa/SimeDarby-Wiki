@@ -50,6 +50,8 @@ flowchart LR
     class input leftAlign;
 :::
 
+AGC will send ID66 when the MC contains data for any stock items that need to be retrieved. 
+
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DMStation</span>
 **STATION_NO**: 1210
@@ -83,6 +85,8 @@ flowchart LR
     classDef leftAlign text-align:left;
     class input leftAlign;
 :::
+
+Allocation of stock items that can be retrieved
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
