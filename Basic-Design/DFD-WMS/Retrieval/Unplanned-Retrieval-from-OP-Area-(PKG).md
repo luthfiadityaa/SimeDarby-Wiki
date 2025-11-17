@@ -394,7 +394,7 @@ After the completion button flashes, the operator removes the pallet and presses
 - ALLOCATION_QTY     = 1
 - RETRIEVAL_STATION_NO = Arrival Station Number from **ID26** 
 - RETRIEVAL_DETAIL   = 1:Unit Retrieval
-- WORK_NO            = DNWORKINFO.JOB_NO
+- WORK_NO            = DNCARRYINFO.WORK_NO
 - SOURCE_STATION_NO  = DNCARRYINFO.SOURCE_STATION_NO
 - DEST_STATION_NO    = DNCARRYINFO.DEST_STATION_NO
 - SCHEDULE_NO        = DNCARRYINFO.SCHEDULE_NO
