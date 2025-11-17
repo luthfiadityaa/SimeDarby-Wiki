@@ -225,7 +225,7 @@ flowchart LR
 To cancel entries, the InquiryRetrievalSettingSCH component first reads data from the **<span style="color:green">DNWORKINFO and DNCARRYINFO</span>** tables, then deletes those records after processing. If not, continue process to [Retrieval-Sender](#Retrieval-Sender)
 
 #Retrieval-Sender
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.wcs.mc.as21.transmission.RetrievalSender&nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.control.RetrievalSender&nbsp;</span>
 
 ::: mermaid
 flowchart LR
