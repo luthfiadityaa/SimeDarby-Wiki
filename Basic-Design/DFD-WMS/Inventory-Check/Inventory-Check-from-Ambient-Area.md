@@ -14,6 +14,12 @@ P1[FROM AISLE STATION - 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014]-->P2[Ret
 
 ### Stage 2 - Restorage Operation
 
+::: mermaid
+flowchart LR
+  
+P1[FROM AISLE STATION - 1301,1302]-->P2[StorageSender]-->P3[ID05]-->P4[ID25]-->P5[ID64]-->P6[ID33]
+:::
+
 
 
 ## Abbreviation
