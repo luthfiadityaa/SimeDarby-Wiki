@@ -336,7 +336,7 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 - CARRY_KEY = MC Key information from ID68
 - STATION_NO = Station information from ID68
 - MATERIAL_CODE = **<span style="color:green">DNWORKINFO.MATERIAL_CODE</span>**
-- RETRIEVAL_QTY = **<span style="color:green">DNWORKINFO.</span>**
+- RETRIEVAL_QTY = **<span style="color:green">DNWORKINFO.STOCK_QTY</span>**
 - DOCK_NO = **<span style="color:green">DNWORKINFO.DOCK_NO</span>**
 - TRUCK_PLATE_NO = **<span style="color:green">DNWORKINFO.TRUCK_PLATE_NO</span>**
 - ARRIAL_DATE = SYSTIMESTAMP
