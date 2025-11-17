@@ -170,6 +170,7 @@ flowchart LR
 *   **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE    
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY  
 *   **BCR_DATA**: DNPALLET.BCR_DATA  
+*   **STORAGE_LOCATION_TO**: Value from Screen (To Location)
 *   **DOCK_NO**: DNWORKINFO.DOCK_NO
 *   **TRUCK_PLATE_NO**: DNWORKINFO.TRUCK_PLATE_NO
 *   **USER_ID**: Login Info     
