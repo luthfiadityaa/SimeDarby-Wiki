@@ -30,7 +30,6 @@ P1[FROM AISLE STATION - 9007, 9008, 9009, 9010]-->P2[RetrievalSender]-->P3[ID66]
 
 #ID66
 
-
 ::: mermaid
 flowchart LR
     input[
@@ -44,12 +43,17 @@ flowchart LR
         DMSTATION
     ")]
 
-    input -->id66msg-->id63process--> |UPDATE| tableList-update
+    input -->id66msg-->id66process--> |UPDATE| tableList-update
 
     classDef leftAlign text-align:left;
     class input leftAlign;
 :::
 
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">DMStation</span>
+**STATION_NO**: 1210
+**RETRIEVAL_TRIGGER_REQUEST**: 2:Requested by AGC
+**LAST_UPDATE_PNAME**: Id66Process
 
 #ID12
 
