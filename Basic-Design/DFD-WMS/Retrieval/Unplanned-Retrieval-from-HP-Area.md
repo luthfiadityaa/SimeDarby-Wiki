@@ -325,7 +325,7 @@ ID 68
 
 id68-select[("
 DNCARRYINFO
-DNSTOCK
+DNWORKINFO
 ")]
 
 id68-insert[("
