@@ -477,8 +477,7 @@ After the completion button flashes, the operator removes the pallet and presses
 *   **MATERIAL_NAME**: DNWORKINFO.MATERIAL_NAME    
 *   **RETRIEVAL_STATION_NO**: DNWORKINFO.RESULT_LOCATION_NO   
 *   **RETRIEVAL_DETAIL**: 1:Unit Retrieval   
-*   **PLAN_QTY**: DNWORKINFO.PLAN_QTY    
-*   **STOCK_QTY**: DNWORKINFO.STOCK_QTY   
+*   **PLAN_QTY**: DNWORKINFO.PLAN_QTY      
 *   **DOCK_NO**: DNWORKINFO.DOCK_NO
 *   **TRUCK_PLATE_NO**: DNWORKINFO.TRUCK_PLATE_NO 
 *   **USER_ID**: DNWORKINFO.USER_ID    
