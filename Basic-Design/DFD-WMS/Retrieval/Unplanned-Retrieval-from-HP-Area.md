@@ -181,7 +181,6 @@ flowchart LR
 *   **PALLET_ID**: DNSTOCK.PALLET_ID    
 *   **WORK_TYPE**: 23:Unplanned Retrieval    
 *   **CMD_STATUS**: 1:Started    
-*   **PRIORITY**: 2:Normal    
 *   **RESTORING_FLAG**: 0:Not Restore to Original Location  
 *   **WORK_NO**: Sequence Object    
 *   **RETRIEVAL_STATION_NO**: DNSTOCK.LOCATION_NO
