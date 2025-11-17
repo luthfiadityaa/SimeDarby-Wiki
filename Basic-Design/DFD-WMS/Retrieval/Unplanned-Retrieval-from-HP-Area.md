@@ -171,8 +171,8 @@ flowchart LR
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY  
 *   **BCR_DATA**: DNPALLET.BCR_DATA  
 *   **STORAGE_LOCATION_TO**: Value from Screen (To Location)
-*   **DOCK_NO**: DNWORKINFO.DOCK_NO
-*   **TRUCK_PLATE_NO**: DNWORKINFO.TRUCK_PLATE_NO
+*   **DOCK_NO**: Value from Screen (Dock No)
+*   **TRUCK_PLATE_NO**: Value from Screen (Trck Plate No)
 *   **USER_ID**: Login Info     
 *   **TERMINAL_NO**: Login info
 *   **REGIST_DATE**: SYSTIMESTAMP    
