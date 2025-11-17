@@ -47,6 +47,7 @@ P1[FROM AISLE STATION - 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID32]
 | ID33 [(4)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
 | ID68 [(5)](#id68)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
 | ID26 [(6)](#id26)                                              |   D  |   U  |   I  |   D  |   D  |      |      |  U   |      |   I  |   I  |      |      |      |      |
+| **Host Communication** [(7)](#host-communication)              |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 
 # Inquiry Retrieval - Set (F2)
 
@@ -453,8 +454,12 @@ After the completion button flashes, the operator removes the pallet and presses
 - LAST_UPDATE_DATE = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
 
+# Host Communication
+
+##<span style="color:skyblue; font-weight:bold">[Unplanned Storage and Retrieval Result - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result)</span>
+
 # User Story
-  - #5776
+  - #5793
 
 # Related DFD
-  - {}
+  - [Unplanned Storage and Retrieval Result - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result)
