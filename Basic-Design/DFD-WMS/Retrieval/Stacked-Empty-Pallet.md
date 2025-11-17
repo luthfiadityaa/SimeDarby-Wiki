@@ -28,7 +28,6 @@ P1[FROM AISLE STATION - 9007, 9008, 9009, 9010]-->P2[ID66]-->P3[RetrievalTrigger
   - **D** : DELETE
   - **S** : SELECT 
 
-
 | Action Name                                                                     |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN|OPRD|INOUT| 
 |---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|
 | ID66 [(1)](#I66)                                                                |    |    |    |    |    |    |     |    |    |    |    | U  |    |    |
