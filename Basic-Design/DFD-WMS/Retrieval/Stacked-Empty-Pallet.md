@@ -86,7 +86,7 @@ flowchart LR
     class input leftAlign;
 :::
 
-Allocation of stock items that can be retrieved
+Next, the Retrieval Trigger Allocator will assign stock items that are eligible for retrieval.
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
