@@ -159,9 +159,9 @@ flowchart LR
 *   **PLAN_LOCATION_NO**: DNSTOCK.LOCATION_NO
 *   **PLAN_DAY**: DMWARENAVISYSTEM.WORK_DAY    
 *   **BATCH_NO**: DNSTOCK.BATCH_NO    
-*   **MATERIAL_CODE**: Value from screen (Material Code)    
-*   **MATERIAL_NAME**: Value from screen (Material Name)    
-*   **MATERIAL_TYPE**: Value from screen (Material Type) 
+*   **MATERIAL_CODE**: DNSTOCK.MATERIAL_CODE    
+*   **MATERIAL_NAME**: DMITEM.MATERIAL_NAME    
+*   **MATERIAL_TYPE**: DMITEM.MATERIAL_TYPE 
 *   **PLAN_QTY**: Value from screen (Retrieval Qty / Stock Qty)    
 *   **TEMPERING_PERIOD**: Value from screen (Tempering Period)    
 *   **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE
