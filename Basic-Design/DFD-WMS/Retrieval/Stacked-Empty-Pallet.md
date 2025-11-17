@@ -56,6 +56,55 @@ flowchart LR
 **RETRIEVAL_TRIGGER_REQUEST**: 2:Requested by AGC
 **LAST_UPDATE_PNAME**: Id66Process
 
+#Retrieval Trigger Allocator
+
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
+*   **JOB_NO**: Sequence Object    
+*   **SETTING_UNIT_KEY**: Sequence Object    
+*   **COLLECT_JOB_NO**: Sequence Object    
+*   **JOB_TYPE**: 23:Unplanned Retrieval    
+*   **STATUS_FLAG**: 0:Not Started    
+*   **PLAN_UKEY**: Sequence Object    
+*   **STOCK_ID**: DNSTOCK.STOCKID    
+*   **PLAN_AREA_NO**: DNSTOCK.AREANO   
+*   **PLAN_LOCATION_NO**: DNSTOCK.LOCATION_NO
+*   **PLAN_DAY**: DMWARENAVISYSTEM.WORK_DAY       
+*   **MATERIAL_CODE**: **<span style="color:green">EMP_PB</span>**   
+*   **MATERIAL_NAME**: **<span style="color:green">Empty Pallet</span>** 
+*   **PLAN_QTY**: Value from screen (Retrieval Qty)       
+*   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY  
+*   **BCR_DATA**: DNPALLET.BCR_DATA  
+*   **USER_ID**: Login Info     
+*   **TERMINAL_NO**: Login info
+*   **REGIST_DATE**: SYSTIMESTAMP    
+*   **REGIST_PNAME**: ClassName    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: ClassName
+
+###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+*   **CARRY_KEY**: Sequence Object    
+*   **PALLET_ID**: DNSTOCK.PALLET_ID    
+*   **WORK_TYPE**: 23:Unplanned Retrieval    
+*   **CMD_STATUS**: 1:Started    
+*   **PRIORITY**: 2:Normal    
+*   **RESTORING_FLAG**: 0:Not Restore to Original Location  
+*   **WORK_NO**: Sequence Object    
+*   **RETRIEVAL_STATION_NO**: DNSTOCK.LOCATION_NO
+*   **SOURCE_STATION_NO**: DNPALLET.CURRENT_STATION_NO    
+*   **DEST_STATION_NO**: **<span style="color:green;">Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (1301, 1302, 1205, 1206, 1207, 1208, 1209)**    
+*   **PRIORITY**: Value from screen ⟶ **<span style="color:green;">(1:Urgent, 2:Normal)</span>**
+*   **CANCEL_REQUEST**: 0:Not Requested    
+*   **SCHEDULE_NO**: Sequence Object    
+*   **CARRY_FLAG**: 2:Retrieval
+*   **CANCEL_REQUEST**: 0:Not requested
+*   **AISLE_STATION_NO**: DMSHELF.PARENT_STATION_NO
+*   **END_STATION_NO**: DNCARRYINFO.DEST_STATION_NO  
+*   **REGIST_DATE**: SYSTIMESTAMP    
+*   **REGIST_PNAME**: ClassName    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: ClassName
+
 #Retrieval-Sender
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalSender&nbsp;</span>
 
