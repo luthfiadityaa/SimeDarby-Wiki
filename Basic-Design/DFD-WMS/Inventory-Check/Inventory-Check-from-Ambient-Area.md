@@ -41,6 +41,7 @@ P1[FROM AISLE STATION - 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014]-->P2[Ret
 | Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HTSD | OPRR | ITEM | STSN | INVC |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
 | Inquiry Retrieval - Set(F2) [(1)](#inventory-check---set(f2))  |   U  |   I  |   I  |   I  |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   I  |
+| Retrieval Sender [(2)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
 # Inventory Check - Set(F2)
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wms.web.display.retrieval.inventorycheck.InventoryCheckSCH` &nbsp;</span>
@@ -214,6 +215,72 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 - REGIST_PNAME       = ClassName
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = ClassName
+
+# Retrieval Sender
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.transmission.RetrievalSender` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+retrievalsender-input[("
+DNCARRYINFO
+")]
+
+retrievalsender-update[("
+DNCARRYINFO
+DNPALLET
+DNSTOCK
+")]
+
+id12msg("
+ID 12
+")
+
+retrievalsender--SEND-->id12msg
+retrievalsender-input-->retrievalsender-.UPDATE.->retrievalsender-update
+:::
+
+For Inventory Check performed in ASRS where there is creation of DNCARRYINFO, DNCARRYNFO data will be processed in Retrieval Sender. ID 12 will be sent after related tables are updated successfully.
+
+## DNCARRYINFO
+- CMD_STATUS = 2:Waiting for response
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
+## DNPALLET
+- STATUS_FLAG = 4:Being retrieved
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
+# ID32
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.communication.control.Id32Proces` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id32("
+ID 32
+")
+
+id32-update[("
+DNCARRYINFO
+")]
+
+id32-->id32process
+id32process-.UPDATE.->id32-update
+:::
+
+ID32 sent from AGC to WareNavi indicate AGC responded the retrieval job by WareNavi.
+
+## DNCARRYINFO
+- CMD_STATUS: 3:Commanded
+- ERROR_CODE: 0
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
 
 
 # User Story
