@@ -158,7 +158,7 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 - WORK_NO = Sequence Object    
 - RETRIEVAL_STATION_NO = DNSTOCK.LOCATION_NO
 - SOURCE_STATION_NO = DNPALLET.CURRENT_STATION_NO    
-- DEST_STATION_NO = Based on **SOURCE_STATION_NO** where a reserved location belongs to ⟶ **(1201, 1202, 1203, 1204**)
+- DEST_STATION_NO = Based on **SOURCE_STATION_NO** where a reserved location belongs to ⟶ **(1201, 1202, 1203, 1204)**
 - PRIORITY = Value from screen **(Dropdown ⟶ 1:Urgent / 2: Normal)**
 - CANCEL_REQUEST = 0: Not Requested    
 - SCHEDULE_NO = Sequence Object    
