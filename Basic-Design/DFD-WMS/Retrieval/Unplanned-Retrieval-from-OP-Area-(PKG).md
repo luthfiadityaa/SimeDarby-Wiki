@@ -157,6 +157,7 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 - RESTORING_FLAG = 0 :Not Restore to Original Location  
 - WORK_NO = Sequence Object    
 - RETRIEVAL_STATION_NO = DNSTOCK.LOCATION_NO
+- RETRIEVAL_DETAIL = 1: Unit Retrieval
 - SOURCE_STATION_NO = DNPALLET.CURRENT_STATION_NO    
 - DEST_STATION_NO = Based on **SOURCE_STATION_NO** where a reserved location belongs to ⟶ **(1201, 1202, 1203, 1204)**
 - PRIORITY = Value from screen **(Dropdown ⟶ 1:Urgent / 2: Normal)**
