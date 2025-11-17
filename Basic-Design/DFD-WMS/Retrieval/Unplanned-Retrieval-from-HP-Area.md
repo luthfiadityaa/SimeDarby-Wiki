@@ -161,6 +161,7 @@ flowchart LR
 *   **BATCH_NO**: Value from screen (Batch #)    
 *   **MATERIAL_CODE**: Value from screen (Material Code)    
 *   **MATERIAL_NAME**: Value from screen (Material Name)    
+*   **MATERIAL_TYPE**: Value from screen (Material Type) 
 *   **PLAN_QTY**: Value from screen (Retrieval Qty)    
 *   **QTY_KG_CRTN**: Value from screen (Qty kg/crtn)    
 *   **QTY_CRTN_PL**: Value from screen (Qty crtn/PL)    
