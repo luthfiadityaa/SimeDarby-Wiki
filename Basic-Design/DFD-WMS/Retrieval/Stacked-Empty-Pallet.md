@@ -37,7 +37,7 @@ P1[FROM AISLE STATION - 9007, 9008, 9009, 9010]-->P2[ID66]-->P3[RetrievalTrigger
 | ID32[(4)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    
 | ID33[(5)](#ID33)                                                                |    |    |    | U  |    |    |     |    | U  |    |    |    |    |    |     
 | ID64[(6)](#ID64)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |
-| ID68[(7)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    | I  |    |
+| ID68[(7)](#ID68)                                                                |    |    |    | S  |    |    |     |    |    |    |    |    | I  |    |
 | ID26[(8)](#ID26)                                                                | U  | I  | D  | D  | D  | I  |     |    | U  | I  |    |    |    | I  |
 
 #ID66
@@ -356,7 +356,6 @@ After the completion button flashes, the operator removes the pallet and presses
 *   **SHORTAGE_QTY**: DNWORKINFO.PLAN_QTY - DNWORKINFO.RESULT_QTY
 *   **RESULT_AREA_NO**: DNWORKINFO.PLAN_AREA_NO
 *   **RESULT_LOCATION_NO**: DNWORKINFO.PLAN_LOCATION_NO
-*   **RESULT_LOT_NO**: DNWORKINFO.PLAN_LOT_NO
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY
 *   **USER_ID**: Login info
 *   **TERMINAL_NO**: Login info
@@ -414,7 +413,6 @@ After the completion button flashes, the operator removes the pallet and presses
 *   **SHORTAGE_QTY**: DNWORKINFO.SHORTAGE_QTY    
 *   **RESULT_AREA_NO**: DNWORKINFO.RESULT_AREA_NO    
 *   **RESULT_LOCATION_NO**: DNWORKINFO.RESULT_LOCATION_NO    
-*   **RESULT_LOT_NO**: DNWORKINFO.RESULT_LOT_NO
 *   **USER_ID**: DNWORKINFO.USER_ID    
 *   **TERMINAL_NO**: DNWORKINFO.TERMINAL_NO    
 *   **WORK_SECOND**: DNWORKINFO.WORK_SECOND    
