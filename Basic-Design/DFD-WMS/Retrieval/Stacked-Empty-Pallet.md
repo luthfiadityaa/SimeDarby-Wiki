@@ -170,6 +170,138 @@ All Empty Pallet Retrieval operation at Ambient will be retrieved to Station 121
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
+#ID32
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id32Process&nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id32("
+ID 32
+")
+
+id32-update[("
+DNCARRYINFO
+")]
+
+id32-->id32process
+id32process--> |UPDATE| id32-update
+:::
+
+ID32 sent from AGC to WareNavi indicate AGC responded the retrieval job by WareNavi.
+
+##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+* **CMD_STATUS**: 3:Commanded
+* **ERROR_CODE**: 0
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
+
+#ID33
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.wcs.mc.as21.communication.control.Id33Process&nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id33("
+ID 33
+")
+
+id33-update[("
+DMSHELF
+DNCARRYINFO
+")]
+
+id33-->id33process
+id33process--> |UPDATE| id33-update
+:::
+
+ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi that the Pallet/Bin is out of rack and is being transferred to related Station.
+
+##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###<span style="color:skyblue; font-weight:bold">DMSHELF</span>
+* **STATUS_FLAG**: 0:Empty
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+
+###<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+* **CMD_STATUS**: 5:Retrieval completed
+* **RETRIEVAL_STATION_NO**: DMSHELF.STATION_NO
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
+
 #ID64
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id64("
+ID 64
+")
+
+id64-update[("
+DNCARRYINFO
+")]
+
+id64-->id64process
+id64process-.U.->id64-update
+:::
+
+Upon equipment have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
+
+##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+* **CMD_STATUS**: 4:Pickup completed
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
+
+#ID68
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id68Process &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id68("
+ID 68
+")
+
+id68-select[("
+DNCARRYINFO
+DNWORKINFO
+")]
+
+id68-insert[("
+DNOPERATIONDISPLAY
+")]
+
+id68-select-->id68
+id68-->id68process
+id68process--> |INSERT| id68-insert
+:::
+
+ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related Station in ASRS. Upon receiving of ID68, insertion of data will be executed.
+
+##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###<span style="color:skyblue; font-weight:bold">DNOPERATIONDISPLAY</span>
+* **CARRY_KEY**: MC Key information from ID68
+* **STATION_NO**: Station information from ID68
+* **MATERIAL_CODE**: **<span style="color:green">DNWORKINFO.MATERIAL_CODE</span>**
+* **RETRIEVAL_QTY**: **<span style="color:green">DNWORKINFO.STOCK_QTY</span>**
+* **DOCK_NO**: **<span style="color:green">DNWORKINFO.DOCK_NO</span>**
+* **TRUCK_PLATE_NO**: **<span style="color:green">DNWORKINFO.TRUCK_PLATE_NO</span>**
+* **ARRIAL_DATE**: SYSTIMESTAMP
+* **REGIST_PNAME**: Class name
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
+
+##<span style="color:skyblue; font-weight:bold">LED sign displays the work</span>  
+[Display information]
+* **Job Type**
+* **Material Code**
+* **Qty**
+* **Dock No**
+* **Truck Plate No**
+
+![image.png](/.attachments/image-1e56dc6e-657e-47ff-9a47-575b04705583.png)
 
 #ID26
