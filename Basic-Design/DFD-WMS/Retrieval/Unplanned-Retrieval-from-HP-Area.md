@@ -249,7 +249,7 @@ DNCARRYINFO
 ")]
 
 id32-->id32process
-id32process-.U.->id32-update
+id32process--> |UPDATE| id32-update
 :::
 
 ID32 sent from AGC to WareNavi indicate AGC responded the retrieval job by WareNavi.
