@@ -158,7 +158,7 @@ flowchart LR
 *   **PLAN_AREA_NO**: DNSTOCK.AREANO   
 *   **PLAN_LOCATION_NO**: DNSTOCK.LOCATION_NO
 *   **PLAN_DAY**: DMWARENAVISYSTEM.WORK_DAY    
-*   **BATCH_NO**: Value from screen (Batch #)    
+*   **BATCH_NO**: DNSTOCK.BATCH_NO    
 *   **MATERIAL_CODE**: Value from screen (Material Code)    
 *   **MATERIAL_NAME**: Value from screen (Material Name)    
 *   **MATERIAL_TYPE**: Value from screen (Material Type) 
