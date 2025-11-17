@@ -382,7 +382,7 @@ After the completion button flashes, the operator removes the pallet and presses
 - JOB_TYPE           = DNWORKINFO.JOB_TYPE
 - PLAN_UKEY          = DNWORKINFO.PLAN_UKEY
 - STOCK_ID           = DNWORKINFO.STOCK_ID
-- PALLET_ID          = DNPALLET.PALLET_ID
+- PALLET_ID          = DNCARRYINFO.PALLET_ID
 - PLAN_DAY           = DNWORKINFO.PLAN_DAY
 - COMPANY_CODE       = DNWORKINFO.COMPANY_CODE
 - BATCH_NO           = DNWORKINDO.BATCH_NO
