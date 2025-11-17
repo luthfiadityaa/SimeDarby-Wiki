@@ -285,23 +285,9 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 ###<span style="color:skyblue; font-weight:bold">DNOPERATIONDISPLAY</span>
 * **CARRY_KEY**: MC Key information from ID68
 * **STATION_NO**: Station information from ID68
-* **MATERIAL_CODE**: **<span style="color:green">DNWORKINFO.MATERIAL_CODE</span>**
-* **RETRIEVAL_QTY**: **<span style="color:green">DNWORKINFO.STOCK_QTY</span>**
-* **DOCK_NO**: **<span style="color:green">DNWORKINFO.DOCK_NO</span>**
-* **TRUCK_PLATE_NO**: **<span style="color:green">DNWORKINFO.TRUCK_PLATE_NO</span>**
 * **ARRIAL_DATE**: SYSTIMESTAMP
 * **REGIST_PNAME**: Class name
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
-
-##<span style="color:skyblue; font-weight:bold">LED sign displays the work</span>  
-[Display information]
-* **Job Type**
-* **Material Code**
-* **Qty**
-* **Dock No**
-* **Truck Plate No**
-
-![image.png](/.attachments/image-1e56dc6e-657e-47ff-9a47-575b04705583.png)
 
 #ID26
