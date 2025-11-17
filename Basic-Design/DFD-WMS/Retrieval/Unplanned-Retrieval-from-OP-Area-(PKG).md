@@ -41,40 +41,12 @@ P1[FROM AISLE STATION - 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID32]
 ## Inbound Table Data Flow
 | Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HTSD | OPRR | ITEM | STSN | TTSN |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
-| ID63 [(1)](#id63)                                              |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| Inquiry Retrieval - Set (F2) [(2)](#inquiry-retrieval---set-(f2))|   S  |      |   I  |   I  |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   S  | 
-| Retrieval Sender [(3)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
-| ID32 [(4)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
-| ID33 [(5)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
-| ID68 [(6)](#id68)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
-| ID26 [(7)](#id26)                                              |   D  |   U  |   I  |   D  |   D  |      |      |  U   |      |      |   I  |      |      |      |      |
-
-# Mode Change Station
-##ID63
-If the station mode is **Storage Mode**, change the mode of the station to **Retrieval mode**.
-**Only For 1301 & 1302**. If not, start from [Inquiry Retrieval Setting - Set(F2)](#inquiry-retrieval---set-(f2))
-
-::: mermaid
-flowchart LR
-    input[
-        Operators pressed the storage mode button on the operation box.      
-    ]
-
-    id61msg("
-     ID63
-    ")
-    tableList-update[("
-        DMSTATION
-    ")]
-
-    input -->id61msg-->id63process--> |UPDATE| tableList-update
-
-    classDef leftAlign text-align:left;
-    class input leftAlign;
-:::
-
-## DMSTATION
-- CURRENT_MODE = 2:Retrieval Mode
+| Inquiry Retrieval - Set (F2) [(1)](#inquiry-retrieval---set-(f2))|   S  |      |   I  |   I  |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   S  | 
+| Retrieval Sender [(2)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID32 [(3)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID33 [(4)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
+| ID68 [(5)](#id68)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
+| ID26 [(6)](#id26)                                              |   D  |   U  |   I  |   D  |   D  |      |      |  U   |      |      |   I  |      |      |      |      |
 
 # Inquiry Retrieval - Set (F2)
 
