@@ -72,7 +72,7 @@ flowchart LR
 *   **PLAN_DAY**: DMWARENAVISYSTEM.WORK_DAY       
 *   **MATERIAL_CODE**: **<span style="color:green">EMP_PB</span>**   
 *   **MATERIAL_NAME**: **<span style="color:green">Empty Pallet</span>** 
-*   **PLAN_QTY**: DNSTOCK.STOCK_QTY)       
+*   **PLAN_QTY**: DNSTOCK.STOCK_QTY     
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY  
 *   **BCR_DATA**: DNPALLET.BCR_DATA  
 *   **USER_ID**: Login Info     
