@@ -50,6 +50,8 @@ P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9
 
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
 ##ID63
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.control.Id63Process&nbsp;</span>
+
 If the station mode is **Storage Mode**, change the mode of the station to **Retrieval mode**.
 **<span style="color:green">Only For 1301 & 1302.</span>** If not, start from [Inquiry Retrieval Setting - Set(F2)](#Inquiry-Retrieval-Setting---Set(F2))
 
