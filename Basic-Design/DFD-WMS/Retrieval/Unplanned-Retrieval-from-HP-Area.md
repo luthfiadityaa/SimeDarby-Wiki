@@ -163,7 +163,7 @@ flowchart LR
 *   **MATERIAL_NAME**: DMITEM.MATERIAL_NAME    
 *   **MATERIAL_TYPE**: DMITEM.MATERIAL_TYPE 
 *   **PLAN_QTY**: Value from screen (Retrieval Qty / Stock Qty)    
-*   **TEMPERING_PERIOD**: Value from screen (Tempering Period)    
+*   **TEMPERING_PERIOD**: DNSTOCK.TEMPERING_PERIOD    
 *   **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE
 *   **QC_DURATION**: DNSTOCK.QC_DURATION
     **QC_CHECK_FLAG**: DNSTOCK_QC_CHECK_FLAG    
