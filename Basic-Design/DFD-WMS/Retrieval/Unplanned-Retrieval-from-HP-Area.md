@@ -315,9 +315,9 @@ Upon equipment have picked up the Pallet successfully, ID64 will be sent from AG
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ###<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
-- **CMD_STATUS**: 4:Pickup completed
-- **LAST_UPDATE_DATE**: = SYSTIMESTAMP
-- **LAST_UPDATE_PNAME**: = Class name
+* **CMD_STATUS**: 4:Pickup completed
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
 
 #ID68
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id68Process &nbsp;</span>
