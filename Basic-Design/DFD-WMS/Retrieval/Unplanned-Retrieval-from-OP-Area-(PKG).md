@@ -154,7 +154,8 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 - WORK_TYPE = 23:Unplanned Retrieval    
 - CMD_STATUS = 1:Started    
 - PRIORITY = 2:Normal    
-- RESTORING_FLAG = 0 :Not Restore to Original Location  
+- RESTORING_FLAG = 0 :Not Restore to Original Location
+- CARRY_FLAG = 2:Retrieval  
 - WORK_NO = Sequence Object    
 - RETRIEVAL_STATION_NO = DNSTOCK.LOCATION_NO
 - SOURCE_STATION_NO = DNPALLET.CURRENT_STATION_NO    
