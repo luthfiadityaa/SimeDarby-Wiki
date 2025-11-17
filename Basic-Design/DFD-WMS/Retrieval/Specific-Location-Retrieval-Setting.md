@@ -332,6 +332,18 @@ ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
+<hr>
+
+#<span style="color:skyblue; font-weight:bold">Continue Process with</span>
+- ###[Flow 1 : through crane 7-10](#)
+- ###[Flow 2 : not through crane 7-10](#)
+- ###[FFlow 3 / Last Process: Only for 1201-1204 Directly to this process](#)
+
+<hr>
+
+
+
+
 #ID64
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id64Process &nbsp;</span>
 
