@@ -322,10 +322,16 @@ id68("
 ID 68
 ")
 
+id68-select[("
+DNCARRYINFO
+DNSTOCK
+")]
+
 id68-insert[("
 DNOPERATIONDISPLAY
 ")]
 
+id68-select-->id68
 id68-->id68process
 id68process--> |INSERT| id68-insert
 :::
