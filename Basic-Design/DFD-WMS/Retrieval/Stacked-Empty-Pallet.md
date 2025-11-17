@@ -31,11 +31,8 @@ P1[FROM AISLE STATION - 9007, 9008, 9009, 9010]-->P2[ID66]-->P3[RetrievalTrigger
 #<span style="color:skyblue; font-weight:bold">Empty Stacked database flow</span>
 | Action Name                                                                     |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN|TTSN|OPRD|INOUT| 
 |---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|----|
-| **Only For 1301 & 1302**                                                        |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| ID63 [(1)](#ID63)                                                               |    |    |    |    |    |    |     |    |    |    |    | U  |    |    |    |
-| **Directly For 1205,1206,1207,1208,1209**                                       |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| Inquiry Retrieval Setting - Set(F2) [(1)](#Inquiry-Retrieval-Setting---Set(F2)) | I  |    | S  | I  | S  |    |     | S  | S  |    | S  | S  | S  |    |    |
-| Inquiry Retrieval Setting - Cancel Entries(F11) [(2)](#Inquiry-Retrieval-Setting---Cancel-Entries(F11)) | I  |    | S  | I  | S  |    |     | S  | S  |    | S  | S  | S  |    |    |
+| ID66 [(1)](#I66)                                                                | I  |    | S  | I  | S  |    |     | S  | S  |    | S  | S  | S  |    |    |
+| Retrieval Trigger Allocator [(2)](#Retrieval-Trigger-Allocator))                | I  |    | S  | I  | S  |    |     | S  | S  |    | S  | S  | S  |    |    |
 | RetrievalSender[(2)](#Retrieval-Sender)                                         |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |    |  
 | ID32[(3)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |    
 | ID33[(4)](#ID33)                                                                |    |    |    | U  |    |    |     |    | U  |    |    |    |    |    |    |     
