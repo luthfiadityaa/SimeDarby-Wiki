@@ -1,6 +1,3 @@
-#<span style="color:skyblue; font-weight:bold">Retrieval from 1301, 1302, 1205, 1206, 1207, 1208, 1209</span>
-![image.png](/.attachments/image-0a629e0c-d766-4b61-aba2-f968f908bd60.png)
-
 #<span style="color:skyblue; font-weight:bold">Summary Flow</span>
 ::: mermaid
 flowchart LR
@@ -84,8 +81,9 @@ flowchart LR
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.InquiryRetrievalSettingSCH &nbsp;</span>
 
  ![==image_0==.jpg](/.attachments/==image_0==-58f99576-be7b-41a4-bc02-6cef92ce5b43.jpg) 
-
-The Inquiry Retrieval Setting screen uses for manually set the retrieval work(UnitRetrieval).​ This screen uses when there are some troubles with Host System Linkage(Irregular Cases) or when manual operation is necessary.
+  
+The Specific Location Retrieval Setting screen uses for manually set the retrieval work through specific location(Unit Retrieval or Only Confirmation).
+ This screen mainly uses when there are some troubles with Host System Linkage(irregular cases) or when manual operation is necessary. Especially for retrieving Error Stock.
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
 This section explains the validations for the whole proccess Unplanned Retrieval
