@@ -301,7 +301,7 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 
 ##LED DISPLAY
 [Display information]
-- job Type
+- Job Type
 - Material Code
 - Qty
 
