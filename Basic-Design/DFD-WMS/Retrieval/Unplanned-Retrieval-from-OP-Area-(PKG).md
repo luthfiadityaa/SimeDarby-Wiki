@@ -120,7 +120,8 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 - SETTING_UNIT_KEY = Sequence Object    
 - COLLECT_JOB_NO = Sequence Object    
 - JOB_TYPE = 23: Unplanned Retrieval    
-- STATUS_FLAG = 0: Not Started    
+- STATUS_FLAG = 1: Working
+- HARDWARE_TYPE = 3: ASRS    
 - PLAN_UKEY = Sequence Object    
 - STOCK_ID = DNSTOCK.STOCKID    
 - PLAN_AREA_NO = DNSTOCK.AREA_NO   
