@@ -376,8 +376,8 @@ After the completion button flashes, the operator removes the pallet and presses
 *   **PLAN_AREA_NO**: DNWOKINFO.PLAN_AREA_NO    
 *   **MATERIAL_CODE**: DNWORKINFO.MATERIAL_CODE    
 *   **MATERIAL_NAME**: DMMASTERIALMASTER.MATERIAL_NAME    
-*   **STORAGE_TYPE**: DNWORKINFO.STORAGE_TYPE    
-*   **STORAGE_DATE**: DNSTORAGEPLAN.PLAN_DAY    
+*   **RETIREVAL_DETAIL**: DNWORKINFO.STORAGE_TYPE    
+*   **RETRIEVAL_STATION_NO**: **<span style="color:green">1210</span>**    
 *   **PLAN_QTY**: DNWORKINFO.PLAN_QTY    
 *   **STOCK_QTY**: DNWORKINFO.STOCK_QTY   
 *   **USER_ID**: DNWORKINFO.USER_ID    
