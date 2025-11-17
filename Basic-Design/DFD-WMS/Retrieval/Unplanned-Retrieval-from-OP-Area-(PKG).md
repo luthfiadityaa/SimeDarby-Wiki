@@ -124,7 +124,10 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 - STOCK_ID = DNSTOCK.STOCKID    
 - PLAN_AREA_NO = DNSTOCK.AREA_NO   
 - PLAN_LOCATION_NO = DNSTOCK.LOCATION_NO
-- PLAN_DAY = DMWARENAVISYSTEM.WORK_DAY    
+- PLAN_DAY = DMWARENAVISYSTEM.WORK_DAY
+- VENDOR_CODE = DNSTOCK.VENDOR_CODE
+- VENDOR_NAME = DNSTOCK.VENDOR_NAME
+- COMPANY_CODE = DNSTOCK.COMPANY_CODE    
 - BATCH_NO = Value from screen (**Batch #**)    
 - MATERIAL_CODE = Value from screen (**Material Code**)    
 - MATERIAL_NAME = Value from screen (**Material Name**)    
@@ -340,28 +343,37 @@ retrievaloperator--> |DELETE| id26-delete
 
 After the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. At the same time, sending ID 26 to the id26process, then delete related records from DNPALLET, DNCARRYINFO, and DNSTOCK.
 
-## DNWORKINFO
-- JOB_NO = Sequence Object
-- SETTING_UNIT_KEY = 
-- COLLECT_JOB_NO = Sequence Object
-- JOB_TYPE = 02:Storage
-- STATUS_FLAG = 4:Completed
-- HARDWARE_TYPE = 3:ASRS
-- PLAN_UKEY = Sequence Object
-- STOCK_ID = DNSTOCK.STOCK_ID
-- SYSTEM_CONN_KEY = DNCARRYINFO.CARRY_KEY
-- PLAN_DAY = DMWARENAVISYSTEM.WORK_DAY
-- PLAN_AREA_NO = Area Number where a reserved location belongs to
-- PLAN_LOCATION_NO = DNCARRYINFO.
-- PLAN_QTY = 1
-- WORK_DAY = DMWARENAVISYSTEM.WORK_DAY
-- USER_ID = Login Info
-- TERMINAL_NO = Login Terminal
-- STORING_PAIR_KEY =
-- REGIST_DATE = SYSTIMESTAMP
-- REGIST_PNAME = ClassName
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = ClassName
+## DNWORKLIST
+- JOB_NO             = DNWORKINFO.JOB_NO
+- CARRY_KEY          = DNWORKINFO.SYSTEM_CONN_KEY
+- SETTING_UNIT_KEY   = DNWORKINFO.SETTING_UNIT_KEY
+- COLLECT_JOB_NO     = DNWORKINFO.COLLECT_JOB_NO
+- JOB_TYPE           = DNWORKINFO.JOB_TYPE
+- PLAN_UKEY          = DNWORKINFO.PLAN_UKEY
+- STOCK_ID           = DNWORKINFO.STOCK_ID
+- PALLET_ID          = DNPALLET.PALLET_ID
+- PLAN_DAY           = DNWORKINFO.PLAN_DAY
+- COMPANY_CODE       = DNWORKINFO.COMPANY_CODE
+- BATCH_NO           = DNWORKINDO.BATCH_NO
+- PLAN_AREA_NO       = DNWORKINFO.PLAN_AREA_NO
+- PLAN_LOCATION_NO   = DNWORKINFO.PLAN_LOCATION_NO
+- MATERIAL_CODE      = DNWORKINFO.MATERIAL_CODE
+- ALLOCATION_QTY     = 1
+- RETRIEVAL_STATION_NO = Arrival Station Number from **ID26** 
+- RETRIEVAL_DETAIL   = 1:Unit Retrieval
+- WORK_NO            = DNWORKINFO.JOB_NO
+- SOURCE_STATION_NO  = DNCARRYINFO.SOURCE_STATION_NO
+- DEST_STATION_NO    = DNCARRYINFO.DEST_STATION_NO
+- SCHEDULE_NO        = DNCARRYINFO.SCHEDULE_NO
+- END_STATION_NO     = DNCARRYINFO.END_STATION_NO
+- USER_ID            = Login Info
+- USER_NAME          = Login Info
+- TERMINAL_NO        = Login Terminal
+- REGIST_DATE        = SYSTIMESTAMP                                                    
+- REGIST_PNAME       = ClassName
+- LAST_UPDATE_DATE   = SYSTIMESTAMP
+- LAST_UPDATE_PNAME  = ClassName
+
 
 # User Story
   - #5776
