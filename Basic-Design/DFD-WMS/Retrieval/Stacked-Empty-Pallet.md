@@ -57,6 +57,7 @@ flowchart LR
 **LAST_UPDATE_PNAME**: Id66Process
 
 #Retrieval Trigger Allocator
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalTriggerAllocator&nbsp;</span>
 
 ::: mermaid
 flowchart LR    
