@@ -501,7 +501,7 @@ After the completion button flashes, the operator removes the pallet and presses
 *   **MATERIAL_CODE**: DNWORKINFO.MATERIAL_CODE    
 *   **MATERIAL_NAME**: DMITEM.MATERIAL_NAME    
 *   **UOM**: MMATERIALMASTER.UOM    
-*   **ENTERING_QTY**: DNSTOCK.STOCK_QTY    Y    
+*   **ENTERING_QTY**: DNSTOCK.STOCK_QTY      
 *   **PLAN_QTY**: DNWORKINFO.PLAN_QTY    
 *   **RESULT_QTY**: DNWORKINFO.RESULT_QTY    
 *   **SHORTAGE_QTY**: DNWORKINFO.SHORTAGE_QTY    
