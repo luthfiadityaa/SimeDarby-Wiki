@@ -8,7 +8,7 @@ flowchart LR
 P1[FROM AISLE STATION - 9007, 9008, 9009, 9010]-->P2[ID66]-->P3[RetrievalTriggerAllocator]-->P4[RetrievalSender]-->P5[ID32]-->P6[ID33]-->P7[ID64]-->P8[ID68]-->P9[ID26]-->P10[To STATION - 1210] 
 :::
 
-#<span style="color:skyblue; font-weight:bold">Unplanned Storage database flow</span>
+#<span style="color:skyblue; font-weight:bold">Empty Stacked database flow</span>
 **Abbreviation:**
 - **WRKI** : DNWORKINFO  
 - **WRKL** : DNWORKINFOLIST  
@@ -28,7 +28,7 @@ P1[FROM AISLE STATION - 9007, 9008, 9009, 9010]-->P2[ID66]-->P3[RetrievalTrigger
   - **D** : DELETE
   - **S** : SELECT 
 
-#<span style="color:skyblue; font-weight:bold">Empty Stacked database flow</span>
+
 | Action Name                                                                     |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN|OPRD|INOUT| 
 |---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|
 | ID66 [(1)](#I66)                                                                |    |    |    |    |    |    |     |    |    |    |    | U  |    |    |
