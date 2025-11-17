@@ -121,7 +121,7 @@ Next, the Retrieval Trigger Allocator will assign stock items that are eligible 
 *   **RESTORING_FLAG**: 0:Not Restore to Original Location  
 *   **WORK_NO**: Sequence Object    
 *   **RETRIEVAL_STATION_NO**: DNSTOCK.LOCATION_NO
-*   **SOURCE_STATION_NO**: DNPALLET.CURRENT_STATION_NO    
+*   **SOURCE_STATION_NO**: DNPALLET.CURRENT_STATION_NO -> **<span style="color:green;">(9007,9008,9009,910)</span>**   
 *   **DEST_STATION_NO**: **<span style="color:green;">1210**    
 *   **CANCEL_REQUEST**: 0:Not Requested    
 *   **SCHEDULE_NO**: Sequence Object    
