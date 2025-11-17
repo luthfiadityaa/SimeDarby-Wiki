@@ -78,9 +78,9 @@ flowchart LR
 
 #Inquiry Retrieval Setting - Set(F2)
 
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.InquiryRetrievalSettingSCH &nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.SpecificLocationRetrievalSettingSCH &nbsp;</span>
 
- ![==image_0==.jpg](/.attachments/==image_0==-58f99576-be7b-41a4-bc02-6cef92ce5b43.jpg) 
+ ![==image_0==.jpg](/.attachments/==image_0==-0f7ad1cc-fe5d-4f53-9b15-1c9fecf90cd0.jpg) 
   
 The Specific Location Retrieval Setting screen uses for manually set the retrieval work through specific location(Unit Retrieval or Only Confirmation).
  This screen mainly uses when there are some troubles with Host System Linkage(irregular cases) or when manual operation is necessary. Especially for retrieving Error Stock.
