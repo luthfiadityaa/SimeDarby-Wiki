@@ -199,6 +199,27 @@ flowchart LR
 *   **LAST_UPDATE_PNAME**: ClassName
 
 #Inquiry Retrieval Setting - Cancel(F11)
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.storage.palletizingsetting.InquiryRetrievalSettingSCH &nbsp;</span>
+
+::: mermaid
+flowchart LR
+     tableList-delete[("
+        DNWORKINFO
+        DNCARRYINFO
+    ")]
+
+     tableList-select[("
+        DNWORKINFO
+        DNCARRYINFO
+    ")]
+
+    className[InquiryRetrievalSettingSCH]
+
+    tableList-select --> className --> |DELETE| tableList-delete
+
+    classDef leftAlign text-align:left;
+    class input leftAlign;
+:::
 
 #Retrieval-Sender
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.wcs.mc.as21.transmission.RetrievalSender&nbsp;</span>
