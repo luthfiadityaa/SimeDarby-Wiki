@@ -449,18 +449,18 @@ retrievaloperator-.U.->id26-update
 After user clicked on Completion button at Station, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Storage Sender picks up the data.
 
 ## DNARRIVAL
-- ARRIVAL_DATE = SYSTIMESTAMP
-- STATION_NO = Arrival Station Number from ID26
-- CARRY_KEY = 99999999
-- BCR_DATA = Barcode information from ID26
-- CONTROLINFO = Control information from ID26
-- SEND_FLAG = 0:Not sent
-- HEIGHT = Dimension Information from ID26
-- WIDTH = Dimension Information From ID26
-- REGIST_DATE = SYSTIMESTAMP
-- REGIST_PNAME = Class name
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+* **ARRIVAL_DATE**: SYSTIMESTAMP
+* **STATION_NO**: Arrival Station Number from ID26
+* **CARRY_KEY**: 99999999
+* **BCR_DATA**: Barcode information from ID26
+* **CONTROLINFO**: Control information from ID26
+* **SEND_FLAG**: 0:Not sent
+* **HEIGHT**: Dimension Information from ID26
+* **WIDTH**: Dimension Information From ID26
+* **REGIST_DATE**: SYSTIMESTAMP
+* **REGIST_PNAME**: Class name
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
 
 ## DNCARRYINFO
 - CMD_STATUS = 1:Started
