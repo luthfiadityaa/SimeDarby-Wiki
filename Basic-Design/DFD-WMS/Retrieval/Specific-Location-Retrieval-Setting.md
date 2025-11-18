@@ -22,7 +22,11 @@ Cond1{Flow?}
 
 Cond1{Flow?}--> |Flow 1: Thorugh crane 7-10 only for 1303| P5[ID64]--> |7207-7210| P8[ID26]-->P9[Retrieval Sender]-->P10[ID25]--> |SRM| P11[ID64]--> |STV| P12[ID64]--> |1303| P7[ID68]
 Cond1{Flow?}--> |Flow 2: Not through crane 7-10| P6[ID64]--> |1205-1209 and 1301-1302| P7[ID68]
-Cond1{Flow?}--> |Flow 3: for 1201-1204 directly to this process| P7[ID68]-->P13[ID26]
+Cond1{Flow?}--> |Flow 3: for 1201-1204 directly to this process| P7[ID68]
+
+P7[ID68]-->Cond2{Retrieval Type?} 
+Cond2{Retrieval Type?}-->P13[ID26]
+Cond2{Retrieval Type?}-->P13[ID45]
 :::
 
 **Stage 4 - only for Picking Operation at 1301,1302,1303**
