@@ -210,7 +210,7 @@ DNPALLET
 
 inoutstationoperator[RetrievalStationOperator]
 
-releaseCommand-->id26msg-->id26process-->inoutstationoperator
+releaseCommand-->id26msg-->id12process-->inoutstationoperator
 inoutstationoperator--> |INSERT| id26-insert
 :::
 
