@@ -608,7 +608,7 @@ Upon equipment have picked up the Pallet successfully, ID64 will be sent from AG
 <hr>
 
 #Flow 2
-**<h3>not through crane 7-10</h3>** 
+**<h2>not through crane 7-10</h2>** 
 Refer to AGC Linkage Specs: [AGCⅦA Linkage Specs_1.2.7_AF954201_SimeDarby_v1.1.xlsx - Retrieval Section - 14 Sheets](https://daifuku.sharepoint.com/:x:/r/sites/jp0211039/Shared%20Documents/PTDI/Projects/PT.%20Guthrie%20Indonesia%20Sei%20Mangkei%20Refinery(Sime%20Darby)/Garuda%20Project/F.%20Basic%20Design/A.%20AGC%20Linkage%20Specs/AGC%E2%85%A6A%20Linkage%20Specs_1.2.7_AF954201_SimeDarby_v1.1.xlsx?d=w31ccf4d7958e4ea989446a6ac5a1a566&csf=1&web=1&e=J2FP9Y)
 
 ##ID64 at STV from 9001-9014
