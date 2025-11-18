@@ -544,7 +544,7 @@ After the completion button flashes, the operator removes the pallet and presses
 *   **LAST_UPDATE_PNAME**: Class name
 
 #Unplanned Storage and Retrieval Result
-- (https://dev.azure.com/DaifukuSW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result)
+- [Unplanned Storage and Retrieval Results](https://dev.azure.com/DaifukuSW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result)
 
 <hr>
 
