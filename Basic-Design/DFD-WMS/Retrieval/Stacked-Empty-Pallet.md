@@ -439,3 +439,11 @@ After the completion button flashes, the operator removes the pallet and presses
 *   **REGIST_PNAME**: Class name
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP
 *   **LAST_UPDATE_PNAME**: Class name
+
+<hr>
+
+#User Story
+- [DFD Location Retrieval](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5792)
+
+#Related DFD
+- [Unplanned Storage and Retrieval Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result)
