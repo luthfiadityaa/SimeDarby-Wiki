@@ -253,7 +253,7 @@ flowchart LR
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.send.As21Id12&nbsp;</span>
 
-*1301 & 1302*
+*1301-1303*
 ::: mermaid
 flowchart LR
 
@@ -276,7 +276,7 @@ inoutstationoperator--> |INSERT| id26-insert
 inoutstationoperator--> |UPDATE| id26-update
 :::
 
-*1205-1209*
+*1201-1209*
 ::: mermaid
 flowchart LR
 
