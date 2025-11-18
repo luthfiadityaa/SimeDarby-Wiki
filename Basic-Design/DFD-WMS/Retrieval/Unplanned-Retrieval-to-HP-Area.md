@@ -286,7 +286,7 @@ ID 12
 ")
 
 retrievalsender-input-->retrievalsender--> |UPDATE| retrievalsender-update
-retrievalsender-->id12msg
+retrievalsender--> |SendText| id12msg
 :::
 
 All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station 1301, 1302, 1205, 1206, 1207, 1208, 1209 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
