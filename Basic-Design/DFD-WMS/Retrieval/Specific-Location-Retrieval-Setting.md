@@ -83,7 +83,7 @@ style P16 fill:#00cc66,stroke:#006633,color:#ffffff
 | ID64[(9)](#ID64-at-SRM-from-7207-7210)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
 | ID64[(10)](#ID64-at-STV-from-9007-910)                                                               |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
 | **Flow 2: Not through crane 7-10 for 1205-1209 and 1301-1302**                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| ID64[(5)](#ID64-at-STV-from-(9001-9014))                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
+| ID64[(5)](#ID64-at-STV-from-9001-9014)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
 | **Flow 3: for 1201-1204 directly to this process**                              |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | ID68[(11)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |    |
 | **Flow 4: Only Confirmation treat as Inventory Check**                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
