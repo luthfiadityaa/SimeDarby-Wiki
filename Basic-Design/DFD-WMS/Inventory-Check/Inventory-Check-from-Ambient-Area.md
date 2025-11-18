@@ -17,7 +17,7 @@ P1[FROM AISLE STATION - 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014]-->P2[Ret
 ::: mermaid
 flowchart LR
   
-P1[Operator Click Completion Button]-->P2[FROM AISLE STATION - 1301,1302]-->P3[ID26]-->P4[ID64]-->P5[ID33]
+P1[Work Display - Click Complete Button]-->P2[ID45]-->P3[ID26]-->P4[ID64]-->P5[ID33]
 :::
 
 ## Abbreviation
@@ -63,7 +63,8 @@ P1[Operator Click Completion Button]-->P2[FROM AISLE STATION - 1301,1302]-->P3[I
 # Inventory Check - Set(F2)
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wms.web.display.retrieval.inventorycheck.InventoryCheckSCH` &nbsp;</span>
-![image.png](/.attachments/image-30ccad7a-c7a3-44cb-aeba-8d19d917c4ea.png)
+
+![image.png](/.attachments/image-1d7c83f5-0bc5-41ad-ab76-6b162f697426.png)
   
 The Inventory Check Setting screen uses for manually set the inventory check work (**always Partial Pick, and retrieval qty = 0**).
 
@@ -475,9 +476,7 @@ After user successful click  **Complete** button, ID45 will be sent along from W
 
 # ID45
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.asrs.communication.id.recv.As21Id26` &nbsp;</span>
-jp.co.daifuku.wcs.mc.as21.communication.id.send.As21Id45
-
+`jp.co.daifuku.wcs.mc.as21.communication.id.send.As21Id45` &nbsp;</span>
 ::: mermaid
 flowchart LR
 
@@ -494,7 +493,7 @@ id45msg--> As21Id45
 As21Id45 --> buttonlight
 :::
 
-Sending of ID45 is sent to AGC when user clicked on **Complete** at Work Display where the Completion button at Control Box will start blinking. If user confirmed re-storing of pallet is safe to proceed, user can click on the blinking Completion button to proceed with transporting of pallet to Unit Load.
+Sending of ID45 is sent to AGC when user clicked on **Complete** at Work Display where the Completion button at Control Box will start blinking. If user confirmed re-storing of pallet is safe to proceed, user can click on the blinking Completion button to proceed with transporting of pallet to ASRS.
 
 # ID26
 
@@ -508,10 +507,13 @@ id26msg("
 ID 26
 ")
 
+id26-insert[("
+DNARRIVAL
+")]
+
 id26-update[("
 DNPALLET
 DNCARRYINFO
-DNWORKINFO
 ")]
 
 buttonclicked["
@@ -519,10 +521,25 @@ Station Completion
 button clicked
 "]
 
+id26process--> |INSERT| id26-insert
 buttonclicked-->id26msg-->id26process--> |UPDATE| id26-update
 :::
 
 After user clicked on Completion button at Station in Unit Load, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26.
+
+## DNARRIVAL
+- ARRIVAL_DATE =  SYSTIMESTAMP    
+- STATION_NO =  Arrival Station Number from ID26    
+- CARRY_KEY =  DNCARRYINFO.CARRY_KEY    
+- BCR_DATA =  Barcode information from ID26    
+- CONTROLINFO =  Control information from ID26    
+- SEND_FLAG =  0: Not sent    
+- HEIGHT =  Dimension Information from ID26    
+- WIDTH =  Dimension Information From ID26    
+- REGIST_DATE =  SYSTIMESTAMP    
+- REGIST_PNAME =  ClassName    
+- LAST_UPDATE_DATE =  SYSTIMESTAMP    
+- LAST_UPDATE_PNAME =  ClassName
 
 ## DNPALLET
 - CURRENT_STATION_NO = Station Number from **ID26**
@@ -541,7 +558,49 @@ After user clicked on Completion button at Station in Unit Load, AGC will send I
 - LAST_UPDATE_DATE = SYSTIMESTAMP    
 - LAST_UPDATE_PNAME = ClassName
 
-##DNWORKINFO
+#Storage Sender
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.asrs.transmission.StorageSender` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+automaticmodechangesender-update[("
+DNCARRYINFO
+DMWAREHOUSE
+DMSHELF
+DNWORKINFO
+DNARRIVAL
+")]
+automaticmodechangesender-input[("
+DNPALLET
+DNCARRYINFO
+")]
+
+id05msg("
+ID 05
+")
+
+automaticmodechangesender-input-->StorageSender-->id05msg
+StorageSender--> |UPDATE| automaticmodechangesender-update
+:::
+
+## DMWAREHOUSE
+- LAST_USED_STATION_NO = Aisle Number where a reserved location belongs to
+- LAST_USED_STATION_NO_PM = Aisle Number where a reserved location belongs to
+- LAST_USED_STATION_NO_EP = Aisle Number where a reserved location belongs to
+
+## DMSHELF
+*   **STATUS_FLAG =  2:Reserved Location    
+*   **LAST_UPDATE_DATE =  SYSTIMESTAMP
+
+## DNCARRYINFO
+- AISLE_STATION_NO = Aisle Number where a reserved location belongs to    
+- CMD_STATUS=  2:Waiting for response    
+- LAST_UPDATE_DATE = SYSTIMESTAMP    
+- LAST_UPDATE_PNAME = Class name
+
+## DNWORKINFO
 - JOB_TYPE = 2:Storage
 - STATUS_FLAG - 4: Completed
 - RESULT_AREA_NO = DNWORKINFO.PLAN_AREA_NO
@@ -549,6 +608,43 @@ After user clicked on Completion button at Station in Unit Load, AGC will send I
 - LAST_UPDATE_DATE = SYSTIMESTAMP    
 - LAST_UPDATE_PNAME = ClassName
 
+## DNARRIVAL   
+- SEND_FLAG =  1: Sent    
+- LAST_UPDATE_DATE =  SYSTIMESTAMP    
+- LAST_UPDATE_PNAME =  Class name
+
+# ID25
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id25("
+ID 25
+")
+
+id25-update[("
+DNCARRYINFO
+")]
+id25-delete[("
+DNARRIVAL
+")]
+
+id25-->id25process
+id25process-.UPDATE.->id25-update
+id25process-.DELETE.-xid25-delete
+
+:::
+
+ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
+
+## DNCARRYINFO
+- CMD_STATUS        = 3:Commanded
+- ERROR_CODE        =  0 
+- LAST_UPDATE_DATE  = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
 
 # ID64
 
@@ -576,6 +672,208 @@ Upon equipment **(STV)** have picked up the Pallet successfully, ID64 will be se
 - CMD_STATUS         = 4:Pickup completed
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = Class name
+
+# ID26(2)
+
+::: mermaid
+flowchart LR
+
+releaseCommand["
+Continue the Process Storage
+"]
+
+id26msg("
+ID 26
+")
+
+id26-insert[("
+DNARRIVAL
+")]
+
+id26-update[("
+DNCARRYINFO
+DNPALLET
+DNWORKINFO
+DNSTOCK
+")]
+
+storageStationOperator[storageStationOperator]
+
+releaseCommand-->id26msg-->id26process-->storageStationOperator
+storageStationOperator--> |INSERT| id26-insert
+storageStationOperator--> |UPDATE| id26-update
+:::
+
+Continue the process **storage**, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.asrs.communication.id.recv.As21Id26` &nbsp;</span>
+
+## DNARRIVAL
+- ARRIVAL_DATE      = SYSTIMESTAMP 
+- STATION_NO        = Arrival Station Number from ID26 
+- CARRY_KEY         = DNCARRYINFO.CARRY_KEY       
+- BCR_DATA          = Barcode information from ID26
+- CONTROLINFO       = Control information from ID26
+- SEND_FLAG         = 0:Not sent
+- HEIGHT            = Dimension Information from ID26
+- WIDTH             = Dimension Information From ID26
+- REGIST_DATE       = SYSTIMESTAMP                                                    
+- REGIST_PNAME      = ClassName
+- LAST_UPDATE_DATE  = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = ClassName
+
+## DNCARRYINFO
+- PALLET_ID         = DNPALLET.PALLET_ID
+- WORK_TYPE         = 2: Storage
+- CMD_STATUS        = 1:Started 
+- PRIORITY          = 2:Normal
+- CARRY_FLAG        = 1: Storage
+- SOURCE_STATION_NO = DNPALLET.CURRENT_STATION_NO ⟶ **(7207/7208/7209/7210/7211/7212/7213/7214)**
+- DEST_STATION_NO   = Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ **(9007/9008/9009/9010/9011/9012/9013/9014)**
+- END_STATION_NO    = DNCARRYINFO.DEST_STATION_NO
+- LAST_UPDATE_DATE  = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = ClassName
+
+## DNPALLET                                                     
+- CURRENT_STATION_NO = DNARRIVAL.STATION_NO                                                                                                                                                
+- LAST_UPDATE_DATE   = SYSTIMESTAMP
+- LAST_UPDATE_PNAME  = ClassName
+
+# Storage Sender(2)
+
+::: mermaid
+flowchart LR
+storageSender-update[("
+DMWAREHOUSE
+DMSHELF
+DNCARRYINFO
+DNWORKINFO
+DNPALLET
+DNSTOCK
+DNARRIVAL
+")]
+storageSender-input[("
+DNARRIVAL
+DNCARRYINFO
+")]
+
+id05msg("
+ID 05
+")
+
+storageSender-input-->storageSender-->id05msg
+storageSender--> |UPDATE| storageSender-update
+:::
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.asrs.transmission.StorageSender ` &nbsp;</span>
+
+After successful creation of arrival record in **ID26process**, Automatic Mode Change Sender is the following process where it will send **ID05** to **AGC**. To indicate **ID05** is sent to AGC, **DNCARRYINFO.CMD_STATUS** will be updated from **1:Started to 2:Waiting for Response**.
+
+## DMWAREHOUSE
+- LAST_USED_STATION_NO = Aisle Number where a reserved location belongs to
+- LAST_USED_STATION_NO_PM = Aisle Number where a reserved location belongs to
+- LAST_USED_STATION_NO_EP = Aisle Number where a reserved location belongs to
+- LAST_UPDATE_DATE        = SYSTIMESTAMP
+- LAST_UPDATE_PNAME       = Class name 
+
+## DMSHELF
+- STATUS_FLAG      = 2:Reserved Location
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+
+## DNCARRYINFO
+- AISLE_STATION_NO  = Aisle Number where a reserved location belongs to
+- CMD_STATUS        = 2:Waiting for response
+- LAST_UPDATE_DATE  = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
+## DNWORKINFO
+- JOB_TYPE          = 02:Storage
+- STATUS_FLAG       = 1: Working
+- PLAN_AREA_NO      = Area Number where a reserved location belongs to
+- PLAN_LOCATION_NO  = Location Number where a reserved location belongs to
+- LAST_UPDATE_DATE  = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = ClassName
+
+## DNPALLET
+- CURRENT_STATION_NO = Reserved Location Number
+- WH_STATION_NO      = DNCARRYINFO.END_STATION_NO
+- LAST_UPDATE_DATE   = SYSTIMESTAMP
+- LAST_UPDATE_PNAME  = Class name
+
+## DNSTOCK
+- AREA_NO           = DNWORKINFO.PLAN_AREA_NO
+- LOCATION_NO       = DNWORKINFO.PLAN_LOCATION_NO
+- LAST_UPDATE_DATE  = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
+## DNARRIVAL
+- CARRY_KEY         = DNCARRYINFO.CARRY_KEY
+- SEND_FLAG         = 1:Sent
+- LAST_UPDATE_DATE  = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
+# ID25(2)
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id25("
+ID 25
+")
+
+id25-update[("
+DNCARRYINFO
+")]
+id25-delete[("
+DNARRIVAL
+")]
+
+id25-->id25process
+id25process-.UPDATE.->id25-update
+id25process-.DELETE.-xid25-delete
+:::
+
+ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
+
+## DNCARRYINFO
+- CMD_STATUS          = 3:Commanded
+- ERROR_CODE          = 0
+- LAST_UPDATE_DATE    = SYSTIMESTAMP
+- LAST_UPDATE_PNAME   = Class name
+
+# ID64(2)
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id64("
+ID 64
+")
+
+id64-update[("
+DNCARRYINFO
+")]
+
+id64-->id64process
+id64process-.UPDATE.->id64-update
+:::
+
+Upon equipment **(SRM)** have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
+
+## DNCARRYINFO
+- CMD_STATUS          = 4:Pickup completed
+- LAST_UPDATE_DATE    = SYSTIMESTAMP
+- LAST_UPDATE_PNAME   = Class name
+
+
 
 # ID33
 
