@@ -637,7 +637,8 @@ Upon equipment have picked up the Pallet successfully, ID64 will be sent from AG
 
 <hr>
 
-#Flow 3 (Normal Flow): for 1201-1204 directly to this process
+#Flow 3 
+(Normal Flow): for 1201-1204 directly to this process
 
 ##ID68
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id68Process &nbsp;</span>
