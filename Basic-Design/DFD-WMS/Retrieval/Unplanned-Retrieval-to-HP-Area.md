@@ -248,7 +248,7 @@ retrievalstationoperator--> |UPDATE| id26-update
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
 
-#Retrieval-Sender
+#Retrieval Sender
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalSender&nbsp;</span>
 
 ::: mermaid
