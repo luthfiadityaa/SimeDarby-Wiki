@@ -528,10 +528,10 @@ id25process-.D.->id25-delete
 ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 
 ## DNCARRYINFO
-- CMD_STATUS: 3:Commanded
-- ERROR_CODE: 0
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+* **CMD_STATUS**: 3:Commanded
+* **ERROR_CODE**: 0
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
 
 #ID64 at SRM from 7207-7210
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id64Process &nbsp;</span>
