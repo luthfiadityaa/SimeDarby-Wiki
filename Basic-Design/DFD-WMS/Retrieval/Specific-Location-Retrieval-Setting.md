@@ -77,7 +77,7 @@ style P16 fill:#00cc66,stroke:#006633,color:#ffffff
 | ID33[(4)](#ID33)                                                                |    |    |    | U  |    |    |     |    | U  |    |    |    |    |    |    |     
 | **Flow 1: Thorugh crane 7-10 only for 1303**                                    |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | ID64[(5)](#ID64-at-STV-from-(9001-9006-&-9011-9014))                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
-| ID26[(6)]                                                                       |    |    | U  | U  |    |    | I   |    |    |    |    |    |    |    |    |
+| ID26[(6)](#ID26-at-7207-7210)                                                                       |    |    | U  | U  |    |    | I   |    |    |    |    |    |    |    |    |
 | Retrieval Sender[(7)]                                                           |    |    |    | U  |    |    | U   |    |    |    |    |    |    |    |    |
 | ID25[(8)]                                                                       |    |    |    | U  |    |    | D   |    |    |    |    |    |    |    |    |
 | ID64[(9)](#ID64)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
@@ -466,7 +466,6 @@ After user clicked on Completion button at Station, AGC will send ID26 to WareNa
 - CMD_STATUS = 1:Started
 - LAST_UPDATE_DATE = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
-
 
 #Retrieval Sender at
 
