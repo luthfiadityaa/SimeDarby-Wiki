@@ -468,6 +468,41 @@ After user clicked on Completion button at Station, AGC will send ID26 to WareNa
 - LAST_UPDATE_PNAME = Class name
 
 #Retrieval Sender at 7207-7210
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalSender&nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+retrievalsender-input[("
+DNCARRYINFO
+")]
+
+retrievalsender-update[("
+DNCARRYINFO
+DNPALLET
+")]
+
+id12msg("
+ID 12
+")
+
+retrievalsender-input-->retrievalsender--> |UPDATE| retrievalsender-update
+retrievalsender-->id12msg
+:::
+
+All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station 1301, 1302, 1205, 1206, 1207, 1208, 1209 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
+
+##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+* **CMD_STATUS**: 2:Waiting for response
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
+
+###<span style="color:skyblue; font-weight:bold">DNPALLET</span>
+* **STATUS_FLAG**: 4:Being retrieved
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
+
 
 #ID25 at 7207-7210
 
