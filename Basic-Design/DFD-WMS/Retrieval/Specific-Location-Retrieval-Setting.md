@@ -85,7 +85,7 @@ style P16 fill:#00cc66,stroke:#006633,color:#ffffff
 | **Flow 2: Not through crane 7-10 for 1205-1209 and 1301-1302**                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | ID64[(5)](#ID64)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
 | **Flow 3: for 1201-1204 directly to this process**                              |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| ID68[(6)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |    |
+| ID68[(11)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |    |
 | **Flow 4: Only Confirmation treat as Inventory Check**                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | ID45[(7)](#ID45)                                                                | U  | I  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I  | 
 | **Flow 4.1: ST 1301 & 1302**                                                    |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
@@ -93,9 +93,9 @@ style P16 fill:#00cc66,stroke:#006633,color:#ffffff
 | **Flow 4.2: ST 1303**                                                           |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | [Continus to Unplaned Storage from 1303](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/880/Unplanned-Storage-from-OP-Area)                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | **Last Process: Directly to this process -if not Only Confirmation Choosen**                                                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| ID26[(7)](#ID26)                                                                | U  | I  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I  | 
+| ID26[(12)](#ID26)                                                                | U  | I  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I  | 
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| Unplanned Storage and Retrieval Result[(19)](#Unplanned-Storage-and-Retrieval-Result)     |    |    |    |   |    | U  |    |    |    |    |    |    | 
+| Unplanned Storage and Retrieval Result[(9)](#Unplanned-Storage-and-Retrieval-Result)     |    |    |    |   |    | U  |    |    |    |    |    |    | 
 
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
 ##ID63
