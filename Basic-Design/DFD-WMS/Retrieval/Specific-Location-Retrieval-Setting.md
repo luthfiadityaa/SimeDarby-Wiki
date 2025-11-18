@@ -713,7 +713,7 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 If DNWORKINFO.REMOVAL_TYPE= **1:Unit Retrieval**
 - [ID26](#ID26)
 
-If DNWORKINFO.REMOVAL_TYPE= 1:Only Confirmation = Retrieval Qty = 0
+If DNWORKINFO.REMOVAL_TYPE= **1:Only Confirmation = Retrieval Qty = 0**
 - [Flow 4: Only Confirmation treat as Inventory Check](#Flow-4)
 <hr style="width:55%; margin-left: 0; border: 2px solid green;">
 
