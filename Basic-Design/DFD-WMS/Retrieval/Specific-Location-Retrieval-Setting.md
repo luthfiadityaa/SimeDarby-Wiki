@@ -607,10 +607,11 @@ Upon equipment have picked up the Pallet successfully, ID64 will be sent from AG
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
-<hr>
+<br>
+<hr style="width:70%; margin-left: 0; border: 2px solid green;">
 
-#<span style="color:skyblue; font-weight:bold">Continue Process with</span>
-- ##[Flow 3 (Normal Flow): for 1201-1204 directly to this process](#Flow-3)
+<span style="color:skyblue; font-weight:bold">Continue Process with</span>: [Flow 3 (Normal Flow): for 1201-1204 directly to this process](#Flow-3)
+<hr style="width:70%; margin-left: 0; border: 2px solid green;">
 
 <hr>
 
