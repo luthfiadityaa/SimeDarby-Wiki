@@ -719,8 +719,9 @@ If Removal Type = 1:Only Confirmation = Retrieval Qty = 0
 
 <hr>
 
-#Flow 4: Only Confirmation treat as Inventory Check
-**Operation at 1301,1302,1303**
+#Flow 4
+**<h2>Only Confirmation treat as Inventory Check Operation at 1301,1302,1303</h2>**
+
 ##ID45
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.id.send.As21Id45&nbsp;</span>
 
