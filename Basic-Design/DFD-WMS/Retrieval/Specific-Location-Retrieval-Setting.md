@@ -83,7 +83,9 @@ style P16 fill:#00cc66,stroke:#006633,color:#ffffff
 | ID63 [(1)](#ID63)                                                               |    |    |    |    |    |    |     |    |    |    |    | U  |    |    |     |
 | **Directly For 1201-1209**                                                      |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
 | Specific Location Retrieval Setting - Set(F2) [(1)](#Specific-Location-Retrieval-Setting---Set(F2)) | I  |    | S  | I  | S  |    |     | S  | S  |    | S  | S  | S   |    |    |
-| **Normal Flow**                                                                 |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
+| **Normal Flow**                                                                 |    |    |    |    |    |    |     |    |    |    
+|    |    |    |    |    |
+| ID12[(2)](#ID12)                                                                |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |    | 
 | RetrievalSender[(2)](#Retrieval-Sender)                                         |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |    |  
 | ID32[(3)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |    
 | ID33[(4)](#ID33)                                                                |    |    |    | U  |    |    |     |    | U  |    |    |    |    |    |    |     
