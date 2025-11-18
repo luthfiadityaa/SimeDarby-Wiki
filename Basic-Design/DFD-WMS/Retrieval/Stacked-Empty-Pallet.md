@@ -443,7 +443,7 @@ After the completion button flashes, the operator removes the pallet and presses
 <hr>
 
 #User Story
-- [DFD Location Retrieval](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5792)
+- [DFD Retrieval for Stacked Empty Pallet](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5794)
 
 #Related DFD
 - [Unplanned Storage and Retrieval Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result)
