@@ -84,10 +84,15 @@ style P16 fill:#00cc66,stroke:#006633,color:#ffffff
 | ID64[(10)](#ID64)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
 | **Flow 2: Not through crane 7-10 for 1205-1209 and 1301-1302**                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | ID64[(5)](#ID64)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
-| **Flow 3 / Last Process: for 1201-1204 directly to this process**                                                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
+| **Flow 3: for 1201-1204 directly to this process**                                                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | ID68[(6)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |    |
-| **Flow 4: Only Confirmation treat as Inventory Check**                                                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
+| **Flow 4: Only Confirmation treat as Inventory Check**                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | ID45[(7)](#ID26)                                                                | U  | I  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I  | 
+| **Flow 4.1: ST 1301 & 1302**                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
+| Continus to Unplaned Storage from 1301 & 1302                         |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
+| **Flow 4.2: ST 1303**                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
+| Continus to Unplaned Storage from 1303                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
+| **Last Process: Directly to this process if not Only Confirmation Choosen**                                                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | Unplanned Storage and Retrieval Result[(19)](#Unplanned-Storage-and-Retrieval-Result)     |    |    |    |   |    | U  |    |    |    |    |    |    | 
 
