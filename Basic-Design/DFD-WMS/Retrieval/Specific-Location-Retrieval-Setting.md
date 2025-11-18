@@ -416,7 +416,7 @@ Upon equipment have picked up the Pallet successfully, ID64 will be sent from AG
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
-#ID26 at 7207-7210
+##ID26 at 7207-7210
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.control.Id26Process&nbsp;</span>
 
 ::: mermaid
@@ -450,8 +450,8 @@ retrievaloperator-.U.->id26-update
 :::
 
 After user clicked on Completion button at Station, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Storage Sender picks up the data.
-
-## DNARRIVAL
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">DNArrival</span>
 * **ARRIVAL_DATE**: SYSTIMESTAMP
 * **STATION_NO**: Arrival Station Number from ID26
 * **CARRY_KEY**: 99999999
