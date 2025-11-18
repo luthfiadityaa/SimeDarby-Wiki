@@ -208,7 +208,7 @@ DNPALLET
 ")]
 
 retrievalstationoperator[RetrievalStationOperator]
-inoutstationoperator[InOuttationOperator]
+inoutstationoperator[InOutStaionOperator]
 
 id26msg
 id26msg-->inoutstationoperator
