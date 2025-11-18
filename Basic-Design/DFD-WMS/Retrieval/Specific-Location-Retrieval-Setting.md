@@ -21,7 +21,7 @@ flowchart LR
 Cond1{Flow?} 
 
 Cond1{Flow?}--> |Flow 1: Thorugh crane 7-10 only for 1303| P5[ID64]-->P8[ID26]-->P9[Retrieval Sender]-->P10[ID25]-->P11[ID64]-->P12[ID64]-->P7[ID68]
-Cond1{Flow?}-->P6[ID64]-->P7[ID68]
+Cond1{Flow?}--> |Flow 2: Not through crane 7-10 for 1205-1209 and 1301-1302| P6[ID64]-->P7[ID68]
 Cond1{Flow?}-->P7[ID68]-->P13[26]
 :::
 
@@ -67,7 +67,7 @@ Cond1{Flow?}-->P7[ID68]-->P13[26]
 | ID25[(8)]                                                                            |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | ID64[(9)](#ID64)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
 | ID64[(10)](#ID64)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
-| **Flow 2: Not through crane 7-10 for 1205,1206,1207,1208,1209,1301,1302**                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
+| **Flow 2: Not through crane 7-10 for 1205-1209 and 1301-1302**                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | ID64[(5)](#ID64)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
 | **Flow 3 / Last Process: for 1201-1204 directly to this process**                                                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | ID68[(6)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |    |
