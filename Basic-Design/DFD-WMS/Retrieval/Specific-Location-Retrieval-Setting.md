@@ -33,7 +33,7 @@ flowchart LR
 Cond2{Retrieval Type?}--> |Unit Retrieval - 1201-1209| P13[ID26]
 Cond2{Retrieval Type?}--> |Only Confirmation| P14[ID45]-->Cond3{Station?}
 Cond3{Station?}-->|1301 & 1302| P15[Go to Unplanned Storage From 1301 & 1302]
-Cond3{Station?}-->|1303| P16[Go to Unplanned Storage From 1301 & 1303] 
+Cond3{Station?}-->|1303| P16[Go to Unplanned Storage From 1303] 
 
 click P15 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/948/Unplanned-Storage-from-HP" "Go to HP"
 click P16 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/880/Unplanned-Storage-from-OP-Area" "Go to OP"
