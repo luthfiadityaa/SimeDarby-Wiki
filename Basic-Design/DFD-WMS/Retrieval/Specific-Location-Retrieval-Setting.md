@@ -298,7 +298,7 @@ flowchart LR
 
 To cancel entries, the InquiryRetrievalSettingSCH component first reads data from the **<span style="color:green">DNWORKINFO and DNCARRYINFO</span>** tables, then deletes those records after processing. If not, continue process to [Retrieval-Sender](#Retrieval-Sender)
 
-#Retrieval-Sender
+#Retrieval Sender
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalSender&nbsp;</span>
 
 ::: mermaid
@@ -321,7 +321,7 @@ retrievalsender-input-->retrievalsender--> |UPDATE| retrievalsender-update
 retrievalsender-->id12msg
 :::
 
-All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station 1301, 1302, 1205, 1206, 1207, 1208, 1209 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
+All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station **<span style="color:green">1201-1209 & 1301-1303</span>** where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
