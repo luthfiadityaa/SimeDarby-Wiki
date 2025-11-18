@@ -790,7 +790,7 @@ Sending of ID45 is sent to AGC when user clicked on **Complete** at Work Display
 flowchart LR
 
 buttonclicked["
-Pallet is arrived at station
+Operators Press the Completion Button
 "]
 
 id26msg("
