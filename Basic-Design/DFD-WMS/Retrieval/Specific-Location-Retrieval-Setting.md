@@ -558,7 +558,7 @@ id64process--> |UPDATE| id64-update
 Upon equipment have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-####<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 * **CMD_STATUS**: 4:Pickup completed
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
