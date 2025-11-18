@@ -674,6 +674,27 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 ![image.png](/.attachments/image-1e56dc6e-657e-47ff-9a47-575b04705583.png)
 
 #Flow 4: Only Confirmation treat as Inventory Check
+##ID45
+jp.co.daifuku.wcs.mc.as21.communication.id.send.As21Id45
+
+::: mermaid
+flowchart LR
+
+id45msg("
+ID 45
+")
+
+buttonlight["
+Station Completion button
+Light Up
+"]
+
+id45msg--> As21Id45
+As21Id45 --> buttonlight
+:::
+
+Sending of ID45 is sent to AGC when user clicked on **Complete** at Work Display where the Completion button at Control Box will start blinking. If user confirmed re-storing of pallet is safe to proceed, user can click on the blinking Completion button to proceed with transporting of pallet to Unit Load.
+
 
 #ID26
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.control.Id26Process&nbsp;</span>
