@@ -217,8 +217,6 @@ flowchart LR
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
-
-Only Confirmation = Retrieval Qty = 0,
 *   **JOB_NO**: Sequence Object    
 *   **SETTING_UNIT_KEY**: Sequence Object    
 *   **COLLECT_JOB_NO**: Sequence Object    
