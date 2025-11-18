@@ -27,7 +27,7 @@ Cond1{Flow?}--> |Flow 3: for 1201-1204 directly to this process| P7[ID68]
 P7[ID68]-->Cond2{Retrieval Type?} 
 :::
 
-**Stage 4 - Only Confirmation for Inventory Check Operation at 1301,1302,1303**
+**Stage 4 - Only Confirmation treat as Inventory Check Operation at 1301,1302,1303**
 ::: mermaid
 flowchart LR
 Cond2{Retrieval Type?}--> |Unit Retrieval - 1201-1209| P13[ID26]
