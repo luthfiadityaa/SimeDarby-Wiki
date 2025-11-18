@@ -80,7 +80,7 @@ Cond1{Flow?}--> |Flow 3: for 1201-1204 directly to this process| P7[ID68]-->P13[
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.control.Id63Process&nbsp;</span>
 
 If the station mode is **Storage Mode**, change the mode of the station to **Retrieval mode**.
-**<span style="color:green">Only For 1301 & 1302.</span>** If not, start from [Inquiry Retrieval Setting - Set(F2)](#Inquiry-Retrieval-Setting---Set(F2))
+**<span style="color:green">Only For 1301, 1302, 1303.</span>** If not, start from [Inquiry Retrieval Setting - Set(F2)](#Inquiry-Retrieval-Setting---Set(F2))
 
 ::: mermaid
 flowchart LR
