@@ -192,6 +192,29 @@ flowchart LR
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.send.As21Id12&nbsp;</span>
 
+*1301 & 1302*
+::: mermaid
+flowchart LR
+
+id26msg("
+ID12
+")
+
+id26-insert[("
+DNCARRYINFO
+")]
+
+id26-update[("
+DNPALLET
+")]
+
+inoutstationoperator[InOutStaionOperator]
+
+id26msg-->inoutstationoperator
+inoutstationoperator--> |INSERT| id26-insert
+inoutstationoperator--> |UPDATE| id26-update
+:::
+
 ::: mermaid
 flowchart LR
 
@@ -208,13 +231,8 @@ DNPALLET
 ")]
 
 retrievalstationoperator[RetrievalStationOperator]
-inoutstationoperator[InOutStaionOperator]
 
-id26msg
-id26msg-->inoutstationoperator
 id26msg-->retrievalstationoperator
-inoutstationoperator--> |INSERT| id26-insert
-inoutstationoperator--> |UPDATE| id26-update
 retrievalstationoperator--> |INSERT| id26-insert
 retrievalstationoperator--> |UPDATE| id26-update
 :::
