@@ -249,6 +249,62 @@ flowchart LR
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
 
+#ID12
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.send.As21Id12&nbsp;</span>
+
+*1301 & 1302*
+::: mermaid
+flowchart LR
+
+id26msg("
+ID12
+")
+
+id26-insert[("
+DNCARRYINFO
+")]
+
+id26-update[("
+DNPALLET
+")]
+
+inoutstationoperator[InOutStaionOperator]
+
+id26msg-->inoutstationoperator
+inoutstationoperator--> |INSERT| id26-insert
+inoutstationoperator--> |UPDATE| id26-update
+:::
+
+*1205-1209*
+::: mermaid
+flowchart LR
+
+id26msg("
+ID12
+")
+
+id26-insert[("
+DNCARRYINFO
+")]
+
+id26-update[("
+DNPALLET
+")]
+
+retrievalstationoperator[RetrievalStationOperator]
+
+id26msg-->retrievalstationoperator
+retrievalstationoperator--> |INSERT| id26-insert
+retrievalstationoperator--> |UPDATE| id26-update
+:::
+
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">DNPallet</span>
+* **STATUS_FLAG**: 3:Reserved for Retrieval
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
+
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 *   **CARRY_KEY**: Sequence Object    
 *   **PALLET_ID**: DNSTOCK.PALLET_ID    
