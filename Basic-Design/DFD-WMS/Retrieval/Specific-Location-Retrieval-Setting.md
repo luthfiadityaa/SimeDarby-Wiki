@@ -86,7 +86,8 @@ style P16 fill:#00cc66,stroke:#006633,color:#ffffff
 | ID64[(5)](#ID64)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
 | **Flow 3 / Last Process: for 1201-1204 directly to this process**                                                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | ID68[(6)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |    |
-| ID26[(7)](#ID26)                                                                | U  | I  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I  | 
+| **Flow 4: Only Confirmation treat as Inventory Check**                                                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
+| ID45[(7)](#ID26)                                                                | U  | I  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I  | 
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | Unplanned Storage and Retrieval Result[(19)](#Unplanned-Storage-and-Retrieval-Result)     |    |    |    |   |    | U  |    |    |    |    |    |    | 
 
