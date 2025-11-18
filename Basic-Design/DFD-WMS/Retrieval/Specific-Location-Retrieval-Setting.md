@@ -34,6 +34,8 @@ Cond2{Retrieval Type?}--> |Unit Retrieval - 1201-1209| P13[ID26]
 Cond2{Retrieval Type?}--> |Only Confirmation| P14[ID45]-->Cond3{Station?}
 Cond3{Station?}-->|1301 & 1302| P15[ID26]
 Cond3{Station?}-->|1303| P16[ID26] 
+
+click P15 "https://www.google.com" "Go to Google"
 :::
 
 #<span style="color:skyblue; font-weight:bold">Specific Location Retrieval Setting database flow</span>
