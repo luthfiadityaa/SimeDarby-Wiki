@@ -398,7 +398,7 @@ ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi
 #<span style="color:skyblue; font-weight:bold">Continue Process with</span>
 - ###[Flow 1 : through crane 7-10](#Flow-1-:-Through-crane-7-10)
 - ###[Flow 2 : not through crane 7-10](#Flow-2-:-not-through-crane-7-10)
-- ###[Flow 3 (Normal Flow): for 1201-1204 directly to this process](#Flow-3-(Normal-Flow):-for-1201-1204-directly-to this-process)
+- ###[Flow 3 (Normal Flow): for 1201-1204 directly to this process](#Flow-3-(Normal-Flow):-for-1201-1204-directly-to-this-process)
 
 <hr>
 
