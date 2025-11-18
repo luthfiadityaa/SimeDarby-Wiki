@@ -212,6 +212,7 @@ inoutstationoperator[RetrievalStationOperator]
 
 releaseCommand-->id26msg-->id12process-->inoutstationoperator
 inoutstationoperator--> |INSERT| id26-insert
+inoutstationoperator--> |UPDATE| id26-update
 :::
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
