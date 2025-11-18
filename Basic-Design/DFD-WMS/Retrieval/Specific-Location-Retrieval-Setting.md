@@ -92,7 +92,8 @@ style P16 fill:#00cc66,stroke:#006633,color:#ffffff
 | [Continus to Unplaned Storage from 1301 & 1302](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/948/Unplanned-Storage-from-HP)                         |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | **Flow 4.2: ST 1303**                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | [Continus to Unplaned Storage from 1303](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/880/Unplanned-Storage-from-OP-Area)                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| **Last Process: Directly to this process if not Only Confirmation Choosen**                                                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
+| **Last Process: Directly to this process -if not Only Confirmation Choosen**                                                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
+| U  | I  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I  | 
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | Unplanned Storage and Retrieval Result[(19)](#Unplanned-Storage-and-Retrieval-Result)     |    |    |    |   |    | U  |    |    |    |    |    |    | 
 
