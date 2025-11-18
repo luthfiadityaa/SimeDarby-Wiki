@@ -673,6 +673,8 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 
 ![image.png](/.attachments/image-1e56dc6e-657e-47ff-9a47-575b04705583.png)
 
+#Flow 4: Only Confirmation treat as Inventory Check
+
 #ID26
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.control.Id26Process&nbsp;</span>
 
