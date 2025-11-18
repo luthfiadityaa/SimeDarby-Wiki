@@ -1,10 +1,22 @@
 #<span style="color:skyblue; font-weight:bold">Summary Flow</span>
+
+**Stage 1**
 ::: mermaid
 flowchart LR
-  
-P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID32]-->P4[ID33]-->P5[ID64]-->P6[ID68]-->P7[ID26]-->P8[To STATION - 1205, 1206, 
-1207, 1208, 1209, 1301, 
-1302, 1303] 
+
+PST[If Retrieve To Station 1301-1303]-->PMode[ID63]  
+:::
+
+**Stage 2**
+::: mermaid
+flowchart LR
+
+P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID32]-->P4[ID33]-->(Flow?)
+
+
+
+P5[ID64]-->P6[ID68]-->P7[ID26]-->P8[To STATION - 1205, 1206, 
+1207, 1208, 1209] 
 :::
 
 #<span style="color:skyblue; font-weight:bold">Specific Location Retrieval Setting database flow</span>
@@ -34,7 +46,7 @@ P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9
 |---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|-----|
 | **Only For 1301, 1302 & 1303**                                                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
 | ID63 [(1)](#ID63)                                                               |    |    |    |    |    |    |     |    |    |    |    | U  |    |    |     |
-| **Directly For 1201--1209**                                       |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
+| **Directly For 1201-1209**                                       |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
 | Specific Location Retrieval Setting - Set(F2) [(1)](#Inquiry-Retrieval-Setting---Set(F2)) | I  |    | S  | I  | S  |    |     | S  | S  |    | S  | S  | S   |    |    |
 | Specific Location Retrieval Setting - Cancel Entries(F11) [(2)](#Inquiry-Retrieval-Setting---Cancel-Entries(F11)) | D   |    |   | D   |   |    |     |    |    |    |    |    |    |    |    |
 | **Normal Flow**                                       |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
