@@ -759,7 +759,6 @@ After the completion button flashes, the operator removes the pallet and presses
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
 
-
 ###<span style="color:skyblue; font-weight:bold">DNHostSend</span>
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY    
 *   **JOB_NO**: DNWORKINFO.JOB_NO    
