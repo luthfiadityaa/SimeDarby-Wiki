@@ -41,14 +41,15 @@ P1[FROM AISLE STATION - 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID32]
 ## Inbound Table Data Flow
 | Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HTSD | OPRR | ITEM | STSN | TTSN |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
-| Inquiry Retrieval - Set (F2) [(1)](#inquiry-retrieval---set-(f2))|   S  |   I  |      |   I  |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   S  | 
-| Retrieval Sender [(2)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
-| ID32 [(3)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
-| ID33 [(4)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
-| ID64 [(5)](#id64)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
-| ID68 [(6)](#id68)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
-| ID26 [(7)](#id26)                                              |   D  |   U  |   I  |   D  |   D  |      |      |  U   |      |   I  |   I  |      |      |      |      |
-| **Host Communication** [(8)](#host-communication)              |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| Inquiry Retrieval - Set (F2) [(1)](#inquiry-retrieval---set-(f2))|   S  |   I  |      |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   S  | 
+| ID12 [(2)](#id12)                      |   U  |      |      |   I  |      |      |      |      |      |      |      |      |      |      |      |
+| Retrieval Sender [(3)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID32 [(4)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID33 [(5)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
+| ID64 [(6)](#id64)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID68 [(7)](#id68)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
+| ID26 [(8)](#id26)                                              |   D  |   U  |   I  |   D  |   D  |      |      |  U   |      |   I  |   I  |      |      |      |      |
+| **Host Communication** [(9)](#host-communication)              |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 
 # Inquiry Retrieval - Set (F2)
 
@@ -90,7 +91,6 @@ Plate No
 
 tableList-insert[("
 DNWORKINFO
-DNCARRYINFO
 ")]
 
 tableList-select[("
@@ -149,6 +149,38 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 - LAST_UPDATE_DATE = SYSTIMESTAMP    
 - LAST_UPDATE_PNAME = ClassName
 
+#ID12
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.asrs.communication.id.send.As21Id12` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id26msg("
+ID12
+")
+
+id26-insert[("
+DNCARRYINFO
+")]
+
+id26-update[("
+DNPALLET
+")]
+
+retrievalstationoperator[RetrievalStationOperator]
+
+id26msg-->id12process
+id12process-->retrievalstationoperator--> |INSERT| id26-insert
+retrievalstationoperator--> |UPDATE| id26-update
+:::
+
+## DNPALLET
+- STATUS_FLAG = 3:Reserved for Retrieval
+- LAST_UPDATE_DATE =  SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
 ## DNCARRYINFO
 - CARRY_KEY = Sequence Object    
 - PALLET_ID = DNSTOCK.PALLET_ID    
@@ -173,6 +205,7 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 - LAST_UPDATE_DATE = SYSTIMESTAMP    
 - LAST_UPDATE_PNAME = ClassName
 
+
 # Retrieval Sender
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
@@ -191,7 +224,7 @@ DNPALLET
 ")]
 
 id12msg("
-ID 12
+ID12
 ")
 
 retrievalsender--SEND-->id12msg
