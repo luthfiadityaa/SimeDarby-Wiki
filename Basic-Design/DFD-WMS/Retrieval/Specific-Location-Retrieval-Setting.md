@@ -271,32 +271,6 @@ flowchart LR
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
 
-#Inquiry Retrieval Setting - Cancel Entries(F11)
-
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.InquiryRetrievalSettingSCH &nbsp;</span>
-
-::: mermaid
-flowchart LR
-     tableList-delete[("
-        DNWORKINFO
-        DNCARRYINFO
-    ")]
-
-     tableList-select[("
-        DNWORKINFO
-        DNCARRYINFO
-    ")]
-
-    className[InquiryRetrievalSettingSCH]
-
-    tableList-select --> |SELECT| className --> |DELETE| tableList-delete
-
-    classDef leftAlign text-align:left;
-    class input leftAlign;
-:::
-
-To cancel entries, the InquiryRetrievalSettingSCH component first reads data from the **<span style="color:green">DNWORKINFO and DNCARRYINFO</span>** tables, then deletes those records after processing. If not, continue process to [Retrieval-Sender](#Retrieval-Sender)
-
 #Retrieval Sender
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalSender&nbsp;</span>
 
