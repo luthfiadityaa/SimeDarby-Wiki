@@ -503,8 +503,35 @@ All Carton Retrieval operation at Ambient or Tempering will be retrieved to Stat
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
-
 #ID25 at 7207-7210
+jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process
+
+::: mermaid
+flowchart LR
+
+id25("
+ID 25
+")
+
+id25-update[("
+DNCARRYINFO
+")]
+id25-delete[("
+DNARRIVAL
+")]
+
+id25-->id25process
+id25process-.U.->id25-update
+id25process-.D.->id25-delete
+:::
+
+ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
+
+## DNCARRYINFO
+- CMD_STATUS: 3:Commanded
+- ERROR_CODE: 0
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
 
 #ID64 at SRM from 7207-7210
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id64Process &nbsp;</span>
