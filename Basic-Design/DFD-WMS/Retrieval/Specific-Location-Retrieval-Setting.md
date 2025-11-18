@@ -469,9 +469,9 @@ After user clicked on Completion button at Station, AGC will send ID26 to WareNa
 
 #Retrieval Sender at 7207-7210
 
-#ID25 at at 7207-7210
+#ID25 at 7207-7210
 
-#ID64 at
+#ID64 at SRM from 7207-7210
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id64Process &nbsp;</span>
 
 ::: mermaid
