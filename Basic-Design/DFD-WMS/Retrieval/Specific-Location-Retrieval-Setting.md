@@ -420,8 +420,7 @@ Upon equipment have picked up the Pallet successfully, ID64 will be sent from AG
 flowchart LR
 
 buttonclicked["
-Station Completion 
-button clicked
+Pallet Arrived at Conveyor Station
 "]
 
 id26msg("
