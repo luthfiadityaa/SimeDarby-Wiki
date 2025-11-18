@@ -551,5 +551,5 @@ After the completion button flashes, the operator removes the pallet and presses
 #User Story
 - [DFD Inquiry Retrieval](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5791)
 
-#<span style="color:skyblue; font-weight:bold">Related DFD</span>
+#Related DFD
 - [Unplanned Storage and Retrieval Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result)
