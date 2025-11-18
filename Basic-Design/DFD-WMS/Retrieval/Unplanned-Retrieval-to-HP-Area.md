@@ -211,22 +211,20 @@ DNPALLET
 retrievalstationoperator[RetrievalStationOperator]
 inoutstationoperator[InOuttationOperator]
 
-releaseCommand-->id26msg-->id12process-->inoutstationoperator
+releaseCommand-->id26msg-->id12process
+id12process-->inoutstationoperator
+id12process-->retrievalstationoperator
 inoutstationoperator--> |INSERT| id26-insert
 inoutstationoperator--> |UPDATE| id26-update
+retrievalstationoperator--> |INSERT| id26-insert
+retrievalstationoperator--> |UPDATE| id26-update
 :::
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ###<span style="color:skyblue; font-weight:bold">DNPallet</span>
-* **CURRENT_STATION_NO**: DNARRIVAL.STATION_NO → 1301 or 1302
-* **WH_STATION_NO**: Value from screen (Storage Location To) → FGW1 (Ambient/9002) or FGW2 (Tempering/9001)
 * **STATUS_FLAG**: 3:Reserved for Retrieval
-* **EMPTY_FLAG**: 0:Normal Pallet
-* **BCR_DATA**: Value from screen (Pallet ID)
-* **REGIST_DATE**: SYSTIMESTAMP
-* **REGIST_PNAME**: ClassName
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
-* **LAST_UPDATE_PNAME**: ClassName
+* **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 *   **CARRY_KEY**: Sequence Object    
