@@ -150,6 +150,7 @@ flowchart LR
         QC Check Flag
         Truck No
         Plate No
+        Retrieval Type
     ]
 
     tableList-insert[("
