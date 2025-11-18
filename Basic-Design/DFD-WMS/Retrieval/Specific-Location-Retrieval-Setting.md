@@ -7,14 +7,19 @@
 ::: mermaid
 flowchart LR
 
-PST[If Retrieve To Station 1301-1303]-->PMode[ID63]  
+PST[If Retrieve To Station 
+1301-1303]-->PMode[ID63]  
 :::
 
 **Stage 2**
 ::: mermaid
 flowchart LR
 
-P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID32]-->P4[ID33]-->Cond1{Flow?} 
+P1[FROM AISLE STATION - 9001, 
+9002 , 9003, 9004, 9005, 
+9006, 9007, 9008, 9009, 
+9010, 9011, 9012, 9013, 
+9014]-->P2[RetrievalSender]-->P3[ID32]-->P4[ID33]-->Cond1{Flow?} 
 :::
 
 **Stage 3**
@@ -33,8 +38,10 @@ P7[ID68]-->Cond2{Retrieval Type?}
 **Stage 4 - Only Confirmation treat as Inventory Check Operation at 1301,1302,1303**
 ::: mermaid
 flowchart LR
-Cond2{Retrieval Type?}--> |Unit Retrieval - 1201-1209 & 1301-1303| P13[ID26]
-Cond2{Retrieval Type?}--> |Only Confirmation - 1301-1303| P14[ID45]-->Cond3{Station?}
+Cond2{Retrieval Type?}--> |Unit Retrieval - 
+1201-1209 & 1301-1303| P13[ID26]
+Cond2{Retrieval Type?}--> |Only Confirmation - 
+1301-1303| P14[ID45]-->Cond3{Station?}
 Cond3{Station?}-->|1301 & 1302| P15[Go to Unplanned Storage 
 From 1301 & 1302]
 Cond3{Station?}-->|1303| P16[Go to Unplanned Storage 
