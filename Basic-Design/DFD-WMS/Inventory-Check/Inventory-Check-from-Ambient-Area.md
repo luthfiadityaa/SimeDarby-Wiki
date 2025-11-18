@@ -17,7 +17,7 @@ P1[FROM AISLE STATION - 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014]-->P2[Ret
 ::: mermaid
 flowchart LR
   
-P1[FROM AISLE STATION - 1301,1302]-->P2[StorageSender]-->P3[ID05]-->P4[ID25]-->P5[ID64]-->P6[ID33]
+P1[Operator Click Completion Button]-->P2[FROM AISLE STATION - 1301,1302]-->P3[ID26]-->P4[ID64]-->P5[ID33]
 :::
 
 ## Abbreviation
@@ -55,7 +55,9 @@ P1[FROM AISLE STATION - 1301,1302]-->P2[StorageSender]-->P3[ID05]-->P4[ID25]-->P
 | ID32 [(3)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
 | ID33 [(4)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
 | ID68 [(5)](#id68)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
-| ID26 [(6)](#id26)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
+| ID26 [(6)](#id26)                                              |   U  |   U  |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID64 [(7)](#id64)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID33 [(8)](#id33)                                              |   U  |      |      |   D  |      |      |      |  U   |      |      |      |      |      |      |   U  |
 
 
 # Inventory Check - Set(F2)
@@ -391,11 +393,15 @@ DNCARRYINFO
 DNWORKINFO
 ")]
 
-storageStationOperator[storageStationOperator]
+buttonclicked["
+Station Completion 
+button clicked
+"]
 
-id26msg-->id26process-->storageStationOperator
-storageStationOperator--> |UPDATE| id26-update
+buttonclicked-->id26msg-->id26process--> |UPDATE| id26-update
 :::
+
+After user clicked on Completion button at Station in Unit Load, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26.
 
 ## DNPALLET
 - CURRENT_STATION_NO = Station Number from **ID26**
@@ -416,12 +422,14 @@ storageStationOperator--> |UPDATE| id26-update
 
 ##DNWORKINFO
 - JOB_TYPE = 2:Storage
-- STATUS_FLAG
+- STATUS_FLAG - 4: Completed
+- RESULT_AREA_NO = DNWORKINFO.PLAN_AREA_NO
+- RESULT_LOCATION_NO = DNWORKINFO.PLAN_LOCATION_NO
 - LAST_UPDATE_DATE = SYSTIMESTAMP    
 - LAST_UPDATE_PNAME = ClassName
 
 
-# ID64 at STV
+# ID64
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process` &nbsp;</span>
@@ -447,6 +455,51 @@ Upon equipment **(STV)** have picked up the Pallet successfully, ID64 will be se
 - CMD_STATUS         = 4:Pickup completed
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = Class name
+
+# ID33
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.asrs.communication.id.recv.As21Id33` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id33("
+ID 33
+")
+
+id33-update[("
+DNPALLET
+DMSHELF
+DNINVENTORYCHECK
+")]
+id33-delete[("
+DNCARRYINFO
+")]
+
+id33-->id33process
+id33process-.UPDATE.->id33-update
+id33process--DELETE-->id33-delete
+:::
+
+ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage operation of the pallet is completed by SRM.
+
+## DMSHELF
+- STATUS_FLAG         = 1: Occupied
+- LAST_UPDATE_DATE    = SYSTIMESTAMP
+
+## DNPALLET
+- CURRENT_STATION_NO  = Location Number information from ID33
+- STATUS_FLAG         = 2:Occupied
+- ALLOCATION_FLAG     = 0:Not allocated
+- LAST_STORED_DATE    = SYSTIMESTAMP
+- LAST_UPDATE_DATE    = SYSTIMESTAMP
+- LAST_UPDATE_PNAME   = Class name
+
+## DNINVENTORYCHECK
+- STATUS_FLAG = 0:Inventory Check Undone
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
 
 
 # User Story
