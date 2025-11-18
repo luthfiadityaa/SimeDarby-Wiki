@@ -646,10 +646,10 @@ Upon equipment have picked up the Pallet successfully, ID64 will be sent from AG
 * **LAST_UPDATE_PNAME**: Class name
 
 <br>
-<hr style="width:70%; margin-left: 0; border: 2px solid green;">
+<hr style="width:50%; margin-left: 0; border: 2px solid green;">
 
 **Continue Process with**: [Flow 3 (Normal Flow): for 1201-1204 directly to this process](#Flow-3)
-<hr style="width:70%; margin-left: 0; border: 2px solid green;">
+<hr style="width:50%; margin-left: 0; border: 2px solid green;">
 <hr>
 
 #Flow 3 
@@ -710,10 +710,10 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 
 **Continue Process with**: 
 
-If Removal Type =  1:Unit Retrieval
+If DNWORKINFO.REMOVAL_TYPE= **1:Unit Retrieval**
 - [ID26](#ID26)
 
-If Removal Type = 1:Only Confirmation = Retrieval Qty = 0
+If DNWORKINFO.REMOVAL_TYPE= 1:Only Confirmation = Retrieval Qty = 0
 - [Flow 4: Only Confirmation treat as Inventory Check](#Flow-4)
 <hr style="width:55%; margin-left: 0; border: 2px solid green;">
 
