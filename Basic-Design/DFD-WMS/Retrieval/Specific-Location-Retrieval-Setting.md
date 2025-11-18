@@ -906,6 +906,7 @@ After the completion button flashes, the operator removes the pallet and presses
 *   **LAST_UPDATE_PNAME**: Class name
 
 ###<span style="color:skyblue; font-weight:bold">DNInOutResult</span>
+*Only for 1301-1303*
 *   **RESULT_KIND**: 2:Retrieval(Stock-)
 *   **STATION_NO**: = DNCARRYINFO.DEST_STATION_NO
 *   **LOCATION_NO**: DNPALLET.CURRENT_STATION_NO
