@@ -92,9 +92,9 @@ style P16 fill:#00cc66,stroke:#006633,color:#ffffff
 | **Flow 4: Only Confirmation treat as Inventory Check**                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | ID45[(7)](#ID45)                                                                | U  | I  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I  | 
 | **Flow 4.1: ST 1301 & 1302**                                                    |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| [Continue to Unplaned Storage from 1301 & 1302](Flow-4.1:-ST-1301-&-1302)                         |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
+| [Continue to Unplaned Storage from 1301 & 1302](#Flow-4.1:-ST-1301-&-1302)                         |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | **Flow 4.2: ST 1303**                                                           |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| [Continue to Unplaned Storage from 1303]()                         |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
+| [Continue to Unplaned Storage from 1303](#Flow-4.2:-ST-1303)                         |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | **Last Process: Directly to this process -if not Only Confirmation Choosen**                                                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | ID26[(12)](#ID26)                                                                | U  | I  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I  | 
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
