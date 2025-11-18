@@ -191,6 +191,32 @@ flowchart LR
 
 #ID12
 
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.send.As21Id12&nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+releaseCommand["
+Operator puts the pallet onto Conveyor
+"]
+
+id26msg("
+ID 26
+")
+
+id26-insert[("
+DNARRIVAL
+DNPALLET
+DNSTOCK
+DNCARRYINFO
+")]
+
+inoutstationoperator[InOutStationOperator]
+
+releaseCommand-->id26msg-->id26process-->inoutstationoperator
+inoutstationoperator--> |INSERT| id26-insert
+:::
+
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ###<span style="color:skyblue; font-weight:bold">DNPallet</span>
 * **PALLET_ID**: Sequence Object
