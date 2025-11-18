@@ -120,7 +120,7 @@ If the station mode is **Storage Mode**, change the mode of the station to **Ret
 ::: mermaid
 flowchart LR
     input[
-        Operators pressed the storage mode button on the operation box.      
+        Operators pressed the retrieval mode button on the operation box.      
     ]
 
     id61msg("
