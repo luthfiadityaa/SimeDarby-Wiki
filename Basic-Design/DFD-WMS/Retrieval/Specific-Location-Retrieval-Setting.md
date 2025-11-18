@@ -414,9 +414,7 @@ Upon equipment have picked up the Pallet successfully, ID64 will be sent from AG
 * **LAST_UPDATE_PNAME**: Class name
 
 #ID26 at
-
-# ID26
-jp.co.daifuku.wcs.mc.as21.communication.control.Id26Process
+jp.co.daifuku.asrs.communication.control.Id26Process
 
 ::: mermaid
 flowchart LR
