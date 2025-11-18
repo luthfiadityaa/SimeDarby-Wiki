@@ -486,7 +486,7 @@ DNCARRYINFO
 ")]
 
 id64-->id64process
-id64process-.U.->id64-update
+id64process--> |UPDATE| id64-update
 :::
 
 Upon equipment have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
@@ -497,7 +497,7 @@ Upon equipment have picked up the Pallet successfully, ID64 will be sent from AG
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
-#ID64 at 
+#ID64 at at STV from 9007-9010 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id64Process &nbsp;</span>
 
 ::: mermaid
