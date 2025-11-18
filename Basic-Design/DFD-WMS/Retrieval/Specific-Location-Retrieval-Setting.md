@@ -87,7 +87,7 @@ style P16 fill:#00cc66,stroke:#006633,color:#ffffff
 | **Flow 3: for 1201-1204 directly to this process**                                                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | ID68[(6)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |    |
 | **Flow 4: Only Confirmation treat as Inventory Check**                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| ID45[(7)](#ID26)                                                                | U  | I  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I  | 
+| ID45[(7)](#ID45)                                                                | U  | I  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I  | 
 | **Flow 4.1: ST 1301 & 1302**                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | [Continus to Unplaned Storage from 1301 & 1302](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/948/Unplanned-Storage-from-HP)                         |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | **Flow 4.2: ST 1303**                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
