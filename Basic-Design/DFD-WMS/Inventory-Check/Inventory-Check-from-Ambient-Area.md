@@ -5,11 +5,19 @@
 ![image.png](/.attachments/image-da2c69da-502e-434b-8de2-eafe8b266f4f.png)
 
 # Summary Flow
+### Stage 1 - Retrieval Station
+::: mermaid
+flowchart LR
+  
+PST[To Station 1301,1302]-->|Mode Change| P2[ID63]
+:::
+
+
 ### Stage 1 - Retrieval Operation
 ::: mermaid
 flowchart LR
   
-P1[FROM AISLE STATION - 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID32]-->P4[ID33]-->P5[ID64]-->P6[ID68]-->P7[To STATION - 1301, 1302]
+P1[FROM AISLE STATION - 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014]-->P2[ID12]-->P3[RetrievalSender]-->P4[ID32]-->P5[ID33]-->P6[ID64]-->P7[ID68]-->P8[To STATION - 1301, 1302]
 :::
 
 ### Stage 2 - Restorage Operation
@@ -17,7 +25,7 @@ P1[FROM AISLE STATION - 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014]-->P2[Ret
 ::: mermaid
 flowchart LR
   
-P1[Work Display - Click Complete Button]-->P2[ID45]-->P3[ID26]-->P4[ID64]-->P5[ID33]
+P1[Work Display - Click Complete Button]-->P2[ID45]-->P3[ID26]-->P4[StorageSender]-->P5[ID25]-->P6[ID64]-->P7[ID26]-->P8[StorageSender]-->P9[ID25]-->P10[ID64]-->P11[ID33]
 :::
 
 ## Abbreviation
@@ -49,16 +57,58 @@ P1[Work Display - Click Complete Button]-->P2[ID45]-->P3[ID26]-->P4[ID64]-->P5[I
 ## Inbound Table Data Flow
 | Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HTSD | OPRR | ITEM | STSN | INVC |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
-| Inquiry Retrieval - Set(F2) [(1)](#inventory-check---set(f2))  |   U  |   I  |   I  |   I  |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   I  |
-| Retrieval Sender [(2)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
-| ID32 [(3)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
-| ID33 [(4)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
-| ID64 [(5)](#id64)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
-| ID68 [(6)](#id68)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
-| ID26 [(7)](#id26)                                              |   U  |   U  |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
-| ID64 [(8)](#id64)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
-| ID33 [(9)](#id33)                                              |   U  |      |      |   D  |      |      |      |  U   |      |      |      |      |      |      |   U  |
+| **Mode Change For 1301-1302**                                  |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| ID63 [(1)](#id33)                                              |      |      |      |      |      |      |      |      |      |      |      |      |      |   U  |      |
+| Inquiry Retrieval - Set(F2) [(2)](#inventory-check---set(f2))  |   S  |   I  |   I  |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   I  |
+| **Retrieval Flow**                                             |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| ID12 [(3)](#id12)                                              |   U  |      |      |   I  |      |      |      |      |      |      |      |      |      |      |      |
+| Retrieval Sender [(4)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID32 [(5)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID33 [(6)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
+| ID64 [(7)](#id64)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID68 [(8)](#id68)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
+| **Re-Storage Flow**                                            |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| ID45 [(9)](#id45)                                              |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| ID26 at 1301-1302 [(9)](#id26-at-1301-1302)                    |   U  |   U  |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| StorageSender at 1301-1302 [(10)](#StorageSender-at-1301-1302) |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |      |
+| ID25 at 1301-1302 [(11)](#ID25-at-1301-1302)                   |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |      |
+| ID64 at STV [(12)](#id64-at-STV)                               |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| ID26 at 7207-7214 [(9)](#id26-at-7207-7214)                    |   U  |   U  |      |   U  |      |   I  |      |      |      |      |      |      |      |      |      |
+| StorageSender at 7207-7214 [(10)](#StorageSender-at-7207-7214) |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |      |
+| ID25 at 7207-7214 [(11)](#ID25-at-7207-7214)                   |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |      |
+| ID64 at SRM [(12)](#id64-at-SRM)                               |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| ID33 [(11)](#id33)                                             |   U  |      |      |   D  |      |      |      |  U   |      |      |      |      |      |      |   U  |
 
+# Mode Change Station
+##ID63
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.asrs.communication.control.Id63Process` &nbsp;</span>
+
+If the station mode is **Storage Mode**, change the mode of the station to **Retrieval mode**.
+**Only For 1301, 1302**.
+
+::: mermaid
+flowchart LR
+    input[
+        Operators pressed the retrieval mode button on the operation box.      
+    ]
+
+    id61msg("
+     ID63
+    ")
+    tableList-update[("
+        DMSTATION
+    ")]
+
+    input -->id61msg-->id63process--> |UPDATE| tableList-update
+
+    classDef leftAlign text-align:left;
+    class input leftAlign;
+:::
+
+## DMSTATION
+- CURRENT_MODE = 2: Retrieval Mode
 
 # Inventory Check - Set(F2)
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
@@ -90,7 +140,6 @@ flowchart LR
 
     tableList-insert[("
         DNINVENTORYCHECK
-        DNCARRYINFO
         DNWORKINFO
         DNWORKLIST
     ")]
@@ -102,14 +151,10 @@ flowchart LR
         DMITEM
         DMSTATION
     ")]
-    tableList-update[("
-        DNPALLET
-    ")]
 
     className[InventoryCheckSCH]
 
     input --> className --> |INSERT| tableList-insert
-    className --> |UPDATE| tableList-update
     tableList-select --> |SELECT| className
 :::
 
@@ -119,12 +164,6 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 - Selected Station Number is NOT under suspend. (**DMStation.SUSPEND.OFF**)
 - Selected Station Number is available. (**DMStation.STATUS.NORMAL** and **DMMachine.STATUS_FLAG.ACTIVE**)
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
-
-## DNPALLET
-- STATUS_FLAG = 3:Reserved for retrieval
-- ALLOCATION_FLAG = 1:Allocated
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
 
 ## DNINVENTORYCHECK
 - SCHEDULE_NO = Sequence object
@@ -139,30 +178,6 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 - REGIST_PNAME = Class name
 - LAST_UPDATE_DATE = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
-
-## DNCARRYINFO
-- CARRY_KEY = Sequence Object    
-- PALLET_ID = DNSTOCK.PALLET_ID    
-- WORK_TYPE = 40: Inventory Check    
-- CMD_STATUS = 1: Started    
-- PRIORITY = 2: Normal    
-- RESTORING_FLAG = 1: Return to Same Location  
-- WORK_NO = Sequence Object
-- CARRY_FLAG = 2: Retrieval    
-- RETRIEVAL_STATION_NO = DNSTOCK.LOCATION_NO
-- RETRIEVAL_DETAIL = 0: Inventory Check
-- SOURCE_STATION_NO = DNPALLET.CURRENT_STATION_NO    
-- DEST_STATION_NO = Based on **SOURCE_STATION_NO** where a reserved location belongs to ⟶ **(1301, 1302)**
-- PRIORITY = 2: Normal
-- CANCEL_REQUEST = 0: Not Requested    
-- SCHEDULE_NO = Sequence Object  
-- CANCEL_REQUEST = 0: Not requested
-- AISLE_STATION_NO = DMSHELF.PARENT_STATION_NO
-- END_STATION_NO = DNCARRYINFO.DEST_STATION_NO  
-- REGIST_DATE = SYSTIMESTAMP    
-- REGIST_PNAME = ClassName    
-- LAST_UPDATE_DATE = SYSTIMESTAMP    
-- LAST_UPDATE_PNAME = ClassName
 
 ## DNWORKINFO
 - JOB_NO =  Sequence Object    
@@ -234,6 +249,63 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 - REGIST_PNAME       = ClassName
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = ClassName
+
+#ID12
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.asrs.communication.id.send.As21Id12` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id26msg("
+ID12
+")
+
+id26-insert[("
+DNCARRYINFO
+")]
+
+id26-update[("
+DNPALLET
+")]
+
+InOutStationOperation[InOutStationOperation]
+
+id26msg-->id12process
+id12process-->InOutStationOperation--> |INSERT| id26-insert
+InOutStationOperation--> |UPDATE| id26-update
+:::
+
+## DNPALLET
+- STATUS_FLAG = 3:Reserved for retrieval
+- ALLOCATION_FLAG = 1:Allocated
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
+## DNCARRYINFO
+- CARRY_KEY = Sequence Object    
+- PALLET_ID = DNSTOCK.PALLET_ID    
+- WORK_TYPE = 40: Inventory Check    
+- CMD_STATUS = 1: Started    
+- PRIORITY = 2: Normal    
+- RESTORING_FLAG = 1: Return to Same Location  
+- WORK_NO = Sequence Object
+- CARRY_FLAG = 2: Retrieval    
+- RETRIEVAL_STATION_NO = DNSTOCK.LOCATION_NO
+- RETRIEVAL_DETAIL = 0: Inventory Check
+- SOURCE_STATION_NO = DNPALLET.CURRENT_STATION_NO    
+- DEST_STATION_NO = Based on **SOURCE_STATION_NO** where a reserved location belongs to ⟶ **(1301, 1302)**
+- PRIORITY = 2: Normal
+- CANCEL_REQUEST = 0: Not Requested    
+- SCHEDULE_NO = Sequence Object  
+- CANCEL_REQUEST = 0: Not requested
+- AISLE_STATION_NO = DMSHELF.PARENT_STATION_NO
+- END_STATION_NO = DNCARRYINFO.DEST_STATION_NO  
+- REGIST_DATE = SYSTIMESTAMP    
+- REGIST_PNAME = ClassName    
+- LAST_UPDATE_DATE = SYSTIMESTAMP    
+- LAST_UPDATE_PNAME = ClassName
 
 # Retrieval Sender
 
@@ -495,7 +567,7 @@ As21Id45 --> buttonlight
 
 Sending of ID45 is sent to AGC when user clicked on **Complete** at Work Display where the Completion button at Control Box will start blinking. If user confirmed re-storing of pallet is safe to proceed, user can click on the blinking Completion button to proceed with transporting of pallet to ASRS.
 
-# ID26
+# ID26 at 1301-1302
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.asrs.communication.id.recv.As21Id26` &nbsp;</span>
@@ -558,7 +630,7 @@ After user clicked on Completion button at Station in Unit Load, AGC will send I
 - LAST_UPDATE_DATE = SYSTIMESTAMP    
 - LAST_UPDATE_PNAME = ClassName
 
-#Storage Sender
+#StorageSender at 1301-1302
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.asrs.transmission.StorageSender` &nbsp;</span>
@@ -613,7 +685,7 @@ StorageSender--> |UPDATE| automaticmodechangesender-update
 - LAST_UPDATE_DATE =  SYSTIMESTAMP    
 - LAST_UPDATE_PNAME =  Class name
 
-# ID25
+# ID25 at 1301-1302
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process` &nbsp;</span>
@@ -646,7 +718,7 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 - LAST_UPDATE_DATE  = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
 
-# ID64
+# ID64 at STV
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process` &nbsp;</span>
@@ -673,7 +745,7 @@ Upon equipment **(STV)** have picked up the Pallet successfully, ID64 will be se
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = Class name
 
-# ID26(2)
+# ID26 at 7207-7214
 
 ::: mermaid
 flowchart LR
@@ -694,7 +766,6 @@ id26-update[("
 DNCARRYINFO
 DNPALLET
 DNWORKINFO
-DNSTOCK
 ")]
 
 storageStationOperator[storageStationOperator]
@@ -740,7 +811,7 @@ Continue the process **storage**, AGC will send ID26 to WareNavi and WareNavi w
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = ClassName
 
-# Storage Sender(2)
+# StorageSender at 7207-7214
 
 ::: mermaid
 flowchart LR
@@ -814,7 +885,7 @@ After successful creation of arrival record in **ID26process**, Automatic Mode C
 - LAST_UPDATE_DATE  = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
 
-# ID25(2)
+# ID25 at 7207-7214
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process` &nbsp;</span>
@@ -846,7 +917,7 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 - LAST_UPDATE_DATE    = SYSTIMESTAMP
 - LAST_UPDATE_PNAME   = Class name
 
-# ID64(2)
+# ID64 at SRM
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process` &nbsp;</span>
@@ -872,8 +943,6 @@ Upon equipment **(SRM)** have picked up the Pallet successfully, ID64 will be se
 - CMD_STATUS          = 4:Pickup completed
 - LAST_UPDATE_DATE    = SYSTIMESTAMP
 - LAST_UPDATE_PNAME   = Class name
-
-
 
 # ID33
 
