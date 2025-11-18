@@ -196,7 +196,7 @@ flowchart LR
 flowchart LR
 
 id26msg("
-ID 12
+ID12
 ")
 
 id26-insert[("
@@ -210,7 +210,7 @@ DNPALLET
 retrievalstationoperator[RetrievalStationOperator]
 inoutstationoperator[InOuttationOperator]
 
-releaseCommand-->id26msg-->id12process
+id26msg-->id12process
 id12process-->inoutstationoperator
 id12process-->retrievalstationoperator
 inoutstationoperator--> |INSERT| id26-insert
