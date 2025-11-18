@@ -465,7 +465,7 @@ After user clicked on Completion button at Station, AGC will send ID26 to WareNa
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
-## DNCARRYINFO
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 - CMD_STATUS = 1:Started
 - LAST_UPDATE_DATE = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
