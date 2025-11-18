@@ -242,7 +242,7 @@ flowchart LR
 *   **STORAGE_LOCATION_TO**: Value from Screen (To Location)
 *   **DOCK_NO**: Value from Screen (Dock No)
 *   **TRUCK_PLATE_NO**: Value from Screen (Truck Plate No)
-*   **REMOVAL_TYPE**: Value from Screen (1: Unit Retrieval​, 2: Only Confirmation = Retrieval Qty = 0)
+*   **REMOVAL_TYPE**: Value from Screen ⟶ **<span style="color:green;">(1: Unit Retrieval​, 2: Only Confirmation = Retrieval Qty = 0)</span>**
 *   **USER_ID**: Login Info     
 *   **TERMINAL_NO**: Login info
 *   **REGIST_DATE**: SYSTIMESTAMP    
