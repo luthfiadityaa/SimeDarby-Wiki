@@ -76,7 +76,7 @@ style P16 fill:#00cc66,stroke:#006633,color:#ffffff
 | ID32[(3)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |    
 | ID33[(4)](#ID33)                                                                |    |    |    | U  |    |    |     |    | U  |    |    |    |    |    |    |     
 | **Flow 1: Thorugh crane 7-10 only for 1303**                                    |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| ID64[(5)](#ID64)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
+| ID64[(5)](#ID64-at-STV-from-(9001-9006-&-9011-9014))                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
 | ID26[(6)]                                                                       |    |    | U  | U  |    |    | I   |    |    |    |    |    |    |    |    |
 | Retrieval Sender[(7)]                                                           |    |    |    | U  |    |    | U   |    |    |    |    |    |    |    |    |
 | ID25[(8)]                                                                       |    |    |    | U  |    |    | D   |    |    |    |    |    |    |    |    |
@@ -387,7 +387,7 @@ ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi
 #Flow 1 : Through crane 7-10
 Refer to AGC Linkage Specs: [AGCⅦA Linkage Specs_1.2.7_AF954201_SimeDarby_v1.1.xlsx - Retrieval Section - 14 Sheets](https://daifuku.sharepoint.com/:x:/r/sites/jp0211039/Shared%20Documents/PTDI/Projects/PT.%20Guthrie%20Indonesia%20Sei%20Mangkei%20Refinery(Sime%20Darby)/Garuda%20Project/F.%20Basic%20Design/A.%20AGC%20Linkage%20Specs/AGC%E2%85%A6A%20Linkage%20Specs_1.2.7_AF954201_SimeDarby_v1.1.xlsx?d=w31ccf4d7958e4ea989446a6ac5a1a566&csf=1&web=1&e=J2FP9Y)
 
-#ID64 at STV from (9001-9006 & 9011-9014
+#ID64 at STV from (9001-9006 & 9011-9014)
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id64Process &nbsp;</span>
 
 ::: mermaid
