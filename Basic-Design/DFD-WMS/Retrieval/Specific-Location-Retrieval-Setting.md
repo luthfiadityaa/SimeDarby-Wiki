@@ -153,6 +153,11 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 - AGC is online. <span style="color:green; font-weight:bold">(DMGroupController.STATUS_FLAG.ONLINE)</span>
 - Selected Station Number is NOT under suspend. <span style="color:green; font-weight:bold">(DMStation.SUSPEND.OFF)</span>
 - Selected Station Number is available. <span style="color:green; font-weight:bold">(DMStation.STATUS.NORMAL and DMMachine.STATUS_FLAG.ACTIVE)</span>
+- 2 options in Removal Type:​
+  - 1: Unit Retrieval​
+  - 2: Only Confirmation = Retrieval Qty = 0, This pallet will be performed like inventory check. ​
+
+the pallet will be retrieved to a station, and return to shelf from this station.​
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
 ::: mermaid
@@ -212,6 +217,8 @@ flowchart LR
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
+
+Only Confirmation = Retrieval Qty = 0,
 *   **JOB_NO**: Sequence Object    
 *   **SETTING_UNIT_KEY**: Sequence Object    
 *   **COLLECT_JOB_NO**: Sequence Object    
@@ -226,7 +233,7 @@ flowchart LR
 *   **MATERIAL_CODE**: DNSTOCK.MATERIAL_CODE    
 *   **MATERIAL_NAME**: DMITEM.MATERIAL_NAME    
 *   **MATERIAL_TYPE**: DMITEM.MATERIAL_TYPE 
-*   **PLAN_QTY**: Value from screen (Retrieval Qty / Stock Qty)    
+*   **PLAN_QTY**: Value from screen (Retrieval Qty / Stock Qty) / 0
 *   **TEMPERING_PERIOD**: DNSTOCK.TEMPERING_PERIOD
 *   **TEMPERING_FLAG**: DNSTOCK.TEMPERING_FLAG      
 *   **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE
