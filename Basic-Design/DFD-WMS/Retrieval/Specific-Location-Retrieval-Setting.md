@@ -124,6 +124,7 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 ::: mermaid
 flowchart LR
     input[
+        Retrieval Material
         Station
         Pallet #
         SoftZone
