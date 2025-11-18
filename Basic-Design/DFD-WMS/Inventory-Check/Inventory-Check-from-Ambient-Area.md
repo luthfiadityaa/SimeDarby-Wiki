@@ -9,7 +9,7 @@
 ::: mermaid
 flowchart LR
   
-P1[FROM AISLE STATION - 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID32]-->P4[ID33]-->P5[ID64]-->P6[ID68]-->P7[ID26]-->P8[To STATION - 1301, 1302]
+P1[FROM AISLE STATION - 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID32]-->P4[ID33]-->P5[ID64]-->P6[ID68]-->P7[To STATION - 1301, 1302]
 :::
 
 ### Stage 2 - Restorage Operation
@@ -51,13 +51,13 @@ P1[Operator Click Completion Button]-->P2[FROM AISLE STATION - 1301,1302]-->P3[I
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
 | Inquiry Retrieval - Set(F2) [(1)](#inventory-check---set(f2))  |   U  |   I  |   I  |   I  |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   I  |
 | Retrieval Sender [(2)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
-|      |      |      |      |      |      |      |
 | ID32 [(3)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
 | ID33 [(4)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
-| ID68 [(5)](#id68)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
-| ID26 [(6)](#id26)                                              |   U  |   U  |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
-| ID64 [(7)](#id64)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
-| ID33 [(8)](#id33)                                              |   U  |      |      |   D  |      |      |      |  U   |      |      |      |      |      |      |   U  |
+| ID64 [(5)](#id64)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID68 [(6)](#id68)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
+| ID26 [(7)](#id26)                                              |   U  |   U  |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID64 [(8)](#id64)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID33 [(9)](#id33)                                              |   U  |      |      |   D  |      |      |      |  U   |      |      |      |      |      |      |   U  |
 
 
 # Inventory Check - Set(F2)
@@ -332,6 +332,33 @@ ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi
 - LAST_UPDATE_DATE = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
 
+# ID64
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id64("
+ID 64
+")
+
+id64-update[("
+DNCARRYINFO
+")]
+
+id64-->id64process
+id64process-.UPDATE.->id64-update
+:::
+
+Upon equipment have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
+
+## DNCARRYINFO
+- CMD_STATUS         = 4:Pickup completed
+- LAST_UPDATE_DATE   = SYSTIMESTAMP
+- LAST_UPDATE_PNAME  = Class name
+
 # ID68
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id68Process` &nbsp;</span>
@@ -351,7 +378,7 @@ id68-->id68process
 id68process--> |INSERT| id68-insert
 :::
 
-ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related Station in ASRS. Upon receiving of ID68, insertion of data will be executed.
+ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived at related Station. Upon receiving of ID68, insertion of data will be executed for Stations 1301 or 1302.
 
 ## DNOPERATIONDISPLAY
 - CARRY_KEY = MC Key information from ID68
@@ -374,6 +401,100 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 - Truck_Plate_no
 
 ![image.png](/.attachments/image-1e56dc6e-657e-47ff-9a47-575b04705583.png)
+
+# Work Display
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wms.web.display.inquiry.workdisplay.WorkDisplaySCH` &nbsp;</span>
+
+![image.png](/.attachments/image-c2e79f90-311f-492c-a016-10421c8fe162.png)
+
+::: mermaid
+flowchart LR
+
+input("
+Complete button
+")
+
+id45msg("
+ID 45
+")
+
+workdisplay-update[("
+DNSTOCK
+DNPALLET
+DNCARRYINFO
+DNWORKINFO
+")]
+
+workdisplay-delete[("
+DNOPERATIONDISPLAY
+")]
+
+workdisplay[WorkDisplaySCH]
+
+input-->workdisplay
+workdisplay-.UPDATE.->workdisplay-update
+workdisplay-.DELETE.->workdisplay-delete
+workdisplay-->id45msg
+:::
+
+Upon Pallet arrival at Station 1301-1302, user can use Work Display Screen to verify the Material, Stock Qty and Others detail information then can complete the Inventory Check process also re-storage the pallet.
+
+After user successful click  **Complete** button, ID45 will be sent along from WareNavi where Completion button at related Stations in Unit Load Control Box will start to blink. After pressing the Completion button, pallet will return back to ASRS.
+
+## DNSTOCK
+- STOCK_QTY = Value from screen (Primary UOM Count Qty)
+- ALLOCATION_QTY = Value from screen (Primary UOM Count Qty)
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
+## DNPALLET
+- STATUS_FLAG = 1:Reserved for Storage
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
+## DNCARRYINFO
+- CMD_STATUS = 6:Arrival
+- CARRY_FLAG = 1:Storage
+- SOURCE_STATION_NO = 2111-2113
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
+## DNWORKINFO
+- STATUS_FLAG = 4:Completed
+- RESULT_AREA_NO = DNWORKINFO.PLAN_AREA_NO
+- RESULT_LOCATION_NO = DNWORKINFO.PLAN_LOCATION_NO
+- RESULT_LOT_NO = DNWORKINFO.PLAN_LOT_NO
+- RESULT_QTY = 0
+- WORK_DAY = DMWARENAVISYSTEM.WORK_DAY
+- USER_ID = Login info
+- TERMINAL_NO = Login info
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
+# ID45
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.asrs.communication.id.recv.As21Id26` &nbsp;</span>
+jp.co.daifuku.wcs.mc.as21.communication.id.send.As21Id45
+
+::: mermaid
+flowchart LR
+
+id45msg("
+ID 45
+")
+
+buttonlight["
+Station Completion button
+Light Up
+"]
+
+id45msg--> As21Id45
+As21Id45 --> buttonlight
+:::
+
+Sending of ID45 is sent to AGC when user clicked on **Complete** at Work Display where the Completion button at Control Box will start blinking. If user confirmed re-storing of pallet is safe to proceed, user can click on the blinking Completion button to proceed with transporting of pallet to Unit Load.
 
 # ID26
 
