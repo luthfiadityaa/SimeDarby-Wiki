@@ -37,6 +37,8 @@ Cond3{Station?}-->|1303| P16[Go to Unplanned Storage From 1301 & 1303]
 
 click P15 "https://www.google.com" "Go to Google"
 click P16 "https://www.google.com" "Go to Google"
+style P15 fill:#00cc66,stroke:#006633,color:#ffffff
+style P16 fill:#00cc66,stroke:#006633,color:#ffffff
 :::
 
 #<span style="color:skyblue; font-weight:bold">Specific Location Retrieval Setting database flow</span>
