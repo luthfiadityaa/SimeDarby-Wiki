@@ -196,22 +196,19 @@ flowchart LR
 ::: mermaid
 flowchart LR
 
-releaseCommand["
-Operator puts the pallet onto Conveyor
-"]
-
 id26msg("
-ID 26
+ID 12
 ")
 
 id26-insert[("
-DNARRIVAL
-DNPALLET
-DNSTOCK
 DNCARRYINFO
 ")]
 
-inoutstationoperator[InOutStationOperator]
+id26-update[("
+DNPALLET
+")]
+
+inoutstationoperator[RetrievalStationOperator]
 
 releaseCommand-->id26msg-->id26process-->inoutstationoperator
 inoutstationoperator--> |INSERT| id26-insert
@@ -219,7 +216,6 @@ inoutstationoperator--> |INSERT| id26-insert
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ###<span style="color:skyblue; font-weight:bold">DNPallet</span>
-* **PALLET_ID**: Sequence Object
 * **CURRENT_STATION_NO**: DNARRIVAL.STATION_NO → 1301 or 1302
 * **WH_STATION_NO**: Value from screen (Storage Location To) → FGW1 (Ambient/9002) or FGW2 (Tempering/9001)
 * **STATUS_FLAG**: 3:Reserved for Retrieval
