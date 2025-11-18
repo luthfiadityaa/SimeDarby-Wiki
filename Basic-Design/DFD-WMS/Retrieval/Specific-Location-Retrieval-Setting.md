@@ -314,7 +314,7 @@ retrievalstationoperator--> |UPDATE| id26-update
 * **STATUS_FLAG**: 3:Reserved for Retrieval
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
-
+<br>
 <hr style="width:20%; margin-left:0; border: 2px solid green;">
 
 **1201-1209 & 1301-1302**
