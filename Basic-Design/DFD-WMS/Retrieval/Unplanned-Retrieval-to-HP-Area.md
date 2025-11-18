@@ -208,7 +208,8 @@ id26-update[("
 DNPALLET
 ")]
 
-inoutstationoperator[RetrievalStationOperator]
+retrievalstationoperator[RetrievalStationOperator]
+inoutstationoperator[InOuttationOperator]
 
 releaseCommand-->id26msg-->id12process-->inoutstationoperator
 inoutstationoperator--> |INSERT| id26-insert
