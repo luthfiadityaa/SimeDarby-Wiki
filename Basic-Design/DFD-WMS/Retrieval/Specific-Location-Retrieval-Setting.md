@@ -706,7 +706,7 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 ![image.png](/.attachments/image-1e56dc6e-657e-47ff-9a47-575b04705583.png)
 
 <br>
-<hr style="width:70%; margin-left: 0; border: 2px solid green;">
+<hr style="width:55%; margin-left: 0; border: 2px solid green;">
 
 **Continue Process with**: 
 
@@ -715,7 +715,7 @@ If Removal Type =  1:Unit Retrieval
 
 If Removal Type = 1:Only Confirmation = Retrieval Qty = 0
 - [Flow 4: Only Confirmation treat as Inventory Check](#Flow-4)
-<hr style="width:70%; margin-left: 0; border: 2px solid green;">
+<hr style="width:55%; margin-left: 0; border: 2px solid green;">
 
 <hr>
 
