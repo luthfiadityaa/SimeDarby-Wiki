@@ -383,7 +383,8 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 flowchart LR
 
 buttonclicked["
-Operators Press the completion button.
+Operators Press the 
+completion button.
 "]
 
 id26msg("
