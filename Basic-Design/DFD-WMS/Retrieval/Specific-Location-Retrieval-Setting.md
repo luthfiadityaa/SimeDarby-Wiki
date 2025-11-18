@@ -664,7 +664,7 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 * **LAST_UPDATE_PNAME**: Class name
 
 ##<span style="color:skyblue; font-weight:bold">LED sign displays the work</span>  
-<span style="color:black; font-weight:bold; color:red">*This performs the operation according to the Station 1205-1209 & 1301-1302</span>
+<span style="color:black; font-weight:bold; color:red">*This performs the operation according to the Station 1205-1209 & 1301-1302.</span>
 [Display information]
 * **Job Type**
 * **Material Code**
