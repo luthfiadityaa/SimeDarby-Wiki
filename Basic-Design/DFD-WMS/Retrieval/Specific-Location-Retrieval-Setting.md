@@ -748,6 +748,8 @@ Sending of ID45 is sent to AGC when user clicked on **Complete** at Work Display
 ##Flow 4.2: ST 1301 & 1302
 - [Continue to Unplaned Storage from 1303](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/880/Unplanned-Storage-from-OP-Area)
 
+<hr>
+
 #ID26
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.control.Id26Process&nbsp;</span>
 
