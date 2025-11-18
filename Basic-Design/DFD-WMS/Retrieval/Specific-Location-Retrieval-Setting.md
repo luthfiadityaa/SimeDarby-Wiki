@@ -282,7 +282,11 @@ inoutstationoperator--> |INSERT| id26-insert
 inoutstationoperator--> |UPDATE| id26-update
 :::
 
+<hr style="width:10%; margin-left:0; border: 2px solid green;">
+
 *1201-1209*
+<hr style="width:10%; margin-left:0; border: 2px solid green;">
+
 ::: mermaid
 flowchart LR
 
