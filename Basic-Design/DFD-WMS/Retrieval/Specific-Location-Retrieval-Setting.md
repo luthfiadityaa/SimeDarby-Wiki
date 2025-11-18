@@ -35,8 +35,8 @@ Cond2{Retrieval Type?}--> |Only Confirmation| P14[ID45]-->Cond3{Station?}
 Cond3{Station?}-->|1301 & 1302| P15[Go to Unplanned Storage From 1301 & 1302]
 Cond3{Station?}-->|1303| P16[Go to Unplanned Storage From 1301 & 1303] 
 
-click P15 "[Unplanned Storage from HP](/Basic-Design/DFD-WMS/Storage/Unplanned-Storage/Unplanned-Storage-from-HP)" "Go to Google"
-click P16 "https://www.google.com" "Go to Google"
+click P15 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/948/Unplanned-Storage-from-HP" "Go to HP"
+click P16 "https://www.google.com" "Go to OP"
 style P15 fill:#00cc66,stroke:#006633,color:#ffffff
 style P16 fill:#00cc66,stroke:#006633,color:#ffffff
 :::
