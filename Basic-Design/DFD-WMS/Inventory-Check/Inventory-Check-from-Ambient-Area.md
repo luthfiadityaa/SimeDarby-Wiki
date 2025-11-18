@@ -20,8 +20,6 @@ flowchart LR
 P1[FROM AISLE STATION - 1301,1302]-->P2[StorageSender]-->P3[ID05]-->P4[ID25]-->P5[ID64]-->P6[ID33]
 :::
 
-
-
 ## Abbreviation
 | **CODE** | TABLE NAME       |
 |----------|------------------|
@@ -57,6 +55,8 @@ P1[FROM AISLE STATION - 1301,1302]-->P2[StorageSender]-->P3[ID05]-->P4[ID25]-->P
 | ID32 [(3)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
 | ID33 [(4)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
 | ID68 [(5)](#id68)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
+| ID26 [(6)](#id26)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
+
 
 # Inventory Check - Set(F2)
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
@@ -372,6 +372,82 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 - Truck_Plate_no
 
 ![image.png](/.attachments/image-1e56dc6e-657e-47ff-9a47-575b04705583.png)
+
+# ID26
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.asrs.communication.id.recv.As21Id26` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id26msg("
+ID 26
+")
+
+id26-update[("
+DNPALLET
+DNCARRYINFO
+DNWORKINFO
+")]
+
+storageStationOperator[storageStationOperator]
+
+id26msg-->id26process-->storageStationOperator
+storageStationOperator--> |UPDATE| id26-update
+:::
+
+## DNPALLET
+- CURRENT_STATION_NO = Station Number from **ID26**
+- STATUS_FLAG = 1: Reserved for Storage     
+- LAST_UPDATE_DATE = SYSTIMESTAMP    
+- LAST_UPDATE_PNAME = ClassName
+
+## DNCARRYINFO
+- WORK_TYPE = 2: Storage    
+- CMD_STATUS = 6: Arrival  
+- RESTORING_FLAG = 1: Return to Same Location  
+- CARRY_FLAG = 1: Storage 
+- SOURCE_STATION_NO = DNPALLET.CURRENT_STATION_NO   
+- DEST_STATION_NO = Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (**7207/7208/7209/7210/7211/7212/7213/7214**)
+- ARRIVAL_DATE = SYSTIMESTAMP  
+- LAST_UPDATE_DATE = SYSTIMESTAMP    
+- LAST_UPDATE_PNAME = ClassName
+
+##DNWORKINFO
+- JOB_TYPE = 2:Storage
+- STATUS_FLAG
+- LAST_UPDATE_DATE = SYSTIMESTAMP    
+- LAST_UPDATE_PNAME = ClassName
+
+
+# ID64 at STV
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id64("
+ID 64
+")
+
+id64-update[("
+DNCARRYINFO
+")]
+
+id64-->id64process
+id64process-.UPDATE.->id64-update
+:::
+
+Upon equipment **(STV)** have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
+
+## DNCARRYINFO
+- CMD_STATUS         = 4:Pickup completed
+- LAST_UPDATE_DATE   = SYSTIMESTAMP
+- LAST_UPDATE_PNAME  = Class name
+
 
 # User Story
   - #5795
