@@ -341,7 +341,7 @@ retrievalstationoperator--> |UPDATE| id26-update
 *   **REGIST_PNAME**: ClassName    
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
-
+<br>
 <hr style="width:10%; margin-left:0; border: 2px solid green;">
 
 *For 1303*
