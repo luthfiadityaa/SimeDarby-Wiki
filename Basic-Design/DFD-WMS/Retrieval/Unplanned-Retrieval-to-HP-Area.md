@@ -246,6 +246,8 @@ All Carton Retrieval operation at Ambient or Tempering will be retrieved to Stat
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
+#ID12
+
 #ID32
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id32Process&nbsp;</span>
 
