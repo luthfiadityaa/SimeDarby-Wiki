@@ -289,7 +289,7 @@ id32process--> |UPDATE| id32-update
 ID32 sent from AGC to WareNavi indicate AGC responded the retrieval job by WareNavi.
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-###<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 * **CMD_STATUS**: 3:Commanded
 * **ERROR_CODE**: 0
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
