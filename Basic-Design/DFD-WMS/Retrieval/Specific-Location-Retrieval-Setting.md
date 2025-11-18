@@ -54,7 +54,7 @@ Cond1{Flow?}--> |Flow 3: for 1201-1204 directly to this process| P7[ID68]-->P13[
 | **Only For 1301, 1302 & 1303**                                                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
 | ID63 [(1)](#ID63)                                                               |    |    |    |    |    |    |     |    |    |    |    | U  |    |    |     |
 | **Directly For 1201-1209**                                       |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
-| Specific Location Retrieval Setting - Set(F2) [(1)](#Inquiry-Retrieval-Setting---Set(F2)) | I  |    | S  | I  | S  |    |     | S  | S  |    | S  | S  | S   |    |    |
+| Specific Location Retrieval Setting - Set(F2) [(1)](#Specific-Location-Retrieval-Setting---Set(F2)) | I  |    | S  | I  | S  |    |     | S  | S  |    | S  | S  | S   |    |    |
 | Specific Location Retrieval Setting - Cancel Entries(F11) [(2)](#Inquiry-Retrieval-Setting---Cancel-Entries(F11)) | D   |    |   | D   |   |    |     |    |    |    |    |    |    |    |    |
 | **Normal Flow**                                       |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
 | RetrievalSender[(2)](#Retrieval-Sender)                                         |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |    |  
