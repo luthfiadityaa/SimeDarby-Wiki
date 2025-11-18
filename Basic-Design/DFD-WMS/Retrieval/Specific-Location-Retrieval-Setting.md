@@ -705,6 +705,8 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 
 ![image.png](/.attachments/image-1e56dc6e-657e-47ff-9a47-575b04705583.png)
 
+<hr>
+
 #Flow 4: Only Confirmation treat as Inventory Check
 **Operation at 1301,1302,1303**
 ##ID45
