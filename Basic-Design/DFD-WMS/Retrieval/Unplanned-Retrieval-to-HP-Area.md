@@ -220,7 +220,7 @@ retrievalstationoperator--> |UPDATE| id26-update
 :::
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-###<span style="color:skyblue; font-weight:bold">DNPallet</span>
+####<span style="color:skyblue; font-weight:bold">DNPallet</span>
 * **STATUS_FLAG**: 3:Reserved for Retrieval
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
