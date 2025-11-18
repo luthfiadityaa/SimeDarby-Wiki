@@ -11,13 +11,20 @@ PST[If Retrieve To Station 1301-1303]-->PMode[ID63]
 ::: mermaid
 flowchart LR
 
-P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID32]-->P4[ID33]-->(Flow?)
-
-
-
-P5[ID64]-->P6[ID68]-->P7[ID26]-->P8[To STATION - 1205, 1206, 
-1207, 1208, 1209] 
+P1[FROM AISLE STATION - 9001, 9002 , 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID32]-->P4[ID33]-->Cond1{Flow?} 
 :::
+
+**Stage 3**
+::: mermaid
+flowchart LR
+
+Cond1{Flow?} 
+
+Cond1{Flow?}-->P5[ID64]
+Cond1{Flow?}-->P6[ID64]
+Cond1{Flow?}-->P7[ID68]
+:::
+
 
 #<span style="color:skyblue; font-weight:bold">Specific Location Retrieval Setting database flow</span>
 **Abbreviation:**
