@@ -255,7 +255,11 @@ flowchart LR
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.send.As21Id12&nbsp;</span>
 
+<hr style="width:10%; margin-left:0; border: 2px solid green;">
+
 *1301-1303*
+<hr style="width:10%; margin-left:0; border: 2px solid green;">
+
 ::: mermaid
 flowchart LR
 
