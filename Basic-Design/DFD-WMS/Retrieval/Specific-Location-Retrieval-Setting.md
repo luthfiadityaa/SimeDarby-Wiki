@@ -337,7 +337,7 @@ retrievalstationoperator--> |UPDATE| id26-update
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 *   **CARRY_KEY**: Sequence Object    
 *   **PALLET_ID**: DNSTOCK.PALLET_ID    
-*   **WORK_TYPE**: 23:Unplanned Retrieval    
+*   **WORK_TYPE**: 26:Direct Transfer    
 *   **CMD_STATUS**: 1:Started    
 *   **RESTORING_FLAG**: 0:Not Restore to Original Location  
 *   **WORK_NO**: Sequence Object    
