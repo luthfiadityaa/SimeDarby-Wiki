@@ -69,15 +69,15 @@ P1[Work Display - Click Complete Button]-->P2[ID45]-->P3[ID26]-->P4[StorageSende
 | ID68 [(8)](#id68)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
 | **Re-Storage Flow**                                            |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 | ID45 [(9)](#id45)                                              |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| ID26 at 1301-1302 [(9)](#id26-at-1301-1302)                    |   U  |   U  |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
-| StorageSender at 1301-1302 [(10)](#StorageSender-at-1301-1302) |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |      |
-| ID25 at 1301-1302 [(11)](#ID25-at-1301-1302)                   |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |      |
-| ID64 at STV [(12)](#id64-at-STV)                               |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
-| ID26 at 7207-7214 [(13)](#id26-at-7207-7214)                    |   U  |   U  |      |   U  |      |   I  |      |      |      |      |      |      |      |      |      |
-| StorageSender at 7207-7214 [(14)](#StorageSender-at-7207-7214) |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |      |
-| ID25 at 7207-7214 [(15)](#ID25-at-7207-7214)                   |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |      |
-| ID64 at SRM [(16)](#id64-at-SRM)                               |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
-| ID33 [(17)](#id33)                                             |   U  |      |      |   D  |      |      |      |  U   |      |      |      |      |      |      |   U  |
+| ID26 at 1301-1302 [(10)](#id26-at-1301-1302)                    |   U  |   U  |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| StorageSender at 1301-1302 [(11)](#StorageSender-at-1301-1302) |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |      |
+| ID25 at 1301-1302 [(12)](#ID25-at-1301-1302)                   |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |      |
+| ID64 at STV [(13)](#id64-at-STV)                               |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| ID26 at 7207-7214 [(14)](#id26-at-7207-7214)                   |   U  |   U  |      |   U  |      |   I  |      |      |      |      |      |      |      |      |      |
+| StorageSender at 7207-7214 [(15)](#StorageSender-at-7207-7214) |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |      |
+| ID25 at 7207-7214 [(16)](#ID25-at-7207-7214)                   |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |      |
+| ID64 at SRM [(17)](#id64-at-SRM)                               |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| ID33 [(18)](#id33)                                             |   U  |      |      |   D  |      |      |      |  U   |      |      |      |      |      |      |   U  |
 
 # Mode Change Station
 ##ID63
@@ -807,7 +807,8 @@ Continue the process **storage**, AGC will send ID26 to WareNavi and WareNavi w
 - LAST_UPDATE_PNAME = ClassName
 
 ## DNPALLET                                                     
-- CURRENT_STATION_NO = DNARRIVAL.STATION_NO                                                                                                                                                
+- CURRENT_STATION_NO = DNARRIVAL.STATION_NO
+- WH_STATION_NO      = DNCARRYINFO.END_STATION_NO                                                                                                                                                
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = ClassName
 
@@ -820,8 +821,6 @@ DMWAREHOUSE
 DMSHELF
 DNCARRYINFO
 DNWORKINFO
-DNPALLET
-DNSTOCK
 DNARRIVAL
 ")]
 storageSender-input[("
@@ -866,18 +865,6 @@ After successful creation of arrival record in **ID26process**, Automatic Mode C
 - PLAN_LOCATION_NO  = Location Number where a reserved location belongs to
 - LAST_UPDATE_DATE  = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = ClassName
-
-## DNPALLET
-- CURRENT_STATION_NO = Reserved Location Number
-- WH_STATION_NO      = DNCARRYINFO.END_STATION_NO
-- LAST_UPDATE_DATE   = SYSTIMESTAMP
-- LAST_UPDATE_PNAME  = Class name
-
-## DNSTOCK
-- AREA_NO           = DNWORKINFO.PLAN_AREA_NO
-- LOCATION_NO       = DNWORKINFO.PLAN_LOCATION_NO
-- LAST_UPDATE_DATE  = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
 
 ## DNARRIVAL
 - CARRY_KEY         = DNCARRYINFO.CARRY_KEY
