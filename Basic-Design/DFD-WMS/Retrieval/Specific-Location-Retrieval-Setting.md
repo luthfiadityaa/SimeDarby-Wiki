@@ -538,7 +538,8 @@ retrievaloperator--I-->id26-insert
 retrievaloperator-.U.->id26-update
 :::
 
-After user clicked on Completion button at Station, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Storage Sender picks up the data.
+Continue the process Direct Transfer, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record.
+
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNArrival</span>
 * **ARRIVAL_DATE**: SYSTIMESTAMP
@@ -555,9 +556,9 @@ After user clicked on Completion button at Station, AGC will send ID26 to WareNa
 * **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-- CMD_STATUS = 1:Started
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+* **CMD_STATUS**: 1:Started
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
 
 ##Retrieval Sender at 7207-7210
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalSender&nbsp;</span>
