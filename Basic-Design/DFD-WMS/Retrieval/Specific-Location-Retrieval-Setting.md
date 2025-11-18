@@ -415,6 +415,62 @@ Upon equipment have picked up the Pallet successfully, ID64 will be sent from AG
 
 #ID26 at
 
+# ID26
+jp.co.daifuku.wcs.mc.as21.communication.control.Id26Process
+
+::: mermaid
+flowchart LR
+
+buttonclicked["
+Station Completion 
+button clicked
+"]
+
+id26msg("
+ID 26
+")
+
+id26-insert[("
+DNARRIVAL
+")]
+
+id26-update[("
+DNCARRYINFO
+")]
+
+id26process[id26process]
+retrievaloperator[RetrievalStationOperator]
+
+
+buttonclicked --> id26msg
+id26msg -->id26process
+id26process-->retrievaloperator
+retrievaloperator--I-->id26-insert
+retrievaloperator-.U.->id26-update
+:::
+
+After user clicked on Completion button at Station, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Storage Sender picks up the data.
+
+## DNARRIVAL
+- ARRIVAL_DATE = SYSTIMESTAMP
+- STATION_NO = Arrival Station Number from ID26
+- CARRY_KEY = 99999999
+- BCR_DATA = Barcode information from ID26
+- CONTROLINFO = Control information from ID26
+- SEND_FLAG = 0:Not sent
+- HEIGHT = Dimension Information from ID26
+- WIDTH = Dimension Information From ID26
+- REGIST_DATE = SYSTIMESTAMP
+- REGIST_PNAME = Class name
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
+## DNCARRYINFO
+- CMD_STATUS = 1:Started
+- LAST_UPDATE_DATE = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = Class name
+
+
 #Retrieval Sender at
 
 #ID25 at
