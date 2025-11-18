@@ -467,9 +467,9 @@ After user clicked on Completion button at Station, AGC will send ID26 to WareNa
 - LAST_UPDATE_DATE = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
 
-#Retrieval Sender at
+#Retrieval Sender at 7207-7210
 
-#ID25 at
+#ID25 at at 7207-7210
 
 #ID64 at
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id64Process &nbsp;</span>
