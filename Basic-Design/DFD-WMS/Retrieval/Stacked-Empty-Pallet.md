@@ -446,4 +446,4 @@ After the completion button flashes, the operator removes the pallet and presses
 - [DFD Retrieval for Stacked Empty Pallet](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5794)
 
 #Related DFD
-- [Unplanned Storage and Retrieval Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result)
+- [Empty Pallet Storage to Ambient Area]([Empty Pallet Storage to Ambient Area - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/884/Empty-Pallet-Storage-to-Ambient-Area))
