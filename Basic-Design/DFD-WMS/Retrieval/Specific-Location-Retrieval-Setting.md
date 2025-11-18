@@ -329,7 +329,10 @@ retrievalstationoperator--> |UPDATE| id26-update
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
 
-*For ST1303*
+<hr stye="width:10%">
+
+*For ST 1303*
+<hr>
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 *   **CARRY_KEY**: Sequence Object    
 *   **PALLET_ID**: DNSTOCK.PALLET_ID    
