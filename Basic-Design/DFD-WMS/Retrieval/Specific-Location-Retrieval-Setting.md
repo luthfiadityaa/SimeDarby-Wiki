@@ -315,10 +315,10 @@ retrievalstationoperator--> |UPDATE| id26-update
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
-<hr style="width:10%; margin-left:0; border: 2px solid green;">
+<hr style="width:20%; margin-left:0; border: 2px solid green;">
 
 **1201-1209 & 1301-1302**
-<hr style="width:10%; margin-left:0; border: 2px solid green;">
+<hr style="width:20%; margin-left:0; border: 2px solid green;">
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 *   **CARRY_KEY**: Sequence Object    
