@@ -173,30 +173,6 @@ flowchart LR
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.send.As21Id12&nbsp;</span>
 
-*1301 & 1302*
-::: mermaid
-flowchart LR
-
-id26msg("
-ID12
-")
-
-id26-insert[("
-DNCARRYINFO
-")]
-
-id26-update[("
-DNPALLET
-")]
-
-inoutstationoperator[InOutStaionOperator]
-
-id26msg-->inoutstationoperator
-inoutstationoperator--> |INSERT| id26-insert
-inoutstationoperator--> |UPDATE| id26-update
-:::
-
-*1205-1209*
 ::: mermaid
 flowchart LR
 
@@ -270,7 +246,7 @@ retrievalsender-input-->retrievalsender--> |UPDATE| retrievalsender-update
 retrievalsender--> |SendText| id12msg
 :::
 
-All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station 1301, 1302, 1205, 1206, 1207, 1208, 1209 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
+All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station 1201, 1202, 1203, 1204 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
