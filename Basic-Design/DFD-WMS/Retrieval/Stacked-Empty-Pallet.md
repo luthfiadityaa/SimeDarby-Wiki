@@ -86,11 +86,6 @@ Continue this flow if occurs.
 ::: mermaid
 flowchart LR    
 
-    tableList-insert[("
-        DNWORKINFO
-        DNWORKLIST
-    ")]
-
      tableList-select[("
         DMWAREHOUSE
         DMSHELF
@@ -99,7 +94,7 @@ flowchart LR
         DMSTATION
     ")]
 
-    className[RetrievalTriggerAllocator]
+     tableList-select-->className[RetrievalTriggerAllocator]
     className --> Cond3{Has no data of stock?} --> |NO| P1[ID54] --> |Save Retrieval Trigger| P2[ID54]
 
     classDef leftAlign text-align:left;
