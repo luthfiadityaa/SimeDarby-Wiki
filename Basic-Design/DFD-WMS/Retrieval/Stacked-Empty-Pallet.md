@@ -42,6 +42,14 @@ P1[FROM AISLE STATION - 9007, 9008, 9009, 9010]-->P2[ID66]-->P3[RetrievalTrigger
 | ID64[(6)](#ID64)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |
 | ID26[(8)](#ID26)                                                                | U  | U  | D  | D  | D  | I  |     |    | U  | I  |    |    |    | I  |
 
+<br>
+<hr style="border: 2px solid red;">
+
+#Irregular Cases
+Continue this flow if occurs.
+
+<hr style="border: 2px solid red;">
+
 #ID66
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.control.Id66Process&nbsp;</span>
 
