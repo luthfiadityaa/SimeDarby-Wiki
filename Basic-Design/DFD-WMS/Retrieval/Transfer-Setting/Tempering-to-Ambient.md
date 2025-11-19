@@ -38,6 +38,16 @@ P1[FROM AISLE STATION - 9001, 9002, 9003, 9004, 9005, 9006]-->P2[ID12]-->P3[Retr
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
 | Transfer Setting - Set(F2) [(1)](#transfer-setting ---set(f2)) |   S  |   I  |   I  |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |
 | ID12 [(2)](#id12)                                              |   U  |      |      |   I  |      |      |      |      |      |      |      |      |      |      |
+| Retrieval Sender [(3)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| ID32 [(4)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| ID33 [(5)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
+| ID64 [(6)](#id64)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID26 at 7207-7214 [(14)](#id26-at-7207-7214)                   |   U  |   U  |      |   U  |      |   I  |      |      |      |      |      |      |      |      |      |
+| StorageSender at 7207-7214 [(15)](#StorageSender-at-7207-7214) |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |      |
+| ID25 at 7207-7214 [(16)](#ID25-at-7207-7214)                   |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |      |
+| ID64 at SRM [(17)](#id64-at-SRM)                               |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| ID33 [(18)](#id33)                                             |   U  |      |      |   D  |      |      |      |  U   |      |      |      |      |      |      |
+
 
 
 # Transfer Setting - Set(F2)
@@ -199,7 +209,7 @@ retrievalstationoperator--> |UPDATE| id12-update
 - **RETRIEVAL_STATION_NO** : DNSTOCK.LOCATION_NO
 - **RETRIEVAL_DETAIL** : 1: Unit Retrieval
 - **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO    
-- **DEST_STATION_NO** : Based on **SOURCE_STATION_NO** where a reserved location belongs to ⟶ **(9001,9002,9003,9004,9005,9006)**
+- **DEST_STATION_NO** : Based on **SOURCE_STATION_NO** where a reserved location belongs to ⟶ **(7207,7208,7209,7210,7211,7212,7213,7214)**
 - **CANCEL_REQUEST** : 0: Not Requested    
 - **SCHEDULE_NO** : Sequence Object    
 - **CARRY_FLAG** : 2: Retrieval
@@ -210,10 +220,355 @@ retrievalstationoperator--> |UPDATE| id12-update
 - **REGIST_PNAME** : ClassName    
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 
+# Retrieval Sender
 
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.transmission.RetrievalSender` &nbsp;</span>
 
+::: mermaid
+flowchart LR
 
+retrievalsender-input[("
+DNCARRYINFO
+")]
 
+retrievalsender-update[("
+DNCARRYINFO
+DNPALLET
+")]
+
+id12msg("
+ID12
+")
+
+retrievalsender--SEND-->id12msg
+retrievalsender-input-->retrievalsender-.UPDATE.->retrievalsender-update
+:::
+
+The Retrieval operation at **Tempering Area (9001: Tempering)** will be retrieved to Station 7207, 7208, 7209, 7210, 7211, 7212, 7213, 7214 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
+
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+- **CMD_STATUS** : 2:Waiting for response
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
+
+## <span style="color:skyblue; font-weight:bold">DNPALLET</span>
+- **STATUS_FLAG** : 4:Being retrieved
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
+
+# ID32
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.communication.control.Id32Proces` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id32("
+ID 32
+")
+
+id32-update[("
+DNCARRYINFO
+")]
+
+id32-->id32process
+id32process-.UPDATE.->id32-update
+:::
+
+ID32 sent from AGC to WareNavi indicate AGC responded the retrieval job by WareNavi.
+
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+- **CMD_STATUS** : 3: Commanded
+- **ERROR_CODE** : 0
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
+
+# ID33
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.communication.control.Id33Process` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id33("
+ID 33
+")
+
+id33-update[("
+DMSHELF
+DNCARRYINFO
+")]
+
+id33-->id33process
+id33process--> |UPDATE| id33-update
+:::
+
+ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi that the Pallet/Bin is out of rack and is being transferred to related Station.
+
+## <span style="color:skyblue; font-weight:bold">DMSHELF</span>
+- **STATUS_FLAG** : 0:Empty
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+- **CMD_STATUS** : 5:Retrieval completed
+- **CARRY_FLAG** : 5:Location-to-location Move
+- **RETRIEVAL_STATION_NO** : DMSHELF.STATION_NO
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
+
+# ID64
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id64("
+ID 64
+")
+
+id64-update[("
+DNCARRYINFO
+")]
+
+id64-->id64process
+id64process-.UPDATE.->id64-update
+:::
+
+Upon equipment **(STV)** have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
+
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+- **CMD_STATUS** : 4:Pickup completed
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
+
+# ID26 at 7207-7214
+
+::: mermaid
+flowchart LR
+
+releaseCommand["
+Continue the Process Storage
+"]
+
+id26msg("
+ID 26
+")
+
+id26-insert[("
+DNARRIVAL
+")]
+
+id26-update[("
+DNCARRYINFO
+DNPALLET
+DNWORKINFO
+")]
+
+storageStationOperator[storageStationOperator]
+
+releaseCommand-->id26msg-->id26process-->storageStationOperator
+storageStationOperator--> |INSERT| id26-insert
+storageStationOperator--> |UPDATE| id26-update
+:::
+
+Continue the process **storage**, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.asrs.communication.id.recv.As21Id26` &nbsp;</span>
+
+## <span style="color:skyblue; font-weight:bold">DNARRIVAL</span>
+- **ARRIVAL_DATE** : SYSTIMESTAMP 
+- **STATION_NO** : Arrival Station Number from ID26 
+- **CARRY_KEY** : DNCARRYINFO.CARRY_KEY       
+- **BCR_DATA** : Barcode information from ID26
+- **CONTROLINFO** : Control information from ID26
+- **SEND_FLAG** : 0:Not sent
+- **HEIGHT** : Dimension Information from ID26
+- **WIDTH** : Dimension Information From ID26
+- **REGIST_DATE** : SYSTIMESTAMP                                                    
+- **REGIST_PNAME** : ClassName
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : ClassName
+
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+- **PALLET_ID** : DNPALLET.PALLET_ID
+- **WORK_TYPE** : 2: Storage
+- **CMD_STATUS** : 1:Started 
+- **PRIORITY** : 2:Normal
+- **CARRY_FLAG** : 1: Storage
+- **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO ⟶ **(7207/7208/7209/7210/7211/7212/7213/7214)**
+- **DEST_STATION_NO** : Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ **(9007/9008/9009/9010/9011/9012/9013/9014)**
+- **END_STATION_NO** : DNCARRYINFO.DEST_STATION_NO
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : ClassName
+
+## <span style="color:skyblue; font-weight:bold">DNPALLET</span>                                                     
+- **CURRENT_STATION_NO** : DNARRIVAL.STATION_NO
+- **WH_STATION_NO** : DNCARRYINFO.END_STATION_NO                                                                                                                                                
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : ClassName
+
+# StorageSender at 7207-7214
+
+::: mermaid
+flowchart LR
+storageSender-update[("
+DMWAREHOUSE
+DMSHELF
+DNCARRYINFO
+DNWORKINFO
+DNARRIVAL
+")]
+storageSender-input[("
+DNARRIVAL
+DNCARRYINFO
+")]
+
+id05msg("
+ID 05
+")
+
+storageSender-input-->storageSender-->id05msg
+storageSender--> |UPDATE| storageSender-update
+:::
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.asrs.transmission.StorageSender ` &nbsp;</span>
+
+After successful creation of arrival record in **ID26process**, Automatic Mode Change Sender is the following process where it will send **ID05** to **AGC**. To indicate **ID05** is sent to AGC, **DNCARRYINFO.CMD_STATUS** will be updated from **1:Started to 2:Waiting for Response**.
+
+## <span style="color:skyblue; font-weight:bold">DMWAREHOUSE</span> 
+- **LAST_USED_STATION_NO** : Aisle Number where a reserved location belongs to
+- **LAST_USED_STATION_NO_PM** : Aisle Number where a reserved location belongs to
+- **LAST_USED_STATION_NO_EP** : Aisle Number where a reserved location belongs to
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name 
+
+## <span style="color:skyblue; font-weight:bold">DMSHELF</span> 
+- **STATUS_FLAG** : 2:Reserved Location
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span> 
+- **AISLE_STATION_NO** : Aisle Number where a reserved location belongs to
+- **CMD_STATUS** : 2:Waiting for response
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
+
+## <span style="color:skyblue; font-weight:bold">DNWORKINFO</span> 
+- **JOB_TYPE** : 02:Storage
+- **STATUS_FLAG** : 1: Working
+- **PLAN_AREA_NO** : Area Number where a reserved location belongs to
+- **PLAN_LOCATION_NO** : Location Number where a reserved location belongs to
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : ClassName
+
+## <span style="color:skyblue; font-weight:bold">DNARRIVAL</span> 
+- **CARRY_KEY** : DNCARRYINFO.CARRY_KEY
+- **SEND_FLAG** : 1:Sent
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
+
+# ID25 at 7207-7214
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id25("
+ID 25
+")
+
+id25-update[("
+DNCARRYINFO
+")]
+id25-delete[("
+DNARRIVAL
+")]
+
+id25-->id25process
+id25process-.UPDATE.->id25-update
+id25process-.DELETE.-xid25-delete
+:::
+
+ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
+
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span> 
+- **CMD_STATUS** : 3:Commanded
+- **ERROR_CODE** : 0
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
+
+# ID64 at SRM
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id64("
+ID 64
+")
+
+id64-update[("
+DNCARRYINFO
+")]
+
+id64-->id64process
+id64process-.UPDATE.->id64-update
+:::
+
+Upon equipment **(SRM)** have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
+
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span> 
+- **CMD_STATUS** : 4:Pickup completed
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
+
+# ID33 at 9007-9014
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.asrs.communication.id.recv.As21Id33` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id33("
+ID 33
+")
+
+id33-update[("
+DNPALLET
+DMSHELF
+")]
+id33-delete[("
+DNCARRYINFO
+")]
+
+id33-->id33process
+id33process-.UPDATE.->id33-update
+id33process--DELETE-->id33-delete
+:::
+
+ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage operation of the pallet is completed by SRM.
+
+## <span style="color:skyblue; font-weight:bold">DMSHELF</span> 
+- **STATUS_FLAG** : 1: Occupied
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+
+## <span style="color:skyblue; font-weight:bold">DNPALLET</span> 
+- **CURRENT_STATION_NO** : Location Number information from ID33
+- **STATUS_FLAG** : 2:Occupied
+- **ALLOCATION_FLAG** : 0:Not allocated
+- **LAST_STORED_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
 
 # User Story
   - #5789
