@@ -205,7 +205,7 @@ flowchart LR
     class input leftAlign;
 :::
 
-Initiate with ID35.
+Initiate with ID35. Send out retrieval transport load wil Transport data deletion report
 
 Continue to Flow: [Retrieval Trigger Allocator](#Retrieval-Trigger-Allocator)
 
