@@ -205,7 +205,7 @@ flowchart LR
     class input leftAlign;
 :::
 
-Initiate with ID35. Send out retrieval transport load wil Transport data deletion report
+**ID35 message** is triggered to send out a load. This message is handled by **Id35Process**, which manages the retrieval and transport of the load. After the load is sent, the system deletes related data from the **DNCARRYINFO** and **DNARRIVAL** tables.
 
 Continue to Flow: [Retrieval Trigger Allocator](#Retrieval-Trigger-Allocator)
 
