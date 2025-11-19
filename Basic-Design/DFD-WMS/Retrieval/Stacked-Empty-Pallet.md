@@ -374,8 +374,6 @@ retrievaloperator--> |UPDATE| id26-update
 retrievaloperator--> |DELETE| id26-delete
 :::
 
-<span style="color:black; font-weight:bold; color:red">*The operator performs the operation according to the work display on the work terminal.</span>
-
 After the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. At the same time, sending ID 26 to the id26process, then delete related records from DNPALLET, DNCARRYINFO, and DNSTOCK.
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
