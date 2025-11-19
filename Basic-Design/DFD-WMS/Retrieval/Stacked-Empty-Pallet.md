@@ -63,6 +63,8 @@ flowchart LR
     class input leftAlign;
 :::
 
+Initiate with ID47 and execute command As21Id47 to search for stations within the retrieval command queue by dispatching a retrieval trigger.
+
 Continue to Flow: [ID66](#ID66)
 
 <hr style="border: 2px solid red;">
