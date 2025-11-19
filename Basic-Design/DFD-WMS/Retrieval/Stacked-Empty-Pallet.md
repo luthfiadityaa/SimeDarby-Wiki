@@ -101,10 +101,8 @@ flowchart LR
 
     className[RetrievalTriggerAllocator]
 
-    className --> {[Has Error?]}
+    className --> Cond3{Has Error?} --> | YES | P1[ID54] --> P2[ID54]
 
-
-|INSERT| tableList-insert
     tableList-select --> |SELECT| className
 
     classDef leftAlign text-align:left;
