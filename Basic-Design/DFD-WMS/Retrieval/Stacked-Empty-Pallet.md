@@ -162,6 +162,34 @@ Next, the Retrieval Trigger Allocator will assign stock items that are eligible 
 Continue this flow if occurs.
 - **When MC has no data of stock items to be retrieved**
 
+#Retrieval Trigger Allocator
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalTriggerAllocator&nbsp;</span>
+
+::: mermaid
+flowchart LR    
+
+    tableList-insert[("
+        DNWORKINFO
+        DNWORKLIST
+    ")]
+
+     tableList-select[("
+        DMWAREHOUSE
+        DMSHELF
+        DNPALLET
+        DMITEM
+        DMSTATION
+    ")]
+
+    className[RetrievalTriggerAllocator]
+
+    className --> |INSERT| tableList-insert
+    tableList-select --> |SELECT| className
+
+    classDef leftAlign text-align:left;
+    class input leftAlign;
+:::
+
 #ID54 at [1210]
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.sendAs21Id54&nbsp;</span>
 ::: mermaid
@@ -208,7 +236,7 @@ Allocation of stock items that can be retrieved.
 "]
 
 id50msg --> As21Id54
-As21Id54 --> buttonlight
+As21Id54 --> buttonlight --> releaseCommand2 --> releaseCommand3
 :::
 
 Once WareNavi receives the signal from ID66 indicating **No Empty Pallet**,” it automatically transmits ID54 to the AGC. At the designated station, the signal tower will flash to indicate **Out of Empty Pallet in ASRS**.
