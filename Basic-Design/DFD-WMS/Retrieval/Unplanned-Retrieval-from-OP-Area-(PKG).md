@@ -1,45 +1,40 @@
 [[_TOC_]]
 [[_TOSP_]]
 
-#Retrieval process station layout of Packaging Material
+#<span style="color:skyblue; font-weight:bold">Retrieval process station layout of Packaging Material</span>
 ![image.png](/.attachments/image-548d8561-0d1f-408d-8c12-683cbc1b3927.png)
 
-# Summary Flow
+#<span style="color:skyblue; font-weight:bold">Summary Flow</span>
 ::: mermaid
 flowchart LR
   
 P1[FROM AISLE STATION - 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID12]-->P4[ID32]-->P5[ID33]-->P6[ID64]-->P7[ID68]-->P8[ID26]-->P9[To STATION - 1201, 1202, 1203, 1204] 
 :::
 
-# Unplanned Retrieval from OP Area (PKG)
+#<span style="color:skyblue; font-weight:bold">Unplanned Retrieval from OP Area (PKG)</span>
 ## Abbreviation
-| **CODE** | TABLE NAME       |
-|----------|------------------|
-| **PLLT** | DNPALLET         | 
-| **WRKI** | DNWORKINFO       | 
-| **WRKL** | DNWORKLIST       | 
-| **CRYI** | DNCARRYINFO      | 
-| **STCK** | DNSTOCK          | 
-| **ARVL** | DNARRIVAL        |
-| **WRHS** | DMWAREHOUSE      |
-| **SHLF** | DMSHELF          |
-| **STCH** | DNSTOCKHISTORY   |
-| **INOT** | DNINOUTRESULT    |
-| **HTSD** | DNHOSTSEND       |
-| **OPRR** | DNOPERATIONRESULT|
-| **ITEM** | DMITEM           |
-| **STSN** | DMSTATION        |
-| **TTSN** | DMTOSTATION      |
+- **PLLT** : DNPALLET          
+- **WRKI** : DNWORKINFO        
+- **WRKL** : DNWORKLIST        
+- **CRYI** : DNCARRYINFO       
+- **STCK** : DNSTOCK           
+- **ARVL** : DNARRIVAL        
+- **WRHS** : DMWAREHOUSE      
+- **SHLF** : DMSHELF          
+- **STCH** : DNSTOCKHISTORY   
+- **INOT** : DNINOUTRESULT    
+- **HTST** : DNHOSTSEND       
+- **OPRR** : DNOPERATIONRESULT
+- **ITEM** : DMITEM           
+- **STSN** : DMSTATION        
+- **TTSN** : DMTOSTATION     
+* **Operation Name**
+  - **I** : INSERT  
+  - **U** : UPDATE  
+  - **D** : DELETE
+  - **S** : SELECT 
 
-| **CODE** | OPERATION NAME   |
-|----------|------------------|
-| **S**    | SELECT           |
-| **I**    | INSERT           |
-| **U**    | UPDATE           |
-| **D**    | DELETE           |
-
-## Inbound Table Data Flow
-| Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HTSD | OPRR | ITEM | STSN | TTSN |
+| Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HTST | OPRR | ITEM | STSN | TTSN |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
 | Inquiry Retrieval - Set (F2) [(1)](#inquiry-retrieval---set-(f2))|   S  |   I  |      |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   S  | 
 | ID12 [(2)](#id12)                      |   U  |      |      |   I  |      |      |      |      |      |      |      |      |      |      |      |
@@ -109,45 +104,45 @@ input --> className --> |INSERT| tableList-insert
 tableList-select --> |SELECT| className
 :::
 
-## Validations
+## <span style="color:skyblue; font-weight:bold">Validations</span>
 This section explains the validations for the whole proccess Unplanned Retrieval process (PKG)
 - AGC is online. (**DMGroupController.STATUS_FLAG.ONLINE**)
 - Selected Station Number is NOT under suspend. (**DMStation.SUSPEND.OFF**)
 - Selected Station Number is available. (**DMStation.STATUS.NORMAL** and **DMMachine.STATUS_FLAG.ACTIVE**)
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
-##  DNWORKINFO
-- JOB_NO = Sequence Object    
-- SETTING_UNIT_KEY = Sequence Object    
-- COLLECT_JOB_NO = Sequence Object    
-- JOB_TYPE = 23: Unplanned Retrieval    
-- STATUS_FLAG = 1: Working
-- HARDWARE_TYPE = 3: ASRS    
-- PLAN_UKEY = Sequence Object    
-- STOCK_ID = DNSTOCK.STOCKID    
-- PLAN_AREA_NO = DNSTOCK.AREA_NO   
-- PLAN_LOCATION_NO = DNSTOCK.LOCATION_NO
-- PLAN_DAY = DMWARENAVISYSTEM.WORK_DAY
-- VENDOR_CODE = DNSTOCK.VENDOR_CODE
-- VENDOR_NAME = DNSTOCK.VENDOR_NAME
-- COMPANY_CODE = DNSTOCK.COMPANY_CODE    
-- BATCH_NO = Value from screen (**Batch #**)    
-- MATERIAL_CODE = Value from screen (**Material Code**)    
-- MATERIAL_NAME = Value from screen (**Material Name**)    
-- PLAN_QTY = Value from screen (**Retrieval Qty**)    
-- QTY_KG_CRTN = Value from screen (**Qty kg/crtn**)    
-- QTY_CRTN_PL = Value from screen (**Qty crtn/PL**)    
-- UOM = Value from screen (**UOM**)    
-- TEMPERING_PERIOD = Value from screen (**Tempering Period**)    
-- EXPIRY_DAYS = DNSTOCK.EXPIRY_DATE    
-- WORK_DAY = DMWARENAVISYSTEM.WORK_DAY  
-- BCR_DATA = DNPALLET.BCR_DATA  
-- USER_ID = Login Info     
-- TERMINAL_NO = Login info
-- REGIST_DATE = SYSTIMESTAMP    
-- REGIST_PNAME = ClassName    
-- LAST_UPDATE_DATE = SYSTIMESTAMP    
-- LAST_UPDATE_PNAME = ClassName
+## <span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
+- **JOB_NO** : Sequence Object    
+- **SETTING_UNIT_KEY** : Sequence Object    
+- **COLLECT_JOB_NO** : Sequence Object    
+- **JOB_TYPE** : 23: Unplanned Retrieval    
+- **STATUS_FLAG** : 1: Working
+- **HARDWARE_TYPE** : 3: ASRS    
+- **PLAN_UKEY** : Sequence Object    
+- **STOCK_ID** : DNSTOCK.STOCKID    
+- **PLAN_AREA_NO** : DNSTOCK.AREA_NO   
+- **PLAN_LOCATION_NO** : DNSTOCK.LOCATION_NO
+- **PLAN_DAY** : DMWARENAVISYSTEM.WORK_DAY
+- **VENDOR_CODE** : DNSTOCK.VENDOR_CODE
+- **VENDOR_NAME** : DNSTOCK.VENDOR_NAME
+- **COMPANY_CODE** : DNSTOCK.COMPANY_CODE    
+- **BATCH_NO** : Value from screen (**Batch #**)    
+- **MATERIAL_CODE** : Value from screen (**Material Code**)    
+- **MATERIAL_NAME** : Value from screen (**Material Name**)    
+- **PLAN_QTY** : Value from screen (**Retrieval Qty**)    
+- **QTY_KG_CRTN** : Value from screen (**Qty kg/crtn**)    
+- **QTY_CRTN_PL** : Value from screen (**Qty crtn/PL**)    
+- **UOM** : Value from screen (**UOM**)    
+- **TEMPERING_PERIOD** : Value from screen (**Tempering Period**)    
+- **EXPIRY_DAYS** : DNSTOCK.EXPIRY_DATE    
+- **WORK_DAY** : DMWARENAVISYSTEM.WORK_DAY  
+- **BCR_DATA** : DNPALLET.BCR_DATA  
+- **USER_ID** : Login Info     
+- **TERMINAL_NO** : Login info
+- **REGIST_DATE** : SYSTIMESTAMP    
+- **REGIST_PNAME** : ClassName    
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP    
+- **LAST_UPDATE_PNAME** : ClassName
 
 #ID12
 
@@ -176,34 +171,34 @@ id12process-->retrievalstationoperator--> |INSERT| id26-insert
 retrievalstationoperator--> |UPDATE| id26-update
 :::
 
-## DNPALLET
-- STATUS_FLAG = 3:Reserved for Retrieval
-- LAST_UPDATE_DATE =  SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+## <span style="color:skyblue; font-weight:bold">DNPALLET</span>
+- **STATUS_FLAG** : 3:Reserved for Retrieval
+- **LAST_UPDATE_DATE** :  SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
 
-## DNCARRYINFO
-- CARRY_KEY = Sequence Object    
-- PALLET_ID = DNSTOCK.PALLET_ID    
-- WORK_TYPE = 23:Unplanned Retrieval    
-- CMD_STATUS = 1:Started    
-- PRIORITY = 2:Normal    
-- RESTORING_FLAG = 0 :Not Restore to Original Location  
-- WORK_NO = Sequence Object    
-- RETRIEVAL_STATION_NO = DNSTOCK.LOCATION_NO
-- RETRIEVAL_DETAIL = 1: Unit Retrieval
-- SOURCE_STATION_NO = DNPALLET.CURRENT_STATION_NO    
-- DEST_STATION_NO = Based on **SOURCE_STATION_NO** where a reserved location belongs to ⟶ **(1201, 1202, 1203, 1204)**
-- PRIORITY = Value from screen **(Dropdown ⟶ 1:Urgent / 2: Normal)**
-- CANCEL_REQUEST = 0: Not Requested    
-- SCHEDULE_NO = Sequence Object    
-- CARRY_FLAG = 2: Retrieval
-- CANCEL_REQUEST = 0: Not requested
-- AISLE_STATION_NO = DMSHELF.PARENT_STATION_NO
-- END_STATION_NO = DNCARRYINFO.DEST_STATION_NO  
-- REGIST_DATE = SYSTIMESTAMP    
-- REGIST_PNAME = ClassName    
-- LAST_UPDATE_DATE = SYSTIMESTAMP    
-- LAST_UPDATE_PNAME = ClassName
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+- **CARRY_KEY** : Sequence Object    
+- **PALLET_ID** : DNSTOCK.PALLET_ID    
+- **WORK_TYPE** : 23:Unplanned Retrieval    
+- **CMD_STATUS** : 1:Started    
+- **PRIORITY** : 2:Normal    
+- **RESTORING_FLAG** : 0 :Not Restore to Original Location  
+- **WORK_NO** : Sequence Object    
+- **RETRIEVAL_STATION_NO** : DNSTOCK.LOCATION_NO
+- **RETRIEVAL_DETAIL** : 1: Unit Retrieval
+- **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO    
+- **DEST_STATION_NO** : Based on **SOURCE_STATION_NO** where a reserved location belongs to ⟶ **(1201, 1202, 1203, 1204)**
+- **PRIORITY** : Value from screen **(Dropdown ⟶ 1:Urgent / 2: Normal)**
+- **CANCEL_REQUEST** : 0: Not Requested    
+- **SCHEDULE_NO** : Sequence Object    
+- **CARRY_FLAG** : 2: Retrieval
+- **CANCEL_REQUEST** : 0: Not requested
+- **AISLE_STATION_NO** : DMSHELF.PARENT_STATION_NO
+- **END_STATION_NO** : DNCARRYINFO.DEST_STATION_NO  
+- **REGIST_DATE** : SYSTIMESTAMP    
+- **REGIST_PNAME** : ClassName    
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP    
+- **LAST_UPDATE_PNAME** : ClassName
 
 
 # Retrieval Sender
@@ -233,16 +228,15 @@ retrievalsender-input-->retrievalsender-.UPDATE.->retrievalsender-update
 
 The Retrieval operation at **Packaging Material zone (9002: Ambient)** will be retrieved to Station 1201, 1202, 1203, 1204 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
 
-## DNCARRYINFO
-- CMD_STATUS = 2:Waiting for response
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+- **CMD_STATUS** : 2:Waiting for response
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
 
-## DNPALLET
-- STATUS_FLAG = 4:Being retrieved
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
-
+## <span style="color:skyblue; font-weight:bold">DNPALLET</span>
+- **STATUS_FLAG** : 4:Being retrieved
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
 # ID32
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
@@ -265,11 +259,11 @@ id32process-.UPDATE.->id32-update
 
 ID32 sent from AGC to WareNavi indicate AGC responded the retrieval job by WareNavi.
 
-## DNCARRYINFO
-- CMD_STATUS: 3:Commanded
-- ERROR_CODE: 0
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+- **CMD_STATUS** : 3: Commanded
+- **ERROR_CODE** : 0
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
 
 # ID33
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
@@ -293,15 +287,15 @@ id33process--> |UPDATE| id33-update
 
 ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi that the Pallet/Bin is out of rack and is being transferred to related Station.
 
-## DMSHELF
-- STATUS_FLAG = 0:Empty
-- LAST_UPDATE_DATE = SYSTIMESTAMP
+## <span style="color:skyblue; font-weight:bold">DMSHELF</span>
+- **STATUS_FLAG** : 0:Empty
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
 
-## DNCARRYINFO
-- CMD_STATUS = 5:Retrieval completed
-- RETRIEVAL_STATION_NO = DMSHELF.STATION_NO
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+- **CMD_STATUS** : 5:Retrieval completed
+- **RETRIEVAL_STATION_NO** : DMSHELF.STATION_NO
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
 
 # ID64
 
@@ -325,10 +319,10 @@ id64process-.UPDATE.->id64-update
 
 Upon equipment have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
 
-## DNCARRYINFO
-- CMD_STATUS         = 4:Pickup completed
-- LAST_UPDATE_DATE   = SYSTIMESTAMP
-- LAST_UPDATE_PNAME  = Class name
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+- **CMD_STATUS** : 4:Pickup completed
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
 
 # ID68
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
@@ -351,15 +345,15 @@ id68process--> |INSERT| id68-insert
 
 ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related Station in ASRS. Upon receiving of ID68, insertion of data will be executed.
 
-## DNOPERATIONDISPLAY
-- CARRY_KEY = MC Key information from ID68
-- STATION_NO = Station information from ID68
-- MATERIAL_CODE = DNWORKINFO.MATERIAL_CODE
-- RETRIEVAL_QTY = DNWORKINFO.STOCK_QTY
-- ARRIVAL_DATE = SYSTIMESTAMP
-- REGIST_PNAME = Class name
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+## <span style="color:skyblue; font-weight:bold">DNOPERATIONDISPLAY</span>
+- **CARRY_KEY** : MC Key information from ID68
+- **STATION_NO** : Station information from ID68
+- **MATERIAL_CODE** : DNWORKINFO.MATERIAL_CODE
+- **RETRIEVAL_QTY** : DNWORKINFO.STOCK_QTY
+- **ARRIVAL_DATE** : SYSTIMESTAMP
+- **REGIST_PNAME** : Class name
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
 
 #ID26
 
@@ -411,7 +405,7 @@ retrievaloperator--> |DELETE| id26-delete
 
 After the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. At the same time, sending ID 26 to the id26process, then delete related records from DNPALLET, DNCARRYINFO, and DNSTOCK.
 
-## DNWORKINFO
+## <span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
 - STATUS_FLAG = 4:Completed
 - RESULT_AREA_NO = DNWORKINFO.PLAN_AREA_NO
 - RESULT_LOCATION_NO = DNWORKINFO.PLAN_LOCATION_NO
@@ -422,12 +416,12 @@ After the completion button flashes, the operator removes the pallet and presses
 - LAST_UPDATE_DATE = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
 
-## DMSHELF
+## <span style="color:skyblue; font-weight:bold">DMSHELF</span>
 - STATUS_FLAG        = 0:Empty Location
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = Class name
 
-## DNWORKLIST
+## <span style="color:skyblue; font-weight:bold">DNWORKLIST</span>
 - JOB_NO             = DNWORKINFO.JOB_NO
 - CARRY_KEY          = DNWORKINFO.SYSTEM_CONN_KEY
 - SETTING_UNIT_KEY   = DNWORKINFO.SETTING_UNIT_KEY
