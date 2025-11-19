@@ -92,6 +92,7 @@ flowchart LR
         DNPALLET
         DMITEM
         DMSTATION
+DNSTOCK
     ")]
 
      tableList-select-->className[RetrievalTriggerAllocator]
