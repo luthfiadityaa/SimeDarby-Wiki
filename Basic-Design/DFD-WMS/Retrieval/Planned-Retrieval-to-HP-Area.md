@@ -111,6 +111,7 @@ This section explains the validations for the whole proccess Planned Retrieval
 ::: mermaid
 flowchart LR
     input[
+        Pallet #
         Shipping Date
         Ticket #
         Status
@@ -123,7 +124,8 @@ flowchart LR
         Batch Qty
         Batch UOM
         Dock #
-        Truck Plate #    ]
+        Truck Plate #    
+   ]
 
     tableList-insert[("
         DNWORKINFO
