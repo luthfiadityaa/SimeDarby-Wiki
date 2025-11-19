@@ -8,7 +8,7 @@
 ::: mermaid
 flowchart LR
   
-P1[FROM AISLE STATION - 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID32]-->P4[ID33]-->P5[ID64]-->P6[ID68]-->P7[ID26]-->P8[To STATION - 1201, 1202, 1203, 1204] 
+P1[FROM AISLE STATION - 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID12]-->P4[ID32]-->P5[ID33]-->P6[ID64]-->P7[ID68]-->P8[ID26]-->P9[To STATION - 1201, 1202, 1203, 1204] 
 :::
 
 # Unplanned Retrieval from OP Area (PKG)
