@@ -329,16 +329,16 @@ retrievalstationoperator--> |UPDATE| id26-update
 #**<span style="color:red">Irregular Cases</span>**
 When this flow if occurs.
 - ##**When load has to be sent out**
-###ID47
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.sendAs21Id54&nbsp;</span>
+###ID35
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.control.Id35Process&nbsp;</span>
 ::: mermaid
 flowchart LR
 
     id66msg("
-     ID47
+     ID35
     ")
 
-    id66msg-->As21Id47-->P1[Search for stations in retrieval command queue by sending retrieval trigger]
+    id66msg-->Id35Process-->P1[Search for stations in retrieval command queue by sending retrieval trigger]
 
     classDef leftAlign text-align:left;
     class input leftAlign;
