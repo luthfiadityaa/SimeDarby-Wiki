@@ -128,8 +128,8 @@ flowchart LR
         Tempering Period
         QC Duration
         QC Check Flag
-        Truck No
-        Plate No
+        Dock #
+        Truck Plate #  
     ]
 
     tableList-insert[("
