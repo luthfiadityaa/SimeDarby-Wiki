@@ -42,9 +42,6 @@ P1[FROM AISLE STATION -
 
 | Action Name                                                                     |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN|TTSN|OPRD|INOUT| 
 |---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|----|
-| **Only For 1301 & 1302**                                                        |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| ID63 [(1)](#ID63)                                                               |    |    |    |    |    |    |     |    |    |    |    | U  |    |    |    |
-| **Directly For 1205,1206,1207,1208,1209**                                       |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | Planned Retrieval Setting - Set(F2) [(1)](#Planned-Retrieval-Setting---Set(F2)) | I  | I   | S  |    | S  |    |     | S  | S  |    | S  | S  | S  |    |    |
 | ID12[(2)](#ID12)                                                                |    |    | U  | I  |    |    |     |    |    |    |    |    |    |    |    |  
 | RetrievalSender[(3)](#Retrieval-Sender)                                         |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |    |  
