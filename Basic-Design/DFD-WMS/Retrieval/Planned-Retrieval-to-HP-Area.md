@@ -166,7 +166,7 @@ flowchart LR
 *   **JOB_NO**: Sequence Object    
 *   **SETTING_UNIT_KEY**: Sequence Object    
 *   **COLLECT_JOB_NO**: Sequence Object    
-*   **JOB_TYPE**: 23:Unplanned Retrieval    
+*   **JOB_TYPE**: 03:Retrieval    
 *   **STATUS_FLAG**: 0:Not Started    
 *   **PLAN_UKEY**: Sequence Object    
 *   **STOCK_ID**: DNSTOCK.STOCKID    
@@ -283,7 +283,7 @@ retrievalstationoperator--> |UPDATE| id26-update
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 *   **CARRY_KEY**: Sequence Object    
 *   **PALLET_ID**: DNSTOCK.PALLET_ID    
-*   **WORK_TYPE**: 23:Unplanned Retrieval    
+*   **WORK_TYPE**: 03:Retrieval    
 *   **CMD_STATUS**: 1:Started    
 *   **RESTORING_FLAG**: 0:Not Restore to Original Location  
 *   **WORK_NO**: Sequence Object    
