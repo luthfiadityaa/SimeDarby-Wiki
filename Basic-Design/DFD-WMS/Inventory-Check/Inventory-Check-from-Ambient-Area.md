@@ -154,7 +154,7 @@ flowchart LR
 :::
 
 ## <span style="color:skyblue; font-weight:bold">Validations</span>
-This section explains the validations for the whole proccess Unplanned Retrieval process (PKG)
+This section explains the validations for the whole process Inventory Check
 - AGC is online. (**DMGroupController.STATUS_FLAG.ONLINE**)
 - Selected Station Number is NOT under suspend. (**DMStation.SUSPEND.OFF**)
 - Selected Station Number is available. (**DMStation.STATUS.NORMAL** and **DMMachine.STATUS_FLAG.ACTIVE**)
