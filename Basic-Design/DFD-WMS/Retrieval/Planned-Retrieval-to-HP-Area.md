@@ -90,7 +90,7 @@ flowchart LR
 **CURRENT_MODE**: 2: Retrieval Mode
 
 #Planned Retrieval
-- [Unplanned Storage and Retrieval Results](https://dev.azure.com/DaifukuSW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result)
+All data in the Planned Retrieval Setting List originates from process [Planned Retrieval - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/838/Planned-Retrieval). Please refer to the details for further information.
 
 #Planned Retrieval Setting - Set(F2)
 
