@@ -141,7 +141,7 @@ flowchart LR
         DMTOSTATION
     ")]
 
-    className[InquiryRetrievalSettingSCH]
+    className[PlannedRetrievalSettingSCH]
 
     input --> className --> |INSERT| tableList-insert
     tableList-select --> |SELECT| className
