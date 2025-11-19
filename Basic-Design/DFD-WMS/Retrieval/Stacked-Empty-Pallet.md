@@ -102,6 +102,8 @@ flowchart LR
     class input leftAlign;
 :::
 
+The Retrieval Trigger Allocator is not found data about stock items available for retrieval.
+
 ##ID54 at [1210]
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.sendAs21Id54&nbsp;</span>
 ::: mermaid
