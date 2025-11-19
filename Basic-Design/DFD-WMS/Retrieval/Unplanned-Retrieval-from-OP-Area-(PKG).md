@@ -36,7 +36,7 @@ P1[FROM AISLE STATION - 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID12]
 
 | Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HTST | OPRR | ITEM | STSN | TTSN |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
-| Inquiry Retrieval - Set (F2) [(1)](#inquiry-retrieval---set-(f2))|   S  |   I  |      |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   S  | 
+| Inquiry Retrieval - Set (F2) [(1)](#inquiry-retrieval---set-(f2))|   S  |   I  |   I  |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   S  | 
 | ID12 [(2)](#id12)                                              |   U  |      |      |   I  |      |      |      |      |      |      |      |      |      |      |      |
 | Retrieval Sender [(3)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
 | ID32 [(4)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
@@ -87,6 +87,7 @@ Plate No
 
 tableList-insert[("
 DNWORKINFO
+DNWORKLIST
 ")]
 
 tableList-select[("
@@ -144,6 +145,31 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 - **REGIST_PNAME** : ClassName    
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 - **LAST_UPDATE_PNAME** : ClassName
+
+##<span style="color:skyblue; font-weight:bold">DNWORKLIST</span>
+- **JOB_NO**: DNWORKINFO.JOB_NO    
+- **SETTING_UNIT_KEY**: Sequence Object   
+- **COLLECT_JOB_NO**: DNWORKINFO.COLLECT_JOB_NO    
+- **JOB_TYPE**: DNWORKINFO.JOB_TYPE    
+- **PLAN_UKEY**: DNWORKINFO.PLAN_UKEY    
+- **STOCK_ID**: DNWORKINFO.STOCK_ID    
+- **PALLET_ID**: DNPALLET.PALLET_ID    
+- **PLAN_DAY**: DNWORKINFO.PLAN_DAY 
+- **COMPANY_CODE** : DNWORKIFO.COMPANY_CODE
+- **BATCH_NO**: DNWORKINFO.BATCH_NO    
+- **PLAN_AREA_NO**: DNWORKINFO.PLAN_AREA_NO    
+- **MATERIAL_CODE**: DNWORKINFO.MATERIAL_CODE    
+- **MATERIAL_NAME**: DNWORKINFO.MATERIAL_NAME      
+- **RETRIEVAL_DETAIL**: 1:Unit Retrieval   
+- **PLAN_QTY**: DNWORKINFO.PLAN_QTY          
+- **DOCK_NO**: DNWORKINFO.DOCK_NO
+- **TRUCK_PLATE_NO**: DNWORKINFO.TRUCK_PLATE_NO 
+- **USER_ID**: DNWORKINFO.USER_ID    
+- **USER_NAME**: DCUSER.USER_NAME    
+- **REGIST_DATE**: SYSTIMESTAMP    
+- **REGIST_PNAME**: ClassName    
+- **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+- **LAST_UPDATE_PNAME**: ClassName
 
 #ID12
 
