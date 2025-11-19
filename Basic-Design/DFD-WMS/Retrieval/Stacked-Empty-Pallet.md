@@ -205,7 +205,7 @@ flowchart LR
     class input leftAlign;
 :::
 
-**ID35 message** is triggered to generate a transport data deletion report. This message is processed by Id35Process, which handles the deletion of transport-related data. As part of this process, the system removes records from the DNCARRYINFO and DNARRIVAL tables to ensure the database remains clean and up to date.
+**ID35 message** is triggered to transport data deletion report. This message is processed by Id35Process, which handles the deletion of transport-related data. As part of this process, the system removes records from the DNCARRYINFO and DNARRIVAL tables.
 
 Continue to Flow: [Retrieval Trigger Allocator](#Retrieval-Trigger-Allocator)
 
