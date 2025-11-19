@@ -13,7 +13,7 @@ P1[FROM AISLE STATION - 9001,
 1302] 
 :::
 
-#<span style="color:skyblue; font-weight:bold">Unplanned Retrieval database flow</span>
+#<span style="color:skyblue; font-weight:bold">Retrieval for QC Start database flow</span>
 **Abbreviation:**
 - **WRKI** : DNWORKINFO  
 - **WRKL** : DNWORKINFOLIST  
