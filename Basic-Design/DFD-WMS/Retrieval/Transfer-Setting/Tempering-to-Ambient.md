@@ -48,7 +48,7 @@ P1[FROM AISLE STATION - 9001, 9002, 9003, 9004, 9005, 9006]-->P2[ID12]-->P3[Retr
 | StorageSender at 7207-7214 [(15)](#StorageSender-at-7207-7214) |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |
 | ID25 at 7207-7214 [(16)](#ID25-at-7207-7214)                   |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |
 | ID64 at SRM [(17)](#id64-at-SRM)                               |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
-| ID33 at 9007-9014 [(18)](#id33-at-9007-9014)                   |   U  |      |      |   D  |   U  |      |      |  U   |   I  |      |      |      |      |      |
+| ID33 at 9007-9014 [(18)](#id33-at-9007-9014)                   |   U  |   U  |      |   D  |   U  |      |      |  U   |   I  |      |      |      |      |      |
 
 
 
@@ -593,8 +593,6 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 - **STATUS_FLAG**: 4: Completed
 - **LAST_UPDATE_DATE**: SYSTIMESTAMP
 - **LAST_UPDATE_PNAME**: Class name
-
-
 
 ## <span style="color:skyblue; font-weight:bold">DNSTOCKHISTORY</span> 
 - **WORK_DAY** : DMWARENAVISYSTEM.WORK_DAY
