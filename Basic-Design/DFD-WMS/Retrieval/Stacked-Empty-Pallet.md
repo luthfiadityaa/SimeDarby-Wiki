@@ -190,6 +190,10 @@ Continue to Flow: [Retrieval Trigger Allocator](#Retrieval-Trigger-Allocator)
 ::: mermaid
 flowchart LR
 
+    tableList-delete[("
+        DNCARRYINFO
+    ")]
+
     id66msg("
      ID35
     ")
