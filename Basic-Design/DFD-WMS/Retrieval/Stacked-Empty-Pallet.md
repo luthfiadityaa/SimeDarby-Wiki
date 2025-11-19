@@ -86,9 +86,9 @@ AGC will send ID66 when the MC contains data for any stock items that need to be
 
 #Irregular Cases
 Continue this flow if occurs.
-- #**When MC has no data of stock items to be retrieved**
+- ##**When MC has no data of stock items to be retrieved**
 
-##Retrieval Trigger Allocator_
+###Retrieval Trigger Allocator_
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalTriggerAllocator&nbsp;</span>
 
 ::: mermaid
@@ -113,7 +113,7 @@ DNSTOCK
 
 The Retrieval Trigger Allocator is not found data about stock items available for retrieval.
 
-##ID54 at [1210]
+###ID54 at [1210]
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.sendAs21Id54&nbsp;</span>
 ::: mermaid
 flowchart LR
@@ -137,7 +137,7 @@ As21Id54 --> buttonlight --> releaseCommand2
 Once WareNavi receives the signal from ID66 indicating **No Empty Pallet**,” it automatically transmits ID54 to the AGC. At the designated station, the signal tower will flash to indicate **Out of Empty Pallet in ASRS**. MC will save and retain the retrieval trigger in memory until the load arrives at the station.
 
 
-##ID54 at [1210]
+###ID54 at [1210]
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.sendAs21Id54&nbsp;</span>
 ::: mermaid
 flowchart LR
