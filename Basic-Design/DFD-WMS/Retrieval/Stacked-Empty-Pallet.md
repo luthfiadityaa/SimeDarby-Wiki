@@ -50,23 +50,18 @@ Continue this flow if occurs.
 - ##**When MC loses memory of retrieval trigger**
 ::: mermaid
 flowchart LR
-    input[
-        Automated Retrieval Trigger.      
-    ]
 
     id66msg("
      ID47
     ")
-    tableList-update[("
-        DMSTATION
-    ")]
 
-    input -->id66msg-->As21Id47
+    id66msg-->As21Id47-->P1[Search for stations in retrieval command queue by sending retrieval trigger]
 
     classDef leftAlign text-align:left;
     class input leftAlign;
 :::
 
+Continue to Flow: [RID66](#ID66)
 
 <hr style="border: 2px solid red;">
 
@@ -99,7 +94,6 @@ AGC will send ID66 when the MC contains data for any stock items that need to be
 **STATION_NO**: 1210
 **RETRIEVAL_TRIGGER_REQUEST**: 2:Requested by AGC
 **LAST_UPDATE_PNAME**: Id66Process
-
 
 <br>
 <hr style="border: 2px solid red;">
