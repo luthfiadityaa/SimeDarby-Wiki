@@ -192,6 +192,10 @@ flowchart LR
 ####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
 * **ALLOCATION_QTY**:
 * **STOCK_QTY**:
+* **REGIST_DATE**: SYSTIMESTAMP    
+* **REGIST_PNAME**: ClassName    
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+* **LAST_UPDATE_PNAME**: ClassName
 
 #ID12
 
