@@ -37,14 +37,15 @@ P1[FROM AISLE STATION - 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID12]
 | Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HTST | OPRR | ITEM | STSN | TTSN |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
 | Inquiry Retrieval - Set (F2) [(1)](#inquiry-retrieval---set-(f2))|   S  |   I  |      |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   S  | 
-| ID12 [(2)](#id12)                      |   U  |      |      |   I  |      |      |      |      |      |      |      |      |      |      |      |
+| ID12 [(2)](#id12)                                              |   U  |      |      |   I  |      |      |      |      |      |      |      |      |      |      |      |
 | Retrieval Sender [(3)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
 | ID32 [(4)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
 | ID33 [(5)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
 | ID64 [(6)](#id64)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
 | ID68 [(7)](#id68)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
 | ID26 [(8)](#id26)                                              |   D  |   U  |   I  |   D  |   D  |      |      |  U   |      |   I  |   I  |      |      |      |      |
-| **Host Communication** [(9)](#host-communication)              |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| **Host Communication**                                         |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| Unplanned Storage and Retrieval Result [(9)](#unplanned-storage-and-retrieval-result)|      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 
 # Inquiry Retrieval - Set (F2)
 
@@ -406,105 +407,104 @@ retrievaloperator--> |DELETE| id26-delete
 After the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. At the same time, sending ID 26 to the id26process, then delete related records from DNPALLET, DNCARRYINFO, and DNSTOCK.
 
 ## <span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
-- STATUS_FLAG = 4:Completed
-- RESULT_AREA_NO = DNWORKINFO.PLAN_AREA_NO
-- RESULT_LOCATION_NO = DNWORKINFO.PLAN_LOCATION_NO
-- RESULT_LOT_NO = DNWORKINFO.PLAN_LOT_NO
-- WORK_DAY = DMWARENAVISYSTEM.WORK_DAY
-- USER_ID = Login info
-- TERMINAL_NO = Login info
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+- **STATUS_FLAG** : 4:Completed
+- **RESULT_AREA_NO** : DNWORKINFO.PLAN_AREA_NO
+- **RESULT_LOCATION_NO** : DNWORKINFO.PLAN_LOCATION_NO
+- **RESULT_LOT_NO** : DNWORKINFO.PLAN_LOT_NO
+- **WORK_DAY** : DMWARENAVISYSTEM.WORK_DAY
+- **USER_ID** : Login info
+- **TERMINAL_NO** : Login info
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
 
 ## <span style="color:skyblue; font-weight:bold">DMSHELF</span>
-- STATUS_FLAG        = 0:Empty Location
-- LAST_UPDATE_DATE   = SYSTIMESTAMP
-- LAST_UPDATE_PNAME  = Class name
+- **STATUS_FLAG** : 0:Empty Location
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
 
 ## <span style="color:skyblue; font-weight:bold">DNWORKLIST</span>
-- JOB_NO             = DNWORKINFO.JOB_NO
-- CARRY_KEY          = DNWORKINFO.SYSTEM_CONN_KEY
-- SETTING_UNIT_KEY   = DNWORKINFO.SETTING_UNIT_KEY
-- COLLECT_JOB_NO     = DNWORKINFO.COLLECT_JOB_NO
-- JOB_TYPE           = DNWORKINFO.JOB_TYPE
-- PLAN_UKEY          = DNWORKINFO.PLAN_UKEY
-- STOCK_ID           = DNWORKINFO.STOCK_ID
-- PALLET_ID          = DNCARRYINFO.PALLET_ID
-- PLAN_DAY           = DNWORKINFO.PLAN_DAY
-- COMPANY_CODE       = DNWORKINFO.COMPANY_CODE
-- BATCH_NO           = DNWORKINDO.BATCH_NO
-- PLAN_AREA_NO       = DNWORKINFO.PLAN_AREA_NO
-- PLAN_LOCATION_NO   = DNWORKINFO.PLAN_LOCATION_NO
-- MATERIAL_CODE      = DNWORKINFO.MATERIAL_CODE
-- MATERIAL_NAME      = DMITEM.MATERIAL_NAME
-- ALLOCATION_QTY     = 1
-- RETRIEVAL_STATION_NO = Arrival Station Number from **ID26** 
-- RETRIEVAL_DETAIL   = 1:Unit Retrieval
-- WORK_NO            = DNCARRYINFO.WORK_NO
-- SOURCE_STATION_NO  = DNCARRYINFO.SOURCE_STATION_NO
-- DEST_STATION_NO    = DNCARRYINFO.DEST_STATION_NO
-- SCHEDULE_NO        = DNCARRYINFO.SCHEDULE_NO
-- END_STATION_NO     = DNCARRYINFO.END_STATION_NO
-- USER_ID            = Login Info
-- USER_NAME          = Login Info
-- TERMINAL_NO        = Login Terminal
-- REGIST_DATE        = SYSTIMESTAMP                                                    
-- REGIST_PNAME       = ClassName
-- LAST_UPDATE_DATE   = SYSTIMESTAMP
-- LAST_UPDATE_PNAME  = ClassName
+- **JOB_NO** : DNWORKINFO.JOB_NO
+- **CARRY_KEY** : DNWORKINFO.SYSTEM_CONN_KEY
+- **SETTING_UNIT_KEY** : DNWORKINFO.SETTING_UNIT_KEY
+- **COLLECT_JOB_NO** : DNWORKINFO.COLLECT_JOB_NO
+- **JOB_TYPE** : DNWORKINFO.JOB_TYPE
+- **PLAN_UKEY** : DNWORKINFO.PLAN_UKEY
+- **STOCK_ID** : DNWORKINFO.STOCK_ID
+- **PALLET_ID** : DNCARRYINFO.PALLET_ID
+- **PLAN_DA** : DNWORKINFO.PLAN_DAY
+- **COMPANY_CODE** : DNWORKINFO.COMPANY_CODE
+- **BATCH_NO** : DNWORKINDO.BATCH_NO
+- **PLAN_AREA_NO** : DNWORKINFO.PLAN_AREA_NO
+- **PLAN_LOCATION_NO** : DNWORKINFO.PLAN_LOCATION_NO
+- **MATERIAL_CODE** : DNWORKINFO.MATERIAL_CODE
+- **MATERIAL_NAME** : DMITEM.MATERIAL_NAME
+- **ALLOCATION_QTY** : 1
+- **RETRIEVAL_STATION_NO** : Arrival Station Number from **ID26** 
+- **RETRIEVAL_DETAIL** : 1:Unit Retrieval
+- **WORK_NO** : DNCARRYINFO.WORK_NO
+- **SOURCE_STATION_NO** : DNCARRYINFO.SOURCE_STATION_NO
+- **DEST_STATION_NO** : DNCARRYINFO.DEST_STATION_NO
+- **SCHEDULE_NO** : DNCARRYINFO.SCHEDULE_NO
+- **END_STATION_NO** : DNCARRYINFO.END_STATION_NO
+- **USER_ID** : Login Info
+- **USER_NAME** : Login Info
+- **TERMINAL_NO** : Login Terminal
+- **REGIST_DATE** : SYSTIMESTAMP                                                    
+- **REGIST_PNAME** : ClassName
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : ClassName
 
-## DNHOSTSEND
-- WORK_DAY = DMWARENAVISYSTEM.WORK_DAY    
-- JOB_NO = DNWORKINFO.JOB_NO    
-- COLLECT_JOB_NO = DNWORKINFO.COLLECT_JOB_NO    
-- SETTING_UNIT_KEY = DNWORKINFO.SETTING_UNIT_KEY    
-- JOB_TYPE = DNWORKINFO.JOB_TYPE    
-- STATUS_FLAG = DNWORKINFO.STATUS_FLAG    
-- HARDWARE_TYPE = DNWORKINFO.HARDWARE_TYPE    
-- PLAN_UKEY = DNWORKINFO.PLAN_UKEY    
-- STOCK_ID = DNWORKINFO.STOCK_ID    
-- SYSTEM_CONN_KEY = DNWORKINFO.SYSTEM_CONN_KEY    
-- PLAN_DAY = DNWORKINFO.PLAN_DAY    
-- BATCH_NO = DNWORKINFO.BATCH_NO    
-- PLAN_AREA_NO = DNWORKINFO.PLAN_AREA_NO    
-- PLAN_LOCATION_NO = DNWORKINFO.PLAN_LOCATION_NO    
-- MATERIAL_CODE = DNWORKINFO.MATERIAL_CODE    
-- MATERIAL_NAME = DMITEM.MATERIAL_NAME    
-- RESULT_QTY = 1
-- RESULT_AREA_NO = DNWORKINFO.RESULT_AREA_NO    
-- RESULT_LOCATION_NO = DNWORKINFO.RESULT_LOCATION_NO    
-- RESULT_LOT_NO = DNWORKINFO.RESULT_LOT_NO
-- USER_ID = DNWORKINFO.USER_ID    
-- TERMINAL_NO = DNWORKINFO.TERMINAL_NO    
-- WORK_SECOND = DNWORKINFO.WORK_SECOND    
-- USER_NAME = DCUSER.USERNAME    
-- REPORT_FLAG = 0:Not Reported    
-- REGIST_DATE = SYSTIMESTAMP    
-- REGIST_PNAME = Class name    
-- LAST_UPDATE_DATE = SYSTIMESTAMP    
-- LAST_UPDATE_PNAME = Class name
+## <span style="color:skyblue; font-weight:bold">DNHOSTSEND </span>
+- **WORK_DAY** : DMWARENAVISYSTEM.WORK_DAY    
+- **JOB_NO** : DNWORKINFO.JOB_NO    
+- **COLLECT_JOB_NO** : DNWORKINFO.COLLECT_JOB_NO    
+- **SETTING_UNIT_KEY** : DNWORKINFO.SETTING_UNIT_KEY    
+- **JOB_TYPE** : DNWORKINFO.JOB_TYPE    
+- **STATUS_FLAG** : DNWORKINFO.STATUS_FLAG    
+- **HARDWARE_TYPE** : DNWORKINFO.HARDWARE_TYPE    
+- **PLAN_UKEY** : DNWORKINFO.PLAN_UKEY    
+- **STOCK_ID** : DNWORKINFO.STOCK_ID    
+- **SYSTEM_CONN_KEY** : DNWORKINFO.SYSTEM_CONN_KEY    
+- **PLAN_DAY** : DNWORKINFO.PLAN_DAY    
+- **BATCH_NO** : DNWORKINFO.BATCH_NO    
+- **PLAN_AREA_NO** : DNWORKINFO.PLAN_AREA_NO    
+- **PLAN_LOCATION_NO** : DNWORKINFO.PLAN_LOCATION_NO    
+- **MATERIAL_CODE** : DNWORKINFO.MATERIAL_CODE    
+- **MATERIAL_NAME** : DMITEM.MATERIAL_NAME    
+- **RESULT_QTY** : 1
+- **RESULT_AREA_NO** : DNWORKINFO.RESULT_AREA_NO    
+- **RESULT_LOCATION_NO** : DNWORKINFO.RESULT_LOCATION_NO    
+- **RESULT_LOT_NO** : DNWORKINFO.RESULT_LOT_NO
+- **USER_ID** : DNWORKINFO.USER_ID    
+- **TERMINAL_NO** : DNWORKINFO.TERMINAL_NO    
+- **WORK_SECOND** : DNWORKINFO.WORK_SECOND    
+- **USER_NAME** : DCUSER.USERNAME    
+- **REPORT_FLAG** : 0:Not Reported    
+- **REGIST_DATE** : SYSTIMESTAMP    
+- **REGIST_PNAME** : Class name    
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP    
+- **LAST_UPDATE_PNAME** : Class name
 
-## DNINOUTRESULT
-- RESULT_KIND = 2:Retrieval(Stock-)
-- STATION_NO = DNCARRYINFO.DEST_STATION_NO
-- LOCATION_NO = DNPALLET.CURRENT_STATION_NO
-- WH_STATION_NO = DNPALLET.WH_STATION_NO
-- AISLE_STATION_NO = DNCARRYINFO.AISLE_STATION_NO
-- WORK_TYPE = DNCARRYINFO.WORK_TYPE
-- RETRIEVAL_DETAIL = DNCARRYINFO.RETRIEVAL_DETAIL
-- WORK_NO = DNCARRYINFO.WORK_NO
-- PALLET_ID = DNPALLET.PALLET_ID
-- CARRY_KEY = DNCARRYINFO.CARRY_KEY
-- RESTORING_FLAG = DNCARRYINFO.RESTORING_FLAG
-- WORK_DAY = DMWARENAVISYSTEM.WORK_DAY
-- REMOVE_FLAG = 00: Normal
-- REGIST_PNAME = Class name
-- LAST_UPDATE_DATE = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = Class name
+## <span style="color:skyblue; font-weight:bold">DNINOUTRESULT </span>
+- **RESULT_KIND** : 2:Retrieval(Stock-)
+- **STATION_NO** : DNCARRYINFO.DEST_STATION_NO
+- **LOCATION_NO** : DNPALLET.CURRENT_STATION_NO
+- **WH_STATION_NO** : DNPALLET.WH_STATION_NO
+- **AISLE_STATION_NO** : DNCARRYINFO.AISLE_STATION_NO
+- **WORK_TYPE** : DNCARRYINFO.WORK_TYPE
+- **RETRIEVAL_DETAIL** : DNCARRYINFO.RETRIEVAL_DETAIL
+- **WORK_NO** : DNCARRYINFO.WORK_NO
+- **PALLET_ID** : DNPALLET.PALLET_ID
+- **CARRY_KEY** : DNCARRYINFO.CARRY_KEY
+- **RESTORING_FLAG** : DNCARRYINFO.RESTORING_FLAG
+- **WORK_DAY** : DMWARENAVISYSTEM.WORK_DAY
+- **REMOVE_FLAG** : 00: Normal
+- **REGIST_PNAME** : Class name
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
 
-# Host Communication
-
-##<span style="color:skyblue; font-weight:bold">[Unplanned Storage and Retrieval Result - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result)</span>
+# Unplanned Storage and Retrieval Result
+- [Unplanned Storage and Retrieval Results](https://dev.azure.com/DaifukuSW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result)
 
 # User Story
   - #5793
