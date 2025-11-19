@@ -72,7 +72,7 @@ P1[Work Display - Click Complete Button]-->P2[ID45]-->P3[ID26]-->P4[StorageSende
 | StorageSender at 7207-7214 [(15)](#StorageSender-at-7207-7214) |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |      |
 | ID25 at 7207-7214 [(16)](#ID25-at-7207-7214)                   |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |      |
 | ID64 at SRM [(17)](#id64-at-SRM)                               |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
-| ID33 [(18)](#id33)                                             |   U  |      |      |   D  |      |      |      |  U   |      |      |      |      |      |      |   U  |
+| ID33 at 9007-9014 [(18)](#id33-at-9007-9014)                   |   U  |      |      |   D  |      |      |      |  U   |      |      |      |      |      |      |   U  |
 
 # <span style="color:skyblue; font-weight:bold">Mode Change Station</span>
 ##ID63
@@ -919,7 +919,7 @@ Upon equipment **(SRM)** have picked up the Pallet successfully, ID64 will be se
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
-# ID33
+# ID33 at 9007-9014
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.asrs.communication.id.recv.As21Id33` &nbsp;</span>
