@@ -101,7 +101,7 @@ flowchart LR
 
     className[RetrievalTriggerAllocator]
 
-    className --> Cond3{Has Error?} --> | YES | P1[ID54] --> P2[ID54]
+    className --> Cond3{Has no data of stock?} --> | YES | P1[ID54] --> P2[ID54]
 
     tableList-select --> |SELECT| className
 
