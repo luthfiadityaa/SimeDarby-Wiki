@@ -53,11 +53,10 @@ P1[FROM AISLE STATION - 9001,
 | RetrievalSender[(3)](#Retrieval-Sender)                                         |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |    |  
 | ID32[(3)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |    
 | ID33[(5)](#ID33)                                                                |    |    |    | U  |    |    |     |    | U  |    |    |    |    |    |    |     
-| ID64[(6)](#ID64)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
-| ID68[(7)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |    |
-| ID26[(8)](#ID26)                                                                | U  | U  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I  |
+| ID68[(6)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |    |
+| ID26[(7)](#ID26)                                                                | U  | U  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I  |
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| Planned Retrieval Result[(9)](#Planned-Retrieval-Result)     |    |    |    |   |    | U  |    |    |    |    |    |    | 
+| Planned Retrieval Result[(8)](#Planned-Retrieval-Result)     |    |    |    |   |    | U  |    |    |    |    |    |    | 
 
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
 ##ID63
