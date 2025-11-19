@@ -97,7 +97,7 @@ id50msg --> As21Id54
 As21Id54 --> buttonlight
 :::
 
-After WareNavi receives information from **ID26** indicating a barcode NO-READ, it automatically sends **ID54** to the AGC. At the designated station, the signal tower lights up and the buzzer sounds, and initiate pallet transport
+After WareNavi receives information from **ID66** indicating a **No Empty Pallet**, it automatically sends **ID54** to the AGC. At the designated station, the signal tower lights up and the buzzer sounds, and initiate pallet transport
 
 <hr style="border: 2px solid red;">
 
