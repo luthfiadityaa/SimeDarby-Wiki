@@ -177,6 +177,7 @@ flowchart LR
         DNPALLET
         DMITEM
         DMSTATION
+DNSTOCK
     ")]
 
     className[RetrievalTriggerAllocator]
