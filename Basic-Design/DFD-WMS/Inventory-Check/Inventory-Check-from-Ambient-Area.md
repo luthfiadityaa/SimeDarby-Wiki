@@ -69,7 +69,7 @@ P1[Work Display - Click Complete Button]-->P2[ID45]-->P3[ID26]-->P4[StorageSende
 | ID68 [(8)](#id68)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
 | **Re-Storage Flow**                                            |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 | ID45 [(9)](#id45)                                              |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| ID26 at 1301-1302 [(10)](#id26-at-1301-1302)                    |   U  |   U  |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID26 at 1301-1302 [(10)](#id26-at-1301-1302)                   |   U  |   U  |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
 | StorageSender at 1301-1302 [(11)](#StorageSender-at-1301-1302) |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |      |
 | ID25 at 1301-1302 [(12)](#ID25-at-1301-1302)                   |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |      |
 | ID64 at STV [(13)](#id64-at-STV)                               |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
