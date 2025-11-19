@@ -100,10 +100,7 @@ flowchart LR
     ")]
 
     className[RetrievalTriggerAllocator]
-
     className --> Cond3{Has no data of stock?} --> | YES | P1[ID54] --> P2[ID54]
-
-    tableList-select --> |SELECT| className
 
     classDef leftAlign text-align:left;
     class input leftAlign;
@@ -159,6 +156,9 @@ As21Id54 --> buttonlight --> releaseCommand2 --> releaseCommand3
 :::
 
 Once WareNavi receives the signal from ID66 indicating **No Empty Pallet**,” it automatically transmits ID54 to the AGC. At the designated station, the signal tower will flash to indicate **Out of Empty Pallet in ASRS**.
+
+Continue to: #Retrieval-Trigger-Allocator
+
 <hr style="border: 2px solid red;">
 
 #Retrieval Trigger Allocator
