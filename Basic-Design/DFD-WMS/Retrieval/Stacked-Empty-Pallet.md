@@ -34,12 +34,12 @@ P1[FROM AISLE STATION - 9007, 9008, 9009, 9010]-->P2[ID66]-->P3[RetrievalTrigger
 | Action Name                                                                     |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN|OPRD|INOUT| 
 |---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|
 | ID66 [(1)](#I66)                                                                |    |    |    |    |    |    |     |    |    |    |    | U  |    |    |
-| Retrieval Trigger Allocator [(2)](#Retrieval-Trigger-Allocator)                 | I  |    | S  | I  | S  |    |     | S  | S  |    | S  | S  |    |    |
+| Retrieval Trigger Allocator [(2)](#Retrieval-Trigger-Allocator)                 | I  | I  | S  | I  | S  |    |     | S  | S  |    | S  | S  |    |    |
 | Retrieval Sender[(3)](#Retrieval-Sender)                                         |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |  
 | ID32[(4)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    
 | ID33[(5)](#ID33)                                                                |    |    |    | U  |    |    |     |    | U  |    |    |    |    |    |     
 | ID64[(6)](#ID64)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |
-| ID26[(8)](#ID26)                                                                | U  | I  | D  | D  | D  | I  |     |    | U  | I  |    |    |    | I  |
+| ID26[(8)](#ID26)                                                                | U  | U  | D  | D  | D  | I  |     |    | U  | I  |    |    |    | I  |
 
 #ID66
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.control.Id66Process&nbsp;</span>
