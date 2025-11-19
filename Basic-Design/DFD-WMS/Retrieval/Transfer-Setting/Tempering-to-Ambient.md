@@ -48,7 +48,7 @@ P1[FROM AISLE STATION - 9001, 9002, 9003, 9004, 9005, 9006]-->P2[ID12]-->P3[Retr
 | StorageSender at 7207-7214 [(15)](#StorageSender-at-7207-7214) |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |
 | ID25 at 7207-7214 [(16)](#ID25-at-7207-7214)                   |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |
 | ID64 at SRM [(17)](#id64-at-SRM)                               |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
-| ID33 at 9007-9014 [(18)](#id33-at-9007-9014)                   |   U  |      |      |   D  |      |      |      |  U   |      |      |      |      |      |      |
+| ID33 at 9007-9014 [(18)](#id33-at-9007-9014)                   |   U  |      |      |   D  |   U  |      |      |  U   |      |      |      |      |      |      |
 
 
 
@@ -545,7 +545,12 @@ id33("
 ID 33
 ")
 
+id33-insert[("
+DNSTOCKHISTORY
+")]
+
 id33-update[("
+DNSTOCK
 DNPALLET
 DMSHELF
 ")]
@@ -554,11 +559,18 @@ DNCARRYINFO
 ")]
 
 id33-->id33process
+id33process--INSERT-->id33-insert
 id33process-.UPDATE.->id33-update
-id33process--DELETE-->id33-delete
+id33process--DELETE--xid33-delete
 :::
 
 ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage operation of the pallet is completed by SRM.
+
+## <span style="color:skyblue; font-weight:bold">DNSTOCK</span>
+- **NEWEST_STORAGE_DATE**: SYSTIMESTAMP
+- **LOCATION_NO** : DNPALLET.CURRENT_STATION_NO
+- **LAST_UPDATE_DATE**: SYSTIMESTAMP
+- **LAST_UPDATE_PNAME**: Class name 
 
 ## <span style="color:skyblue; font-weight:bold">DMSHELF</span> 
 - **STATUS_FLAG** : 1: Occupied
@@ -571,6 +583,34 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 - **LAST_STORED_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
+
+## <span style="color:skyblue; font-weight:bold">DNSTOCKHISTORY</span> 
+- **WORK_DAY** : DMWARENAVISYSTEM.WORK_DAY
+- **INC_DEC_TYPE** : 1: Stock Increase
+- **JOB_TYPE** : 2: Storage
+- **STOCK_ID** : DNSTOCK.STOCK_ID
+- **AREA_NO** : DNSTOCK.AREA_NO
+- **LOCATION_NO** : DNSTOCK.LOCATION_NO
+- **MATERIAL_CODE** : DNSTOCK.MATERIAL_CODE
+- **MATERIAL_NAME** : DMITEM.MATERIAL_NAME
+- **STORAGE_DAY** : DNSTOCK.STORAGE_DAY
+- **STORAGE_DATE** : DNSTOCK.STORAGE_DATE
+- **NEWEST_STORAGE_DATE** : DNSTOCK.NEWEST_STORAGE_DATE
+- **UPDATE_STOCK_QTY**: DNSTOCK.STOCK_QTY
+- **INC_DEC_QTY** : DNSTOCK.STOCK_QTY
+- **PALLET_ID** : DNSTOCK.PALLET_ID
+- **AREA_TYPE** : DMAREA_AREA_TYPE
+- **USER_ID** : Login info
+- **USER_NAME** : Login info
+- **TERMINAL_NO** : Login info
+- **TERMINAL_NAME** : Login info
+- **IP_ADDRESS** : Login info
+- **STOCK_STATUS** : DNSTOCK.STOCK_STATUS
+- **TEMPERING_FLAG** : DNSTOCK.TEMPERING_FLAG
+- **QC_FLAG** : DNSTOCK.QC_FLAG
+- **EXPIRY_DATE** : DNSTOCK..EXPIRY_DAYS
+- **REGIST_DATE** : SYSTIMESTAMP
+- **REGIST_PNAME** : Class name
 
 # User Story
   - #5789
