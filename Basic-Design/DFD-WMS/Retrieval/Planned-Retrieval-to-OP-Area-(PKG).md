@@ -49,7 +49,7 @@ P1[FROM AISLE STATION -
 | ID68[(6)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |
 | ID26[(7)](#ID26)                                                                | U  | U  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    |
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |
-| Planned Retrieval Result[(8)](#Planned-Retrieval-Result)     |    |    |    |   |    | U  |    |    |    |    |    |    | 
+| Planned Retrieval Result[(8)](#Planned-Retrieval-Result)                        |    |    |    |   |    | U  |    |    |    |    |    |    | 
 
 #Planned Retrieval
 All data in the Planned Retrieval Setting List originates from process [Planned Retrieval - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/838/Planned-Retrieval). Please refer to the details for further information.
