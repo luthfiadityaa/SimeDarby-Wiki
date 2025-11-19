@@ -116,8 +116,8 @@ tableList-select --> |SELECT| className
 - **HARDWARE_TYPE** : 3: ASRS    
 - **PLAN_UKEY** : Sequence Object    
 - **STOCK_ID** : DNSTOCK.STOCKID    
-- **PLAN_AREA_NO** : Value from screen (Dropdown ⟶ Area: **9001: Tempering**)    
-- **PLAN_LOCATION_NO** : Value from screen (Dropdown ⟶ To_Location: **9002: Ambient**)  
+- **PLAN_AREA_NO** :  DNSTOCK.AREA_NO   
+- **PLAN_LOCATION_NO** :  DNSTOCK.LOCATION_NO
 - **PLAN_DAY** : DMWARENAVISYSTEM.WORK_DAY
 - **VENDOR_CODE** : DNSTOCK.VENDOR_CODE
 - **VENDOR_NAME** : DNSTOCK.VENDOR_NAME
