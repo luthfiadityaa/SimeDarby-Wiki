@@ -96,7 +96,7 @@ All data in the Planned Retrieval Setting List originates from process [Planned 
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.PlannedRetrievalSettingSCH &nbsp;</span>
 
- ![==image_0==.jpg](/.attachments/==image_0==-da2d8aa4-ecd6-4ef5-88b4-5a1178eb48bb.jpg) 
+![==image_0==.jpg](/.attachments/==image_0==-da2d8aa4-ecd6-4ef5-88b4-5a1178eb48bb.jpg) 
 
 The Inquiry Retrieval Setting screen uses for manually set the retrieval work(UnitRetrieval).​ This screen uses when there are some troubles with Host System Linkage(Irregular Cases) or when manual operation is necessary.
 
