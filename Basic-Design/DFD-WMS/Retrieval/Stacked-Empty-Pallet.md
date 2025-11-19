@@ -102,7 +102,7 @@ AGC will send ID66 when the MC contains data for any stock items that need to be
 <br>
 <hr style="border: 2px solid red;">
 
-#Irregular Cases
+#**<span style="color:red">Irregular Cases</span>**
 Continue this flow if occurs.
 - ##**When MC has no data of stock items to be retrieved**
 
