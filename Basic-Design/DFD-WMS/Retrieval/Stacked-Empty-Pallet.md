@@ -118,10 +118,10 @@ flowchart LR
         DNPALLET
         DMITEM
         DMSTATION
-DNSTOCK
+        DNSTOCK
     ")]
 
-     tableList-select-->className[RetrievalTriggerAllocator]
+    tableList-select-->className[RetrievalTriggerAllocator]
     className --> Cond3{Has no data of stock?} --> |YES| P1[ID54] --> |Save Retrieval Trigger| P2[ID54] --> |Stock Available| P3[ID12]
     Cond3{Has no data of stock?} --> |NO| P3[ID12]
 
