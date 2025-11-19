@@ -111,7 +111,19 @@ This section explains the validations for the whole proccess Planned Retrieval
 ::: mermaid
 flowchart LR
     input[
-        Station
+        Shipping Date
+        Ticket #
+        Status
+        Ticket List
+        Detail Record Qty
+        Ticket Line #
+        Material Code
+        Material Name
+        Batch #
+        Batch Qty
+        Batch UOM
+        Dock No
+
         Pallet #
         SoftZone
         Priority
@@ -119,10 +131,9 @@ flowchart LR
         All Qty
         Retrieval Qty
         Stock Qty
-        Material Code
-        Material Name
+        
         Material Type
-        Batch #
+        
         Area
         Loc #
         Stock Status
