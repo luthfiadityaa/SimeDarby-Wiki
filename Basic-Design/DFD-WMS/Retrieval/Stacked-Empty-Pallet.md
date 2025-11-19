@@ -61,7 +61,7 @@ flowchart LR
     class input leftAlign;
 :::
 
-Continue to Flow: [RID66](#ID66)
+Continue to Flow: [ID66](#ID66)
 
 <hr style="border: 2px solid red;">
 
