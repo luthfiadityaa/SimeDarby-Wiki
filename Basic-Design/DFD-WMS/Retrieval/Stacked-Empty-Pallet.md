@@ -79,7 +79,7 @@ AGC will send ID66 when the MC contains data for any stock items that need to be
 Continue this flow if occurs.
 - **When MC has no data of stock items to be retrieved**
 
-#ID54 at [1101-1105]
+#ID54 at [1210]
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.sendAs21Id54&nbsp;</span>
 ::: mermaid
 flowchart LR
