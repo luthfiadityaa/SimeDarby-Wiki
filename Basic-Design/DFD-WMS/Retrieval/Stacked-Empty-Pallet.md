@@ -202,7 +202,7 @@ flowchart LR
 
 Initiate with ID35.
 
-Continue to Flow: [ID35](#ID35)
+Continue to Flow: [Retrieval Trigger Allocator](#Retrieval-Trigger-Allocator)
 
 <hr style="border: 2px solid red;">
 
