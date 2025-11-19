@@ -99,7 +99,7 @@ tableList-select --> |SELECT| className
 - **JOB_NO** : Sequence Object    
 - **SETTING_UNIT_KEY** : Sequence Object    
 - **COLLECT_JOB_NO** : Sequence Object    
-- **JOB_TYPE** : 45: Location-to-location   
+- **JOB_TYPE** : 03: Retrieval   
 - **STATUS_FLAG** : 1: Working
 - **HARDWARE_TYPE** : 3: ASRS    
 - **PLAN_UKEY** : Sequence Object    
@@ -140,7 +140,7 @@ tableList-select --> |SELECT| className
 - **PLAN_AREA_NO**: DNWORKINFO.PLAN_AREA_NO    
 - **MATERIAL_CODE**: DNWORKINFO.MATERIAL_CODE    
 - **MATERIAL_NAME**: DNWORKINFO.MATERIAL_NAME      
-- **RETRIEVAL_DETAIL**: 6: Location-to-location (Relocation)   
+- **RETRIEVAL_DETAIL**: 1:Unit Retrieval   
 - **PLAN_QTY**: DNWORKINFO.PLAN_QTY  
 - **TEMPERING_PERIOD**: DNSTOCK.TEMPERING_PERIOD
 - **TEMPERING_FLAG**: DNSTOCK.TEMPERING_FLAG      
@@ -191,7 +191,7 @@ retrievalstationoperator--> |UPDATE| id12-update
 ## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
 - **CARRY_KEY** : Sequence Object    
 - **PALLET_ID** : DNSTOCK.PALLET_ID    
-- **WORK_TYPE** : 23:Unplanned Retrieval    
+- **WORK_TYPE** : 03: Retrieval   
 - **CMD_STATUS** : 1:Started    
 - **PRIORITY** : 2:Normal    
 - **RESTORING_FLAG** : 0 :Not Restore to Original Location  
@@ -199,8 +199,7 @@ retrievalstationoperator--> |UPDATE| id12-update
 - **RETRIEVAL_STATION_NO** : DNSTOCK.LOCATION_NO
 - **RETRIEVAL_DETAIL** : 1: Unit Retrieval
 - **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO    
-- **DEST_STATION_NO** : Based on **SOURCE_STATION_NO** where a reserved location belongs to ⟶ **(1201, 1202, 1203, 1204)**
-- **PRIORITY** : Value from screen **(Dropdown ⟶ 1:Urgent / 2: Normal)**
+- **DEST_STATION_NO** : Based on **SOURCE_STATION_NO** where a reserved location belongs to ⟶ **(9001,9002,9003,9004,9005,9006)**
 - **CANCEL_REQUEST** : 0: Not Requested    
 - **SCHEDULE_NO** : Sequence Object    
 - **CARRY_FLAG** : 2: Retrieval
