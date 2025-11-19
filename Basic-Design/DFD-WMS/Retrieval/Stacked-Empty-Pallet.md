@@ -126,7 +126,34 @@ Next, the Retrieval Trigger Allocator will assign stock items that are eligible 
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
 
-####<span style="color:skyblue; font-weight:bold">DNWORKLIST</span>
+####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
+*   **JOB_NO**: DNWORKINFO.JOB_NO    
+*   **SETTING_UNIT_KEY**: Sequence Object   
+*   **COLLECT_JOB_NO**: DNWORKINFO.COLLECT_JOB_NO    
+*   **JOB_TYPE**: DNWORKINFO.JOB_TYPE    
+*   **PLAN_UKEY**: DNWORKINFO.PLAN_UKEY    
+*   **STOCK_ID**: DNWORKINFO.STOCK_ID    
+*   **PALLET_ID**: DNPALLET.PALLET_ID    
+*   **PLAN_DAY**: DNWORKINFO.PLAN_DAY    
+*   **BATCH_NO**: DNWORKINFO.BATCH_NO    
+*   **PLAN_AREA_NO**: DNWORKINFO.PLAN_AREA_NO    
+*   **MATERIAL_CODE**: DNWORKINFO.MATERIAL_CODE    
+*   **MATERIAL_NAME**: DNWORKINFO.MATERIAL_NAME      
+*   **RETRIEVAL_DETAIL**: 1:Unit Retrieval   
+*   **PLAN_QTY**: DNWORKINFO.PLAN_QTY  
+*   **TEMPERING_PERIOD**: DNSTOCK.TEMPERING_PERIOD
+*   **TEMPERING_FLAG**: DNSTOCK.TEMPERING_FLAG      
+*   **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE
+*   **QC_DURATION**: DNSTOCK.QC_DURATION
+*   **QC_CHECK_FLAG**: DNSTOCK_QC_CHECK_FLAG        
+*   **DOCK_NO**: DNWORKINFO.DOCK_NO
+*   **TRUCK_PLATE_NO**: DNWORKINFO.TRUCK_PLATE_NO 
+*   **USER_ID**: DNWORKINFO.USER_ID    
+*   **USER_NAME**: DCUSER.USER_NAME    
+*   **REGIST_DATE**: SYSTIMESTAMP    
+*   **REGIST_PNAME**: ClassName    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: ClassName
 
 #ID12
 
