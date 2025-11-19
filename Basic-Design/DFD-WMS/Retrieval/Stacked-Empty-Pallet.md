@@ -97,7 +97,7 @@ id50msg --> As21Id54
 As21Id54 --> buttonlight
 :::
 
-After WareNavi receives information from **ID66** indicating a **No Empty Pallet**, it automatically sends **ID54** to the AGC. At the designated station, the signal tower lights up and the buzzer sounds, and initiate pallet transport
+Once WareNavi receives the signal from ID66 indicating **No Empty Pallet**,” it automatically transmits ID54 to the AGC. At the designated station, the signal tower will flash to indicate “Out of Empty Pallet in ASRS.
 
 <hr style="border: 2px solid red;">
 
