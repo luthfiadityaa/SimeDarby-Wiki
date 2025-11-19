@@ -61,7 +61,7 @@ flowchart LR
         DMSTATION
     ")]
 
-    input -->id66msg-->As21Id54
+    input -->id66msg-->As21Id47
 
     classDef leftAlign text-align:left;
     class input leftAlign;
