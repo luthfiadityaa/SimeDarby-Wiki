@@ -154,7 +154,7 @@ id50msg --> As21Id54
 As21Id54 --> buttonlight --> releaseCommand2 --> releaseCommand3
 :::
 
-A signal tower lights up to indicate that the process is active. Next, the system waits until the correct load becomes available. Once ready, stock items are allocated for retrieval, completing the process.
+A signal tower lights up again to indicate that the system waits until the correct load becomes available. Once ready, stock items are allocated for retrieval.
 
 Continue to: [Retrieval Trigger Allocator](#Retrieval-Trigger-Allocator)
 
