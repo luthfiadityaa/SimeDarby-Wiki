@@ -101,7 +101,10 @@ flowchart LR
 
     className[RetrievalTriggerAllocator]
 
-    className --> |INSERT| tableList-insert
+    className --> {[Has Error?]}
+
+
+|INSERT| tableList-insert
     tableList-select --> |SELECT| className
 
     classDef leftAlign text-align:left;
