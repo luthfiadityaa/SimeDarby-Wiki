@@ -122,32 +122,8 @@ flowchart LR
         Batch #
         Batch Qty
         Batch UOM
-        Dock No
-
-        Pallet #
-        SoftZone
-        Priority
-        To Location
-        All Qty
-        Retrieval Qty
-        Stock Qty
-        
-        Material Type
-        
-        Area
-        Loc #
-        Stock Status
-        Storage Date/Time
-        Qty kg/crtn
-        Qty crtn/PL
-        UOM
-        Tempering Flag
-        Tempering Period
-        QC Duration
-        QC Check Flag
-        Truck No
-        Plate No
-    ]
+        Dock #
+        Truck Plate #    ]
 
     tableList-insert[("
         DNWORKINFO
