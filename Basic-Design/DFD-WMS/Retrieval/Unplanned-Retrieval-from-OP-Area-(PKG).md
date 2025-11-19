@@ -178,23 +178,23 @@ tableList-select --> |SELECT| className
 ::: mermaid
 flowchart LR
 
-id26msg("
+id12msg("
 ID12
 ")
 
-id26-insert[("
+id12-insert[("
 DNCARRYINFO
 ")]
 
-id26-update[("
+id12-update[("
 DNPALLET
 ")]
 
 retrievalstationoperator[RetrievalStationOperator]
 
-id26msg-->id12process
-id12process-->retrievalstationoperator--> |INSERT| id26-insert
-retrievalstationoperator--> |UPDATE| id26-update
+id12msg-->id12process
+id12process-->retrievalstationoperator--> |INSERT| id12-insert
+retrievalstationoperator--> |UPDATE| id12-update
 :::
 
 ## <span style="color:skyblue; font-weight:bold">DNPALLET</span>
