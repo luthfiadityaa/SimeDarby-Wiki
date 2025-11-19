@@ -90,7 +90,38 @@ ID 54
 
 buttonlight["
 The signal tower lights.
-The buzzer sounds.
+"]
+
+releaseCommand2["
+Save retrieval trigger
+"]
+
+id50msg --> As21Id54
+As21Id54 --> buttonlight --> releaseCommand2
+:::
+
+Once WareNavi receives the signal from ID66 indicating **No Empty Pallet**,” it automatically transmits ID54 to the AGC. At the designated station, the signal tower will flash to indicate **Out of Empty Pallet in ASRS**. MC will save and retain the retrieval trigger in memory until the load arrives at the station.
+
+
+#ID54 at [1210]
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.sendAs21Id54&nbsp;</span>
+::: mermaid
+flowchart LR
+
+id50msg("
+ID 54
+")
+
+buttonlight["
+The signal tower lights.
+"]
+
+releaseCommand2["
+Wait until applicable load becomes available
+"]
+
+releaseCommand3["
+Allocation of stock items that can be retrieved. 
 "]
 
 id50msg --> As21Id54
@@ -98,7 +129,6 @@ As21Id54 --> buttonlight
 :::
 
 Once WareNavi receives the signal from ID66 indicating **No Empty Pallet**,” it automatically transmits ID54 to the AGC. At the designated station, the signal tower will flash to indicate **Out of Empty Pallet in ASRS**.
-
 <hr style="border: 2px solid red;">
 
 #Retrieval Trigger Allocator
