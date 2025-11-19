@@ -271,7 +271,6 @@ Next, the Retrieval Trigger Allocator will assign stock items that are eligible 
 *   **LAST_UPDATE_PNAME**: ClassName
 
 #ID12
-
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.send.As21Id12&nbsp;</span>
 
 ::: mermaid
