@@ -72,6 +72,16 @@ AGC will send ID66 when the MC contains data for any stock items that need to be
 **RETRIEVAL_TRIGGER_REQUEST**: 2:Requested by AGC
 **LAST_UPDATE_PNAME**: Id66Process
 
+<br>
+<hr style="border: 2px solid red;">
+
+#Irregular Cases
+Continue this flow if occurs.
+- **When MC has no data of stock items to be retrieved**
+
+
+<hr style="border: 2px solid red;">
+
 #Retrieval Trigger Allocator
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalTriggerAllocator&nbsp;</span>
 
