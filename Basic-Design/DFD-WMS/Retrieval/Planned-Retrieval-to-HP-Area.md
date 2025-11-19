@@ -616,7 +616,7 @@ After the completion button flashes, the operator removes the pallet and presses
 *   **LAST_UPDATE_PNAME**: Class name
 
 #Planned Retrieval Result
-- [Planned Retrieval Results](https://dev.azure.com/DaifukuSW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Sto-Retrieval-Result)
+- [Planned Retrieval Results](https://dev.azure.com/DaifukuSW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/848/Planned-Retrieval-Result)
 
 <hr>
 
