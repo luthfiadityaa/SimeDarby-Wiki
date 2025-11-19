@@ -509,7 +509,7 @@ workdisplay[WorkDisplaySCH]
 input-->workdisplay
 workdisplay-.UPDATE.->workdisplay-update
 workdisplay-.DELETE.->workdisplay-delete
-workdisplay-->id45msg
+workdisplay--SEND-->id45msg
 :::
 
 Upon Pallet arrival at Station 1301-1302, user can use Work Display Screen to verify the Material, Stock Qty and Others detail information then can complete the Inventory Check process also re-storage the pallet.
