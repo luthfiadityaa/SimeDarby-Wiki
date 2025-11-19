@@ -263,6 +263,7 @@ The Retrieval operation at **Packaging Material zone (9002: Ambient)** will be r
 - **STATUS_FLAG** : 4:Being retrieved
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
+
 # ID32
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
