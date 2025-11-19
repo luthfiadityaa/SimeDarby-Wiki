@@ -4,7 +4,7 @@
 # Transfer Setting Tempering Area to Ambient Area
 ![image.png](/.attachments/image-2fb067b7-aa3e-40d4-b523-ccf656bd68d6.png)
 
-# Summary
+# <span style="color:skyblue; font-weight:bold">Summary Flow</span>
 ::: mermaid
 flowchart LR
   
@@ -36,7 +36,7 @@ P1[FROM STATION - 9001, 9002, 9003, 9004, 9005, 9006]-->P2[ID12]-->P3[RetrievalS
 
 | Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HTST | OPRR | ITEM | STSN |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
-| Transfer Setting - Set(F2) [(1)](#transfer-setting---set(f2)) |   S  |   I  |   I  |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |
+| Transfer Setting - Set(F2) [(1)](#transfer-setting---set(f2))  |   S  |   I  |   I  |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |
 | **Retrieval Flow**                                             |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 | ID12 [(2)](#id12)                                              |   U  |      |      |   I  |      |      |      |      |      |      |      |      |      |      |
 | Retrieval Sender [(3)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
