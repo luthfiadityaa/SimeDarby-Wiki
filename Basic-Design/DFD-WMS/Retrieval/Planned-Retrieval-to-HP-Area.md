@@ -125,7 +125,7 @@ flowchart LR
         Batch UOM
         Dock #
         Truck Plate #    
-   ]
+    ]
 
     tableList-insert[("
         DNWORKINFO
