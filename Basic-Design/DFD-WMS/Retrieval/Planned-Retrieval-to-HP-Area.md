@@ -607,4 +607,4 @@ After the completion button flashes, the operator removes the pallet and presses
 - [DFD Retrieval for Shipping](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5790)
 
 #Related DFD
-- [Planned Retrieval from OP Area (PKG)]((https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/890/Planned-Retrieval-from-OP-Area-(PKG))
+- [Planned Retrieval from OP Area (PKG)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/890/Planned-Retrieval-from-OP-Area-(PKG))
