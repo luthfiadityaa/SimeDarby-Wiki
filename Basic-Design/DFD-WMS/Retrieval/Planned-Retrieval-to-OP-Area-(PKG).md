@@ -4,7 +4,7 @@
 [[_TOC_]]
 [[_TOSP_]]
 
-#<span style="color:skyblue; font-weight:bold">Retrieval from 1301, 1302, 1205, 1206, 1207, 1208, 1209</span>
+#<span style="color:skyblue; font-weight:bold">Retrieval from 1201, 1202, 1203, 1204</span>
 ![image.png](/.attachments/image-0a629e0c-d766-4b61-aba2-f968f908bd60.png)
 
 #<span style="color:skyblue; font-weight:bold">Summary Flow</span>
