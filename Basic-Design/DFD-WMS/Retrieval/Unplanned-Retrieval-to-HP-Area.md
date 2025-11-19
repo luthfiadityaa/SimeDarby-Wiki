@@ -190,6 +190,8 @@ flowchart LR
 *   **LAST_UPDATE_PNAME**: ClassName
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
+* ***ALLOCATION_QTY**:
+*
 
 #ID12
 
