@@ -45,7 +45,7 @@ P1[FROM AISLE STATION - 9007, 9008, 9009, 9010]-->P2[ID66]-->P3[RetrievalTrigger
 <br>
 <hr style="border: 2px solid red;">
 
-#<span style="color:red">Irregular Cases</span>
+#**<span style="color:red">Irregular Cases</span>**
 When this flow if occurs.
 - ##**When MC loses memory of retrieval trigger**
 ###ID47
