@@ -190,6 +190,7 @@ flowchart LR
 *   **LAST_UPDATE_PNAME**: ClassName
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
+* **SETTING_UNIT_KEY**: Sequence Object   
 * **ALLOCATION_QTY**:
 * **STOCK_QTY**:
 * **REGIST_DATE**: SYSTIMESTAMP    
