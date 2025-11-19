@@ -61,7 +61,7 @@ flowchart LR
         DMSTATION
     ")]
 
-    input -->id66msg-->id66process--> |UPDATE| tableList-update
+    input -->id66msg-->As21Id54
 
     classDef leftAlign text-align:left;
     class input leftAlign;
@@ -86,7 +86,7 @@ flowchart LR
         DMSTATION
     ")]
 
-    input -->id66msg-->As21Id54
+    input -->id66msg-->id66process--> |UPDATE| tableList-update
 
     classDef leftAlign text-align:left;
     class input leftAlign;
