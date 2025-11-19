@@ -89,6 +89,9 @@ flowchart LR
 ####<span style="color:skyblue; font-weight:bold">DMStation</span>
 **CURRENT_MODE**: 2: Retrieval Mode
 
+#Planned Retrieval
+- [Unplanned Storage and Retrieval Results](https://dev.azure.com/DaifukuSW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result)
+
 #Planned Retrieval Setting - Set(F2)
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.PlannedRetrievalSettingSCH &nbsp;</span>
