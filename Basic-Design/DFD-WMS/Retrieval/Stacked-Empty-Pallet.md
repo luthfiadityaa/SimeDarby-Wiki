@@ -48,6 +48,8 @@ P1[FROM AISLE STATION - 9007, 9008, 9009, 9010]-->P2[ID66]-->P3[RetrievalTrigger
 #Irregular Cases
 Continue this flow if occurs.
 - ##**When MC loses memory of retrieval trigger**
+###ID47
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.sendAs21Id54&nbsp;</span>
 ::: mermaid
 flowchart LR
 
