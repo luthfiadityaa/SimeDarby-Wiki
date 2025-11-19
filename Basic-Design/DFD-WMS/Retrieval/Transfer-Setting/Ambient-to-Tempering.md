@@ -3,14 +3,23 @@
 
 # Transfer Setting Ambient Area to Tempering Area
 ![image.png](/.attachments/image-c5758bc4-cf12-4686-ada3-9bdb5b9b65aa.png)
+![image.png](/.attachments/image-73207ff0-617e-4e69-88df-40df91dd8d4d.png)
 
 # <span style="color:skyblue; font-weight:bold">Summary Flow</span>
-**Stage 1**
+## Stage 1
 ::: mermaid
 flowchart LR
 
-P1[FROM STATION - 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014]-->P2[ID12]-->P3[RetrievalSender]-->P4[ID32]-->P5[ID33]-->P6[ID64]-->P7[ID26]-->P8[StorageSender]-->P9[ID05]-->P10[ID25]-->P11[ID64]-->P12[ID33]
+P1[FROM STATION 9001 - 9014]-->P2[ID12]-->P3[RetrievalSender]-->P4[ID32]-->|SRM|P5[ID33]-->|STV|P6[ID64]-->Cond1{Flow?} 
 :::
+
+## Stage 2 
+::: mermaid
+flowchart LR
+
+Cond1{Flow?} -->|7101-7106|P2[ID26]-->P8[StorageSender]-->P9[ID05]-->P10[ID25]-->|SRM|P11[ID64]
+:::
+
 
 #<span style="color:skyblue; font-weight:bold">Transfer Setting from Tempering to Ambient</span>
 ## Abbreviation
