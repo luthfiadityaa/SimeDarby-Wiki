@@ -161,7 +161,7 @@ Once WareNavi receives the signal from ID66 indicating **No Empty Pallet**,” i
 flowchart LR
 
 id50msg("
-ID 54
+ID54
 ")
 
 buttonlight["
@@ -194,7 +194,7 @@ flowchart LR
      ID35
     ")
 
-    id66msg-->Id35Process-->P1[Search for stations in retrieval command queue by sending retrieval trigger]
+    id66msg-->Id35Process--> |DELETE| P1[Search for stations in retrieval command queue by sending retrieval trigger]
 
     classDef leftAlign text-align:left;
     class input leftAlign;
