@@ -32,7 +32,6 @@ P1[FROM AISLE STATION -
 - **STSN** : DMSTATION  
 - **STCH** : DNSTOCKHISTORY  
 - **TTSN** : DMTOSTATION 
-- **INOUT**: DNINOUTSTATION
 
 * **Operation Name**
   - **I** : INSERT  
@@ -40,16 +39,16 @@ P1[FROM AISLE STATION -
   - **D** : DELETE
   - **S** : SELECT 
 
-| Action Name                                                                     |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN|TTSN|OPRD|INOUT| 
-|---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|----|
-| Planned Retrieval Setting - Set(F2) [(1)](#Planned-Retrieval-Setting---Set(F2)) | I  | I   | S  |    | S  |    |     | S  | S  |    | S  | S  | S  |    |    |
-| ID12[(2)](#ID12)                                                                |    |    | U  | I  |    |    |     |    |    |    |    |    |    |    |    |  
-| RetrievalSender[(3)](#Retrieval-Sender)                                         |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |    |  
-| ID32[(3)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |    
-| ID33[(5)](#ID33)                                                                |    |    |    | U  |    |    |     |    | U  |    |    |    |    |    |    |     
-| ID68[(6)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |    |
-| ID26[(7)](#ID26)                                                                | U  | U  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I  |
-| **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
+| Action Name                                                                     |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN|TTSN|OPRD| 
+|---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|
+| Planned Retrieval Setting - Set(F2) [(1)](#Planned-Retrieval-Setting---Set(F2)) | I  | I   | S  |    | S  |    |     | S  | S  |    | S  | S  | S  |    |
+| ID12[(2)](#ID12)                                                                |    |    | U  | I  |    |    |     |    |    |    |    |    |    |    | 
+| RetrievalSender[(3)](#Retrieval-Sender)                                         |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    | 
+| ID32[(3)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    
+| ID33[(5)](#ID33)                                                                |    |    |    | U  |    |    |     |    | U  |    |    |    |    |    |    
+| ID68[(6)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |
+| ID26[(7)](#ID26)                                                                | U  | U  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    |
+| **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |
 | Planned Retrieval Result[(8)](#Planned-Retrieval-Result)     |    |    |    |   |    | U  |    |    |    |    |    |    | 
 
 #Planned Retrieval
