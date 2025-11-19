@@ -60,7 +60,7 @@ P1[FROM AISLE STATION - 9001, 9002, 9003, 9004, 9005, 9006]-->P2[ID12]-->P3[Retr
 This screen is mainly used to move pallets from tempering to ambient.
 
 ## <span style="color:skyblue; font-weight:bold">Validations</span>
-This section explains the validations for the whole proccess Unplanned Retrieval process (PKG)
+This section explains the validations for the whole process Transfer Setting
 - AGC is online. (**DMGroupController.STATUS_FLAG.ONLINE**)
 - Selected Station Number is NOT under suspend. (**DMStation.SUSPEND.OFF**)
 - Selected Station Number is available. (**DMStation.STATUS.NORMAL** and **DMMachine.STATUS_FLAG.ACTIVE**)
