@@ -57,7 +57,7 @@ P1[FROM AISLE STATION - 9001,
 | ID68[(7)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |    |
 | ID26[(8)](#ID26)                                                                | U  | U  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I  |
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| Unplanned Storage and Retrieval Result[(9)](#Unplanned-Storage-and-Retrieval-Result)     |    |    |    |   |    | U  |    |    |    |    |    |    | 
+| Planned Retrieval Result Retrieval Result[(9)](#Unplanned-Storage-and-Retrieval-Result)     |    |    |    |   |    | U  |    |    |    |    |    |    | 
 
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
 ##ID63
