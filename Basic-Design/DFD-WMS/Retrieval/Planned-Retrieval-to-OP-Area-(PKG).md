@@ -52,36 +52,6 @@ P1[FROM AISLE STATION -
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | Planned Retrieval Result[(8)](#Planned-Retrieval-Result)     |    |    |    |   |    | U  |    |    |    |    |    |    | 
 
-#<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
-##ID63
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.control.Id63Process&nbsp;</span>
-
-If the station mode is **Storage Mode**, change the mode of the station to **Retrieval mode**.
-**<span style="color:green">Only For 1301 & 1302.</span>** If not, start from [Inquiry Retrieval Setting - Set(F2)](#Inquiry-Retrieval-Setting---Set(F2))
-
-::: mermaid
-flowchart LR
-    input[
-        Operators pressed the retrieval mode button on the operation box.      
-    ]
-
-    id61msg("
-     ID63
-    ")
-    tableList-update[("
-        DMSTATION
-    ")]
-
-    input -->id61msg-->id63process--> |UPDATE| tableList-update
-
-    classDef leftAlign text-align:left;
-    class input leftAlign;
-:::
-
-###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-####<span style="color:skyblue; font-weight:bold">DMStation</span>
-**CURRENT_MODE**: 2: Retrieval Mode
-
 #Planned Retrieval
 All data in the Planned Retrieval Setting List originates from process [Planned Retrieval - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/838/Planned-Retrieval). Please refer to the details for further information.
 
