@@ -54,6 +54,13 @@ P1[FROM AISLE STATION - 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID12]
 ![image.png](/.attachments/image-bbf9a08f-5425-40ef-bb6b-8a9991a6e82a.png)
 Inquiry Retrieval Setting (PKG) is used for manually pickup Packaging Material item in ASRS. 
 
+## <span style="color:skyblue; font-weight:bold">Validations</span>
+This section explains the validations for the whole proccess Unplanned Retrieval process (PKG)
+- AGC is online. (**DMGroupController.STATUS_FLAG.ONLINE**)
+- Selected Station Number is NOT under suspend. (**DMStation.SUSPEND.OFF**)
+- Selected Station Number is available. (**DMStation.STATUS.NORMAL** and **DMMachine.STATUS_FLAG.ACTIVE**)
+- Input text with red asterisk <span style="color:red">(*)</span> is not empty
+
 ::: mermaid
 flowchart LR
 input[
@@ -104,13 +111,6 @@ className[EmptyPalletSettingSCH]
 input --> className --> |INSERT| tableList-insert
 tableList-select --> |SELECT| className
 :::
-
-## <span style="color:skyblue; font-weight:bold">Validations</span>
-This section explains the validations for the whole proccess Unplanned Retrieval process (PKG)
-- AGC is online. (**DMGroupController.STATUS_FLAG.ONLINE**)
-- Selected Station Number is NOT under suspend. (**DMStation.SUSPEND.OFF**)
-- Selected Station Number is available. (**DMStation.STATUS.NORMAL** and **DMMachine.STATUS_FLAG.ACTIVE**)
-- Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
 ## <span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
 - **JOB_NO** : Sequence Object    
