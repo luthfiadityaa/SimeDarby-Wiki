@@ -127,28 +127,6 @@ Next, the Retrieval Trigger Allocator will assign stock items that are eligible 
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
 
-###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-*   **CARRY_KEY**: Sequence Object    
-*   **PALLET_ID**: DNSTOCK.PALLET_ID    
-*   **WORK_TYPE**: 23:Unplanned Retrieval    
-*   **CMD_STATUS**: 1:Started    
-*   **PRIORITY**: 2:Normal    
-*   **RESTORING_FLAG**: 0:Not Restore to Original Location  
-*   **WORK_NO**: Sequence Object    
-*   **RETRIEVAL_STATION_NO**: DNSTOCK.LOCATION_NO
-*   **SOURCE_STATION_NO**: DNPALLET.CURRENT_STATION_NO → **<span style="color:green;">(9007,9008,9009,910)</span>**   
-*   **DEST_STATION_NO**: **<span style="color:green;">1210**    
-*   **CANCEL_REQUEST**: 0:Not Requested    
-*   **SCHEDULE_NO**: Sequence Object    
-*   **CARRY_FLAG**: 2:Retrieval
-*   **CANCEL_REQUEST**: 0:Not requested
-*   **AISLE_STATION_NO**: DMSHELF.PARENT_STATION_NO
-*   **END_STATION_NO**: DNCARRYINFO.DEST_STATION_NO  
-*   **REGIST_DATE**: SYSTIMESTAMP    
-*   **REGIST_PNAME**: ClassName    
-*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
-*   **LAST_UPDATE_PNAME**: ClassName
-
 #ID12
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.send.As21Id12&nbsp;</span>
@@ -181,7 +159,29 @@ retrievalstationoperator--> |UPDATE| id26-update
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
-#Retrieval-Sender
+###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+*   **CARRY_KEY**: Sequence Object    
+*   **PALLET_ID**: DNSTOCK.PALLET_ID    
+*   **WORK_TYPE**: 23:Unplanned Retrieval    
+*   **CMD_STATUS**: 1:Started    
+*   **PRIORITY**: 2:Normal    
+*   **RESTORING_FLAG**: 0:Not Restore to Original Location  
+*   **WORK_NO**: Sequence Object    
+*   **RETRIEVAL_STATION_NO**: DNSTOCK.LOCATION_NO
+*   **SOURCE_STATION_NO**: DNPALLET.CURRENT_STATION_NO → **<span style="color:green;">(9007,9008,9009,910)</span>**   
+*   **DEST_STATION_NO**: **<span style="color:green;">1210**    
+*   **CANCEL_REQUEST**: 0:Not Requested    
+*   **SCHEDULE_NO**: Sequence Object    
+*   **CARRY_FLAG**: 2:Retrieval
+*   **CANCEL_REQUEST**: 0:Not requested
+*   **AISLE_STATION_NO**: DMSHELF.PARENT_STATION_NO
+*   **END_STATION_NO**: DNCARRYINFO.DEST_STATION_NO  
+*   **REGIST_DATE**: SYSTIMESTAMP    
+*   **REGIST_PNAME**: ClassName    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: ClassName
+
+#Retrieval Sender
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalSender&nbsp;</span>
 
 ::: mermaid
