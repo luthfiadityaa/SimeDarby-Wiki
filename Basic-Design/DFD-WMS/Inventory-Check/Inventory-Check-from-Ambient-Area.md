@@ -887,10 +887,10 @@ id25process-.DELETE.-xid25-delete
 ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 
 ## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span> 
-- CMD_STATUS          = 3:Commanded
-- ERROR_CODE          = 0
-- LAST_UPDATE_DATE    = SYSTIMESTAMP
-- LAST_UPDATE_PNAME   = Class name
+- **CMD_STATUS** : 3:Commanded
+- **ERROR_CODE** : 0
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
 
 # ID64 at SRM
 
