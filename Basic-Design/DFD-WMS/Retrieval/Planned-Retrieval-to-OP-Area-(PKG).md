@@ -5,7 +5,7 @@
 [[_TOSP_]]
 
 #<span style="color:skyblue; font-weight:bold">Retrieval from 1201, 1202, 1203, 1204</span>
-![image.png](/.attachments/image-48b2a6e2-8f3a-4329-a18f-131d2ba345ea.png)
+![image.png](/.attachments/image-4d80d926-210c-401a-ac3f-ae618c29672f.png)
 
 #<span style="color:skyblue; font-weight:bold">Summary Flow</span>
 ::: mermaid
