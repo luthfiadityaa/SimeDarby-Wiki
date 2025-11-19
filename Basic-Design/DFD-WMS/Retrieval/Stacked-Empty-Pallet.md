@@ -324,6 +324,32 @@ retrievalstationoperator--> |UPDATE| id26-update
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
 
+<hr style="border: 2px solid red;">
+
+#**<span style="color:red">Irregular Cases</span>**
+When this flow if occurs.
+- ##**When load has to be sent out**
+###ID47
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.sendAs21Id54&nbsp;</span>
+::: mermaid
+flowchart LR
+
+    id66msg("
+     ID47
+    ")
+
+    id66msg-->As21Id47-->P1[Search for stations in retrieval command queue by sending retrieval trigger]
+
+    classDef leftAlign text-align:left;
+    class input leftAlign;
+:::
+
+Initiate with ID47 and execute command As21Id47 to search for stations within the retrieval command queue by dispatching a retrieval trigger.
+
+Continue to Flow: [ID66](#ID66)
+
+<hr style="border: 2px solid red;">
+
 #Retrieval Sender
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalSender&nbsp;</span>
 
