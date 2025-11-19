@@ -96,6 +96,7 @@ flowchart LR
 
      tableList-select-->className[RetrievalTriggerAllocator]
     className --> Cond3{Has no data of stock?} --> |YES| P1[ID54] --> |Save Retrieval Trigger| P2[ID54]
+    Cond3{Has no data of stock?} --> |NO| P3[ID12]
 
     classDef leftAlign text-align:left;
     class input leftAlign;
