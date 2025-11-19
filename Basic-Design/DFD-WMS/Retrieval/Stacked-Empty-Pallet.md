@@ -198,7 +198,7 @@ flowchart LR
      ID35
     ")
 
-    id66msg-->Id35Process--> |DELETE| P1[Search for stations in retrieval command queue by sending retrieval trigger]
+    id66msg-->Id35Process--> |DELETE| tableList-delete
 
     classDef leftAlign text-align:left;
     class input leftAlign;
