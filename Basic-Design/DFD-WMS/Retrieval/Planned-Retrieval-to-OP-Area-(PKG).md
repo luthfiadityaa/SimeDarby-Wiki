@@ -352,16 +352,6 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
-##<span style="color:skyblue; font-weight:bold">LED sign displays the work</span>  
-[Display information]
-* **Job Type**
-* **Material Code**
-* **Qty**
-* **Dock No**
-* **Truck Plate No**
-
-![image.png](/.attachments/image-1e56dc6e-657e-47ff-9a47-575b04705583.png)
-
 #ID26
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.control.Id26Process&nbsp;</span>
 
