@@ -89,7 +89,7 @@ flowchart LR
 ####<span style="color:skyblue; font-weight:bold">DMStation</span>
 **CURRENT_MODE**: 2: Retrieval Mode
 
-#Inquiry Retrieval Setting - Set(F2)
+#Planned Retrieval Setting - Set(F2)
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.InquiryRetrievalSettingSCH &nbsp;</span>
 
