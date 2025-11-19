@@ -192,6 +192,7 @@ flowchart LR
 
     tableList-delete[("
         DNCARRYINFO
+        DNARRIVAL
     ")]
 
     id66msg("
