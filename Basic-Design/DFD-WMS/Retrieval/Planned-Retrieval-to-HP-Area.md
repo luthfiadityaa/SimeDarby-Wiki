@@ -98,7 +98,7 @@ All data in the Planned Retrieval Setting List originates from process [Planned 
 
 ![==image_0==.jpg](/.attachments/==image_0==-da2d8aa4-ecd6-4ef5-88b4-5a1178eb48bb.jpg) 
 
-The Inquiry Retrieval Setting screen uses for manually set the retrieval work(UnitRetrieval).​ This screen uses when there are some troubles with Host System Linkage(Irregular Cases) or when manual operation is necessary.
+The Planned Retrieval Setting screen is used to start multiple retrieval work grouped byTicket # (Document Number in SAP).​
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
 This section explains the validations for the whole proccess Planned Retrieval
