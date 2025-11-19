@@ -324,32 +324,6 @@ retrievalstationoperator--> |UPDATE| id26-update
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
 
-<hr style="border: 2px solid red;">
-
-#**<span style="color:red">Irregular Cases</span>**
-When this flow if occurs.
-- ##**When load has to be sent out**
-###ID35
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.control.Id35Process&nbsp;</span>
-::: mermaid
-flowchart LR
-
-    id66msg("
-     ID35
-    ")
-
-    id66msg-->Id35Process-->P1[Search for stations in retrieval command queue by sending retrieval trigger]
-
-    classDef leftAlign text-align:left;
-    class input leftAlign;
-:::
-
-Initiate with ID35.
-
-Continue to Flow: [ID35](#ID35)
-
-<hr style="border: 2px solid red;">
-
 #Retrieval Sender
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalSender&nbsp;</span>
 
