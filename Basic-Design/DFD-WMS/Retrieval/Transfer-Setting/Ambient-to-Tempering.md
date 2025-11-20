@@ -530,6 +530,8 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
+<hr>
+
 # ID64 at SRM 9007-9010
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
@@ -556,6 +558,12 @@ Upon equipment **(SRM 9007-9008)** have picked up the Pallet successfully, ID64 
 - **CMD_STATUS** : 4:Pickup completed
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
+
+# Continue to Flow 2 - Storage Flow
+
+<hr>
+
+
 
 # ID64 at SRM 9001-9006
 
