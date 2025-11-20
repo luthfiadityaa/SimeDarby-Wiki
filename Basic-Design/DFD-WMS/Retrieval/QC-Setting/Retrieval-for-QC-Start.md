@@ -1,7 +1,7 @@
 [[_TOC_]]
 
 #<span style="color:skyblue; font-weight:bold">Summary Flow</span>
-**Section 1 : Retrieval for QC Start**
+**Section 1 : <span style="color:green">Retrieval for QC Start</span>**
 **Stage 1**
 ::: mermaid
 flowchart LR
