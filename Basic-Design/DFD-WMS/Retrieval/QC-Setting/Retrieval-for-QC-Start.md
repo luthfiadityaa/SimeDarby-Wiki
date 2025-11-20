@@ -453,6 +453,9 @@ After the completion button flashes, the operator removes the pallet and presses
 * **RESTORING_FLAG**: 0:Not Re-store to Original Location
 * **CARRY_FLAG**: 1:Storage
 
+###<span style="color:skyblue; font-weight:bold">DNPALLET</span>
+* **STATUS_FLAG**: 1:Reserved for Storage
+
 ###<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 *   **STATUS_FLAG**: 4:Completed
 *   **SHORTAGE_QTY**: DNWORKINFO.PLAN_QTY - DNWORKINFO.RESULT_QTY
