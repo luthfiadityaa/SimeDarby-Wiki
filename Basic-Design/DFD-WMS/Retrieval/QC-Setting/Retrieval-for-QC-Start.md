@@ -179,10 +179,6 @@ flowchart LR
 *   **LAST_UPDATE_PNAME**: QCSettingSCH
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
-*   **JOB_NO**: DNWORKINFO.JOB_NO    
-*   **SETTING_UNIT_KEY**: Sequence Object   
-*   **COLLECT_JOB_NO**: DNWORKINFO.COLLECT_JOB_NO    
-*   **JOB_TYPE**: DNWORKINFO.JOB_TYPE    
 *   **PLAN_UKEY**: DNWORKINFO.PLAN_UKEY    
 *   **STOCK_ID**: DNWORKINFO.STOCK_ID    
 *   **PALLET_ID**: DNPALLET.PALLET_ID    
