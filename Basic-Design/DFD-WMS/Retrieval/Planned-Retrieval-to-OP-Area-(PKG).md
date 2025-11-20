@@ -42,9 +42,9 @@ P1[FROM AISLE STATION -
 | Action Name                                                                     |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN|TTSN|OPRD| 
 |---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|
 | Planned Retrieval Setting - Set(F2) [(1)](#Planned-Retrieval-Setting---Set(F2)) | I  | I  | S  |    | S  |    |     | S  | S  |    | S  | S  |    |    |
-| ID12[(2)](#ID12)                                                                |    |    | U  | I  |    |    |     |    |    |    |    |    |    |    | 
-| RetrievalSender[(3)](#Retrieval-Sender)                                         |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    | 
-| ID32[(3)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    
+| RetrievalSender[(2)](#Retrieval-Sender)                                         |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    | 
+| ID12[(3)](#ID12)                                                                |    |    | U  | I  |    |    |     |    |    |    |    |    |    |    | 
+| ID32[(4)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    
 | ID33[(5)](#ID33)                                                                |    |    |    | U  |    |    |     |    | U  |    |    |    |    |    |    
 | ID68[(6)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |
 | ID26[(7)](#ID26)                                                                | U  | U  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    |
