@@ -357,3 +357,38 @@ ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi
 * **RETRIEVAL_STATION_NO**: DMSHELF.STATION_NO
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
+
+#ID68
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id68Process &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id68("
+ID 68
+")
+
+id68-select[("
+DNCARRYINFO
+DNWORKINFO
+")]
+
+id68-insert[("
+DNOPERATIONDISPLAY
+")]
+
+id68-select-->id68
+id68-->id68process
+id68process--> |INSERT| id68-insert
+:::
+
+ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related Station in ASRS. Upon receiving of ID68, insertion of data will be executed.
+
+##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###<span style="color:skyblue; font-weight:bold">DNOperationDisplay</span>
+* **CARRY_KEY**: MC Key information from ID68
+* **STATION_NO**: Station information from ID68
+* **ARRIAL_DATE**: SYSTIMESTAMP
+* **REGIST_PNAME**: Class name
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
