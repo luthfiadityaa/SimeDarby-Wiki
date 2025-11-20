@@ -115,7 +115,6 @@ flowchart LR
         DNPALLET
         DMITEM
         DMSTATION
-        DMTOSTATION
     ")]
 
     className[InquiryRetrievalSettingSCH]
