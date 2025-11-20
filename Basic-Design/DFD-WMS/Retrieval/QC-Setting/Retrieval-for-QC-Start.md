@@ -114,6 +114,7 @@ flowchart LR
     ")]
 
      tableList-select[("
+        DNSTOCK
         DMWAREHOUSE
         DMSHELF
         DNPALLET
