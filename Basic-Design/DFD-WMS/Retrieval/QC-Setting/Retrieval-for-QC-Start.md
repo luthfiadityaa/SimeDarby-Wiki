@@ -176,7 +176,7 @@ flowchart LR
 *   **REGIST_DATE**: SYSTIMESTAMP    
 *   **REGIST_PNAME**: ClassName    
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
-*   **LAST_UPDATE_PNAME**: ClassName
+*   **LAST_UPDATE_PNAME**: QCSettingSCH
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
 *   **JOB_NO**: DNWORKINFO.JOB_NO    
@@ -204,4 +204,4 @@ flowchart LR
 *   **REGIST_DATE**: SYSTIMESTAMP    
 *   **REGIST_PNAME**: ClassName    
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
-*   **LAST_UPDATE_PNAME**: ClassName
+*   **LAST_UPDATE_PNAME**: QCSettingSCH
