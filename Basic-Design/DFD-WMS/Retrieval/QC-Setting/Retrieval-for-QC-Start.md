@@ -1,7 +1,7 @@
 [[_TOC_]]
 
 #<span style="color:skyblue; font-weight:bold">Summary Flow</span>
-Section 1 : Retrieval for QC Start
+**Section 1 : Retrieval for QC Start**
 
 ::: mermaid
 flowchart LR
@@ -13,7 +13,7 @@ P1[FROM AISLE STATION - 9001,
 9014]-->P21[ID12]-->P2[RetrievalSender]-->P3[ID32]-->P4[ID33]-->P5[ID64]-->P6[ID68]-->P7[ID26]-->P8[To STATION - 1303] 
 :::
 
-Section 2 : QC Work
+**Section 2 : QC Work**
 
 #<span style="color:skyblue; font-weight:bold">Retrieval for QC Start database flow</span>
 **Abbreviation:**
