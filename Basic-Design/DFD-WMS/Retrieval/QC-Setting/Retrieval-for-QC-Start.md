@@ -455,6 +455,7 @@ After the completion button flashes, the operator removes the pallet and presses
 
 ###<span style="color:skyblue; font-weight:bold">DNPALLET</span>
 * **STATUS_FLAG**: 1:Reserved for Storage
+* **EMPTY_FLAG**: 0:Normal Pallet
 
 ###<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 *   **STATUS_FLAG**: 4:Completed
