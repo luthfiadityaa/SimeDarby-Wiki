@@ -134,6 +134,7 @@ flowchart LR
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
 * **STOCK_STATUS**: <span style="color:green; font-weight:bold">QI</span>
 * **STORAGE_LOCATION_TO**: <span style="color:green; font-weight:bold">QC01</span>
+
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 *   **JOB_NO**: Sequence Object    
 *   **SETTING_UNIT_KEY**: Sequence Object    
@@ -157,7 +158,7 @@ flowchart LR
 *   **QC_CHECK_FLAG**: DNSTOCK_QC_CHECK_FLAG    
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY  
 *   **BCR_DATA**: DNPALLET.BCR_DATA  
-*   **STORAGE_LOCATION_TO**: Value from Screen (To Location)
+*   **STORAGE_LOCATION_TO**: <span style="color:green; font-weight:bold">QC01</span>
 *   **USER_ID**: Login Info     
 *   **TERMINAL_NO**: Login info
 *   **REGIST_DATE**: SYSTIMESTAMP    
