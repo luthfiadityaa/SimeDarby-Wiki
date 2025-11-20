@@ -392,3 +392,145 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 * **REGIST_PNAME**: Class name
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
+
+#ID26
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.control.Id26Process&nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+buttonclicked["
+Operators Press the 
+completion button.
+"]
+
+id26msg("
+ID 26
+")
+
+id26-update[("
+DNWORKINFO
+DNSHELF
+")]
+
+id26-delete[("
+DNCARRYINFO
+DNPALLET
+DNSTOCK
+")]
+
+id26-insert[("
+DNWORKLIST
+DNHOSTSEND
+DNINOUTRESULT
+")]
+
+id26process[id26process]
+retrievaloperator[RetrievalStationOperator]
+
+
+buttonclicked --> id26msg
+id26msg -->id26process
+id26process-->retrievaloperator
+
+retrievaloperator--> |INSERT| id26-insert
+retrievaloperator--> |UPDATE| id26-update
+retrievaloperator--> |DELETE| id26-delete
+:::
+
+<span style="color:black; font-weight:bold; color:red">*The operator performs the operation according to the work display on the work terminal.</span>
+
+After the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. After that, AGC will sending ID 26 to the id26process, then delete related records from DNPALLET, DNCARRYINFO, and DNSTOCK.
+
+##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
+*   **STATUS_FLAG**: 4:Completed
+*   **SHORTAGE_QTY**: DNWORKINFO.PLAN_QTY - DNWORKINFO.RESULT_QTY
+*   **RESULT_AREA_NO**: DNWORKINFO.PLAN_AREA_NO
+*   **RESULT_LOCATION_NO**: DNWORKINFO.PLAN_LOCATION_NO
+*   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY
+*   **USER_ID**: Login info
+*   **TERMINAL_NO**: Login info
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP
+*   **LAST_UPDATE_PNAME**: Class name
+
+###<span style="color:skyblue; font-weight:bold">DNWorkList</span>
+*   **JOB_NO**: DNWORKINFO.JOB_NO    
+*   **CARRY_KEY**: DNCARRYINFO.CARRY_KEY    
+*   **SETTING_UNIT_KEY**: DNWORKINFO.SETTING_UNIT_KEY    
+*   **COLLECT_JOB_NO**: DNWORKINFO.COLLECT_JOB_NO    
+*   **JOB_TYPE**: DNWORKINFO.JOB_TYPE    
+*   **PLAN_UKEY**: DNWORKINFO.PLAN_UKEY    
+*   **STOCK_ID**: DNWORKINFO.STOCK_ID    
+*   **PALLET_ID**: DNPALLET.PALLET_ID    
+*   **PLAN_DAY**: DNWORKINFO.PLAN_DAY    
+*   **BATCH_NO**: DNWORKINFO.BATCH_NO    
+*   **PLAN_AREA_NO**: DNWORKINFO.PLAN_AREA_NO    
+*   **MATERIAL_CODE**: DNWORKINFO.MATERIAL_CODE    
+*   **MATERIAL_NAME**: DNWORKINFO.MATERIAL_NAME    
+*   **RETRIEVAL_STATION_NO**: DNWORKINFO.RESULT_LOCATION_NO   
+*   **RETRIEVAL_DETAIL**: 1:Unit Retrieval   
+*   **PLAN_QTY**: DNWORKINFO.PLAN_QTY      
+*   **DOCK_NO**: DNWORKINFO.DOCK_NO
+*   **TRUCK_PLATE_NO**: DNWORKINFO.TRUCK_PLATE_NO 
+*   **USER_ID**: DNWORKINFO.USER_ID    
+*   **USER_NAME**: DCUSER.USER_NAME    
+*   **REGIST_DATE**: SYSTIMESTAMP    
+*   **REGIST_PNAME**: ClassName    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: ClassName
+
+###<span style="color:skyblue; font-weight:bold">DNHostSend</span>
+*   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY    
+*   **JOB_NO**: DNWORKINFO.JOB_NO    
+*   **COLLECT_JOB_NO**: DNWORKINFO.COLLECT_JOB_NO    
+*   **SETTING_UNIT_KEY**: DNWORKINFO.SETTING_UNIT_KEY    
+*   **JOB_TYPE**: DNWORKINFO.JOB_TYPE    
+*   **STATUS_FLAG**: DNWORKINFO.STATUS_FLAG    
+*   **HARDWARE_TYPE**: DNWORKINFO.HARDWARE_TYPE    
+*   **PLAN_UKEY**: DNWORKINFO.PLAN_UKEY    
+*   **STOCK_ID**: DNWORKINFO.STOCK_ID    
+*   **SYSTEM_CONN_KEY**: DNWORKINFO.SYSTEM_CONN_KEY    
+*   **PLAN_DAY**: DNWORKINFO.PLAN_DAY    
+*   **BATCH_NO**: DNWORKINFO.BATCH_NO    
+*   **PLAN_AREA_NO**: DNWORKINFO.PLAN_AREA_NO    
+*   **PLAN_LOCATION_NO**: DNWORKINFO.PLAN_LOCATION_NO    
+*   **MATERIAL_CODE**: DNWORKINFO.MATERIAL_CODE    
+*   **MATERIAL_NAME**: DMITEM.MATERIAL_NAME    
+*   **UOM**: MMATERIALMASTER.UOM    
+*   **ENTERING_QTY**: DNSTOCK.STOCK_QTY      
+*   **PLAN_QTY**: DNWORKINFO.PLAN_QTY    
+*   **RESULT_QTY**: DNWORKINFO.RESULT_QTY    
+*   **SHORTAGE_QTY**: DNWORKINFO.SHORTAGE_QTY    
+*   **RESULT_AREA_NO**: DNWORKINFO.RESULT_AREA_NO    
+*   **RESULT_LOCATION_NO**: DNWORKINFO.RESULT_LOCATION_NO   
+*   **DOCK_NO**: **DNWORKINFO.DOCK_NO**
+*   **TRUCK_PLATE_NO**: **DNWORKINFO.TRUCK_PLATE_NO**   
+*   **USER_ID**: DNWORKINFO.USER_ID    
+*   **TERMINAL_NO**: DNWORKINFO.TERMINAL_NO    
+*   **WORK_SECOND**: DNWORKINFO.WORK_SECOND    
+*   **USER_NAME**: DCUSER.USERNAME    
+*   **REPORT_FLAG**: 0: Not Reported    
+*   **REGIST_DATE**: SYSTIMESTAMP    
+*   **REGIST_PNAME**: Class name    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: Class name
+
+###<span style="color:skyblue; font-weight:bold">DNInOutResult</span>
+*Only for 1301 & 1302*
+*   **RESULT_KIND**: 2:Retrieval(Stock-)
+*   **STATION_NO**: = DNCARRYINFO.DEST_STATION_NO
+*   **LOCATION_NO**: DNPALLET.CURRENT_STATION_NO
+*   **WH_STATION_NO**: DNPALLET.WH_STATION_NO
+*   **AISLE_STATION_NO**: DNCARRYINFO.AISLE_STATION_NO
+*   **WORK_TYPE**: DNCARRYINFO.WORK_TYPE
+*   **RETRIEVAL_DETAIL**: DNCARRYINFO.RETRIEVAL_DETAIL
+*   **WORK_NO**: DNCARRYINFO.WORK_NO
+*   **PALLET_ID**: DNPALLET.PALLET_ID
+*   **CARRY_KEY**: DNCARRYINFO.CARRY_KEY
+*   **RESTORING_FLAG**: DNCARRYINFO.RESTORING_FLAG
+*   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY
+*   **REMOVE_FLAG**: 00:Normal
+*   **REGIST_PNAME**: Class name
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP
+*   **LAST_UPDATE_PNAME**: Class name
