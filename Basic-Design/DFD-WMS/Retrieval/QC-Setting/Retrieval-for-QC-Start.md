@@ -236,6 +236,7 @@ All Carton Retrieval operation at Ambient or Tempering will be retrieved to Stat
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
 * **STATUS_FLAG**: 3:Reserved for Retrieval
+* **ALLOCATION_FLAG**: 1:Allocated
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
@@ -265,7 +266,6 @@ All Carton Retrieval operation at Ambient or Tempering will be retrieved to Stat
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.send.As21Id12&nbsp;</span>
 
-*1301 & 1302*
 ::: mermaid
 flowchart LR
 
