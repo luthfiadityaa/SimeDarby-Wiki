@@ -50,7 +50,13 @@ flowchart LR
 P18[ID64]--> |STV| P19[ID64]--> |7211-7214| P20[ID26]-->P21[StorageSender]-->P22[ID25]--> |SRM| P23[ID64]
 
 P18[ID64]--> |9001-9010| P14[ID33]
-P23[ID64]--> |9011-9014|P14[ID33]
+P23[ID64]--> |9011-9014| P14[ID33]
+
+P14[ID33]-->P1[TO AISLE STATION - 9001, 
+9002 , 9003, 9004, 9005, 
+9006, 9007, 9008, 9009, 
+9010, 9011, 9012, 9013, 
+9014]
 :::
 
 #<span style="color:skyblue; font-weight:bold">Retrieval for QC Start database flow</span>
