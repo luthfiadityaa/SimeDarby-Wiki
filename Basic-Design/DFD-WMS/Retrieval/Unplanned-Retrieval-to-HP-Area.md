@@ -322,6 +322,17 @@ retrievalstationoperator--> |INSERT| id26-insert
 retrievalstationoperator--> |UPDATE| id26-update
 :::
 
+##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+* **CMD_STATUS**: 2:Waiting for response
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
+
+###<span style="color:skyblue; font-weight:bold">DNPallet</span>
+* **STATUS_FLAG**: 4:Being retrieved
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
+
 #ID32
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id32Process&nbsp;</span>
 
