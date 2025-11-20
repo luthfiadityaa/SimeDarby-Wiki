@@ -245,7 +245,7 @@ All Carton Retrieval operation at Ambient or Tempering will be retrieved to Stat
 *   **WORK_NO**: Sequence Object    
 *   **RETRIEVAL_STATION_NO**: DNSTOCK.LOCATION_NO
 *   **SOURCE_STATION_NO**: DNPALLET.CURRENT_STATION_NO    
-*   **DEST_STATION_NO**: Value from screen (Station)     
+*   **DEST_STATION_NO**: Value from screen (Station) **<span style="color:green;">1303</span>**     
 *   **PRIORITY**: Value from screen ⟶ **<span style="color:green;">(1:Urgent, 2:Normal)</span>**
 *   **CANCEL_REQUEST**: 0:Not Requested    
 *   **SCHEDULE_NO**: Sequence Object    
