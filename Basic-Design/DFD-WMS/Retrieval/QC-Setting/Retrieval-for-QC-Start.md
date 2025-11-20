@@ -444,6 +444,9 @@ After the completion button flashes, the operator removes the pallet and presses
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ###<span style="color:skyblue; font-weight:bold">DNARRIVAL</span>
+* **CARRY_KEY**: DNCARRYINFO.CARRY_KEY
+* **SEND_FLAG**: 0:Not Sent
+* **BCR_DATA**: Arrival Information from ID26 
 
 ###<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 *   **STATUS_FLAG**: 4:Completed
