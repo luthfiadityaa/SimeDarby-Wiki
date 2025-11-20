@@ -117,7 +117,7 @@ flowchart LR
         DMSTATION
     ")]
 
-    className[InquiryRetrievalSettingSCH]
+    className[QCSettingSCH]
 
     input --> className --> |INSERT| tableList-insert
     tableList-select --> |SELECT| className
