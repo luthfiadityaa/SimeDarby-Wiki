@@ -125,6 +125,7 @@ flowchart LR
 
     input --> className --> |INSERT| tableList-insert
     tableList-select --> |SELECT| className
+    className --> |UPDATE| tableList-update
 
     classDef leftAlign text-align:left;
     class input leftAlign;
