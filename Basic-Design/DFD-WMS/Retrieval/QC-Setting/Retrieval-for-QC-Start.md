@@ -150,17 +150,15 @@ flowchart LR
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 * **LAST_UPDATE_PNAME**: QCSettingSCH
 
-####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
-*   **JOB_NO**: Sequence Object    
-*   **SETTING_UNIT_KEY**: Sequence Object    
-*   **COLLECT_JOB_NO**: Sequence Object    
+####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>  
 *   **JOB_TYPE**: 23:Unplanned Retrieval    
 *   **STATUS_FLAG**: 0:Not Started    
 *   **PLAN_UKEY**: Sequence Object    
 *   **STOCK_ID**: DNSTOCK.STOCKID    
 *   **PLAN_AREA_NO**: DNSTOCK.AREANO   
 *   **PLAN_LOCATION_NO**: DNSTOCK.LOCATION_NO
-*   **PLAN_DAY**: DMWARENAVISYSTEM.WORK_DAY    
+*   **PLAN_DAY**: DMWARENAVISYSTEM.WORK_DAY
+*   **PLAN_QTY**: DNSTOCK.STOCK_QTY    
 *   **BATCH_NO**: DNSTOCK.BATCH_NO    
 *   **MATERIAL_CODE**: DNSTOCK.MATERIAL_CODE    
 *   **MATERIAL_NAME**: DMITEM.MATERIAL_NAME    
