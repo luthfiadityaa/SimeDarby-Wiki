@@ -134,8 +134,8 @@ flowchart LR
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
 * **STOCK_STATUS**: <span style="color:green; font-weight:bold">QI</span>
 * **STORAGE_LOCATION_TO**: <span style="color:green; font-weight:bold">QC01</span>
-*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
-*   **LAST_UPDATE_PNAME**: ClassName
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+* **LAST_UPDATE_PNAME**: ClassName
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 *   **JOB_NO**: Sequence Object    
