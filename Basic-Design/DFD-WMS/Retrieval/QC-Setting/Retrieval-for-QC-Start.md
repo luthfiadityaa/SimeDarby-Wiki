@@ -84,3 +84,45 @@ This section explains the validations for the whole proccess Retrieval for QC St
 - Target pallet of Stock Status is <span style="color:green; font-weight:bold">UU</span>.
 - Only the pallets with tempering flag <span style="color:green; font-weight:bold">Reached</span> are applicable for QC settings.
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
+
+::: mermaid
+flowchart LR
+    input[
+        Area        
+        QC Station
+        Pallet #
+        Material Code
+        Batch #
+        Stock Status
+        Tempering Flag
+        QC Check Flag
+        Loc #
+        Material Name
+        Stock Qty
+        Storage Date/Time
+        Tempering Period
+        QC Duration
+    ]
+
+    tableList-insert[("
+        DNWORKINFO
+        DNWORKLIST
+    ")]
+
+     tableList-select[("
+        DMWAREHOUSE
+        DMSHELF
+        DNPALLET
+        DMITEM
+        DMSTATION
+        DMTOSTATION
+    ")]
+
+    className[InquiryRetrievalSettingSCH]
+
+    input --> className --> |INSERT| tableList-insert
+    tableList-select --> |SELECT| className
+
+    classDef leftAlign text-align:left;
+    class input leftAlign;
+:::
