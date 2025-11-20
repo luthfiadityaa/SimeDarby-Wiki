@@ -472,6 +472,8 @@ After the completion button flashes, the operator removes the pallet and presses
 * **INC_DEC_TYPE**: 2:Stock Decrease (Retrieval)
 * **JOB_TYPE**: 03:Retrieval
 
+some data will insert by DNSTOCK
+
 ###<span style="color:skyblue; font-weight:bold">DNWorkList</span>
 *   **JOB_NO**: DNWORKINFO.JOB_NO    
 *   **CARRY_KEY**: DNCARRYINFO.CARRY_KEY    
