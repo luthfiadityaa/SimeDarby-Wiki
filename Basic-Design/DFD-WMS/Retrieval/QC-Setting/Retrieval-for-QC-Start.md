@@ -28,7 +28,7 @@ Cond1{Flow?}--> |Flow 2: Not through crane 7-10| P6[ID64]--> P7[ID68]-->P81[ID26
 ::: mermaid
 flowchart LR
   
-P1[FROM OP STATION - 1303]-->P2[ID26]-->P3[StorageSender]-->P4[ID25]-->Cond1{Flow?} 
+P1[1303]-->P2[ID26]-->P3[StorageSender]-->P4[ID25]-->Cond1{Flow?} 
 :::
 
 **Stage 2**
