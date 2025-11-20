@@ -167,8 +167,43 @@ flowchart LR
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
 
-#ID12
+#Retrieval Sender
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalSender&nbsp;</span>
 
+::: mermaid
+flowchart LR
+
+retrievalsender-input[("
+DNCARRYINFO
+")]
+
+retrievalsender-update[("
+DNCARRYINFO
+DNPALLET
+")]
+
+id12msg("
+ID 12
+")
+
+retrievalsender-input-->retrievalsender--> |UPDATE| retrievalsender-update
+retrievalsender--> |SendText| id12msg
+:::
+
+All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station 1201, 1202, 1203, 1204 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
+
+##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+* **CMD_STATUS**: 2:Waiting for response
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
+
+###<span style="color:skyblue; font-weight:bold">DNPallet</span>
+* **STATUS_FLAG**: 4:Being retrieved
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
+
+#ID12
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.send.As21Id12&nbsp;</span>
 
 ::: mermaid
@@ -220,42 +255,6 @@ retrievalstationoperator--> |UPDATE| id26-update
 *   **REGIST_PNAME**: ClassName    
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
-
-#Retrieval Sender
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalSender&nbsp;</span>
-
-::: mermaid
-flowchart LR
-
-retrievalsender-input[("
-DNCARRYINFO
-")]
-
-retrievalsender-update[("
-DNCARRYINFO
-DNPALLET
-")]
-
-id12msg("
-ID 12
-")
-
-retrievalsender-input-->retrievalsender--> |UPDATE| retrievalsender-update
-retrievalsender--> |SendText| id12msg
-:::
-
-All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station 1201, 1202, 1203, 1204 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
-
-##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-* **CMD_STATUS**: 2:Waiting for response
-* **LAST_UPDATE_DATE**: SYSTIMESTAMP
-* **LAST_UPDATE_PNAME**: Class name
-
-###<span style="color:skyblue; font-weight:bold">DNPallet</span>
-* **STATUS_FLAG**: 4:Being retrieved
-* **LAST_UPDATE_DATE**: SYSTIMESTAMP
-* **LAST_UPDATE_PNAME**: Class name
 
 #ID32
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id32Process&nbsp;</span>
