@@ -39,7 +39,7 @@ P1[Work Display - Click Complete Button]-->P2[ID45]-->P3[ID26]-->P4[StorageSende
 - **SHLF** : DMSHELF          
 - **STCH** : DNSTOCKHISTORY   
 - **INOT** : DNINOUTRESULT    
-- **HTST** : DNHOSTSEND       
+- **HSTS** : DNHOSTSEND       
 - **OPRR** : DNOPERATIONRESULT
 - **ITEM** : DMITEM           
 - **STSN** : DMSTATION        
@@ -50,7 +50,7 @@ P1[Work Display - Click Complete Button]-->P2[ID45]-->P3[ID26]-->P4[StorageSende
   - **D** : DELETE
   - **S** : SELECT
 
-| Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HTST | OPRR | ITEM | STSN | INVC |
+| Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HSTS | OPRR | ITEM | STSN | INVC |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
 | **Mode Change For 1301-1302**                                  |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 | ID63 [(1)](#id33)                                              |      |      |      |      |      |      |      |      |      |      |      |      |      |   U  |      |
