@@ -23,6 +23,8 @@ Cond1{Flow?}--> |Flow 1: Thorugh crane 7-10| P5[ID64]--> |7207-7210| P8[ID26]-->
 Cond1{Flow?}--> |Flow 2: Not through crane 7-10| P6[ID64]--> P7[ID68]-->P81[ID26]-->P13[To Station 1303]
 :::
 
+<hr>
+
 **Section 2 : QC Work**
 **Stage 1**
 ::: mermaid
