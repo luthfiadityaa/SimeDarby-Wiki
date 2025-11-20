@@ -448,6 +448,9 @@ After the completion button flashes, the operator removes the pallet and presses
 * **SEND_FLAG**: 0:Not Sent
 * **BCR_DATA**: Arrival Information from ID26 
 
+###<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+* **CMD_STATUS**: 6:Arrival
+
 ###<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 *   **STATUS_FLAG**: 4:Completed
 *   **SHORTAGE_QTY**: DNWORKINFO.PLAN_QTY - DNWORKINFO.RESULT_QTY
