@@ -13,7 +13,7 @@ flowchart LR
   
 P1[FROM AISLE STATION - 
 9011, 9012, 9013, 
-9014]-->P21[ID12]-->P2[RetrievalSender]-->P3[ID32]-->P4[ID33]-->P6[ID68]-->P7[ID26]-->P8[To STATION - 1201, 1202, 
+9014]-->P2[RetrievalSender]-->P21[ID12]-->P3[ID32]-->P4[ID33]-->P6[ID68]-->P7[ID26]-->P8[To STATION - 1201, 1202, 
 1203, 1204] 
 :::
 
