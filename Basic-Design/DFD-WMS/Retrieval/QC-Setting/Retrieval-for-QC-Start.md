@@ -20,7 +20,7 @@ flowchart LR
 Cond1{Flow?} 
 
 Cond1{Flow?}--> |Flow 1: Thorugh crane 7-10| P5[ID64]--> |7207-7210| P8[ID26]-->P9[Retrieval Sender]-->P10[ID25]--> |SRM| P11[ID64]--> |STV| P12[ID64]--> P7[ID68]
-Cond1{Flow?}--> |Flow 2: Not through crane 7-10| P6[ID64]--> P7[ID68]--> P81[ID26]-->P13[1303]
+Cond1{Flow?}--> |Flow 2: Not through crane 7-10| P6[ID64]--> P7[ID68]-->P81[ID26]-->P13[1303]
 :::
 
 **Section 2 : QC Work**
