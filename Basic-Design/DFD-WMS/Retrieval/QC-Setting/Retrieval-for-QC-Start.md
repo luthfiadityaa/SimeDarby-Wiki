@@ -19,13 +19,8 @@ flowchart LR
 
 Cond1{Flow?} 
 
-Cond1{Flow?}--> |Flow 1: Thorugh crane 7-10 only for 1303| P5[ID64]--> |7207-7210| P8[ID26]-->P9[Retrieval Sender]-->P10[ID25]--> |SRM| P11[ID64]--> |STV| P12[ID64]--> |1303| P7[ID68]
-Cond1{Flow?}--> |Flow 2: Not through crane 7-10| P6[ID64]--> |1205-1209 and 1301-1302| P7[ID68]
-
-click P15 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/948/Unplanned-Storage-from-HP" "Go to HP"
-click P16 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/880/Unplanned-Storage-from-OP-Area" "Go to OP"
-style P15 fill:#00cc66,stroke:#006633,color:#ffffff
-style P16 fill:#00cc66,stroke:#006633,color:#ffffff
+Cond1{Flow?}--> |Flow 1: Thorugh crane 7-10| P5[ID64]--> |7207-7210| P8[ID26]-->P9[Retrieval Sender]-->P10[ID25]--> |SRM| P11[ID64]--> |STV| P12[ID64]--> P7[ID68]
+Cond1{Flow?}--> |Flow 2: Not through crane 7-10| P6[ID64]--> P7[ID68]
 :::
 
 
