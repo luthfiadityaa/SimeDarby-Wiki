@@ -450,6 +450,8 @@ After the completion button flashes, the operator removes the pallet and presses
 
 ###<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
 * **CMD_STATUS**: 6:Arrival
+* **RESTORING_FLAG**: 0:Not Re-store to Original Location
+* **CARRY_FLAG**: 1:Storage
 
 ###<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 *   **STATUS_FLAG**: 4:Completed
