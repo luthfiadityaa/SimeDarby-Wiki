@@ -135,5 +135,35 @@ flowchart LR
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
 * **STOCK_STATUS**: <span style="color:green; font-weight:bold">QI</span>
+* **STORAGE_LOCATION_TO**: <span style="color:green; font-weight:bold">QC01</span>
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
+*   **JOB_NO**: Sequence Object    
+*   **SETTING_UNIT_KEY**: Sequence Object    
+*   **COLLECT_JOB_NO**: Sequence Object    
+*   **JOB_TYPE**: 23:Unplanned Retrieval    
+*   **STATUS_FLAG**: 0:Not Started    
+*   **PLAN_UKEY**: Sequence Object    
+*   **STOCK_ID**: DNSTOCK.STOCKID    
+*   **PLAN_AREA_NO**: DNSTOCK.AREANO   
+*   **PLAN_LOCATION_NO**: DNSTOCK.LOCATION_NO
+*   **PLAN_DAY**: DMWARENAVISYSTEM.WORK_DAY    
+*   **BATCH_NO**: DNSTOCK.BATCH_NO    
+*   **MATERIAL_CODE**: DNSTOCK.MATERIAL_CODE    
+*   **MATERIAL_NAME**: DMITEM.MATERIAL_NAME    
+*   **MATERIAL_TYPE**: DMITEM.MATERIAL_TYPE 
+*   **PLAN_QTY**: Value from screen (Retrieval Qty / Stock Qty)    
+*   **TEMPERING_PERIOD**: DNSTOCK.TEMPERING_PERIOD
+*   **TEMPERING_FLAG**: DNSTOCK.TEMPERING_FLAG      
+*   **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE
+*   **QC_DURATION**: DNSTOCK.QC_DURATION
+*   **QC_CHECK_FLAG**: DNSTOCK_QC_CHECK_FLAG    
+*   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY  
+*   **BCR_DATA**: DNPALLET.BCR_DATA  
+*   **STORAGE_LOCATION_TO**: Value from Screen (To Location)
+*   **USER_ID**: Login Info     
+*   **TERMINAL_NO**: Login info
+*   **REGIST_DATE**: SYSTIMESTAMP    
+*   **REGIST_PNAME**: ClassName    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: ClassName
 ####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
