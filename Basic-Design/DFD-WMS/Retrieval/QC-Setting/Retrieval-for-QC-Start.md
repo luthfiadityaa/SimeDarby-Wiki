@@ -253,6 +253,7 @@ All Carton Retrieval operation at Ambient or Tempering will be retrieved to Stat
 *   **CANCEL_REQUEST**: 0:Not requested
 *   **AISLE_STATION_NO**: DMSHELF.PARENT_STATION_NO
 *   **END_STATION_NO**: DNCARRYINFO.DEST_STATION_NO  
+*   **RETRIEVAL_DETAIL**: 0:Inventory Check
 *   **REGIST_DATE**: SYSTIMESTAMP    
 *   **REGIST_PNAME**: ClassName    
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
