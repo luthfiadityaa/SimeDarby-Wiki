@@ -288,29 +288,6 @@ inoutstationoperator--> |INSERT| id26-insert
 inoutstationoperator--> |UPDATE| id26-update
 :::
 
-*1205-1209*
-::: mermaid
-flowchart LR
-
-id26msg("
-ID12
-")
-
-id26-insert[("
-DNCARRYINFO
-")]
-
-id26-update[("
-DNPALLET
-")]
-
-retrievalstationoperator[RetrievalStationOperator]
-
-id26msg-->retrievalstationoperator
-retrievalstationoperator--> |INSERT| id26-insert
-retrievalstationoperator--> |UPDATE| id26-update
-:::
-
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 * **CMD_STATUS**: 2:Waiting for response
