@@ -88,8 +88,7 @@ This section explains the validations for the whole proccess Retrieval for QC St
 ::: mermaid
 flowchart LR
     input[
-
-        Area        
+        Area
         QC Station
         Pallet #
         Material Code
