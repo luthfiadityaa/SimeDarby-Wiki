@@ -134,6 +134,6 @@ flowchart LR
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
-* **a**: 
+* **STOCK_STATUS**: <span style="color:skyblue; font-weight:bold">QI</span>
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 ####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
