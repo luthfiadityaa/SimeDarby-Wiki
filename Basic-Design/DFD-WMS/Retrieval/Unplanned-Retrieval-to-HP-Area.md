@@ -5,6 +5,7 @@
 ![image.png](/.attachments/image-0a629e0c-d766-4b61-aba2-f968f908bd60.png)
 
 #<span style="color:skyblue; font-weight:bold">Summary Flow</span>
+**Stage 1**
 ::: mermaid
 flowchart LR
   
