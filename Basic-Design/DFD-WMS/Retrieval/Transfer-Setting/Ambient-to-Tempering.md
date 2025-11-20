@@ -6,22 +6,33 @@
 ![image.png](/.attachments/image-73207ff0-617e-4e69-88df-40df91dd8d4d.png)
 
 # <span style="color:skyblue; font-weight:bold">Summary Flow</span>
-## Stage 1
+## Stage 1 - Normal Retrieval
 ::: mermaid
 flowchart LR
 
-P1[FROM STATION 9001 - 9014]-->P2[ID12]-->P3[RetrievalSender]-->P4[ID32]-->|SRM|P5[ID33]-->|STV|P6[ID64]-->Cond1{Flow?} 
+P1[FROM STATION 9001 - 9014]-->P2[ID12]-->P3[RetrievalSender]-->P4[ID32]-->|SRM|P5[ID33]-->Cond1{Flow ?} 
 :::
 
-## Stage 2 
+## Stage 2 - Deposit from station to SRM
 ::: mermaid
-flowchart LR
+flowchart LR 
+Cond1{Flow ?}-->|STV HP|P1[ID64]-->|7207-7214|P2[ID26]-->P3[StorageSender]-->P4[ID05]-->P5[ID25]-->|SRM 9007-9010|P6[ID64]
+Cond1{Flow ?}-->|STV OP|P7[ID64]-->|7101-7106|P8[ID26]-->P9[StorageSender]-->P10[ID05]-->P11[ID25]-->|SRM 9001-9006|P6[ID64]
 
-Cond1{Flow?} -->|7101-7106|P2[ID26]-->P8[StorageSender]-->P9[ID05]-->P10[ID25]-->|SRM|P11[ID64]
+P6[ID64]-->Cond2{Continue Deposit to ?}
+
+:::
+
+## Stage 3
+::: mermaid
+flowchart LR 
+Cond1{Continue Deposit to ?}-->|Through SRM 9007-9010|P1[Continue Go to Stage 2 - STV OP]
+Cond1{Continue Deposit to ?}-->|SRM 9001-9006|P2[ID33]
+
 :::
 
 
-#<span style="color:skyblue; font-weight:bold">Transfer Setting from Tempering to Ambient</span>
+#<span style="color:skyblue; font-weight:bold">Transfer Setting from Ambient to Tempering</span>
 ## Abbreviation
 - **PLLT** : DNPALLET          
 - **WRKI** : DNWORKINFO       
@@ -47,18 +58,22 @@ Cond1{Flow?} -->|7101-7106|P2[ID26]-->P8[StorageSender]-->P9[ID05]-->P10[ID25]--
 | Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HTST | OPRR | ITEM | STSN |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
 | Transfer Setting - Set(F2) [(1)](#transfer-setting---set(f2))  |   S  |   I  |   I  |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |
-| **Retrieval Flow**                                             |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| **Flow 1 - Normal Retrieval**                                  |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 | ID12 [(2)](#id12)                                              |   U  |      |      |   I  |      |      |      |      |      |      |      |      |      |      |
 | Retrieval Sender [(3)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
 | ID32 [(4)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
-| ID33 [(5)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |
-| ID64 [(6)](#id64)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
-| **Re-Storage Flow**                                            |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| ID26 at 7207-7214 [(14)](#id26-at-7207-7214)                   |   U  |   U  |      |   U  |      |   I  |      |      |      |      |      |      |      |      |
-| StorageSender at 7207-7214 [(15)](#StorageSender-at-7207-7214) |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |
-| ID25 at 7207-7214 [(16)](#ID25-at-7207-7214)                   |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |
-| ID64 at SRM [(17)](#id64-at-SRM)                               |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
-| ID33 at 9007-9014 [(18)](#id33-at-9007-9014)                   |   U  |   U  |      |   D  |   U  |      |      |  U   |   I  |      |      |      |      |      |
+| ID33 at SRM [(5)](#id33-at-srm)                                |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |
+| **Flow 2 - Storage Flow**                                      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| ID64 at STV [(6)](#id64-at-stv)                                |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| ID26[(7)](#id26)                                               |   U  |   U  |      |   U  |      |   I  |      |      |      |      |      |      |      |      |
+| StorageSender [(8)](#StorageSender)                            |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |
+| ID25 [(9)](#ID25)                                              |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |
+| **Flow 3.1 - Through SRM 9007-9010**                           |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| ID64 at SRM 9007-9010 [(10)](#id64-at-srm-9007-9010)           |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| Continue to Flow 2 - Storage Flow [(11)](#id64-at-srm-9007-9010)           |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| **Flow 3.2 - Direct go to Tempering**                          |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| ID64 at SRM 9001-9006 [(12)](#id64-at-SRM-9001-9006)           |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |                            
+| ID33 at 9001-9006 [(13)](#id33-at-9001-9006)                   |   U  |   U  |      |   D  |   U  |      |      |  U   |   I  |      |      |      |      |      |
 
 
 
@@ -298,7 +313,7 @@ ID32 sent from AGC to WareNavi indicate AGC responded the retrieval job by WareN
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
-# ID33
+# ID33 at SRM
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id33Process` &nbsp;</span>
 
@@ -331,7 +346,7 @@ ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
-# ID64
+# ID64 at STV
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process` &nbsp;</span>
@@ -358,7 +373,7 @@ Upon equipment **(STV)** have picked up the Pallet successfully, ID64 will be se
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
-# ID26 at 7207-7214
+# ID26
 
 ::: mermaid
 flowchart LR
@@ -413,8 +428,8 @@ Continue the process **storage**, AGC will send ID26 to WareNavi and WareNavi w
 - **CMD_STATUS** : 1:Started 
 - **PRIORITY** : 2:Normal
 - **CARRY_FLAG** : 1: Storage
-- **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO ⟶ **(7207/7208/7209/7210/7211/7212/7213/7214)**
-- **DEST_STATION_NO** : Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ **(9007/9008/9009/9010/9011/9012/9013/9014)**
+- **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO ⟶ **(7101/7102/7103/7104/7105/7106/7207/7208/7209/7210/7211/7212/7213/7214)**
+- **DEST_STATION_NO** : Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ **(9001/9002/9003/9004/9005/9006/9007/9008/9009/9010/9011/9012/9013/9014)**
 - **END_STATION_NO** : DNCARRYINFO.DEST_STATION_NO
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : ClassName
@@ -425,7 +440,7 @@ Continue the process **storage**, AGC will send ID26 to WareNavi and WareNavi w
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : ClassName
 
-# StorageSender at 7207-7214
+# StorageSender
 
 ::: mermaid
 flowchart LR
@@ -456,8 +471,6 @@ After successful creation of arrival record in **ID26process**, Automatic Mode C
 
 ## <span style="color:skyblue; font-weight:bold">DMWAREHOUSE</span> 
 - **LAST_USED_STATION_NO** : Aisle Number where a reserved location belongs to
-- **LAST_USED_STATION_NO_PM** : Aisle Number where a reserved location belongs to
-- **LAST_USED_STATION_NO_EP** : Aisle Number where a reserved location belongs to
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name 
 
@@ -485,7 +498,7 @@ After successful creation of arrival record in **ID26process**, Automatic Mode C
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
-# ID25 at 7207-7214
+# ID25
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process` &nbsp;</span>
@@ -517,7 +530,7 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
-# ID64 at SRM
+# ID64 at SRM 9007-9010
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process` &nbsp;</span>
@@ -537,14 +550,41 @@ id64-->id64process
 id64process-.UPDATE.->id64-update
 :::
 
-Upon equipment **(SRM)** have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
+Upon equipment **(SRM 9007-9008)** have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
+
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+- **CMD_STATUS** : 4:Pickup completed
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
+
+# ID64 at SRM 9001-9006
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id64("
+ID 64
+")
+
+id64-update[("
+DNCARRYINFO
+")]
+
+id64-->id64process
+id64process-.UPDATE.->id64-update
+:::
+
+Upon equipment **(SRM 9001-9006)** have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
 
 ## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span> 
 - **CMD_STATUS** : 4:Pickup completed
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
-# ID33 at 9007-9014
+# ID33 at 9001-9006
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.asrs.communication.id.recv.As21Id33` &nbsp;</span>
