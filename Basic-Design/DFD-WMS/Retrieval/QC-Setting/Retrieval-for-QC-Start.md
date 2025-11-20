@@ -109,6 +109,10 @@ flowchart LR
         DNWORKLIST
     ")]
 
+     tableList-update[("
+        DNSTOCK
+    ")]
+
      tableList-select[("
         DMWAREHOUSE
         DMSHELF
