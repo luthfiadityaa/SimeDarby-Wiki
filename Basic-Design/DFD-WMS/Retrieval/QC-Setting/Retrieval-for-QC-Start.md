@@ -468,6 +468,9 @@ After the completion button flashes, the operator removes the pallet and presses
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP
 *   **LAST_UPDATE_PNAME**: Class name
 
+###<span style="color:skyblue; font-weight:bold">DNStockHistory</span>
+* **INC_DEC_TYPE**: (TBD) 1:Stock Increase (Storage), 2:Stock Decrease (Retrieval), 3:Stock Decrease (Shortage)
+
 ###<span style="color:skyblue; font-weight:bold">DNWorkList</span>
 *   **JOB_NO**: DNWORKINFO.JOB_NO    
 *   **CARRY_KEY**: DNCARRYINFO.CARRY_KEY    
