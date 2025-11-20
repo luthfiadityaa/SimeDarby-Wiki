@@ -240,7 +240,7 @@ All Carton Retrieval operation at Ambient or Tempering will be retrieved to Stat
 * **STATUS_FLAG**: 3:Reserved for Retrieval
 * **ALLOCATION_FLAG**: 1:Allocated
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
-* **LAST_UPDATE_PNAME**: Class name
+* **LAST_UPDATE_PNAME**: RetrievalSender
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 *   **CARRY_KEY**: Sequence Object    
@@ -262,7 +262,7 @@ All Carton Retrieval operation at Ambient or Tempering will be retrieved to Stat
 *   **REGIST_DATE**: SYSTIMESTAMP    
 *   **REGIST_PNAME**: ClassName    
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
-*   **LAST_UPDATE_PNAME**: ClassName
+*   **LAST_UPDATE_PNAME**: RetrievalSender
 
 #ID12
 
