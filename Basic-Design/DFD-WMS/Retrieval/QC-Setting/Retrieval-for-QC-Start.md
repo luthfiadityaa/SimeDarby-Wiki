@@ -25,7 +25,7 @@ Cond1{Flow?}--> |Flow 2: Not through crane 7-10| P6[ID64]--> P7[ID68]-->P81[ID26
 
 <hr>
 
-**Section 2 : QC Work**
+**Section 2 : <span style="color:green">QC Work</span>**
 **Stage 1**
 ::: mermaid
 flowchart LR
