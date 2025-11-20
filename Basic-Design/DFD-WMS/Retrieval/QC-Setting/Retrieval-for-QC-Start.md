@@ -131,3 +131,8 @@ flowchart LR
     classDef leftAlign text-align:left;
     class input leftAlign;
 :::
+
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">DNStock</span>
+####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
+####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
