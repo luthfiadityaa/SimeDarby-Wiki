@@ -244,16 +244,33 @@ retrievalsender--> |SendText| id12msg
 
 All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station 1301, 1302, 1205, 1206, 1207, 1208, 1209 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
 
-##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-* **CMD_STATUS**: 2:Waiting for response
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">DNPallet</span>
+* **STATUS_FLAG**: 3:Reserved for Retrieval
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
-###<span style="color:skyblue; font-weight:bold">DNPallet</span>
-* **STATUS_FLAG**: 4:Being retrieved
-* **LAST_UPDATE_DATE**: SYSTIMESTAMP
-* **LAST_UPDATE_PNAME**: Class name
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+*   **CARRY_KEY**: Sequence Object    
+*   **PALLET_ID**: DNSTOCK.PALLET_ID    
+*   **WORK_TYPE**: 23:Unplanned Retrieval    
+*   **CMD_STATUS**: 1:Started    
+*   **RESTORING_FLAG**: 0:Not Restore to Original Location  
+*   **WORK_NO**: Sequence Object    
+*   **RETRIEVAL_STATION_NO**: DNSTOCK.LOCATION_NO
+*   **SOURCE_STATION_NO**: DNPALLET.CURRENT_STATION_NO    
+*   **DEST_STATION_NO**: Value from screen (Station)     
+*   **PRIORITY**: Value from screen ⟶ **<span style="color:green;">(1:Urgent, 2:Normal)</span>**
+*   **CANCEL_REQUEST**: 0:Not Requested    
+*   **SCHEDULE_NO**: Sequence Object    
+*   **CARRY_FLAG**: 2:Retrieval
+*   **CANCEL_REQUEST**: 0:Not requested
+*   **AISLE_STATION_NO**: DMSHELF.PARENT_STATION_NO
+*   **END_STATION_NO**: DNCARRYINFO.DEST_STATION_NO  
+*   **REGIST_DATE**: SYSTIMESTAMP    
+*   **REGIST_PNAME**: ClassName    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: ClassName
 
 #ID12
 
@@ -304,34 +321,6 @@ id26msg-->retrievalstationoperator
 retrievalstationoperator--> |INSERT| id26-insert
 retrievalstationoperator--> |UPDATE| id26-update
 :::
-
-###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-####<span style="color:skyblue; font-weight:bold">DNPallet</span>
-* **STATUS_FLAG**: 3:Reserved for Retrieval
-* **LAST_UPDATE_DATE**: SYSTIMESTAMP
-* **LAST_UPDATE_PNAME**: Class name
-
-####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-*   **CARRY_KEY**: Sequence Object    
-*   **PALLET_ID**: DNSTOCK.PALLET_ID    
-*   **WORK_TYPE**: 23:Unplanned Retrieval    
-*   **CMD_STATUS**: 1:Started    
-*   **RESTORING_FLAG**: 0:Not Restore to Original Location  
-*   **WORK_NO**: Sequence Object    
-*   **RETRIEVAL_STATION_NO**: DNSTOCK.LOCATION_NO
-*   **SOURCE_STATION_NO**: DNPALLET.CURRENT_STATION_NO    
-*   **DEST_STATION_NO**: Value from screen (Station)     
-*   **PRIORITY**: Value from screen ⟶ **<span style="color:green;">(1:Urgent, 2:Normal)</span>**
-*   **CANCEL_REQUEST**: 0:Not Requested    
-*   **SCHEDULE_NO**: Sequence Object    
-*   **CARRY_FLAG**: 2:Retrieval
-*   **CANCEL_REQUEST**: 0:Not requested
-*   **AISLE_STATION_NO**: DMSHELF.PARENT_STATION_NO
-*   **END_STATION_NO**: DNCARRYINFO.DEST_STATION_NO  
-*   **REGIST_DATE**: SYSTIMESTAMP    
-*   **REGIST_PNAME**: ClassName    
-*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
-*   **LAST_UPDATE_PNAME**: ClassName
 
 #ID32
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id32Process&nbsp;</span>
