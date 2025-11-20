@@ -94,6 +94,7 @@ Plate No
 tableList-insert[("
 DNWORKINFO
 DNWORKLIST
+DNCARRYINFO
 ")]
 
 tableList-select[("
@@ -169,6 +170,7 @@ tableList-select --> |SELECT| className
 - **REGIST_PNAME**: ClassName    
 - **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 - **LAST_UPDATE_PNAME**: ClassName
+
 
 #ID12
 
