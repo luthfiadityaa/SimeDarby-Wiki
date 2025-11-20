@@ -23,7 +23,7 @@ P1[FROM AISLE STATION - 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID12]
 - **SHLF** : DMSHELF          
 - **STCH** : DNSTOCKHISTORY   
 - **INOT** : DNINOUTRESULT    
-- **HTST** : DNHOSTSEND       
+- **HSTS** : DNHOSTSEND       
 - **OPRR** : DNOPERATIONRESULT
 - **ITEM** : DMITEM           
 - **STSN** : DMSTATION        
@@ -34,7 +34,7 @@ P1[FROM AISLE STATION - 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID12]
   - **D** : DELETE
   - **S** : SELECT 
 
-| Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HTST | OPRR | ITEM | STSN | TTSN |
+| Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HSTS | OPRR | ITEM | STSN | TTSN |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
 | Inquiry Retrieval - Set (F2) [(1)](#inquiry-retrieval---set-(f2))|   S  |   I  |   I  |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   S  | 
 | ID12 [(2)](#id12)                                              |   U  |      |      |   I  |      |      |      |      |      |      |      |      |      |      |      |
