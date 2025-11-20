@@ -553,3 +553,5 @@ some data will insert by DNSTOCK
 *   **REGIST_PNAME**: Class name
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP
 *   **LAST_UPDATE_PNAME**: Class name
+
+some data will insert by DNWORKINFO
