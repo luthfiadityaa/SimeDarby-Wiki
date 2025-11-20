@@ -443,6 +443,8 @@ retrievaloperator--> |DELETE| id26-delete
 After the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. After that, AGC will sending ID 26 to the id26process, then delete related records from DNPALLET, DNCARRYINFO, and DNSTOCK.
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###<span style="color:skyblue; font-weight:bold">DNARRIVAL</span>
+
 ###<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 *   **STATUS_FLAG**: 4:Completed
 *   **SHORTAGE_QTY**: DNWORKINFO.PLAN_QTY - DNWORKINFO.RESULT_QTY
@@ -517,7 +519,6 @@ After the completion button flashes, the operator removes the pallet and presses
 *   **LAST_UPDATE_PNAME**: Class name
 
 ###<span style="color:skyblue; font-weight:bold">DNInOutResult</span>
-*Only for 1301 & 1302*
 *   **RESULT_KIND**: 2:Retrieval(Stock-)
 *   **STATION_NO**: = DNCARRYINFO.DEST_STATION_NO
 *   **LOCATION_NO**: DNPALLET.CURRENT_STATION_NO
