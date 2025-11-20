@@ -149,8 +149,7 @@ flowchart LR
 *   **BATCH_NO**: DNSTOCK.BATCH_NO    
 *   **MATERIAL_CODE**: DNSTOCK.MATERIAL_CODE    
 *   **MATERIAL_NAME**: DMITEM.MATERIAL_NAME    
-*   **MATERIAL_TYPE**: DMITEM.MATERIAL_TYPE 
-*   **PLAN_QTY**: Value from screen (Retrieval Qty / Stock Qty)    
+*   **MATERIAL_TYPE**: DMITEM.MATERIAL_TYPE   
 *   **TEMPERING_PERIOD**: DNSTOCK.TEMPERING_PERIOD
 *   **TEMPERING_FLAG**: DNSTOCK.TEMPERING_FLAG      
 *   **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE
@@ -165,4 +164,5 @@ flowchart LR
 *   **REGIST_PNAME**: ClassName    
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
+
 ####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
