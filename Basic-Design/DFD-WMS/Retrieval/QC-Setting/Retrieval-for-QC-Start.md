@@ -325,3 +325,35 @@ ID32 sent from AGC to WareNavi indicate AGC responded the retrieval job by WareN
 * **ERROR_CODE**: 0
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
+
+#ID33
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.control.Id33Process&nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id33("
+ID 33
+")
+
+id33-update[("
+DMSHELF
+DNCARRYINFO
+")]
+
+id33-->id33process
+id33process--> |UPDATE| id33-update
+:::
+
+ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi that the Pallet/Bin is out of rack and is being transferred to related Station.
+
+##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###<span style="color:skyblue; font-weight:bold">DMShelf</span>
+* **STATUS_FLAG**: 0:Empty
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+
+###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+* **CMD_STATUS**: 5:Retrieval completed
+* **RETRIEVAL_STATION_NO**: DMSHELF.STATION_NO
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
