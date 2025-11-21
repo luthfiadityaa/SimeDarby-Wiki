@@ -1044,7 +1044,7 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 * **LAST_UPDATE_DATE** : SYSTIMESTAMP  
 * **LAST_UPDATE_PNAME** : ClassName  
 
-#<span style="color:skyblue; font-weight:bold">[Send Report as Unplanned Storage and Retrieval Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result)</span>
+#<span style="color:skyblue; font-weight:bold">[Send Report as Internal Location Transfer Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/844/Internal-Location-Transfer-Result)</span>
 
 #User Story
 - [DFD Manual Storage to Ambient](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5785)
