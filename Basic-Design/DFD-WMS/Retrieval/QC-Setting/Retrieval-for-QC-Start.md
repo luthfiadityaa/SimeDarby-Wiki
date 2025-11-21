@@ -750,10 +750,6 @@ After the completion button flashes, the operator removes the pallet and presses
 *  **LAST_UPDATE_DATE**: SYSTIMESTAMP
 *  **LAST_UPDATE_PNAME**: ClassName
 
-
-
-some data will insert by DNSTOCK
-
 ###<span style="color:skyblue; font-weight:bold">DNWorkList</span>
 *   **JOB_NO**: DNWORKINFO.JOB_NO    
 *   **CARRY_KEY**: DNCARRYINFO.CARRY_KEY    
