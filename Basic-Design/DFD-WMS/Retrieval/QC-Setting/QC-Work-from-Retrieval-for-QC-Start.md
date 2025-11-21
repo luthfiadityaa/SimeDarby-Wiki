@@ -89,16 +89,6 @@ P14[ID33]-->P1[TO AISLE STATION - 9001,
 | **Host Communication**                                           |    |    |    |    |    |    |     |    |    |    |    |    |
 | Unplanned Storage and Retrieval Result[(19)](#Unplanned-Storage-and-Retrieval-Result)     |    |    |    |    |    | U   |     |    |    |    |    |    | 
 
-# QC Work - Retrieval for QC Start - Set(F2)
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.QCWorkSettingSCH &nbsp;</span>
-
--
-
-This screen is mainly used when the pallet needs to be inspected.
-
-##<span style="color:skyblue; font-weight:bold">Validations</span>
-This section explains the validations for the whole proccess QC Work - Retrieval for QC Start
-
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
 ##ID63
 If the station mode is **Retrieval Mode**, change the mode of the station to **Storage mode**.
@@ -125,4 +115,15 @@ flowchart LR
 
 ####<span style="color:skyblue; font-weight:bold">DMStation</span>
 **CURRENT_MODE**: 1:Storage Mode
+
+# QC Work - Retrieval for QC Start - Set(F2)
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.QCWorkSettingSCH &nbsp;</span>
+
+-
+
+This screen is mainly used when the pallet needs to be inspected.
+
+##<span style="color:skyblue; font-weight:bold">Validations</span>
+This section explains the validations for the whole proccess QC Work - Retrieval for QC Start
+
 
