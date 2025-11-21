@@ -484,12 +484,7 @@ DNCARRYINFO
 DNPALLET
 ")]
 
-id12msg("
-ID 12
-")
-
 retrievalsender-input-->retrievalsender--> |UPDATE| retrievalsender-update
-retrievalsender-->id12msg
 :::
 
 All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station 1303 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
