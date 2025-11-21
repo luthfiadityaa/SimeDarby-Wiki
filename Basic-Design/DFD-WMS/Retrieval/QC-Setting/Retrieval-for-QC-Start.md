@@ -457,6 +457,26 @@ Continue the process Direct Transfer, AGC will send ID26 to WareNavi and WareNa
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: Class name
 
+### DNPallet
+
+*   **CURRENT_STATION_NO**: DNARRIVAL.STATION_NO
+*   **REGIST_DATE**: SYSTIMESTAMP
+*   **REGIST_PNAME**: ClassName
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP
+*   **LAST_UPDATE_PNAME**: ClassName
+
+#### DNCarryInfo
+
+*   **WORK_TYPE**: 26:Direct Transfer
+*   **CMD_STATUS**: 1:Started
+*   **CARRY_FLAG**: 3: Direct Transfer
+*   **SOURCE_STATION_NO**: DNARRIVAL.STATION_NO ⟶ (7207, 7208, 7209, 7210)
+*   **DEST_STATION_NO**: **<span style="color:green">1303</span>**
+*   **REGIST_DATE**: SYSTIMESTAMP
+*   **REGIST_PNAME**: ClassName
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP
+*   **LAST_UPDATE_PNAME**: ClassName
+
 ##Retrieval Sender at 7207-7210
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalSender&nbsp;</span>
 
