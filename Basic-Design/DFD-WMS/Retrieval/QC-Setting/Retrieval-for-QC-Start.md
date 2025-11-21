@@ -52,7 +52,6 @@ Cond1{Flow?}--> |Flow 2: Not through crane 7-10.
 | ID63 [(1)](#ID63)                                                               |    |    |    |    |    |    |     |    |    |    |    | U  |    |    |     |
 | **Directly For 1201-1209**                                                      |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
 | Retrieval for QC Start - Set(F2) [(1)](#Specific-Location-Retrieval-Setting---Set(F2)) | I  |    | S  | I  | S  |    |     | S  | S  |    | S  | S  | S   |    |    |
-| **Normal Flow**                                                                |    |    |    |    |    |    |     |    |    |    
 | RetrievalSender[(3)](#Retrieval-Sender)                                         |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |    |  
 | ID12[(2)](#ID12)                                                                |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |    | 
 | ID32[(4)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |    
