@@ -742,8 +742,8 @@ After the completion button flashes, the operator removes the pallet and presses
 *  **QC_CHECK_FLAG**: DNSTOCK_QC_CHECK_FLAG
 *  **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY
 *  **BCR_DATA**: DNPALLET.BCR_DATA
-*  **STORAGE_LOCATION_TO**: FGW1 / FGW2
-*  **STORAGE_LOCATION_TO**: QC01
+*  **STORAGE_LOCATION_TO**: <span style="color:green; font-weight:bold">FGW1 / FGW2</span>
+*  **STORAGE_LOCATION_TO**: <span style="color:green; font-weight:bold">QC01</span>
 *  **TERMINAL_NO**: Login info
 *  **REGIST_DATE**: SYSTIMESTAMP
 *  **REGIST_PNAME**: ClassName
