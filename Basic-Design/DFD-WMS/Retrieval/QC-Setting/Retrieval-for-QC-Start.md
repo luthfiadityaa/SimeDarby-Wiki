@@ -66,7 +66,7 @@ Cond1{Flow?}--> |Flow 2: Not through crane 7-10.
 | ID64[(6)](#ID64-at-STV-from-9001-9014)                                          |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |     |
 | **Last Process:**                                                               |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
 | ID68[(7)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |     |
-| ID26[(8)](#ID26)                                                                | U  | I  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I   | 
+| ID26[(8)](#ID26)                                                                | U  | I  | U  | U  |    | I  |  I  |    | U  | I  |    |    |    |    | I   | 
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
 | Internal Location Transfer Result[(9)](#Internal-Location-Transfer-Result)      |    |    |    |    |    | U  |     |    |    |    |    |    |    |    |     |
  
