@@ -748,7 +748,7 @@ After the completion button flashes, the operator removes the pallet and presses
 *  **REGIST_DATE**: SYSTIMESTAMP
 *  **REGIST_PNAME**: ClassName
 *  **LAST_UPDATE_DATE**: SYSTIMESTAMP
-*  **LAST_UPDATE_PNAME**: QCSettingSCH
+*  **LAST_UPDATE_PNAME**: ClassName
 
 
 
