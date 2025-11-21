@@ -569,4 +569,4 @@ After
 <hr>
 
 #User Story
-- 
+- [DFD - QC Setting](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5788)
