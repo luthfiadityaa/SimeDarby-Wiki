@@ -457,7 +457,7 @@ Continue the process Direct Transfer, AGC will send ID26 to WareNavi and WareNa
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP
 *   **LAST_UPDATE_PNAME**: ClassName
 
-#### DNCarryInfo
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 
 *   **WORK_TYPE**: 26:Direct Transfer
 *   **CMD_STATUS**: 1:Started
