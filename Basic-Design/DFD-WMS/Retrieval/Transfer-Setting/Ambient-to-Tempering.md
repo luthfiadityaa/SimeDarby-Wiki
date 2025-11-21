@@ -58,22 +58,24 @@ Cond1{Continue Deposit to ?}-->|SRM 9001-9006|P2[ID33]
 | Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HTST | OPRR | ITEM | STSN |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
 | Transfer Setting - Set(F2) [(1)](#transfer-setting---set(f2))  |   S  |   I  |   I  |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |
-| **Flow 1 - Normal Retrieval**                                  |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| **Normal Retrieval**                                           |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 | ID12 [(2)](#id12)                                              |   U  |      |      |   I  |      |      |      |      |      |      |      |      |      |      |
 | Retrieval Sender [(3)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
 | ID32 [(4)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
-| ID33 at SRM [(5)](#id33-at-srm)                                |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |
-| **Flow 2 - Storage Flow**                                      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| ID64 at STV [(6)](#id64-at-stv)                                |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
-| ID26[(7)](#id26)                                               |   U  |   U  |      |   U  |      |   I  |      |      |      |      |      |      |      |      |
-| StorageSender [(8)](#StorageSender)                            |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |
-| ID25 [(9)](#ID25)                                              |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |
-| **Flow 3.1 - Through SRM 9007-9010**                           |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| ID64 at SRM 9007-9010 [(10)](#id64-at-srm-9007-9010)           |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
-| Continue to Flow 2 - Storage Flow [(11)](#id64-at-srm-9007-9010)           |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
-| **Flow 3.2 - Direct go to Tempering**                          |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| ID64 at SRM 9001-9006 [(12)](#id64-at-SRM-9001-9006)           |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |                            
-| ID33 at 9001-9006 [(13)](#id33-at-9001-9006)                   |   U  |   U  |      |   D  |   U  |      |      |  U   |   I  |      |      |      |      |      |
+| ID33 at SRM Retrieval [(5)](#id33-at-srm-retrieval)            |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |
+| **Flow 1 - Storage from crane (9011-9014) through crane (9007-9010)**|      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| ID64 at STV HP [(6)](#id64-at-stv-hp)                          |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| ID26 at 7207-7214[(7)](#id26-at-7207-7214)                     |   U  |   U  |      |   U  |      |   I  |      |      |      |      |      |      |      |      |
+| StorageSender at 7207-7214 [(8)](#StorageSender-at-7207-7214)  |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |
+| ID25 at 7207-7214 [(9)](#ID25-at-7207-7214)                    |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |
+| ID64 at SRM 9007-9010 [(12)](#id64-at-SRM-9007-9010)           |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |  
+| **Flow 2 - Direct storage from crane (9007-9010) to Tempering (9001-9006)**|      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| ID64 at STV OP [(6)](#id64-at-stv-op)                          |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| ID26 at 7101-7106[(7)](#id26-at-7101-7106)                     |   U  |   U  |      |   U  |      |   I  |      |      |      |      |      |      |      |      |
+| StorageSender at 7101-7106 [(8)](#StorageSender-at-7101-7106)  |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |
+| ID25 at 7101-7106 [(9)](#ID25-at-7101-7106)                    |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |
+| ID64 at SRM 9001-9006 [(12)](#id64-at-SRM-9001-9006)           |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |  
+| ID33 at 9001-9006 [(13)](#id33-at-9001-9006)                   |   U  |   U  |      |   D  |   U  |      |      |  U   |   I  |      |      |      |      |      |                  
 
 
 
@@ -313,7 +315,7 @@ ID32 sent from AGC to WareNavi indicate AGC responded the retrieval job by WareN
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
-# ID33 at SRM
+# ID33 at SRM Retrieval
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id33Process` &nbsp;</span>
 
@@ -346,7 +348,17 @@ ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
-# ID64 at STV
+<hr>
+
+#<span style="color:skyblue; font-weight:bold">Continue Process with</span>
+- ##[Flow 1 : Storage from crane (9011-9014) through crane (9007-9010)](#flow-1-%3A-storage-from-crane-(9011-9014)-through-crane-(9007-9010))
+- ##[Flow 2 : Direct storage from crane (9007-9010) to Tempering (9001-9006)](#flow-2-%3A--direct-storage-from-crane-(9007-9010)-to-tempering-(9001-9006))
+
+<hr>
+
+#Flow 1 : Storage from crane (9011-9014) through crane (9007-9010)
+
+# ID64 at STV HP
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process` &nbsp;</span>
@@ -373,7 +385,7 @@ Upon equipment **(STV)** have picked up the Pallet successfully, ID64 will be se
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
-# ID26
+# ID26 at 7207-7210
 
 ::: mermaid
 flowchart LR
@@ -440,7 +452,7 @@ Continue the process **storage**, AGC will send ID26 to WareNavi and WareNavi w
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : ClassName
 
-# StorageSender
+# StorageSender at 7207-7210
 
 ::: mermaid
 flowchart LR
@@ -498,7 +510,7 @@ After successful creation of arrival record in **ID26process**, Automatic Mode C
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
-# ID25
+# ID25 at 7207-7210
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process` &nbsp;</span>
@@ -530,8 +542,6 @@ ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
-<hr>
-
 # ID64 at SRM 9007-9010
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
@@ -559,11 +569,200 @@ Upon equipment **(SRM 9007-9008)** have picked up the Pallet successfully, ID64 
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
-# Continue to Flow 2 - Storage Flow
+<br>
+<hr style="width:50%; margin-left: 0; border: 2px solid green;">
+
+**Continue Process with**: [Flow 2 : Direct storage from crane (9007-9010) to Tempering (9001-9006)](#flow-2-%3A--direct-storage-from-crane-(9007-9010)-to-tempering-(9001-9006))
+<hr style="width:50%; margin-left: 0; border: 2px solid green;">
+
 
 <hr>
 
+#Flow 2 :  Direct storage from crane (9007-9010) to Tempering (9001-9006)
 
+# ID64 at STV OP
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.communication.control.Id64Process` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id64("
+ID 64
+")
+
+id64-update[("
+DNCARRYINFO
+")]
+
+id64-->id64process
+id64process-.UPDATE.->id64-update
+:::
+
+Upon equipment **(STV)** have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
+
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+- **CMD_STATUS** : 4:Pickup completed
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
+
+# ID26 at 7101-7106
+
+::: mermaid
+flowchart LR
+
+releaseCommand["
+Continue the Process Storage
+"]
+
+id26msg("
+ID 26
+")
+
+id26-insert[("
+DNARRIVAL
+")]
+
+id26-update[("
+DNCARRYINFO
+DNPALLET
+DNWORKINFO
+")]
+
+storageStationOperator[storageStationOperator]
+
+releaseCommand-->id26msg-->id26process-->storageStationOperator
+storageStationOperator--> |INSERT| id26-insert
+storageStationOperator--> |UPDATE| id26-update
+:::
+
+Continue the process **storage**, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.asrs.communication.id.recv.As21Id26` &nbsp;</span>
+
+## <span style="color:skyblue; font-weight:bold">DNARRIVAL</span>
+- **ARRIVAL_DATE** : SYSTIMESTAMP 
+- **STATION_NO** : Arrival Station Number from ID26 
+- **CARRY_KEY** : DNCARRYINFO.CARRY_KEY       
+- **BCR_DATA** : Barcode information from ID26
+- **CONTROLINFO** : Control information from ID26
+- **SEND_FLAG** : 0:Not sent
+- **HEIGHT** : Dimension Information from ID26
+- **WIDTH** : Dimension Information From ID26
+- **REGIST_DATE** : SYSTIMESTAMP                                                    
+- **REGIST_PNAME** : ClassName
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : ClassName
+
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+- **PALLET_ID** : DNPALLET.PALLET_ID
+- **WORK_TYPE** : 2: Storage
+- **CMD_STATUS** : 1:Started 
+- **PRIORITY** : 2:Normal
+- **CARRY_FLAG** : 1: Storage
+- **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO ⟶ **(7101/7102/7103/7104/7105/7106/7207/7208/7209/7210/7211/7212/7213/7214)**
+- **DEST_STATION_NO** : Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ **(9001/9002/9003/9004/9005/9006/9007/9008/9009/9010/9011/9012/9013/9014)**
+- **END_STATION_NO** : DNCARRYINFO.DEST_STATION_NO
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : ClassName
+
+## <span style="color:skyblue; font-weight:bold">DNPALLET</span>                                                     
+- **CURRENT_STATION_NO** : DNARRIVAL.STATION_NO
+- **WH_STATION_NO** : DNCARRYINFO.END_STATION_NO                                                                                                                                                
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : ClassName
+
+# StorageSender at 7101-7106
+
+::: mermaid
+flowchart LR
+storageSender-update[("
+DMWAREHOUSE
+DMSHELF
+DNCARRYINFO
+DNWORKINFO
+DNARRIVAL
+")]
+storageSender-input[("
+DNARRIVAL
+DNCARRYINFO
+")]
+
+id05msg("
+ID 05
+")
+
+storageSender-input-->storageSender-->id05msg
+storageSender--> |UPDATE| storageSender-update
+:::
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.asrs.transmission.StorageSender ` &nbsp;</span>
+
+After successful creation of arrival record in **ID26process**, Automatic Mode Change Sender is the following process where it will send **ID05** to **AGC**. To indicate **ID05** is sent to AGC, **DNCARRYINFO.CMD_STATUS** will be updated from **1:Started to 2:Waiting for Response**.
+
+## <span style="color:skyblue; font-weight:bold">DMWAREHOUSE</span> 
+- **LAST_USED_STATION_NO** : Aisle Number where a reserved location belongs to
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name 
+
+## <span style="color:skyblue; font-weight:bold">DMSHELF</span> 
+- **STATUS_FLAG** : 2:Reserved Location
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span> 
+- **AISLE_STATION_NO** : Aisle Number where a reserved location belongs to
+- **CMD_STATUS** : 2:Waiting for response
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
+
+## <span style="color:skyblue; font-weight:bold">DNWORKINFO</span> 
+- **JOB_TYPE** : 02:Storage
+- **STATUS_FLAG** : 1: Working
+- **PLAN_AREA_NO** : Area Number where a reserved location belongs to
+- **PLAN_LOCATION_NO** : Location Number where a reserved location belongs to
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : ClassName
+
+## <span style="color:skyblue; font-weight:bold">DNARRIVAL</span> 
+- **CARRY_KEY** : DNCARRYINFO.CARRY_KEY
+- **SEND_FLAG** : 1:Sent
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
+
+# ID25 at 7101-7106
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id25("
+ID 25
+")
+
+id25-update[("
+DNCARRYINFO
+")]
+id25-delete[("
+DNARRIVAL
+")]
+
+id25-->id25process
+id25process-.UPDATE.->id25-update
+id25process-.DELETE.-xid25-delete
+:::
+
+ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
+
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span> 
+- **CMD_STATUS** : 3:Commanded
+- **ERROR_CODE** : 0
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
 
 # ID64 at SRM 9001-9006
 
