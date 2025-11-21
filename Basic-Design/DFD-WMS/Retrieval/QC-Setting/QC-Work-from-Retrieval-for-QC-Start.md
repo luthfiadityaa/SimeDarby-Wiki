@@ -33,5 +33,28 @@ P14[ID33]-->P1[TO AISLE STATION - 9001,
 9014]
 :::
 
+#<span style="color:skyblue; font-weight:bold">QC Work - Retrieval for QC Start database flow</span>
+**Abbreviation:**
+- **WRKI** : DNWORKINFO  
+- **WRKL** : DNWORKINFOLIST  
+- **PLLT** : DNPALLET  
+- **CRYI** : DNCARRYINFO  
+- **STCK** : DNSTOCK  
+- **HSTS** : DNHOSTSEND  
+- **ARVL** : DNARRIVAL  
+- **WRHS** : DMWAREHOUSE  
+- **SHLF** : DMSHELF  
+- **ITEM** : DMITEM
+- **STSN** : DMSTATION  
+- **STCH** : DNSTOCKHISTORY  
+- **TTSN** : DMTOSTATION 
+- **INOUT**: DNINOUTSTATION
+
+* **Operation Name**
+  - **I** : INSERT  
+  - **U** : UPDATE  
+  - **D** : DELETE
+  - **S** : SELECT 
+
 
 ![==image_0==.jpg](/.attachments/==image_0==-86dcd6db-436b-4e67-8318-8157c77b6900.jpg) .
