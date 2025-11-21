@@ -49,10 +49,9 @@ Cond1{Flow?}--> |Flow 2: Not through crane 7-10.
 
 | Action Name                                                                     |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN|TTSN|OPRD|INOUT| 
 |---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|-----|
-| **Only For 1301, 1302 & 1303**                                                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
 | ID63 [(1)](#ID63)                                                               |    |    |    |    |    |    |     |    |    |    |    | U  |    |    |     |
 | **Directly For 1201-1209**                                                      |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
-| Specific Location Retrieval Setting - Set(F2) [(1)](#Specific-Location-Retrieval-Setting---Set(F2)) | I  |    | S  | I  | S  |    |     | S  | S  |    | S  | S  | S   |    |    |
+| Retrieval for QC Start - Set(F2) [(1)](#Specific-Location-Retrieval-Setting---Set(F2)) | I  |    | S  | I  | S  |    |     | S  | S  |    | S  | S  | S   |    |    |
 | **Normal Flow**                                                                 |    |    |    |    |    |    |     |    |    |    
 | ID12[(2)](#ID12)                                                                |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |    | 
 | RetrievalSender[(3)](#Retrieval-Sender)                                         |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |    |  
