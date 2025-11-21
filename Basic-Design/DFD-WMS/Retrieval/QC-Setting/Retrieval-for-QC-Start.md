@@ -672,9 +672,6 @@ DNWORKINFO
 DNSHELF
 DNCARRYINFO
 DNPALLET
-")]
-
-id26-delete[("
 DNSTOCK
 ")]
 
@@ -695,7 +692,6 @@ id26process-->retrievaloperator
 
 retrievaloperator--> |INSERT| id26-insert
 retrievaloperator--> |UPDATE| id26-update
-retrievaloperator--> |DELETE| id26-delete
 :::
 
 <span style="color:black; font-weight:bold; color:red">*The operator performs the operation according to the work display on the work terminal.</span>
