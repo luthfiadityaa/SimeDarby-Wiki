@@ -449,7 +449,7 @@ Continue the process Direct Transfer, AGC will send ID26 to WareNavi and WareNa
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
-### DNPallet
+####<span style="color:skyblue; font-weight:bold">DNPallet</span>
 
 *   **CURRENT_STATION_NO**: DNARRIVAL.STATION_NO
 *   **REGIST_DATE**: SYSTIMESTAMP
