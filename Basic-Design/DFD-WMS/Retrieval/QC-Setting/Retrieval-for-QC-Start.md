@@ -565,7 +565,7 @@ DNCARRYINFO
 ")]
 
 id64-->id64process
-id64process--> |DELET| id64-update
+id64process--> |DELETE| id64-update
 :::
 
 Upon equipment have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
