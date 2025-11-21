@@ -65,15 +65,8 @@ Cond1{Flow?}--> |Flow 2: Not through crane 7-10.
 | ID64[(11)](#ID64-at-STV-from-9007-910)                                                               |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
 | **Flow 2: Not through crane 7-10 for 1205-1209 and 1301-1302**                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | ID64[(6)](#ID64-at-STV-from-9001-9014)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
-| **Flow 3 (Normal Flow): for 1201-1204 directly to this process**                              |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| ID68[(7)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |    |
-| **Flow 4: Only Confirmation treat as Inventory Check**                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| ID45[(7)](#ID45)                                                                |    |    |    |    |    |    |     |    |    |   |    |    |    |    |   | 
-| **Flow 4.1: ST 1301 & 1302**                                                    |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| [Continue to Unplaned Storage from 1301 & 1302](#Flow-4.1:-ST-1301-&-1302)                         |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| **Flow 4.2: ST 1303**                                                           |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| [Continue to Unplaned Storage from 1303](#Flow-4.2:-ST-1303)                         |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | **Last Process: Directly to this process -if not Only Confirmation Choosen**                                                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
+| ID68[(7)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |    |
 | ID26[(8)](#ID26)                                                                | U  | I  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I  | 
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | Unplanned Storage and Retrieval Result[(9)](#Unplanned-Storage-and-Retrieval-Result)     |    |    |    |   |    | U  |    |    |    |    |    |    | 
