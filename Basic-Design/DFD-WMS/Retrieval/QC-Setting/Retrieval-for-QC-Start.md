@@ -729,7 +729,7 @@ After the completion button flashes, the operator removes the pallet and presses
 * **WORK_DAY**
 * **INC_DEC_TYPE**: 2:Stock Decrease (Retrieval)
 * **JOB_TYPE**: 40:Inventory Check (AS/RS)
-* **STOCK_ID**
+* **STOCK_ID**: DNSTOCK.STOCK_ID
 * **AREA_NO**
 * **LOCATION_NO**
 * **AREA_TYPE**
