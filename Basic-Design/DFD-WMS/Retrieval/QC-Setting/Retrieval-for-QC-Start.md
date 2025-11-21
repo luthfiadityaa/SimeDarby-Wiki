@@ -69,7 +69,7 @@ Cond1{Flow?}--> |Flow 2: Not through crane 7-10.
 | ID68[(7)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |    |
 | ID26[(8)](#ID26)                                                                | U  | I  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I  | 
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| Unplanned Storage and Retrieval Result[(9)](#Unplanned-Storage-and-Retrieval-Result)     |    |    |    |   |    | U  |    |    |    |    |    |    | 
+| Internal Location Transfer Result[(9)](#Internal-Location-Transfer-Result)     |    |    |    |   |    | U  |    |    |    |    |    |    | 
 
 
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
