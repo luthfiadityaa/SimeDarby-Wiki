@@ -427,8 +427,8 @@ retrievaloperator[RetrievalStationOperator]
 buttonclicked --> id26msg
 id26msg -->id26process
 id26process-->retrievaloperator
-retrievaloperator--I-->id26-insert
-retrievaloperator-.U.->id26-update
+retrievaloperator--> |INSERT| id26-insert
+retrievaloperator--> |UPDATE| id26-update
 :::
 
 Continue the process Direct Transfer, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record.
