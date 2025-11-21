@@ -556,9 +556,12 @@ some data will insert by DNSTOCK
 
 some data will insert by DNWORKINFO
 
+  
+When the retrieved pallet reaches the QC station, Warenavi sends an ‘Internal Location Transfer’ message to the host system and initiates ‘QC Work‘.
+
 #Internal Location Transfer Result
-- [Internal Location Transfer Result - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/844/Internal-Location-Transfer-Result)
+- [Internal Location Transfer Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/844/Internal-Location-Transfer-Result)
 
 #QC Work from Retrieval for QC Start
-- [QC Work from Retrieval for QC Start - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/961/QC-Work-from-Retrieval-for-QC-Start)
+- [QC Work from Retrieval for QC Start](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/961/QC-Work-from-Retrieval-for-QC-Start)
 After
