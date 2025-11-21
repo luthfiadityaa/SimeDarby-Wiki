@@ -51,26 +51,26 @@ Cond1{Flow?}--> |Flow 2: Not through crane 7-10.
 |---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|-----|
 | ID63 [(1)](#ID63)                                                               |    |    |    |    |    |    |     |    |    |    |    | U  |    |    |     |
 | **Directly For 1201-1209**                                                      |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
-| Retrieval for QC Start - Set(F2) [(1)](#Retrieval for QC Start --Set(F2)) | I  |    | S  | I  | S  |    |     | S  | S  |    | S  | S  | S   |    |    |
-| RetrievalSender[(3)](#Retrieval-Sender)                                         |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |    |  
-| ID12[(2)](#ID12)                                                                |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |    | 
-| ID32[(4)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |    
-| ID33[(5)](#ID33)                                                                |    |    |    | U  |    |    |     |    | U  |    |    |    |    |    |    |     
-| **Flow 1: Thorugh crane 7-10 only for 1303**                                    |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| ID64[(6)](#ID64-at-STV-from-(9001-9006-&-9011-9014))                            |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
-| ID26[(7)](#ID26-at-7207-7210)                                                   |    |    | U  | U  |    |    | I   |    |    |    |    |    |    |    |    |
-| Retrieval Sender[(8)](#Retrieval-Sender-at-7207-7210)                           |    |    |    | U  |    |    | U   |    |    |    |    |    |    |    |    |
-| ID25[(9)](#ID25-at-7207-7210)                                                   |    |    |    | U  |    |    | D   |    |    |    |    |    |    |    |    |
-| ID64[(10)](#ID64-at-SRM-from-7207-7210)                                         |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
-| ID64[(11)](#ID64-at-STV-from-9007-910)                                          |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
-| **Flow 2: Not through crane 7-10 for 1205-1209 and 1301-1302**                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| ID64[(6)](#ID64-at-STV-from-9001-9014)                                          |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |
-| **Last Process: Directly to this process -if not Only Confirmation Choosen**    |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| ID68[(7)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |    |
-| ID26[(8)](#ID26)                                                                | U  | I  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I  | 
-| **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| Internal Location Transfer Result[(9)](#Internal-Location-Transfer-Result)     |    |    |    |   |    | U  |    |    |    |    |    |    | 
-
+| Retrieval for QC Start - Set(F2) [(1)](#Retrieval for QC Start --Set(F2))       | I  |    | S  | I  | S  |    |     | S  | S  |    | S  | S  | S  |    |     |
+| RetrievalSender[(3)](#Retrieval-Sender)                                         |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |     |  
+| ID12[(2)](#ID12)                                                                |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |     | 
+| ID32[(4)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |     |    
+| ID33[(5)](#ID33)                                                                |    |    |    | U  |    |    |     |    | U  |    |    |    |    |    |     |     
+| **Flow 1: Thorugh crane 7-10 only for 1303**                                    |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
+| ID64[(6)](#ID64-at-STV-from-(9001-9006-&-9011-9014))                            |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |     |
+| ID26[(7)](#ID26-at-7207-7210)                                                   |    |    | U  | U  |    |    | I   |    |    |    |    |    |    |    |     |
+| Retrieval Sender[(8)](#Retrieval-Sender-at-7207-7210)                           |    |    |    | U  |    |    | U   |    |    |    |    |    |    |    |     |
+| ID25[(9)](#ID25-at-7207-7210)                                                   |    |    |    | U  |    |    | D   |    |    |    |    |    |    |    |     |
+| ID64[(10)](#ID64-at-SRM-from-7207-7210)                                         |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |     |
+| ID64[(11)](#ID64-at-STV-from-9007-910)                                          |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |     |
+| **Flow 2: Not through crane 7-10 for 1205-1209 and 1301-1302**                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
+| ID64[(6)](#ID64-at-STV-from-9001-9014)                                          |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |     |
+| **Last Process: Directly to this process -if not Only Confirmation Choosen**    |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
+| ID68[(7)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |     |
+| ID26[(8)](#ID26)                                                                | U  | I  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I   | 
+| **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
+| Internal Location Transfer Result[(9)](#Internal-Location-Transfer-Result)      |    |    |    |    |    | U  |     |    |    |    |    |    |    |    |     |
+ 
 
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
 ##ID63
