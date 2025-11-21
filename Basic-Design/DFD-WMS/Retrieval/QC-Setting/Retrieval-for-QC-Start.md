@@ -559,5 +559,6 @@ some data will insert by DNWORKINFO
 #Unplanned Storage and Retrieval Result
 - [Unplanned Storage and Retrieval Results](https://dev.azure.com/DaifukuSW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result)
 
-#Unplanned Storage and Retrieval Result
+#QC Work from Retrieval for QC Start
+- [QC Work from Retrieval for QC Start - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/961/QC-Work-from-Retrieval-for-QC-Start)
 After
