@@ -60,3 +60,12 @@ P14[ID33]-->P1[TO AISLE STATION - 9001,
   - **U** : UPDATE  
   - **D** : DELETE
   - **S** : SELECT 
+
+# QC Work - Retrieval for QC Start - Set(F2)
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.QCSettingSCH &nbsp;</span>
+ ![==image_0==.jpg](/.attachments/==image_0==-385c044c-0af1-4f9f-b8bd-8c195cfba22a.jpg) 
+
+This screen is mainly used when the pallet needs to be inspected.
+
+##<span style="color:skyblue; font-weight:bold">Validations</span>
+This section explains the validations for the whole proccess QC Work - Retrieval for QC Start
