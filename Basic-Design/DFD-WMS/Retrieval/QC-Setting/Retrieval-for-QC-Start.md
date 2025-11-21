@@ -366,6 +366,216 @@ ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi
 
 <hr>
 
+#Flow 1 : 
+
+**<h2>Through crane 7-10</h2>**
+
+Refer to AGC Linkage Specs: [AGCⅦA Linkage Specs_1.2.7_AF954201_SimeDarby_v1.1.xlsx - Retrieval Section - 14 Sheets](https://daifuku.sharepoint.com/:x:/r/sites/jp0211039/Shared%20Documents/PTDI/Projects/PT.%20Guthrie%20Indonesia%20Sei%20Mangkei%20Refinery(Sime%20Darby)/Garuda%20Project/F.%20Basic%20Design/A.%20AGC%20Linkage%20Specs/AGC%E2%85%A6A%20Linkage%20Specs_1.2.7_AF954201_SimeDarby_v1.1.xlsx?d=w31ccf4d7958e4ea989446a6ac5a1a566&csf=1&web=1&e=J2FP9Y)
+
+##ID64 at STV from (9001-9006 & 9011-9014)
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id64Process &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id64("
+ID 64
+")
+
+id64-update[("
+DNCARRYINFO
+")]
+
+id64-->id64process
+id64process--> |UPDATE| id64-update
+:::
+
+Upon equipment have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
+
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+* **CMD_STATUS**: 4:Pickup completed
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
+
+##ID26 at 7207-7210
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.control.Id26Process&nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+buttonclicked["
+Pallet Arrived at Conveyor Station
+"]
+
+id26msg("
+ID 26
+")
+
+id26-insert[("
+DNARRIVAL
+")]
+
+id26-update[("
+DNCARRYINFO
+")]
+
+id26process[id26process]
+retrievaloperator[RetrievalStationOperator]
+
+
+buttonclicked --> id26msg
+id26msg -->id26process
+id26process-->retrievaloperator
+retrievaloperator--I-->id26-insert
+retrievaloperator-.U.->id26-update
+:::
+
+Continue the process Direct Transfer, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record.
+
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">DNArrival</span>
+* **ARRIVAL_DATE**: SYSTIMESTAMP
+* **STATION_NO**: Arrival Station Number from ID26
+* **CARRY_KEY**: 99999999
+* **BCR_DATA**: Barcode information from ID26
+* **CONTROLINFO**: Control information from ID26
+* **SEND_FLAG**: 0:Not sent
+* **HEIGHT**: Dimension Information from ID26
+* **WIDTH**: Dimension Information From ID26
+* **REGIST_DATE**: SYSTIMESTAMP
+* **REGIST_PNAME**: Class name
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
+
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+*   **WORK_TYPE**: 23:Unplanned Retrieval    
+*   **CMD_STATUS**: 1:Started    
+*   **CARRY_FLAG**: 2:Retrieval      
+*   **SOURCE_STATION_NO**: DNARRIVAL.STATION_NO    
+*   **DEST_STATION_NO**: **<span style="color:green">1303</span>**    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: Class name
+
+##Retrieval Sender at 7207-7210
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalSender&nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+retrievalsender-input[("
+DNCARRYINFO
+")]
+
+retrievalsender-update[("
+DNCARRYINFO
+DNPALLET
+")]
+
+id12msg("
+ID 12
+")
+
+retrievalsender-input-->retrievalsender--> |UPDATE| retrievalsender-update
+retrievalsender-->id12msg
+:::
+
+All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station 1301, 1302, 1205, 1206, 1207, 1208, 1209 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
+
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+* **CMD_STATUS**: 2:Waiting for response
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
+
+####<span style="color:skyblue; font-weight:bold">DNPallet</span>
+* **STATUS_FLAG**: 4:Being retrieved
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
+
+##ID25 at 7207-7210
+jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process
+
+::: mermaid
+flowchart LR
+
+id25("
+ID 25
+")
+
+id25-update[("
+DNCARRYINFO
+")]
+id25-delete[("
+DNARRIVAL
+")]
+
+id25-->id25process
+id25process-.U.->id25-update
+id25process-.D.->id25-delete
+:::
+
+ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
+
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+* **CMD_STATUS**: 3:Commanded
+* **ERROR_CODE**: 0
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
+
+##ID64 at SRM from 7207-7210
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id64Process &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id64("
+ID 64
+")
+
+id64-update[("
+DNCARRYINFO
+")]
+
+id64-->id64process
+id64process--> |UPDATE| id64-update
+:::
+
+Upon equipment have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
+
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+* **CMD_STATUS**: 4:Pickup completed
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
+
+##ID64 at at STV from 9007-9010 
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id64Process &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id64("
+ID 64
+")
+
+id64-update[("
+DNCARRYINFO
+")]
+
+id64-->id64process
+id64process-.U.->id64-update
+:::
+
+Upon equipment have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
+
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+* **CMD_STATUS**: 4:Pickup completed
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
+
 
 #ID68
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id68Process &nbsp;</span>
