@@ -87,7 +87,7 @@ P14[ID33]-->P1[TO AISLE STATION - 9001,
 | **Last Process**                                                 |    |    |    |    |    |    |     |    |    |    |    |    |    
 | ID33[(15)](#)                                                    | U  | I  | U  | D  | U  | I  |     |    | U  | I  |    |    |
 | **Host Communication**                                           |    |    |    |    |    |    |     |    |    |    |    |    |
-| Unplanned Storage and Retrieval Result[(19)](#Unplanned-Storage-and-Retrieval-Result)     |    |    |    |    |    | U   |     |    |    |    |    |    | 
+| Internal Location Transfer Result[(9)](#Internal-Location-Transfer-Result)      |    |    |    |    |    | U  |     |    |    |    |    |    |    |    |     |
 
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
 ##ID63
