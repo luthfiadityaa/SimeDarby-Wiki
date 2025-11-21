@@ -725,8 +725,39 @@ After the completion button flashes, the operator removes the pallet and presses
 *   **LAST_UPDATE_PNAME**: Class name
 
 ###<span style="color:skyblue; font-weight:bold">DNStockHistory</span>
+* **REGIST_DATE**
+* **WORK_DAY**
 * **INC_DEC_TYPE**: 2:Stock Decrease (Retrieval)
 * **JOB_TYPE**: 03:Retrieval
+* **STOCK_ID**
+* **AREA_NO**
+* **LOCATION_NO**
+* **AREA_TYPE**
+* **ITEM_CODE**
+* **ITEM_NAME**
+* **JAN**
+* **CASE_IF**
+* **BUNDLE_IF**
+* **ENTERING_QTY**
+* **BUNDLE_ENTERING_QTY**
+* **LOT_NO**
+* **NOTE**
+* **STORAGE_DAY**
+* **STORAGE_DATE**
+* **NEWEST_STORAGE_DATE**
+* **RETRIEVAL_DAY**
+* **INVENTORY_DAY**
+* **UPDATE_STOCK_QTY**
+* **INC_DEC_QTY**
+* **PALLET_ID**
+* **USER_ID**
+* **USER_NAME**
+* **TERMINAL_NO**
+* **TERMINAL_NAME**
+* **IP_ADDRESS**
+* **REGIST_PNAME**
+
+
 
 some data will insert by DNSTOCK
 
