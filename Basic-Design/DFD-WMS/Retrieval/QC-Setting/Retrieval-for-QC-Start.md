@@ -366,7 +366,7 @@ ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi
 
 <hr>
 
-#Flow 1 : 
+#Flow 1 
 
 **<h2>Through crane 7-10</h2>**
 
