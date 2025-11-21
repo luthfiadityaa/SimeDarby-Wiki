@@ -418,6 +418,7 @@ DNARRIVAL
 
 id26-update[("
 DNCARRYINFO
+DNPALLET
 ")]
 
 id26process[id26process]
