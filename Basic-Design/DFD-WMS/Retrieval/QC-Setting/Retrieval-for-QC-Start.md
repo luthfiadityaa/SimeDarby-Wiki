@@ -55,16 +55,16 @@ Cond1{Flow?}--> |Flow 2: Not through crane 7-10.
 | ID12[(2)](#ID12)                                                                |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |     | 
 | ID32[(4)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |     |    
 | ID33[(5)](#ID33)                                                                |    |    |    | U  |    |    |     |    | U  |    |    |    |    |    |     |     
-| **Flow 1: Thorugh crane 7-10 only for 1303**                                    |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
+| **Flow 1: Thorugh crane 7-10**                                                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
 | ID64[(6)](#ID64-at-STV-from-(9001-9006-&-9011-9014))                            |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |     |
 | ID26[(7)](#ID26-at-7207-7210)                                                   |    |    | U  | U  |    |    | I   |    |    |    |    |    |    |    |     |
 | Retrieval Sender[(8)](#Retrieval-Sender-at-7207-7210)                           |    |    |    | U  |    |    | U   |    |    |    |    |    |    |    |     |
 | ID25[(9)](#ID25-at-7207-7210)                                                   |    |    |    | U  |    |    | D   |    |    |    |    |    |    |    |     |
 | ID64[(10)](#ID64-at-SRM-from-7207-7210)                                         |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |     |
 | ID64[(11)](#ID64-at-STV-from-9007-910)                                          |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |     |
-| **Flow 2: Not through crane 7-10 for 1205-1209 and 1301-1302**                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
+| **Flow 2: Not through crane 7-10**                                              |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
 | ID64[(6)](#ID64-at-STV-from-9001-9014)                                          |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |     |
-| **Last Process: Directly to this process -if not Only Confirmation Choosen**    |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
+| **Last Process:**                                                               |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
 | ID68[(7)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |     |
 | ID26[(8)](#ID26)                                                                | U  | I  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I   | 
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
