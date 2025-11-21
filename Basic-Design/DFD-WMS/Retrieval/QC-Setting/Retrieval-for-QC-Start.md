@@ -726,36 +726,29 @@ After the completion button flashes, the operator removes the pallet and presses
 
 ###<span style="color:skyblue; font-weight:bold">DNStockHistory</span>
 * **REGIST_DATE**
-* **WORK_DAY**
+* **WORK_DAY**:
 * **INC_DEC_TYPE**: 2:Stock Decrease (Retrieval)
 * **JOB_TYPE**: 40:Inventory Check (AS/RS)
 * **STOCK_ID**: DNSTOCK.STOCK_ID
-* **AREA_NO**
-* **LOCATION_NO**
-* **AREA_TYPE**
-* **ITEM_CODE**
-* **ITEM_NAME**
-* **JAN**
-* **CASE_IF**
-* **BUNDLE_IF**
-* **ENTERING_QTY**
-* **BUNDLE_ENTERING_QTY**
-* **LOT_NO**
-* **NOTE**
-* **STORAGE_DAY**
-* **STORAGE_DATE**
-* **NEWEST_STORAGE_DATE**
-* **RETRIEVAL_DAY**
-* **INVENTORY_DAY**
-* **UPDATE_STOCK_QTY**
-* **INC_DEC_QTY**
-* **PALLET_ID**
-* **USER_ID**
-* **USER_NAME**
-* **TERMINAL_NO**
-* **TERMINAL_NAME**
-* **IP_ADDRESS**
-* **REGIST_PNAME**
+* **AREA_NO**:
+* **LOCATION_NO**:
+*  **MATERIAL_CODE**: DNSTOCK.MATERIAL_CODE
+*  **MATERIAL_NAME**: DMITEM.MATERIAL_NAME
+*  **MATERIAL_TYPE**: DMITEM.MATERIAL_TYPE
+*  **TEMPERING_PERIOD**: DNSTOCK.TEMPERING_PERIOD
+*  **TEMPERING_FLAG**: DNSTOCK.TEMPERING_FLAG
+*  **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE
+*  **QC_DURATION**: DNSTOCK.QC_DURATION
+*  **QC_CHECK_FLAG**: DNSTOCK_QC_CHECK_FLAG
+*  **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY
+*  **BCR_DATA**: DNPALLET.BCR_DATA
+*  **STORAGE_LOCATION_TO**: FGW1 / FGW2
+*  **STORAGE_LOCATION_TO**: QC01
+*  **TERMINAL_NO**: Login info
+*  **REGIST_DATE**: SYSTIMESTAMP
+*  **REGIST_PNAME**: ClassName
+*  **LAST_UPDATE_DATE**: SYSTIMESTAMP
+*  **LAST_UPDATE_PNAME**: QCSettingSCH
 
 
 
