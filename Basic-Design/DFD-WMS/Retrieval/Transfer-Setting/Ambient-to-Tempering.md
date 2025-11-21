@@ -16,7 +16,7 @@ P1[FROM STATION 9001 - 9014]-->P2[ID12]-->P3[RetrievalSender]-->P4[ID32]-->|SRM|
 ## Stage 2 - Deposit from station to SRM
 ::: mermaid
 flowchart LR 
-Cond1{Flow ?}-->|STV HP|P1[ID64]-->|7207-7214|P2[ID26]-->P3[StorageSender]-->P4[ID05]-->P5[ID25]-->|SRM 9007-9010|P6[ID64]
+Cond1{Flow ?}-->|STV HP|P1[ID64]-->|7207-7210|P2[ID26]-->P3[StorageSender]-->P4[ID05]-->P5[ID25]-->|SRM 9007-9010|P6[ID64]
 Cond1{Flow ?}-->|STV OP|P7[ID64]-->|7101-7106|P8[ID26]-->P9[StorageSender]-->P10[ID05]-->P11[ID25]-->|SRM 9001-9006|P6[ID64]
 
 P6[ID64]-->Cond2{Continue Deposit to ?}
