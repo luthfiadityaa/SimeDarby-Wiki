@@ -50,7 +50,6 @@ Cond1{Flow?}--> |Flow 2: Not through crane 7-10.
 | Action Name                                                                     |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN|TTSN|OPRD|INOUT| 
 |---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|-----|
 | ID63 [(1)](#ID63)                                                               |    |    |    |    |    |    |     |    |    |    |    | U  |    |    |     |
-
 | Retrieval for QC Start - Set(F2) [(1)](#Retrieval for QC Start --Set(F2))       | I  |    | S  | I  | S  |    |     | S  | S  |    | S  | S  | S  |    |     |
 | RetrievalSender[(3)](#Retrieval-Sender)                                         |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |     |  
 | ID12[(2)](#ID12)                                                                |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |     | 
