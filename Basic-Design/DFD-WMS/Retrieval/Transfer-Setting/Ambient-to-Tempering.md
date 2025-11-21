@@ -65,17 +65,17 @@ Cond1{Continue Deposit to ?}-->|SRM 9001-9006|P2[ID33]
 | ID33 at SRM Retrieval [(5)](#id33-at-srm-retrieval)            |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |
 | **Flow 1 - Storage from crane (9011-9014) through crane (9007-9010)**|      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 | ID64 at STV HP [(6)](#id64-at-stv-hp)                          |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
-| ID26 at 7207-7214[(7)](#id26-at-7207-7214)                     |   U  |   U  |      |   U  |      |   I  |      |      |      |      |      |      |      |      |
-| StorageSender at 7207-7214 [(8)](#StorageSender-at-7207-7214)  |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |
-| ID25 at 7207-7214 [(9)](#ID25-at-7207-7214)                    |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |
-| ID64 at SRM 9007-9010 [(12)](#id64-at-SRM-9007-9010)           |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |  
+| ID26 at 7207-7210[(7)](#id26-at-7207-7210)                     |   U  |   U  |      |   U  |      |   I  |      |      |      |      |      |      |      |      |
+| StorageSender at 7207-7210[(8)](#StorageSender-at-7207-7210)  |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |
+| ID25 at 7207-7210[(9)](#ID25-at-7207-7210)                    |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |
+| ID64 at SRM 9007-9010 [(10)](#id64-at-SRM-9007-9010)           |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |  
 | **Flow 2 - Direct storage from crane (9007-9010) to Tempering (9001-9006)**|      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| ID64 at STV OP [(6)](#id64-at-stv-op)                          |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
-| ID26 at 7101-7106[(7)](#id26-at-7101-7106)                     |   U  |   U  |      |   U  |      |   I  |      |      |      |      |      |      |      |      |
-| StorageSender at 7101-7106 [(8)](#StorageSender-at-7101-7106)  |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |
-| ID25 at 7101-7106 [(9)](#ID25-at-7101-7106)                    |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |
-| ID64 at SRM 9001-9006 [(12)](#id64-at-SRM-9001-9006)           |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |  
-| ID33 at 9001-9006 [(13)](#id33-at-9001-9006)                   |   U  |   U  |      |   D  |   U  |      |      |  U   |   I  |      |      |      |      |      |                  
+| ID64 at STV OP [(11)](#id64-at-stv-op)                          |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| ID26 at 7101-7106[(12)](#id26-at-7101-7106)                     |   U  |   U  |      |   U  |      |   I  |      |      |      |      |      |      |      |      |
+| StorageSender at 7101-7106 [(13)](#StorageSender-at-7101-7106)  |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |
+| ID25 at 7101-7106 [(14)](#ID25-at-7101-7106)                    |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |
+| ID64 at SRM 9001-9006 [(15)](#id64-at-SRM-9001-9006)           |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |  
+| ID33 at 9001-9006 [(16)](#id33-at-9001-9006)                   |   U  |   U  |      |   D  |   U  |      |      |  U   |   I  |      |      |      |      |      |                  
 
 
 
@@ -440,8 +440,8 @@ Continue the process **storage**, AGC will send ID26 to WareNavi and WareNavi w
 - **CMD_STATUS** : 1:Started 
 - **PRIORITY** : 2:Normal
 - **CARRY_FLAG** : 1: Storage
-- **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO ⟶ **(7101/7102/7103/7104/7105/7106/7207/7208/7209/7210/7211/7212/7213/7214)**
-- **DEST_STATION_NO** : Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ **(9001/9002/9003/9004/9005/9006/9007/9008/9009/9010/9011/9012/9013/9014)**
+- **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO ⟶ **(7207/7208/7209/7210)**
+- **DEST_STATION_NO** : Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ **(9007/9008/9009/9010)**
 - **END_STATION_NO** : DNCARRYINFO.DEST_STATION_NO
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : ClassName
@@ -479,7 +479,7 @@ storageSender--> |UPDATE| storageSender-update
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.asrs.transmission.StorageSender ` &nbsp;</span>
 
-After successful creation of arrival record in **ID26process**, Automatic Mode Change Sender is the following process where it will send **ID05** to **AGC**. To indicate **ID05** is sent to AGC, **DNCARRYINFO.CMD_STATUS** will be updated from **1:Started to 2:Waiting for Response**.
+After successful creation of arrival record in **ID26 Process**, Storage Sender is the following process where it will send **ID05** to **AGC**. To indicate **ID05** is sent to AGC, **DNCARRYINFO.CMD_STATUS** will be updated from **1:Started to 2:Waiting for Response**.
 
 ## <span style="color:skyblue; font-weight:bold">DMWAREHOUSE</span> 
 - **LAST_USED_STATION_NO** : Aisle Number where a reserved location belongs to
@@ -562,7 +562,7 @@ id64-->id64process
 id64process-.UPDATE.->id64-update
 :::
 
-Upon equipment **(SRM 9007-9008)** have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
+Upon equipment **(SRM 9007-9010)** have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
 
 ## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
 - **CMD_STATUS** : 4:Pickup completed
@@ -572,7 +572,7 @@ Upon equipment **(SRM 9007-9008)** have picked up the Pallet successfully, ID64 
 <br>
 <hr style="width:50%; margin-left: 0; border: 2px solid green;">
 
-**Continue Process with**: [Flow 2 : Direct storage from crane (9007-9010) to Tempering (9001-9006)](#flow-2-%3A--direct-storage-from-crane-(9007-9010)-to-tempering-(9001-9006))
+**Continue Process with**: [[Flow 2 : Direct storage from crane (9007-9010) to Tempering (9001-9006)](#flow-2-%3A--direct-storage-from-crane-(9007-9010)-to-tempering-(9001-9006))
 <hr style="width:50%; margin-left: 0; border: 2px solid green;">
 
 
@@ -662,8 +662,8 @@ Continue the process **storage**, AGC will send ID26 to WareNavi and WareNavi w
 - **CMD_STATUS** : 1:Started 
 - **PRIORITY** : 2:Normal
 - **CARRY_FLAG** : 1: Storage
-- **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO ⟶ **(7101/7102/7103/7104/7105/7106/7207/7208/7209/7210/7211/7212/7213/7214)**
-- **DEST_STATION_NO** : Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ **(9001/9002/9003/9004/9005/9006/9007/9008/9009/9010/9011/9012/9013/9014)**
+- **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO ⟶ **(7101/7102/7103/7104/7105/7106)**
+- **DEST_STATION_NO** : Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ **(9001/9002/9003/9004/9005/9006)**
 - **END_STATION_NO** : DNCARRYINFO.DEST_STATION_NO
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : ClassName
@@ -701,7 +701,7 @@ storageSender--> |UPDATE| storageSender-update
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.asrs.transmission.StorageSender ` &nbsp;</span>
 
-After successful creation of arrival record in **ID26process**, Automatic Mode Change Sender is the following process where it will send **ID05** to **AGC**. To indicate **ID05** is sent to AGC, **DNCARRYINFO.CMD_STATUS** will be updated from **1:Started to 2:Waiting for Response**.
+After successful creation of arrival record in **ID26 process**, Storage Sender is the following process where it will send **ID05** to **AGC**. To indicate **ID05** is sent to AGC, **DNCARRYINFO.CMD_STATUS** will be updated from **1:Started to 2:Waiting for Response**.
 
 ## <span style="color:skyblue; font-weight:bold">DMWAREHOUSE</span> 
 - **LAST_USED_STATION_NO** : Aisle Number where a reserved location belongs to
