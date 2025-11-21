@@ -555,7 +555,6 @@ some data will insert by DNSTOCK
 *   **LAST_UPDATE_PNAME**: Class name
 
 some data will insert by DNWORKINFO
-
   
 When the retrieved pallet reaches the QC station, Warenavi sends an ‘Internal Location Transfer’ message to the host system and initiates ‘QC Work‘.
 
