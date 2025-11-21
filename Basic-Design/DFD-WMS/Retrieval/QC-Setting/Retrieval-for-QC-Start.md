@@ -151,7 +151,7 @@ flowchart LR
 * **LAST_UPDATE_PNAME**: QCSettingSCH
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>  
-*   **JOB_TYPE**: 23:Unplanned Retrieval    
+*   **JOB_TYPE**: 40:Inventory Check (AS/RS)    
 *   **STATUS_FLAG**: 0:Not Started    
 *   **PLAN_UKEY**: Sequence Object    
 *   **STOCK_ID**: DNSTOCK.STOCKID    
