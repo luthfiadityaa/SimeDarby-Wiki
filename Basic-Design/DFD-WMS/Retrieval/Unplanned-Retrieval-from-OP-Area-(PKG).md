@@ -37,8 +37,8 @@ P1[FROM AISLE STATION - 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID12]
 | Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HSTS | OPRR | ITEM | STSN | TTSN |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
 | Inquiry Retrieval - Set (F2) [(1)](#inquiry-retrieval---set-(f2))|   S  |   I  |   I  |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   S  | 
-| ID12 [(2)](#id12)                                              |   U  |      |      |   I  |      |      |      |      |      |      |      |      |      |      |      |
 | Retrieval Sender [(3)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID12 [(2)](#id12)                                              |   U  |      |      |   I  |      |      |      |      |      |      |      |      |      |      |      |
 | ID32 [(4)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
 | ID33 [(5)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
 | ID64 [(6)](#id64)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
@@ -171,30 +171,6 @@ tableList-select --> |SELECT| className
 - **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 - **LAST_UPDATE_PNAME**: ClassName
 
-## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
-- **CARRY_KEY** : Sequence Object    
-- **PALLET_ID** : DNSTOCK.PALLET_ID    
-- **WORK_TYPE** : 23:Unplanned Retrieval    
-- **CMD_STATUS** : 1:Started    
-- **PRIORITY** : 2:Normal    
-- **RESTORING_FLAG** : 0 :Not Restore to Original Location  
-- **WORK_NO** : Sequence Object    
-- **RETRIEVAL_STATION_NO** : DNSTOCK.LOCATION_NO
-- **RETRIEVAL_DETAIL** : 1: Unit Retrieval
-- **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO    
-- **DEST_STATION_NO** : Based on **SOURCE_STATION_NO** where a reserved location belongs to ⟶ **(1201, 1202, 1203, 1204)**
-- **PRIORITY** : Value from screen **(Dropdown ⟶ 1:Urgent / 2: Normal)**
-- **CANCEL_REQUEST** : 0: Not Requested    
-- **SCHEDULE_NO** : Sequence Object    
-- **CARRY_FLAG** : 2: Retrieval
-- **CANCEL_REQUEST** : 0: Not requested
-- **AISLE_STATION_NO** : DMSHELF.PARENT_STATION_NO
-- **END_STATION_NO** : DNCARRYINFO.DEST_STATION_NO  
-- **REGIST_DATE** : SYSTIMESTAMP    
-- **REGIST_PNAME** : ClassName    
-- **LAST_UPDATE_DATE** : SYSTIMESTAMP    
-- **LAST_UPDATE_PNAME** : ClassName
-
 # Retrieval Sender
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
@@ -221,43 +197,6 @@ retrievalsender-input-->retrievalsender-.UPDATE.->retrievalsender-update
 :::
 
 The Retrieval operation at **Packaging Material zone (9002: Ambient)** will be retrieved to Station 1201, 1202, 1203, 1204 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
-
-## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
-- **CMD_STATUS** : 2:Waiting for response
-- **LAST_UPDATE_DATE** : SYSTIMESTAMP
-- **LAST_UPDATE_PNAME** : Class name
-
-## <span style="color:skyblue; font-weight:bold">DNPALLET</span>
-- **STATUS_FLAG** : 4:Being retrieved
-- **LAST_UPDATE_DATE** : SYSTIMESTAMP
-- **LAST_UPDATE_PNAME** : Class name
-
-#ID12
-
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.asrs.communication.id.send.As21Id12` &nbsp;</span>
-
-::: mermaid
-flowchart LR
-
-id12msg("
-ID12
-")
-
-id12-insert[("
-DNCARRYINFO
-")]
-
-id12-update[("
-DNPALLET
-")]
-
-retrievalstationoperator[RetrievalStationOperator]
-
-id12msg-->id12process
-id12process-->retrievalstationoperator--> |INSERT| id12-insert
-retrievalstationoperator--> |UPDATE| id12-update
-:::
 
 ## <span style="color:skyblue; font-weight:bold">DNPALLET</span>
 - **STATUS_FLAG** : 3:Reserved for Retrieval
@@ -287,6 +226,43 @@ retrievalstationoperator--> |UPDATE| id12-update
 - **REGIST_PNAME** : ClassName    
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 - **LAST_UPDATE_PNAME** : ClassName
+
+#ID12
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.asrs.communication.id.send.As21Id12` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id12msg("
+ID12
+")
+
+id12-insert[("
+DNCARRYINFO
+")]
+
+id12-update[("
+DNPALLET
+")]
+
+retrievalstationoperator[RetrievalStationOperator]
+
+id12msg-->id12process
+id12process-->retrievalstationoperator--> |INSERT| id12-insert
+retrievalstationoperator--> |UPDATE| id12-update
+:::
+
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+- **CMD_STATUS** : 2:Waiting for response
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
+
+## <span style="color:skyblue; font-weight:bold">DNPALLET</span>
+- **STATUS_FLAG** : 4:Being retrieved
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name
 
 # ID32
 
