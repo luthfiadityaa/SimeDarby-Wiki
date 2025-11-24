@@ -100,7 +100,7 @@ flowchart LR
 ####<span style="color:skyblue; font-weight:bold">DMStation</span>
 **CURRENT_MODE**: 2: Retrieval Mode
 
-# Retrieval for Return Stock - Set(F2)
+# Update QC Status - Set(F2)
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.QCSettingSCH &nbsp;</span>
 ![Picture1.png](/.attachments/Picture1-bdec4735-9094-418a-9a9f-09579d66436b.png)
   
