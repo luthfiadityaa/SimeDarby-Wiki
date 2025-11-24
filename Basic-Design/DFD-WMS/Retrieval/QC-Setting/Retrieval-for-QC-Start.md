@@ -718,14 +718,7 @@ retrievaloperator--> |UPDATE| id26-update
 id26-insert-->buttonclicked2 
 :::
 
-<span style="color:black; font-weight:bold; color:red">*The operator performs the operation according to the work display on the work terminal.</span>
-
 When the retrieved pallet reaches the QC station, Warenavi sends an ‘Internal Location Transfer’ message to the host system and initiates ‘QC Work‘. 
-
-
-
-
-the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. After that, AGC will sending ID 26 to the id26process, then update related records from DNPALLET, DNCARRYINFO, and DNSTOCK.
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ###<span style="color:skyblue; font-weight:bold">DNARRIVAL</span>
