@@ -84,7 +84,7 @@ flowchart LR
 <hr>
 
 ##<span style="color:skyblue; font-weight:bold">Storage Flag Condition</span>
-![image.png](/.attachments/image-ce857ad3-8f9d-4967-b554-217332bb058c.png)
+![image.png](/.attachments/image-db552ec6-fdf6-4fac-a11d-c741bbe387b8.png)
   
 *) If QC result requires more tempering, refer Re-QC.
 
