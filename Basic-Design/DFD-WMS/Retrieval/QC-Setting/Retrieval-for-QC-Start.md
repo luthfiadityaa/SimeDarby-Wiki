@@ -800,8 +800,8 @@ When the retrieved pallet reaches the QC station, Warenavi sends an ‘Internal 
 *   **RETRIEVAL_STATION_NO**: DNWORKINFO.RESULT_LOCATION_NO   
 *   **RETRIEVAL_DETAIL**: 1:Unit Retrieval   
 *   **PLAN_QTY**: DNWORKINFO.PLAN_QTY      
-*   **DOCK_NO**: DNWORKINFO.DOCK_NO
-*   **TRUCK_PLATE_NO**: DNWORKINFO.TRUCK_PLATE_NO 
+*   **STORAGE_LOCATION_FROM**: <span style="color:green; font-weight:bold">FGW1 or FGW2</span>
+*   **STORAGE_LOCATION_TO**: <span style="color:green; font-weight:bold">QC01</span>
 *   **USER_ID**: DNWORKINFO.USER_ID    
 *   **USER_NAME**: DCUSER.USER_NAME    
 *   **REGIST_DATE**: SYSTIMESTAMP    
