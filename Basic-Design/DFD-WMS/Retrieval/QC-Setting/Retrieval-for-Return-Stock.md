@@ -112,7 +112,7 @@ This section explains the validations for the whole proccess Retrieval for QC St
 - The station mode must be <span style="color:green; font-weight:bold">Retrieval mode</span>.
 - The Station Number is NOT under suspend. <span style="color:green; font-weight:bold">(DMStation.SUSPEND.OFF)</span>
 - The Station Number is available. <span style="color:green; font-weight:bold">(DMStation.STATUS.NORMAL and DMMachine.STATUS_FLAG.ACTIVE)</span>
-- Target pallet of Stock Status is <span style="color:green; font-weight:bold">UU</span>.
+- Target pallet of Stock Status is <span style="color:green; font-weight:bold">QI</span>.
 - Only the pallets with tempering flag <span style="color:green; font-weight:bold">Reached</span> are applicable for QC settings.
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
