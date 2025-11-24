@@ -110,9 +110,6 @@ flowchart LR
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: ClassName
   
-#QC Status Update Result
-- [QC Status Update Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/844/Internal-Location-Transfer-Result)
-
 <hr>
 
 #<span style="color:skyblue; font-weight:bold">User Story</span>
