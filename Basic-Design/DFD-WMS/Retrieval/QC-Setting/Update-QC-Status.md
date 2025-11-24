@@ -6,19 +6,7 @@
 flowchart LR
 
 P1[Select the Pallet Number 
-from Screen]-->P2[Update To QC Status]-->P21[ID12]-->P3[ID32]-->P4[ID33]-->Cond1{Flow?} 
-:::
-
-**Stage 2**
-::: mermaid
-flowchart LR
-
-Cond1{Flow?} 
-
-Cond1{Flow?}--> |Flow 1: Thorugh crane 7-10.
-9001, 9002, 9003, 9004, 9005, 9006, 9011, 9012, 9013, 9014.| P5[ID64]--> |7207-7210| P8[ID26]-->P9[Retrieval Sender]-->P10[ID25]--> |SRM| P11[ID64]--> |STV| P12[ID64]--> P7[ID68]
-Cond1{Flow?}--> |Flow 2: Not through crane 7-10.
-9007, 9008, 9009, 9010| P6[ID64]--> P7[ID68]-->P81[ID26]-->P13[To Station 1303]
+from Screen]-->P2[Update To QC Status]-->P21[QC Status Update Result]
 :::
 
 #<span style="color:skyblue; font-weight:bold">Update QC Status database flow</span>
@@ -48,22 +36,6 @@ Cond1{Flow?}--> |Flow 2: Not through crane 7-10.
 |---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|-----|
 | ID63 [(1)](#ID63)                                                               |    |    |    |    |    |    |     |    |    |    |    | U  |    |    |     |
 | Update QC Status - Set(F2) [(1)](#Update-QC-Status--Set(F2))                    | I  | I  | S  | I  | U  |    |     | S  | S  |    | S  | S  | S  |    |     |
-| RetrievalSender[(3)](#Retrieval-Sender)                                         | U  |    | U  | U  |    |    |     |    |    |    |    |    |    |    |     |  
-| ID12[(2)](#ID12)                                                                |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |     | 
-| ID32[(4)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |     |    
-| ID33[(5)](#ID33)                                                                |    |    |    | U  |    |    |     |    | U  |    |    |    |    |    |     |     
-| **Flow 1: Thorugh crane 7-10**                                                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
-| ID64[(6)](#ID64-at-STV-from-(9001-9006-&-9011-9014))                            |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |     |
-| ID26[(7)](#ID26-at-7207-7210)                                                   |    |    | U  | U  |    |    | I   |    |    |    |    |    |    |    |     |
-| Retrieval Sender[(8)](#Retrieval-Sender-at-7207-7210)                           |    |    |    | U  |    |    | U   |    |    |    |    |    |    |    |     |
-| ID25[(9)](#ID25-at-7207-7210)                                                   |    |    |    | U  |    |    | D   |    |    |    |    |    |    |    |     |
-| ID64[(10)](#ID64-at-SRM-from-7207-7210)                                         |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |     |
-| ID64[(11)](#ID64-at-STV-from-9007-910)                                          |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |     |
-| **Flow 2: Not through crane 7-10**                                              |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
-| ID64[(6)](#ID64-at-STV-from-9001-9014)                                          |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |     |
-| **Last Process:**                                                               |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
-| ID68[(7)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |     |
-| ID26[(8)](#ID26)                                                                | U  | U  | U  | U  |    | I  |  I  |    | U  | I  |    |    |    |    | I   | 
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
 | Internal Location Transfer Result[(9)](#Internal-Location-Transfer-Result)      |    |    |    |    |    | U  |     |    |    |    |    |    |    |    |     |
  
