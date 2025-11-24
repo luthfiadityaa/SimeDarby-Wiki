@@ -39,7 +39,7 @@ from Screen]-->P2[Extend Tempering Period]
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.QCSettingSCH &nbsp;</span>
 ![Picture1.png](/.attachments/Picture1-d36a622b-7f90-4076-8fb0-a10e85d67eb4.png)
   
-This screen is mainly used when it is decided to update QC Status of stock after QC operation.
+ This screen is mainly used when it is decided to extend the tempering period of stock after QC operation.
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
 This section explains the validations for the whole process QC Status Update
