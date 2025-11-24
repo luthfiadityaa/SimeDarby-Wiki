@@ -66,16 +66,17 @@ Cond1{Continue Deposit to ?}-->|SRM 9001-9006|P2[ID33]
 | **Flow 1 - Storage from crane (9011-9014) through crane (9007-9010)**|      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 | ID64 at STV HP [(6)](#id64-at-stv-hp)                          |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
 | ID26 at 7207-7210[(7)](#id26-at-7207-7210)                     |   U  |   U  |      |   U  |      |   I  |      |      |      |      |      |      |      |      |
-| StorageSender at 7207-7210[(8)](#StorageSender-at-7207-7210)  |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |
-| ID25 at 7207-7210[(9)](#ID25-at-7207-7210)                    |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |
-| ID64 at SRM 9007-9010 [(10)](#id64-at-SRM-9007-9010)           |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |  
+| StorageSender at 7207-7210[(8)](#StorageSender-at-7207-7210)   |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |
+| ID25 at 7207-7210[(9)](#ID25-at-7207-7210)                     |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |
+| ID64 at SRM 9007-9010 [(10)](#id64-at-SRM-9007-9010)           |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| [Continue to Flow 2](#flow-2-%3A--direct-storage-from-crane-(9007-9010)-to-tempering-(9001-9006))|      |      |      |      |      |      |      |      |      |      |      |      |      |      |  
 | **Flow 2 - Direct storage from crane (9007-9010) to Tempering (9001-9006)**|      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 | ID64 at STV OP [(11)](#id64-at-stv-op)                          |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
 | ID26 at 7101-7106[(12)](#id26-at-7101-7106)                     |   U  |   U  |      |   U  |      |   I  |      |      |      |      |      |      |      |      |
 | StorageSender at 7101-7106 [(13)](#StorageSender-at-7101-7106)  |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |
 | ID25 at 7101-7106 [(14)](#ID25-at-7101-7106)                    |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |
-| ID64 at SRM 9001-9006 [(15)](#id64-at-SRM-9001-9006)           |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |  
-| ID33 at 9001-9006 [(16)](#id33-at-9001-9006)                   |   U  |   U  |      |   D  |   U  |      |      |  U   |   I  |      |      |      |      |      |                  
+| ID64 at SRM 9001-9006 [(15)](#id64-at-SRM-9001-9006)            |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |  
+| ID33 at 9001-9006 [(16)](#id33-at-9001-9006)                    |   U  |   U  |      |   D  |   U  |      |      |  U   |   I  |      |      |      |      |      |                  
 
 
 
