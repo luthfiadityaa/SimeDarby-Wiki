@@ -74,7 +74,7 @@ style P25 fill:#00cc66,stroke:#006633,color:#ffffff
 | Action Name                                                      |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN| 
 |------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|
 | ID63 [(1)](#ID63)                                                |    |    |    |    |    |    |     |    |    |    |    | U  |   
-| QC Work - Retrieval for Return Stock - Completion and Restorage [(2)](#QC-Work---Retrieval-for-QC-Start---Set(F2)) | U  | U  |    |    | U  |    |     |    |    |    | S  |    |
+| QC Work - Retrieval for Return Stock - Completion and Restorage [(2)](#QC-Work---Retrieval-for-Return-Stock---Set(F2)) | U  | U  |    |    | U  |    |     |    |    |    | S  |    |
 | ID26[(3)](#ID26-at-1303)                                                                | U  | U  | U  | U  |    | I  |  I  |    | U  | I  |    |    |    |    | I   |    
 | StorageSender[(4)](#Storage-Sender-at-1301-&-1302)               | U  |    | U  | U  | U  |    | U   | U  | U  |    |    |    |    
 | ID25[(5)](#ID25-at-1303)                                  |    |    |    | U  |    |    | D   |    |    |    |    |    |     
