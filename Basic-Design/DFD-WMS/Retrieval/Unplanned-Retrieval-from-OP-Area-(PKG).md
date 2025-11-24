@@ -232,6 +232,10 @@ The Retrieval operation at **Packaging Material zone (9002: Ambient)** will be r
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 - **LAST_UPDATE_PNAME** : ClassName
 
+####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>   
+* **STATUS_FLAG**: 1:Working  
+* **SYSTEM_CONN_KEY**: DNCARRYINFO.CARRY_KEY
+
 #ID12
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
