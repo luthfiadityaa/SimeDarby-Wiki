@@ -85,13 +85,13 @@ P14[ID33]-->P1[TO AISLE STATION - 9001,
 | ID64[(10)](#ID64-at-STV-From-7107-7110)                          |    |    |    | U  |    |    |     |    |    |    |    |    |
 | ID64[(11)](#ID64-at-SRM-From-7107-7110)                          |    |    |    | U  |    |    |     |    |    |    |    |    |
 | ID26[(12)](#ID26-at-7211-7214)                                   |    |    | U  | U  |    |    | I   |    |    |    |    |    |       
-| StorageSender[(15)](#Storage-Sender-at-7211-7214)                |    |    |    | U  |    |    | U   |    |    |    |    |    |
-| ID25[(13)](#ID25-at-7211-7214)                                   |    |    |    | U  |    |    | D   |    |    |    |    |    |
-| ID64[(14)](#ID64-at-SRM-From-7211-7214)                         |    |    |    | U  |    |    |     |    |    |    |    |    |
+| StorageSender[(13)](#Storage-Sender-at-7211-7214)                |    |    |    | U  |    |    | U   |    |    |    |    |    |
+| ID25[(14)](#ID25-at-7211-7214)                                   |    |    |    | U  |    |    | D   |    |    |    |    |    |
+| ID64[(15)](#ID64-at-SRM-From-7211-7214)                         |    |    |    | U  |    |    |     |    |    |    |    |    |
 | **Last Process**                                                 |    |    |    |    |    |    |     |    |    |    |    |    |    
-| ID33[(15)](#)                                                    | U  | I  | U  | D  | U  | I  |     |    | U  | I  |    |    |
+| ID33[(16)](#)                                                    | U  | I  | U  | D  | U  | I  |     |    | U  | I  |    |    |
 | **Host Communication**                                           |    |    |    |    |    |    |     |    |    |    |    |    |
-| Internal Location Transfer Result[(9)](#Internal-Location-Transfer-Result)      |    |    |    |    |    | U  |     |    |    |    |    |    |    |    |     |
+| Internal Location Transfer Result[(17)](#Internal-Location-Transfer-Result)      |    |    |    |    |    | U  |     |    |    |    |    |    |    |    |     |
 
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
 ##ID63
