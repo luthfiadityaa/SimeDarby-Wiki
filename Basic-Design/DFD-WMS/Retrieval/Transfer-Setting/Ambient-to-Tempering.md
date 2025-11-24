@@ -573,7 +573,7 @@ Upon equipment **(SRM 9007-9010)** have picked up the Pallet successfully, ID64 
 <br>
 <hr style="width:50%; margin-left: 0; border: 2px solid green;">
 
-**Continue Process with**: [[Flow 2 : Direct storage from crane (9007-9010) to Tempering (9001-9006)](#flow-2-%3A--direct-storage-from-crane-(9007-9010)-to-tempering-(9001-9006))
+**Continue Process with**: [Flow 2 : Direct storage from crane (9007-9010) to Tempering (9001-9006)](#flow-2-%3A--direct-storage-from-crane-(9007-9010)-to-tempering-(9001-9006))
 <hr style="width:50%; margin-left: 0; border: 2px solid green;">
 
 
