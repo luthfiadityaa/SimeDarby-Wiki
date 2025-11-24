@@ -9,7 +9,7 @@ flowchart LR
   
 P1[From Station 1303]-->P2[ID26]-->P3[StorageSender]-->P4[ID25]-->Cond1{Flow?} 
 
-click P2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/900/Retrieval-for-QC-Start?anchor=id26" "Go to ID26"
+click P2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/902/Retrieval-for-Return-Stock?anchor=id26" "Go to ID26"
 style P2 fill:#00cc66,stroke:#006633,color:#ffffff
 :::
 
