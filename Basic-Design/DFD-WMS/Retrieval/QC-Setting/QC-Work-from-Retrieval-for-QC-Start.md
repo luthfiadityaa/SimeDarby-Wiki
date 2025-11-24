@@ -184,6 +184,20 @@ flowchart LR
 #ID26 at 1303
 This is a continuation of [ID26](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/900/Retrieval-for-QC-Start?anchor=id26). 
 
+::: mermaid
+flowchart LR
+    input[
+        After QC Work done, Operators will pressed completion button.
+    ]
+
+    className[StorageSender]
+
+    input-->className
+
+    classDef leftAlign text-align:left;
+    class input leftAlign;
+:::
+
 #Storage Sender at 1303
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
 
