@@ -184,7 +184,7 @@ flowchart LR
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
-*   **STOCK_QTY**: DNSTOCK.STOCK_QTY - **<span style="color"red">Value from screen (Take Out Qty)</span>**     
+*   **STOCK_QTY**: DNSTOCK.STOCK_QTY - **<span style="color:red">Value from screen (Take Out Qty)</span>**     
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: Class name
 
