@@ -129,6 +129,7 @@ This screen is mainly used when the pallet arrives at QC Station and pick carton
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
 This section explains the validations for the whole proccess QC Work - Retrieval for QC Start
+- **Take Out Qty** not more higher that DNSTOCK.STOCK_QTY
 
 ::: mermaid
 flowchart LR
@@ -184,7 +185,7 @@ flowchart LR
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
-*   **STOCK_QTY**: DNSTOCK.STOCK_QTY - **<span style="color:red">Value from screen (Take Out Qty)</span>**     
+*   **STOCK_QTY**: **<span style="color:green">DNSTOCK.STOCK_QTY</span>** - **<span style="color:red">Value from screen (Take Out Qty)</span>**     
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: Class name
 
