@@ -31,7 +31,6 @@ Cond1{Continue Deposit to ?}-->|SRM 9001-9006|P2[ID33]
 
 :::
 
-
 #<span style="color:skyblue; font-weight:bold">Transfer Setting from Ambient to Tempering</span>
 ## Abbreviation
 - **PLLT** : DNPALLET          
@@ -85,7 +84,7 @@ Cond1{Continue Deposit to ?}-->|SRM 9001-9006|P2[ID33]
 `jp.co.daifuku.wms.web.display.retrieval.transfersetting.TransferSettingSCH` &nbsp;</span>
 
 ![image.png](/.attachments/image-e54f05df-ae09-4220-9c06-4587ada90f7d.png)
-This screen is mainly used to move pallets from tempering to ambient.
+This screen is mainly used to move pallets from Ambient to Tempering.
 
 ## <span style="color:skyblue; font-weight:bold">Validations</span>
 This section explains the validations for the whole process Transfer Setting
