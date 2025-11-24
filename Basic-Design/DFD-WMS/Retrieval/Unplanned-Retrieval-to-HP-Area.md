@@ -229,8 +229,12 @@ DNCARRYINFO
 ")]
 
 retrievalsender-update[("
-DNCARRYINFO
 DNPALLET
+DNWORKINFO
+")]
+
+retrievalsender-insert[("
+DNCARRYINFO
 ")]
 
 id12msg("
