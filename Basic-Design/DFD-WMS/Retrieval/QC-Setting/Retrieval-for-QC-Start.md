@@ -687,7 +687,7 @@ Internal Location Transfer Result
 "]
 
 buttonclicked3["
-QC Work 
+Go to the next process -> QC WORK 
 "]
 
 id26msg("
