@@ -107,7 +107,7 @@ flowchart LR
 This screen is mainly used when the cartons needs to be returned to the pallet after QC operation.
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
-This section explains the validations for the whole proccess Retrieval for QC Start
+This section explains the validations for the whole proccess Retrieval for Return Stock
 - AGC is online. <span style="color:green; font-weight:bold">(DMGroupController.STATUS_FLAG.ONLINE)</span>
 - The station mode must be <span style="color:green; font-weight:bold">Retrieval mode</span>.
 - The Station Number is NOT under suspend. <span style="color:green; font-weight:bold">(DMStation.SUSPEND.OFF)</span>
