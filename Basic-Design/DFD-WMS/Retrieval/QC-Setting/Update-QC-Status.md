@@ -34,9 +34,9 @@ from Screen]-->P2[Update To QC Status]-->P21[QC Status Update Result]
 
 | Action Name                                                                     |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN|TTSN|OPRD|INOUT| 
 |---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|-----|
-| Update QC Status - Set(F2) [(1)](#Update-QC-Status--Set(F2))                    |    |    |    |    | U  |    |     |    |    | U  |    |    |    |    |     |
+| Update QC Status - Set(F2) [(1)](#Update-QC-Status--Set(F2))                    |    |    |    |    | U  |    |     |    |    | I  |    |    |    |    |     |
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
-| QC Status Update Result[(2)](#QC-Status-Update-Result)                          |    |    |    |    |    |   |     |    |    |    |    |    |    |    |     |
+| QC Status Update Result[(2)](#QC-Status-Update-Result)                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
 
 # Update QC Status - Set(F2)
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.QCSettingSCH &nbsp;</span>
