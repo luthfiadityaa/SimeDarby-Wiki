@@ -672,6 +672,27 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
+##ID45
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.id.send.As21Id45&nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+id45msg("
+ID 45
+")
+
+buttonlight["
+Station Completion button
+Light Up
+"]
+
+id45msg--> As21Id45
+As21Id45 --> buttonlight
+:::
+
+Sending of ID45 is sent to AGC when user clicked on **Complete** at Work Display where the Completion button at Control Box will start blinking. If user confirmed re-storing of pallet is safe to proceed, user can click on the blinking Completion button to proceed with transporting of pallet to ASRS.
+
 #ID26
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.control.Id26Process&nbsp;</span>
 
