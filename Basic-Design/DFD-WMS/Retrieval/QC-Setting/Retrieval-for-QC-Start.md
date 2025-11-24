@@ -234,11 +234,11 @@ DNCARRYINFO
 
 retrievalsender-update[("
 DNPALLET
+DNWORKINFO
 ")]
 
 retrievalsender-insert[("
 DNCARRYINFO
-DNWORKINFO
 ")]
 
 id12msg("
