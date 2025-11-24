@@ -40,9 +40,9 @@ from Screen]-->P2[Update To QC Status]-->P21[QC Status Update Result]
 
 # Update QC Status - Set(F2)
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.QCSettingSCH &nbsp;</span>
-![Picture1.png](/.attachments/Picture1-bdec4735-9094-418a-9a9f-09579d66436b.png)
+![Picture1.png](/.attachments/Picture1-d36a622b-7f90-4076-8fb0-a10e85d67eb4.png)
   
-This screen is mainly used when the cartons needs to be returned to the pallet after QC operation.
+This screen is mainly used when it is decided to update QC Status of stock after QC operation.
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
 This section explains the validations for the whole process QC Status Update
