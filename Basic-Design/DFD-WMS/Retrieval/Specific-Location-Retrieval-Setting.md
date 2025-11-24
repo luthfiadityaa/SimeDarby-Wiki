@@ -146,7 +146,7 @@ flowchart LR
 
  ![==image_0==.jpg](/.attachments/==image_0==-0f7ad1cc-fe5d-4f53-9b15-1c9fecf90cd0.jpg) 
   
-The Specific Location Retrieval Setting screen uses for manually set the retrieval work through specific location(Unit Retrieval or Only Confirmation).
+The Specific Location Retrieval Setting screen uses for manually set the retrieval work through specific location **(Unit Retrieval or Only Confirmation)**.
 This screen mainly uses when there are some troubles with Host System Linkage(irregular cases) or when manual operation is necessary. Especially for retrieving Error Stock.
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
