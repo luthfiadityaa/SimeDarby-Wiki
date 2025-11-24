@@ -70,15 +70,6 @@ flowchart LR
         DNSTOCK
     ")]
 
-     tableList-select[("
-        DNSTOCK
-        DMWAREHOUSE
-        DMSHELF
-        DNPALLET
-        DMITEM
-        DMSTATION
-    ")]
-
     input-->className[QCSettingSCH]
 
     tableList-select --> |SELECT| className
