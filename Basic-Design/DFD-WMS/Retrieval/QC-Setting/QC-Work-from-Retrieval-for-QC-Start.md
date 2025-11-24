@@ -200,8 +200,8 @@ flowchart LR
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
 * **SETTING_TYPE**: 0:Retrieval for QC Start
-* **STORAGE_LOCATION_FROM**:
-* **STORAGE_LOCATION_TO**:
+* **STORAGE_LOCATION_FROM**: **<span style="color:green">QC01</span>
+* **STORAGE_LOCATION_TO**: <span style="color:green; font-weight:bold">FGW1 or FGW2</span>
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 * **LAST_UPDATE_PNAME**: Class name
 
