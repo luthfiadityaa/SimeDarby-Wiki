@@ -77,7 +77,7 @@ flowchart LR
     input-->className[QCSettingSCH]
 
     className --> |UPDATE| tableList-update
-    className --> |INSERT| tableList-update
+    className --> |INSERT| tableList-insert
 
     classDef leftAlign text-align:left;
     class input leftAlign;
