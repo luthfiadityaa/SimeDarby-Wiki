@@ -62,6 +62,7 @@ flowchart LR
         Storage Date/Time
         Tempering Period
         QC Duration
+        Extend to Hours
     ]
 
      tableList-update[("
