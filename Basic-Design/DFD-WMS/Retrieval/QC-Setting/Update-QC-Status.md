@@ -90,7 +90,7 @@ flowchart LR
 * **LAST_UPDATE_PNAME**: QCSettingSCH
 
 ###<span style="color:skyblue; font-weight:bold">DNStockHistory</span>
-* **JOB_TYPE**: 40:Inventory Check (AS/RS)
+* **JOB_TYPE**: <span style="color:green; font-weight:bold">91:QC Status Update</span>
 * **TERMINAL_NO**: Login info
 * **REGIST_DATE**: SYSTIMESTAMP
 * **REGIST_PNAME**: ClassName
