@@ -306,7 +306,6 @@ inoutstationoperator[InOutStaionOperator]
 
 id26msg-->inoutstationoperator
 inoutstationoperator--> |INSERT| id26-insert
-inoutstationoperator--> |UPDATE| id26-update
 :::
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
