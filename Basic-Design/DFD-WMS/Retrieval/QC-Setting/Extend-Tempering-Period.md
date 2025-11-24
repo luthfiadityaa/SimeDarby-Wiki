@@ -86,7 +86,7 @@ flowchart LR
 ##<span style="color:skyblue; font-weight:bold">Storage Flag Condition</span>
 ![image.png](/.attachments/image-db552ec6-fdf6-4fac-a11d-c741bbe387b8.png)
   
-*) If QC result requires more tempering, refer Re-QC.
+*) After setting, **<span style="color:skyblue; font-weight:bold">Tempering Flag</span>** will be changed from `Reached` to `Not Reached`.
 
 <hr>
 
