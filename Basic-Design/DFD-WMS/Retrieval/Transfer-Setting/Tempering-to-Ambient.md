@@ -446,8 +446,6 @@ After successful creation of arrival record in **ID26process**, Automatic Mode C
 
 ## <span style="color:skyblue; font-weight:bold">DMWAREHOUSE</span> 
 - **LAST_USED_STATION_NO** : Aisle Number where a reserved location belongs to
-- **LAST_USED_STATION_NO_PM** : Aisle Number where a reserved location belongs to
-- **LAST_USED_STATION_NO_EP** : Aisle Number where a reserved location belongs to
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name 
 
