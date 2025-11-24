@@ -92,12 +92,13 @@ flowchart LR
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
+* **QC_DURATION**: DNSTOCK.QC_DURATION
 * **TEMPERING_FLAG** : <span style="color:yellow; font-weight:bold; background-color:grey">0: Not Reached</span> 
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 * **LAST_UPDATE_PNAME**: QCSettingSCH
 
 ####<span style="color:skyblue; font-weight:bold">DNStockHistory</span>
-* **TEMPERING_FLAG** : <span style="color:yellow; font-weight:bold; background-color:grey">0: Not Reached</span> 
+* **TEMPERING_FLAG**: <span style="color:yellow; font-weight:bold; background-color:grey">0: Not Reached</span> 
 * **QC_DURATION**: DNSTOCK.QC_DURATION
 * **TERMINAL_NO**: Login info
 * **REGIST_DATE**: SYSTIMESTAMP
