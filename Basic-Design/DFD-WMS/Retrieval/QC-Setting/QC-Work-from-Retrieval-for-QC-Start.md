@@ -137,7 +137,7 @@ flowchart LR
         Area
         QC Station
         Work #
-        Setting Type               
+        Setting Type
         Pallet #
         Material Code
         Batch #
