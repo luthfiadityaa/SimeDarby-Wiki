@@ -302,10 +302,6 @@ DNCARRYINFO
 DNPALLET
 ")]
 
-id26-update[("
-DNPALLET
-")]
-
 inoutstationoperator[InOutStaionOperator]
 
 id26msg-->inoutstationoperator
