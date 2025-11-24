@@ -93,7 +93,7 @@ flowchart LR
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
-* **QC_DURATION**: DNSTOCK.QC_DURATION + Value from screen
+* **QC_DURATION**: DNSTOCK.QC_DURATION + Value from screen (Extend to Hours)
 * **TEMPERING_FLAG** : <span style="color:yellow; font-weight:bold; background-color:grey">0: Not Reached</span> 
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 * **LAST_UPDATE_PNAME**: QCSettingSCH
