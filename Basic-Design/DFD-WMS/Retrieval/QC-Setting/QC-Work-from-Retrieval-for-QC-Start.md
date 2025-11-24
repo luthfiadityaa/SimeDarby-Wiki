@@ -42,7 +42,7 @@ P14[ID33]-->P1[TO AISLE STATION - 9001,
 
 P14[ID33]-->P25[Internal Location Transfer Result]
 
-click P25 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/900/Retrieval-for-QC-Start?anchor=id26" "Go to ID26"
+click P25 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/844/Internal-Location-Transfer-Result" "Go to ID26"
 style P5 fill:#00cc66,stroke:#006633,color:#ffffff
 
 :::
