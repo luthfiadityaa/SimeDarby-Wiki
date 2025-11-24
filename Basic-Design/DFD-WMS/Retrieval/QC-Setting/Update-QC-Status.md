@@ -45,6 +45,7 @@ This screen is mainly used when it is decided to update QC Status of stock after
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
 This section explains the validations for the whole process QC Status Update
+- Once the QC status is updated from **<span style="color:green; font-weight:bold">QI→UU/BS</span>, it cannot turn back to **<span style="color:green; font-weight:bold">QI</span>**. **<span style="color:green; font-weight:bold">UU</span>** can be turned to **<span style="color:green; font-weight:bold">BS</span>** and vice-versa, but not to **<span style="color:green; font-weight:bold">QI</span>**.
 
 ::: mermaid
 flowchart LR
