@@ -91,6 +91,8 @@ flowchart LR
 
 ###<span style="color:skyblue; font-weight:bold">DNStockHistory</span>
 * **JOB_TYPE**: <span style="color:green; font-weight:bold">91:QC Status Update</span>
+* **STOCK_STATUS_FROM**: DNSTOCK.STOCK_STATUS
+* **STOCK_STATUS_TO**: Value from Screen -> (QI / BS)
 * **TERMINAL_NO**: Login info
 * **REGIST_DATE**: SYSTIMESTAMP
 * **REGIST_PNAME**: ClassName
