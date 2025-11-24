@@ -716,7 +716,7 @@ retrievaloperator--> |UPDATE| id26-update
 
 <span style="color:black; font-weight:bold; color:red">*The operator performs the operation according to the work display on the work terminal.</span>
 
-After the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. After that, AGC will sending ID 26 to the id26process, then update related records from DNPALLET, DNCARRYINFO, and DNSTOCK.
+After Pallet arrived the QC Work will perform. the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. After that, AGC will sending ID 26 to the id26process, then update related records from DNPALLET, DNCARRYINFO, and DNSTOCK.
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ###<span style="color:skyblue; font-weight:bold">DNARRIVAL</span>
@@ -849,8 +849,6 @@ After the completion button flashes, the operator removes the pallet and presses
 *   **REGIST_PNAME**: Class name
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP
 *   **LAST_UPDATE_PNAME**: Class name
-
-some data will insert by DNWORKINFO
   
 When the retrieved pallet reaches the QC station, Warenavi sends an ‘Internal Location Transfer’ message to the host system and initiates ‘QC Work‘.
 
