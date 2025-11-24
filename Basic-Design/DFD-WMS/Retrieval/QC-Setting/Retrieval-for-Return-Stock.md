@@ -864,7 +864,7 @@ When the retrieved pallet reaches the QC station, Warenavi sends an ‘Internal 
 - [Internal Location Transfer Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/844/Internal-Location-Transfer-Result)
 
 #QC Work from Retrieval for Return Stock
-- [QC Work from Retrieval for Return Stock](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/961/QC-Work-from-Retrieval-for-QC-Start)
+- [QC Work from Retrieval for Return Stock](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/962/QC-Work-from-Retrieval-for-Return-Stock)
 
 <hr>
 
