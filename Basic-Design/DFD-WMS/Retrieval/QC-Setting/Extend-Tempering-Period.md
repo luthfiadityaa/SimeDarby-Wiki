@@ -98,7 +98,7 @@ flowchart LR
 
 ####<span style="color:skyblue; font-weight:bold">DNStockHistory</span>
 * **TEMPERING_FLAG** : <span style="color:yellow; font-weight:bold; background-color:grey">0: Not Reached</span> 
-* **QC_CHECK_FLAG**: **<span style="color:green; font-weight:bold">Done</span>**
+* **QC_DURATION**: **<span style="color:green; font-weight:bold">Done</span>**
 * **TERMINAL_NO**: Login info
 * **REGIST_DATE**: SYSTIMESTAMP
 * **REGIST_PNAME**: ClassName
