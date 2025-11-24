@@ -183,7 +183,7 @@ flowchart LR
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
-####<span style="color:skyblue; font-weight:bold">Stock</span>
+####<span style="color:skyblue; font-weight:bold">DNStock</span>
 
 #ID26 at 1303
 This is a continuation of [ID26 at Retrieval for QC Start](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/900/Retrieval-for-QC-Start?anchor=id26). 
