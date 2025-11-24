@@ -46,7 +46,7 @@ P1[FROM AISLE STATION - 9001,
 | ID63 [(1)](#ID63)                                                               |    |    |    |    |    |    |     |    |    |    |    | U  |    |    |    |
 | **Directly For 1205,1206,1207,1208,1209**                                       |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
 | Inquiry Retrieval Setting - Set(F2) [(1)](#Inquiry-Retrieval-Setting---Set(F2)) | I  | I   | S  |    | S  |    |     | S  | S  |    | S  | S  | S  |    |    |
-| RetrievalSender[(2)](#Retrieval-Sender)                                         |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |    | 
+| RetrievalSender[(2)](#Retrieval-Sender)                                         |    |    | U  | I  |    |    |     |    |    |    |    |    |    |    |    | 
 | ID12[(3)](#ID12)                                                                |    |    | U  | I  |    |    |     |    |    |    |    |    |    |    |    |   
 | ID32[(4)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |    
 | ID33[(5)](#ID33)                                                                |    |    |    | U  |    |    |     |    | U  |    |    |    |    |    |    |     
