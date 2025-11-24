@@ -102,8 +102,7 @@ flowchart LR
 
 # Retrieval for Return Stock - Set(F2)
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.QCSettingSCH &nbsp;</span>
-![Picture1.png](/.attachments/Picture1-37499104-236d-4dcc-9964-59b0f489bb55.png) 
-
+![Picture1.png](/.attachments/Picture1-bdec4735-9094-418a-9a9f-09579d66436b.png)
 This screen is mainly used when the pallet needs to be inspected.
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
