@@ -148,6 +148,7 @@ flowchart LR
         Qty crtn/PL
         UOM
         Tempering Period
+        Storage Location
         Expiry Days
     ]
 
