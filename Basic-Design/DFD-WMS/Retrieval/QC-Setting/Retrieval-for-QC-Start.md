@@ -299,6 +299,7 @@ ID12
 
 id26-insert[("
 DNCARRYINFO
+DNPALLET
 ")]
 
 id26-update[("
