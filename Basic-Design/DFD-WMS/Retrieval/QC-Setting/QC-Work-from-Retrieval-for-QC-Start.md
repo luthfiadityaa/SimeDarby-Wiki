@@ -188,6 +188,10 @@ flowchart LR
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: Class name
 
+####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
+
+####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
+
 #ID26 at 1303
 This is a continuation of [ID26 at Retrieval for QC Start](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/900/Retrieval-for-QC-Start?anchor=id26). 
 
