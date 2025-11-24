@@ -100,7 +100,7 @@ flowchart LR
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 * **LAST_UPDATE_PNAME**: QCSettingSCH
 
-####or:skyblue; font-weight:bold">DNStockHistory</span>
+####<span style="color:skyblue; font-weight:bold">DNStockHistory</span>
 * **JOB_TYPE**: <span style="color:green; font-weight:bold">91:QC Status Update</span>
 * **STOCK_STATUS_FROM**: DNSTOCK.STOCK_STATUS
 * **STOCK_STATUS_TO**: Value from Screen → **<span style="color:green; font-weight:bold">QI: Quality Inspection or BS:Block Stock</span>**
