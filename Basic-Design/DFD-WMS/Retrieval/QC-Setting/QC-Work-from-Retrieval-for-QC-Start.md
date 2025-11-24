@@ -9,7 +9,6 @@ flowchart LR
   
 P1[From Station 1303]-->P2[ID26]-->P3[StorageSender]-->P4[ID25]-->Cond1{Flow?} 
 
-
 click P2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/900/Retrieval-for-QC-Start?anchor=id26" "Go to ID26"
 style P2 fill:#00cc66,stroke:#006633,color:#ffffff
 :::
@@ -40,6 +39,12 @@ P14[ID33]-->P1[TO AISLE STATION - 9001,
 9006, 9007, 9008, 9009, 
 9010, 9011, 9012, 9013, 
 9014]
+
+P14[ID33]-->P25[Internal Location Transfer Result]
+
+click P25 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/900/Retrieval-for-QC-Start?anchor=id26" "Go to ID26"
+style P5 fill:#00cc66,stroke:#006633,color:#ffffff
+
 :::
 
 #<span style="color:skyblue; font-weight:bold">QC Work - Retrieval for QC Start database flow</span>
