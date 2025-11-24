@@ -70,6 +70,10 @@ flowchart LR
         DNSTOCK
     ")]
 
+     tableList-insert[("
+        DNSTOCKHISTORY
+    ")]
+
     input-->className[QCSettingSCH]
 
     tableList-select --> |SELECT| className
