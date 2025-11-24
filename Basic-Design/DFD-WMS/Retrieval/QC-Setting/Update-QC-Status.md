@@ -45,14 +45,7 @@ from Screen]-->P2[Update To QC Status]-->P21[QC Status Update Result]
 This screen is mainly used when the cartons needs to be returned to the pallet after QC operation.
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
-This section explains the validations for the whole proccess Retrieval for Return Stock
-- AGC is online. <span style="color:green; font-weight:bold">(DMGroupController.STATUS_FLAG.ONLINE)</span>
-- The station mode must be <span style="color:green; font-weight:bold">Retrieval mode</span>.
-- The Station Number is NOT under suspend. <span style="color:green; font-weight:bold">(DMStation.SUSPEND.OFF)</span>
-- The Station Number is available. <span style="color:green; font-weight:bold">(DMStation.STATUS.NORMAL and DMMachine.STATUS_FLAG.ACTIVE)</span>
-- Target pallet of Stock Status is <span style="color:green; font-weight:bold">QI</span>.
-- Only the pallets with tempering flag <span style="color:green; font-weight:bold">Reached</span> are applicable for QC settings.
-- Input text with red asterisk <span style="color:red">(*)</span> is not empty
+This section explains the validations for the whole proccess QC Status Update
 
 ::: mermaid
 flowchart LR
