@@ -152,17 +152,13 @@ flowchart LR
         Expiry Days
     ]
 
-    tableList-insert[("
+     tableList-update[("
+        DNSTOCK
         DNWORKINFO
         DNWORKLIST
     ")]
 
-     tableList-update[("
-        DNSTOCK
-    ")]
-
      tableList-select[("
-        DNSTOCK
         DMWAREHOUSE
         DMSHELF
         DNPALLET
@@ -170,7 +166,7 @@ flowchart LR
         DMSTATION
     ")]
 
-    className[QCSettingSCH]
+    className[QCWorkSettingSCH]
 
     input --> className --> |INSERT| tableList-insert
     tableList-select --> |SELECT| className
