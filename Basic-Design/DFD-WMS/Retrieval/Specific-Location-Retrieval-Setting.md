@@ -39,7 +39,7 @@ P7[ID68]-->Cond2{Retrieval Type?}
 **Stage 4 - Only Confirmation treat as Inventory Check Operation at 1301,1302,1303**
 ::: mermaid
 flowchart LR
-Cond2{Remova Type?}--> |Unit Retrieval - 
+Cond2{Removal Type?}--> |Unit Retrieval - 
 1201-1209 & 1301-1303| P13[ID26]
 Cond2{Retrieval Type?}--> |Only Confirmation - 
 1301-1303| P14[ID45]-->Cond3{Station?}
