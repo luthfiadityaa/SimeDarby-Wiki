@@ -168,7 +168,6 @@ flowchart LR
 
     className[QCWorkSettingSCH]
 
-    input --> className --> |INSERT| tableList-insert
     tableList-select --> |SELECT| className
     className --> |UPDATE| tableList-update
 
