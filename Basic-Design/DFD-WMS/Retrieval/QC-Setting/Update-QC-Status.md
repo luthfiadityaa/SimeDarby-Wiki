@@ -45,7 +45,7 @@ from Screen]-->P2[Update To QC Status]-->P21[QC Status Update Result]
 This screen is mainly used when the cartons needs to be returned to the pallet after QC operation.
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
-This section explains the validations for the whole proccess QC Status Update
+This section explains the validations for the whole process QC Status Update
 
 ::: mermaid
 flowchart LR
