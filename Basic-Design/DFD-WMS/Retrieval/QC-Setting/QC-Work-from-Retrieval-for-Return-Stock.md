@@ -126,7 +126,7 @@ flowchart LR
 ####<span style="color:skyblue; font-weight:bold">DMStation</span>
 **CURRENT_MODE**: 1:Storage Mode
 
-# QC Work - Retrieval for Return Stock - Set(F2)
+# QC Work - Retrieval for Return Stock - Completion and Restorage
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.QCWorkSettingSCH &nbsp;</span>
 
 ![Picture1.png](/.attachments/Picture1-7132ff6c-8d5e-49b9-a1a8-d3c2be7e1c83.png)
