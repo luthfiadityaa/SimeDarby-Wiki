@@ -124,4 +124,4 @@ flowchart LR
 - [DFD - QC Setting](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5788)
 
 #<span style="color:skyblue; font-weight:bold">Related DFD</span>
-- [QC Work from Retrieval for Return Stock](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/962/QC-Work-from-Retrieval-for-Return-Stock)
+- [Extend Tempering Period - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/906/Extend-Tempering-Period)
