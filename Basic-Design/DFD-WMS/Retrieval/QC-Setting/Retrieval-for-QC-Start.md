@@ -246,6 +246,7 @@ ID 12
 ")
 
 retrievalsender-input-->retrievalsender--> |UPDATE| retrievalsender-update
+retrievalsender--> |INSERT| retrievalsender-update
 retrievalsender--> |SendText| id12msg
 :::
 
