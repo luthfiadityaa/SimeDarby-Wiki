@@ -238,8 +238,8 @@ retrievalstationoperator--> |UPDATE| id12-update
 - **WORK_NO** : Sequence Object    
 - **RETRIEVAL_STATION_NO** : DNSTOCK.LOCATION_NO
 - **RETRIEVAL_DETAIL** : 1: Unit Retrieval
-- **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO    
-- **DEST_STATION_NO** : Based on **SOURCE_STATION_NO** where a reserved location belongs to ⟶ **(7207,7208,7209,7210,7211,7212,7213,7214)**
+- **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO ⟶ **(9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014)**    
+- **DEST_STATION_NO** : Based on **SOURCE_STATION_NO** where a reserved location belongs to ⟶ **(7101, 7102, 7103, 7104, 7105, 7207, 7208, 7209, 7210)**
 - **CANCEL_REQUEST** : 0: Not Requested    
 - **SCHEDULE_NO** : Sequence Object    
 - **CARRY_FLAG** : 2: Retrieval
@@ -275,7 +275,7 @@ retrievalsender--SEND-->id12msg
 retrievalsender-input-->retrievalsender-.UPDATE.->retrievalsender-update
 :::
 
-The Retrieval operation at **Tempering Area (9001: Tempering)** will be retrieved to Station 7207, 7208, 7209, 7210, 7211, 7212, 7213, 7214 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
+The Retrieval operation at **Ambient Area (9002: Ambient)** will be retrieved to Station 7101, 7102, 7103, 7104, 7105, 7207, 7208, 7209, 7210 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
 
 ## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
 - **CMD_STATUS** : 2:Waiting for response
