@@ -567,9 +567,9 @@ Continue the process <span style="color:green; font-weight:bold">Direct Transfer
 *   **WIDTH** : Dimension Information from ID26    
 *   **REGIST_DATE** : SYSTIMESTAMP    
 *   **REGIST_PNAME** : ClassName    
-*   **LAST_UPDATE_DATE** : SYSTIMESTAMP
-    
+*   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME** : ClassName
+
 ###<span style="color:skyblue; font-weight:bold">DNPallet</span>
 *   **CURRENT_STATION_NO** : DNARRIVAL.STATION_NO    
 *   **REGIST_DATE** : SYSTIMESTAMP    
