@@ -862,7 +862,7 @@ Upon equipment <span style="color:green; font-weight:bold">SRM</span> have picke
 <hr>
 
 #<span style="color:skyblue; font-weight:bold">Storage Flag Condition</span>
-![image.png](/.attachments/image-31228a41-0618-46d0-acf0-93f1edd79e4e.png)
+![image.png](/.attachments/image-72dca279-6aec-4e49-b133-c1fed9d0afed.png)
 
 <hr>
 
