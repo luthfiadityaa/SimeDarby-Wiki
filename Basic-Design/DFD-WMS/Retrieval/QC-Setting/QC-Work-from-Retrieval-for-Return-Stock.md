@@ -126,7 +126,7 @@ flowchart LR
 ####<span style="color:skyblue; font-weight:bold">DMStation</span>
 **CURRENT_MODE**: 1:Storage Mode
 
-# QC Work - Retrieval for QC Start - Set(F2)
+# QC Work - Retrieval for Return Stock - Set(F2)
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.QCWorkSettingSCH &nbsp;</span>
 
 ![Picture1.png](/.attachments/Picture1-bc50da6b-1545-456a-807f-701a53af0980.png)
@@ -134,7 +134,7 @@ flowchart LR
 This screen is mainly used when the pallet arrives at QC Station and pick cartons from pallet to do QC operation.
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
-This section explains the validations for the whole proccess QC Work - Retrieval for QC Start
+This section explains the validations for the whole proccess QC Work - Retrieval for Return Stock
 - **<span style="color:red">Take Out Qty</span>** not higher than **<span style="color:green">DNSTOCK.STOCK_QTY</span>**
 
 ::: mermaid
