@@ -597,7 +597,7 @@ Continue the process Direct Transfer, AGC will send ID26 to WareNavi and WareNa
 * **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-*   **WORK_TYPE**: 23:Unplanned Retrieval    
+*   **WORK_TYPE**: **<span style="color:green; font-weight:bold">23:Unplanned Retrieval or 40:Inventory Check</span>**   
 *   **CMD_STATUS**: 1:Started    
 *   **CARRY_FLAG**: 2:Retrieval      
 *   **SOURCE_STATION_NO**: DNARRIVAL.STATION_NO    
