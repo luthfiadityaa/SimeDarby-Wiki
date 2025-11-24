@@ -37,7 +37,7 @@ from Screen]-->P2[Update To QC Status]-->P21[QC Status Update Result]
 | ID63 [(1)](#ID63)                                                               |    |    |    |    |    |    |     |    |    |    |    | U  |    |    |     |
 | Update QC Status - Set(F2) [(1)](#Update-QC-Status--Set(F2))                    | I  | I  | S  | I  | U  |    |     | S  | S  |    | S  | S  | S  |    |     |
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
-| Internal-Location-Transfer-Result[(9)](#QC-Status-Update-Result)      |    |    |    |    |    | U  |     |    |    |    |    |    |    |    |     |
+| QC Status Update Result[(9)](#QC-Status-Update-Result)      |    |    |    |    |    | U  |     |    |    |    |    |    |    |    |     |
  
 
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
