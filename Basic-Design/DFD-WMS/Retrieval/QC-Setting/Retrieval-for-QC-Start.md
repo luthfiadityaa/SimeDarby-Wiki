@@ -773,7 +773,7 @@ When the retrieved pallet reaches the QC station, Warenavi sends an ‘Internal 
 * **QC_CHECK_FLAG**: DNSTOCK_QC_CHECK_FLAG
 * **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY
 * **BCR_DATA**: DNPALLET.BCR_DATA
-* **STORAGE_LOCATION_TO**: <span style="color:green; font-weight:bold">FGW1 or FGW2</span>
+* **STORAGE_LOCATION_FROM**: <span style="color:green; font-weight:bold">FGW1 or FGW2</span>
 * **STORAGE_LOCATION_TO**: <span style="color:green; font-weight:bold">QC01</span>
 * **TERMINAL_NO**: Login info
 * **REGIST_DATE**: SYSTIMESTAMP
