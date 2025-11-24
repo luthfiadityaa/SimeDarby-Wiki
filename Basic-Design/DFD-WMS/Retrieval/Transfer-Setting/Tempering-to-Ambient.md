@@ -38,8 +38,8 @@ P1[FROM STATION - 9001, 9002, 9003, 9004, 9005, 9006]-->P2[ID12]-->P3[RetrievalS
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
 | Transfer Setting - Set(F2) [(1)](#transfer-setting---set(f2))  |   S  |   I  |   I  |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |
 | **Retrieval Flow**                                             |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| ID12 [(2)](#id12)                                              |   U  |      |      |   I  |      |      |      |      |      |      |      |      |      |      |
-| Retrieval Sender [(3)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| Retrieval Sender [(2)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| ID12 [(3)](#id12)                                              |   U  |      |      |   I  |      |      |      |      |      |      |      |      |      |      |
 | ID32 [(4)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
 | ID33 [(5)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |
 | ID64 [(6)](#id64)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
@@ -169,32 +169,32 @@ tableList-select --> |SELECT| className
 - **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 - **LAST_UPDATE_PNAME**: ClassName
 
-#ID12
+# Retrieval Sender
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.asrs.communication.id.send.As21Id12` &nbsp;</span>
+`jp.co.daifuku.wcs.mc.as21.transmission.RetrievalSender` &nbsp;</span>
 
 ::: mermaid
 flowchart LR
+
+retrievalsender-input[("
+DNCARRYINFO
+")]
+
+retrievalsender-update[("
+DNCARRYINFO
+DNPALLET
+")]
 
 id12msg("
 ID12
 ")
 
-id12-insert[("
-DNCARRYINFO
-")]
-
-id12-update[("
-DNPALLET
-")]
-
-retrievalstationoperator[RetrievalStationOperator]
-
-id12msg-->id12process
-id12process-->retrievalstationoperator--> |INSERT| id12-insert
-retrievalstationoperator--> |UPDATE| id12-update
+retrievalsender--SEND-->id12msg
+retrievalsender-input-->retrievalsender-.UPDATE.->retrievalsender-update
 :::
+
+The Retrieval operation at **Tempering Area (9001: Tempering)** will be retrieved to Station 7207, 7208, 7209, 7210, 7211, 7212, 7213, 7214 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
 
 ## <span style="color:skyblue; font-weight:bold">DNPALLET</span>
 - **STATUS_FLAG** : 3:Reserved for Retrieval
@@ -223,32 +223,32 @@ retrievalstationoperator--> |UPDATE| id12-update
 - **REGIST_PNAME** : ClassName    
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 
-# Retrieval Sender
+#ID12
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.wcs.mc.as21.transmission.RetrievalSender` &nbsp;</span>
+`jp.co.daifuku.asrs.communication.id.send.As21Id12` &nbsp;</span>
 
 ::: mermaid
 flowchart LR
-
-retrievalsender-input[("
-DNCARRYINFO
-")]
-
-retrievalsender-update[("
-DNCARRYINFO
-DNPALLET
-")]
 
 id12msg("
 ID12
 ")
 
-retrievalsender--SEND-->id12msg
-retrievalsender-input-->retrievalsender-.UPDATE.->retrievalsender-update
-:::
+id12-insert[("
+DNCARRYINFO
+")]
 
-The Retrieval operation at **Tempering Area (9001: Tempering)** will be retrieved to Station 7207, 7208, 7209, 7210, 7211, 7212, 7213, 7214 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
+id12-update[("
+DNPALLET
+")]
+
+retrievalstationoperator[RetrievalStationOperator]
+
+id12msg-->id12process
+id12process-->retrievalstationoperator--> |INSERT| id12-insert
+retrievalstationoperator--> |UPDATE| id12-update
+:::
 
 ## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
 - **CMD_STATUS** : 2:Waiting for response
