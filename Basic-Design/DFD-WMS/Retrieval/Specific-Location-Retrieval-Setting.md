@@ -315,7 +315,7 @@ All Carton Retrieval operation at Ambient or Tempering will be retrieved to Stat
 
 <hr style="width:20%; margin-left:0; border: 2px solid green;">
 
-**1201-1209 & 1301-1302**
+*For 1201-1209 & 1301-1302*
 <hr style="width:20%; margin-left:0; border: 2px solid green;">
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
