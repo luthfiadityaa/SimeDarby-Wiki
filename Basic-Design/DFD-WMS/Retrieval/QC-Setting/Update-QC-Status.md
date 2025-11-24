@@ -94,6 +94,7 @@ flowchart LR
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
 * **STOCK_STATUS**: Value from Screen -> **<span style="color:green; font-weight:bold">QI: Quality Inspection or BS:Block Stock</span>**
+* **TEMPERING_FLAG**: Reached
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 * **LAST_UPDATE_PNAME**: QCSettingSCH
 
