@@ -1,7 +1,6 @@
 [[_TOC_]]
 
 #<span style="color:skyblue; font-weight:bold">Summary Flow</span>
-**Stage 1**
 ::: mermaid
 flowchart LR
 
