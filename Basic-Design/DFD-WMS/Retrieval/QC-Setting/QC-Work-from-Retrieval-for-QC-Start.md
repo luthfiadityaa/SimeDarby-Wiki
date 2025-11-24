@@ -218,7 +218,8 @@ This is a continuation of [ID26 at Retrieval for QC Start](https://dev.azure.com
 ::: mermaid
 flowchart LR
     input[
-        After QC Work done, Operators will pressed completion button.
+        After QC Work done, 
+        Operators will pressed completion button.
     ]
 
     className[StorageSender]
