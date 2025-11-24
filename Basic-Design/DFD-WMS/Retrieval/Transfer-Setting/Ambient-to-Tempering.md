@@ -882,7 +882,7 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 - **REGIST_PNAME** : Class name
 
 # User Story
-  - #5789
+  - #5863
 
 # Related DFD
   - {}
