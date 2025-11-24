@@ -103,6 +103,7 @@ flowchart LR
 * **JOB_TYPE**: <span style="color:green; font-weight:bold">91:QC Status Update</span>
 * **STOCK_STATUS_FROM**: DNSTOCK.STOCK_STATUS
 * **STOCK_STATUS_TO**: Value from Screen -> **<span style="color:green; font-weight:bold">QI: Quality Inspection or BS:Block Stock</span>**
+* **TEMPERING_FLAG** : <span style="color:yellow; font-weight:bold; background-color:grey">1: Reached</span> 
 * **QC_CHECK_FLAG**: **<span style="color:green; font-weight:bold">Done</span>**
 * **TERMINAL_NO**: Login info
 * **REGIST_DATE**: SYSTIMESTAMP
