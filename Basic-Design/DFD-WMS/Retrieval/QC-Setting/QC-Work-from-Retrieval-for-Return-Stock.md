@@ -129,7 +129,7 @@ flowchart LR
 # QC Work - Retrieval for Return Stock - Set(F2)
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.QCWorkSettingSCH &nbsp;</span>
 
-![Picture1.png](/.attachments/Picture1-bc50da6b-1545-456a-807f-701a53af0980.png)
+![Picture1.png](/.attachments/Picture1-7132ff6c-8d5e-49b9-a1a8-d3c2be7e1c83.png)
   
 This screen is mainly used when the pallet arrives at QC Station and pick cartons from pallet to do QC operation.
 
