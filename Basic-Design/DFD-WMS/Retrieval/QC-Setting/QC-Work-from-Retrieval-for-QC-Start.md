@@ -863,6 +863,7 @@ Upon equipment <span style="color:green; font-weight:bold">SRM</span> have picke
 
 #<span style="color:skyblue; font-weight:bold">Storage Flag Condition</span>
 ![image.png](/.attachments/image-72dca279-6aec-4e49-b133-c1fed9d0afed.png)
+   After the pallet reaches the shelf, warenavi sends `Internal location Transfer` to host system.
 
 <hr>
 
