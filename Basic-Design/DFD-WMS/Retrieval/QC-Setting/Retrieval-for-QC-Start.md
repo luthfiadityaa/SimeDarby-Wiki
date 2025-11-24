@@ -233,8 +233,11 @@ DNCARRYINFO
 ")]
 
 retrievalsender-update[("
-DNCARRYINFO
 DNPALLET
+")]
+
+retrievalsender-insert[("
+DNCARRYINFO
 DNWORKINFO
 ")]
 
