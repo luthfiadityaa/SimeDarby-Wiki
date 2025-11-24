@@ -686,7 +686,7 @@ buttonclicked2["
 Internal Location Transfer Result 
 "]
 
-buttonclicked2["
+buttonclicked3["
 QC Work 
 "]
 
@@ -712,6 +712,7 @@ DNINOUTRESULT
 id26process[id26process]
 retrievaloperator[RetrievalStationOperator]
 
+buttonclicked-->buttonclicked2
 buttonclicked --> id26msg
 id26msg -->id26process
 id26process-->retrievaloperator
