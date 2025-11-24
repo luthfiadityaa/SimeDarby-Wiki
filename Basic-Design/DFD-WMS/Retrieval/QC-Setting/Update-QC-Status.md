@@ -82,6 +82,15 @@ flowchart LR
     class input leftAlign;
 :::
 
+<hr>
+
+#<span style="color:skyblue; font-weight:bold">Storage Flag Condition</span>
+![image.png](/.attachments/image-ce857ad3-8f9d-4967-b554-217332bb058c.png)
+  
+*) If QC result requires more tempering, refer Re-QC.
+
+<hr>
+
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
 * **STOCK_STATUS**: Value from Screen -> **<span style="color:green; font-weight:bold">QI: Quality Inspection or BS:Block Stock</span>**
