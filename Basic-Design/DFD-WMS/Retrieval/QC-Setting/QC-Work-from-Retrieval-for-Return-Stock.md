@@ -191,7 +191,7 @@ flowchart LR
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
 ####<span style="color:skyblue; font-weight:bold">DNStock</span> 
-* **STOCK_QTY**: **<span style="color:green">DNSTOCK.STOCK_QTY</span>** - **<span style="color:red">Value from screen (Take Out Qty)</span>**    
+* **STOCK_QTY**: **<span style="color:green">DNSTOCK.STOCK_QTY</span>** + **<span style="color:red">Value from screen (Qty to Add)</span>**    
 * **STORAGE_LOCATION_FROM**: **<span style="color:green">QC01</span>**
 * **STORAGE_LOCATION_TO**: <span style="color:green; font-weight:bold">FGW1 or FGW2</span>
 * **SETTING_TYPE**: 1:Retrieval for Return Stock
