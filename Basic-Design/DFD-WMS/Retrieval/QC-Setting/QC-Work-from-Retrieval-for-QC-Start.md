@@ -194,6 +194,7 @@ flowchart LR
 * **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
+* **SETTING_TYPE**: 0:Retrieval for QC Start
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: Class name
 
