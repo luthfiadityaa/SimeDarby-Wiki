@@ -157,8 +157,6 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 - 2 options in Removal Type:​
   - `1: Unit Retrieval`​
   - `2: Only Confirmation` = Retrieval Qty = 0, This pallet will be performed like inventory check. ​
-
-the pallet will be retrieved to a station, and return to shelf from this station.​
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
 
 ::: mermaid
