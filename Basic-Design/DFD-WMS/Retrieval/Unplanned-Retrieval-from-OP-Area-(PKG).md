@@ -107,7 +107,7 @@ DMTOSTATION
 ")]
 
 
-className[EmptyPalletSettingSCH]
+className[InquiryRetrievalSettingSCH]
 
 input --> className --> |INSERT| tableList-insert
 tableList-select --> |SELECT| className
