@@ -125,6 +125,60 @@ This screen is mainly used when the pallet arrives at QC Station and pick carton
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
 This section explains the validations for the whole proccess QC Work - Retrieval for QC Start
 
+::: mermaid
+flowchart LR
+    input[
+        Area
+        QC Station
+        Work #
+        Setting Type               
+        Pallet #
+        Material Code
+        Batch #
+        Material Name
+        Stock Qty
+        Qty to Pick
+        Stock Status
+        Tempering Flag
+        QC Check Flag
+        QC Duration
+        Storage Date/Time
+        Material Type
+        Qty kg/crtn
+        Qty crtn/PL
+        UOM
+        Tempering Period
+        Expiry Days
+    ]
+
+    tableList-insert[("
+        DNWORKINFO
+        DNWORKLIST
+    ")]
+
+     tableList-update[("
+        DNSTOCK
+    ")]
+
+     tableList-select[("
+        DNSTOCK
+        DMWAREHOUSE
+        DMSHELF
+        DNPALLET
+        DMITEM
+        DMSTATION
+    ")]
+
+    className[QCSettingSCH]
+
+    input --> className --> |INSERT| tableList-insert
+    tableList-select --> |SELECT| className
+    className --> |UPDATE| tableList-update
+
+    classDef leftAlign text-align:left;
+    class input leftAlign;
+:::
+
 #Storage Sender at 1303
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
 
