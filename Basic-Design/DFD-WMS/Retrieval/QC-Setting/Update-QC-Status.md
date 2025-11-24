@@ -100,7 +100,7 @@ flowchart LR
 * **LAST_UPDATE_PNAME**: ClassName
   
 #QC Status Update Result
-- [Internal Location Transfer Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/844/Internal-Location-Transfer-Result)
+- [QC Status Update Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/844/Internal-Location-Transfer-Result)
 
 <hr>
 
