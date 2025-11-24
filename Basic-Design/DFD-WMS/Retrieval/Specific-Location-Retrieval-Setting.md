@@ -231,7 +231,7 @@ flowchart LR
 *   **MATERIAL_CODE**: DNSTOCK.MATERIAL_CODE    
 *   **MATERIAL_NAME**: DMITEM.MATERIAL_NAME    
 *   **MATERIAL_TYPE**: DMITEM.MATERIAL_TYPE 
-*   **PLAN_QTY**: Value from screen ⟶ **<span style="color:green;">Stock Qty) or 0</span>**
+*   **PLAN_QTY**: Value from screen ⟶ **<span style="color:green;">Stock Qty or 0</span>**
 *   **TEMPERING_PERIOD**: DNSTOCK.TEMPERING_PERIOD
 *   **TEMPERING_FLAG**: DNSTOCK.TEMPERING_FLAG      
 *   **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE
