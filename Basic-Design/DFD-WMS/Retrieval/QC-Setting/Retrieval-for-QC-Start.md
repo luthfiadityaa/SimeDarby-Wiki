@@ -679,8 +679,11 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 flowchart LR
 
 buttonclicked["
-Operators Press the 
-completion button.
+Pallet arrived at station
+"]
+
+buttonclicked2["
+Internal Location Transfer Result 
 "]
 
 id26msg("
