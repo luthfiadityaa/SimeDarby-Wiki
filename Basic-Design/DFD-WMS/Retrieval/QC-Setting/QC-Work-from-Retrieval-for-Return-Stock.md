@@ -194,26 +194,26 @@ flowchart LR
 * **STOCK_QTY**: **<span style="color:green">DNSTOCK.STOCK_QTY</span>** - **<span style="color:red">Value from screen (Take Out Qty)</span>**    
 * **STORAGE_LOCATION_FROM**: **<span style="color:green">QC01</span>**
 * **STORAGE_LOCATION_TO**: <span style="color:green; font-weight:bold">FGW1 or FGW2</span>
-* **SETTING_TYPE**: 0:Retrieval for QC Start
+* **SETTING_TYPE**: 1:Retrieval for Return Stock
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 * **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
-* **SETTING_TYPE**: 0:Retrieval for QC Start
+* **SETTING_TYPE**: 1:Retrieval for Return Stock
 * **STORAGE_LOCATION_FROM**: **<span style="color:green">QC01</span>**
 * **STORAGE_LOCATION_TO**: <span style="color:green; font-weight:bold">FGW1 or FGW2</span>
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 * **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
-* **SETTING_TYPE**: 0:Retrieval for QC Start
+* **SETTING_TYPE**: 1:Retrieval for Return Stock
 * **STORAGE_LOCATION_FROM**: **<span style="color:green">QC01</span>**
 * **STORAGE_LOCATION_TO**: <span style="color:green; font-weight:bold">FGW1 or FGW2</span>
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 * **LAST_UPDATE_PNAME**: Class name
 
 #ID26 at 1303
-This is a continuation of [ID26 at Retrieval for QC Start](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/900/Retrieval-for-QC-Start?anchor=id26). 
+This is a continuation of [ID26 at Retrieval for Return Stock](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/900/Retrieval-for-QC-Start?anchor=id26). 
 
 ::: mermaid
 flowchart LR
