@@ -5,7 +5,7 @@
 ::: mermaid
 flowchart LR
 
-P1[Select the Pallet Number 
+P1[Select the List 
 from Screen]-->P2[Update To QC Status]-->P21[QC Status Update Result]
 :::
 
