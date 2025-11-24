@@ -67,9 +67,9 @@ Cond1{Flow?}--> |Flow 2: Not through crane 7-10.
 | **Last Process:**                                                               |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
 | ID68[(7)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |     |
 | ID45[(8)](#ID45)                                                                |    |    |    |    |    |    |     |    |    |   |    |    |    |    |   | 
-| ID26[(8)](#ID26)                                                                | U  | U  | U  | U  |    | I  |  I  |    | U  | I  |    |    |    |    | I   | 
+| ID26[(9)](#ID26)                                                                | U  | U  | U  | U  |    | I  |  I  |    | U  | I  |    |    |    |    | I   | 
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
-| Internal Location Transfer Result[(9)](#Internal-Location-Transfer-Result)      |    |    |    |    |    | U  |     |    |    |    |    |    |    |    |     |
+| Internal Location Transfer Result[(10)](#Internal-Location-Transfer-Result)      |    |    |    |    |    | U  |     |    |    |    |    |    |    |    |     |
  
 
 #<span style="color:skyblue; font-weight:bold">Mode Change Station</span>
