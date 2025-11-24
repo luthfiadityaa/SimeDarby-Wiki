@@ -26,7 +26,8 @@ P6[ID64]-->Cond2{Continue Deposit to ?}
 ## Stage 3
 ::: mermaid
 flowchart LR 
-Cond1{Continue Deposit to ?}-->|Through SRM 9007-9010|P1[Continue Go to Stage 2 - STV OP]
+Cond1{Continue Deposit to ?}-->|Through SRM 9007-9010|P1[Continue Go to Stage 2 
+- STV OP]
 Cond1{Continue Deposit to ?}-->|SRM 9001-9006|P2[ID33]
 
 :::
