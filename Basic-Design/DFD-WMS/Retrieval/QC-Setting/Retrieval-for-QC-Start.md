@@ -716,6 +716,10 @@ id26process-->retrievaloperator
 retrievaloperator--> |INSERT| id26-insert
 retrievaloperator--> |UPDATE| id26-update
 id26-insert-->buttonclicked2 
+
+click buttonclicked2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/948/Unplanned-Storage-from-HP" "Go to HP"
+click P16 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/880/Unplanned-Storage-from-OP-Area" "Go to OP"
+style P15 fill:#00cc66,stroke:#006633,color:#ffffff
 :::
 
 When the retrieved pallet reaches the QC station, Warenavi sends an ‘Internal Location Transfer’ message to the host system and initiates `QC Work`. 
