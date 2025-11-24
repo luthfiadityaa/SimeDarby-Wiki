@@ -721,8 +721,8 @@ retrievaloperator--> |INSERT| id26-insert
 retrievaloperator--> |UPDATE| id26-update
 id26-insert-->buttonclicked2 
 
-click buttonclicked2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/948/Unplanned-Storage-from-HP" "Go to HP"
-click buttonclicked3 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/880/Unplanned-Storage-from-OP-Area" "Go to OP"
+click buttonclicked2 "Internal-Location-Transfer-Result" "Go Internal Location Transfer Result"
+click buttonclicked3 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/880/Unplanned-Storage-from-OP-Area" "Go to QC Work"
 style buttonclicked2 fill:#00cc66,stroke:#006633,color:#ffffff
 style buttonclicked3 fill:#00cc66,stroke:#006633,color:#ffffff
 :::
