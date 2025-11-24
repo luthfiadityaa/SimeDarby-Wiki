@@ -217,8 +217,12 @@ DNCARRYINFO
 ")]
 
 retrievalsender-update[("
-DNCARRYINFO
 DNPALLET
+DNWORKINFO
+")]
+
+retrievalsender-insert[("
+DNCARRYINFO
 ")]
 
 id12msg("
@@ -226,6 +230,7 @@ ID 12
 ")
 
 retrievalsender-input-->retrievalsender--> |UPDATE| retrievalsender-update
+retrievalsender--> |INSERT| retrievalsender-insert
 retrievalsender--> |SendText| id12msg
 :::
 
