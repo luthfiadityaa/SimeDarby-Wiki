@@ -272,7 +272,7 @@ flowchart LR
 *   **QC_CHECK_FLAG**: DNSTOCK_QC_CHECK_FLAG        
 *   **DOCK_NO**: DNWORKINFO.DOCK_NO
 *   **TRUCK_PLATE_NO**: DNWORKINFO.TRUCK_PLATE_NO 
-*   **STORAGE_LOCATION_FROM**: Value from Screen (To Location) ⟶ **<span style="color:green;">VT01, QC01, SD01, SG01</span>**
+*   **STORAGE_LOCATION_FROM**: DNSTOCK.STORAGE_LOCATION (From Location Location) ⟶ **<span style="color:green;">VT01, QC01, SD01, SG01</span>**
 *   **STORAGE_LOCATION_TO**: Value from Screen (To Location) ⟶ **<span style="color:green;">VT01, QC01, SD01, SG01</span>**
 *   **USER_ID**: DNWORKINFO.USER_ID    
 *   **USER_NAME**: DCUSER.USER_NAME    
