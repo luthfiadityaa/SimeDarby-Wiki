@@ -1047,6 +1047,7 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 
 #<span style="color:skyblue; font-weight:bold">[Send Report as Internal Location Transfer Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/844/Internal-Location-Transfer-Result)</span>
 
+<br>
 <hr>
 
 #<span style="color:skyblue; font-weight:bold">User Story</span>
