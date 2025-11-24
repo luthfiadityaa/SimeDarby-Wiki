@@ -56,8 +56,8 @@ P1[Work Display - Click Complete Button]-->P2[ID45]-->P3[ID26]-->P4[StorageSende
 | ID63 [(1)](#id33)                                              |      |      |      |      |      |      |      |      |      |      |      |      |      |   U  |      |
 | Inquiry Retrieval - Set(F2) [(2)](#inventory-check---set(f2))  |   S  |   I  |   I  |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   I  |
 | **Retrieval Flow**                                             |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| ID12 [(3)](#id12)                                              |   U  |      |      |   I  |      |      |      |      |      |      |      |      |      |      |      |
-| Retrieval Sender [(4)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| Retrieval Sender [(3)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID12 [(4)](#id12)                                              |   U  |      |      |   I  |      |      |      |      |      |      |      |      |      |      |      |
 | ID32 [(5)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
 | ID33 [(6)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
 | ID64 [(7)](#id64)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
@@ -238,32 +238,32 @@ This section explains the validations for the whole process Inventory Check
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : ClassName
 
-#ID12
+# Retrieval Sender
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.asrs.communication.id.send.As21Id12` &nbsp;</span>
+`jp.co.daifuku.wcs.mc.as21.transmission.RetrievalSender` &nbsp;</span>
 
 ::: mermaid
 flowchart LR
 
-id26msg("
-ID12
-")
-
-id26-insert[("
+retrievalsender-input[("
 DNCARRYINFO
 ")]
 
-id26-update[("
+retrievalsender-update[("
+DNCARRYINFO
 DNPALLET
 ")]
 
-InOutStationOperation[InOutStationOperation]
+id12msg("
+ID 12
+")
 
-id26msg-->id12process
-id12process-->InOutStationOperation--> |INSERT| id26-insert
-InOutStationOperation--> |UPDATE| id26-update
+retrievalsender--SEND-->id12msg
+retrievalsender-input-->retrievalsender-.UPDATE.->retrievalsender-update
 :::
+
+For Inventory Check performed in ASRS where there is creation of DNCARRYINFO, DNCARRYNFO data will be processed in Retrieval Sender. ID 12 will be sent after related tables are updated successfully.
 
 ## <span style="color:skyblue; font-weight:bold">DNPALLET</span>
 - **STATUS_FLAG** : 3:Reserved for retrieval
@@ -295,33 +295,32 @@ InOutStationOperation--> |UPDATE| id26-update
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 - **LAST_UPDATE_PNAME** : ClassName
 
-# Retrieval Sender
+#ID12
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.wcs.mc.as21.transmission.RetrievalSender` &nbsp;</span>
+`jp.co.daifuku.asrs.communication.id.send.As21Id12` &nbsp;</span>
 
 ::: mermaid
 flowchart LR
 
-retrievalsender-input[("
-DNCARRYINFO
-")]
-
-retrievalsender-update[("
-DNCARRYINFO
-DNPALLET
-DNSTOCK
-")]
-
-id12msg("
-ID 12
+id26msg("
+ID12
 ")
 
-retrievalsender--SEND-->id12msg
-retrievalsender-input-->retrievalsender-.UPDATE.->retrievalsender-update
-:::
+id26-insert[("
+DNCARRYINFO
+")]
 
-For Inventory Check performed in ASRS where there is creation of DNCARRYINFO, DNCARRYNFO data will be processed in Retrieval Sender. ID 12 will be sent after related tables are updated successfully.
+id26-update[("
+DNPALLET
+")]
+
+InOutStationOperation[InOutStationOperation]
+
+id26msg-->id12process
+id12process-->InOutStationOperation--> |INSERT| id26-insert
+InOutStationOperation--> |UPDATE| id26-update
+:::
 
 ## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
 - **CMD_STATUS** : 2:Waiting for response
