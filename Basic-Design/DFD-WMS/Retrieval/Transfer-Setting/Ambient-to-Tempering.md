@@ -662,8 +662,8 @@ Continue the process **storage**, AGC will send ID26 to WareNavi and WareNavi w
 - **CMD_STATUS** : 1:Started 
 - **PRIORITY** : 2:Normal
 - **CARRY_FLAG** : 1: Storage
-- **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO ⟶ **(7101/7102/7103/7104/7105/7106)**
-- **DEST_STATION_NO** : Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ **(9001/9002/9003/9004/9005/9006)**
+- **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO ⟶ **(7101, 7102, 7103, 7104, 7105, 7106)**
+- **DEST_STATION_NO** : Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ **(9001, 9002, 9003, 9004, 9005, 9006)**
 - **END_STATION_NO** : DNCARRYINFO.DEST_STATION_NO
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : ClassName
