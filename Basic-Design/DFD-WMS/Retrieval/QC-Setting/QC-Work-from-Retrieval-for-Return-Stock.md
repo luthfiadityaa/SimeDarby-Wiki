@@ -135,7 +135,7 @@ This screen is mainly used when the pallet arrives at QC Station and pick carton
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
 This section explains the validations for the whole proccess QC Work - Retrieval for Return Stock
-- **<span style="color:red">Take Out Qty</span>** not higher than **<span style="color:green">DNSTOCK.STOCK_QTY</span>**
+- **<span style="color:red">Qty to Add</span>** not higher than **<span style="color:green">DNSTOCK.STOCK_QTY</span>**
 
 ::: mermaid
 flowchart LR
