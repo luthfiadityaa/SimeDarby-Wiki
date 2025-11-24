@@ -928,8 +928,7 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 * **STORAGE_DAY** : DMWARENAVISYSTEM.WORK_DAY  
 * **NEWEST_STORAGE_DATE** : SYSTIMESTAMP  
 * **STOCK_QTY** : DNWORKINFO.RESULT_QTY  
-* **ALLOCATION_QTY** : DNWORKINFO.RESULT_QTY  
-* **PLAN_QTY** : 0  
+* **ALLOCATION_QTY** : DNWORKINFO.RESULT_QTY
 * **STOCK_STATUS** : <span style="color:green; font-weight:bold">QI: Quality Inspection</span>  
 * **TEMPERING_FLAG** : <span style="color:yellow; font-weight:bold; background-color:grey">1: Reached</span>  
 * **QC_FLAG** : <span style="color:green; font-weight:bold">0: Not Done</span>  
