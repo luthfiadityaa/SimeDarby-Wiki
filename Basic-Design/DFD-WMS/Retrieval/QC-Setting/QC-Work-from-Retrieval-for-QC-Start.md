@@ -184,18 +184,24 @@ flowchart LR
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
-####<span style="color:skyblue; font-weight:bold">DNStock</span>
-*   **STOCK_QTY**: **<span style="color:green">DNSTOCK.STOCK_QTY</span>** - **<span style="color:red">Value from screen (Take Out Qty)</span>**     
+####<span style="color:skyblue; font-weight:bold">DNStock</span> 
+*   **STOCK_QTY**: **<span style="color:green">DNSTOCK.STOCK_QTY</span>** - **<span style="color:red">Value from screen (Take Out Qty)</span>**    
+*   **STORAGE_LOCATION_FROM**:
+*   **STORAGE_LOCATION_TO**: 
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 * **SETTING_TYPE**: 0:Retrieval for QC Start
+* **STORAGE_LOCATION_FROM**:
+* **STORAGE_LOCATION_TO**:
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 * **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
 * **SETTING_TYPE**: 0:Retrieval for QC Start
+* **STORAGE_LOCATION_FROM**:
+* **STORAGE_LOCATION_TO**:
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 * **LAST_UPDATE_PNAME**: Class name
 
