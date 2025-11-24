@@ -271,6 +271,10 @@ All Carton Retrieval operation at Ambient or Tempering will be retrieved to Stat
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
 
+####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>   
+* **STATUS_FLAG**: 1:Working  
+* **SYSTEM_CONN_KEY**: DNCARRYINFO.CARRY_KEY
+
 #ID12
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.send.As21Id12&nbsp;</span>
