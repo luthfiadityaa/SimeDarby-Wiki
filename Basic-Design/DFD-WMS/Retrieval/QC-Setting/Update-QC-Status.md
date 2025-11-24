@@ -66,11 +66,6 @@ flowchart LR
         QC Duration
     ]
 
-    tableList-insert[("
-        DNWORKINFO
-        DNWORKLIST
-    ")]
-
      tableList-update[("
         DNSTOCK
     ")]
@@ -84,9 +79,8 @@ flowchart LR
         DMSTATION
     ")]
 
-    className[QCSettingSCH]
+    input-->className[QCSettingSCH]
 
-    input --> className --> |INSERT| tableList-insert
     tableList-select --> |SELECT| className
     className --> |UPDATE| tableList-update
 
