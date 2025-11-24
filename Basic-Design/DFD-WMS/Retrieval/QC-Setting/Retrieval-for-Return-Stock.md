@@ -874,7 +874,7 @@ When the retrieved pallet reaches the QC station, Warenavi sends an ‘Internal 
 
 <hr>
 
-#User Story
+#<span style="color:skyblue; font-weight:bold">User Story</span>
 - [DFD - QC Setting](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5788)
 
 #<span style="color:skyblue; font-weight:bold">Related DFD</span>
