@@ -712,7 +712,7 @@ DNINOUTRESULT
 id26process[id26process]
 retrievaloperator[RetrievalStationOperator]
 
-buttonclicked-->buttonclicked2
+buttonclicked-->buttonclicked3
 buttonclicked --> id26msg
 id26msg -->id26process
 id26process-->retrievaloperator
