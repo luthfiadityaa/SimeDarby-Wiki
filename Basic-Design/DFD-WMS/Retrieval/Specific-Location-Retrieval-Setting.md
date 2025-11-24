@@ -219,7 +219,7 @@ flowchart LR
 *   **JOB_NO**: Sequence Object    
 *   **SETTING_UNIT_KEY**: Sequence Object    
 *   **COLLECT_JOB_NO**: Sequence Object    
-*   **JOB_TYPE**: <span style="color:green; font-weight:bold">23:Unplanned Retrieval or 40:Inventory Check    
+*   **JOB_TYPE**: **<span style="color:green; font-weight:bold">23:Unplanned Retrieval or 40:Inventory Check</span>**    
 *   **STATUS_FLAG**: 0:Not Started    
 *   **PLAN_UKEY**: Sequence Object    
 *   **STOCK_ID**: DNSTOCK.STOCKID    
