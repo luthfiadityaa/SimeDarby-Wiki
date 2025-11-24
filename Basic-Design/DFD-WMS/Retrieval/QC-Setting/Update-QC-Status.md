@@ -88,7 +88,7 @@ flowchart LR
 ##<span style="color:skyblue; font-weight:bold">Storage Flag Condition</span>
 ![image.png](/.attachments/image-ce857ad3-8f9d-4967-b554-217332bb058c.png)
   
-*) If QC result requires more tempering, refer Re-QC.
+*) If QC result requires more tempering, refer [Re-QC](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/900/Retrieval-for-QC-Start).
 
 <hr>
 
