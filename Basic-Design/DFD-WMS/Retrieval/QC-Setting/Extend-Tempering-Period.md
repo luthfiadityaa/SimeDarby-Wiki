@@ -43,7 +43,7 @@ This screen is mainly used when it is decided to extend the tempering period of 
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
 This section explains the validations for the whole process QC Status Update
-- Only **<span style="color:green; font-weight:bold">9001:Tempering Area</span** can bet set. 
+- Only **<span style="color:green; font-weight:bold">9001:Tempering Area</span>** can bet set. 
 
 Once the QC status is updated from **<span style="color:green; font-weight:bold">QI→UU/BS</span>**, it cannot turn back to **<span style="color:green; font-weight:bold">QI</span>**. **<span style="color:green; font-weight:bold">UU</span>** can be turned to **<span style="color:green; font-weight:bold">BS</span>** and `vice-versa`, but not to **<span style="color:green; font-weight:bold">QI</span>**.
 
