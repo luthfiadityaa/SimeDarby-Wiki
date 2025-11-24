@@ -59,8 +59,8 @@ Cond1{Continue Deposit to ?}-->|SRM 9001-9006|P2[ID33]
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
 | Transfer Setting - Set(F2) [(1)](#transfer-setting---set(f2))  |   S  |   I  |   I  |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |
 | **Normal Retrieval**                                           |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| ID12 [(2)](#id12)                                              |   U  |      |      |   I  |      |      |      |      |      |      |      |      |      |      |
-| Retrieval Sender [(3)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| Retrieval Sender [(2)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| ID12 [(3)](#id12)                                              |   U  |      |      |   I  |      |      |      |      |      |      |      |      |      |      |
 | ID32 [(4)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
 | ID33 at SRM Retrieval [(5)](#id33-at-srm-retrieval)            |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |
 | **Flow 1 - Storage from crane (9011-9014) through crane (9007-9010)**|      |      |      |      |      |      |      |      |      |      |      |      |      |      |
