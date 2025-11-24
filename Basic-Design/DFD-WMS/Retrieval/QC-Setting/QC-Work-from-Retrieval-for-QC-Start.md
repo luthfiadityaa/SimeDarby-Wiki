@@ -68,7 +68,8 @@ P14[ID33]-->P1[TO AISLE STATION - 9001,
 | Action Name                                                      |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN| 
 |------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|
 | ID63 [(1)](#ID63)                                                |    |    |    |    |    |    |     |    |    |    |    | U  |   
-| QC Work - Retrieval for QC Start - Set(F2) [(2)](#QC-Work---Retrieval-for-QC-Start---Set(F2)) | I  |    |    |    |    |    |     |    |    |    | S  |    |   
+| QC Work - Retrieval for QC Start - Set(F2) [(2)](#QC-Work---Retrieval-for-QC-Start---Set(F2)) | I  |    |    |    |    |    |     |    |    |    | S  |    |
+| ID26[(3)](#ID26)                                                                | U  | U  | U  | U  |    | I  |  I  |    | U  | I  |    |    |    |    | I   |    
 | StorageSender[(4)](#Storage-Sender-at-1301-&-1302)               | U  |    | U  | U  | U  |    | U   | U  | U  |    |    |    |    
 | ID25[(5)](#ID25-at-1303)                                  |    |    |    | U  |    |    | D   |    |    |    |    |    |     
 | ID64[(6)](#ID64-at-STV-From-1303)                         |    |    |    | U  |    |    |     |    |    |    |    |    |     
