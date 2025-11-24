@@ -296,9 +296,8 @@ DNWORKINFO
 DNPALLET
 ")]
 
-retrievalsender-update[("
+retrievalsender-insert[("
 DNCARRYINFO
-DNPALLET
 ")]
 
 id12msg("
