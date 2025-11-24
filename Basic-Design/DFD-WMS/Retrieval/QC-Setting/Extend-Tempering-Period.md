@@ -37,7 +37,7 @@ from Screen]-->P2[Extend Tempering Period]
 
 # Extend Tempering Period - Set(F2)
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.QCSettingSCH &nbsp;</span>
-![Picture1.png](/.attachments/Picture1-d36a622b-7f90-4076-8fb0-a10e85d67eb4.png)
+![Picture1.png](/.attachments/Picture1-a2a1e5de-6862-4a3e-9429-502cd782711b.png)
   
 This screen is mainly used when it is decided to extend the tempering period of stock after QC operation.
 
