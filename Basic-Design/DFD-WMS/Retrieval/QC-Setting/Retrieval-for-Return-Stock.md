@@ -520,7 +520,7 @@ All Carton Retrieval operation at Ambient or Tempering will be retrieved to Stat
 * **LAST_UPDATE_PNAME**: Class name
 
 ##ID25 at 7207-7210
-jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process&nbsp;</span>
 
 ::: mermaid
 flowchart LR
