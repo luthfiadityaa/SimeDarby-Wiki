@@ -718,7 +718,7 @@ retrievaloperator--> |UPDATE| id26-update
 id26-insert-->buttonclicked2 
 :::
 
-When the retrieved pallet reaches the QC station, Warenavi sends an ‘Internal Location Transfer’ message to the host system and initiates ‘QC Work‘. 
+When the retrieved pallet reaches the QC station, Warenavi sends an ‘Internal Location Transfer’ message to the host system and initiates `QC Work`. 
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ###<span style="color:skyblue; font-weight:bold">DNARRIVAL</span>
