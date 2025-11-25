@@ -138,7 +138,7 @@ flowchart LR
 
     tableList-insert[("
         DNWORKINFO
-        DNWORKLIST     
+        DNWORKLIST
         DNSTOCKHISTORY
     ")]
 
