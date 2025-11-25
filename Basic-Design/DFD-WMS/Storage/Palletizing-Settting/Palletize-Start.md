@@ -311,8 +311,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME** : ClassName
 
-###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
-*  **PLAN_UKEY**: Sequence Object    
+###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span> 
 *  **STATUS_FLAG**: 1: Working  
 *  **BCR_DATA**: DNPALLET.BCR_DATA
 
