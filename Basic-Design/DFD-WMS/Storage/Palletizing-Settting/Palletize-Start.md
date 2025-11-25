@@ -314,7 +314,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 ###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
 *  **PLAN_UKEY**: Sequence Object    
 *  **STATUS_FLAG**: 1: Working  
-*  **BCR_DATA**:
+*  **BCR_DATA**: DNPALLET.BCR_DATA
 
 ##Storage Sender at 1101-1105
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
