@@ -39,7 +39,7 @@ The data will be selected as a result:
 * **RESULT_AREA_NO** ⇄ **PLANT** 
 * **BATCH_NO** ⇄ **BATCH**
 * **RESULT_QTY** ⇄ **QUANTITY**
-* **UOM** ⇄ DMITEM.UOM
+* **UOM** ⇄ **UOM**
 * **LAST_UPDATE_DATE** ⇄ **POSTING DATE**
 * **STOCK_STATUS_TO** ⇄ **STATUSTO**
 * **STORAGE_LOCATION_FROM** ⇄ **STORAGE LOCATION FROM**
