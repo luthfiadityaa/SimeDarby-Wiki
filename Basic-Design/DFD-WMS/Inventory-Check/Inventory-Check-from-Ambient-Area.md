@@ -300,7 +300,7 @@ For Inventory Check performed in ASRS where there is creation of DNCARRYINFO, DN
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 - **LAST_UPDATE_PNAME** : ClassName
 
-####<span style="color:skyblue; font-weight:bold">DNWORKINFO</span>   
+## <span style="color:skyblue; font-weight:bold">DNWORKINFO</span>   
 - **STATUS_FLAG**: 1:Working  
 - **SYSTEM_CONN_KEY**: DNCARRYINFO.CARRY_KEY
 
