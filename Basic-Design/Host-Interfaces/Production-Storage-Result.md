@@ -46,10 +46,6 @@ The data will be selected as a result: **Warenavi** ⇄ **SAP**
 * **STORAGE_LOCATION_TO** ⇄ **STORAGE LOCATION TO**
 * **BCR_DATA** ⇄ **PALLET ID**
 
-###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
-* **REPORT_FLAG**: 1:Reported
-* **LAST_UPDATE_PNAME**: SYSTIMESTAMP
-
 #Result Data from WareNavi
 ##TXT/CSV Format
 ```csv
@@ -74,6 +70,10 @@ The data will be selected as a result: **Warenavi** ⇄ **SAP**
     <PalletID>PLY0001</PalletID>
 </PalletUpdate>
 ```
+
+###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
+* **REPORT_FLAG**: 1:Reported
+* **LAST_UPDATE_PNAME**: SYSTIMESTAMP
 
 # Related DFD
 - [SAP Response - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/866/SAP-Response)
