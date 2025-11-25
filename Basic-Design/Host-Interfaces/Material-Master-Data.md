@@ -31,7 +31,7 @@ flowchart LR
 * **TYPE**: S: Success
 * **MESSAGE_DESC**: Free Text -> **The master material data has been inserted.**    
 
-The data will be paired as a input: **Warenavi** ⇄ **SAP**
+The data will be paired as an input: **Warenavi** ⇄ **SAP**
 * **ITEM_CODE** ⇄ **MATERIAL CODE**
 * **RESULT_AREA_NO** ⇄ **PLANT** 
 * **BATCH_NO** ⇄ **BATCH**
@@ -84,7 +84,7 @@ The data will be paired as a input: **Warenavi** ⇄ **SAP**
 ```
 
 ###<span style="color:skyblue; font-weight:bold">DMItem</span>
-The data will be paired to insert: **Warenavi** ⇄ **SAP**
+The data will be paired as an input: **Warenavi** ⇄ **SAP**
 * **ITEM_CODE** ⇄ **MATERIAL CODE**
 * **ITEM_NAME** ⇄ **MATERIAL MATERIAL**
 
