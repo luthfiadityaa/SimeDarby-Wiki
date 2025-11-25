@@ -42,6 +42,8 @@ The data will be selected as a result:
 * **UOM** = DMITEM.UOM
 * **LAST_UPDATE_DATE** = **POSTING DATE**
 * **STOCK_STATUS_TO** = **STATUSTO**
+* **STORAGE_LOCATION_FROM** = **STORAGE LOCATION FROM**
+* **STORAGE_LOCATION_TO** = **STORAGE LOCATION TO**
 
 #Result Data from WareNavi
 ##TXT/CSV Format
