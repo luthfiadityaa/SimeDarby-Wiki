@@ -40,6 +40,7 @@ The data will be selected asa result:
 * **BATCH_NO** = **BATCH**
 * **RESULT_QTY** = **QUANTITY**
 * **UOM** = DMITEM.UOM
+* *LAST_UPDATE_DATE* = **POSTING DATE**
 
 #Result Data from WareNavi
 ##TXT/CSV Format
