@@ -34,8 +34,7 @@ flowchart LR
 * **TYPE**: S: Success
 * **MESSAGE_DESC**: Free Text -> **The production process has been finished.**    
 
-The data will be selected as a result:
-
+The data will be selected as a result: Warenavi ⇄ SAP
 * **ITEM_CODE** ⇄ **MATERIAL CODE**
 * **RESULT_AREA_NO** ⇄ **PLANT** 
 * **BATCH_NO** ⇄ **BATCH**
@@ -44,6 +43,7 @@ The data will be selected as a result:
 * **LAST_UPDATE_DATE** ⇄ **POSTING DATE**
 * **STOCK_STATUS_TO** ⇄ **STATUSTO**
 * **STORAGE_LOCATION_FROM** ⇄ **STORAGE LOCATION FROM**
+* **STORAGE_LOCATION_TO** ⇄ **STORAGE LOCATION TO**
 * **STORAGE_LOCATION_TO** ⇄ **STORAGE LOCATION TO**
 
 #Result Data from WareNavi
