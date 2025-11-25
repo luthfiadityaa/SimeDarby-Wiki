@@ -269,9 +269,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 *   **STOCK_ID**: Sequence Object    
 *   **AREA_NO**: Value from screen (Storage Location To) ⟶ <span style="color:green; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>    
 *   **LOCATION_NO**: 22222222    
-*   **STORAGE_TYPE**: 2: New    
-*   **QTY_CRTN_PL**: Value from screen (Qty crtn/PL)    
-*   **QTY_KG_CRTN**: Value from screen (Qty kg/crtn)    
+*   **STORAGE_TYPE**: 2: New     
 *   **ALLOCATION_QTY**: 0    
 *   **PLAN_QTY**: Value from screen (Storage Qty)    
 *   **PALLET_ID**: Sequence Object    
