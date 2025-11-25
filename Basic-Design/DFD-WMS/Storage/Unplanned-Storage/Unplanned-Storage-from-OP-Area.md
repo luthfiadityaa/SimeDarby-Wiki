@@ -175,24 +175,24 @@ This section explains the validations for the whole proccess Palletize Start
 *   **JOB_NO**: Sequence Object    
 *   **SETTING_UNIT_KEY**: Sequence Object    
 *   **COLLECT_JOB_NO**: Sequence Object    
-*   **JOB_TYPE**: 22: Unplanned Storage    
-*   **STATUS_FLAG**: 0: Not Started    
+*   **JOB_TYPE**: 22:Unplanned Storage    
+*   **STATUS_FLAG**: 0:Not Started    
 *   **PLAN_UKEY**: Sequence Object    
 *   **STOCK_ID**: Sequence Object    
-*   **PLAN_AREA_NO**: Value from screen (Storage Location To) ⟶ <span style="color:green; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>    
+*   **PLAN_AREA_NO**: Value from screen (Storage Location To) ⟶ **FGW1 (Ambient/9002) or FGW2 (Tempering/9001)**    
 *   **PLAN_DAY**: DMWARENAVISYSTEM.WORK_DAY    
 *   **BATCH_NO**: Value from screen (Batch No)    
 *   **MATERIAL_CODE**: Value from screen (Material Code)    
 *   **MATERIAL_NAME**: Value from screen (Material Name)    
-*   **PLAN_QTY**: Value from screen (Storage Qty)    
+*   **PLAN_QTY**: Value from screen (Qty crtn/PL)    
 *   **QTY_KG_CRTN**: Value from screen (Qty kg/crtn)    
-*   **QTY_CRTN_PL**: Value from screen (Qty crtn/PL)    
+*   **STORAGE_QTY**: Value from screen (Storage Qty)    
 *   **UOM**: Value from screen (UOM)    
 *   **TEMPERING_PERIOD**: Value from screen (Tempering Period)    
-*   **EXPIRY_DAYS**: Value from screen (Expiry Days)    
+*   **EXPIRY_DATE**: Value from screen (Expiry Days)    
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY    
 *   **USER_ID**: Login Info    
-*   **STORAGE_LOCATION**: Value from screen (Storage Location From) ⟶ <span style="color:green; font-weight:bold">FGW1 (Ambient/9002) or FGW2 (Tempering/9001)</span>    
+*   **STORAGE_LOCATION**: Value from screen (Storage Location From) ⟶ **FGW1 (Ambient/9002) or FGW2 (Tempering/9001)**    
 *   **REGIST_DATE**: SYSTIMESTAMP    
 *   **REGIST_PNAME**: ClassName    
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
