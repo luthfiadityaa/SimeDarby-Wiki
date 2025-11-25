@@ -56,8 +56,8 @@ P1[Work Display - Click Complete Button]-->P2[ID45]-->P3[ID26]-->P4[StorageSende
 | ID63 [(1)](#id33)                                              |      |      |      |      |      |      |      |      |      |      |      |      |      |   U  |      |
 | Inquiry Retrieval - Set(F2) [(2)](#inventory-check---set(f2))  |   S  |   I  |   I  |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   I  |
 | **Retrieval Flow**                                             |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| Retrieval Sender [(3)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
-| ID12 [(4)](#id12)                                              |   U  |      |      |   I  |      |      |      |      |      |      |      |      |      |      |      |
+| Retrieval Sender [(3)](#retrieval-sender)                      |   U  |   U  |      |   I  |      |      |      |      |      |      |      |      |      |      |      |
+| ID12 [(4)](#id12)                                              |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
 | ID32 [(5)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
 | ID33 [(6)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
 | ID64 [(7)](#id64)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
@@ -251,16 +251,21 @@ DNCARRYINFO
 ")]
 
 retrievalsender-update[("
-DNCARRYINFO
 DNPALLET
+DNWORKINFO
+")]
+
+retrievalsender-insert[("
+DNCARRYINFO
 ")]
 
 id12msg("
 ID 12
 ")
 
-retrievalsender--SEND-->id12msg
-retrievalsender-input-->retrievalsender-.UPDATE.->retrievalsender-update
+retrievalsender-input-->RetrievalSender--> |UPDATE| retrievalsender-update
+RetrievalSender--> |INSERT| retrievalsender-insert
+RetrievalSender--> |SendText| id12msg
 :::
 
 For Inventory Check performed in ASRS where there is creation of DNCARRYINFO, DNCARRYNFO data will be processed in Retrieval Sender. ID 12 will be sent after related tables are updated successfully.
@@ -295,6 +300,10 @@ For Inventory Check performed in ASRS where there is creation of DNCARRYINFO, DN
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 - **LAST_UPDATE_PNAME** : ClassName
 
+####<span style="color:skyblue; font-weight:bold">DNWORKINFO</span>   
+- **STATUS_FLAG**: 1:Working  
+- **SYSTEM_CONN_KEY**: DNCARRYINFO.CARRY_KEY
+
 #ID12
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
@@ -303,23 +312,19 @@ For Inventory Check performed in ASRS where there is creation of DNCARRYINFO, DN
 ::: mermaid
 flowchart LR
 
-id26msg("
+id12msg("
 ID12
 ")
 
-id26-insert[("
+id12-update[("
+DNPALLET
 DNCARRYINFO
 ")]
 
-id26-update[("
-DNPALLET
-")]
+retrievalstationoperator[RetrievalStationOperator]
 
-InOutStationOperation[InOutStationOperation]
-
-id26msg-->id12process
-id12process-->InOutStationOperation--> |INSERT| id26-insert
-InOutStationOperation--> |UPDATE| id26-update
+id12msg-->id12process
+id12process-->retrievalstationoperator--> |UPDATE| id12-update
 :::
 
 ## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
