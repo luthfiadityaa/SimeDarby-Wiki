@@ -169,7 +169,7 @@ This section explains the validations for the whole proccess Palletize Start
 *   **BATCH_NO** : Value from screen (**Batch_No**)    
 *   **PLANNED_CARTON_QTY** : Value from screen (**Planned Carton Qty**)    
 *   **QTY_KG_CRTN** : Value from screen (**Qty Kg/Crtn**) -> **<span style="color:green; font-weight:bold">DMITEM.ITEM_TYPE </span>**    
-*   **UOM** : Value from screen (**UOM**)    
+*   **UOM** : Value from screen (**UOM**) -> **<span style="color:green; font-weight:bold">DMITEM.UOM </span>**    
 *   **TEMPERING_PERIOD** : Value from screen (**Tempering Period**)    
 *   **EXPIRY_DAYS** : Value from screen (**Expiry Days**)    
 *   **STORAGE_QTY** : **PLANNED_CARTON_QTY - TOTAL_ACTUAL_CARTON_QTY**    
