@@ -82,6 +82,9 @@ The data will be selected as a result: **Warenavi** ⇄ **SAP**
 00000000025230999,4900000002,"PACKAGING 001",KG,ZPCK,0
 ```
 
+###<span style="color:skyblue; font-weight:bold">DMItem</span>
+
+
 # User Story
 - #5737
 
