@@ -139,11 +139,11 @@ flowchart LR
     tableList-insert[("
         DNWORKINFO
         DNWORKLIST
-        DNSTOCKHISTORY
     ")]
 
      tableList-update[("
-        DNSTOCK
+        DNSTOCK        
+        DNSTOCKHISTORY
     ")]
 
      tableList-select[("
