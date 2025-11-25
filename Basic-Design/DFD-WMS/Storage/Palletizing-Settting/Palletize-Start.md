@@ -175,7 +175,7 @@ This section explains the validations for the whole proccess Palletize Start
 *   **STORAGE_QTY** : **PLANNED_CARTON_QTY - TOTAL_ACTUAL_CARTON_QTY**    
 *   **TOTAL_ACTUAL_CARTON_QTY** : **TOTAL_ACTUAL_CARTON_QTY + PLAN_QTY**    
 *   **MAX_PALLET_BATCH_END** : **PLANNED_CARTON_QTY / PLAN_QTY**    
-*   **BATCH_PALLET_START** : **Value from screen (Storage Date/Time) + System Timestamp**    
+*   **BATCH_PALLET_START** : **PLAN_DAY + System Timestamp**    
 *   **REGIST_DATE** : SYSTIMESTAMP    
 *   **REGIST_PNAME** : ClassName    
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
