@@ -48,6 +48,7 @@ The data will be selected as a result: **Warenavi** ⇄ **SAP**
 
 ###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
 * **REPORT_FLAG**: 1:Reported
+* **LAST_UPDATE_PNAME**: SYSTIMESTAMP
 
 #Result Data from WareNavi
 ##TXT/CSV Format
