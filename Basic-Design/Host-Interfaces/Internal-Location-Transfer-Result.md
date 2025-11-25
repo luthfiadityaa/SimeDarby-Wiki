@@ -25,6 +25,7 @@ flowchart LR
     end
 :::
 
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ###<span style="color:skyblue; font-weight:bold">DNHostSend</span>
 * **MSG_ID**: Sequence Object
 * **MSG_TYPE**: 2:Pallet Update 
