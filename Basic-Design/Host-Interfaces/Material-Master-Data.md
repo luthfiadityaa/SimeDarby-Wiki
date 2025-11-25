@@ -28,7 +28,7 @@ flowchart LR
 * **MSG_TYPE**: ? 
 * **ERROR_INDICATION**: 0:Successful
 * **TYPE**: S: Success
-* **MESSAGE_DESC**: Free Text -> **The Master Material data process has been inserted.**    
+* **MESSAGE_DESC**: Free Text -> **The master material data has been inserted.**    
 
 The data will be selected as a result: **Warenavi** ⇄ **SAP**
 * **ITEM_CODE** ⇄ **MATERIAL CODE**
