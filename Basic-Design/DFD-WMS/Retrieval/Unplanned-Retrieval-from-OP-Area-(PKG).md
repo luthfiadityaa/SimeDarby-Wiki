@@ -195,9 +195,9 @@ id12msg("
 ID 12
 ")
 
-retrievalsender-input-->retrievalsender--> |UPDATE| retrievalsender-update
-retrievalsender--> |INSERT| retrievalsender-insert
-retrievalsender--> |SendText| id12msg
+retrievalsender-input-->RetrievalSender--> |UPDATE| retrievalsender-update
+RetrievalSender--> |INSERT| retrievalsender-insert
+RetrievalSender--> |SendText| id12msg
 :::
 
 The Retrieval operation at **Packaging Material zone (9002: Ambient)** will be retrieved to Station 1201, 1202, 1203, 1204 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
