@@ -31,7 +31,7 @@ flowchart LR
 * **TYPE**: S: Success
 * **MESSAGE_DESC**: Free Text -> **The master material data has been inserted.**    
 
-The data will be selected as a result: **Warenavi** ⇄ **SAP**
+The data will be paired as a input: **Warenavi** ⇄ **SAP**
 * **ITEM_CODE** ⇄ **MATERIAL CODE**
 * **RESULT_AREA_NO** ⇄ **PLANT** 
 * **BATCH_NO** ⇄ **BATCH**
