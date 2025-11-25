@@ -189,7 +189,7 @@ This section explains the validations for the whole proccess Palletize Start
 *   **EXPIRY_DATE**: Value from screen (Expiry Days)    
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY    
 *   **USER_ID**: Login Info    
-*   **STORAGE_LOCATION_FROM**: Value from screen (Storage Location From) ⟶ **FGW1 (Ambient/9002) or FGW2 (Tempering/9001)**    
+*   **STORAGE_LOCATION**: Value from screen (Storage Location From) ⟶ **FGW1 (Ambient/9002) or FGW2 (Tempering/9001)**    
 *   **REGIST_DATE**: SYSTIMESTAMP    
 *   **REGIST_PNAME**: ClassName    
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
