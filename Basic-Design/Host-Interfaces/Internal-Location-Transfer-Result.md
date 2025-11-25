@@ -35,6 +35,12 @@ flowchart LR
 
 The data will be selected asa result:
 
+* **MSG_ID**: Sequence Object
+* **MSG_TYPE**: 2:Pallet Update 
+* **ERROR_INDICATION**: 0:Successful
+* **TYPE**: S: Success
+* **MESSAGE_DESC**: Free Text -> **The Retrieval QC process has been initiated.**
+
 #Result Data from WareNavi
 ##TXT/CSV Format
 ```csv
