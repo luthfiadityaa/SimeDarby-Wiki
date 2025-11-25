@@ -28,6 +28,7 @@ flowchart LR
 * **MSG_ID**: Value from SAP
 * **MSG_TYPE**: ? 
 * **ERROR_INDICATION**: 0:Successful
+* **DELETE_INDICATION**: 0:Normal
 * **TYPE**: S: Success
 * **MESSAGE_DESC**: Free Text -> **The master material data has been inserted.**    
 
