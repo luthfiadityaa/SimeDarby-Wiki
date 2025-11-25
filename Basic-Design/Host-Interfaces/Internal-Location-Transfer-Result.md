@@ -25,6 +25,15 @@ flowchart LR
     end
 :::
 
+###<span style="color:skyblue; font-weight:bold">DNHostSend</span>
+* **MSG_ID**: Sequence Object
+* **MSG_TYPE**: 2:Pallet Update 
+* **ERROR_INDICATION**: 0:Successful
+* **TYPE**: S: Success
+* **MESSAGE_DESC**:    
+
+
+
 #Result Data from WareNavi
 ##TXT/CSV Format
 ```csv
