@@ -25,10 +25,10 @@ flowchart LR
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ###<span style="color:skyblue; font-weight:bold">DNHostSend</span>
 * **MSG_ID**: Value from SAP
-* **MSG_TYPE**: 1:Production Storage 
+* **MSG_TYPE**: ? 
 * **ERROR_INDICATION**: 0:Successful
 * **TYPE**: S: Success
-* **MESSAGE_DESC**: Free Text -> **The production process has been finished.**    
+* **MESSAGE_DESC**: Free Text -> **The Master Material data process has been inserted.**    
 
 The data will be selected as a result: **Warenavi** ⇄ **SAP**
 * **ITEM_CODE** ⇄ **MATERIAL CODE**
