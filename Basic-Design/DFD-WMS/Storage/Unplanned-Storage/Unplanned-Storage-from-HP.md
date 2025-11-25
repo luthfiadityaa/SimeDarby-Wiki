@@ -186,7 +186,7 @@ This section explains the validations for the whole proccess Palletize Start
 *   **STORAGE_QTY**: Value from screen (Storage Qty)    
 *   **UOM**: Value from screen (UOM)    
 *   **TEMPERING_PERIOD**: Value from screen (Tempering Period)    
-*   **EXPIRY_DAYS**: Value from screen (Expiry Days)    
+*   **EXPIRY_DATE**: Value from screen (Expiry Days)    
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY    
 *   **USER_ID**: Login Info    
 *   **STORAGE_LOCATION_FROM**: Value from screen (Storage Location From) ⟶ **FGW1 (Ambient/9002) or FGW2 (Tempering/9001)**    
@@ -1049,7 +1049,7 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 *   **STOCK_STATUS**: <span style="color:green; font-weight:bold">UU: Unrestricted Used</span>    
 *   **TEMPERING_FLAG**: <span style="color:green; font-weight:bold">0: Not Reached</span>    
 *   **QC_FLAG**: <span style="color:green; font-weight:bold">0: Not Done</span>
-*   **EXPIRY_DATE**: DNWORKINFO.EXPIRY_DAYS    
+*   **EXPIRY_DATE**: DNWORKINFO.EXPIRY_DATE    
 *   **REGIST_DATE**: SYSTIMESTAMP    
 *   **REGIST_PNAME**: Class name
 
