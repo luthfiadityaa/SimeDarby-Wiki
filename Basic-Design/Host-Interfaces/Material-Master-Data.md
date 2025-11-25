@@ -22,6 +22,26 @@ flowchart LR
     end
 :::
 
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###<span style="color:skyblue; font-weight:bold">DNHostSend</span>
+* **MSG_ID**: Value from SAP
+* **MSG_TYPE**: 1:Production Storage 
+* **ERROR_INDICATION**: 0:Successful
+* **TYPE**: S: Success
+* **MESSAGE_DESC**: Free Text -> **The production process has been finished.**    
+
+The data will be selected as a result: **Warenavi** ⇄ **SAP**
+* **ITEM_CODE** ⇄ **MATERIAL CODE**
+* **RESULT_AREA_NO** ⇄ **PLANT** 
+* **BATCH_NO** ⇄ **BATCH**
+* **RESULT_QTY** ⇄ **QUANTITY**
+* **UOM** ⇄ **UOM**
+* **LAST_UPDATE_DATE** ⇄ **POSTING DATE**
+* **STOCK_STATUS_TO** ⇄ **STATUSTO**
+* **STORAGE_LOCATION_FROM** ⇄ **STORAGE LOCATION FROM**
+* **STORAGE_LOCATION_TO** ⇄ **STORAGE LOCATION TO**
+* **BCR_DATA** ⇄ **PALLET ID**
+
 #XML Format
 ##Finish Goods
 ```xml
