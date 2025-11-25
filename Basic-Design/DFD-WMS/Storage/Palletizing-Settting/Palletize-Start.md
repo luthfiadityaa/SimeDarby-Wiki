@@ -153,7 +153,7 @@ This section explains the validations for the whole proccess Palletize Start
 
 ###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
 *   **PLAN_UKEY** : Sequence Object    
-*   **STATUS_FLAG** : 1: Working    
+*   **STATUS_FLAG** : 0: Not Started    
 *   **CANCEL_FLAG** : 0: Normal Data    
 *   **DELETE_FLAG** : 0: No    
 *   **PLAN_DAY** : Value from screen (**Storage Date/Time**)    
