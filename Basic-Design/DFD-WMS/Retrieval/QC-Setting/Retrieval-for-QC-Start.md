@@ -781,6 +781,7 @@ When the retrieved pallet reaches the QC station, Warenavi sends an ‘Internal 
 *   **RESULT_AREA_NO**: DNWORKINFO.PLAN_AREA_NO
 *   **RESULT_LOCATION_NO**: DNWORKINFO.PLAN_LOCATION_NO
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY
+*   **STOCK_STATUS**: <span style="color:green; font-weight:bold">QI</span>   
 *   **STORAGE_LOCATION**: <span style="color:green; font-weight:bold">QC01</span>
 *   **USER_ID**: Login info
 *   **TERMINAL_NO**: Login info
