@@ -73,7 +73,8 @@ The data will be selected as a result: **Warenavi** ⇄ **SAP**
 
 ###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
 * **REPORT_FLAG**: 1:Reported
-* **LAST_UPDATE_PNAME**: SYSTIMESTAMP
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Classname
 
 # Related DFD
 - [SAP Response - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/866/SAP-Response)
