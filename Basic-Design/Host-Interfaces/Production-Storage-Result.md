@@ -46,6 +46,8 @@ The data will be selected as a result: **Warenavi** ⇄ **SAP**
 * **STORAGE_LOCATION_TO** ⇄ **STORAGE LOCATION TO**
 * **BCR_DATA** ⇄ **PALLET ID**
 
+###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
+
 #Result Data from WareNavi
 ##TXT/CSV Format
 ```csv
