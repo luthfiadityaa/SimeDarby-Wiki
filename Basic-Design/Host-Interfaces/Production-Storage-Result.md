@@ -26,6 +26,8 @@ flowchart LR
     end
 :::
 
+
+
 #Result Data from WareNavi
 ##TXT/CSV Format
 ```csv
