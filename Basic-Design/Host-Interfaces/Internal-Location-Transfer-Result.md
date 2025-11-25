@@ -30,7 +30,7 @@ flowchart LR
 * **MSG_TYPE**: 2:Pallet Update 
 * **ERROR_INDICATION**: 0:Successful
 * **TYPE**: S: Success
-* **MESSAGE_DESC**: Free Text -> "The Retrieval QC process has been initiated."    
+* **MESSAGE_DESC**: Free Text -> **The Retrieval QC process has been initiated.**    
 
 
 #Result Data from WareNavi
