@@ -33,14 +33,15 @@ flowchart LR
 * **TYPE**: S: Success
 * **MESSAGE_DESC**: Free Text -> **The Retrieval QC process has been initiated.**    
 
-The data will be selected as A result:
+The data will be selected as a result:
 
 * **ITEM_CODE** = **MATERIAL CODE**
 * **RESULT_AREA_NO** = **PLANT** 
 * **BATCH_NO** = **BATCH**
 * **RESULT_QTY** = **QUANTITY**
 * **UOM** = DMITEM.UOM
-* *LAST_UPDATE_DATE* = **POSTING DATE**
+* **LAST_UPDATE_DATE** = **POSTING DATE**
+* **STOCK_STATUS_TO** = **STATUSTO**
 
 #Result Data from WareNavi
 ##TXT/CSV Format
