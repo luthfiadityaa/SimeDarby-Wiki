@@ -83,7 +83,9 @@ The data will be selected as a result: **Warenavi** ⇄ **SAP**
 ```
 
 ###<span style="color:skyblue; font-weight:bold">DMItem</span>
-
+The data will be paired to insert: **Warenavi** ⇄ **SAP**
+* **ITEM_CODE** ⇄ **MATERIAL CODE**
+* **ITEM_NAME** ⇄ **MATERIAL MATERIAL**
 
 # User Story
 - #5737
