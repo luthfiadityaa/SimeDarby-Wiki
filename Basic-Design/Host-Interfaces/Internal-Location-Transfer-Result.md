@@ -33,6 +33,8 @@ flowchart LR
 * **TYPE**: S: Success
 * **MESSAGE_DESC**: Free Text -> **The Retrieval QC process has been initiated.**    
 
+The data will be selected asa result:
+
 #Result Data from WareNavi
 ##TXT/CSV Format
 ```csv
