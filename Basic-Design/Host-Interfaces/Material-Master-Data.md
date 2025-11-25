@@ -87,6 +87,8 @@ The data will be paired as an input: **Warenavi** ⇄ **SAP**
 * **ITEM_CODE** ⇄ **MATERIAL CODE**
 * **ITEM_NAME** ⇄ **MATERIAL MATERIAL**
 * **QTY_KG_CRTN** ⇄ **QUANTITY KG CTN**
+* **UOM** ⇄ **UOM**
+* **ITEM_TYPE** ⇄ **ITEM TYPE**
 
 # User Story
 - #5737
