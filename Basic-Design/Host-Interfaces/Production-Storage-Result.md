@@ -34,7 +34,7 @@ flowchart LR
 * **TYPE**: S: Success
 * **MESSAGE_DESC**: Free Text -> **The production process has been finished.**    
 
-The data will be selected as a result: Warenavi ⇄ SAP
+The data will be selected as a result: **Warenavi** ⇄ **SAP**
 * **ITEM_CODE** ⇄ **MATERIAL CODE**
 * **RESULT_AREA_NO** ⇄ **PLANT** 
 * **BATCH_NO** ⇄ **BATCH**
