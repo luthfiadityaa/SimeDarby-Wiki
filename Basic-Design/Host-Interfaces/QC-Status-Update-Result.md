@@ -16,7 +16,6 @@ flowchart LR
     D -->|Send Back Response| C
     C -->|Convert XML → TXT/CSV| B
     B -->|Return TXT/CSV Response via SFTP| A
-    E[(DNStock)] <--> |Update| A
     F[(DNHostSend)] <--> |Update| A
 
      subgraph HostCommExecutor
