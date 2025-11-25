@@ -166,6 +166,12 @@ flowchart LR
 :::
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">DNStockHistory</span>
+* **STOCK_STATUS**: <span style="color:green; font-weight:bold">QI</span>
+* **STORAGE_LOCATION**: <span style="color:green; font-weight:bold">QC01</span>
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+* **LAST_UPDATE_PNAME**: QCSettingSCH
+
 ####<span style="color:skyblue; font-weight:bold">DNStock</span>
 * **STOCK_STATUS**: <span style="color:green; font-weight:bold">QI</span>
 * **STORAGE_LOCATION**: <span style="color:green; font-weight:bold">QC01</span>
