@@ -8,7 +8,7 @@
 ::: mermaid
 flowchart LR
   
-P1[FROM STATION - 9001, 9002, 9003, 9004, 9005, 9006]-->P2[ID12]-->P3[RetrievalSender]-->P4[ID32]-->P5[ID33]-->P6[ID64]-->P7[ID26]-->P8[StorageSender]-->P9[ID05]-->P10[ID25]-->P11[ID64]-->P12[ID33]
+P1[FROM STATION - 9001, 9002, 9003, 9004, 9005, 9006]-->P2[RetrievalSender]-->P3[ID12]-->P4[ID32]-->P5[ID33]-->P6[ID64]-->P7[ID26]-->P8[StorageSender]-->P9[ID05]-->P10[ID25]-->P11[ID64]-->P12[ID33]
 :::
 
 #<span style="color:skyblue; font-weight:bold">Transfer Setting from Tempering to Ambient</span>
