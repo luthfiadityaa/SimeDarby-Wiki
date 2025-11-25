@@ -167,7 +167,7 @@ This section explains the validations for the whole proccess Palletize Start
 *   **MATERIAL_NAME** : Value from screen (**Material Name**) -> **<span style="color:green; font-weight:bold">DMITEM.ITEM_NAME </span>**    
 *   **MATERIAL_TYPE** : Value from screen (**Material Type**) -> **<span style="color:green; font-weight:bold">DMITEM.ITEM_TYPE </span>**    
 *   **BATCH_NO** : Value from screen (**Batch_No**)    
-*   **PLANNED_CARTON_QTY** : Value from screen (**Planned Carton Qty**)    
+*   **PLAN_QTY** : Value from screen (**Planned Carton Qty**)    
 *   **QTY_KG_CRTN** : Value from screen (**Qty Kg/Crtn**) -> **<span style="color:green; font-weight:bold">DMITEM.ITEM_TYPE </span>**    
 *   **UOM** : Value from screen (**UOM**) -> **<span style="color:green; font-weight:bold">DMITEM.UOM </span>**    
 *   **TEMPERING_PERIOD** : Value from screen (**Tempering Period**)    
