@@ -863,6 +863,7 @@ When the retrieved pallet reaches the QC station, Warenavi sends an ‘Internal 
 *   **SHORTAGE_QTY**: DNWORKINFO.SHORTAGE_QTY    
 *   **RESULT_AREA_NO**: DNWORKINFO.RESULT_AREA_NO    
 *   **RESULT_LOCATION_NO**: DNWORKINFO.RESULT_LOCATION_NO   
+*   **STOCK_STATUS**: <span style="color:green; font-weight:bold">QI</span>   
 *   **STORAGE_LOCATION**: <span style="color:green; font-weight:bold">QC01</span>
 *   **USER_ID**: DNWORKINFO.USER_ID    
 *   **TERMINAL_NO**: DNWORKINFO.TERMINAL_NO    
