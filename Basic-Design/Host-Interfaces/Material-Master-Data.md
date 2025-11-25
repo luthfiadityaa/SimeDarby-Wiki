@@ -34,17 +34,9 @@ flowchart LR
 
 The data will be paired as an input: **Warenavi** ⇄ **SAP**
 * **ITEM_CODE** ⇄ **MATERIAL CODE**
-* **RESULT_AREA_NO** ⇄ **PLANT** 
-* **BATCH_NO** ⇄ **BATCH**
-* **RESULT_QTY** ⇄ **QUANTITY**
 * **UOM** ⇄ **UOM**
-* **LAST_UPDATE_DATE** ⇄ **POSTING DATE**
-* **STOCK_STATUS_TO** ⇄ **STATUSTO**
-* **STORAGE_LOCATION_FROM** ⇄ **STORAGE LOCATION FROM**
-* **STORAGE_LOCATION_TO** ⇄ **STORAGE LOCATION TO**
-* **BCR_DATA** ⇄ **PALLET ID**
-
 #XML Format
+
 ##Finish Goods
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
