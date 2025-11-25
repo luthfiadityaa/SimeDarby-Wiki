@@ -33,7 +33,7 @@ flowchart LR
 * **TYPE**: S: Success
 * **MESSAGE_DESC**: Free Text -> **The Retrieval QC process has been initiated.**    
 
-The data will be selected asa result:
+The data will be selected as A result:
 
 * **ITEM_CODE** = **MATERIAL CODE**
 * **RESULT_AREA_NO** = **PLANT** 
