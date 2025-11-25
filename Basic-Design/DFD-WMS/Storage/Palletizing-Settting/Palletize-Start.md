@@ -1216,7 +1216,7 @@ Storage Date will be update by the system in this section represent by <span sty
 * **TERMINAL_NO**: Login info
 * **TERMINAL_NAME**: Login info
 * **IP_ADDRESS**: Login info
-* **STOCK_STATUS**: <span style="color:green; font-weight:bold">UU: Unrestricted Used</span>
+* **STOCK_STATUS_FROM**: <span style="color:green; font-weight:bold">UU: Unrestricted Used</span>
 * **TEMPERING_FLAG**: <span style="color:yellow; font-weight:bold; background-color:grey">0: Not Reached</span>
 * **QC_FLAG**: <span style="color:green; font-weight:bold">0: Not Done</span>
 * **EXPIRY_DATE**: DNWORKINFO.EXPIRY_DAYS
