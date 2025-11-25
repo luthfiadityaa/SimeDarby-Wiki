@@ -788,8 +788,6 @@ When the retrieved pallet reaches the QC station, Warenavi sends an ‘Internal 
 *   **LAST_UPDATE_PNAME**: Class name
 
 ###<span style="color:skyblue; font-weight:bold">DNStockHistory</span>
-* **REGIST_DATE**
-* **WORK_DAY**:
 * **INC_DEC_TYPE**: 2:Stock Decrease (Retrieval)
 * **JOB_TYPE**: 40:Inventory Check (AS/RS)
 * **STOCK_ID**: DNSTOCK.STOCK_ID
