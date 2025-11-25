@@ -10,7 +10,7 @@
 ::: mermaid
 flowchart LR
 
-P1[FROM STATION 9001 - 9014]-->P2[ID12]-->P3[RetrievalSender]-->P4[ID32]-->|SRM|P5[ID33]-->Cond1{Flow ?} 
+P1[FROM STATION 9007 - 9014]-->P2[RetrievalSender]-->P3[ID12]-->P4[ID32]-->|SRM|P5[ID33]-->Cond1{Flow ?} 
 :::
 
 ## Stage 2 - Deposit from station to SRM
@@ -240,7 +240,7 @@ retrievalstationoperator--> |UPDATE| id12-update
 - **RETRIEVAL_STATION_NO** : DNSTOCK.LOCATION_NO
 - **RETRIEVAL_DETAIL** : 1: Unit Retrieval
 - **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO ⟶ **(9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014)**    
-- **DEST_STATION_NO** : Based on **SOURCE_STATION_NO** where a reserved location belongs to ⟶ **(7101, 7102, 7103, 7104, 7105, 7207, 7208, 7209, 7210)**
+- **DEST_STATION_NO** : Based on **SOURCE_STATION_NO** where a reserved location belongs to ⟶ **(7101, 7102, 7103, 7104, 7105, 7106, 7207, 7208, 7209, 7210)**
 - **CANCEL_REQUEST** : 0: Not Requested    
 - **SCHEDULE_NO** : Sequence Object    
 - **CARRY_FLAG** : 2: Retrieval
