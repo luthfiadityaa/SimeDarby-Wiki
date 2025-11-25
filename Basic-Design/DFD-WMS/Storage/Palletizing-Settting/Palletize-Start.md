@@ -158,7 +158,7 @@ This section explains the validations for the whole proccess Palletize Start
 *   **DELETE_FLAG** : 0: No    
 *   **PLAN_DAY** : Value from screen (**Storage Date/Time**)    
 *   **PLAN_AREA_NO** : Value from screen (**Storage Location**) : **FGW1 (Ambient/9002)** or **FGW2 (Tempering/9001)**    
-*   **MATERIAL_CODE** : Value from screen (**Material Code**)    
+*   **MATERIAL_CODE** : Value from screen (**Material Code**) -> **<span style="color:green; font-weight:bold">DMITEM.ITEM_CODE </span>**   
 *   **PLAN_QTY** : Value from screen (**Qty Crtn/PL**)    
 *   **REPORT_FLAG** : 0: Not Reported    
 *   **STORING_PAIR_KEY** : Value from screen **(Material Code + Batch_No)**    
