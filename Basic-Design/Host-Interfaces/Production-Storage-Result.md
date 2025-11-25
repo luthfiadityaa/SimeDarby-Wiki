@@ -44,7 +44,7 @@ The data will be selected as a result: Warenavi ⇄ SAP
 * **STOCK_STATUS_TO** ⇄ **STATUSTO**
 * **STORAGE_LOCATION_FROM** ⇄ **STORAGE LOCATION FROM**
 * **STORAGE_LOCATION_TO** ⇄ **STORAGE LOCATION TO**
-* **STORAGE_LOCATION_TO** ⇄ **STORAGE LOCATION TO**
+* **BCR_DATA** ⇄ **PALLET ID**
 
 #Result Data from WareNavi
 ##TXT/CSV Format
