@@ -26,6 +26,26 @@ flowchart LR
     end
 :::
 
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###<span style="color:skyblue; font-weight:bold">DNHostSend</span>
+* **MSG_ID**: Sequence Object
+* **MSG_TYPE**: 2:Pallet Update 
+* **ERROR_INDICATION**: 0:Successful
+* **TYPE**: S: Success
+* **MESSAGE_DESC**: Free Text -> **The QC Status has been Updated.**    
+
+The data will be selected as a result:
+
+* **ITEM_CODE** ⇄ **MATERIAL CODE**
+* **RESULT_AREA_NO** ⇄ **PLANT** 
+* **BATCH_NO** ⇄ **BATCH**
+* **RESULT_QTY** ⇄ **QUANTITY**
+* **UOM** ⇄ **UOM**
+* **LAST_UPDATE_DATE** ⇄ **POSTING DATE**
+* **STOCK_STATUS_TO** ⇄ **STATUSTO**
+* **STORAGE_LOCATION_FROM** ⇄ **STORAGE LOCATION FROM**
+* **STORAGE_LOCATION_TO** ⇄ **STORAGE LOCATION TO**
+
 #Result Data from WareNavi
 ##TXT/CSV Format
 ```csv
