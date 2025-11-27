@@ -10,7 +10,7 @@
 ::: mermaid
 flowchart LR
   
-P1[FROM ST 1210]-->P2[ID66]-->P3[RetrievalTriggerAllocator 
+P1[FROM ST 1210]-->P2[ID66]-->P3[RetrievalTriggerAllocator] 
 :::
 
 **Stage 2**
