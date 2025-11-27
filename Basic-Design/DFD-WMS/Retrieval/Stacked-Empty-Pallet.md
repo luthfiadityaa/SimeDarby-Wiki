@@ -5,6 +5,15 @@
 ![image.png](/.attachments/image-b5fcb612-8067-43e8-a98a-ac23b8402498.png)
 
 #<span style="color:skyblue; font-weight:bold">Summary Flow</span>
+
+**Stage 1**
+::: mermaid
+flowchart LR
+  
+P1[FROM AISLE STATION - 9007, 9008, 9009, 9010]-->P2[ID66]-->P3[RetrievalTriggerAllocator]-->P41[ID12]-->P4[RetrievalSender]-->P5[ID32]-->P6[ID33]-->P7[ID64]-->P9[ID26]-->P10[To STATION - 1210] 
+:::
+
+**Stage 2**
 ::: mermaid
 flowchart LR
   
