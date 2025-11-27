@@ -25,7 +25,7 @@ P1[FROM STATION 9007 - 9014]-->P2[RetrievalSender]-->P3[ID12]-->P4[ID32]-->P5[ID
 ::: mermaid
 flowchart LR
   
-P1[Work Display - Click Complete Button]-->P2[ID45]-->P3[ID26]-->P4[StorageSender]-->P5[ID25]-->P6[ID64]-->P7[ID26]-->P8[StorageSender]-->P9[ID25]-->P10[ID64]-->P11[ID33]
+P1[Work Display - Click Complete Button]-->P2[ID45]-->P3[ID26]-->P4[StorageSender]-->P5[ID05]-->P6[ID25]-->P7[ID64]-->P8[ID26]-->P9[StorageSender]-->P10[ID05]-->P11[ID25]-->P12[ID64]-->P13[ID33]
 :::
 
 ## Abbreviation
@@ -645,7 +645,7 @@ id05msg("
 ID 05
 ")
 
-automaticmodechangesender-input-->StorageSender-->id05msg
+automaticmodechangesender-input-->StorageSender-->|SEND|id05msg
 StorageSender--> |UPDATE| automaticmodechangesender-update
 :::
 
