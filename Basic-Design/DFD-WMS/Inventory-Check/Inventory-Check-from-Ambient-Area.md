@@ -824,7 +824,7 @@ id05msg("
 ID 05
 ")
 
-storageSender-input-->storageSender-->id05msg
+storageSender-input-->storageSender-->|SEND|id05msg
 storageSender--> |UPDATE| storageSender-update
 :::
 
