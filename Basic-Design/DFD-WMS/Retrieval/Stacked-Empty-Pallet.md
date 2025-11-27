@@ -10,14 +10,14 @@
 ::: mermaid
 flowchart LR
   
-P1[FROM ST 1210]-->P2[ID66] 
+P1[FROM ST 1210]-->P2[ID66]-->P3[RetrievalTriggerAllocator 
 :::
 
 **Stage 2**
 ::: mermaid
 flowchart LR
   
-P1[FROM AISLE STATION - 9007, 9008, 9009, 9010]-->P2[ID66]-->P3[RetrievalTriggerAllocator]-->P41[ID12]-->P4[RetrievalSender]-->P5[ID32]-->P6[ID33]-->P7[ID64]-->P9[ID26]-->P10[To STATION - 1210] 
+P1[FROM AISLE STATION - 9007, 9008, 9009, 9010]-->P41[ID12]-->P4[RetrievalSender]-->P5[ID32]-->P6[ID33]-->P7[ID64]-->P9[ID26]-->P10[To STATION - 1210] 
 :::
 
 #<span style="color:skyblue; font-weight:bold">Empty Stacked database flow</span>
