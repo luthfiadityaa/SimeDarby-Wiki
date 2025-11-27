@@ -165,7 +165,7 @@ Once WareNavi receives the signal from ID66 indicating **No Empty Pallet**,” i
 
 
 ###ID54 at finish [1107]
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.sendAs21Id47&nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.sendAs21Id54&nbsp;</span>
 ::: mermaid
 flowchart LR
 
