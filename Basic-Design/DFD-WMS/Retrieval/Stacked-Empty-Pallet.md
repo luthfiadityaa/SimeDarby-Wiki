@@ -252,7 +252,7 @@ flowchart LR
     className[RetrievalTriggerAllocator→process→allocateStackPallet]
     className2[WebUnplannedRetrievalScheduler→schedule]
     className--> |Calling| className2
-    classNam2 --> |INSERT| tableList-insert
+    className2 --> |INSERT| tableList-insert
     tableList-select --> |SELECT| className
     classDef leftAlign text-align:left;
     class input leftAlign;
@@ -265,6 +265,7 @@ Next, the Retrieval Trigger Allocator will assign stock items that are eligible 
 *   **JOB_NO**: Sequence Object    
 *   **SETTING_UNIT_KEY**: Sequence Object    
 *   **COLLECT_JOB_NO**: Sequence Object    
+*   **HARDWARE_TYPE**: 3:ASRS 
 *   **JOB_TYPE**: 23:Unplanned Retrieval    
 *   **STATUS_FLAG**: 0:Not Started    
 *   **PLAN_UKEY**: Sequence Object    
