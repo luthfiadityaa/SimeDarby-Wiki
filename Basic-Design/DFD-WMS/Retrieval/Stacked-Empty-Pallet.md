@@ -262,6 +262,11 @@ flowchart LR
     className2 --> |INSERT| tableList-insert
     className2 --> |UPDATE| tableList-update
     tableList-select --> |SELECT| className
+
+    click RetrievalTriggerAllocator "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/956/Stacked-Empty-Pallet?anchor=retrieval-trigger-allocator" "Go to Retrieval Trigger Allocator"
+    style RetrievalTriggerAllocator fill:#00cc66,stroke:#006633,color:#ffffff
+
+
     classDef leftAlign text-align:left;
     class input leftAlign;
 :::
