@@ -360,6 +360,7 @@ flowchart LR
 
 retrievalsender-input[("
 DNCARRYINFO
+DMSTATION
 ")]
 
 retrievalsender-update[("
