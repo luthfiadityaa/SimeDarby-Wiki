@@ -237,6 +237,8 @@ flowchart LR
 
     tableList-insert[("
         DNWORKINFO
+        DNCARRYINFO
+        DNPALLET
         DNWORKLIST
     ")]
 
