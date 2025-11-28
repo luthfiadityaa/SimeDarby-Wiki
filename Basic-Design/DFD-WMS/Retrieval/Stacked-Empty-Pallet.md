@@ -99,8 +99,8 @@ flowchart LR
     ")
 
     input -->id66msg-->id66process-->processReceivedInfo--> |UPDATE| tableList-update
-    id66process--> |SendText| id46msg
-    id66process-->RetrievalTriggerAllocator
+    processReceivedInfo--> |SendText| id46msg
+    processReceivedInfo-->RetrievalTriggerAllocator
 
     click RetrievalTriggerAllocator "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/956/Stacked-Empty-Pallet?anchor=retrieval-trigger-allocator" "Go to Retrieval Trigger Allocator"
     style RetrievalTriggerAllocator fill:#00cc66,stroke:#006633,color:#ffffff
