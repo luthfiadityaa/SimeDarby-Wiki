@@ -249,9 +249,10 @@ flowchart LR
         DNSTOCK
     ")]
 
-    className[RetrievalTriggerAllocator→process→allocateStackPallet→WebUnplannedRetrievalScheduler→schedule]
-
-    className --> |INSERT| tableList-insert
+    className[RetrievalTriggerAllocator→process→allocateStackPallet]
+    className2[WebUnplannedRetrievalScheduler→schedule]
+    className--> |Calling| className2
+    classNam2 --> |INSERT| tableList-insert
     tableList-select --> |SELECT| className
     classDef leftAlign text-align:left;
     class input leftAlign;
