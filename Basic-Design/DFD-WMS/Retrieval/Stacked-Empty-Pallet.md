@@ -102,7 +102,7 @@ flowchart LR
     id66process--> |SendText| id46msg
     id66process-->RetrievalTriggerAllocator
 
-    click RetrievalTriggerAllocator "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/948/Unplanned-Storage-from-HP" "Go to HP"
+    click RetrievalTriggerAllocator "Retrieval-Trigger-Allocator" "Go to Retrieval Trigger Allocator"
     style RetrievalTriggerAllocator fill:#00cc66,stroke:#006633,color:#ffffff
 
     classDef leftAlign text-align:left;
