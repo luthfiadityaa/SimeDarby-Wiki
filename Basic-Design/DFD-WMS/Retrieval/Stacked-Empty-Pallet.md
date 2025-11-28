@@ -309,7 +309,7 @@ Next, the Retrieval Trigger Allocator will assign stock items that are eligible 
 
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
 * **STATUS_FLAG**: 3:Reserved for Retrieval
-* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **ALLOCATION_FLAG**: 1:Allocated
 * **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
