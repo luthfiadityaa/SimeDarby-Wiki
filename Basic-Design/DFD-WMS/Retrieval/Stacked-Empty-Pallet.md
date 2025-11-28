@@ -249,7 +249,7 @@ flowchart LR
         DNSTOCK
     ")]
 
-    className[RetrievalTriggerAllocator]
+    className[RetrievalTriggerAllocator->process]
 
     className --> |INSERT| tableList-insert
     tableList-select --> |SELECT| className
