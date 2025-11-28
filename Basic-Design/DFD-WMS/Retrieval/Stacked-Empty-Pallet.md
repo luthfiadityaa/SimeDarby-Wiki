@@ -372,7 +372,7 @@ id12msg("
 ID 12
 ")
 
-retrievalsender-input--> P1[retrievalsender→process]-->P2[SendCarry]--> |UPDATE| retrievalsender-update
+retrievalsender-input--> P1[retrievalsender→process]-->P2[SendCarry→getSendCarryArray]--> |UPDATE| retrievalsender-update
 P1-->id12msg
 :::
 
