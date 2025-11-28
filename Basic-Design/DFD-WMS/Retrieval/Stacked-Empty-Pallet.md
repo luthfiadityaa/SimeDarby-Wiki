@@ -263,7 +263,7 @@ flowchart LR
     className2 --> |UPDATE| tableList-update
     tableList-select --> |SELECT| className
 
-    click P1 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/956/Stacked-Empty-Pallet?anchor=retrieval-trigger-allocator" "Go to Retrieval Trigger Allocator"
+    click P1 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/956/Stacked-Empty-Pallet?anchor=retrieval-sender" "Go to Retrieval Retrieval Sender"
     style P1 fill:#00cc66,stroke:#006633,color:#ffffff
 
 
