@@ -374,6 +374,9 @@ ID 12
 
 retrievalsender-input--> P1[retrievalsender→process]-->P2[SendCarry→getSendCarryArray]--> |UPDATE| retrievalsender-update
 P2--> |SendText| id12msg
+
+ click id12msg "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/956/Stacked-Empty-Pallet?anchor=retrieval-sender" "Go to Retrieval Retrieval Sender"
+    style id12msg fill:#00cc66,stroke:#006633,color:#ffffff
 :::
 
 All Empty Pallet Retrieval operation at Ambient will be retrieved to Station 1210 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
