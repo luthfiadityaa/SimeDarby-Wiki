@@ -308,6 +308,9 @@ Next, the Retrieval Trigger Allocator will assign stock items that are eligible 
 *   **LAST_UPDATE_PNAME**: ClassName
 
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
+* **STATUS_FLAG**: 3:Reserved for Retrieval
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
 *   **JOB_NO**: DNWORKINFO.JOB_NO    
@@ -364,10 +367,7 @@ retrievalsender-->id12msg
 All Empty Pallet Retrieval operation at Ambient will be retrieved to Station 1210 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-####<span style="color:skyblue; font-weight:bold">DNPallet</span>
-* **STATUS_FLAG**: 3:Reserved for Retrieval
-* **LAST_UPDATE_DATE**: SYSTIMESTAMP
-* **LAST_UPDATE_PNAME**: Class name
+
 
 
 
