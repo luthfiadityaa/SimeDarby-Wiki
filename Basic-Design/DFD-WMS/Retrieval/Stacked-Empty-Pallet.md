@@ -238,8 +238,11 @@ flowchart LR
     tableList-insert[("
         DNWORKINFO
         DNCARRYINFO
-        DNPALLET
         DNWORKLIST
+    ")]
+
+   tableList-update[("
+        DNPALLET
     ")]
 
      tableList-select[("
@@ -255,6 +258,7 @@ flowchart LR
     className2[WebUnplannedRetrievalScheduler→schedule]
     className--> |Calling| className2
     className2 --> |INSERT| tableList-insert
+    className2 --> |UPDATE| tableList-update
     tableList-select --> |SELECT| className
     classDef leftAlign text-align:left;
     class input leftAlign;
