@@ -98,7 +98,7 @@ flowchart LR
      ID46
     ")
 
-    input -->id66msg-->id66process--> |UPDATE| tableList-update
+    input -->id66msg-->id66process-->processReceivedInfo()--> |UPDATE| tableList-update
     id66process--> |SendText| id46msg
 
     classDef leftAlign text-align:left;
