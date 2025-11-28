@@ -392,34 +392,6 @@ All Empty Pallet Retrieval operation at Ambient will be retrieved to Station 121
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
-#ID12
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.send.As21Id12&nbsp;</span>
-
-::: mermaid
-flowchart LR
-
-id26msg("
-ID12
-")
-
-id26-insert[("
-DNCARRYINFO
-")]
-
-id26-update[("
-DNPALLET
-")]
-
-retrievalstationoperator[RetrievalStationOperator]
-
-id26msg-->retrievalstationoperator
-retrievalstationoperator--> |INSERT| id26-insert
-retrievalstationoperator--> |UPDATE| id26-update
-:::
-
-##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-
-
 #ID32
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id32Process&nbsp;</span>
 
