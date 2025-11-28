@@ -100,6 +100,7 @@ flowchart LR
 
     input -->id66msg-->id66process-->processReceivedInfo--> |UPDATE| tableList-update
     id66process--> |SendText| id46msg
+    id66process-->RetrievalTriggerAllocator
 
     classDef leftAlign text-align:left;
     class input leftAlign;
