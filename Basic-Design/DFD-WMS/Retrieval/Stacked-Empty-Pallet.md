@@ -257,7 +257,7 @@ flowchart LR
     className[RetrievalTriggerAllocator→process]
     className3[allocateStackPallet]
     className2[WebUnplannedRetrievalScheduler→schedule]
-    className--> |Calling| className2
+    className--> |Calling| className3 --> |Calling| className2
     className--> |Calling| P1[RetrievalSender]
     className2 --> |INSERT| tableList-insert
     className2 --> |UPDATE| tableList-update
