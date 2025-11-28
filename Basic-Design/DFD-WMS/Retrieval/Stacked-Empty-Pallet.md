@@ -304,9 +304,7 @@ Next, the Retrieval Trigger Allocator will assign stock items that are eligible 
 *   **CANCEL_REQUEST**: 0:Not requested
 *   **AISLE_STATION_NO**: DMSHELF.PARENT_STATION_NO
 *   **END_STATION_NO**: DNCARRYINFO.DEST_STATION_NO  
-*   **REGIST_DATE**: SYSTIMESTAMP    
 *   **REGIST_PNAME**: ClassName    
-*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
