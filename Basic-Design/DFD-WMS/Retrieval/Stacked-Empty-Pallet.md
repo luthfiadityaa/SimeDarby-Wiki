@@ -307,6 +307,8 @@ Next, the Retrieval Trigger Allocator will assign stock items that are eligible 
 *   **REGIST_PNAME**: ClassName    
 *   **LAST_UPDATE_PNAME**: ClassName
 
+####<span style="color:skyblue; font-weight:bold">DNPALLET</span>
+
 ####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
 *   **JOB_NO**: DNWORKINFO.JOB_NO    
 *   **SETTING_UNIT_KEY**: Sequence Object   
