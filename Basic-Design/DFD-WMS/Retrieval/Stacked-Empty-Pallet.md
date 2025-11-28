@@ -373,7 +373,7 @@ ID 12
 ")
 
 retrievalsender-input--> P1[retrievalsender→process]-->P2[SendCarry→getSendCarryArray]--> |UPDATE| retrievalsender-update
-P1-->id12msg
+P2--> |SendText| id12msg
 :::
 
 All Empty Pallet Retrieval operation at Ambient will be retrieved to Station 1210 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
