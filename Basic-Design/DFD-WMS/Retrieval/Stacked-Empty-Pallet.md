@@ -99,6 +99,7 @@ flowchart LR
     ")
 
     input -->id66msg-->id66process--> |UPDATE| tableList-update
+    id66process--> |SendText| id46msg
 
     classDef leftAlign text-align:left;
     class input leftAlign;
