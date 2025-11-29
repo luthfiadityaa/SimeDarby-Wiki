@@ -207,10 +207,19 @@ flowchart LR
         DMTOSTATION
     ")]
 
-    className[InquiryRetrievalSettingSCH]
+    tableList-update[("
+        DNPALLET
+    ")]
 
-    input --> className --> |INSERT| tableList-insert
+     className[InquiryRetrievalSettingSCH]
+    className--> |Calling| className2[WebUnplannedRetrievalScheduler→schedule] --> |INSERT| tableList-insert
+    input --> |getValue| className 
+    className--> |Calling| P1[RetrievalSender]
+    className2 --> |UPDATE| tableList-update
     tableList-select --> |SELECT| className
+
+    click P1 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/956/Stacked-Empty-Pallet?anchor=retrieval-sender" "Go to Retrieval Retrieval Sender"
+    style P1 fill:#00cc66,stroke:#006633,color:#ffffff
 
     classDef leftAlign text-align:left;
     class input leftAlign;
