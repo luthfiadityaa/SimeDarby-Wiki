@@ -177,7 +177,7 @@ flowchart LR
 * **STATUS_FLAG**: 1:Working
 *  **LAST_UPDATE_PNAME**: ClassName
 
-####<span style="color:skyblue; font-weight:bold">DNSTOCK</span>
+####<span style="color:skyblue; font-weight:bold">DNStock</span>
 * **ALLOCATION_QTY**: DNSTOCK_QTY
 * **LAST_UPDATE_PNAME**: Class name
 
