@@ -151,8 +151,8 @@ flowchart LR
     ")]
 
     className[InquiryRetrievalSettingSCH]
-
-    input --> className --> |INSERT| tableList-insert
+    className--> |Calling| className2[WebUnplannedRetrievalScheduler→schedule] --> |INSERT| tableList-insert
+    input --> className 
     tableList-select --> |SELECT| className
 
     classDef leftAlign text-align:left;
