@@ -903,6 +903,7 @@ P5 --> |UPDATE| id26-updateIoNew
 P5 --> |Calling| P6[HostSendControllerr→insertByWorkInfo→completeWorkInfoComplete]
 P6 --> |INSERT| id26-insertIoNew
 P4 --> |Calling| P42[subtractStock]
+P42 --> |Calling| P7[AsStockController→retrieval]
 
 :::
 
