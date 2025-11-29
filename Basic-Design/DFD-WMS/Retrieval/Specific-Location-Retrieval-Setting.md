@@ -843,27 +843,7 @@ id26msg("
 ID 26
 ")
 
-id26-update[("
-DNWORKINFO
-DNSHELF
-")]
-
-id26-delete[("
-DNCARRYINFO
-DNPALLET
-DNSTOCK
-")]
-
-id26-insert[("
-DNWORKLIST
-DNHOSTSEND
-DNINOUTRESULT
-")]
-
 id26process[id26process]
-retrievaloperator[RetrievalStationOperator]
-inOutStationOperator[InOutStationOperator]
-
 
 buttonclicked --> id26msg
 id26msg -->id26process-->Cond1{Flow?}
@@ -873,14 +853,6 @@ id26msg -->id26process-->Cond1{Flow?}
 ::: mermaid
 flowchart LR
 
-buttonclicked["
-Operators Press the Completion Button
-"]
-
-id26msg("
-ID 26
-")
-
 id26-update[("
 DNWORKINFO
 DNSHELF
@@ -898,13 +870,6 @@ DNHOSTSEND
 DNINOUTRESULT
 ")]
 
-id26process[id26process]
-retrievaloperator[RetrievalStationOperator]
-inOutStationOperator[InOutStationOperator]
-
-
-buttonclicked --> id26msg
-id26msg -->id26process-->Cond1{Flow?}
 Cond1{Flow?} --> |1201-1209| retrievaloperator
 Cond1{Flow?} --> |1201-1203| inOutStationOperator
 
