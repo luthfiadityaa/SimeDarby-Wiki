@@ -861,11 +861,13 @@ DNINOUTRESULT
 
 id26process[id26process]
 retrievaloperator[RetrievalStationOperator]
+retrievaloperator[InOutStationOperator]
 
 
 buttonclicked --> id26msg
-id26msg -->id26process
-id26process-->retrievaloperator
+id26msg -->id26process-->Cond1{Flow?}
+Cond1{Flow?} --> |1201-1209| retrievaloperator
+Cond1{Flow?} --> |1201-1209| retrievaloperator
 
 retrievaloperator--> |INSERT| id26-insert
 retrievaloperator--> |UPDATE| id26-update
