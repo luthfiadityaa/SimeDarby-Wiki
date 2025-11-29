@@ -833,7 +833,7 @@ Sending of ID45 is sent to AGC when user clicked on **Complete** at Work Display
 
 **Stage 1**
 ::: mermaid
-flowchart TD
+flowchart LR
 
 buttonclicked["
 Operators Press the Completion Button
@@ -891,17 +891,8 @@ id26-insert2[("
 DNINOUTRESULT
 ")]
 
-RetrievalStationOperator--> |INSERT| id26-insert
-RetrievalStationOperator--> |UPDATE| id26-update
-RetrievalStationOperator--> |DELETE| id26-delete
+RetrievalStationOperator <-- Cond1{Flow?} --> InOutStationOperator 
 
-Cond1{Flow?} --> |1201-1209| RetrievalStationOperator
-Cond1{Flow?} --> |1201-1203| InOutStationOperator
-
-InOutStationOperator--> |INSERT| id26-insert2
-InOutStationOperator--> |INSERT| id26-insert3
-InOutStationOperator--> |UPDATE| id26-update2
-InOutStationOperator--> |DELETE| id26-delete2
 :::
 
 <span style="color:black; font-weight:bold; color:red">*The operator performs the operation according to the work display on the work terminal.</span>
