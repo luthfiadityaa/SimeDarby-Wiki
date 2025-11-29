@@ -846,6 +846,7 @@ ID 26
 id26-updateRt[("
 DNWORKINFO
 DNSHELF
+DNWORKLIST
 ")]
 
 id26-deleteRt[("
