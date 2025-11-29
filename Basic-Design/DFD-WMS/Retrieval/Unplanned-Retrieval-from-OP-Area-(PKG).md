@@ -128,37 +128,38 @@ flowchart LR
 :::
 
 ## <span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
-- **JOB_NO** : Sequence Object    
-- **SETTING_UNIT_KEY** : Sequence Object    
-- **COLLECT_JOB_NO** : Sequence Object    
-- **JOB_TYPE** : 23: Unplanned Retrieval    
-- **STATUS_FLAG** : 1: Working
-- **HARDWARE_TYPE** : 3: ASRS    
-- **PLAN_UKEY** : Sequence Object    
-- **STOCK_ID** : DNSTOCK.STOCKID    
-- **PLAN_AREA_NO** : DNSTOCK.AREA_NO   
-- **PLAN_LOCATION_NO** : DNSTOCK.LOCATION_NO
-- **PLAN_DAY** : DMWARENAVISYSTEM.WORK_DAY
-- **VENDOR_CODE** : DNSTOCK.VENDOR_CODE
-- **VENDOR_NAME** : DNSTOCK.VENDOR_NAME
-- **COMPANY_CODE** : DNSTOCK.COMPANY_CODE    
-- **BATCH_NO** : Value from screen (**Batch #**)    
-- **MATERIAL_CODE** : Value from screen (**Material Code**)    
-- **MATERIAL_NAME** : Value from screen (**Material Name**)    
-- **PLAN_QTY** : Value from screen (**Retrieval Qty**)    
-- **QTY_KG_CRTN** : Value from screen (**Qty kg/crtn**)    
-- **QTY_CRTN_PL** : Value from screen (**Qty crtn/PL**)    
-- **UOM** : Value from screen (**UOM**)    
-- **TEMPERING_PERIOD** : Value from screen (**Tempering Period**)    
-- **EXPIRY_DAYS** : DNSTOCK.EXPIRY_DATE    
-- **WORK_DAY** : DMWARENAVISYSTEM.WORK_DAY  
-- **BCR_DATA** : DNPALLET.BCR_DATA  
-- **USER_ID** : Login Info     
-- **TERMINAL_NO** : Login info
-- **REGIST_DATE** : SYSTIMESTAMP    
-- **REGIST_PNAME** : ClassName    
-- **LAST_UPDATE_DATE** : SYSTIMESTAMP    
-- **LAST_UPDATE_PNAME** : ClassName
+*   **JOB_NO**: Sequence Object    
+*   **SETTING_UNIT_KEY**: Sequence Object    
+*   **COLLECT_JOB_NO**: Sequence Object    
+*   **HARDWARE_TYPE**: 3:ASRS 
+*   **JOB_TYPE**: 23:Unplanned Retrieval    
+*   **STATUS_FLAG**: 0:Not Started    
+*   **PLAN_UKEY**: Sequence Object    
+*   **STOCK_ID**: DNSTOCK.STOCKID    
+*   **PLAN_AREA_NO**: DNSTOCK.AREANO   
+*   **PLAN_LOCATION_NO**: DNSTOCK.LOCATION_NO
+*   **PLAN_DAY**: DMWARENAVISYSTEM.WORK_DAY    
+*   **BATCH_NO**: DNSTOCK.BATCH_NO    
+*   **MATERIAL_CODE**: DNSTOCK.MATERIAL_CODE    
+*   **MATERIAL_NAME**: DMITEM.MATERIAL_NAME    
+*   **MATERIAL_TYPE**: DMITEM.MATERIAL_TYPE 
+*   **PLAN_QTY**: Value from screen (Retrieval Qty / Stock Qty)    
+*   **TEMPERING_PERIOD**: DNSTOCK.TEMPERING_PERIOD
+*   **TEMPERING_FLAG**: DNSTOCK.TEMPERING_FLAG      
+*   **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE
+*   **QC_DURATION**: DNSTOCK.QC_DURATION
+*   **QC_CHECK_FLAG**: DNSTOCK_QC_CHECK_FLAG    
+*   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY  
+*   **BCR_DATA**: DNPALLET.BCR_DATA  
+*   **STORAGE_LOCATION**: Value from Screen (To Location)
+*   **DOCK_NO**: Value from Screen (Dock No)
+*   **TRUCK_PLATE_NO**: Value from Screen (Truck Plate No)
+*   **USER_ID**: Login Info     
+*   **TERMINAL_NO**: Login info
+*   **REGIST_DATE**: SYSTIMESTAMP    
+*   **REGIST_PNAME**: ClassName    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: ClassName
 
 ##<span style="color:skyblue; font-weight:bold">DNWORKLIST</span>
 - **JOB_NO**: DNWORKINFO.JOB_NO    
