@@ -41,16 +41,16 @@ P1[FROM AISLE STATION -
   - **S** : SELECT 
 
 | Action Name                                                                     |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN|TTSN|OPRD|RPLAN| 
-|---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|----|
-| Planned Retrieval Setting - Set(F2) [(1)](#Planned-Retrieval-Setting---Set(F2)) | I  | I  | S  |    | S  |    |     | S  | S  |    | S  | S  |    |    |    |
-| RetrievalSender[(2)](#Retrieval-Sender)                                         |    |    | U  | I  |    |    |     |    |    |    |    |    |    |    |    | 
-| ID12[(3)](#ID12)                                                                |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |    | 
-| ID32[(4)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |    |    
-| ID33[(5)](#ID33)                                                                |    |    |    | U  |    |    |     |    | U  |    |    |    |    |    |    |    
-| ID68[(6)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |    |
-| ID26[(7)](#ID26)                                                                | U  | U  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    |    |
-| **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |    |
-| Planned Retrieval Result[(8)](#Planned-Retrieval-Result)                        |    |    |    |    |    | U  |     |    |    |    |    |    |    |    |    | 
+|---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|-----|
+| Planned Retrieval Setting - Set(F2) [(1)](#Planned-Retrieval-Setting---Set(F2)) | I  | I  | S  |    | S  |    |     | S  | S  |    | S  | S  |    |    | U   |
+| RetrievalSender[(2)](#Retrieval-Sender)                                         |    |    | U  | I  |    |    |     |    |    |    |    |    |    |    |     | 
+| ID12[(3)](#ID12)                                                                |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |     | 
+| ID32[(4)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |     |    
+| ID33[(5)](#ID33)                                                                |    |    |    | U  |    |    |     |    | U  |    |    |    |    |    |     |    
+| ID68[(6)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |     |
+| ID26[(7)](#ID26)                                                                | U  | U  | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    |     |
+| **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
+| Planned Retrieval Result[(8)](#Planned-Retrieval-Result)                        |    |    |    |    |    | U  |     |    |    |    |    |    |    |    |     | 
 
 #Planned Retrieval
 All data in the Planned Retrieval Setting List originates from process [Planned Retrieval - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/838/Planned-Retrieval). Please refer to the details for further information.
