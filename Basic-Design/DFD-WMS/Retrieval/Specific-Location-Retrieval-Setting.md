@@ -783,7 +783,7 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 ![image.png](/.attachments/image-1e56dc6e-657e-47ff-9a47-575b04705583.png)
 
 # Work Display
-
+![image.png](/.attachments/image-eb0f2a03-692d-4e72-bbb5-97fe9eaf209e.png)
 <br>
 <hr style="width:55%; margin-left: 0; border: 2px solid green;">
 
@@ -885,10 +885,10 @@ RetrievalStationOperator--> |UPDATE| id26-updateRt
 RetrievalStationOperator--> |DELETE| id26-deleteRt 
 
 Cond1{Flow?} --> |1201-1209| RetrievalStationOperator
-Cond1{Flow?} --> |1301-1303| InOutStationOperator
+Cond1{Flow?} --> |1301-1303| P2[InOutStationOperator→arrival→updateArrival]
 
-InOutStationOperator --> |INSERT| id26-insertIo
-InOutStationOperator --> |UPDATE| id26-updateIo
+P2 --> |INSERT| id26-insertIo
+P2 --> |UPDATE| id26-updateIo
 
 :::
 
