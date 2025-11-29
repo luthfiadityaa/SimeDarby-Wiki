@@ -66,53 +66,65 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 
 ::: mermaid
 flowchart LR
-input[
-Station
-Pallet #
-SoftZone
-Priority
-To Location
-All Qty
-Retrieval Qty
-Stock Qty
-Material Code
-Material Name
-Material Type
-Batch #
-Area
-Loc #
-Stock Status
-Storage Date/Time
-Qty kg/crtn
-Qty crtn/PL
-UOM
-Tempering Flag
-Tempering Period
-QC Duration
-QC Check Flag
-Truck No
-Plate No
-]
+    input[
+        Station
+        Pallet #
+        SoftZone
+        Priority
+        To Location
+        All Qty
+        Retrieval Qty
+        Stock Qty
+        Material Code
+        Material Name
+        Material Type
+        Batch #
+        Area
+        Loc #
+        Stock Status
+        Storage Date/Time
+        Qty kg/crtn
+        Qty crtn/PL
+        UOM
+        Tempering Flag
+        Tempering Period
+        QC Duration
+        QC Check Flag
+        Dock #
+        Truck Plate #  
+    ]
 
-tableList-insert[("
-DNWORKINFO
-DNWORKLIST
-")]
+    tableList-insert[("
+        DNWORKINFO
+        DNCARRYINFO
+        DNWORKLIST
+    ")]
 
-tableList-select[("
-DMWAREHOUSE
-DMSHELF
-DNPALLET
-DMITEM
-DMSTATION
-DMTOSTATION
-")]
+     tableList-select[("
+        DMWAREHOUSE
+        DMSHELF
+        DNPALLET
+        DMITEM
+        DMSTATION
+        DMTOSTATION
+    ")]
 
+    tableList-update[("
+        DNPALLET
+    ")]
 
-className[InquiryRetrievalSettingSCH]
+    className[InquiryRetrievalSettingSCH]
+    className--> |Calling| className2[WebUnplannedRetrievalScheduler→schedule] --> |INSERT| tableList-insert
+    input --> |getValue| className 
+    className--> |Calling| P1[RetrievalSender]
+    className2 --> |UPDATE| tableList-update
+    tableList-select --> |SELECT| className
 
-input --> className --> |INSERT| tableList-insert
-tableList-select --> |SELECT| className
+    click P1 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/956/Stacked-Empty-Pallet?anchor=retrieval-sender" "Go to Retrieval Retrieval Sender"
+    style P1 fill:#00cc66,stroke:#006633,color:#ffffff
+
+    classDef leftAlign text-align:left;
+    class input leftAlign;
 :::
 
 ## <span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
