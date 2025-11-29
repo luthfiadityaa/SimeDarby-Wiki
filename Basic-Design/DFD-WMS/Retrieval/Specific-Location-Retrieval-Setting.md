@@ -873,12 +873,12 @@ DNINOUTRESULT
 Cond1{Flow?} --> |1201-1209| RetrievalStationOperator
 Cond1{Flow?} --> |1201-1203| InOutStationOperator
 
-retrievaloperator--> |INSERT| id26-insert
-retrievaloperator--> |UPDATE| id26-update
-retrievaloperator--> |DELETE| id26-delete
-inOutStationOperator--> |INSERT| id26-insert
-inOutStationOperator--> |UPDATE| id26-update
-inOutStationOperator--> |DELETE| id26-delete
+RetrievalStationOperator--> |INSERT| id26-insert
+RetrievalStationOperator--> |UPDATE| id26-update
+RetrievalStationOperator--> |DELETE| id26-delete
+InOutStationOperator--> |INSERT| id26-insert
+InOutStationOperator--> |UPDATE| id26-update
+InOutStationOperator--> |DELETE| id26-delete
 :::
 
 <span style="color:black; font-weight:bold; color:red">*The operator performs the operation according to the work display on the work terminal.</span>
