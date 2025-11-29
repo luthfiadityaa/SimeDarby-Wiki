@@ -34,16 +34,16 @@ P1[FROM AISLE STATION - 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID12]
   - **D** : DELETE
   - **S** : SELECT 
 
-| Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HSTS | OPRR | ITEM | STSN | TTSN |
-|----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
-| Inquiry Retrieval - Set (F2) [(1)](#inquiry-retrieval---set-(f2))|   S  |   I  |   I  |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   S  | 
-| Retrieval Sender [(3)](#retrieval-sender)                      |   U  | U    |      |   I  |      |      |      |      |      |      |      |      |      |      |      |
-| ID12 [(2)](#id12)                                              |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
-| ID32 [(4)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
-| ID33 [(5)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
-| ID68 [(7)](#id68)                                              |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
-| ID26 [(8)](#id26)                                              |   D  |   U  |   I  |   D  |   D  |      |      |  U   |      |   I  |   I  |      |      |      |      |
-| **Host Communication**                                         |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| Action Name                                                        | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HSTS | OPRR | ITEM | STSN | TTSN |
+|--------------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
+| Inquiry Retrieval - Set (F2) [(1)](#inquiry-retrieval---set-(f2))  |   U  |   I  |   I  |   I  |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   S  | 
+| Retrieval Sender [(3)](#retrieval-sender)                          |   U  | U    |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID12 [(2)](#id12)                                                  |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID32 [(4)](#id32)                                                  |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID33 [(5)](#id33)                                                  |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
+| ID68 [(7)](#id68)                                                  |      |      |      |      |      |      |      |      |      |      |      |   I  |      |      |      |
+| ID26 [(8)](#id26)                                                  |   D  |   U  |   I  |   D  |   D  |      |      |  U   |      |   I  |   I  |      |      |      |      |
+| **Host Communication**                                             |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 | Unplanned Storage and Retrieval Result [(9)](#unplanned-storage-and-retrieval-result)|      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 
 # Inquiry Retrieval Setting - Set(F2)
