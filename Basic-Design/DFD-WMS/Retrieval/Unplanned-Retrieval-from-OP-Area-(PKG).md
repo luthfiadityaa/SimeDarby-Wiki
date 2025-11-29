@@ -338,7 +338,7 @@ id68process--> |INSERT| id68-insert
 ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related Station in ASRS. Upon receiving of ID68, insertion of data will be executed.
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-###<span style="color:skyblue; font-weight:bold">DNOPERATIONDISPLAY</span>
+###<span style="color:skyblue; font-weight:bold">DNOperationDisplay</span>
 - **CARRY_KEY** : MC Key information from ID68
 - **STATION_NO** : Station information from ID68
 - **MATERIAL_CODE** : DNWORKINFO.MATERIAL_CODE
