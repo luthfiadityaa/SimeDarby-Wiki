@@ -870,6 +870,10 @@ DNHOSTSEND
 DNINOUTRESULT
 ")]
 
+id26-insert2[("
+DNINOUTRESULT
+")]
+
 Cond1{Flow?} --> |1201-1209| RetrievalStationOperator
 Cond1{Flow?} --> |1201-1203| InOutStationOperator
 
