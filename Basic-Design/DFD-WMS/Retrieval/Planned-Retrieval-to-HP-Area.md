@@ -23,7 +23,7 @@ P1[FROM AISLE STATION - 9001,
 #<span style="color:skyblue; font-weight:bold">Planned Retrieval database flow</span>
 **Abbreviation:**
 - **WRKI** : DNWORKINFO  
-- **WRKL** : DNWORKINFOLIST  
+- **WRKL** : DNWORKLIST  
 - **PLLT** : DNPALLET  
 - **CRYI** : DNCARRYINFO  
 - **STCK** : DNSTOCK  
