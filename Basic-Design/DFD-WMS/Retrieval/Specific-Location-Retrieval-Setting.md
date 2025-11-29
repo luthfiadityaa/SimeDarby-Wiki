@@ -858,7 +858,6 @@ DNSTOCK
 id26-insert[("
 DNWORKLIST
 DNHOSTSEND
-DNINOUTRESULT
 ")]
 
 id26-update2[("
