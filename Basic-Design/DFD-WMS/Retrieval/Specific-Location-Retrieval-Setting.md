@@ -896,8 +896,9 @@ Cond1{Flow?} --> |1201-1209| RetrievalStationOperator
 Cond1{Flow?} --> |1301-1303| P2[InOutStationOperator→arrival→updateArrival]
 
 P2 --> |Calling| P3[ReturnStorageManager→updateForReturnStorageArrival]
-P3 --> |Calling| P4[CarryCompleteOperator→completeRetrievalWorkAndUpdateStock→completeWorkInfoNormally]
-P4 --> |Calling| P5[WorkInfoControllerr→completeWorkInfo→completeWorkInfoComplete]
+P3 --> |Calling| P4[CarryCompleteOperator→completeRetrievalWorkAndUpdateStock] 
+P4 --> |Calling| P41[completeWorkInfoNormally]
+P41 --> |Calling| P5[WorkInfoControllerr→completeWorkInfo→completeWorkInfoComplete]
 P5 --> |UPDATE| id26-updateIoNew
 P5 --> |Calling| P6[HostSendControllerr→insertByWorkInfo→completeWorkInfoComplete]
 P6 --> |INSERT| id26-insertIoNew
