@@ -137,14 +137,13 @@ flowchart LR
         DNWORKLIST
     ")]
 
-    tableList-update[("
-        DNRetrievalPlan
-        DNStock
-        DNPallet
+    tableList-update[("       
+        DNSTOCK
+        DNPALLET
     ")]
 
     tableList-update2[("
-        DNRetrievalPlan
+        DNRETRIEVALPLAN
     ")]
 
      tableList-select[("
