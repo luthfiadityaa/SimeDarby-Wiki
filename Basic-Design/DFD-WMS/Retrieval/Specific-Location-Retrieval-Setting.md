@@ -438,7 +438,7 @@ DMSHELF
 DNCARRYINFO
 ")]
 
-id33-->id33process
+id33-->P1[id33process→retrievalCompletion]
 id33process--> |UPDATE| id33-update
 :::
 
