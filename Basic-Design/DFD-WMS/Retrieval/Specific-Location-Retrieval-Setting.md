@@ -843,34 +843,34 @@ ID 26
 ")
 
 
-id26-update[("
+id26-updateRt[("
 DNWORKINFO
 DNSHELF
 ")]
 
-id26-delete[("
+id26-deleteRt[("
 DNCARRYINFO
 DNPALLET
 DNSTOCK
 ")]
 
-id26-insert[("
-DNWORKLIST
+id26-insertRt[("
 DNHOSTSEND
 ")]
 
-id26-update2[("
+id26-updateIo[("
 DNWORKINFO
 DNSHELF
+DNWORKLIST
 ")]
 
-id26-delete2[("
+id26-deleteIo[("
 DNCARRYINFO
 DNPALLET
 DNSTOCK
 ")]
 
-id26-insert3[("
+id26-insertIo[("
 DNWORKLIST
 DNHOSTSEND
 DNINOUTRESULT
