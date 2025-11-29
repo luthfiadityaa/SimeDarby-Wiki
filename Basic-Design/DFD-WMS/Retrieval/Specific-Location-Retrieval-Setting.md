@@ -847,53 +847,19 @@ id26process[id26process]
 
 buttonclicked --> id26msg
 id26msg -->id26process-->Cond1{Flow?}
-:::
 
-**Stage 2**
-::: mermaid
-flowchart TD
+RetrievalStationOperator--> |INSERT| id26-insert 
+RetrievalStationOperator--> |UPDATE| id26-update 
+RetrievalStationOperator--> |DELETE| id26-delete 
 
-id26-update[("
-DNWORKINFO
-DNSHELF
-")]
+Cond1{Flow?} --> |1201-1209| RetrievalStationOperator
+Cond1{Flow?} --> |1201-1203| InOutStationOperator
 
-id26-delete[("
-DNCARRYINFO
-DNPALLET
-DNSTOCK
-")]
+InOutStationOperator--> |INSERT| id26-insert2
+InOutStationOperator--> |INSERT| id26-insert3
+InOutStationOperator--> |UPDATE| id26-update2
+InOutStationOperator--> |DELETE| id26-delete2
 
-id26-insert[("
-DNWORKLIST
-DNHOSTSEND
-DNINOUTRESULT
-")]
-
-id26-update2[("
-DNWORKINFO
-DNSHELF
-")]
-
-id26-delete2[("
-DNCARRYINFO
-DNPALLET
-DNSTOCK
-")]
-
-id26-insert3[("
-DNWORKLIST
-DNHOSTSEND
-DNINOUTRESULT
-")]
-
-id26-insert2[("
-DNINOUTRESULT
-")]
-
-Cond1{Flow?} --> RetrievalStationOperator
-Cond1{Flow?} --> InOutStationOperator 
-RetrievalStationOperator --> id26-insert
 :::
 
 <span style="color:black; font-weight:bold; color:red">*The operator performs the operation according to the work display on the work terminal.</span>
