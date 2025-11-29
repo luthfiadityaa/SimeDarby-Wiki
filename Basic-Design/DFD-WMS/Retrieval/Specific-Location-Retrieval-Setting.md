@@ -211,7 +211,7 @@ flowchart LR
         DNPALLET
     ")]
 
-     className[InquiryRetrievalSettingSCH]
+     className[LocationRetrievalSCH]
     className--> |Calling| className2[WebUnplannedRetrievalScheduler→schedule] --> |INSERT| tableList-insert
     input --> |getValue| className 
     className--> |Calling| P1[RetrievalSender]
