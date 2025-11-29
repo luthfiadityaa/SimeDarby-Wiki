@@ -880,7 +880,7 @@ Cond1{Flow?} --> |1201-1203| InOutStationOperator
 RetrievalStationOperator--> |INSERT| id26-insert
 RetrievalStationOperator--> |UPDATE| id26-update
 RetrievalStationOperator--> |DELETE| id26-delete
-InOutStationOperator--> |INSERT| id26-insert
+InOutStationOperator--> |INSERT| id26-insert2
 InOutStationOperator--> |UPDATE| id26-update
 InOutStationOperator--> |DELETE| id26-delete
 :::
