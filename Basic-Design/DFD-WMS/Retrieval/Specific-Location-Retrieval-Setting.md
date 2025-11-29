@@ -881,9 +881,9 @@ id26process[id26process]
 buttonclicked --> id26msg
 id26msg -->id26process-->Cond1{Flow?}
 
-RetrievalStationOperator--> |INSERT| id26-insert 
-RetrievalStationOperator--> |UPDATE| id26-update 
-RetrievalStationOperator--> |DELETE| id26-delete 
+RetrievalStationOperator--> |INSERT| id26-insertRt 
+RetrievalStationOperator--> |UPDATE| id26-updateRt 
+RetrievalStationOperator--> |DELETE| id26-deleteRt 
 
 Cond1{Flow?} --> |1201-1209| RetrievalStationOperator
 Cond1{Flow?} --> |1301-1203| InOutStationOperator
