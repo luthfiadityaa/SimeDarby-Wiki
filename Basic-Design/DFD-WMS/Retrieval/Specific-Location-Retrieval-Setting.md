@@ -887,7 +887,7 @@ RetrievalStationOperator--> |DELETE| id26-deleteRt
 Cond1{Flow?} --> |1201-1209| RetrievalStationOperator
 Cond1{Flow?} --> |1301-1303| P2[InOutStationOperator→arrival→updateArrival]
 
-P2 --> |Calling| P3[ReturnStorageManager]
+P2 --> |Calling| P3[ReturnStorageManager→updateForReturnStorageArrival]
 P2 --> |INSERT| id26-insertIo
 P2 --> |UPDATE| id26-updateIo
 
