@@ -260,8 +260,7 @@ The Retrieval operation at **Packaging Material zone (9002: Ambient)** will be r
 
 # ID32
 
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.wcs.mc.as21.communication.control.Id32Proces` &nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id32Process&nbsp;</span>
 
 ::: mermaid
 flowchart LR
