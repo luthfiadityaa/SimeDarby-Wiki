@@ -372,9 +372,7 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 - **LAST_UPDATE_PNAME** : Class name
 
 #ID26
-
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.wcs.mc.as21.communication.control.Id26Process` &nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id26Process&nbsp;</span>
 
 ::: mermaid
 flowchart LR
