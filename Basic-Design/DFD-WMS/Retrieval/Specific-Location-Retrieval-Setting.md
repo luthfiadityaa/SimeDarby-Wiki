@@ -1,4 +1,4 @@
-[[_TOC_]]
+f[[_TOC_]]
 [[_TOSP_]]
 
 #<span style="color:skyblue; font-weight:bold">Summary Flow</span>
@@ -456,7 +456,7 @@ ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ###<span style="color:skyblue; font-weight:bold">DMShelf</span>
-* **STATUS_FLAG**: 0:Empty
+* **STATUS_FLAG**: **<span style="color:green">0:Empty or 2:Reserved Location </span>**
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 
 ###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
