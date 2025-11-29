@@ -142,7 +142,7 @@ flowchart LR
 
 #Specific Location Retrieval Setting - Set(F2)
 
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.SpecificLocationRetrievalSettingSCH &nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.LocationRetrievalSCH &nbsp;</span>
 
  ![==image_0==.jpg](/.attachments/==image_0==-0f7ad1cc-fe5d-4f53-9b15-1c9fecf90cd0.jpg) 
   
