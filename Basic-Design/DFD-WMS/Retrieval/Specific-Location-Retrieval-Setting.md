@@ -831,7 +831,6 @@ Sending of ID45 is sent to AGC when user clicked on **Complete** at Work Display
 #ID26
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.control.Id26Process&nbsp;</span>
 
-**Stage 1**
 ::: mermaid
 flowchart LR
 
