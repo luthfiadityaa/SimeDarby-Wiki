@@ -255,8 +255,7 @@ flowchart LR
 *   **QC_CHECK_FLAG**: DNSTOCK_QC_CHECK_FLAG    
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY  
 *   **BCR_DATA**: DNPALLET.BCR_DATA  
-*   **STORAGE_LOCATION_FROM**: DNSTOCK.STORAGE_LOCATION (From Location Location) ⟶ **<span style="color:green;">FGW1 or FGW2</span>**
-*   **STORAGE_LOCATION_TO**: Value from Screen (To Location) ⟶ **<span style="color:green;">VT01, QC01, SD01, SG01</span>** 
+*   **STORAGE_LOCATION**: Value from Screen (To Location) ⟶ **<span style="color:green;">VT01, QC01, SD01, SG01</span>** 
 *   **DOCK_NO**: Value from Screen (Dock No)
 *   **TRUCK_PLATE_NO**: Value from Screen (Truck Plate No)
 *   **REMOVAL_TYPE**: Value from Screen ⟶ **<span style="color:green;">(1: Unit Retrieval​ or 2: Only Confirmation = Retrieval Qty = 0)</span>**
