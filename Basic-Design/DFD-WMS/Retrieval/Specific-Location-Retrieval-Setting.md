@@ -843,17 +843,6 @@ id26msg("
 ID 26
 ")
 
-id26process[id26process]
-
-buttonclicked --> id26msg
-id26msg -->id26process-->Cond1{Flow?}
-Cond1{Flow?} --> RetrievalStationOperator
-Cond1{Flow?} --> InOutStationOperator
-:::
-
-**Stage 2**
-::: mermaid
-flowchart TD
 
 id26-update[("
 DNWORKINFO
@@ -893,8 +882,22 @@ id26-insert2[("
 DNINOUTRESULT
 ")]
 
-Cond1{Flow?} --> RetrievalStationOperator
-Cond1{Flow?} --> InOutStationOperator 
+id26process[id26process]
+
+buttonclicked --> id26msg
+id26msg -->id26process-->Cond1{Flow?}
+
+RetrievalStationOperator--> |INSERT| id26-insert 
+RetrievalStationOperator--> |UPDATE| id26-update 
+RetrievalStationOperator--> |DELETE| id26-delete 
+
+Cond1{Flow?} --> |1201-1209| RetrievalStationOperator
+Cond1{Flow?} --> |1201-1203| InOutStationOperator
+
+InOutStationOperator--> |INSERT| id26-insert2
+InOutStationOperator--> |INSERT| id26-insert3
+InOutStationOperator--> |UPDATE| id26-update2
+InOutStationOperator--> |DELETE| id26-delete2
 
 :::
 
