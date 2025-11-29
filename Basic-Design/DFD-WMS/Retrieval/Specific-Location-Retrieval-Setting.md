@@ -41,7 +41,7 @@ P7[ID68]-->Cond2{Retrieval Type?}
 flowchart LR
 Cond2{Removal Type?}--> |Unit Retrieval - 
 1201-1209 & 1301-1303| P13[ID26]
-Cond2{Retrieval Type?}--> |Only Confirmation - 
+Cond2{Removal Type?}--> |Only Confirmation - 
 1301-1303| P14[ID45]-->Cond3{Station?}
 Cond3{Station?}-->|1301 & 1302| P15[Go to Unplanned Storage 
 From 1301 & 1302]
