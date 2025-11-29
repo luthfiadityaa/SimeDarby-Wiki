@@ -226,6 +226,12 @@ flowchart LR
 :::
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">DNStockHistory</span>
+* **STOCK_STATUS_FROM**: DNSTOCK.STOCK_STATUS
+* **STORAGE_LOCATION_FROM**: DNSTOCK.STORAGE_LOCATION
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+* **LAST_UPDATE_PNAME**: QCSettingSCH
+
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 *   **JOB_NO**: Sequence Object    
 *   **SETTING_UNIT_KEY**: Sequence Object    
@@ -284,7 +290,7 @@ flowchart LR
 *   **DOCK_NO**: DNWORKINFO.DOCK_NO
 *   **TRUCK_PLATE_NO**: DNWORKINFO.TRUCK_PLATE_NO 
 *   **STORAGE_LOCATION_FROM**: DNSTOCK.STORAGE_LOCATION (From Location Location) ⟶ **<span style="color:green;">FGW1 or FGW2</span>**
-*   **STORAGE_LOCATION_TO**: Value from Screen (To Location) ⟶ **<span style="color:green;">VT01, QC01, SD01, SG01</span>**
+*   **STORAGE_LOCATION**: Value from Screen (To Location) ⟶ **<span style="color:green;">VT01, QC01, SD01, SG01</span>**
 *   **USER_ID**: DNWORKINFO.USER_ID    
 *   **USER_NAME**: DCUSER.USER_NAME    
 *   **REGIST_DATE**: SYSTIMESTAMP    
