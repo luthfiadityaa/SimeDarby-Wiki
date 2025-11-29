@@ -157,7 +157,7 @@ flowchart LR
 *   **WORK_NO**: Sequence Object    
 *   **RETRIEVAL_STATION_NO**: DNSTOCK.LOCATION_NO
 *   **SOURCE_STATION_NO**: DNPALLET.CURRENT_STATION_NO    
-*   **DEST_STATION_NO**: Value from screen (Station) ⟶ **<span style="color:green;">1205, 1206, 1207, 1208, 1209, 1301, 1302</span>**     
+*   **DEST_STATION_NO**: Value from screen (Station) ⟶ **<span style="color:green;">1201, 1202, 1203, 1204</span>**     
 *   **PRIORITY**: Value from screen ⟶ **<span style="color:green;">(1:Urgent, 2:Normal)</span>**
 *   **CANCEL_REQUEST**: 0:Not Requested    
 *   **SCHEDULE_NO**: Sequence Object    
