@@ -137,6 +137,12 @@ flowchart LR
         DNWORKLIST
     ")]
 
+    tableList-update[("
+        DNRetrievalPlan
+        DNStock
+        DNPallet
+    ")]
+
      tableList-select[("
         DMWAREHOUSE
         DMSHELF
