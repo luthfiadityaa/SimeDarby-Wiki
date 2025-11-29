@@ -870,6 +870,23 @@ DNHOSTSEND
 DNINOUTRESULT
 ")]
 
+id26-update2[("
+DNWORKINFO
+DNSHELF
+")]
+
+id26-delete2[("
+DNCARRYINFO
+DNPALLET
+DNSTOCK
+")]
+
+id26-insert3[("
+DNWORKLIST
+DNHOSTSEND
+DNINOUTRESULT
+")]
+
 id26-insert2[("
 DNINOUTRESULT
 ")]
@@ -881,8 +898,9 @@ RetrievalStationOperator--> |INSERT| id26-insert
 RetrievalStationOperator--> |UPDATE| id26-update
 RetrievalStationOperator--> |DELETE| id26-delete
 InOutStationOperator--> |INSERT| id26-insert2
-InOutStationOperator--> |UPDATE| id26-update
-InOutStationOperator--> |DELETE| id26-delete
+InOutStationOperator--> |INSERT| id26-insert3
+InOutStationOperator--> |UPDATE| id26-update2
+InOutStationOperator--> |DELETE| id26-delete2
 :::
 
 <span style="color:black; font-weight:bold; color:red">*The operator performs the operation according to the work display on the work terminal.</span>
