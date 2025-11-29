@@ -408,12 +408,12 @@ After the completion button flashes, the operator removes the pallet and presses
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
-###<span style="color:skyblue; font-weight:bold">DMSHELF</span>
+###<span style="color:skyblue; font-weight:bold">DMShelf</span>
 - **STATUS_FLAG** : 0:Empty Location
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
-###<span style="color:skyblue; font-weight:bold">DNWORKLIST</span>
+###<span style="color:skyblue; font-weight:bold">DNWorkList</span>
 - **JOB_NO** : DNWORKINFO.JOB_NO
 - **CARRY_KEY** : DNWORKINFO.SYSTEM_CONN_KEY
 - **SETTING_UNIT_KEY** : DNWORKINFO.SETTING_UNIT_KEY
