@@ -450,7 +450,7 @@ DNPALLET
 ")]
 
 id26process[id26process]
-retrievaloperator[RetrievalStationOperator]
+retrievaloperator[InOutStationOperator]
 
 
 buttonclicked --> id26msg
