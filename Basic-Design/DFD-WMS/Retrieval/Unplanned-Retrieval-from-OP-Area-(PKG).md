@@ -445,7 +445,7 @@ After the completion button flashes, the operator removes the pallet and presses
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : ClassName
 
-###<span style="color:skyblue; font-weight:bold">DNHOSTSEND </span>
+###<span style="color:skyblue; font-weight:bold">DNHostSend</span>
 - **WORK_DAY** : DMWARENAVISYSTEM.WORK_DAY    
 - **JOB_NO** : DNWORKINFO.JOB_NO    
 - **COLLECT_JOB_NO** : DNWORKINFO.COLLECT_JOB_NO    
@@ -474,24 +474,6 @@ After the completion button flashes, the operator removes the pallet and presses
 - **REGIST_DATE** : SYSTIMESTAMP    
 - **REGIST_PNAME** : Class name    
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP    
-- **LAST_UPDATE_PNAME** : Class name
-
-###<span style="color:skyblue; font-weight:bold">DNINOUTRESULT </span>
-- **RESULT_KIND** : 2:Retrieval(Stock-)
-- **STATION_NO** : DNCARRYINFO.DEST_STATION_NO
-- **LOCATION_NO** : DNPALLET.CURRENT_STATION_NO
-- **WH_STATION_NO** : DNPALLET.WH_STATION_NO
-- **AISLE_STATION_NO** : DNCARRYINFO.AISLE_STATION_NO
-- **WORK_TYPE** : DNCARRYINFO.WORK_TYPE
-- **RETRIEVAL_DETAIL** : DNCARRYINFO.RETRIEVAL_DETAIL
-- **WORK_NO** : DNCARRYINFO.WORK_NO
-- **PALLET_ID** : DNPALLET.PALLET_ID
-- **CARRY_KEY** : DNCARRYINFO.CARRY_KEY
-- **RESTORING_FLAG** : DNCARRYINFO.RESTORING_FLAG
-- **WORK_DAY** : DMWARENAVISYSTEM.WORK_DAY
-- **REMOVE_FLAG** : 00: Normal
-- **REGIST_PNAME** : Class name
-- **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
 # Unplanned Storage and Retrieval Result
