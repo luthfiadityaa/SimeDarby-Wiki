@@ -940,6 +940,32 @@ After the completion button flashes, the operator removes the pallet and presses
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: Class name
 
+###<span style="color:skyblue; font-weight:bold">DNStockHistory</span>
+* **INC_DEC_TYPE**: 2:Stock Decrease (Retrieval)
+* **JOB_TYPE**: **<span style="color:green; font-weight:bold">23:Unplanned Retrieval or 40:Inventory Check</span>** 
+* **STOCK_ID**: DNSTOCK.STOCK_ID
+* **PLAN_AREA_NO**: DNSTOCK.AREANO
+* **PLAN_LOCATION_NO**: DNPALLET.CURRENT_STATION_NO
+* **MATERIAL_CODE**: DNSTOCK.MATERIAL_CODE
+* **MATERIAL_NAME**: DMITEM.MATERIAL_NAME
+* **MATERIAL_TYPE**: DMITEM.MATERIAL_TYPE
+* **TEMPERING_PERIOD**: DNSTOCK.TEMPERING_PERIOD
+* **TEMPERING_FLAG**: DNSTOCK.TEMPERING_FLAG
+* **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE
+* **QC_DURATION**: DNSTOCK.QC_DURATION
+* **QC_CHECK_FLAG**: DNSTOCK_QC_CHECK_FLAG
+* **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY
+* **BCR_DATA**: DNPALLET.BCR_DATA
+* **STOCK_STATUS_FROM**: DNSTOCK.STOCK_STATUS
+* **STOCK_STATUS_TO**: <span style="color:green; font-weight:bold">QI</span>
+* **STORAGE_LOCATION_FROM**: DNSTOCK.STORAGE_LOCATION
+* **STORAGE_LOCATION_TO**: <span style="color:green; font-weight:bold">QC01</span>
+* **TERMINAL_NO**: Login info
+* **REGIST_DATE**: SYSTIMESTAMP
+* **REGIST_PNAME**: ClassName
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: ClassName
+
 ###<span style="color:skyblue; font-weight:bold">DNInOutResult</span>
 *Only for 1301-1303*
 *   **RESULT_KIND**: 2:Retrieval(Stock-)
