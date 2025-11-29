@@ -32,6 +32,7 @@ P1[FROM AISLE STATION -
 - **STSN** : DMSTATION  
 - **STCH** : DNSTOCKHISTORY  
 - **TTSN** : DMTOSTATION 
+- **RPLAN**: DNRETRIEVALPLAN
 
 * **Operation Name**
   - **I** : INSERT  
