@@ -877,14 +877,11 @@ DNINOUTRESULT
 
 id26-updateIoNew[("
 DNWORKINFO
+DNSTOCK
 ")]
 
 id26-insertIoNew[("
 DNHOSTSEND
-")]
-
-id26-updateIoNew[("
-DNSTOCK
 ")]
 
 id26process[id26process]
