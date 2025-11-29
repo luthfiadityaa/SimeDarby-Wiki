@@ -158,6 +158,7 @@ flowchart LR
 
 ####<span style="color:skyblue; font-weight:bold">DNRetrievalPlan</span>
 * **STATUS_FLAG**: 1:Working
+*  **LAST_UPDATE_PNAME**: ClassName
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 *   **JOB_NO**: Sequence Object    
