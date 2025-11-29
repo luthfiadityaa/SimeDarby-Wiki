@@ -278,7 +278,8 @@ id32process-.UPDATE.->id32-update
 
 ID32 sent from AGC to WareNavi indicate AGC responded the retrieval job by WareNavi.
 
-## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 - **CMD_STATUS** : 3: Commanded
 - **ERROR_CODE** : 0
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
@@ -305,11 +306,12 @@ id33process--> |UPDATE| id33-update
 
 ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi that the Pallet/Bin is out of rack and is being transferred to related Station.
 
-## <span style="color:skyblue; font-weight:bold">DMSHELF</span>
+##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###<span style="color:skyblue; font-weight:bold">DMShelf</span>
 - **STATUS_FLAG** : 0:Empty
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 
-## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 - **CMD_STATUS** : 5:Retrieval completed
 - **RETRIEVAL_STATION_NO** : DMSHELF.STATION_NO
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
