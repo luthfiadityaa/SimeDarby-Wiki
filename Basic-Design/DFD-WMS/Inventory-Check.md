@@ -153,7 +153,7 @@ flowchart LR
     input --> className 
     tableList-select --> |SELECT| className
 
-click P1 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/868/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Inventory%20Check&anchor=retrieval-sender"
+click P1 "#retrieval-sender"
 style P1 fill:#00cc66,stroke:#006633,color:#ffffff
 
 :::
@@ -253,24 +253,23 @@ flowchart LR
 
 retrievalsender-input[("
 DNCARRYINFO
+DMSTATION
 ")]
 
 retrievalsender-update[("
-DNPALLET
-DNWORKINFO
-")]
-
-retrievalsender-insert[("
 DNCARRYINFO
+DNPALLET
 ")]
 
 id12msg("
 ID 12
 ")
 
-retrievalsender-input-->RetrievalSender--> |UPDATE| retrievalsender-update
-RetrievalSender--> |INSERT| retrievalsender-insert
-RetrievalSender--> |SendText| id12msg
+retrievalsender-input--> P1[retrievalsender→process]-->P2[SendCarry→getSendCarryArray]--> |UPDATE| retrievalsender-update
+P2--> |SendText| id12msg
+
+ click id12msg "#" "Go to ID12"
+ style id12msg fill:#00cc66,stroke:#006633,color:#ffffff
 :::
 
 For Inventory Check performed in ASRS where there is creation of DNCARRYINFO, DNCARRYNFO data will be processed in Retrieval Sender. ID 12 will be sent after related tables are updated successfully.
