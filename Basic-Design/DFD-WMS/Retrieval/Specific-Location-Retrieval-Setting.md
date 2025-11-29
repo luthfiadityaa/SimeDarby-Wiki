@@ -901,7 +901,7 @@ After the completion button flashes, the operator removes the pallet and presses
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ###<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 *   **STATUS_FLAG**: 4:Completed
-*   **RESULT_QTY**: DNWORKINFO.PLAN_QTY - DNWORKINFO.RESULT_QTY
+*   **RESULT_QTY**: DNWORKINFO.PLAN_QTY
 *   **RESULT_AREA_NO**: DNWORKINFO.PLAN_AREA_NO
 *   **RESULT_LOCATION_NO**: DNWORKINFO.PLAN_LOCATION_NO
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY
