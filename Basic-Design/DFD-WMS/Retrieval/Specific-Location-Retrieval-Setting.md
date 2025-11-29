@@ -782,6 +782,8 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 
 ![image.png](/.attachments/image-1e56dc6e-657e-47ff-9a47-575b04705583.png)
 
+# Work Display
+
 <br>
 <hr style="width:55%; margin-left: 0; border: 2px solid green;">
 
