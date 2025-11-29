@@ -96,12 +96,12 @@ The Inquiry Retrieval Setting screen uses for manually set the retrieval work(Un
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
 This section explains the validations for the whole proccess Unplanned Retrieval
-- AGC is online. <span style="color:green; font-weight:bold">(DMGroupController.STATUS_FLAG.ONLINE)</span>
-- The selected station mode must be <span style="color:green; font-weight:bold">Retrieval mode</span> if it is Bi-Direction station
-- Selected Station Number is NOT under suspend. <span style="color:green; font-weight:bold">(DMStation.SUSPEND.OFF)</span>
-- Selected Station Number is available. <span style="color:green; font-weight:bold">(DMStation.STATUS.NORMAL and DMMachine.STATUS_FLAG.ACTIVE)</span>
-- **<span style="color:green; font-weight:bold">Daily Update</span>** is not running
-- Input text with red asterisk <span style="color:red">(*)</span> is not empty
+- AGC is online. <span style="color:green; font-weight:bold">(DMGroupController.STATUS_FLAG.ONLINE)</span>.
+- The selected station mode must be <span style="color:green; font-weight:bold">Retrieval mode</span> if it is Bi-Direction station.
+- Selected Station Number is NOT under suspend. <span style="color:green; font-weight:bold">(DMStation.SUSPEND.OFF)</span>.
+- Selected Station Number is available. <span style="color:green; font-weight:bold">(DMStation.STATUS.NORMAL and DMMachine.STATUS_FLAG.ACTIVE)</span>.
+- **<span style="color:green; font-weight:bold">Daily Update</span>** is not running.
+- Input text with red asterisk <span style="color:red">(*)</span> is not empty.
 
 ::: mermaid
 flowchart LR
