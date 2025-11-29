@@ -879,6 +879,10 @@ id26-updateIoNew[("
 DNWORKINFO
 ")]
 
+id26-insertIoNew[("
+DNHOSTSEND
+")]
+
 id26process[id26process]
 
 buttonclicked --> id26msg
@@ -896,6 +900,7 @@ P3 --> |Calling| P4[CarryCompleteOperator→completeRetrievalWorkAndUpdateStock�
 P4 --> |Calling| P5[WorkInfoControllerr→completeWorkInfo→completeWorkInfoComplete]
 P5 --> |UPDATE| id26-updateIoNew
 P5 --> |Calling| P6[HostSendControllerr→insertByWorkInfo→completeWorkInfoComplete]
+P6 --> |UPDATE| id26-updateIoNew
 P2 --> |UPDATE| id26-updateIo
 
 :::
