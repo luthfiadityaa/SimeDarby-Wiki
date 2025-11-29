@@ -445,9 +445,10 @@ id33-->P1[id33process→retrievalCompletion→normalRetrievalCompletion]
 P1--> |Calling| P2[RetrievalCompleter→completeOperation]
 P4[releaseOrReserveSourceShelf]
 P5[RetrievalCompleteManager→updateCarryForCompRetrieval]
-P2--> |Calling| P4--> |Calling| P3[ShelfController]
-P6[releaseShelf]--> |UPDATE| id33-update
-P6[updateStatus]--> |UPDATE| id33-update
+P2--> |Calling| P4--> |Calling| P3[ShelfController]-->Cond2
+Cond2{Removal Type?}
+Cond2--> |Unit Retrival| P6[releaseShelf]--> |UPDATE| id33-update
+Cond2--> |Only Confirmation| P7[updateStatus]--> |UPDATE| id33-update
 P2--> |Calling| P5--> |UPDATE| id33-update2
 :::
 
