@@ -862,16 +862,12 @@ id26-updateIo[("
 DNWORKINFO
 DNSHELF
 DNWORKLIST
-")]
-
-id26-deleteIo[("
 DNCARRYINFO
 DNPALLET
 DNSTOCK
 ")]
 
 id26-insertIo[("
-DNWORKLIST
 DNHOSTSEND
 DNINOUTRESULT
 ")]
@@ -890,7 +886,6 @@ Cond1{Flow?} --> |1301-1203| InOutStationOperator
 
 InOutStationOperator --> |INSERT| id26-insertIo
 InOutStationOperator --> |UPDATE| id26-updateIo
-InOutStationOperator --> |DELETE| id26-deleteIo
 
 :::
 
