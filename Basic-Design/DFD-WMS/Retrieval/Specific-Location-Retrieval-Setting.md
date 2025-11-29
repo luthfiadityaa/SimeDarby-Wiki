@@ -227,7 +227,6 @@ flowchart LR
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNStockHistory</span>
-* **STOCK_STATUS_FROM**: DNSTOCK.STOCK_STATUS
 * **STORAGE_LOCATION_FROM**: DNSTOCK.STORAGE_LOCATION
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 * **LAST_UPDATE_PNAME**: LocationRetrievalSCH
