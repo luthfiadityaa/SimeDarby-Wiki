@@ -64,10 +64,15 @@ The Planned Retrieval Setting screen is used to start multiple retrieval work gr
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
 This section explains the validations for the whole proccess Planned Retrieval
-- AGC is online. <span style="color:green; font-weight:bold">(DMGroupController.STATUS_FLAG.ONLINE)</span>
-- Selected Station Number is NOT under suspend. <span style="color:green; font-weight:bold">(DMStation.SUSPEND.OFF)</span>
-- Selected Station Number is available. <span style="color:green; font-weight:bold">(DMStation.STATUS.NORMAL and DMMachine.STATUS_FLAG.ACTIVE)</span>
-- Input text with red asterisk <span style="color:red">(*)</span> is not empty
+- AGC is online. <span style="color:green; font-weight:bold">(DMGroupController.STATUS_FLAG.ONLINE)</span>.
+- The selected station mode must be <span style="color:green; font-weight:bold">Retrieval mode</span> if it is Bi-Direction station.
+- Selected Station Number is NOT under suspend. <span style="color:green; font-weight:bold">(DMStation.SUSPEND.OFF)</span>.
+- Selected Station Number is available. <span style="color:green; font-weight:bold">(DMStation.STATUS.NORMAL and DMMachine.STATUS_FLAG.ACTIVE)</span>.
+- **<span style="color:green; font-weight:bold">Daily Update</span>** is not running.
+- **<span style="color:green; font-weight:bold">Retrieval Allocate Flag </span>** is in progress.
+- **<span style="color:green; font-weight:bold">Inventory to retrieval</span>** is allocated.
+- Shelf condition is not **<span style="color:red; font-weight:bold">NG (Not Goods), Prohibitied, Reserved for Storage and Empty</span>**.
+- Input text with red asterisk <span style="color:red">(*)</span> is not empty.
 
 ::: mermaid
 flowchart LR
@@ -91,6 +96,16 @@ flowchart LR
     tableList-insert[("
         DNWORKINFO
         DNWORKLIST
+        DNCARRYINFO
+    ")]
+
+    tableList-update[("       
+        DNSTOCK
+        DNPALLET
+    ")]
+
+    tableList-update2[("
+        DNRETRIEVALPLAN
     ")]
 
      tableList-select[("
@@ -99,18 +114,62 @@ flowchart LR
         DNPALLET
         DMITEM
         DMSTATION
+        DNSTOCK
     ")]
 
-    className[PlannedRetrievalSettingSCH]
-
-    input --> className --> |INSERT| tableList-insert
+    className[PlanRetrievalSCH]
+    className--> |Calling| methodName[RetrievalAllocateOperator→allocate] 
+    methodName--> |Calling| methodName2[AbstractAllocateOperator→allocateStock]--> |INSERT| tableList-insert
+    input --> className
     tableList-select --> |SELECT| className
+    methodName--> |Calling| P1[RetrievalSender]
+    methodName2--> |UPDATE| tableList-update
+    methodName--> |UPDATE| tableList-update2
+
+    click P1 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/956/Stacked-Empty-Pallet?anchor=retrieval-sender" "Go to Retrieval Retrieval Sender"
+    style P1 fill:#00cc66,stroke:#006633,color:#ffffff
 
     classDef leftAlign text-align:left;
     class input leftAlign;
 :::
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+
+####<span style="color:skyblue; font-weight:bold">DNRetrievalPlan</span>
+* **STATUS_FLAG**: 1:Working
+*  **LAST_UPDATE_PNAME**: ClassName
+
+####<span style="color:skyblue; font-weight:bold">DNStock</span>
+* **ALLOCATION_QTY**: DNSTOCK_QTY
+* **LAST_UPDATE_PNAME**: Class name
+
+####<span style="color:skyblue; font-weight:bold">DNPallet</span>
+* **STATUS_FLAG**: 3:Reserved for Retrieval
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
+
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+*   **CARRY_KEY**: Sequence Object    
+*   **PALLET_ID**: DNSTOCK.PALLET_ID    
+*   **WORK_TYPE**: 03:Retrieval    
+*   **CMD_STATUS**: 1:Started    
+*   **RESTORING_FLAG**: 0:Not Restore to Original Location  
+*   **WORK_NO**: Sequence Object    
+*   **RETRIEVAL_STATION_NO**: DNSTOCK.LOCATION_NO
+*   **SOURCE_STATION_NO**: DNPALLET.CURRENT_STATION_NO    
+*   **DEST_STATION_NO**: Value from screen (Station) ⟶ **<span style="color:green;">1205, 1206, 1207, 1208, 1209, 1301, 1302</span>**     
+*   **PRIORITY**: Value from screen ⟶ **<span style="color:green;">(1:Urgent, 2:Normal)</span>**
+*   **CANCEL_REQUEST**: 0:Not Requested    
+*   **SCHEDULE_NO**: Sequence Object    
+*   **CARRY_FLAG**: 2:Retrieval
+*   **CANCEL_REQUEST**: 0:Not requested
+*   **AISLE_STATION_NO**: DMSHELF.PARENT_STATION_NO
+*   **END_STATION_NO**: DNCARRYINFO.DEST_STATION_NO  
+*   **REGIST_DATE**: SYSTIMESTAMP    
+*   **REGIST_PNAME**: ClassName    
+*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME**: ClassName
+
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 *   **JOB_NO**: Sequence Object    
 *   **SETTING_UNIT_KEY**: Sequence Object    
@@ -175,92 +234,34 @@ flowchart LR
 
 retrievalsender-input[("
 DNCARRYINFO
+DMSTATION
 ")]
 
 retrievalsender-update[("
-DNPALLET
-DNWORKINFO
-")]
-
-retrievalsender-insert[("
 DNCARRYINFO
+DNPALLET
 ")]
 
 id12msg("
 ID 12
 ")
 
-retrievalsender-input-->retrievalsender--> |UPDATE| retrievalsender-update
-retrievalsender--> |INSERT| retrievalsender-insert
-retrievalsender--> |SendText| id12msg
+retrievalsender-input--> P1[retrievalsender→process]-->P2[SendCarry→getSendCarryArray]--> |UPDATE| retrievalsender-update
+P2--> |SendText| id12msg
+
+ click id12msg "#" "Go to ID12"
+ style id12msg fill:#00cc66,stroke:#006633,color:#ffffff
 :::
 
-All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station 1201, 1202, 1203, 1204 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
+All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station 1301, 1302, 1205, 1206, 1207, 1208, 1209 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-####<span style="color:skyblue; font-weight:bold">DNPallet</span>
-* **STATUS_FLAG**: 3:Reserved for Retrieval
-* **LAST_UPDATE_DATE**: SYSTIMESTAMP
-* **LAST_UPDATE_PNAME**: Class name
-
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-*   **CARRY_KEY**: Sequence Object    
-*   **PALLET_ID**: DNSTOCK.PALLET_ID    
-*   **WORK_TYPE**: 03:Retrieval    
-*   **CMD_STATUS**: 1:Started    
-*   **RESTORING_FLAG**: 0:Not Restore to Original Location  
-*   **WORK_NO**: Sequence Object    
-*   **RETRIEVAL_STATION_NO**: DNSTOCK.LOCATION_NO
-*   **SOURCE_STATION_NO**: DNPALLET.CURRENT_STATION_NO    
-*   **DEST_STATION_NO**: Value from screen (Station)     
-*   **PRIORITY**: Value from screen ⟶ **<span style="color:green;">(1:Urgent, 2:Normal)</span>**
-*   **CANCEL_REQUEST**: 0:Not Requested    
-*   **SCHEDULE_NO**: Sequence Object    
-*   **CARRY_FLAG**: 2:Retrieval
-*   **CANCEL_REQUEST**: 0:Not requested
-*   **AISLE_STATION_NO**: DMSHELF.PARENT_STATION_NO
-*   **END_STATION_NO**: DNCARRYINFO.DEST_STATION_NO  
-*   **REGIST_DATE**: SYSTIMESTAMP    
-*   **REGIST_PNAME**: ClassName    
-*   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
-*   **LAST_UPDATE_PNAME**: ClassName
-
-####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>   
-* **STATUS_FLAG**: 1:Working  
-* **SYSTEM_CONN_KEY**: DNCARRYINFO.CARRY_KEY
-
-#ID12
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.send.As21Id12&nbsp;</span>
-
-::: mermaid
-flowchart LR
-
-id26msg("
-ID12
-")
-
-id26-insert[("
-DNCARRYINFO
-")]
-
-id26-update[("
-DNPALLET
-")]
-
-retrievalstationoperator[RetrievalStationOperator]
-
-id26msg-->retrievalstationoperator
-retrievalstationoperator--> |INSERT| id26-insert
-retrievalstationoperator--> |UPDATE| id26-update
-:::
-
-##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 * **CMD_STATUS**: 2:Waiting for response
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
-###<span style="color:skyblue; font-weight:bold">DNPallet</span>
+####<span style="color:skyblue; font-weight:bold">DNPallet</span>
 * **STATUS_FLAG**: 4:Being retrieved
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
