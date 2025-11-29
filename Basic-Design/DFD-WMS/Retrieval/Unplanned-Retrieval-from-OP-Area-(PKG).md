@@ -226,24 +226,23 @@ flowchart LR
 
 retrievalsender-input[("
 DNCARRYINFO
+DMSTATION
 ")]
 
 retrievalsender-update[("
-DNPALLET
-DNWORKINFO
-")]
-
-retrievalsender-insert[("
 DNCARRYINFO
+DNPALLET
 ")]
 
 id12msg("
 ID 12
 ")
 
-retrievalsender-input-->RetrievalSender--> |UPDATE| retrievalsender-update
-RetrievalSender--> |INSERT| retrievalsender-insert
-RetrievalSender--> |SendText| id12msg
+retrievalsender-input--> P1[retrievalsender→process]-->P2[SendCarry→getSendCarryArray]--> |UPDATE| retrievalsender-update
+P2--> |SendText| id12msg
+
+ click id12msg "#" "Go to ID12"
+ style id12msg fill:#00cc66,stroke:#006633,color:#ffffff
 :::
 
 The Retrieval operation at **Packaging Material zone (9002: Ambient)** will be retrieved to Station 1201, 1202, 1203, 1204 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
