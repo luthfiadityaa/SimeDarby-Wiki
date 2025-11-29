@@ -284,13 +284,12 @@ retrievalsender-input--> P1[retrievalsender→process]-->P2[SendCarry→getSendC
 P2--> |SendText| id12msg
 
  click id12msg "#" "Go to ID12"
-    style id12msg fill:#00cc66,stroke:#006633,color:#ffffff
+ style id12msg fill:#00cc66,stroke:#006633,color:#ffffff
 :::
 
 All Pallet Retrieval operation at Ambient or Tempering will be retrieved to Station 1301, 1302, 1205, 1206, 1207, 1208, 1209 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-
 ###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 * **CMD_STATUS**: 2:Waiting for response
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
