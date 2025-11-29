@@ -219,9 +219,7 @@ flowchart LR
 *   **LAST_UPDATE_PNAME**: ClassName
 
 # Retrieval Sender
-
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.wcs.mc.as21.transmission.RetrievalSender` &nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalSender&nbsp;</span>
 
 ::: mermaid
 flowchart LR
