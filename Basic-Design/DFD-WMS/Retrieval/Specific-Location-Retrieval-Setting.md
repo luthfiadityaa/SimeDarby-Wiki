@@ -444,7 +444,7 @@ DNCARRYINFO
 id33-->P1[id33process→retrievalCompletion→normalRetrievalCompletion]
 P1--> |Calling| P2[RetrievalCompleter→completeOperation]
 P4[releaseOrReserveSourceShelf]
-P5[RetrievalCompleteManagerupdateCarryForCompRetrieval]
+P5[RetrievalCompleteManager→updateCarryForCompRetrieval]
 P2-->P4-->P3[ShelfController→releaseShelf]--> |UPDATE| id33-update
 P2-->P5-->|UPDATE| id33-update2
 :::
