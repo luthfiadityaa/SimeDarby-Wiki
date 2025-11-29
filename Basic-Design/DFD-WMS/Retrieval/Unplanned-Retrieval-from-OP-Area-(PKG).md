@@ -47,7 +47,7 @@ P1[FROM AISLE STATION - 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID12]
 | **Host Communication**                                         |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 | Unplanned Storage and Retrieval Result [(9)](#unplanned-storage-and-retrieval-result)|      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 
-# Inquiry Retrieval - Set (F2)
+# Inquiry Retrieval Setting - Set(F2)
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.InquiryRetrievalSettingSCH &nbsp;</span>
 ![image.png](/.attachments/image-bbf9a08f-5425-40ef-bb6b-8a9991a6e82a.png)
 Inquiry Retrieval Setting (PKG) is used for manually pickup Packaging Material item in ASRS. 
