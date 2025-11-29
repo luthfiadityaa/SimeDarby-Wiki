@@ -900,8 +900,7 @@ P3 --> |Calling| P4[CarryCompleteOperator→completeRetrievalWorkAndUpdateStock�
 P4 --> |Calling| P5[WorkInfoControllerr→completeWorkInfo→completeWorkInfoComplete]
 P5 --> |UPDATE| id26-updateIoNew
 P5 --> |Calling| P6[HostSendControllerr→insertByWorkInfo→completeWorkInfoComplete]
-P6 --> |UPDATE| id26-updateIoNew
-P2 --> |UPDATE| id26-updateIo
+P6 --> |INSERT| id26-updateIoNew
 
 :::
 
