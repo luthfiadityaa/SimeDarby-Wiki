@@ -150,9 +150,17 @@ flowchart LR
         DMTOSTATION
     ")]
 
+    tableList-update[("
+        DNPALLET
+    ")]
+
     className[InquiryRetrievalSettingSCH]
     className--> |Calling| className2[WebUnplannedRetrievalScheduler→schedule] --> |INSERT| tableList-insert
     input --> className 
+    className--> |Calling| P1[RetrievalSender]
+    className2 --> |UPDATE| tableList-update
+
+
     tableList-select --> |SELECT| className
 
     classDef leftAlign text-align:left;
