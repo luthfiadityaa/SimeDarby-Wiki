@@ -867,7 +867,7 @@ inOutStationOperator[InOutStationOperator]
 buttonclicked --> id26msg
 id26msg -->id26process-->Cond1{Flow?}
 Cond1{Flow?} --> |1201-1209| retrievaloperator
-Cond1{Flow?} --> |1201-1209| retrievaloperator
+Cond1{Flow?} --> |1201-1203| inOutStationOperator
 
 retrievaloperator--> |INSERT| id26-insert
 retrievaloperator--> |UPDATE| id26-update
