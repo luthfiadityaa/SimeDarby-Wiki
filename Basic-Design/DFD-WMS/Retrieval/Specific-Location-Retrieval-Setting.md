@@ -297,38 +297,6 @@ flowchart LR
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
 
-#Retrieval Sender
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalSender&nbsp;</span>
-
-::: mermaid
-flowchart LR
-
-retrievalsender-input[("
-DNCARRYINFO
-")]
-
-retrievalsender-update[("
-DNWORKINFO
-DNPALLET
-")]
-
-retrievalsender-insert[("
-DNCARRYINFO
-")]
-
-id12msg("
-ID 12
-")
-
-retrievalsender-input-->retrievalsender--> |UPDATE| retrievalsender-update
-retrievalsender--> |INSERT| retrievalsender-insert
-retrievalsender--> |SendText| id12msg
-:::
-
-All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station **<span style="color:green">1201-1209 & 1301-1303</span>** where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
-
-###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-
 <hr style="width:20%; margin-left:0; border: 2px solid green;">
 
 *For 1201-1209 & 1301-1302*
@@ -382,6 +350,40 @@ All Carton Retrieval operation at Ambient or Tempering will be retrieved to Stat
 *   **REGIST_PNAME**: ClassName    
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
+
+
+#Retrieval Sender
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalSender&nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+retrievalsender-input[("
+DNCARRYINFO
+")]
+
+retrievalsender-update[("
+DNWORKINFO
+DNPALLET
+")]
+
+retrievalsender-insert[("
+DNCARRYINFO
+")]
+
+id12msg("
+ID 12
+")
+
+retrievalsender-input-->retrievalsender--> |UPDATE| retrievalsender-update
+retrievalsender--> |INSERT| retrievalsender-insert
+retrievalsender--> |SendText| id12msg
+:::
+
+All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station **<span style="color:green">1201-1209 & 1301-1303</span>** where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
+
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+
 
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
 * **STATUS_FLAG**: 3:Reserved for Retrieval
