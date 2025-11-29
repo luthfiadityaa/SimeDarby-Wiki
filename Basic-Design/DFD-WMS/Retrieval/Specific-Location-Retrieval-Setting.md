@@ -888,9 +888,9 @@ RetrievalStationOperator--> |DELETE| id26-deleteRt
 Cond1{Flow?} --> |1201-1209| RetrievalStationOperator
 Cond1{Flow?} --> |1301-1203| InOutStationOperator
 
-InOutStationOperator --> |INSERT| id26-insert3
-InOutStationOperator --> |UPDATE| id26-update2
-InOutStationOperator --> |DELETE| id26-delete2
+InOutStationOperator --> |INSERT| id26-insertIo
+InOutStationOperator --> |UPDATE| id26-updateIo
+InOutStationOperator --> |DELETE| id26-deleteIo
 
 :::
 
