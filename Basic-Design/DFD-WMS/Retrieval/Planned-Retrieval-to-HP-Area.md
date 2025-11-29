@@ -155,6 +155,9 @@ flowchart LR
 :::
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+
+####<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
+
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 *   **JOB_NO**: Sequence Object    
 *   **SETTING_UNIT_KEY**: Sequence Object    
