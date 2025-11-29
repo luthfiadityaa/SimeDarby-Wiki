@@ -851,7 +851,7 @@ id26msg -->id26process-->Cond1{Flow?}
 
 **Stage 2**
 ::: mermaid
-flowchart LR
+flowchart TD
 
 id26-update[("
 DNWORKINFO
@@ -892,8 +892,7 @@ DNINOUTRESULT
 ")]
 
 Cond1{Flow?} --> RetrievalStationOperator
-Cond1{Flow?} --> InOutStationOperato
-r 
+Cond1{Flow?} --> InOutStationOperator 
 
 :::
 
