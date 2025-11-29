@@ -396,7 +396,8 @@ retrievaloperator--> |DELETE| id26-delete
 
 After the completion button flashes, the operator removes the pallet and presses the completion button to clear the operation indication. At the same time, sending ID 26 to the id26process, then delete related records from DNPALLET, DNCARRYINFO, and DNSTOCK.
 
-## <span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
+##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###<span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
 - **STATUS_FLAG** : 4:Completed
 - **RESULT_AREA_NO** : DNWORKINFO.PLAN_AREA_NO
 - **RESULT_LOCATION_NO** : DNWORKINFO.PLAN_LOCATION_NO
@@ -407,12 +408,12 @@ After the completion button flashes, the operator removes the pallet and presses
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
-## <span style="color:skyblue; font-weight:bold">DMSHELF</span>
+###<span style="color:skyblue; font-weight:bold">DMSHELF</span>
 - **STATUS_FLAG** : 0:Empty Location
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
-## <span style="color:skyblue; font-weight:bold">DNWORKLIST</span>
+###<span style="color:skyblue; font-weight:bold">DNWORKLIST</span>
 - **JOB_NO** : DNWORKINFO.JOB_NO
 - **CARRY_KEY** : DNWORKINFO.SYSTEM_CONN_KEY
 - **SETTING_UNIT_KEY** : DNWORKINFO.SETTING_UNIT_KEY
@@ -444,7 +445,7 @@ After the completion button flashes, the operator removes the pallet and presses
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : ClassName
 
-## <span style="color:skyblue; font-weight:bold">DNHOSTSEND </span>
+###<span style="color:skyblue; font-weight:bold">DNHOSTSEND </span>
 - **WORK_DAY** : DMWARENAVISYSTEM.WORK_DAY    
 - **JOB_NO** : DNWORKINFO.JOB_NO    
 - **COLLECT_JOB_NO** : DNWORKINFO.COLLECT_JOB_NO    
@@ -475,7 +476,7 @@ After the completion button flashes, the operator removes the pallet and presses
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 - **LAST_UPDATE_PNAME** : Class name
 
-## <span style="color:skyblue; font-weight:bold">DNINOUTRESULT </span>
+###<span style="color:skyblue; font-weight:bold">DNINOUTRESULT </span>
 - **RESULT_KIND** : 2:Retrieval(Stock-)
 - **STATION_NO** : DNCARRYINFO.DEST_STATION_NO
 - **LOCATION_NO** : DNPALLET.CURRENT_STATION_NO
