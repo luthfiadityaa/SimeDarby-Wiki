@@ -174,6 +174,7 @@ flowchart LR
 *   **JOB_NO**: Sequence Object    
 *   **SETTING_UNIT_KEY**: Sequence Object    
 *   **COLLECT_JOB_NO**: Sequence Object    
+*   **HARDWARE_TYPE**: 3:ASRS 
 *   **JOB_TYPE**: 23:Unplanned Retrieval    
 *   **STATUS_FLAG**: 0:Not Started    
 *   **PLAN_UKEY**: Sequence Object    
