@@ -891,7 +891,8 @@ id26-insert2[("
 DNINOUTRESULT
 ")]
 
-RetrievalStationOperator <-- Cond1{Flow?} --> InOutStationOperator 
+Cond1{Flow?}
+RetrievalStationOperator <-- Cond1 --> InOutStationOperator 
 
 :::
 
