@@ -145,7 +145,7 @@ flowchart LR
         DMSTATION
     ")]
 
-    className[PlanRetrievalSettingSCH]
+    className[PlanRetrievalSCH]
 
     input --> className --> |INSERT| tableList-insert
     tableList-select --> |SELECT| className
