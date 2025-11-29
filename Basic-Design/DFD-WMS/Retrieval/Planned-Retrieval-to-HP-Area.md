@@ -109,7 +109,7 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 - Selected Station Number is available. <span style="color:green; font-weight:bold">(DMStation.STATUS.NORMAL and DMMachine.STATUS_FLAG.ACTIVE)</span>.
 - **<span style="color:green; font-weight:bold">Daily Update</span>** is not running.
 - **<span style="color:green; font-weight:bold">Retrieval Allocate Flag </span>** is in progress.
-- **<span style="color:green; font-weight:bold">Inventory to retrieval</span>** is not allocated.
+- **<span style="color:green; font-weight:bold">Inventory to retrieval</span>** is allocated.
 - Shelf condition is not **<span style="color:red; font-weight:bold">NG (Not Goods), Prohibitied, Reserved for Storage and Empty</span>**.
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty.
 
