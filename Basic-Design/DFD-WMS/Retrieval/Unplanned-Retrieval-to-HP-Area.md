@@ -226,6 +226,11 @@ flowchart LR
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
 
+####<span style="color:skyblue; font-weight:bold">DNPallet</span>
+* **STATUS_FLAG**: 3:Reserved for Retrieval
+* **LAST_UPDATE_DATE**: SYSTIMESTAMP
+* **LAST_UPDATE_PNAME**: Class name
+
 ####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
 *   **JOB_NO**: DNWORKINFO.JOB_NO    
 *   **SETTING_UNIT_KEY**: Sequence Object   
@@ -286,10 +291,7 @@ retrievalsender--> |SendText| id12msg
 All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station 1301, 1302, 1205, 1206, 1207, 1208, 1209 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-####<span style="color:skyblue; font-weight:bold">DNPallet</span>
-* **STATUS_FLAG**: 3:Reserved for Retrieval
-* **LAST_UPDATE_DATE**: SYSTIMESTAMP
-* **LAST_UPDATE_PNAME**: Class name
+
 
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>   
 * **STATUS_FLAG**: 1:Working  
