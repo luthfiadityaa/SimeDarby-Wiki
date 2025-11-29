@@ -153,7 +153,7 @@ flowchart LR
     input --> className 
     tableList-select --> |SELECT| className
 
-click P1 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Inventory%20Check&pageId=868&anchor=retrieval-sender"
+click P1 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/868/?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Inventory%20Check&anchor=retrieval-sender"
 style P1 fill:#00cc66,stroke:#006633,color:#ffffff
 
 :::
