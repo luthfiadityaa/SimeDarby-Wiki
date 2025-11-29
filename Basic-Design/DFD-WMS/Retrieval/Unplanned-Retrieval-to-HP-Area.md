@@ -268,24 +268,23 @@ flowchart LR
 
 retrievalsender-input[("
 DNCARRYINFO
+DMSTATION
 ")]
 
 retrievalsender-update[("
-DNPALLET
-DNWORKINFO
-")]
-
-retrievalsender-insert[("
 DNCARRYINFO
+DNPALLET
 ")]
 
 id12msg("
 ID 12
 ")
 
-retrievalsender-input-->retrievalsender--> |UPDATE| retrievalsender-update
-retrievalsender--> |INSERT| retrievalsender-insert
-retrievalsender--> |SendText| id12msg
+retrievalsender-input--> P1[retrievalsender→process]-->P2[SendCarry→getSendCarryArray]--> |UPDATE| retrievalsender-update
+P2--> |SendText| id12msg
+
+ click id12msg "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/956/Stacked-Empty-Pallet?anchor=id12" "Go to ID12"
+    style id12msg fill:#00cc66,stroke:#006633,color:#ffffff
 :::
 
 All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station 1301, 1302, 1205, 1206, 1207, 1208, 1209 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
