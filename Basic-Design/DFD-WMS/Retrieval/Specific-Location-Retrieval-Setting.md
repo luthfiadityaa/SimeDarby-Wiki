@@ -833,7 +833,7 @@ Sending of ID45 is sent to AGC when user clicked on **Complete** at Work Display
 
 **Stage 1**
 ::: mermaid
-flowchart LR
+flowchart TD
 
 buttonclicked["
 Operators Press the Completion Button
