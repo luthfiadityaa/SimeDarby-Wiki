@@ -895,7 +895,7 @@ P2 --> |Calling| P3[ReturnStorageManager→updateForReturnStorageArrival]
 P3 --> |Calling| P4[CarryCompleteOperator→completeRetrievalWorkAndUpdateStock→completeWorkInfoNormally]
 P4 --> |Calling| P5[WorkInfoControllerr→completeWorkInfo→completeWorkInfoComplete]
 P5 --> |UPDATE| id26-updateIoNew
-P5 --> |Calling| P6[HostSendControllerr→completeWorkInfo→completeWorkInfoComplete]
+P5 --> |Calling| P6[HostSendControllerr→insertByWorkInfo→completeWorkInfoComplete]
 P2 --> |UPDATE| id26-updateIo
 
 :::
