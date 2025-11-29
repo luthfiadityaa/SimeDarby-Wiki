@@ -883,6 +883,10 @@ id26-insertIoNew[("
 DNHOSTSEND
 ")]
 
+id26-updateIoNew[("
+DNSTOCK
+")]
+
 id26process[id26process]
 
 buttonclicked --> id26msg
