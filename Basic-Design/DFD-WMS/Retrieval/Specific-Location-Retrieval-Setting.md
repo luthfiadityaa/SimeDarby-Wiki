@@ -870,8 +870,8 @@ DNHOSTSEND
 DNINOUTRESULT
 ")]
 
-Cond1{Flow?} --> |1201-1209| retrievaloperator
-Cond1{Flow?} --> |1201-1203| inOutStationOperator
+Cond1{Flow?} --> |1201-1209| RetrievalStationOperator
+Cond1{Flow?} --> |1201-1203| InOutStationOperator
 
 retrievaloperator--> |INSERT| id26-insert
 retrievaloperator--> |UPDATE| id26-update
