@@ -162,7 +162,7 @@ flowchart LR
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
 
-####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 *   **CARRY_KEY**: Sequence Object    
 *   **PALLET_ID**: DNSTOCK.PALLET_ID    
 *   **WORK_TYPE**: 23:Unplanned Retrieval    
@@ -184,12 +184,12 @@ flowchart LR
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
 
-####<span style="color:skyblue; font-weight:bold">DNPallet</span>
+###<span style="color:skyblue; font-weight:bold">DNPallet</span>
 * **STATUS_FLAG**: 3:Reserved for Retrieval
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
-##<span style="color:skyblue; font-weight:bold">DNWorkList</span>
+###<span style="color:skyblue; font-weight:bold">DNWorkList</span>
 *   **JOB_NO**: DNWORKINFO.JOB_NO    
 *   **SETTING_UNIT_KEY**: Sequence Object   
 *   **COLLECT_JOB_NO**: DNWORKINFO.COLLECT_JOB_NO    
