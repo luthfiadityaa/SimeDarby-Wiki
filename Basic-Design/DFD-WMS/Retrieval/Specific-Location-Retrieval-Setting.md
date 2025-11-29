@@ -878,10 +878,6 @@ DNHOSTSEND
 DNINOUTRESULT
 ")]
 
-id26-insert2[("
-DNINOUTRESULT
-")]
-
 id26process[id26process]
 
 buttonclicked --> id26msg
@@ -894,7 +890,6 @@ RetrievalStationOperator--> |DELETE| id26-delete
 Cond1{Flow?} --> |1201-1209| RetrievalStationOperator
 Cond1{Flow?} --> |1201-1203| InOutStationOperator
 
-InOutStationOperator --> |INSERT| id26-insert2
 InOutStationOperator --> |INSERT| id26-insert3
 InOutStationOperator --> |UPDATE| id26-update2
 InOutStationOperator --> |DELETE| id26-delete2
