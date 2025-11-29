@@ -127,7 +127,7 @@ flowchart LR
     class input leftAlign;
 :::
 
-## <span style="color:skyblue; font-weight:bold">DNWORKINFO</span>
+## <span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 *   **JOB_NO**: Sequence Object    
 *   **SETTING_UNIT_KEY**: Sequence Object    
 *   **COLLECT_JOB_NO**: Sequence Object    
@@ -188,7 +188,7 @@ flowchart LR
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
-##<span style="color:skyblue; font-weight:bold">DNWORKLIST</span>
+##<span style="color:skyblue; font-weight:bold">DNWorkList</span>
 *   **JOB_NO**: DNWORKINFO.JOB_NO    
 *   **SETTING_UNIT_KEY**: Sequence Object   
 *   **COLLECT_JOB_NO**: DNWORKINFO.COLLECT_JOB_NO    
