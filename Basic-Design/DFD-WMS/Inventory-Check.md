@@ -147,10 +147,15 @@ flowchart LR
         DMSTATION
     ")]
 
-    className[InventoryCheckSCH]
+    className[InventoryCheckSCH]--> |calling| methodName[InventoryScheduler → WebInventoryScheduler]--> |INSERT| tableList-insert
+    className[InventoryCheckSCH]--> |calling| P1[RetrievalSender]
 
-    input --> className --> |INSERT| tableList-insert
+    input --> className 
     tableList-select --> |SELECT| className
+
+click P1 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Inventory%20Check&pageId=868&anchor=retrieval-sender"
+style P1 fill:#00cc66,stroke:#006633,color:#ffffff
+
 :::
 
 ## <span style="color:skyblue; font-weight:bold">Validations</span>
