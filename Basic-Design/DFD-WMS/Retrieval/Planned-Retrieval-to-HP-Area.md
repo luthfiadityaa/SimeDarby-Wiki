@@ -146,7 +146,7 @@ flowchart LR
     ")]
 
     className[PlanRetrievalSCH]
-    className--> |Calling| methodName[RetrievalAllocateOperator→allocate] --> |INSERT| tableList-insert
+    className--> |Calling| methodName[RetrievalAllocateOperator→allocate→allocateStock] --> |INSERT| tableList-insert
     input --> className
     tableList-select --> |SELECT| className
 
