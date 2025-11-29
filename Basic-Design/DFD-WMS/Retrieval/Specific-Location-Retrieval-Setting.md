@@ -872,6 +872,9 @@ Cond1{Flow?} --> |1201-1203| inOutStationOperator
 retrievaloperator--> |INSERT| id26-insert
 retrievaloperator--> |UPDATE| id26-update
 retrievaloperator--> |DELETE| id26-delete
+inOutStationOperator--> |INSERT| id26-insert
+inOutStationOperator--> |UPDATE| id26-update
+inOutStationOperator--> |DELETE| id26-delete
 :::
 
 <span style="color:black; font-weight:bold; color:red">*The operator performs the operation according to the work display on the work terminal.</span>
