@@ -438,8 +438,8 @@ DMSHELF
 DNCARRYINFO
 ")]
 
-id33-->P1[id33process→retrievalCompletion]
-id33process--> |UPDATE| id33-update
+id33-->P1[id33process→retrievalCompletion→normalRetrievalCompletion]
+P1--> |UPDATE| id33-update
 :::
 
 ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi that the Pallet/Bin is out of rack and is being transferred to related Station.
