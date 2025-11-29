@@ -103,7 +103,7 @@ This section explains the validations for the whole proccess Unplanned Retrieval
 - **<span style="color:green; font-weight:bold">Daily Update</span>** is not running.
 - **<span style="color:green; font-weight:bold">Retrieval and Transport Data Clear Flag</span>** is not in progress.
 - **<span style="color:green; font-weight:bold">Inventory to retrieval</span>** is not allocated.
-- Shelf condition is not 
+- Shelf condition is not NG (Not Goods), Prohibitied, Reserved for Storage and Empty.
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty.
 
 ::: mermaid
