@@ -893,7 +893,7 @@ DNINOUTRESULT
 
 Cond1{Flow?} --> RetrievalStationOperator
 Cond1{Flow?} --> InOutStationOperator 
-
+RetrievalStationOperator --> id26-insert
 :::
 
 <span style="color:black; font-weight:bold; color:red">*The operator performs the operation according to the work display on the work terminal.</span>
