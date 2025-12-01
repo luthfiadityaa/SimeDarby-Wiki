@@ -197,6 +197,7 @@ flowchart LR
         DNWORKINFO
         DNWORKLIST
         DNSTOCKHISTORY
+        DNCARRYINFO
     ")]
 
      tableList-select[("
