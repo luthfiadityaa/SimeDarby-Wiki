@@ -36,10 +36,10 @@ P1[FROM STATION - 9001, 9002, 9003, 9004, 9005, 9006]-->P2[RetrievalSender]-->P3
 
 | Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HTST | OPRR | ITEM | STSN |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
-| Transfer Setting - Set(F2) [(1)](#transfer-setting---set(f2))  |   S  |   I  |   I  |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |
+| Transfer Setting - Set(F2) [(1)](#transfer-setting---set(f2))  |   S  |   I  |   I  |   I  |      |      |   S  |   S  |      |      |      |      |   S  |   S  |
 | **Retrieval Flow**                                             |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| Retrieval Sender [(2)](#retrieval-sender)                      |   U  |   U  |      |   I  |      |      |      |      |      |      |      |      |      |      |
-| ID12 [(3)](#id12)                                              |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| Retrieval Sender [(2)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| ID12                                                           |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 | ID32 [(4)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
 | ID33 [(5)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |
 | ID64 [(6)](#id64)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
@@ -91,6 +91,7 @@ QC Check Flag
 tableList-insert[("
 DNWORKINFO
 DNWORKLIST
+DNCARRYINFO
 ")]
 
 tableList-select[("
@@ -169,43 +170,6 @@ tableList-select --> |SELECT| className
 - **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 - **LAST_UPDATE_PNAME**: ClassName
 
-# Retrieval Sender
-
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.wcs.mc.as21.transmission.RetrievalSender` &nbsp;</span>
-
-::: mermaid
-flowchart LR
-
-retrievalsender-input[("
-DNCARRYINFO
-")]
-
-retrievalsender-update[("
-DNPALLET
-DNWORKINFO
-")]
-
-retrievalsender-insert[("
-DNCARRYINFO
-")]
-
-id12msg("
-ID 12
-")
-
-retrievalsender-input-->RetrievalSender--> |UPDATE| retrievalsender-update
-RetrievalSender--> |INSERT| retrievalsender-insert
-RetrievalSender--> |SendText| id12msg
-:::
-
-The Retrieval operation at **Tempering Area (9001: Tempering)** will be retrieved to Station 7207, 7208, 7209, 7210, 7211, 7212, 7213, 7214 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
-
-## <span style="color:skyblue; font-weight:bold">DNPALLET</span>
-- **STATUS_FLAG** : 3:Reserved for Retrieval
-- **LAST_UPDATE_DATE** :  SYSTIMESTAMP
-- **LAST_UPDATE_PNAME** : Class name
-
 ## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
 - **CARRY_KEY** : Sequence Object    
 - **PALLET_ID** : DNSTOCK.PALLET_ID    
@@ -226,44 +190,44 @@ The Retrieval operation at **Tempering Area (9001: Tempering)** will be retrieve
 - **END_STATION_NO** : DNCARRYINFO.DEST_STATION_NO  
 - **REGIST_DATE** : SYSTIMESTAMP    
 - **REGIST_PNAME** : ClassName    
-- **LAST_UPDATE_DATE** : SYSTIMESTAMP    
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP   
 
-## <span style="color:skyblue; font-weight:bold">DNWORKINFO</span>   
-- **STATUS_FLAG**: 1:Working  
-- **SYSTEM_CONN_KEY**: DNCARRYINFO.CARRY_KEY
-
-#ID12
+# Retrieval Sender
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.asrs.communication.id.send.As21Id12` &nbsp;</span>
+`jp.co.daifuku.wcs.mc.as21.transmission.RetrievalSender` &nbsp;</span>
 
 ::: mermaid
 flowchart LR
 
-id12msg("
-ID12
-")
-
-id12-update[("
-DNPALLET
+retrievalsender-input[("
 DNCARRYINFO
 ")]
 
-retrievalstationoperator[RetrievalStationOperator]
+retrievalsender-update[("
+DNPALLET
+DNWORKINFO
+")]
 
-id12msg-->id12process
-id12process-->retrievalstationoperator--> |UPDATE| id12-update
+id12msg("
+ID 12
+")
+
+retrievalsender-input-->RetrievalSender--> |UPDATE| retrievalsender-update
+RetrievalSender--> |SendText| id12msg
 :::
 
-## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
-- **CMD_STATUS** : 2:Waiting for response
-- **LAST_UPDATE_DATE** : SYSTIMESTAMP
-- **LAST_UPDATE_PNAME** : Class name
+The Retrieval operation at **Tempering Area (9001: Tempering)** will be retrieved to Station 7207, 7208, 7209, 7210, 7211, 7212, 7213, 7214 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
 
 ## <span style="color:skyblue; font-weight:bold">DNPALLET</span>
-- **STATUS_FLAG** : 4:Being retrieved
-- **LAST_UPDATE_DATE** : SYSTIMESTAMP
-- **LAST_UPDATE_PNAME** : Class name
+- **STATUS_FLAG** : 3:Reserved for Retrieval
+- **LAST_UPDATE_DATE** :  SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name 
+
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>   
+- **CMD_STATUS**: 2:Waiting for response
+- **LAST_UPDATE_DATE**: SYSTIMESTAMP
+- **LAST_UPDATE_PNAME**: Class name
 
 # ID32
 
