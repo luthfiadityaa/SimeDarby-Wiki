@@ -9,7 +9,7 @@ P1[FROM AISLE STATION - 9001,
 9002 , 9003, 9004, 9005, 
 9006, 9007, 9008, 9009, 
 9010, 9011, 9012, 9013, 
-9014]-->P2[RetrievalSender]-->P21[ID12]-->P3[ID32]-->P4[ID33]-->Cond1{Flow?} 
+9014]-->P2[RetrievalSender]-->P21[ID12]-->P3[ID32]-->P4[ID33]
 :::
 
 **Stage 2 -  Thorugh crane 7-10.**
