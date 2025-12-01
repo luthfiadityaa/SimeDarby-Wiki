@@ -226,38 +226,6 @@ flowchart LR
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: QCSettingSCH
 
-#Retrieval Sender
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalSender&nbsp;</span>
-
-::: mermaid
-flowchart LR
-
-retrievalsender-input[("
-DNCARRYINFO
-")]
-
-retrievalsender-update[("
-DNPALLET
-DNWORKINFO
-")]
-
-retrievalsender-insert[("
-DNCARRYINFO
-")]
-
-id12msg("
-ID 12
-")
-
-retrievalsender-input-->retrievalsender--> |UPDATE| retrievalsender-update
-retrievalsender--> |INSERT| retrievalsender-insert
-retrievalsender--> |SendText| id12msg
-:::
-
-All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station 1303 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
-
-###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
 * **STATUS_FLAG**: 3:Reserved for Retrieval
 * **ALLOCATION_FLAG**: 1:Allocated
@@ -291,28 +259,37 @@ All Carton Retrieval operation at Ambient or Tempering will be retrieved to Stat
 * **STATUS_FLAG**: 1:Working  
 * **SYSTEM_CONN_KEY**: DNCARRYINFO.CARRY_KEY
 
-#ID12
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.send.As21Id12&nbsp;</span>
+#Retrieval Sender
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalSender&nbsp;</span>
 
 ::: mermaid
 flowchart LR
 
-id26msg("
-ID12
-")
-
-id26-insert[("
+retrievalsender-input[("
 DNCARRYINFO
-DNPALLET
 ")]
 
-inoutstationoperator[InOutStaionOperator]
+retrievalsender-update[("
+DNPALLET
+DNWORKINFO
+")]
 
-id26msg-->inoutstationoperator
-inoutstationoperator--> |UPDATE| id26-insert
+retrievalsender-insert[("
+DNCARRYINFO
+")]
+
+id12msg("
+ID 12
+")
+
+retrievalsender-input-->retrievalsender--> |UPDATE| retrievalsender-update
+retrievalsender--> |INSERT| retrievalsender-insert
+retrievalsender--> |SendText| id12msg
 :::
 
-##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station 1303 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
+
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 * **CMD_STATUS**: 2:Waiting for response
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
