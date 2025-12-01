@@ -7,7 +7,7 @@
 ::: mermaid
 flowchart LR
   
-P1[From Station 1303]-->P2[ID26]-->P3[StorageSender]-->P4[ID25]-->Cond1{Flow?} 
+P1[From Station 1303]-->P2[ID26]-->P3[StorageSender]-->P31[ID05]-->P4[ID25]-->Cond1{Flow?} 
 
 click P2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/902/Retrieval-for-Return-Stock?anchor=id26" "Go to ID26"
 style P2 fill:#00cc66,stroke:#006633,color:#ffffff
@@ -29,7 +29,7 @@ P9[ID64]--> |7107-7110| P15[ID26]-->P16[StorageSender]-->P112[ID05]-->P17[ID25]-
 **Stage 3**
 ::: mermaid
 flowchart LR 
-P18[ID64]--> |STV| P19[ID64]--> |7211-7214| P20[ID26]-->P21[StorageSender]-->P22[ID25]--> |SRM| P23[ID64]
+P18[ID64]--> |STV| P19[ID64]--> |7211-7214| P20[ID26]-->P21[StorageSender]-->P212[ID05]-->P22[ID25]--> |SRM| P23[ID64]
 
 P18[ID64]--> |9001-9010| P14[ID33]
 P23[ID64]--> |9011-9014| P14[ID33]
