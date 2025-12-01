@@ -148,14 +148,10 @@ flowchart LR
         DMSTATION
     ")]
 
-    className[InventoryCheckSCH]--> |calling| methodName[InventoryScheduler → WebInventoryScheduler]--> |INSERT| tableList-insert
-    className[InventoryCheckSCH]--> |calling| P1[RetrievalSender]
+    className[InventoryCheckSCH]-->|INSERT| tableList-insert
 
     input --> className 
     tableList-select --> |SELECT| className
-
-click P1 "#retrieval-sender"
-style P1 fill:#00cc66,stroke:#006633,color:#ffffff
 
 :::
 
