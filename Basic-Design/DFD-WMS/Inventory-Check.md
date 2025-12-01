@@ -54,10 +54,10 @@ P1[Work Display - Click Complete Button]-->P2[ID45]-->P3[ID26]-->P4[StorageSende
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
 | **Mode Change For 1301-1302**                                  |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 | ID63 [(1)](#id33)                                              |      |      |      |      |      |      |      |      |      |      |      |      |      |   U  |      |
-| Inquiry Retrieval - Set(F2) [(2)](#inventory-check---set(f2))  |   S  |   I  |   I  |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   I  |
+| Inquiry Retrieval - Set(F2) [(2)](#inventory-check---set(f2))  |   S  |   I  |   I  |   I  |      |      |   S  |   S  |      |      |      |      |   S  |   S  |   I  |
 | **Retrieval Flow**                                             |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| Retrieval Sender [(3)](#retrieval-sender)                      |   U  |   U  |      |   I  |      |      |      |      |      |      |      |      |      |      |      |
-| ID12 [(4)](#id12)                                              |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| Retrieval Sender [(3)](#retrieval-sender)                      |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
+| ID12                                                           |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 | ID32 [(5)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
 | ID33 [(6)](#id33)                                              |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
 | ID64 [(7)](#id64)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
@@ -137,6 +137,7 @@ flowchart LR
         DNINVENTORYCHECK
         DNWORKINFO
         DNWORKLIST
+        DNCARRYINFO
     ")]
 
      tableList-select[("
@@ -243,6 +244,30 @@ This section explains the validations for the whole process Inventory Check
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : ClassName
 
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+- **CARRY_KEY** : Sequence Object    
+- **PALLET_ID** : DNSTOCK.PALLET_ID    
+- **WORK_TYPE** : 40: Inventory Check    
+- **CMD_STATUS** : 1: Started    
+- **PRIORITY** : 2: Normal    
+- **RESTORING_FLAG** : 1: Return to Same Location  
+- **WORK_NO** : Sequence Object
+- **CARRY_FLAG** : 2: Retrieval    
+- **RETRIEVAL_STATION_NO** : DNSTOCK.LOCATION_NO
+- **RETRIEVAL_DETAIL** : 0: Inventory Check
+- **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO    
+- **DEST_STATION_NO** : Based on **SOURCE_STATION_NO** where a reserved location belongs to ⟶ **(1301, 1302)**
+- **PRIORITY** : 2: Normal
+- **CANCEL_REQUEST** : 0: Not Requested    
+- **SCHEDULE_NO** : Sequence Object  
+- **CANCEL_REQUEST** : 0: Not requested
+- **AISLE_STATION_NO** : DMSHELF.PARENT_STATION_NO
+- **END_STATION_NO** : DNCARRYINFO.DEST_STATION_NO  
+- **REGIST_DATE** : SYSTIMESTAMP    
+- **REGIST_PNAME** : ClassName    
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP    
+- **LAST_UPDATE_PNAME** : ClassName
+
 # Retrieval Sender
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
@@ -280,66 +305,10 @@ For Inventory Check performed in ASRS where there is creation of DNCARRYINFO, DN
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
-## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
-- **CARRY_KEY** : Sequence Object    
-- **PALLET_ID** : DNSTOCK.PALLET_ID    
-- **WORK_TYPE** : 40: Inventory Check    
-- **CMD_STATUS** : 1: Started    
-- **PRIORITY** : 2: Normal    
-- **RESTORING_FLAG** : 1: Return to Same Location  
-- **WORK_NO** : Sequence Object
-- **CARRY_FLAG** : 2: Retrieval    
-- **RETRIEVAL_STATION_NO** : DNSTOCK.LOCATION_NO
-- **RETRIEVAL_DETAIL** : 0: Inventory Check
-- **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO    
-- **DEST_STATION_NO** : Based on **SOURCE_STATION_NO** where a reserved location belongs to ⟶ **(1301, 1302)**
-- **PRIORITY** : 2: Normal
-- **CANCEL_REQUEST** : 0: Not Requested    
-- **SCHEDULE_NO** : Sequence Object  
-- **CANCEL_REQUEST** : 0: Not requested
-- **AISLE_STATION_NO** : DMSHELF.PARENT_STATION_NO
-- **END_STATION_NO** : DNCARRYINFO.DEST_STATION_NO  
-- **REGIST_DATE** : SYSTIMESTAMP    
-- **REGIST_PNAME** : ClassName    
-- **LAST_UPDATE_DATE** : SYSTIMESTAMP    
-- **LAST_UPDATE_PNAME** : ClassName
-
-## <span style="color:skyblue; font-weight:bold">DNWORKINFO</span>   
-- **STATUS_FLAG**: 1:Working  
-- **SYSTEM_CONN_KEY**: DNCARRYINFO.CARRY_KEY
-
-#ID12
-
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.asrs.communication.id.send.As21Id12` &nbsp;</span>
-
-::: mermaid
-flowchart LR
-
-id12msg("
-ID12
-")
-
-id12-update[("
-DNPALLET
-DNCARRYINFO
-")]
-
-retrievalstationoperator[RetrievalStationOperator]
-
-id12msg-->id12process
-id12process-->retrievalstationoperator--> |UPDATE| id12-update
-:::
-
-## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
-- **CMD_STATUS** : 2:Waiting for response
-- **LAST_UPDATE_DATE** : SYSTIMESTAMP
-- **LAST_UPDATE_PNAME** : Class name
-
-## <span style="color:skyblue; font-weight:bold">DNPALLET</span>
-- **STATUS_FLAG** : 4:Being retrieved
-- **LAST_UPDATE_DATE** : SYSTIMESTAMP
-- **LAST_UPDATE_PNAME** : Class name
+## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>   
+- **CMD_STATUS**: 2:Waiting for response
+- **LAST_UPDATE_DATE**: SYSTIMESTAMP
+- **LAST_UPDATE_PNAME**: Class name
 
 # ID32
 
