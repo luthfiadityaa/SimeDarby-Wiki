@@ -22,8 +22,8 @@ Cond1 --> |Flow 1: Without going
 through crane 7~10 - STV| P8[ID64]
 Cond1 --> |Flow 2: Go through 
 crane 7~10 -STV| P9[ID64]
-P8[ID64]--> |7101-7110| P10[ID26]-->P11[StorageSender]-->P12[ID25]--> |SRM| P18[ID64]
-P9[ID64]--> |7107-7110| P15[ID26]-->P16[StorageSender]-->P17[ID25]--> |SRM| P18[ID64]
+P8[ID64]--> |7101-7110| P10[ID26]-->P11[StorageSender]-->P111[ID05]-->P12[ID25]--> |SRM| P18[ID64]
+P9[ID64]--> |7107-7110| P15[ID26]-->P16[StorageSender]-->P111[ID05]-->P17[ID25]--> |SRM| P18[ID64]
 :::
 
 **Stage 3**
