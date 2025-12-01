@@ -46,9 +46,9 @@ P7[ID68]-->P71[ID45]-->P81[ID26]-->P13[To Station 1303]
 | Action Name                                                                     |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN|TTSN|OPRD|INOUT| 
 |---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|-----|
 | ID63 [(1)](#ID63)                                                               |    |    |    |    |    |    |     |    |    |    |    | U  |    |    |     |
-| Retrieval for QC Start - Set(F2) [(1)](#Retrieval-for-QC-Start---Set(F2))       | I  | I  | S  |    | U  |    |     | S  | S  | I  | S  | S  | S  |    |     |
+| Retrieval for QC Start - Set(F2) [(1)](#Retrieval-for-QC-Start---Set(F2))       | I  | I  | S  | I   | U  |    |     | S  | S  | I  | S  | S  | S  |    |     |
 | RetrievalSender[(3)](#Retrieval-Sender)                                         | U  |    | U  | I  |    |    |     |    |    |    |    |    |    |    |     |  
-| ID12[(2)](#ID12)                                                                |    |    | U  | U  |    |    |     |    |    |    |    |    |    |    |     | 
+| ID12[(2)](#ID12)                                                                |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     | 
 | ID32[(4)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |     |    
 | ID33[(5)](#ID33)                                                                |    |    |    | U  |    |    |     |    | U  |    |    |    |    |    |     |     
 | **Flow 1: Thorugh crane 7-10**                                                  |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
