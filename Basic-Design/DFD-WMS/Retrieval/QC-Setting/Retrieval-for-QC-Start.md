@@ -136,10 +136,12 @@ flowchart LR
         DNWORKINFO
         DNWORKLIST
         DNSTOCKHISTORY
+        DNCARRYINFO
     ")]
 
      tableList-update[("
         DNSTOCK   
+        DNPALLET
     ")]
 
      tableList-select[("
