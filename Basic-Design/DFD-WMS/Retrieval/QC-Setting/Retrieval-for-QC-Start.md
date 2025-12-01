@@ -140,7 +140,7 @@ flowchart LR
     ")]
 
      tableList-update[("
-        DNSTOCK   
+        DNSTOCK
         DNPALLET
     ")]
 
