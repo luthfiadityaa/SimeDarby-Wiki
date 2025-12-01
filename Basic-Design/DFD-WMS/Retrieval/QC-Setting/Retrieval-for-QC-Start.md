@@ -12,11 +12,9 @@ P1[FROM AISLE STATION - 9001,
 9014]-->P2[RetrievalSender]-->P21[ID12]-->P3[ID32]-->P4[ID33]-->Cond1{Flow?} 
 :::
 
-**Stage 2**
+**Stage 2 -  Thorugh crane 7-10.**
 ::: mermaid
 flowchart LR
-
-*Thorugh crane 7-10.*
 
 9001, 9002, 9003, 9004, 9005, 9006| P5[ID64]--> |7207-7210| P8[ID26]-->P9[Retrieval Sender]-->P10[ID25]--> |SRM| P11[ID64]--> |STV| P12[ID64]--> P7[ID68]
 P7[ID68]-->P71[ID45]-->P81[ID26]-->P13[To Station 1303]
