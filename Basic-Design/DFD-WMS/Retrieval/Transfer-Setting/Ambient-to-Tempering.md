@@ -60,7 +60,7 @@ Cond1{Continue Deposit to ?}-->|SRM 9001-9006|P2[ID33]
 | Transfer Setting - Set(F2) [(1)](#transfer-setting---set(f2))  |   S  |   I  |   I  |   I  |      |      |   S  |   S  |      |      |      |      |   S  |   S  |
 | **Normal Retrieval**                                           |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 | Retrieval Sender [(2)](#retrieval-sender)                      |   U  |   U  |      |      |      |      |      |      |      |      |      |      |      |      |
-| ID12 [(3)](#id12)                                              |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
+| ID12                                                           |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 | ID32 [(4)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
 | ID33 at SRM Retrieval [(5)](#id33-at-srm-retrieval)            |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |
 | **Flow 1 - Storage from crane (9011-9014) through crane (9007-9010)**|      |      |      |      |      |      |      |      |      |      |      |      |      |      |
@@ -255,39 +255,6 @@ The Retrieval operation at **Ambient Area (9002: Ambient)** will be retrieved to
 ## <span style="color:skyblue; font-weight:bold">DNWORKINFO</span>   
 - **STATUS_FLAG**: 1:Working  
 - **SYSTEM_CONN_KEY**: DNCARRYINFO.CARRY_KEY
-
-#ID12
-
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.asrs.communication.id.send.As21Id12` &nbsp;</span>
-
-::: mermaid
-flowchart LR
-
-id12msg("
-ID12
-")
-
-id12-update[("
-DNPALLET
-DNCARRYINFO
-")]
-
-retrievalstationoperator[RetrievalStationOperator]
-
-id12msg-->id12process
-id12process-->retrievalstationoperator--> |UPDATE| id12-update
-:::
-
-## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
-- **CMD_STATUS** : 2:Waiting for response
-- **LAST_UPDATE_DATE** : SYSTIMESTAMP
-- **LAST_UPDATE_PNAME** : Class name
-
-## <span style="color:skyblue; font-weight:bold">DNPALLET</span>
-- **STATUS_FLAG** : 4:Being retrieved
-- **LAST_UPDATE_DATE** : SYSTIMESTAMP
-- **LAST_UPDATE_PNAME** : Class name
 
 # ID32
 
