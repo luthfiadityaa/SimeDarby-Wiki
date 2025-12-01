@@ -57,9 +57,9 @@ Cond1{Continue Deposit to ?}-->|SRM 9001-9006|P2[ID33]
 
 | Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | HTST | OPRR | ITEM | STSN |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
-| Transfer Setting - Set(F2) [(1)](#transfer-setting---set(f2))  |   S  |   I  |   I  |      |      |      |   S  |   S  |      |      |      |      |   S  |   S  |
+| Transfer Setting - Set(F2) [(1)](#transfer-setting---set(f2))  |   S  |   I  |   I  |   I  |      |      |   S  |   S  |      |      |      |      |   S  |   S  |
 | **Normal Retrieval**                                           |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| Retrieval Sender [(2)](#retrieval-sender)                      |   U  |   U  |      |   I  |      |      |      |      |      |      |      |      |      |      |
+| Retrieval Sender [(2)](#retrieval-sender)                      |   U  |   U  |      |      |      |      |      |      |      |      |      |      |      |      |
 | ID12 [(3)](#id12)                                              |   U  |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
 | ID32 [(4)](#id32)                                              |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |
 | ID33 at SRM Retrieval [(5)](#id33-at-srm-retrieval)            |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |
@@ -119,6 +119,7 @@ QC Check Flag
 tableList-insert[("
 DNWORKINFO
 DNWORKLIST
+DNCARRYINFO
 ")]
 
 tableList-select[("
@@ -196,44 +197,6 @@ tableList-select --> |SELECT| className
 - **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 - **LAST_UPDATE_PNAME**: ClassName
 
-# Retrieval Sender
-
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.wcs.mc.as21.transmission.RetrievalSender` &nbsp;</span>
-
-::: mermaid
-flowchart LR
-
-retrievalsender-input[("
-DNCARRYINFO
-")]
-
-retrievalsender-update[("
-DNPALLET
-DNWORKINFO
-")]
-
-retrievalsender-insert[("
-DNCARRYINFO
-")]
-
-id12msg("
-ID 12
-")
-
-retrievalsender-input-->RetrievalSender--> |UPDATE| retrievalsender-update
-RetrievalSender--> |INSERT| retrievalsender-insert
-RetrievalSender--> |SendText| id12msg
-:::
-
-
-The Retrieval operation at **Ambient Area (9002: Ambient)** will be retrieved to Station 7101, 7102, 7103, 7104, 7105, 7207, 7208, 7209, 7210 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
-
-## <span style="color:skyblue; font-weight:bold">DNPALLET</span>
-- **STATUS_FLAG** : 3:Reserved for Retrieval
-- **LAST_UPDATE_DATE** :  SYSTIMESTAMP
-- **LAST_UPDATE_PNAME** : Class name
-
 ## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
 - **CARRY_KEY** : Sequence Object    
 - **PALLET_ID** : DNSTOCK.PALLET_ID    
@@ -254,7 +217,40 @@ The Retrieval operation at **Ambient Area (9002: Ambient)** will be retrieved to
 - **END_STATION_NO** : DNCARRYINFO.DEST_STATION_NO  
 - **REGIST_DATE** : SYSTIMESTAMP    
 - **REGIST_PNAME** : ClassName    
-- **LAST_UPDATE_DATE** : SYSTIMESTAMP    
+- **LAST_UPDATE_DATE** : SYSTIMESTAMP   
+
+# Retrieval Sender
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wcs.mc.as21.transmission.RetrievalSender` &nbsp;</span>
+
+::: mermaid
+flowchart LR
+
+retrievalsender-input[("
+DNCARRYINFO
+")]
+
+retrievalsender-update[("
+DNPALLET
+DNWORKINFO
+")]
+
+id12msg("
+ID 12
+")
+
+retrievalsender-input-->RetrievalSender--> |UPDATE| retrievalsender-update
+RetrievalSender--> |SendText| id12msg
+:::
+
+
+The Retrieval operation at **Ambient Area (9002: Ambient)** will be retrieved to Station 7101, 7102, 7103, 7104, 7105, 7207, 7208, 7209, 7210 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
+
+## <span style="color:skyblue; font-weight:bold">DNPALLET</span>
+- **STATUS_FLAG** : 3:Reserved for Retrieval
+- **LAST_UPDATE_DATE** :  SYSTIMESTAMP
+- **LAST_UPDATE_PNAME** : Class name 
 
 ## <span style="color:skyblue; font-weight:bold">DNWORKINFO</span>   
 - **STATUS_FLAG**: 1:Working  
