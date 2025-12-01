@@ -206,7 +206,7 @@ DNCARRYINFO
 
 retrievalsender-update[("
 DNPALLET
-DNWORKINFO
+DNCARRYINFO
 ")]
 
 id12msg("
