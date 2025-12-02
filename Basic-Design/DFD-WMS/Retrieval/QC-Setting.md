@@ -1,17 +1,8 @@
 [[_TOC_]]
 [[_TOSP_]]
 
-**QC Summary Flow**
+# **QC Summary Flow**   
 
-- **Tempering Period** will use the **Storage Date & Time** for calculate
-   
-  Data as example:
-  - `Storage Date & Time`: 2/12/2025 02:00:00
-  - `Tempering Period`: 72 Hours
-  - `Tempering Period Date End`: (Storage Date & Time) + (Tempering Period) → **5/12/2025 02:00:00** 
-
-  The tempering period will remain at `72 hours` even if the original end date has passed. Any changes will only be applied upon approval to `Extend the Tempering Period`. 
-   
 ::: mermaid
 sequenceDiagram
     autonumber
@@ -70,3 +61,12 @@ sequenceDiagram
     Extend Tempering Period ->> DNSTOCK: Tempering Period: 72 H + Extend Value
     Extend Tempering Period ->> DNSTOCK: Tempering Flag: Not Reached
 :::
+
+- **Tempering Period** will use the **Storage Date & Time** for calculate
+   
+  Data as example:
+  - `Storage Date & Time`: 2/12/2025 02:00:00
+  - `Tempering Period`: 72 Hours
+  - `Tempering Period Date End`: (Storage Date & Time) + (Tempering Period) → **5/12/2025 02:00:00** 
+
+  The tempering period will remain at `72 hours` even if the original end date has passed. Any changes will only be applied upon approval to `Extend the Tempering Period`. 
