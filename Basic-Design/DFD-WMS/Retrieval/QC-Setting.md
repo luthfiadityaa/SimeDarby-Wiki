@@ -32,4 +32,5 @@ sequenceDiagram
 
     %% --- 3. QC Work from Retrieval for QC Start ---
     QC Work from Retrieval for QC Start ->> DNSTOCK: Stock Qty: (60-2) → 58
+    QC Work from Retrieval for QC Start ->> DNSTOCK: QC Duration: (Last Update Date + Now)
 :::
