@@ -9,11 +9,11 @@ User((User))
 Timer((System Clock))
 
 %% --- Processes ---
-P1([1. Palletize Storage → Tempering])
-P2([2. Retrieval for QC Start])
-P3([3. Retrieval for Return Stock])
-P4([4. Update QC Status])
-P5([5. Extend Tempering Period])
+P1([Palletize Storage → Tempering])
+P2([Retrieval for QC Start])
+P3([Retrieval for Return Stock])
+P4([Update QC Status])
+P5([Extend Tempering Period])
 
 %% --- Data Stores ---
 D1[(Stock Data)]
