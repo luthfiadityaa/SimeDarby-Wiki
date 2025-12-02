@@ -46,14 +46,9 @@ sequenceDiagram
     QC Work from Retrieval for Return Stock ->> DNSTOCK: Stock Qty: (58+2) → 60
 
     %% --- 6. Update QC Status ---
-    DNSTOCK ->> Update QC Status: Stock Status: QI  
-    DNSTOCK ->> Update QC Status: Tempering Flag: Reached 
-    DNSTOCK ->> Update QC Status: QC Check Flag: Not Done
-    DNSTOCK ->> Update QC Status: QC Duration: (QC Duration + Now)
+    DNSTOCK ->> Update QC Status: Stock Status: QI <br> Tempering Flag: Reached <br> QC Check Flag: Not Done <br> QC Duration: (QC Duration + Now)
     
-    Update QC Status ->> DNSTOCK: Stock Status: UU  
-    Update QC Status ->> DNSTOCK: QC Check Flag: Done
-    Update QC Status ->> DNSTOCK: QC Duration: (QC Duration + Now)
+    Update QC Status ->> DNSTOCK: Stock Status: UU <br> QC Check Flag: Done <br> QC Duration: (QC Duration + Now)
 
     %% --- 7. Extend Tempering Period ---
     DNSTOCK ->> Extend Tempering Period: Stock Status: QI  
