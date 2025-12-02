@@ -10,7 +10,7 @@
   - `Tempering Period`: 72 Hours
   - `Tempering Period Date End`: (Storage Date & Time) + (Tempering Period) → **5/12/2025 02:00:00** 
 
-Tempering Period will changed only proceed on Extend Tempering Period. 
+  The tempering period will remain at `72 hours` even if the original end date has passed. Any changes will only be applied upon approval to `Extend the Tempering Period`. 
    
 ::: mermaid
 sequenceDiagram
