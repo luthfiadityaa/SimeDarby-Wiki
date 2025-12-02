@@ -23,19 +23,19 @@ D3[(QC Records)]
 %% --- Process 1 ---
 User -->|Input: Start Date, Tempering Period| P1
 P1 -->|Update: Stock Status=UU, Flags, DateStart, DateEnd| D1
-Timer -->|Now() Check (>= DateEnd)| P1
+Timer -->|Now Check >= DateEnd| P1
 P1 -->|Eligible Stock for QC Start| P2
 
 %% --- Process 2 ---
 P2 -->|Filter Stock Status=UU| D1
 P2 -->|Update: Status QI, Flag Reached, QC Duration Start| D1
 P2 -->|Record QC Start| D3
-P2 -->|Send Stock (QI) | P3
+P2 -->|Send Stock QI | P3
 
 %% --- Process 3 ---
 P3 -->|Filter Stock Status=QI| D1
 P3 -->|Add Qty, Update Stock Qty| D1
-P3 -->|Updated Stock (QI)| P4
+P3 -->|Updated Stock QI| P4
 
 %% --- Process 4 ---
 P4 -->|Filter Stock Status=QI| D1
