@@ -13,38 +13,38 @@ sequenceDiagram
     participant Extend Tempering Period as P6
 
     %% --- 1. Retrieval for Return Stock ---
-    User ->> System: Input StartDate, TemperingPeriod=72H
-    System ->> System: Calculate DateEnd = StartDate + 72H
-    System ->> StockDB: Save StockStatus=UU,\nTemperingFlag=Not Reached,\nQCFlag=Not Done,\nDateStart, DateEnd
+    P1 ->> System: Input StartDate, TemperingPeriod=72H
+    P2 ->> System: Calculate DateEnd = StartDate + 72H
+    P2 ->> StockDB: Save StockStatus=UU,\nTemperingFlag=Not Reached,\nQCFlag=Not Done,\nDateStart, DateEnd
 
-    Timer ->> System: Now() >= DateEnd ?
-    System -->> System: If true → ready for QC Start
-    System ->> User: Show in Retrieval for QC Start
+    P3 ->> System: Now() >= DateEnd ?
+    P2 -->> System: If true → ready for QC Start
+    P2 ->> User: Show in Retrieval for QC Start
 
     %% --- 2. QC Work from Retrieval for QC Start ---
-    User ->> System: Retrieve Stock (Filter: Status=UU)
-    System ->> StockDB: Update\nStockStatus=QI\nTemperingFlag=Reached\nQCFlag=Not Done\nQC Duration Start=Now()
-    System ->> StockDB: Stock Qty: 60 → 58
-    System ->> QCDB: Record QC Start
+    P1 ->> System: Retrieve Stock (Filter: Status=UU)
+    P2 ->> StockDB: Update\nStockStatus=QI\nTemperingFlag=Reached\nQCFlag=Not Done\nQC Duration Start=Now()
+    P2 ->> StockDB: Stock Qty: 60 → 58
+    P2 ->> QCDB: Record QC Start
 
-    System -->> System: If TemperingFlag == Reached
-    System ->> User: Move to Retrieval for Return Stock
+    P1 -->> System: If TemperingFlag == Reached
+    P1 ->> User: Move to Retrieval for Return Stock
 
     %% --- 3. Retrieval for Return Stock ---
-    User ->> System: Retrieve Stock (Filter: Status=QI)
-    System ->> StockDB: Update Stock Qty: 58 → 60
+    P1 ->> System: Retrieve Stock (Filter: Status=QI)
+    P2 ->> StockDB: Update Stock Qty: 58 → 60
 
     %% --- 4. QC Work from Retrieval for Return Stock ---
-    User ->> System: Update QC Status (Filter: Status=QI)
-    System ->> StockDB: Update\nStockStatus=UU\nQC Check Flag=Done\nQC Duration Stop=Now()
-    System ->> QCDB: Save QC Completion
+    P1 ->> System: Update QC Status (Filter: Status=QI)
+    P2 ->> StockDB: Update\nStockStatus=UU\nQC Check Flag=Done\nQC Duration Stop=Now()
+    P2 ->> QCDB: Save QC Completion
 
     %% --- 5. Update QC Status ---
-    User ->> System: Extend Tempering Period (Filter: Status=QI & QC Not Done)
-    System ->> StockDB: Update\nTemperingPeriod=72H + ExtendValue\nTemperingFlag=Not Reached
+    P1 ->> System: Extend Tempering Period (Filter: Status=QI & QC Not Done)
+    P2 ->> StockDB: Update\nTemperingPeriod=72H + ExtendValue\nTemperingFlag=Not Reached
 
     %% --- 6. Extend Tempering Period ---
-    User ->> System: Extend Tempering Period (Filter: Status=QI & QC Not Done)
-    System ->> StockDB: Update\nTemperingPeriod=72H + ExtendValue\nTemperingFlag=Not Reached
+    P1 ->> System: Extend Tempering Period (Filter: Status=QI & QC Not Done)
+    P2 ->> StockDB: Update\nTemperingPeriod=72H + ExtendValue\nTemperingFlag=Not Reached
 
 :::
