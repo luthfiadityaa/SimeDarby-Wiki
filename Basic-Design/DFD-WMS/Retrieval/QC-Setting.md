@@ -51,11 +51,7 @@ sequenceDiagram
     Update QC Status ->> DNSTOCK: Stock Status: UU <br> QC Check Flag: Done <br> QC Duration: (QC Duration + Now)
 
     %% --- 7. Extend Tempering Period ---
-    DNSTOCK ->> Extend Tempering Period: Stock Status: QI  
-    DNSTOCK ->> Extend Tempering Period: Tempering Flag: Reached 
-    DNSTOCK ->> Extend Tempering Period: QC Check Flag: Not Done
-    DNSTOCK ->> Extend Tempering Period: QC Duration: (QC Duration + Now)
+    DNSTOCK ->> Extend Tempering Period: Stock Status: QI <br> Tempering Flag: Reached <br> QC Check Flag: Not Done <br> QC Duration: (QC Duration + Now)
 
-    Extend Tempering Period ->> DNSTOCK: Tempering Period: 72 H + Extend Value
-    Extend Tempering Period ->> DNSTOCK: Tempering Flag: Not Reached
+    Extend Tempering Period ->> DNSTOCK: Tempering Period: 72 H + Extend Value <br> Tempering Flag: Not Reached
 :::
