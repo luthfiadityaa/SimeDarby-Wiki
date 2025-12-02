@@ -20,7 +20,7 @@ sequenceDiagram
     participant Update QC Status
     participant Extend Tempering Period
 
-    %% --- 1. Tempering Periods Passed ---
+    %% --- 1. Retrieval for QC Start ---
     DNSTOCK ->> Retrieval for QC Start: Now >= Tempering Period Date End
     DNSTOCK ->> Retrieval for QC Start: Stock Status: UU  
     DNSTOCK ->> Retrieval for QC Start: Tempering Flag: Not Reached 
@@ -30,5 +30,6 @@ sequenceDiagram
     %% --- 2. Tempering Periods Passed ---
     Retrieval for QC Start ->> QC Work from Retrieval for QC Start: Qty To Pick?  2
 
-
+    %% --- 3. QC Work from Retrieval for QC Start ---
+    QC Work from Retrieval for QC Start ->> DNSTOCK: Stock Qty: (60-2) → **58**
 :::
