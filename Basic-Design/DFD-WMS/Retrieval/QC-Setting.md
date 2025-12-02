@@ -62,4 +62,7 @@ sequenceDiagram
     DNSTOCK ->> Extend Tempering Period: Tempering Flag: Reached 
     DNSTOCK ->> Extend Tempering Period: QC Check Flag: Not Done
     DNSTOCK ->> Extend Tempering Period: QC Duration: (QC Duration + Now)
+
+    Extend Tempering Period ->> DNSTOCK: Tempering Period: 72 H + Extend Value
+    Extend Tempering Period ->> DNSTOCK: Tempering Flag: Not Reached
 :::
