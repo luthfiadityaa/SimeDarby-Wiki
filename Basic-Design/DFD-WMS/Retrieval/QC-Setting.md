@@ -37,7 +37,6 @@ sequenceDiagram
     QC Work from Retrieval for QC Start ->> DNSTOCK: Tempering Flag: Reached
 
     %% --- 4. Retrieval for Return Stock ---
-    DNSTOCK ->> Retrieval for Return Stock: Now >= Tempering Period Date End
     DNSTOCK ->> Retrieval for Return Stock: Stock Status: QI  
     DNSTOCK ->> Retrieval for Return Stock: Tempering Flag: Reached 
     DNSTOCK ->> Retrieval for Return Stock: QC Check Flag: Not Done
