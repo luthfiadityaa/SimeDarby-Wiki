@@ -42,4 +42,6 @@ sequenceDiagram
     DNSTOCK ->> Retrieval for Return Stock: Tempering Flag: Reached 
     DNSTOCK ->> Retrieval for Return Stock: QC Check Flag: Not Done
     DNSTOCK ->> Retrieval for Return Stock: Stock Qty: 58
+
+    QC Work from Retrieval for Return Stock ->> QC Work from Retrieval for Return Stock: Qty To Add?  2
 :::
