@@ -1,7 +1,7 @@
 [[_TOC_]]
 [[_TOSP_]]
 
-**Tempering Period Checker**
+**QC Summary Flow**
 
 - **Tempering Period** will use the **Storage Date & Time** for calculate
   - `Storage Date & Time`: 2/12/2025 02:00:00
