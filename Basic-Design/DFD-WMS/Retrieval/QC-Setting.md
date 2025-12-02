@@ -31,5 +31,5 @@ sequenceDiagram
     Retrieval for QC Start ->> QC Work from Retrieval for QC Start: Qty To Pick?  2
 
     %% --- 3. QC Work from Retrieval for QC Start ---
-    QC Work from Retrieval for QC Start ->> DNSTOCK: Stock Qty: (60-2) → **58**
+    QC Work from Retrieval for QC Start ->> DNSTOCK: Stock Qty: (60-2) → 58
 :::
