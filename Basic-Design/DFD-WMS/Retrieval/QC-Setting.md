@@ -52,4 +52,9 @@ sequenceDiagram
     DNSTOCK ->> Update QC Status: Tempering Flag: Reached 
     DNSTOCK ->> Update QC Status: QC Check Flag: Not Done
     DNSTOCK ->> Update QC Status: QC Duration: (QC Duration + Now)
+    
+    Update QC Status ->> Update QC Status: Stock Status: UU  
+    Update QC Status ->> Update QC Status: QC Check Flag: Done
+    DNSTOCK ->> Update QC Status: QC Duration: (QC Duration + Now)
+
 :::
