@@ -34,6 +34,7 @@ sequenceDiagram
     DNSTOCK ->> Retrieval for QC Start: QC Check Flag: Not Done
     DNSTOCK ->> Retrieval for QC Start: Stock Qty: 60
 
+
     %% --- 2. Retrieval for QC Start ---
     Retrieval for QC Start ->> QC Work from Retrieval for QC Start: Qty To Pick?  2
 
