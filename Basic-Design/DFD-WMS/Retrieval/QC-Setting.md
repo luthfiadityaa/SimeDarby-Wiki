@@ -3,10 +3,13 @@
 
 **Tempering Period Checker**
 
-- Tempering Period will use the last pallet “Storage Date & Time” for calculate
-   - `Tempering Period`: 2/12/2025 02:00:00
-   
+- **Tempering Period** will use the last pallet **Storage Date & Time** for calculate
+  - `Storage Date & Time`: 2/12/2025 02:00:00
+  - `Tempering Period`: 72 Hours
 
+Formula
+    Date End: 5/12/2025 02:00:00 
+   
 ::: mermaid
 sequenceDiagram
     autonumber
@@ -20,7 +23,7 @@ sequenceDiagram
     participant Extend Tempering Period
 
     %% --- 1. Tempering Periods Passed ---
-    DNSTOCK ->> Retrieval for QC Start: Tempering Period: 72H
+    DNSTOCK ->> Retrieval for QC Start: Now >= (Storage Date & Time) + (Tempering Period)
     DNSTOCK ->> Retrieval for QC Start: Stock Status: UU  
     DNSTOCK ->> Retrieval for QC Start: Tempering Flag: Not Reached 
     DNSTOCK ->> Retrieval for QC Start: QC Check Flag: Not Done
