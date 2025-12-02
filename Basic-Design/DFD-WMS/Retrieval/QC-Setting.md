@@ -2,47 +2,45 @@
 [[_TOSP_]]
 
 ::: mermaid
-flowchart TB
+sequenceDiagram
+    autonumber
 
-%% --- External Entities ---
-User((User))
-Timer((System Clock))
+    participant Retrieval for Return Stock
+    participant QC Work from Retrieval for QC Start
+    participant Retrieval for Return Stock
+    participant QC Work from Retrieval for Return Stock
+    participant Update QC Status
+    participant Extend Tempering Period
 
-%% --- Processes ---
-P1([Palletize Storage → Tempering])
-P2([Retrieval for QC Start])
-P3([Retrieval for Return Stock])
-P4([Update QC Status])
-P5([Extend Tempering Period])
+    %% --- 1. Palletize Storage to Tempering ---
+    User ->> System: Input StartDate, TemperingPeriod=72H
+    System ->> System: Calculate DateEnd = StartDate + 72H
+    System ->> StockDB: Save StockStatus=UU,\nTemperingFlag=Not Reached,\nQCFlag=Not Done,\nDateStart, DateEnd
 
-%% --- Data Stores ---
-D1[(Stock Data)]
-D2[(Tempering Parameters)]
-D3[(QC Records)]
+    Timer ->> System: Now() >= DateEnd ?
+    System -->> System: If true → ready for QC Start
+    System ->> User: Show in Retrieval for QC Start
 
-%% --- Process 1 ---
-User -->|Input: Start Date, Tempering Period| P1
-P1 -->|Update: Stock Status=UU, Flags, DateStart, DateEnd| D1
-Timer -->|Now Check >= DateEnd| P1
-P1 -->|Eligible Stock for QC Start| P2
+    %% --- 2. Retrieval for QC Start ---
+    User ->> System: Retrieve Stock (Filter: Status=UU)
+    System ->> StockDB: Update\nStockStatus=QI\nTemperingFlag=Reached\nQCFlag=Not Done\nQC Duration Start=Now()
+    System ->> StockDB: Stock Qty: 60 → 58
+    System ->> QCDB: Record QC Start
 
-%% --- Process 2 ---
-P2 -->|Filter Stock Status=UU| D1
-P2 -->|Update: Status QI, Flag Reached, QC Duration Start| D1
-P2 -->|Record QC Start| D3
-P2 -->|Send Stock QI | P3
+    System -->> System: If TemperingFlag == Reached
+    System ->> User: Move to Retrieval for Return Stock
 
-%% --- Process 3 ---
-P3 -->|Filter Stock Status=QI| D1
-P3 -->|Add Qty, Update Stock Qty| D1
-P3 -->|Updated Stock QI| P4
+    %% --- 3. Retrieval for Return Stock ---
+    User ->> System: Retrieve Stock (Filter: Status=QI)
+    System ->> StockDB: Update Stock Qty: 58 → 60
 
-%% --- Process 4 ---
-P4 -->|Filter Stock Status=QI| D1
-P4 -->|Set QC Check Flag=Done, Status=UU, Stop QC Duration| D1
-P4 -->|QC Completed Record| D3
+    %% --- 4. Update QC Status ---
+    User ->> System: Update QC Status (Filter: Status=QI)
+    System ->> StockDB: Update\nStockStatus=UU\nQC Check Flag=Done\nQC Duration Stop=Now()
+    System ->> QCDB: Save QC Completion
 
-%% --- Process 5 ---
-P5 -->|Filter Stock Status=QI & QC Not Done| D1
-P5 -->|Tempering Period Extended, Flag Not Reached| D1
+    %% --- 5. Extend Tempering Period ---
+    User ->> System: Extend Tempering Period (Filter: Status=QI & QC Not Done)
+    System ->> StockDB: Update\nTemperingPeriod=72H + ExtendValue\nTemperingFlag=Not Reached
+
 :::
