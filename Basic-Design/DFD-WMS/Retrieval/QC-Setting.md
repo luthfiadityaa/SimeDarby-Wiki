@@ -51,5 +51,5 @@ sequenceDiagram
     DNSTOCK ->> Update QC Status: Stock Status: QI  
     DNSTOCK ->> Update QC Status: Tempering Flag: Reached 
     DNSTOCK ->> Update QC Status: QC Check Flag: Not Done
-    DNSTOCK ->> Update QC Status: Stock Qty: 58
+    DNSTOCK ->> Update QC Status: QC Duration: (Last Update Date + Now)
 :::
