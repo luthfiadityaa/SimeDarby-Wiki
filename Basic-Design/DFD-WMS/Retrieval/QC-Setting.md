@@ -28,7 +28,8 @@ sequenceDiagram
     participant Extend Tempering Period
 
     %% --- 1. DNSTOCK ---
-    DNSTOCK ->> Retrieval for QC Start: Now >= Tempering Period Date End<br>Stock Status: UU\nTempering Flag: Not Reached\nQC Check Flag: Not Done\nStock Qty: 60
+    DNSTOCK ->> Retrieval for QC Start: Now >= Tempering Period Date End<br>
+   Stock Status: UU\nTempering Flag: Not Reached\nQC Check Flag: Not Done\nStock Qty: 60
 
 
     %% --- 2. Retrieval for QC Start ---
