@@ -4,6 +4,8 @@
 **QC Summary Flow**
 
 - **Tempering Period** will use the **Storage Date & Time** for calculate
+   
+  Data as example:
   - `Storage Date & Time`: 2/12/2025 02:00:00
   - `Tempering Period`: 72 Hours
   - `Tempering Period Date End`: (Storage Date & Time) + (Tempering Period) → **5/12/2025 02:00:00** 
