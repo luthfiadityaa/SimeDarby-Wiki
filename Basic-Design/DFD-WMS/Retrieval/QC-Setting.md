@@ -53,8 +53,8 @@ sequenceDiagram
     DNSTOCK ->> Update QC Status: QC Check Flag: Not Done
     DNSTOCK ->> Update QC Status: QC Duration: (QC Duration + Now)
     
-    Update QC Status ->> Update QC Status: Stock Status: UU  
-    Update QC Status ->> Update QC Status: QC Check Flag: Done
-    DNSTOCK ->> Update QC Status: QC Duration: (QC Duration + Now)
+    Update QC Status ->> DNSTOCK: Stock Status: UU  
+    Update QC Status ->> DNSTOCK: QC Check Flag: Done
+    Update QC Status ->> DNSTOCK: QC Duration: (QC Duration + Now)
 
 :::
