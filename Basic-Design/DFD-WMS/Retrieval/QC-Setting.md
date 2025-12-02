@@ -47,4 +47,6 @@ sequenceDiagram
 
     %% --- 5. QC Work from Retrieval for Return Stock ---
     QC Work from Retrieval for Return Stock ->> DNSTOCK: Stock Qty: (58+2) → 60
+
+    %% --- 6. Update QC Status ---
 :::
