@@ -27,12 +27,6 @@ sequenceDiagram
     DNSTOCK ->> Retrieval for QC Start: QC Check Flag: Not Done
     DNSTOCK ->> Retrieval for QC Start: Stock Qty: 60
 
-    DNSTOCK ->> Retrieval for Return Stock: Now >= Tempering Period Date End
-    DNSTOCK ->> Retrieval for Return Stock: Stock Status: QI  
-    DNSTOCK ->> Retrieval for Return Stock: Tempering Flag: Reached 
-    DNSTOCK ->> Retrieval for Return Stock: QC Check Flag: Not Done
-    DNSTOCK ->> Retrieval for Return Stock: Stock Qty: 58
-
     %% --- 2. Retrieval for QC Start ---
     Retrieval for QC Start ->> QC Work from Retrieval for QC Start: Qty To Pick?  2
 
@@ -41,4 +35,11 @@ sequenceDiagram
     QC Work from Retrieval for QC Start ->> DNSTOCK: QC Duration: (Last Update Date + Now)
     QC Work from Retrieval for QC Start ->> DNSTOCK: Stock Status: QI
     QC Work from Retrieval for QC Start ->> DNSTOCK: Tempering Flag: Reached
+
+    %% --- 4. QC Work from Retrieval for Return Stock ---
+    DNSTOCK ->> Retrieval for Return Stock: Now >= Tempering Period Date End
+    DNSTOCK ->> Retrieval for Return Stock: Stock Status: QI  
+    DNSTOCK ->> Retrieval for Return Stock: Tempering Flag: Reached 
+    DNSTOCK ->> Retrieval for Return Stock: QC Check Flag: Not Done
+    DNSTOCK ->> Retrieval for Return Stock: Stock Qty: 58
 :::
