@@ -61,14 +61,16 @@ sequenceDiagram
 **PROCESS 1 — Retrieval for QC Start**
 --------------------------------------
 
-**Filter:** `StockStatus` = UU
+**Filter:** 
+`Now() >= (Storage Date + Tempering Perios)`
+`StockStatus` = UU 
 
-**Data will be showing following criteria: **
+**Data will be showing following criteria:**
 * `Tempering Period`: 72 H    
 * `QC Check Flag`: Not Done
 * `Stock Status`: UU
-* 'Tempering Flag`: Reached
-* Stock
+* `Tempering Flag`: Reached
+* `Stock Qty`: 60
     
 **Change:**
 *  `Stock Status` → QI    
