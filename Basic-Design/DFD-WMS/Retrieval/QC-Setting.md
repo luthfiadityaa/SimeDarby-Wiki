@@ -121,7 +121,7 @@ sequenceDiagram
 --------------------------------
 
 **Filter:** 
-'StockStatus = QI`
+`StockStatus = QI`
 
 **Keep:**
 *   Tempering Period 72h    
@@ -133,11 +133,11 @@ sequenceDiagram
 *   QC Check → Done    
 *   QC Duration Stop → QC Duration + Now()
 
-**PROCESS 5 — Extend Tempering Period**
+**PROCESS 6 — Extend Tempering Period**
 ---------------------------------------
 
 **Filter:** 
-`Status Status`: QI`
+`Status Status: QI`
 `QC Check Flag: Not Done`
 
 **Keep (Retain):** 
