@@ -124,7 +124,7 @@ sequenceDiagram
 `StockStatus = QI`
 
 **Keep:**
-*   Tempering Period 72h    
+*   Tempering Period: 72 H    
 *   Tempering Flag: Reached
 *   Stock Qty: 60
     
