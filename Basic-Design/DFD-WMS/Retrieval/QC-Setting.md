@@ -130,8 +130,8 @@ sequenceDiagram
     
 **Change:**
 *   Stock Status → UU    
-*   QC Check = Done    
-*   QC Duration Stop = QC Duration + Now()
+*   QC Check → Done    
+*   QC Duration Stop → QC Duration + Now()
 
 **PROCESS 5 — Extend Tempering Period**
 ---------------------------------------
@@ -140,7 +140,9 @@ sequenceDiagram
 `Status Status`: QI`
 `QC Check Flag: Not Done`
 
+**Input:**
+* Extended Value: 3
+
 **Change:**
-*   Tempering Period = 72H + ExtendedValue
-    
-*   Tempering Flag = Not Reached
+*   Tempering Period → 75 H      
+*   Tempering Flag → Not Reached
