@@ -126,6 +126,7 @@ sequenceDiagram
 **Keep:**
 *   Tempering Period 72h    
 *   Tempering Flag: Reached
+*   Stock Qty: 60
     
 **Change:**
 *   Stock Status → UU    
