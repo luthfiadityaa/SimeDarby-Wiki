@@ -72,9 +72,5 @@ sequenceDiagram
 * `Tempering Flag`: Reached
 * `Stock Qty`: 60
     
-**Change:**
-*  `Stock Status` → QI    
-*  `Tempering Flag` → Reached    
-*  `QC Duration Start` → Now()    
-*  'Stock Qty` → (Stock Qty calculation: 60 → 58)
-    
+**PROCESS 2 — QC Work from Retrieval for QC Start**
+--------------------------------------
