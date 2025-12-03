@@ -59,6 +59,8 @@ flowchart LR
 1469,0,3100006023,PS023128,64,CTN,2025-04-10,UU,9908,VT01,ZPCK
 ```
 ####XML Format
+`Name File`: YYYYMMDD_HHMMSS_PalletUpdate_<BatchID>.xml
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <PalletUpdate>
@@ -83,6 +85,8 @@ flowchart LR
 1469,0,3100006023,PS023128,64,CTN,2025-04-10,UU,9908,FGW1,VT01
 ```
 ####XML Format
+`Name File`: YYYYMMDD_HHMMSS_PalletUpdate_<BatchID>.xml
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <PalletUpdate>
