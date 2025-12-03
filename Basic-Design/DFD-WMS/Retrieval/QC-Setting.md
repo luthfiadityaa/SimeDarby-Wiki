@@ -58,7 +58,7 @@ sequenceDiagram
     Extend Tempering Period ->> DNSTOCK: Tempering Period: 72 H + Extend Value (3) → 75 <br> Tempering Flag: Not Reached
 :::
 
-**PROCESS 1 — Retrieval for QC Start**
+**Process 1 — Retrieval for QC Start**
 --------------------------------------
 
 **Filter:** 
@@ -72,7 +72,7 @@ sequenceDiagram
 * Tempering Flag: Reached
 * Stock Qty: 60
     
-**PROCESS 2 — QC Work from Retrieval for QC Start**
+**Process 2 — QC Work from Retrieval for QC Start**
 --------------------------------------
 **Keep (Retain):**
 *   Tempering Period: 72 H    
@@ -87,7 +87,7 @@ sequenceDiagram
 *   QC Duration → Newest Storage Date + Now()    
 *   Stock Qty → 58
 
-**PROCESS 3 — Retrieval for Return Stock**
+**Process 3 — Retrieval for Return Stock**
 ------------------------------------------
 
 **Filter:** 
@@ -101,7 +101,7 @@ sequenceDiagram
 *   Stock Qty: 58
 *   QC Duration → QC Duration + Now()
 
-**PROCESS 4 — QC Work from Retrieval for Return Stock**
+**Process 4 — QC Work from Retrieval for Return Stock**
 --------------------------------------
 **Keep (Retain):**
 *   Tempering Period: 72 H    
@@ -117,7 +117,7 @@ sequenceDiagram
 *   Stock Qty → 60
 *   QC Duration → QC Duration + Now()
 
-**PROCESS 5 — Update QC Status**
+**Process 5 — Update QC Status**
 --------------------------------
 
 **Filter:** 
@@ -133,7 +133,7 @@ sequenceDiagram
 *   QC Check → Done    
 *   QC Duration Stop → QC Duration + Now()
 
-**PROCESS 6 — Extend Tempering Period**
+**Process 6 — Extend Tempering Period**
 ---------------------------------------
 
 **Filter:** 
