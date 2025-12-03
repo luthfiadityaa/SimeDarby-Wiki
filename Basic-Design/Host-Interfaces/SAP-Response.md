@@ -58,6 +58,8 @@ flowchart LR
  SAP base UOM
 
 ##<b>XML Format</b>
+`Name File`: Response_<MessageType>_YYYYMMMDD_hhmmss-xxx.xml
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Response>
