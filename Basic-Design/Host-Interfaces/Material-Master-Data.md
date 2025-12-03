@@ -35,7 +35,10 @@ flowchart LR
 The data will be paired as an input: **Warenavi** ⇄ **SAP**
 * **ITEM_CODE** ⇄ **MATERIAL CODE**
 * **UOM** ⇄ **UOM**
+
 #XML Format
+
+`Name File`: Material_<MaterialNum>_YYYYMMMDD_hhmmss-xxx.xml​
 
 ##Finish Goods
 ```xml
