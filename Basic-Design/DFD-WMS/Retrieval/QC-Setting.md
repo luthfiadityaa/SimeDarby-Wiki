@@ -37,7 +37,7 @@ sequenceDiagram
     Retrieval for QC Start ->> QC Work from Retrieval for QC Start: Qty To Pick?  2
 
     %% --- 3. QC Work from Retrieval for QC Start ---
-    QC Work from Retrieval for QC Start ->> DNSTOCK: Stock Qty: (60-2) → 58 <br> QC Duration: (Last Update Date + Now) <br> Stock Status: QI <br> Tempering Flag: Reached
+    QC Work from Retrieval for QC Start ->> DNSTOCK: Stock Qty: (60-2) → 58 <br> QC Duration: (Newest Storage Date + Now) <br> Stock Status: QI <br> Tempering Flag: Reached
 
     %% --- 4. Retrieval for Return Stock ---
     DNSTOCK ->> Retrieval for Return Stock: Stock Status: QI <br> Tempering Flag: Reached <br> QC Check Flag: Not Done <br> Stock Qty: 58
