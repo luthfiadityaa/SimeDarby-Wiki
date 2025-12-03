@@ -141,7 +141,7 @@ sequenceDiagram
 `QC Check Flag: Not Done`
 
 **Keep (Retain):** 
-*   Stock Qty: 58
+*   Stock Qty: 60
 
 **Input:**
 * Extended Value: 3
