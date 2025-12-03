@@ -77,12 +77,25 @@ sequenceDiagram
 **Keep (Retain):**
 *   Tempering Period: 72 H    
 *   QC Check Flag: Not Done
+
+**Input:**
+* Take out Qty: 2
     
 **Change:**
-*   Stock Status → QI
-    
-*   Tempering Flag → Reached
-    
-*   QC Duration Start → Now()
-    
-*   (Stock Qty calculation: 60 → 58)
+*   Stock Status → QI    
+*   Tempering Flag → Reached    
+*   QC Duration → Newest Storage Date + Now()    
+*   Stock Qty → 58
+
+**PROCESS 3 — Retrieval for Return Stock**
+------------------------------------------
+
+**Filter:** 
+`StockStatus = QI`
+
+**Data will be showing following criteria:**
+*   Tempering Period: 72 H    
+*   QC Check: Not Done    
+*   StockStatus: QI    
+*   TemperingFlag: Reached
+*   Stock Qty: 58
