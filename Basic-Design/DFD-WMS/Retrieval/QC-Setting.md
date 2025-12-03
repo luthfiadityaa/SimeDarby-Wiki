@@ -99,3 +99,4 @@ sequenceDiagram
 *   StockStatus: QI    
 *   TemperingFlag: Reached
 *   Stock Qty: 58
+*   QC Duration → Newest Storage Date + Now()
