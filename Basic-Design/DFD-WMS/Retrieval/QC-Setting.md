@@ -2,7 +2,6 @@
 [[_TOSP_]]
 
 # **QC Summary Flow**   
-<br>
 
 ## **Tempering Period**
 **Tempering Period** will use the **Storage Date & Time** for calculate.
