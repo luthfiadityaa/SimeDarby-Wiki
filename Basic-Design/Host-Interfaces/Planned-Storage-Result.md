@@ -78,6 +78,8 @@ flowchart LR
 20250623,20250620,101,4500012345,00020,MAT123456789000002,SG01,0002,75.000,EA,PALLET-002,BATCH0045656
 ```
 ###XML Format
+`Name File`: Cancel_GR_XML.xml
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <MaterialDocument>
