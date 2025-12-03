@@ -53,6 +53,8 @@ The data will be selected as a result: **Warenavi** ⇄ **SAP**
 ```
 
 ##XML Format
+`Name File`: YYYYMMDD_HHMMSS_PalletUpdate_<BatchID>.xml
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <PalletUpdate>
