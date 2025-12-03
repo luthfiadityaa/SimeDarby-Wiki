@@ -55,5 +55,5 @@ sequenceDiagram
     %% --- 7. Extend Tempering Period ---
     DNSTOCK ->> Extend Tempering Period: Stock Status: QI <br> Tempering Flag: Reached <br> QC Check Flag: Not Done <br> QC Duration: (QC Duration + Now)
 
-    Extend Tempering Period ->> DNSTOCK: Tempering Period: 72 H + Extend Value <br> Tempering Flag: Not Reached
+    Extend Tempering Period ->> DNSTOCK: Tempering Period: 72 H + Extend Value (3) → 75 <br> Tempering Flag: Not Reached
 :::
