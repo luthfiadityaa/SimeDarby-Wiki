@@ -37,7 +37,6 @@ The data will be paired as an input: **Warenavi** ⇄ **SAP**
 * **UOM** ⇄ **UOM**
 
 #XML Format
-
 `Name File`: Material_<MaterialNum>_YYYYMMMDD_hhmmss-xxx.xml​
 
 ##Finish Goods
