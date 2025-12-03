@@ -105,13 +105,14 @@ sequenceDiagram
 --------------------------------------
 **Keep (Retain):**
 *   Tempering Period: 72 H    
-*   QC Check Flag: Not Done
+*   QC Check: Not Done    
+*   StockStatus: QI    
+*   TemperingFlag: Reached
+*   Stock Qty: 58
+*   QC Duration → Newest Storage Date + Now()
 
 **Input:**
-* Take out Qty: 2
+* Qty to Add: 2
     
-**Change:**
-*   Stock Status → QI    
-*   Tempering Flag → Reached    
-*   QC Duration → Newest Storage Date + Now()    
-*   Stock Qty → 58
+**Change:** 
+*   Stock Qty → 60
