@@ -35,7 +35,7 @@ flowchart LR
 20250623,20250620,101,4500012345,00020,MAT123456789000002,SG01,0002,75.000,EA,PALLET-002,BATCH00456
 ```
 ###XML Format
-`Name File`; GR_XMLxml  
+`Name File`: GR_XMLxml  
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
