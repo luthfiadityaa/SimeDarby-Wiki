@@ -140,6 +140,9 @@ sequenceDiagram
 `Status Status`: QI`
 `QC Check Flag: Not Done`
 
+**Keep (Retain):** 
+*   Stock Qty: 58
+
 **Input:**
 * Extended Value: 3
 
