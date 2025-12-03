@@ -109,10 +109,25 @@ sequenceDiagram
 *   StockStatus: QI    
 *   TemperingFlag: Reached
 *   Stock Qty: 58
-*   QC Duration → Newest Storage Date + Now()
 
 **Input:**
 * Qty to Add: 2
     
 **Change:** 
 *   Stock Qty → 60
+*   QC Duration → Newest Storage Date + Now()
+
+**PROCESS 5 — Update QC Status**
+--------------------------------
+
+**Filter:** 
+'StockStatus = QI`
+
+**Keep:**
+*   Tempering Period 72h    
+*   Tempering Flag: Reached
+    
+**Change:**
+*   Stock Status → UU    
+*   QC Check = Done    
+*   QC Duration Stop = Last Update + Now()
