@@ -23,6 +23,9 @@ flowchart LR
 :::
 
 #XML Format
+
+`Name File`: ShippingProcess_<MaterialNum>_YYYYMMMDD_hhmmss-xxx.xml
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <ShippingProcess>
