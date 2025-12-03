@@ -99,7 +99,7 @@ sequenceDiagram
 *   StockStatus: QI    
 *   TemperingFlag: Reached
 *   Stock Qty: 58
-*   QC Duration → Newest Storage Date + Now()
+*   QC Duration → QC Duration + Now()
 
 **PROCESS 4 — QC Work from Retrieval for Return Stock**
 --------------------------------------
@@ -115,7 +115,7 @@ sequenceDiagram
     
 **Change:** 
 *   Stock Qty → 60
-*   QC Duration → Newest Storage Date + Now()
+*   QC Duration → QC Duration + Now()
 
 **PROCESS 5 — Update QC Status**
 --------------------------------
@@ -130,4 +130,4 @@ sequenceDiagram
 **Change:**
 *   Stock Status → UU    
 *   QC Check = Done    
-*   QC Duration Stop = Last Update + Now()
+*   QC Duration Stop = QC Duration + Now()
