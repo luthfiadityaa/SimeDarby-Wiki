@@ -5,7 +5,7 @@
 <br>
 
 ## **Tempering Period**
-- **Tempering Period** will use the **Storage Date & Time** for calculate.
+**Tempering Period** will use the **Storage Date & Time** for calculate.
    
   **DNSTOCK** data as example:
   - `Storage Date & Time`: 2/12/2025 02:00:00
