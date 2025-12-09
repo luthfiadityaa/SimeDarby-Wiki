@@ -15,6 +15,13 @@ Tempering Period will use the **Storage Date & Time** for calculate.
 
   The tempering period will remain at `72 hours` even if the original end date has passed. Any changes will only be applied upon approval to `Extend the Tempering Period`. 
 
+
+## **Tempering Flag Checker**
+@<5841075A-3462-65B0-8512-76DD7AE397C1> 
+`jp.co.daifuku.asrs.transmission.ShelfMonitor`
+Please see this process and create the checker process.
+
+
 <br>
 
 ::: mermaid
