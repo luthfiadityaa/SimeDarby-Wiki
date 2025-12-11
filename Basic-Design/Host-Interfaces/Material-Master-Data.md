@@ -38,6 +38,13 @@ The data will be paired as an input: **Warenavi** ⇄ **SAP**
 * **ENTERING_QTY** ⇄ **QTY KG CTN**
 * **UOM** ⇄ **UOM**
 
+###<span style="color:skyblue; font-weight:bold">DMItem</span>
+* **ITEM_CODE** ⇄ **MATERIAL CODE**
+* **ITEM_NAME** ⇄ **MATERIAL NAME**
+* **ITEM_TYPE** ⇄ **MATERIAL TYPE**
+* **ENTERING_QTY** ⇄ **QTY KG CTN**
+* **UOM** ⇄ **UOM**
+
 #XML Format
 `Name File`: Material_<MaterialNum>_YYYYMMMDD_hhmmss-xxx.xml​
 
