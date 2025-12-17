@@ -40,9 +40,9 @@ flowchart LR
 
     HostSystem -->|Send Material Master Data| FileXML
     FileXML --> P1
-    P1 -->|Parsed XML Data| P2
-    P2 -->|Request DB Connection| P3
-    P3 -->|DB Session| DB
-    P2 -->|Request System Lock| P4
-    P4 -->|Lock Granted| Lock
+    P1 --> |Parsed XML Data| P2
+    P2 --> |Request DB Connection| P3
+    P3 --> |DB Session| DB
+    P2 --> |Request System Lock| P4
+    P4 --> |Lock Granted| Lock
 :::
