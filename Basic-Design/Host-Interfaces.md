@@ -32,9 +32,11 @@ The trigger to start the process is this file.
 ::: mermaid
 flowchart LR
  C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]  
- C2[["HostCommExecutor.java"]         
- C1 --> C2 --> Receiving
- C1 --> C2 --> Sending
+ C2["HostCommExecutor.java"]
+ C1 --> C2
+ C2 --> Receiving
+ C2 --> Sending
+
 
 subgraph Receiving
  C2["recvMaterialMasterData()"]
