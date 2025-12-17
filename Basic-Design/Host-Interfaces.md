@@ -29,7 +29,7 @@ The trigger to start the process is this file.
 `C:\daifuku\wms\tomcat\webapps\wms\serviceHostComm.prj`
 
 ::: mermaid
-flowchart LR
+flowchart TD
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]       
     
         C1 --> HostCommExecutor
