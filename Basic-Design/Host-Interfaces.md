@@ -58,11 +58,8 @@ end
 **Stage 2**
 ::: mermaid
 flowchart LR
-
-AbstractXmlDataLoader.java --> execute
-
-subgraph AbstractXmlDataLoader.java
-end 
+ C1["AbstractXmlDataLoader.java"]
+ C1 --> execute
 
 subgraph execute
  C2 --> C3 --> Cond1
@@ -70,7 +67,7 @@ subgraph execute
  C2["connect()"]
  C3["WarenaviSystemController"]
  Cond1{"!getLock(sysCon) ?"} 
- Cond1 --> |FALSE| C1
+ Cond1 --> |FALSE| C2
  Cond1 --> |TRUE| Rollback1
 end
 :::
