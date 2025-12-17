@@ -38,6 +38,8 @@ flowchart LR
     subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
         C2["recvMaterialMasterData()<br>→ MaterialMasterDataLoader"]
+        C3["recvMaterialMasterData()<br>→ MaterialMasterDataLoader"]
+C3["recvMaterialMasterData()<br>→ MaterialMasterDataLoader"]
         C1 --> C2
     end
 :::
