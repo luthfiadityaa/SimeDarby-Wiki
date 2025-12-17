@@ -32,18 +32,18 @@ The trigger to start the process is this file.
 ::: mermaid
 flowchart LR
  C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]           
- C1 --> HostCommExecutor.java Receiving
- C1 --> HostCommExecutor2.java
+ C1 --> HostCommExecutor_Receiving
+ C1 --> HostCommExecutor_Sending
 
 
-subgraph HostCommExecutor.java Receiving
+subgraph HostCommExecutor_Receiving
  C2["recvMaterialMasterData()"]
  C3["recvStoragePlanPkgData()"]
  C4["recvRetrievalPlanData()"]
  C5["recvResponseData()"]
 end
 
-subgraph HostCommExecutor.java
+subgraph HostCommExecutor_Sending
  C6["sendProductionStorageData()"]
  C7["sendQCStatusUpdateData()"]
  C8["sendInternalLocTransferData()"]
