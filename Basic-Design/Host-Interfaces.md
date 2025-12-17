@@ -209,6 +209,70 @@ subgraph Sending
 end 
 :::
 
+### **1. Entry Point: `setConfig()`**
+*   The flow starts after **Stage 2 successfully acquires the system lock** and applies configuration.    
+*   `setConfig()` determines:
+    *   Data type        
+    *   Direction (Receiving / Sending)        
+    *   Target loader classes
+
+**2. Receiving Flow (Inbound Data)**
+**Objective:**  
+Process incoming XML data from the host system and convert it into internal domain objects.
+
+### **Receiving Loaders**
+Each loader handles **one specific inbound data type**:
+*   `MaterialMasterDataLoader`    
+*   `StoragePlanPkgDataLoader`    
+*   `RetrievalPlanDataLoader`    
+*   `ResponseDataLoader`
+    
+
+### **Process**
+For each incoming XML file:
+1.  Select the corresponding **DataLoader**    
+2.  Parse XML    
+3.  Validate data    
+4.  Convert to domain objects    
+5.  Store into internal structures
+    
+➡ All receiving loaders follow the **same abstract execution pattern** inherited from `AbstractXmlDataLoader`.
+
+**3. Sending Flow (Outbound Data)**
+
+**Objective:**  
+Generate outbound data based on internal system state and send it to the host.
+
+### **Sending Report Generators**
+Each report represents a **specific business message**:
+*   `ProductionStorageReportData`    
+*   `QCStatusUpdateReportData`    
+*   `InternalLocTransferReportData`    
+*   `StorageReportData`    
+*   `RetrievalReportData`    
+*   `StorageRetrievalReportData`   
+
+### **Process**
+For each outbound data type:
+1.  Collect required business data    
+2.  Transform data into report format    
+3.  Generate XML    
+4.  Prepare transmission payload    
+
+**4. Model Binding: `setModel()`**
+After **Receiving or Sending processing completes**:
+*   `setModel()` is invoked    
+*   All processed data is:
+    *   Consolidated        
+    *   Normalized        
+    *   Stored into a unified execution model
+        
+This model is later used for:
+*   Database persistence    
+*   Transaction handling    
+*   Response generation    
+*   Logging and auditing
+
 <br>
 <hr>
 
