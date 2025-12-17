@@ -85,12 +85,12 @@ subgraph Receiving
 end
 
 subgraph Sending
- C25["ProductionStorageReportData"] --> E11
- C26["QCStatusUpdateReportData"] --> E11
- C27["InternalLocTransferReportData"] --> E11
- C28["StorageReportData"] --> E11
- C29["RetrievalReportData"] --> E11
- C30["StorageRetrievalReportData"] --> E11
+ C25["ProductionStorageReportData"]
+ C26["QCStatusUpdateReportData"]
+ C27["InternalLocTransferReportData"] 
+ C28["StorageReportData"]
+ C29["RetrievalReportData"] 
+ C30["StorageRetrievalReportData"] 
 end
  
 :::
