@@ -209,6 +209,9 @@ subgraph Sending
 end 
 :::
 
+<br>
+<hr>
+
 **Stage 4**
 ::: mermaid
 flowchart LR
