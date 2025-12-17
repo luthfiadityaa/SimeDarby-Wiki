@@ -27,7 +27,7 @@
 The trigger to start the process is this file.
 `C:\daifuku\wms\tomcat\webapps\wms\serviceHostComm.prj`
 
-**Stage 1**
+##**Stage 1**
 
 This stage describes how the **Host Communication subsystem** handles **incoming and outgoing XML-based data** between an external host system and the internal WMS logic.
 It is divided into **Receiving** and **Sending** processes, coordinated by `HostCommExecutor.java`.
@@ -74,15 +74,13 @@ end
 **Receiving Flow (Inbound Data)**
 This section handles **data received from the external host system**.
 
-### Receiving functions:
-
+**Receiving functions:**
 *   `recvMaterialMasterData()`    
 *   `recvStoragePlanPkgData()`    
 *   `recvRetrievalPlanData()`    
 *   `recvResponseData()`    
 
-### What happens:
-
+** What happens:**
 1.  Host sends XML data    
 2.  `HostCommExecutor` detects the data type    
 3.  Corresponding `recvXXX()` method is called    
