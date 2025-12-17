@@ -30,7 +30,6 @@ The trigger to start the process is this file.
 
 ::: mermaid
 flowchart LR
-    subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
         C2["recvMaterialMasterData()<br>→ MaterialMasterDataLoader"]
         C3["recvStoragePlanPkgData()<br>→ StoragePlanPkgDataLoader"]
@@ -52,5 +51,4 @@ flowchart LR
         C1 --> C9
         C1 --> C10
         C1 --> C11
-    end
 :::
