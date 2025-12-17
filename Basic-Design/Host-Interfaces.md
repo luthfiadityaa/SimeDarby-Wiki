@@ -90,16 +90,17 @@ subgraph setConfig
 end
 
 subgraph getFile
- C31["MaterialMasterDataLoader"]
- C32["StoragePlanPkgDataLoader"]
- C33["RetrievalPlanDataLoader"]
- C34["ResponseDataLoader"]
- C35["ProductionStorageReportData"]
- C36["QCStatusUpdateReportData"]
- C37["InternalLocTransferReportData"]
- C38["StorageReportData"]
- C39["RetrievalReportData"]
- C40["StorageRetrievalReportData"]        
+ C31["listFile()"]    
+
+ Cond1{"host directory ?"}   
+
+ C32["host directory"]  
+
+ C31 --> Cond1
+
+Cond1 --> |True|
+Cond1 --> |False|
+
 end
 
 :::
