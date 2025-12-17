@@ -86,7 +86,6 @@ subgraph setConfig
  C29["RetrievalReportData"] --> E11
  C30["StorageRetrievalReportData"] --> E11
 
-
  E11--> E12 --> E13
 end
 :::
