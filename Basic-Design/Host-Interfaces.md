@@ -31,6 +31,8 @@ The trigger to start the process is this file.
 flowchart TD
  C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]           
  C1 --> HostCommExecutor.java
+C1 --> HostCommExecutor1.java
+
 
 subgraph HostCommExecutor.java
  C2["recvMaterialMasterData()"]
