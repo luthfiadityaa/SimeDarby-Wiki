@@ -395,8 +395,44 @@ end
 ####**1. Input from Previous Stage**
 
 From **Stage 4**, you already have:
-*   Java **model classes** (POJO)
-    
+*   Java **model classes** (POJO)    
 *   Logical mapping between **data types** (Receiving / Sending)
     
 Now Stage 5 maps these models to **XML schemas (XSD)**.
+
+####**2. Receiving (Inbound XML Validation)**
+
+The system assigns XSDs used to validate **incoming XML files**:
+
+| XML Type | XSD |
+| --- | --- |
+| Material Master | `MaterialMaster.xsd` |
+| Storage Plan Package | `StoragePlanPkg.xsd` |
+| Retrieval Plan | `RetrievalPlan.xsd` |
+| Response | `Response.xsd` |
+
+These schemas ensure:
+*   Mandatory fields exist    
+*   Data types are correct    
+*   Length / format rules are enforced
+    
+This is typically used by:
+*   JAXB validation    
+*   SAX pre-validation
+
+####**2. Sending (Outbound XML Generation)**
+
+The system also assigns XSDs for **outgoing messages**:
+
+| XML Type | XSD |
+| --- | --- |
+| Production Storage | `ProductionStorage.xsd` |
+| QC Status Update | `QCStatusUpdate.xsd` |
+| Internal Location Transfer | `InternalLocTransfer.xsd` |
+| Storage Result | `StorageResult.xsd` |
+| Retrieval Result | `RetrievalResult.xsd` |
+| Storage Retrieval Result | `StorageRetrievalResult.xsd` |
+
+These ensure:
+*   Generated XML conforms to host system specs    
+*   Response messages are valid before sending
