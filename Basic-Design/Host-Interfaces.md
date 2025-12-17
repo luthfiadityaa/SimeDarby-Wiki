@@ -546,6 +546,6 @@ This step:
 flowchart LR
  C1["getFile()"]  
  C2["checkDataHostDirectory()"]
-
+ Cond1{"listFiles() ?"} 
 end 
 :::
