@@ -362,6 +362,9 @@ Examples:
 *   `MaterialMaster.class` → `MaterialMaster.xsd`    
 *   `RetrievalPlan.class` → `RetrievalPlan.xsd`
 
+<br>
+<hr>
+
 **Stage 5**
 ::: mermaid
 flowchart LR
