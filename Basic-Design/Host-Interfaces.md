@@ -44,7 +44,8 @@ flowchart LR
         C6["sendProductionStorageData()<br>→ ProductionStorageReportData"]
         C7["sendQCStatusUpdateData()<br>→ QCStatusUpdateReportData"]
         C8["sendInternalLocTransferData()<br>→ InternalLocTransferReportData"]
-C8["sendInternalLocTransferData()<br>→ InternalLocTransferReportData"]
+        C9["sendStorageData()<br>→ StorageReportData"]
+C9["sendStorageData()<br>→ StorageReportData"]
         C1 --> C2
         C1 --> C3
         C1 --> C4
