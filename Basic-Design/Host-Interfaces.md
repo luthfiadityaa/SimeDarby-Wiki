@@ -55,3 +55,5 @@ subgraph Sending
  C12["sendStorageRetrievalData()"]
 end
 :::
+
+**Stage 2**
