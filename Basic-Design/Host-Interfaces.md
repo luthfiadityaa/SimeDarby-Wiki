@@ -459,7 +459,7 @@ subgraph Sending
  C25["PalletUpdate (ProductionStorage ID env)"]
  C26["PalletUpdate (QCStatusUpdate ID env)"]
  C27["PalletUpdate (InternalLocTransfer ID env)"] 
- C28["GR or Cancel_GR"]
+ C28["GR or Cancel_GR" (StorageResult ID env)]
  C29["PalletUpdate"] 
  C30["PalletUpdate"] 
 end 
