@@ -437,6 +437,9 @@ These ensure:
 *   Generated XML conforms to host system specs    
 *   Response messages are valid before sending
 
+<br>
+<hr>
+
 ##**Stage 6**
 ::: mermaid
 flowchart LR
