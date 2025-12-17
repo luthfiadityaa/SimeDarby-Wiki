@@ -58,7 +58,7 @@ end
 ::: mermaid
 flowchart TD
  C1["AbstractXmlDataLoader.java"]
- C1 --> execute --> setConfig
+ C1 --> execute
 
 subgraph execute
  C2 --> C3 --> Cond1
