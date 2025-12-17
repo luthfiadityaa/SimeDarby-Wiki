@@ -99,7 +99,6 @@ subgraph getFile
  C31 --> Cond2
 
 Cond2 --> |True| C32
-Cond2 --> 
 
 end
 
