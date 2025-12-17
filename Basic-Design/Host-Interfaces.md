@@ -436,3 +436,28 @@ The system also assigns XSDs for **outgoing messages**:
 These ensure:
 *   Generated XML conforms to host system specs    
 *   Response messages are valid before sending
+
+##**Stage 6**
+::: mermaid
+flowchart LR
+ E1["setExEnv()"]
+ C1["setSchema()"]  
+ C1 --> Receiving --> E1
+ C1 --> Sending --> E1
+
+subgraph Receiving
+ C21["MaterialMaster.xsd"]
+ C22["StoragePlanPkg.xsd"] 
+ C23["RetrievalPlan.xsd"] 
+ C24["Response.xsd"]
+end
+
+subgraph Sending
+ C25["ProductionStorage.xsd"]
+ C26["QCStatusUpdate.xsd"]
+ C27["InternalLocTransfer.xsd"] 
+ C28["StorageResult.xsd"]
+ C29["RetrievalResult.xsd"] 
+ C30["StorageRetrievalResult.xsd"] 
+end 
+:::
