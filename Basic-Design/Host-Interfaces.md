@@ -37,12 +37,13 @@ subgraph HostCommExecutor.java
  C3["recvStoragePlanPkgData()"]
  C4["recvRetrievalPlanData()"]
  C5["recvResponseData()"]
- C6["sendProductionStorageData()"]
- C7["sendQCStatusUpdateData()"]
- C8["sendInternalLocTransferData()"]
- C9["sendStorageData()"]
- C10["sendRetrievalData()"]
- C11["sendStorageRetrievalData()"]
+end
+
+subgraph HostCommExecutor2.java
+ C2["recvMaterialMasterData()"]
+ C3["recvStoragePlanPkgData()"]
+ C4["recvRetrievalPlanData()"]
+ C5["recvResponseData()"]
 end
 :::
 
