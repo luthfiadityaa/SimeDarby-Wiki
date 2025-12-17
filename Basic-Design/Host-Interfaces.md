@@ -29,8 +29,7 @@ The trigger to start the process is this file.
 
 ::: mermaid
 flowchart TD
-        C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]       
-    
+        C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]           
         C1 --> HostCommExecutor.java
         AbstractXmlDataLoader.java
         HostCommExecutor.java --> AbstractXmlDataLoader.java
