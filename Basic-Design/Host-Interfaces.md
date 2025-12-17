@@ -92,15 +92,15 @@ end
 subgraph getFile
  C31["listFile()"]    
 
- Cond1{"host directory ?"}   
+ Cond2{"host directory ?"}   
 
  C32["setConfig"]
  C33["finally"]
 
  C31 --> Cond1
 
-Cond1 --> |True| C32
-Cond1 --> |False| C33
+Cond2 --> |True| C32
+Cond2 --> |False| C33
 
 end
 
