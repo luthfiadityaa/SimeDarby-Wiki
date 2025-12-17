@@ -35,16 +35,16 @@ flowchart TD
  HostCommExecutor.java --> AbstractXmlDataLoader.java
 
 subgraph HostCommExecutor.java
- C2["recvMaterialMasterData()<br>→ MaterialMasterDataLoader"]
- C3["recvStoragePlanPkgData()<br>→ StoragePlanPkgDataLoader"]
- C4["recvRetrievalPlanData()<br>→ RetrievalPlanDataLoader"]
- C5["recvResponseData()<br>→ ResponseDataLoader"]
- C6["sendProductionStorageData()<br>→ ProductionStorageReportData"]
- C7["sendQCStatusUpdateData()<br>→ QCStatusUpdateReportData"]
- C8["sendInternalLocTransferData()<br>→ InternalLocTransferReportData"]
- C9["sendStorageData()<br>→ StorageReportData"]
- C10["sendRetrievalData()<br>→ RetrievalReportData"]
- C11["sendStorageRetrievalData()<br>→ StorageRetrievalReportData"]
+ C2["recvMaterialMasterData()"]
+ C3["recvStoragePlanPkgData()"]
+ C4["recvRetrievalPlanData()"]
+ C5["recvResponseData()"]
+ C6["sendProductionStorageData()"]
+ C7["sendQCStatusUpdateData()"]
+ C8["sendInternalLocTransferData()"]
+ C9["sendStorageData()"]
+ C10["sendRetrievalData()"]
+ C11["sendStorageRetrievalData()"]
 end
 
 subgraph AbstractXmlDataLoader.java
@@ -65,8 +65,17 @@ subgraph execute
  Cond1 --> |False| C15   
 end
 
-subgraph AbstractXmlDataLoader.java
- execute        
+subgraph setConfig
+ C21["MaterialMasterDataLoader"]
+ C22["StoragePlanPkgDataLoader"]
+ C23["RetrievalPlanDataLoader"]
+ C24["ResponseDataLoader"]
+ C25["ProductionStorageReportData"]
+ C26["QCStatusUpdateReportData"]
+ C27["InternalLocTransferReportData"]
+ C28["StorageReportData"]
+ C29["RetrievalReportData"]
+ C30["StorageRetrievalReportData"]        
 end
 
 :::
