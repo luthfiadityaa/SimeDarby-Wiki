@@ -91,6 +91,30 @@ subgraph Sending
  C28["StorageReportData"]
  C29["RetrievalReportData"] 
  C30["StorageRetrievalReportData"] 
+end 
+:::
+
+**Stage 4**
+::: mermaid
+flowchart LR
+ C1["setConfig()"]  
+ C1 --> Receiving 
+ C1 --> Sending 
+
+subgraph Receiving
+ C21["MaterialMasterDataLoader"]
+ C22["StoragePlanPkgDataLoader"] 
+ C23["RetrievalPlanDataLoader"] 
+ C24["ResponseDataLoader"]
+end
+
+subgraph Sending
+ C25["ProductionStorageReportData"]
+ C26["QCStatusUpdateReportData"]
+ C27["InternalLocTransferReportData"] 
+ C28["StorageReportData"]
+ C29["RetrievalReportData"] 
+ C30["StorageRetrievalReportData"] 
 end
  
 :::
