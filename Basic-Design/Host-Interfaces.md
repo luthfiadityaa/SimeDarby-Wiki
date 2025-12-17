@@ -27,6 +27,8 @@
 The trigger to start the process is this file.
 `C:\daifuku\wms\tomcat\webapps\wms\serviceHostComm.prj`
 
+**Stage 1**
+
 ::: mermaid
 flowchart LR
  C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]           
