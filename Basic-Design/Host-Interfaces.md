@@ -57,10 +57,11 @@ subgraph execute
  
  Cond1{"!getLock(sysCon)"} 
 
+ C16["setConfig"]
  C15["finally"]
 
  C13 --> C14 --> Cond1
- Cond1 --> |False| setConfig
+ Cond1 --> |False| C16
  Cond1 --> |True| C15   
 end
 
