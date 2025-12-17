@@ -63,6 +63,14 @@ end
 *   Launched via `ConsoleApplicationExecutor`    
 *   Initializes the Host Communication process
 
+**HostCommExecutor.java**
+
+*   Central **orchestrator**    
+*   Determines **what type of data** to process    
+*   Routes execution to:
+    *   **Receiving flow** (incoming data from host)        
+    *   **Sending flow** (outgoing data to host)
+
 **Stage 2**
 ::: mermaid
 flowchart TD
