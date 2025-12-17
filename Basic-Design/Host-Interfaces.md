@@ -71,6 +71,26 @@ end
     *   **Receiving flow** (incoming data from host)        
     *   **Sending flow** (outgoing data to host)
 
+**Receiving Flow (Inbound Data)**
+This section handles **data received from the external host system**.
+
+### Receiving functions:
+
+*   `recvMaterialMasterData()`    
+*   `recvStoragePlanPkgData()`    
+*   `recvRetrievalPlanData()`    
+*   `recvResponseData()`    
+
+### What happens:
+
+1.  Host sends XML data    
+2.  `HostCommExecutor` detects the data type    
+3.  Corresponding `recvXXX()` method is called    
+4.  Each method:
+    *   Reads XML files        
+    *   Performs validation        
+    *   Passes control to `AbstractXmlDataLoader.java`
+
 **Stage 2**
 ::: mermaid
 flowchart TD
