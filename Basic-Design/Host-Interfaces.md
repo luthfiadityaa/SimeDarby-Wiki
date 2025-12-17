@@ -544,24 +544,8 @@ This step:
 
 ::: mermaid
 flowchart LR
- E1["getFile()"]
  C1["getFile()"]  
- C1 --> Receiving --> E1
- C1 --> Sending --> E1
+ C2["checkDataHostDirectory()"]
 
-subgraph Receiving
- C21["Material (MaterialMaster ID env)"]
- C22["Pl_Stor (StoragePLanPkg ID env)"] 
- C23["ShippingProcess (RetrievalPLan ID env)"] 
- C24["Response (Response ID env)"]
-end
-
-subgraph Sending
- C25["PalletUpdate (ProductionStorage ID env)"]
- C26["PalletUpdate (QCStatusUpdate ID env)"]
- C27["PalletUpdate (InternalLocTransfer ID env)"] 
- C28["GR or Cancel_GR (StorageResult ID env)"]
- C29["PalletUpdate (RetrievalResult ID env)"] 
- C30["PalletUpdate (Storage Retrieval Result ID env)"] 
 end 
 :::
