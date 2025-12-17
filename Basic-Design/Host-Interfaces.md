@@ -32,7 +32,7 @@ The trigger to start the process is this file.
 flowchart TD
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]       
     
-        C1 --> HostCommExecutor
+        C1 --> HostCommExecutor.java
 
         C12["AbstractXmlDataLoader<br>→execute()"]
 
@@ -47,7 +47,7 @@ flowchart TD
         HostCommExecutor --> C12
         HostCommExecutor --> C12
 
-subgraph HostCommExecutor
+subgraph HostCommExecutor.java
         C2["recvMaterialMasterData()<br>→ MaterialMasterDataLoader"]
         C3["recvStoragePlanPkgData()<br>→ StoragePlanPkgDataLoader"]
         C4["recvRetrievalPlanData()<br>→ RetrievalPlanDataLoader"]
