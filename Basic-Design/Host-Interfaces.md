@@ -157,13 +157,13 @@ end
 **Decision: `!getLock(sysCon)?`**
 *   The system checks whether it can acquire an **exclusive lock**.
 
-#### **If FALSE (Lock not acquired)**
+#### **If FALSE (Lock acquired)**
 *   The process:
     *   Returns back to `connect()`        
     *   Retries connection and lock acquisition        
 *   This loop prevents unsafe concurrent execution.    
 
-#### **If TRUE (Lock acquired)**
+#### **If TRUE (Lock not acquired)**
 *   The system proceeds safely to the next step.    
 
 ### **6. Configuration Setup**
