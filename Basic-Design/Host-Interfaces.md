@@ -67,6 +67,6 @@ subgraph execute
  C3["WarenaviSystemController"]
  Cond1{"!getLock(sysCon) ?"} 
  Cond1 --> |FALSE| C2
- Cond1 --> |TRUE| setConfig()
+ Cond1 --> |TRUE| setConfig
 end
 :::
