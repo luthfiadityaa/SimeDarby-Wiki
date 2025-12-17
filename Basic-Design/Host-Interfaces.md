@@ -235,7 +235,7 @@ For each incoming XML file:
 4.  Convert to domain objects    
 5.  Store into internal structures
     
-➡ All receiving loaders follow the **same abstract execution pattern** inherited from `AbstractXmlDataLoader`.
+All receiving loaders follow the **same abstract execution pattern** inherited from `AbstractXmlDataLoader`.
 
 ###**3. Sending Flow (Outbound Data)**
 
