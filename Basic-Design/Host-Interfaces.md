@@ -78,18 +78,19 @@ flowchart LR
  C1 --> Sending 
 
 subgraph Receiving
- C3["recvMaterialMasterData()"]
- C4["recvStoragePlanPkgData()"]
- C5["recvRetrievalPlanData()"]
- C6["recvResponseData()"]
+ C21["MaterialMasterDataLoader"]
+ C22["StoragePlanPkgDataLoader"] 
+ C23["RetrievalPlanDataLoader"] 
+ C24["ResponseDataLoader"]
 end
 
 subgraph Sending
- C7["sendProductionStorageData()"]
- C8["sendQCStatusUpdateData()"]
- C9["sendInternalLocTransferData()"]
- C10["sendStorageData()"]
- C11["sendRetrievalData()"]
- C12["sendStorageRetrievalData()"]
+ C25["ProductionStorageReportData"] --> E11
+ C26["QCStatusUpdateReportData"] --> E11
+ C27["InternalLocTransferReportData"] --> E11
+ C28["StorageReportData"] --> E11
+ C29["RetrievalReportData"] --> E11
+ C30["StorageRetrievalReportData"] --> E11
 end
+ 
 :::
