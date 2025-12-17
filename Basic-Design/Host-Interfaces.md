@@ -127,7 +127,7 @@ This section handles **data sent from WMS to the host system**.
 <br>
 <hr>
 
-##**Stage 2**
+##Stage 2
 Stage 2 describes how incoming XML data is processed safely by the system, ensuring **exclusive access (locking)** before any configuration or business processing continues.
 
 This stage focuses on **execution control, system connection, and lock validation**.
@@ -192,7 +192,7 @@ end
 <br>
 <hr>
 
-##**Stage 3**
+##Stage 3
 
 Stage 3 is responsible for **executing the actual business data loaders** after the system configuration is completed in Stage 2.  
 
@@ -288,7 +288,7 @@ This model is later used for:
 <br>
 <hr>
 
-##**Stage 4**
+##Stage 4
 Stage 4 is responsible for **binding concrete Java model classes** and **preparing XML schema definitions (XSD)** so the system can **validate and process XML data structurally**.
 
 This stage bridges:
@@ -379,7 +379,7 @@ Examples:
 <br>
 <hr>
 
-##**Stage 5**
+##Stage 5
 Stage 5 finalizes **XML structure validation** and prepares the **execution environment** before actual data processing (parse, validate, DB insert, response generation).
 
 ::: mermaid
@@ -454,7 +454,7 @@ These ensure:
 <br>
 <hr>
 
-##**Stage 6**
+##Stage 6
 At this stage, the system has already:
 *   Loaded models    
 *   Applied schemas (XSD)    
@@ -554,7 +554,7 @@ This step:
 <br>
 <hr>
 
-##**Stage 7**
+##Stage 7
 
 Stage 7 is responsible for **file-level control and validation before XML processing**.  
 It ensures that only **valid, non-duplicate, correctly named XML files** are passed to JAXB/XML validation.  
