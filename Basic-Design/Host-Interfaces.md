@@ -257,7 +257,7 @@ For each outbound data type:
 3.  Generate XML    
 4.  Prepare transmission payload    
 
-##**4. Model Binding: `setModel()`**
+###**4. Model Binding: `setModel()`**
 After **Receiving or Sending processing completes**:
 *   `setModel()` is invoked    
 *   All processed data is:
