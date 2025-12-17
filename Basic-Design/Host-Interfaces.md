@@ -473,7 +473,6 @@ end
 :::
 
 ### **1. Receiving Flow (Inbound Data Processing)**
-
 Each inbound message is now **fully contextualized** with:
 *   Model    
 *   Schema    
@@ -501,7 +500,6 @@ At this point:
 *   Routing and validation rules are now deterministic
 
 ### **2. Sending Flow (Outbound Result Generation)**
-
 After processing, outbound messages are created and tagged with the correct environment:
 1.  **PalletUpdate**
     *   ProductionStorage ID env        
