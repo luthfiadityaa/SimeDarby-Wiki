@@ -518,8 +518,24 @@ After processing, outbound messages are created and tagged with the correct envi
     *   Handles internal movement updates
         
 Each outbound payload:
-*   Is mapped to the **correct business result**
-    
-*   Uses the **correct environment ID**
-    
+*   Is mapped to the **correct business result**    
+*   Uses the **correct environment ID**    
 *   Is ready for **file generation or transmission**
+
+### **3. Final Transition → `getFile()`**
+
+Once all objects are:
+*   Bound to environment    
+*   Fully validated    
+*   Properly classified (Receiving / Sending)
+    
+The flow reaches: `getFile()`
+
+This step:
+*   Resolves **physical file names**    
+*   Determines **target directories**    
+*   Prepares files for:
+    *   Writing        
+    *   Sending        
+    *   Archiving        
+    *   Error handling
