@@ -548,5 +548,5 @@ flowchart LR
  Cond1 --> |FALSE| C3[RollBack to Stage 1]
  Cond1 --> |TRUE| Cond2{"listFiles() ?"}  
  Cond2 --> |FALSE| C3
- Cond2 --> |TRUE| C4["checkFileName(f)"]
+ Cond2 --> |TRUE| Cond3{"checkFileName() ?"} 
 :::
