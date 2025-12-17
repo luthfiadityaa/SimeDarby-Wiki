@@ -24,7 +24,6 @@
 | 11   | Unplanned Retrieval Result                               | Unplanned Retrieval Result    | [StorageRetrievalReportData](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result?anchor=storageretievalreportdata)                               | Once has Data |
 
 # Detail Flow Process
-
 The trigger to start the process is this file.
 `C:\daifuku\wms\tomcat\webapps\wms\serviceHostComm.prj`
 
@@ -33,19 +32,8 @@ flowchart TD
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]       
     
         C1 --> HostCommExecutor.java
-
-        C12["AbstractXmlDataLoader<br>→execute()"]
-
-        HostCommExecutor.java --> C12
-        HostCommExecutor.java --> C12
-        HostCommExecutor.java --> C12
-        HostCommExecutor.java --> C12
-        HostCommExecutor.java --> C12
-        HostCommExecutor.java --> C12
-        HostCommExecutor.java --> C12
-        HostCommExecutor.java --> C12
-        HostCommExecutor.java --> C12
-        HostCommExecutor.java --> C12
+        AbstractXmlDataLoader.java
+        HostCommExecutor.java --> AbstractXmlDataLoader.java
 
 subgraph HostCommExecutor.java
         C2["recvMaterialMasterData()<br>→ MaterialMasterDataLoader"]
@@ -59,4 +47,9 @@ subgraph HostCommExecutor.java
         C10["sendRetrievalData()<br>→ RetrievalReportData"]
         C11["sendStorageRetrievalData()<br>→ StorageRetrievalReportData"]
 end
+
+subgraph AbstractXmlDataLoader.java
+        C2["execute()<br>→ MaterialMasterDataLoader"]
+end
+
 :::
