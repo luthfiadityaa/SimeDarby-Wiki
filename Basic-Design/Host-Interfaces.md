@@ -36,6 +36,7 @@ flowchart TD
  AbstractXmlDataLoader.java --> setConfig
  setConfig --> getFile
  execute --> |True| finally
+
  getFile --> |False| finally
 
 subgraph HostCommExecutor.java
@@ -50,60 +51,4 @@ subgraph HostCommExecutor.java
  C10["sendRetrievalData()"]
  C11["sendStorageRetrievalData()"]
 end
-
-subgraph AbstractXmlDataLoader.java
- execute        
-end
-
-subgraph execute
- C13["connect()"]
- C14["WarenaviSystemController"]
- 
- Cond1{"!getLock(sysCon)"} 
-
- C16["setConfig"]
-
- C13 --> C14 --> Cond1
- Cond1 --> |False| C16   
-end
-
-subgraph setConfig
-
- E11["setModel"]
- E12["setSchema"]
- E13["setExchangeEnvironment"]
-
- E11--> E12 --> E13
-
- C21["MaterialMasterDataLoader"] --> E11
- C22["StoragePlanPkgDataLoader"] --> E11
- C23["RetrievalPlanDataLoader"] --> E11
- C24["ResponseDataLoader"] --> E11
- C25["ProductionStorageReportData"] --> E11
- C26["QCStatusUpdateReportData"] --> E11
- C27["InternalLocTransferReportData"] --> E11
- C28["StorageReportData"] --> E11
- C29["RetrievalReportData"] --> E11
- C30["StorageRetrievalReportData"] --> E11
-            
-end
-
-subgraph getFile
- C31["listFile()"]    
- Cond2{"host directory ?"}   
- C32["setConfig"]
- C33[checkFileName]
- C34[checkDuplicateFile]
- C31 --> Cond2
- Cond2 --> |True| C32
- C32 --> C33 --> C34 
-end
-
-subgraph finally
- C51 --> C52
-
- C51["finally"]
- C52["getConnection().rollback()"]
-end
-
 :::
