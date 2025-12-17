@@ -100,7 +100,7 @@ This section handles **data sent from WMS to the host system**.
 *   `sendRetrievalData()`    
 *   `sendStorageRetrievalData()`    
 
-### What happens:
+**What happens:**
 1.  `HostCommExecutor` triggers sending based on system events    
 2.  Each `sendXXX()` method:
     *   Collects data from DB        
