@@ -327,7 +327,7 @@ These classes represent **incoming XML payloads**:
     *   Field mapping        
     *   Data constraints (length, type, required fields)
         
-📌 At this point:
+At this point:
 *   XML → Java Object mapping is **fully defined**    
 *   But **not yet validated against schema**
 
