@@ -33,6 +33,7 @@ flowchart TD
  C1 --> HostCommExecutor.java
  AbstractXmlDataLoader.java
  HostCommExecutor.java --> AbstractXmlDataLoader.java
+ AbstractXmlDataLoader.java --> setConfig
 
 subgraph HostCommExecutor.java
  C2["recvMaterialMasterData()"]
