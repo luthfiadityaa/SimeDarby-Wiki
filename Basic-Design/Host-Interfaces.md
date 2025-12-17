@@ -456,7 +456,7 @@ subgraph Receiving
 end
 
 subgraph Sending
- C25["PalletUpdate"]
+ C25["PalletUpdate (ProductionStorage ID env)"]
  C26["PalletUpdate"]
  C27["PalletUpdate"] 
  C28["GR or Cancel_GR"]
