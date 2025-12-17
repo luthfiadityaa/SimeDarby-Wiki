@@ -49,7 +49,7 @@ subgraph HostCommExecutor.java
 end
 
 subgraph AbstractXmlDataLoader.java
-        C1["execute()<br>→ connect()"]
+        C12["execute()<br>→ connect()"]
 end
 
 :::
