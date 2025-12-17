@@ -119,3 +119,28 @@ subgraph Sending
  C30["StorageRetrievalResult.class"] 
 end 
 :::
+
+**Stage 5**
+::: mermaid
+flowchart LR
+ E1["setExEnv()"]
+ C1["setSchema()"]  
+ C1 --> Receiving --> E1
+ C1 --> Sending --> E1
+
+subgraph Receiving
+ C21["MaterialMaster.class"]
+ C22["StoragePlanPkg.class"] 
+ C23["RetrievalPlan.class"] 
+ C24["Response.class"]
+end
+
+subgraph Sending
+ C25["ProductionStorage.class"]
+ C26["QCStatusUpdate.class"]
+ C27["InternalLocTransfer.class"] 
+ C28["StorageResult.class"]
+ C29["RetrievalResult.class"] 
+ C30["StorageRetrievalResult.class"] 
+end 
+:::
