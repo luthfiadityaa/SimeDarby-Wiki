@@ -542,6 +542,10 @@ This step:
 
 ##**Stage 7**
 
+Stage 7 is responsible for **file-level control and validation before XML processing**.  
+It ensures that only **valid, non-duplicate, correctly named XML files** are passed to JAXB/XML validation.  
+Any failure causes a **rollback to Stage 1** (re-waiting for host communication).
+
 ::: mermaid
 flowchart LR
  C1["getFile()"] --> Cond1{"checkDataHostDirectory() ?"}
@@ -554,3 +558,4 @@ flowchart LR
  Cond4 --> |TRUE| C1
  Cond4 --> |FALSE| C4["convertToEntity() -> validateXml()"]
 :::
+
