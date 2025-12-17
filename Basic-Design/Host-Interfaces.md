@@ -449,8 +449,8 @@ flowchart LR
  C1 --> Sending --> E1
 
 subgraph Receiving
- C21["Material"]
- C22["Pl_Stor"] 
+ C21["Material (MaterialMaster ID env)"]
+ C22["Pl_Stor (StoragePLanPkg ID env)"] 
  C23["ShippingProcess"] 
  C24["Response"]
 end
