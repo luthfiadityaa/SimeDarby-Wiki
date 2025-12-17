@@ -111,6 +111,8 @@ This section handles **data sent from WMS to the host system**.
     *   Generates XML        
     *   Sends XML to the host        
 3.  Uses shared logic from `AbstractXmlDataLoader.java` where applicable
+<br>
+<hr>
 
 ##**Stage 2**
 Stage 2 describes how incoming XML data is processed safely by the system, ensuring **exclusive access (locking)** before any configuration or business processing continues.
