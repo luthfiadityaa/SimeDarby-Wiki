@@ -38,7 +38,7 @@ The trigger to start the process is this file.
 
 | Stage | Responsibility |
 | --- | --- |
-| [(Stage 1)](##Stage-1) | Host communication & routing |
+| [Stage 1](##Stage-1) | Host communication & routing |
 | Stage 2 | System connection & locking |
 | Stage 3 | DataLoader selection |
 | Stage 4 | Java model binding |
