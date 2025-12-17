@@ -68,16 +68,22 @@ subgraph execute
 end
 
 subgraph setConfig
- C21["MaterialMasterDataLoader"]
- C22["StoragePlanPkgDataLoader"]
- C23["RetrievalPlanDataLoader"]
- C24["ResponseDataLoader"]
- C25["ProductionStorageReportData"]
- C26["QCStatusUpdateReportData"]
- C27["InternalLocTransferReportData"]
- C28["StorageReportData"]
- C29["RetrievalReportData"]
- C30["StorageRetrievalReportData"]        
+
+ E11["setModel"]
+ E12["setSchema"]
+
+ C21["MaterialMasterDataLoader"] --> E11 --> E12
+ C22["StoragePlanPkgDataLoader"] --> E11 --> E12
+ C23["RetrievalPlanDataLoader"] --> E11 --> E12
+ C24["ResponseDataLoader"] --> E11 --> E12
+ C25["ProductionStorageReportData"] --> E11 --> E12
+ C26["QCStatusUpdateReportData"] --> E11 --> E12
+ C27["InternalLocTransferReportData"] --> E11 --> E12
+ C28["StorageReportData"] --> E11 --> E12
+ C29["RetrievalReportData"] --> E11 --> E12
+ C30["StorageRetrievalReportData"] --> E11 --> E12
+
+            
 end
 
 subgraph getFile
