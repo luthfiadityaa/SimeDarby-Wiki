@@ -366,6 +366,8 @@ Examples:
 <hr>
 
 **Stage 5**
+Stage 5 finalizes **XML structure validation** and prepares the **execution environment** before actual data processing (parse, validate, DB insert, response generation).
+
 ::: mermaid
 flowchart LR
  E1["setExEnv()"]
