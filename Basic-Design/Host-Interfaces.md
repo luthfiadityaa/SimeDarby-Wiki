@@ -42,8 +42,8 @@ flowchart LR
         C4["recvRetrievalPlanData()<br>→ RetrievalPlanDataLoader"]
         C5["recvResponseData()<br>→ ResponseDataLoader"]
         C6["sendProductionStorageData()<br>→ ProductionStorageReportData"]
-        C7["sendQCStatusUodateData()<br>→ QCStatusUpdateReportData"]
-        C8["sendQCStatusUodateData()<br>→ QCStatusUpdateReportData"]
+        C7["sendQCStatusUpdateData()<br>→ QCStatusUpdateReportData"]
+        C8["sendInternalLocTransferData()<br>→ InternalLocTransferReportData"]
         C1 --> C2
         C1 --> C3
         C1 --> C4
