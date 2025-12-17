@@ -92,8 +92,11 @@ subgraph getFile
  C31["listFile()"]    
  Cond2{"host directory ?"}   
  C32["setConfig"]
+ C33[checkFileName]
+ C34[checkDuplicateFile]
  C31 --> Cond2
  Cond2 --> |True| C32
+ C32 --> C33 --> C34 
 end
 
 subgraph finally
