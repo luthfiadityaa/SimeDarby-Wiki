@@ -25,12 +25,19 @@
 
 # Summary Flow Process
 
+The trigger to start the process is this file.
+`C:\daifuku\wms\tomcat\webapps\wms\serviceHostComm.prj`
+
 ::: mermaid
 flowchart LR
-    E1["Host System"] --> P1["P1: recvMaterialMasterData"]
-    P1 --> P2["P2: XML Load & Validate"]
-    P2 --> P3["P3: Execute"]
-    P3 --> P4["P4: DB Connect"]
-    P4 --> E2["Warenavi System"]
-    E2 --> P5["P5: getLock"]
+    A[SAP] -->|Send XML via SFTP| B[(FTP Folder)]
+    B -->|GET XML| C[HostCommExecutor]
+    C -->|Insert Data| E[(DMItem)]
+    C -->|Insert Data| F[(DNHostSend)]
+
+    subgraph HostCommExecutor
+        C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
+        C2["recvMaterialMasterData()<br>→ MaterialMasterDataLoader"]
+        C1 --> C2
+    end
 :::
