@@ -54,9 +54,11 @@ end
 subgraph execute
  C13["connect()"]
  C14["WarenaviSystemController"]
- C15["!getLock(sysCon)"]
+ Cond1{!getLock(sysCon)} 
  
- C13 --> C14 --> C15      
+ C13 --> C14 --> Cond1
+ Cond1 --> |True|
+ Cond1 --> |False|     
 end
 
 :::
