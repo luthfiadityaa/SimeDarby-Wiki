@@ -471,3 +471,31 @@ subgraph Sending
  C30["PalletUpdate (Storage Retrieval Result ID env)"] 
 end 
 :::
+
+### **1. Receiving Flow (Inbound Data Processing)**
+
+Each inbound message is now **fully contextualized** with:
+*   Model    
+*   Schema    
+*   Environment ID
+    
+**Receiving objects:**
+1.  **Material**
+    *   Bound with **MaterialMaster ID env**        
+    *   Identifies inbound _material master data_
+        
+2.  **PL_Stor**
+    *   Bound with **StoragePlanPkg ID env**        
+    *   Represents storage planning packages
+        
+3.  **ShippingProcess**
+    *   Bound with **RetrievalPlan ID env**        
+    *   Represents retrieval/shipping instructions
+        
+4.  **Response**
+    *   Bound with **Response ID env**        
+    *   Handles acknowledgments and results
+        
+At this point:
+*   Each object is **environment-aware**    
+*   Routing and validation rules are now deterministic
