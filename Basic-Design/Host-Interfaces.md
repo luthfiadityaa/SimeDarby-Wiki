@@ -172,7 +172,7 @@ end
 *   Environment and execution parameters are prepared.    
 *   At this point, the system is:
     *   Connected        
-    *   Locked        
+    *   Unlocked        
     *   Safe to process data
 
 <br>
