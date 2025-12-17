@@ -114,6 +114,7 @@ This section handles **data sent from WMS to the host system**.
 
 ##**Stage 2**
 Stage 2 describes how incoming XML data is processed safely by the system, ensuring **exclusive access (locking)** before any configuration or business processing continues.
+
 This stage focuses on **execution control, system connection, and lock validation**.
 ::: mermaid
 flowchart TD
