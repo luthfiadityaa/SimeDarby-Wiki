@@ -216,19 +216,18 @@ end
     *   Direction (Receiving / Sending)        
     *   Target loader classes
 
-**2. Receiving Flow (Inbound Data)**
+### **2. Receiving Flow (Inbound Data)**
 **Objective:**  
 Process incoming XML data from the host system and convert it into internal domain objects.
 
-### **Receiving Loaders**
+#### **2.1Receiving Loaders**
 Each loader handles **one specific inbound data type**:
 *   `MaterialMasterDataLoader`    
 *   `StoragePlanPkgDataLoader`    
 *   `RetrievalPlanDataLoader`    
 *   `ResponseDataLoader`
     
-
-### **Process**
+#### **2.2 Process**
 For each incoming XML file:
 1.  Select the corresponding **DataLoader**    
 2.  Parse XML    
