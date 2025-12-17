@@ -615,8 +615,6 @@ flowchart LR
     *   Length / type validation        
     *   Business rule validation
         
-**Successful validation → Proceed to Stage 8 (business processing)**.
-
 <br>
 <hr>
 
