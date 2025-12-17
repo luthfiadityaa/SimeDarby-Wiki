@@ -276,8 +276,8 @@ This model is later used for:
 
 ##**Stage 4**
 Stage 4 is responsible for **binding concrete Java model classes** and **preparing XML schema definitions (XSD)** so the system can **validate and process XML data structurally**.
-This stage bridges:
 
+This stage bridges:
 > **Data Loader logic (Stage 3)** → **Concrete domain models + schema validation**
 
 ::: mermaid
