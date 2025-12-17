@@ -62,8 +62,7 @@ subgraph execute
  C16["setConfig"]
 
  C13 --> C14 --> Cond1
- Cond1 --> |False| C16
- Cond1 --> |True| C15   
+ Cond1 --> |False| C16   
 end
 
 subgraph setConfig
