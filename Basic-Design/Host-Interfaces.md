@@ -73,7 +73,7 @@ end
 **Stage 3**
 ::: mermaid
 flowchart LR
- C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]  
+ C1["setConfig()"]  
  C2["HostCommExecutor.java"]
  C13["AbstractXmlDataLoader.java"]
  C1 --> C2
