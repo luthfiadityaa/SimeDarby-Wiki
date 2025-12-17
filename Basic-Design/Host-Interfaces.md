@@ -179,7 +179,7 @@ end
 <br>
 <hr>
 
-**Stage 3**
+##**Stage 3**
 
 Stage 3 is responsible for **executing the actual business data loaders** after the system configuration is completed in Stage 2.  
 
