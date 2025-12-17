@@ -443,7 +443,7 @@ These ensure:
 ##**Stage 6**
 ::: mermaid
 flowchart LR
- E1["setExEnv()"]
+ E1["getFile()"]
  C1["setExEnv()"]  
  C1 --> Receiving --> E1
  C1 --> Sending --> E1
