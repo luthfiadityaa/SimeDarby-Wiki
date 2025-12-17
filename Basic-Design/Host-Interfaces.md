@@ -65,6 +65,6 @@ subgraph execute
  C2 --> C3
 
  C2["connect()"]
- C3["WarenaviSystemController]
+ C3["WarenaviSystemController"]
 end
 :::
