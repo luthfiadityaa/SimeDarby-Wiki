@@ -67,7 +67,7 @@ subgraph execute
  C2["connect()"]
  C3["WarenaviSystemController"]
  Cond1{"!getLock(sysCon) ?"} 
- Cond1 --> |FALSE| C2
+ Cond1 --> |FALSE| execute
  Cond1 --> |TRUE| Rollback1
 end
 :::
