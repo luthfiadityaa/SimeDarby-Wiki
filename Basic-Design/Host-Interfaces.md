@@ -24,7 +24,7 @@
 | 11   | Unplanned Retrieval Result                               | Unplanned Retrieval Result    | [StorageRetrievalReportData](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result?anchor=storageretievalreportdata)                               | Once has Data |
 
 # Summary Flow Process
-::: mermaid
+:::mermaid
 flowchart LR
     HostSystem[(Host System)]
     FileXML[[MaterialMaster XML File]]
