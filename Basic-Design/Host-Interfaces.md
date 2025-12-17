@@ -80,7 +80,7 @@ This section handles **data received from the external host system**.
 *   `recvRetrievalPlanData()`    
 *   `recvResponseData()`    
 
-** What happens:**
+**What happens:**
 1.  Host sends XML data    
 2.  `HostCommExecutor` detects the data type    
 3.  Corresponding `recvXXX()` method is called    
