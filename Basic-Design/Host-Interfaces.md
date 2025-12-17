@@ -48,10 +48,10 @@ subgraph HostCommExecutor.java
 end
 
 subgraph AbstractXmlDataLoader.java
- execute ()        
+ execute        
 end
 
-subgraph execute ()
+subgraph execute
  C13["connect()"]
  C14["WarenaviSystemController"]
  
