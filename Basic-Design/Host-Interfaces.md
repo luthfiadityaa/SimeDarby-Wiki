@@ -36,16 +36,16 @@ flowchart TD
 
         C12["AbstractXmlDataLoader<br>→execute()"]
 
-        HostCommExecutor --> C12
-        HostCommExecutor --> C12
-        HostCommExecutor --> C12
-        HostCommExecutor --> C12
-        HostCommExecutor --> C12
-        HostCommExecutor --> C12
-        HostCommExecutor --> C12
-        HostCommExecutor --> C12
-        HostCommExecutor --> C12
-        HostCommExecutor --> C12
+        HostCommExecutor.java --> C12
+        HostCommExecutor.java --> C12
+        HostCommExecutor.java --> C12
+        HostCommExecutor.java --> C12
+        HostCommExecutor.java --> C12
+        HostCommExecutor.java --> C12
+        HostCommExecutor.java --> C12
+        HostCommExecutor.java --> C12
+        HostCommExecutor.java --> C12
+        HostCommExecutor.java --> C12
 
 subgraph HostCommExecutor.java
         C2["recvMaterialMasterData()<br>→ MaterialMasterDataLoader"]
