@@ -456,11 +456,11 @@ subgraph Receiving
 end
 
 subgraph Sending
- C25["ProductionStorage.xsd"]
- C26["QCStatusUpdate.xsd"]
- C27["InternalLocTransfer.xsd"] 
- C28["StorageResult.xsd"]
- C29["RetrievalResult.xsd"] 
- C30["StorageRetrievalResult.xsd"] 
+ C25["PalletUpdate"]
+ C26["PalletUpdate"]
+ C27["PalletUpdate"] 
+ C28["GR or Cancel_GR"]
+ C29["PalletUpdate"] 
+ C30["PalletUpdate"] 
 end 
 :::
