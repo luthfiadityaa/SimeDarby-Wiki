@@ -23,4 +23,25 @@
 | 10   | Unplanned Storage Result                                 | Unllanned Storage Result      | [StorageRetrievalReportData](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result?anchor=storageretievalreportdata)                                   | Once has Data |
 | 11   | Unplanned Retrieval Result                               | Unplanned Retrieval Result    | [StorageRetrievalReportData](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result?anchor=storageretievalreportdata)                               | Once has Data |
 
-Sequence Flow Process
+# Summary Flow Process
+::: mermaid
+flowchart LR
+    HostSystem[(Host System)]
+    FileXML[[MaterialMaster XML File]]
+
+    P1[HostCommExecutor\nrecvMaterialMasterData()]
+    P2[AbstractXMLDataLoader\nexecute()]
+    P3[Database Connection\nconnect()]
+    P4[WarenaviSystemController\ngetLock(sysCon)]
+
+    DB[(WMS Database)]
+    Lock[(System Lock)]
+
+    HostSystem -->|Send Material Master Data| FileXML
+    FileXML --> P1
+    P1 -->|Parsed XML Data| P2
+    P2 -->|Request DB Connection| P3
+    P3 -->|DB Session| DB
+    P2 -->|Request System Lock| P4
+    P4 -->|Lock Granted| Lock
+::: end
