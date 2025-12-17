@@ -27,22 +27,10 @@
 
 ::: mermaid
 flowchart LR
-    HostSystem[(Host System)]
-    FileXML[[MaterialMaster XML File]]
-
-    P1[HostCommExecutor\nrecvMaterialMasterData()]
-    P2[AbstractXMLDataLoader\nexecute()]
-    P3[Database Connection\nconnect()]
-    P4[WarenaviSystemController\ngetLock(sysCon)]
-
-    DB[(WMS Database)]
-    Lock[(System Lock)]
-
-    HostSystem -->|Send Material Master Data| FileXML
-    FileXML --> P1
-    P1 --> |Parsed XML Data| P2
-    P2 --> |Request DB Connection| P3
-    P3 --> |DB Session| DB
-    P2 --> |Request System Lock| P4
-    P4 --> |Lock Granted| Lock
+    E1["Host System"] --> P1["P1: recvMaterialMasterData"]
+    P1 --> P2["P2: XML Load & Validate"]
+    P2 --> P3["P3: Execute"]
+    P3 --> P4["P4: DB Connect"]
+    P4 --> E2["Warenavi System"]
+    E2 --> P5["P5: getLock"]
 :::
