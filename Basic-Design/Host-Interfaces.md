@@ -59,11 +59,9 @@ end
 ::: mermaid
 flowchart LR
  C1["AbstractXmlDataLoader.java"]
+ C1 --> execute
 
 subgraph execute
- C3["recvMaterialMasterData()"]
- C4["recvStoragePlanPkgData()"]
- C5["recvRetrievalPlanData()"]
- C6["recvResponseData()"]
+ C3["connect()"]
 end
 :::
