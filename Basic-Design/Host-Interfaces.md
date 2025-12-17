@@ -365,7 +365,7 @@ Examples:
 <br>
 <hr>
 
-**Stage 5**
+##**Stage 5**
 Stage 5 finalizes **XML structure validation** and prepares the **execution environment** before actual data processing (parse, validate, DB insert, response generation).
 
 ::: mermaid
@@ -391,3 +391,12 @@ subgraph Sending
  C30["StorageRetrievalResult.xsd"] 
 end 
 :::
+
+####**1. Input from Previous Stage**
+
+From **Stage 4**, you already have:
+*   Java **model classes** (POJO)
+    
+*   Logical mapping between **data types** (Receiving / Sending)
+    
+Now Stage 5 maps these models to **XML schemas (XSD)**.
