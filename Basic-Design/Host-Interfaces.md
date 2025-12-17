@@ -30,7 +30,24 @@ The trigger to start the process is this file.
 
 ::: mermaid
 flowchart LR
-        C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
+        C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]       
+    
+        C1 --> HostCommExecutor
+
+        C12["AbstractXmlDataLoader<br>→execute()"]
+
+        HostCommExecutor --> C12
+        HostCommExecutor --> C12
+        HostCommExecutor --> C12
+        HostCommExecutor --> C12
+        HostCommExecutor --> C12
+        HostCommExecutor --> C12
+        HostCommExecutor --> C12
+        HostCommExecutor --> C12
+        HostCommExecutor --> C12
+        HostCommExecutor --> C12
+
+subgraph HostCommExecutor
         C2["recvMaterialMasterData()<br>→ MaterialMasterDataLoader"]
         C3["recvStoragePlanPkgData()<br>→ StoragePlanPkgDataLoader"]
         C4["recvRetrievalPlanData()<br>→ RetrievalPlanDataLoader"]
@@ -41,29 +58,5 @@ flowchart LR
         C9["sendStorageData()<br>→ StorageReportData"]
         C10["sendRetrievalData()<br>→ RetrievalReportData"]
         C11["sendStorageRetrievalData()<br>→ StorageRetrievalReportData"]
-        C1 --> C2
-        C1 --> C3
-        C1 --> C4
-        C1 --> C5
-        C1 --> C6
-        C1 --> C7
-        C1 --> C8
-        C1 --> C9
-        C1 --> C10
-        C1 --> C11
-
-        C12["AbstractXmlDataLoader<br>→execute()"]
-        C2 --> C12
-        C3 --> C12
-        C4 --> C12
-        C5 --> C12
-        C6 --> C12
-        C7 --> C12
-        C8 --> C12
-        C9 --> C12
-        C10 --> C12
-        C11 --> C12
-
-subgraph HostCommExecutor
 end
 :::
