@@ -36,7 +36,7 @@ flowchart TD
  AbstractXmlDataLoader.java --> setConfig
  setConfig --> getFile
  execute --> |True| finally
- getFile --> |True| finally
+ getFile --> |False| finally
 
 subgraph HostCommExecutor.java
  C2["recvMaterialMasterData()"]
@@ -90,15 +90,10 @@ end
 
 subgraph getFile
  C31["listFile()"]    
-
  Cond2{"host directory ?"}   
-
  C32["setConfig"]
-
  C31 --> Cond2
-
-Cond2 --> |True| C32
-
+ Cond2 --> |True| C32
 end
 
 subgraph finally
