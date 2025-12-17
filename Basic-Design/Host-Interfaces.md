@@ -68,25 +68,6 @@ subgraph execute
  Cond1 --> |FALSE| C2
  Cond1 --> |TRUE| C4["setConfig()"]
 end
-
-subgraph setConfig
- E11["setModel"]
- E12["setSchema"]
- E13["setExchangeEnvironment"]
-
- C21["MaterialMasterDataLoader"] --> E11
- C22["StoragePlanPkgDataLoader"] --> E11
- C23["RetrievalPlanDataLoader"] --> E11
- C24["ResponseDataLoader"] --> E11
- C25["ProductionStorageReportData"] --> E11
- C26["QCStatusUpdateReportData"] --> E11
- C27["InternalLocTransferReportData"] --> E11
- C28["StorageReportData"] --> E11
- C29["RetrievalReportData"] --> E11
- C30["StorageRetrievalReportData"] --> E11
-
- E11--> E12 --> E13
-end
 :::
 
 **Stage 3**
