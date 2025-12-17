@@ -521,7 +521,6 @@ Each outbound payload:
 *   Is ready for **file generation or transmission**
 
 ### **3. Final Transition → `getFile()`**
-
 Once all objects are:
 *   Bound to environment    
 *   Fully validated    
@@ -540,3 +539,29 @@ This step:
 
 <br>
 <hr>
+
+##**Stage 7**
+
+::: mermaid
+flowchart LR
+ E1["getFile()"]
+ C1["setExEnv()"]  
+ C1 --> Receiving --> E1
+ C1 --> Sending --> E1
+
+subgraph Receiving
+ C21["Material (MaterialMaster ID env)"]
+ C22["Pl_Stor (StoragePLanPkg ID env)"] 
+ C23["ShippingProcess (RetrievalPLan ID env)"] 
+ C24["Response (Response ID env)"]
+end
+
+subgraph Sending
+ C25["PalletUpdate (ProductionStorage ID env)"]
+ C26["PalletUpdate (QCStatusUpdate ID env)"]
+ C27["PalletUpdate (InternalLocTransfer ID env)"] 
+ C28["GR or Cancel_GR (StorageResult ID env)"]
+ C29["PalletUpdate (RetrievalResult ID env)"] 
+ C30["PalletUpdate (Storage Retrieval Result ID env)"] 
+end 
+:::
