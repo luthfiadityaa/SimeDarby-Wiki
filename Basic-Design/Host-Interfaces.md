@@ -26,42 +26,23 @@
 # Summary Flow Process
 
 ::: mermaid
-sequenceDiagram
-    autonumber
+flowchart LR
+    HostSystem[(Host System)]
+    FileXML[[MaterialMaster XML File]]
 
-    participant DNSTOCK
-    participant Retrieval for QC Start
-    participant QC Work from Retrieval for QC Start
-    participant Retrieval for Return Stock
-    participant QC Work from Retrieval for Return Stock
-    participant Update QC Status
-    participant Extend Tempering Period
+    P1[HostCommExecutor\nrecvMaterialMasterData()]
+    P2[AbstractXMLDataLoader\nexecute()]
+    P3[Database Connection\nconnect()]
+    P4[WarenaviSystemController\ngetLock(sysCon)]
 
-    %% --- 1. DNSTOCK ---
-    DNSTOCK ->> Retrieval for QC Start: Now >= Tempering Period Date End <br><br> Stock Status: UU <br> Tempering Flag: Not Reached <br> QC Check Flag: Not Done <br> Stock Qty: 60
+    DB[(WMS Database)]
+    Lock[(System Lock)]
 
-
-    %% --- 2. Retrieval for QC Start ---
-    Retrieval for QC Start ->> QC Work from Retrieval for QC Start: Qty To Pick?  2
-
-    %% --- 3. QC Work from Retrieval for QC Start ---
-    QC Work from Retrieval for QC Start ->> DNSTOCK: Stock Qty: (60-2) → 58 <br> QC Duration: (Newest Storage Date + Now) <br> Stock Status: QI <br> Tempering Flag: Reached
-
-    %% --- 4. Retrieval for Return Stock ---
-    DNSTOCK ->> Retrieval for Return Stock: Stock Status: QI <br> Tempering Flag: Reached <br> QC Check Flag: Not Done <br> Stock Qty: 58
-
-    Retrieval for Return Stock ->> QC Work from Retrieval for Return Stock: Qty To Add?  2
-
-    %% --- 5. QC Work from Retrieval for Return Stock ---
-    QC Work from Retrieval for Return Stock ->> DNSTOCK: Stock Qty: (58+2) → 60
-
-    %% --- 6. Update QC Status ---
-    DNSTOCK ->> Update QC Status: Stock Status: QI <br> Tempering Flag: Reached <br> QC Check Flag: Not Done <br> QC Duration: (QC Duration + Now)
-    
-    Update QC Status ->> DNSTOCK: Stock Status: UU <br> QC Check Flag: Done <br> QC Duration: (QC Duration + Now)
-
-    %% --- 7. Extend Tempering Period ---
-    DNSTOCK ->> Extend Tempering Period: Stock Status: QI <br> Tempering Flag: Reached <br> QC Check Flag: Not Done <br> QC Duration: (QC Duration + Now)
-
-    Extend Tempering Period ->> DNSTOCK: Tempering Period: 72 H + Extend Value (3) → 75 <br> Tempering Flag: Not Reached
+    HostSystem -->|Send Material Master Data| FileXML
+    FileXML --> P1
+    P1 -->|Parsed XML Data| P2
+    P2 -->|Request DB Connection| P3
+    P3 -->|DB Session| DB
+    P2 -->|Request System Lock| P4
+    P4 -->|Lock Granted| Lock
 :::
