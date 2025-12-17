@@ -38,7 +38,6 @@ flowchart LR
  C2 --> Receiving --> C13
  C2 --> Sending --> C13
 
-
 subgraph Receiving
  C3["recvMaterialMasterData()"]
  C4["recvStoragePlanPkgData()"]
