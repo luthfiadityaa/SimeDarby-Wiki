@@ -102,7 +102,10 @@ Cond2 --> |True| C32
 end
 
 subgraph finally
- C15["finally"]
+ C51 --> C52
+
+ C51["finally"]
+ C52["getConnection().rollback()"]
 end
 
 :::
