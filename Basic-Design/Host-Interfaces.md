@@ -57,6 +57,12 @@ subgraph Sending
 end
 :::
 
+**serviceHostComm.prj**
+
+*   Acts as the **application entry point**    
+*   Launched via `ConsoleApplicationExecutor`    
+*   Initializes the Host Communication process
+
 **Stage 2**
 ::: mermaid
 flowchart TD
