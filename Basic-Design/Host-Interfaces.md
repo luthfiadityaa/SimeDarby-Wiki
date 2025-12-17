@@ -36,6 +36,7 @@ flowchart TD
  AbstractXmlDataLoader.java --> setConfig
  setConfig --> getFile
  execute --> |True| finally
+ getFile --> |True| finally
 
 subgraph HostCommExecutor.java
  C2["recvMaterialMasterData()"]
