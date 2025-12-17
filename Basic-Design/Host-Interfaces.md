@@ -118,6 +118,7 @@ This section handles **data sent from WMS to the host system**.
 Stage 2 describes how incoming XML data is processed safely by the system, ensuring **exclusive access (locking)** before any configuration or business processing continues.
 
 This stage focuses on **execution control, system connection, and lock validation**.
+
 ::: mermaid
 flowchart TD
  C1["AbstractXmlDataLoader.java"]
@@ -179,6 +180,11 @@ end
 <hr>
 
 **Stage 3**
+
+Stage 3 is responsible for **executing the actual business data loaders** after the system configuration is completed in Stage 2.  
+
+It separates **Receiving** and **Sending** data processes and finally binds the processed data into a unified model.
+
 ::: mermaid
 flowchart LR
  E1["setModel()"]
