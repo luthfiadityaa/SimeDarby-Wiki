@@ -133,6 +133,51 @@ subgraph execute
 end
 :::
 
+### **1. Entry Point**
+**`AbstractXmlDataLoader.java`**
+*   Acts as the **central controller** for XML data processing.    
+*   Responsible for managing execution flow and system safety checks.
+
+### **2. Execute Process**
+**`execute()`**
+*   This method initiates the processing lifecycle.    
+*   It ensures all preconditions are met before data handling continues.
+
+### **3. System Connection**
+**`connect()`**
+*   Attempts to establish a connection with the **Warenavi system**.    
+*   This step is required before any lock or configuration actions.
+
+### **4. System Controller Interaction**
+**`WarenaviSystemController`**
+*   Manages system-level operations.    
+*   Provides lock control to prevent concurrent processing conflicts.
+    
+### **5. Lock Validation Decision**
+**Decision: `!getLock(sysCon)?`**
+*   The system checks whether it can acquire an **exclusive lock**.
+
+#### **If FALSE (Lock not acquired)**
+*   The process:
+    *   Returns back to `connect()`        
+    *   Retries connection and lock acquisition        
+*   This loop prevents unsafe concurrent execution.    
+
+#### **If TRUE (Lock acquired)**
+*   The system proceeds safely to the next step.    
+
+### **6. Configuration Setup**
+**`setConfig()`**
+*   System configuration is initialized.    
+*   Environment and execution parameters are prepared.    
+*   At this point, the system is:
+    *   Connected        
+    *   Locked        
+    *   Safe to process data
+
+<br>
+<hr>
+
 **Stage 3**
 ::: mermaid
 flowchart LR
