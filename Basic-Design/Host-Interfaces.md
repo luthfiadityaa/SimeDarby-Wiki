@@ -73,6 +73,7 @@ end
 **Stage 3**
 ::: mermaid
 flowchart LR
+ E1["setModel()"]
  C1["setConfig()"]  
  C1 --> Receiving 
  C1 --> Sending 
