@@ -304,6 +304,98 @@ subgraph Sending
 end 
 :::
 
+##**Flow Description**
+### 1️⃣ Input from Stage 3: `setModel()`
+*   After Stage 3 selects the correct **DataLoader** (Receiving or Sending),    
+*   `setModel()` is invoked to determine **which Java classes represent the XML data**.
+   
+###**Receiving Flow (Inbound Data)**
+
+When the system is **receiving data from Host**:
+
+### Bound Model Classes
+
+These classes represent **incoming XML payloads**:
+*   `MaterialMaster.class`
+    
+*   `StoragePlanPkg.class`
+    
+*   `RetrievalPlan.class`
+    
+*   `Response.class`
+    
+
+### What Happens Here
+
+*   Each XML file is mapped to its **corresponding JAXB model**
+    
+*   These classes define:
+    *   XML structure
+        
+    *   Field mapping
+        
+    *   Data constraints (length, type, required fields)
+        
+📌 At this point:
+*   XML → Java Object mapping is **fully defined**
+    
+*   But **not yet validated against schema**
+    
+
+* * *
+
+📤 **Sending Flow (Outbound Data)**
+-----------------------------------
+
+When the system is **sending data to Host**:
+
+### Bound Model Classes
+
+These classes represent **outgoing result/report data**:
+*   `ProductionStorage.class`
+    
+*   `QCStatusUpdate.class`
+    
+*   `InternalLocTransfer.class`
+    
+*   `StorageResult.class`
+    
+*   `RetrievalResult.class`
+    
+*   `StorageRetrievalResult.class`
+    
+
+### What Happens Here
+
+*   Internal processing results are converted into **standardized outbound models**
+    
+*   These models are later:
+    *   Serialized into XML
+        
+    *   Validated
+        
+    *   Sent to Host
+        
+
+* * *
+
+🔧 **Schema Preparation: `setSchema()`**
+----------------------------------------
+
+After model binding is complete:
+
+### `setSchema()` is executed
+
+This step:
+*   Associates each model with its **XSD definition**
+    
+*   Prepares **XML schema validation** for the next stage
+    
+📌 Examples:
+*   `MaterialMaster.class` → `MaterialMaster.xsd`
+    
+*   `RetrievalPlan.class` → `RetrievalPlan.xsd`
+
 **Stage 5**
 ::: mermaid
 flowchart LR
