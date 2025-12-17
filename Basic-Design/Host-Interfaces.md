@@ -338,48 +338,29 @@ When the system is **sending data to Host**:
 ####**3.1 Bound Model Classes**
 
 These classes represent **outgoing result/report data**:
-*   `ProductionStorage.class`
-    
-*   `QCStatusUpdate.class`
-    
-*   `InternalLocTransfer.class`
-    
-*   `StorageResult.class`
-    
-*   `RetrievalResult.class`
-    
-*   `StorageRetrievalResult.class`
-    
+*   `ProductionStorage.class`    
+*   `QCStatusUpdate.class`    
+*   `InternalLocTransfer.class`    
+*   `StorageResult.class`    
+*   `RetrievalResult.class`    
+*   `StorageRetrievalResult.class`    
 
-### What Happens Here
-
-*   Internal processing results are converted into **standardized outbound models**
-    
+####**3.2 What Happens Here**
+*   Internal processing results are converted into **standardized outbound models**    
 *   These models are later:
-    *   Serialized into XML
-        
-    *   Validated
-        
-    *   Sent to Host
-        
+    *   Serialized into XML        
+    *   Validated        
+    *   Sent to Host        
 
-* * *
-
-🔧 **Schema Preparation: `setSchema()`**
-----------------------------------------
-
-After model binding is complete:
-
-### `setSchema()` is executed
+###**4. Schema Preparation: `setSchema()`**
+After model binding is complete: `setSchema()` is executed
 
 This step:
-*   Associates each model with its **XSD definition**
-    
+*   Associates each model with its **XSD definition**    
 *   Prepares **XML schema validation** for the next stage
     
-📌 Examples:
-*   `MaterialMaster.class` → `MaterialMaster.xsd`
-    
+Examples:
+*   `MaterialMaster.class` → `MaterialMaster.xsd`    
 *   `RetrievalPlan.class` → `RetrievalPlan.xsd`
 
 **Stage 5**
