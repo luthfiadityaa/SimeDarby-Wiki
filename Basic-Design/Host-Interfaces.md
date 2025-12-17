@@ -320,7 +320,7 @@ These classes represent **incoming XML payloads**:
 *   `RetrievalPlan.class`    
 *   `Response.class`    
 
-#### 2.2 What Happens Here
+####**2.2 What Happens Here**
 
 *   Each XML file is mapped to its **corresponding JAXB model**
     
