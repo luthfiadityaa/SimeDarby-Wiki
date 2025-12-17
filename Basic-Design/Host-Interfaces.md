@@ -57,21 +57,19 @@ subgraph Sending
 end
 :::
 
-**serviceHostComm.prj**
-
+###**serviceHostComm.prj**
 *   Acts as the **application entry point**    
 *   Launched via `ConsoleApplicationExecutor`    
 *   Initializes the Host Communication process
 
-**HostCommExecutor.java**
-
+###**HostCommExecutor.java**
 *   Central **orchestrator**    
 *   Determines **what type of data** to process    
 *   Routes execution to:
     *   **Receiving flow** (incoming data from host)        
     *   **Sending flow** (outgoing data to host)
 
-**Receiving Flow (Inbound Data)**
+####**Receiving Flow (Inbound Data)**
 This section handles **data received from the external host system**.
 
 **Receiving functions:**
@@ -80,7 +78,7 @@ This section handles **data received from the external host system**.
 *   `recvRetrievalPlanData()`    
 *   `recvResponseData()`    
 
-**What happens:**
+#####**What happens:**
 1.  Host sends XML data    
 2.  `HostCommExecutor` detects the data type    
 3.  Corresponding `recvXXX()` method is called    
@@ -89,7 +87,7 @@ This section handles **data received from the external host system**.
     *   Performs validation        
     *   Passes control to `AbstractXmlDataLoader.java`
 
-**Sending Flow (Outbound Data)**
+####**Sending Flow (Outbound Data)**
 This section handles **data sent from WMS to the host system**.
 
 **Sending functions:**
@@ -100,7 +98,7 @@ This section handles **data sent from WMS to the host system**.
 *   `sendRetrievalData()`    
 *   `sendStorageRetrievalData()`    
 
-**What happens:**
+#####**What happens:**
 1.  `HostCommExecutor` triggers sending based on system events    
 2.  Each `sendXXX()` method:
     *   Collects data from DB        
