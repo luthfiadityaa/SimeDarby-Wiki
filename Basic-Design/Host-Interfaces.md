@@ -305,27 +305,22 @@ end
 :::
 
 ##**Flow Description**
-### 1️⃣ Input from Stage 3: `setModel()`
+### **1. Input from Stage 3:** `setModel()`
 *   After Stage 3 selects the correct **DataLoader** (Receiving or Sending),    
 *   `setModel()` is invoked to determine **which Java classes represent the XML data**.
    
-###**Receiving Flow (Inbound Data)**
+###**2. Receiving Flow (Inbound Data)**
 
 When the system is **receiving data from Host**:
 
-### Bound Model Classes
-
+####**2.1 Bound Model Classes**
 These classes represent **incoming XML payloads**:
-*   `MaterialMaster.class`
-    
-*   `StoragePlanPkg.class`
-    
-*   `RetrievalPlan.class`
-    
-*   `Response.class`
-    
+*   `MaterialMaster.class`    
+*   `StoragePlanPkg.class`    
+*   `RetrievalPlan.class`    
+*   `Response.class`    
 
-### What Happens Here
+#### 2.2 What Happens Here
 
 *   Each XML file is mapped to its **corresponding JAXB model**
     
