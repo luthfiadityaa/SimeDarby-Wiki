@@ -97,7 +97,7 @@ subgraph getFile
  C32["setConfig"]
  C33["finally"]
 
- C31 --> Cond1
+ C31 --> Cond2
 
 Cond2 --> |True| C32
 Cond2 --> |False| C33
