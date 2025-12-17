@@ -30,11 +30,6 @@ The trigger to start the process is this file.
 
 ::: mermaid
 flowchart LR
-    A[SAP] -->|Send XML via SFTP| B[(FTP Folder)]
-    B -->|GET XML| C[HostCommExecutor]
-    C -->|Insert Data| E[(DMItem)]
-    C -->|Insert Data| F[(DNHostSend)]
-
     subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
         C2["recvMaterialMasterData()<br>→ MaterialMasterDataLoader"]
