@@ -72,16 +72,18 @@ subgraph setConfig
  E11["setModel"]
  E12["setSchema"]
 
- C21["MaterialMasterDataLoader"] --> E11 --> E12
- C22["StoragePlanPkgDataLoader"] --> E11 --> E12
- C23["RetrievalPlanDataLoader"] --> E11 --> E12
- C24["ResponseDataLoader"] --> E11 --> E12
- C25["ProductionStorageReportData"] --> E11 --> E12
- C26["QCStatusUpdateReportData"] --> E11 --> E12
- C27["InternalLocTransferReportData"] --> E11 --> E12
- C28["StorageReportData"] --> E11 --> E12
- C29["RetrievalReportData"] --> E11 --> E12
- C30["StorageRetrievalReportData"] --> E11 --> E12
+ E11--> E12
+
+ C21["MaterialMasterDataLoader"] --> E11
+ C22["StoragePlanPkgDataLoader"] --> E11
+ C23["RetrievalPlanDataLoader"] --> E11
+ C24["ResponseDataLoader"] --> E11
+ C25["ProductionStorageReportData"] --> E11
+ C26["QCStatusUpdateReportData"] --> E11
+ C27["InternalLocTransferReportData"] --> E11
+ C28["StorageReportData"] --> E11
+ C29["RetrievalReportData"] --> E11
+ C30["StorageRetrievalReportData"] --> E11
 
             
 end
