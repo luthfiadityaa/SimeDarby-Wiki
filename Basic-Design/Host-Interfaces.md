@@ -544,8 +544,10 @@ This step:
 
 ::: mermaid
 flowchart LR
- C1["getFile()"]  
- C2["checkDataHostDirectory()"]
+ C1["getFile()"] --> C2["checkDataHostDirectory()"]
+ C2 --> Cond1
  Cond1{"listFiles() ?"} 
+ Cond1 --> |FALSE| --> C3[RollBack to Stage 1]
+ Cond1 --> |TRUE| --> C4["checkFileName(f)"]
 end 
 :::
