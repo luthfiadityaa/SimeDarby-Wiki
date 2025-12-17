@@ -34,8 +34,7 @@ The trigger to start the process is this file.
 `C:\daifuku\wms\tomcat\webapps\wms\serviceHostComm.prj`
 
 ##**Stage 1**
-
-This stage describes how the **Host Communication subsystem** handles **incoming and outgoing XML-based data** between an external host system and the internal WMS logic.
+Stage 1 describes how the **Host Communication subsystem** handles **incoming and outgoing XML-based data** between an external host system and the internal WMS logic.
 It is divided into **Receiving** and **Sending** processes, coordinated by `HostCommExecutor.java`.
 ::: mermaid
 flowchart LR
@@ -276,6 +275,12 @@ This model is later used for:
 <hr>
 
 **Stage 4**
+
+Stage 4 is responsible for **binding concrete Java model classes** and **preparing XML schema definitions (XSD)** so the system can **validate and process XML data structurally**.
+This stage bridges:
+
+> **Data Loader logic (Stage 3)** → **Concrete domain models + schema validation**
+
 ::: mermaid
 flowchart LR
  E1["setSchema()"]
