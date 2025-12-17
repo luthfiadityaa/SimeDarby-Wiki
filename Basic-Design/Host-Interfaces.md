@@ -44,4 +44,4 @@ flowchart LR
     P3 -->|DB Session| DB
     P2 -->|Request System Lock| P4
     P4 -->|Lock Granted| Lock
-::: end
+:::
