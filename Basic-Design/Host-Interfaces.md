@@ -550,4 +550,5 @@ flowchart LR
  Cond2 --> |FALSE| C3
  Cond2 --> |TRUE| Cond3{"checkFileName() ?"} 
  Cond3 --> |FALSE| C1
+ Cond3 --> |TRUE| Cond4{"checkDuplicatedFile() ?"} 
 :::
