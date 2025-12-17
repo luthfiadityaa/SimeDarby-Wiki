@@ -112,7 +112,9 @@ This section handles **data sent from WMS to the host system**.
     *   Sends XML to the host        
 3.  Uses shared logic from `AbstractXmlDataLoader.java` where applicable
 
-**Stage 2**
+##**Stage 2**
+Stage 2 describes how incoming XML data is processed safely by the system, ensuring **exclusive access (locking)** before any configuration or business processing continues.
+This stage focuses on **execution control, system connection, and lock validation**.
 ::: mermaid
 flowchart TD
  C1["AbstractXmlDataLoader.java"]
