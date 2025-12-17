@@ -39,18 +39,18 @@ flowchart LR
 
 
 subgraph Receiving
- C2["recvMaterialMasterData()"]
- C3["recvStoragePlanPkgData()"]
- C4["recvRetrievalPlanData()"]
- C5["recvResponseData()"]
+ C3["recvMaterialMasterData()"]
+ C4["recvStoragePlanPkgData()"]
+ C5["recvRetrievalPlanData()"]
+ C6["recvResponseData()"]
 end
 
 subgraph Sending
- C6["sendProductionStorageData()"]
- C7["sendQCStatusUpdateData()"]
- C8["sendInternalLocTransferData()"]
- C9["sendStorageData()"]
- C10["sendRetrievalData()"]
- C11["sendStorageRetrievalData()"]
+ C7["sendProductionStorageData()"]
+ C8["sendQCStatusUpdateData()"]
+ C9["sendInternalLocTransferData()"]
+ C10["sendStorageData()"]
+ C11["sendRetrievalData()"]
+ C12["sendStorageRetrievalData()"]
 end
 :::
