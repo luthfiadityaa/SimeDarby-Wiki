@@ -322,25 +322,17 @@ These classes represent **incoming XML payloads**:
 
 ####**2.2 What Happens Here**
 
-*   Each XML file is mapped to its **corresponding JAXB model**
-    
+*   Each XML file is mapped to its **corresponding JAXB model**    
 *   These classes define:
-    *   XML structure
-        
-    *   Field mapping
-        
+    *   XML structure        
+    *   Field mapping        
     *   Data constraints (length, type, required fields)
         
 📌 At this point:
-*   XML → Java Object mapping is **fully defined**
-    
+*   XML → Java Object mapping is **fully defined**    
 *   But **not yet validated against schema**
-    
 
-* * *
-
-📤 **Sending Flow (Outbound Data)**
------------------------------------
+###**3. Sending Flow (Outbound Data)**
 
 When the system is **sending data to Host**:
 
