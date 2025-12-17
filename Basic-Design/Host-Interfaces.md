@@ -559,3 +559,65 @@ flowchart LR
  Cond4 --> |FALSE| C4["convertToEntity() -> validateXml()"]
 :::
 
+**Detailed Flow Description**
+
+### **1. getFile()**
+*   The process starts by requesting a file candidate from the host directory.    
+*   This function does **not assume the file exists yet**.    
+
+### **2. checkDataHostDirectory()**
+*   Verifies whether the **host data directory exists and is accessible**.    
+**Decision:**
+*   **FALSE** → Roll back to **Stage 1**  
+    (System waits or reinitializes host communication)    
+*   **TRUE** → Continue to `listFiles()`
+
+### **3. listFiles()**
+*   Retrieves the list of files from the host directory.
+**Decision:**
+*   **FALSE (empty or error)** → Roll back to **Stage 1**    
+*   **TRUE** → Continue to `checkFileName()`
+
+### **4. checkFileName()**
+*   Validates file naming rules, such as:
+    *   Prefix (e.g., `Material_`)        
+    *   ID format        
+    *   Timestamp        
+    *   Sequence number        
+    *   Extension (`.xml`)
+        
+**Decision:**
+*   **FALSE** → Return to `getFile()`  
+    (Skip invalid file and continue scanning)    
+*   **TRUE** → Continue to `checkDuplicatedFile()`
+
+### **5. checkDuplicatedFile()**
+
+*   Determines whether the file:
+    *   Has already been processed        
+    *   Exists in history / backup / error directories        
+    *   Has the same unique key (ID + timestamp)
+        
+**Decision:**
+*   **TRUE (duplicate)** → Return to `getFile()`  
+    (Ignore duplicate and scan next file)    
+*   **FALSE (new file)** → Continue to processing
+
+### **6. convertToEntity()**
+*   Converts XML file into Java objects (JAXB unmarshalling).    
+*   Maps XML elements to domain models.
+
+### **7. validateXml()**
+
+*   Performs validation such as:
+    *   XSD validation        
+    *   Mandatory field checks        
+    *   Length / type validation        
+    *   Business rule validation
+        
+**Successful validation → Proceed to Stage 8 (business processing)**.
+
+<br>
+<hr>
+
+##**Stage 8**
