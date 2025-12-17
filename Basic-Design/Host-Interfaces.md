@@ -552,5 +552,5 @@ flowchart LR
  Cond3 --> |FALSE| C1
  Cond3 --> |TRUE| Cond4{"checkDuplicatedFile() ?"} 
  Cond4 --> |TRUE| C1
- Cond4 --> |FALSE| C4["convertToEntity()"]
+ Cond4 --> |FALSE| C4["convertToEntity() -> validateXml()"]
 :::
