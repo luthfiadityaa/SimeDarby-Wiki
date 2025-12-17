@@ -62,6 +62,9 @@ flowchart LR
  C1 --> execute
 
 subgraph execute
- C3["connect()"]
+ C2 --> C3
+
+ C2["connect()"]
+ C3["WarenaviSystemController]
 end
 :::
