@@ -545,7 +545,7 @@ This step:
 ::: mermaid
 flowchart LR
  E1["getFile()"]
- C1["setExEnv()"]  
+ C1["getFile()"]  
  C1 --> Receiving --> E1
  C1 --> Sending --> E1
 
