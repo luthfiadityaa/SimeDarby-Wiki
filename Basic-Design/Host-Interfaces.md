@@ -74,11 +74,8 @@ end
 ::: mermaid
 flowchart LR
  C1["setConfig()"]  
- C2["HostCommExecutor.java"]
- C13["AbstractXmlDataLoader.java"]
- C1 --> C2
- C2 --> Receiving --> C13
- C2 --> Sending --> C13
+ C1 --> Receiving 
+ C1 --> Sending 
 
 subgraph Receiving
  C3["recvMaterialMasterData()"]
