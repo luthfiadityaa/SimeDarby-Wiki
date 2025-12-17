@@ -53,10 +53,10 @@ end
 
 subgraph execute
  C13["connect()"]
- C14["sysCon = WarenaviSystemController"]
+ C14["WarenaviSystemController"]
  C15["!getLock(sysCon)"]
  
- C13 --> C14        
+ C13 --> C14 --> C15      
 end
 
 :::
