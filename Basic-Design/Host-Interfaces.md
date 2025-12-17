@@ -35,6 +35,7 @@ flowchart TD
  HostCommExecutor.java --> AbstractXmlDataLoader.java
  AbstractXmlDataLoader.java --> setConfig
  setConfig --> getFile
+ C15["finally"]
 
 subgraph HostCommExecutor.java
  C2["recvMaterialMasterData()"]
@@ -60,7 +61,6 @@ subgraph execute
  Cond1{"!getLock(sysCon)"} 
 
  C16["setConfig"]
- C15["finally"]
 
  C13 --> C14 --> Cond1
  Cond1 --> |False| C16
