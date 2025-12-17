@@ -304,7 +304,6 @@ subgraph Sending
 end 
 :::
 
-##**Flow Description**
 ### **1. Input from Stage 3:** `setModel()`
 *   After Stage 3 selects the correct **DataLoader** (Receiving or Sending),    
 *   `setModel()` is invoked to determine **which Java classes represent the XML data**.
