@@ -89,6 +89,25 @@ This section handles **data received from the external host system**.
     *   Performs validation        
     *   Passes control to `AbstractXmlDataLoader.java`
 
+**Sending Flow (Outbound Data)**
+This section handles **data sent from WMS to the host system**.
+
+**Sending functions:**
+*   `sendProductionStorageData()`    
+*   `sendQCStatusUpdateData()`    
+*   `sendInternalQCTransferData()`    
+*   `sendStorageData()`    
+*   `sendRetrievalData()`    
+*   `sendStorageRetrievalData()`    
+
+### What happens:
+1.  `HostCommExecutor` triggers sending based on system events    
+2.  Each `sendXXX()` method:
+    *   Collects data from DB        
+    *   Generates XML        
+    *   Sends XML to the host        
+3.  Uses shared logic from `AbstractXmlDataLoader.java` where applicable
+
 **Stage 2**
 ::: mermaid
 flowchart TD
