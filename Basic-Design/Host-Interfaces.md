@@ -62,9 +62,10 @@ flowchart LR
  C1 --> execute
 
 subgraph execute
- C2 --> C3
+ C2 --> C3 --> Cond1
 
  C2["connect()"]
  C3["WarenaviSystemController"]
+ Cond1{"!getLock(sysCon)"} 
 end
 :::
