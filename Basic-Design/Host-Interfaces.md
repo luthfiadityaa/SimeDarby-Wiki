@@ -33,6 +33,20 @@
 The trigger to start the process is this file.
 `C:\daifuku\wms\tomcat\webapps\wms\serviceHostComm.prj`
 
+**Overall End-to-End Flow Summary (Stage 1 → Stage 6)**
+-------------------------------------------------------
+
+| Stage | Responsibility |
+| --- | --- |
+| Stage 1 | Host communication & routing |
+| Stage 2 | System connection & locking |
+| Stage 3 | DataLoader selection |
+| Stage 4 | Java model binding |
+| Stage 5 | XSD schema validation |
+| Stage 6 | Environment binding & file resolution |
+| Stage 7 | Environment binding & file resolution |
+| Stage 8 | TODO |
+
 ##**Stage 1**
 Stage 1 describes how the **Host Communication subsystem** handles **incoming and outgoing XML-based data** between an external host system and the internal WMS logic.
 It is divided into **Receiving** and **Sending** processes, coordinated by `HostCommExecutor.java`.
