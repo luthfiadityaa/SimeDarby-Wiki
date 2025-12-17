@@ -63,4 +63,7 @@ flowchart LR
         C9 --> C12
         C10 --> C12
         C11 --> C12
+
+subgraph HostCommExecutor
+end
 :::
