@@ -71,8 +71,9 @@ subgraph setConfig
 
  E11["setModel"]
  E12["setSchema"]
+ E13["setExchangeEnvironment"]
 
- E11--> E12
+ E11--> E12 --> E13
 
  C21["MaterialMasterDataLoader"] --> E11
  C22["StoragePlanPkgDataLoader"] --> E11
