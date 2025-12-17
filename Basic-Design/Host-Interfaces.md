@@ -41,7 +41,7 @@ flowchart LR
         C3["recvStoragePlanPkgData()<br>→ StoragePlanPkgDataLoader"]
         C4["recvRetrievalPlanData()<br>→ RetrievalPlanDataLoader"]
         C1 --> C2
-C1 --> C2
-C1 --> C2
+        C1 --> C3
+        C1 --> C4
     end
 :::
