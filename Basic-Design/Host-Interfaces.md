@@ -51,11 +51,11 @@ subgraph HostCommExecutor.java
         C2["recvMaterialMasterData()<br>→ MaterialMasterDataLoader"]
         C3["recvStoragePlanPkgData()<br>→ StoragePlanPkgDataLoader"]
         C4["recvRetrievalPlanData()<br>→ RetrievalPlanDataLoader"]
-        C5["recvResponseData()<br>→ ResponseDataLoader"]\n
+        C5["recvResponseData()<br>→ ResponseDataLoader"]
         C6["sendProductionStorageData()<br>→ ProductionStorageReportData"]
         C7["sendQCStatusUpdateData()<br>→ QCStatusUpdateReportData"]
         C8["sendInternalLocTransferData()<br>→ InternalLocTransferReportData"]
-        C9["sendStorageData()<br>→ StorageReportData"]\n
+        C9["sendStorageData()<br>→ StorageReportData"]
         C10["sendRetrievalData()<br>→ RetrievalReportData"]
         C11["sendStorageRetrievalData()<br>→ StorageRetrievalReportData"]
 end
