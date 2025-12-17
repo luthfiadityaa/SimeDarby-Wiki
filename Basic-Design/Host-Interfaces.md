@@ -37,7 +37,7 @@ flowchart TD
 setConfig --> getFile
 
 subgraph HostCommExecutor.java
- C2["recvMaterialMasterData()"]
+ C2["recvMaterialMasterData()"] --> execute
  C3["recvStoragePlanPkgData()"]
  C4["recvRetrievalPlanData()"]
  C5["recvResponseData()"]
