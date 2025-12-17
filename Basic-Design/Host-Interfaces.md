@@ -57,7 +57,7 @@ end
 
 **Stage 2**
 ::: mermaid
-flowchart LR
+flowchart TD
  C1["AbstractXmlDataLoader.java"]
  C1 --> execute --> setConfig
 
