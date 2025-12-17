@@ -220,7 +220,7 @@ end
 **Objective:**  
 Process incoming XML data from the host system and convert it into internal domain objects.
 
-#### **2.1Receiving Loaders**
+#### **2.1 Receiving Loaders**
 Each loader handles **one specific inbound data type**:
 *   `MaterialMasterDataLoader`    
 *   `StoragePlanPkgDataLoader`    
@@ -237,12 +237,12 @@ For each incoming XML file:
     
 ➡ All receiving loaders follow the **same abstract execution pattern** inherited from `AbstractXmlDataLoader`.
 
-**3. Sending Flow (Outbound Data)**
+###**3. Sending Flow (Outbound Data)**
 
 **Objective:**  
 Generate outbound data based on internal system state and send it to the host.
 
-### **Sending Report Generators**
+#### **3.1 Sending Report Generators**
 Each report represents a **specific business message**:
 *   `ProductionStorageReportData`    
 *   `QCStatusUpdateReportData`    
@@ -251,7 +251,7 @@ Each report represents a **specific business message**:
 *   `RetrievalReportData`    
 *   `StorageRetrievalReportData`   
 
-### **Process**
+### **3.2 Process**
 For each outbound data type:
 1.  Collect required business data    
 2.  Transform data into report format    
