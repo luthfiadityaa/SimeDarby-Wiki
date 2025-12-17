@@ -76,7 +76,7 @@ flowchart LR
  E1["setModel()"]
  C1["setConfig()"]  
  C1 --> Receiving -->E1
- C1 --> Sending --E1
+ C1 --> Sending -->E1
 
 subgraph Receiving
  C21["MaterialMasterDataLoader"]
@@ -98,7 +98,7 @@ end
 **Stage 4**
 ::: mermaid
 flowchart LR
- C1["setConfig()"]  
+ C1["setModel()"]  
  C1 --> Receiving 
  C1 --> Sending 
 
