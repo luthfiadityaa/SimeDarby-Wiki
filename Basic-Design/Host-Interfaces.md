@@ -441,6 +441,13 @@ These ensure:
 <hr>
 
 ##**Stage 6**
+At this stage, the system has already:
+*   Loaded models    
+*   Applied schemas (XSD)    
+*   Set execution environment (`setExEnv()`)
+    
+Now it **binds runtime environment IDs** and **resolves the actual files to be processed or generated**.
+
 ::: mermaid
 flowchart LR
  E1["getFile()"]
