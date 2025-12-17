@@ -335,8 +335,7 @@ These classes represent **incoming XML payloads**:
 ###**3. Sending Flow (Outbound Data)**
 
 When the system is **sending data to Host**:
-
-### Bound Model Classes
+####**3.1 Bound Model Classes**
 
 These classes represent **outgoing result/report data**:
 *   `ProductionStorage.class`
