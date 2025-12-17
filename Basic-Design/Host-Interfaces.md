@@ -40,6 +40,10 @@ flowchart LR
         C2["recvMaterialMasterData()<br>→ MaterialMasterDataLoader"]
         C3["recvStoragePlanPkgData()<br>→ StoragePlanPkgDataLoader"]
         C4["recvRetrievalPlanData()<br>→ RetrievalPlanDataLoader"]
+        C5["recvResponseData()<br>→ ResponseDataLoader"]
+        C6["sendProductionStorageData()<br>→ ProductionStorageReportData"]
+        C7["sendQCStatusUodateData()<br>→ QCStatusUpdateReportData"]
+        C8["sendQCStatusUodateData()<br>→ QCStatusUpdateReportData"]
         C1 --> C2
         C1 --> C3
         C1 --> C4
