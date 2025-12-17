@@ -546,8 +546,7 @@ This step:
 flowchart LR
  C1["getFile()"] --> Cond1{"checkDataHostDirectory() ?"}
  Cond1 --> |FALSE| C3[RollBack to Stage 1]
- Cond2 --> |TRUE| Cond2{"listFiles() ?"}  
- Cond2 --> |FALSE| --> C3
- Cond2 --> |TRUE| --> C4["checkFileName(f)"] 
-end 
+ Cond1 --> |TRUE| Cond2{"listFiles() ?"}  
+ Cond2 --> |FALSE| C3
+ Cond2 --> |TRUE| C4["checkFileName(f)"]
 :::
