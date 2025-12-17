@@ -35,7 +35,6 @@ flowchart TD
  HostCommExecutor.java --> AbstractXmlDataLoader.java
  AbstractXmlDataLoader.java --> setConfig
  setConfig --> getFile
- C15["finally"]
 
 subgraph HostCommExecutor.java
  C2["recvMaterialMasterData()"]
@@ -85,7 +84,6 @@ subgraph setConfig
  C28["StorageReportData"] --> E11
  C29["RetrievalReportData"] --> E11
  C30["StorageRetrievalReportData"] --> E11
-
             
 end
 
@@ -101,5 +99,7 @@ subgraph getFile
 Cond2 --> |True| C32
 
 end
+
+ C15["finally"]
 
 :::
