@@ -33,7 +33,7 @@ The trigger to start the process is this file.
 flowchart LR
  C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]  
  C2["HostCommExecutor.java"]
- C13["AbstracXmlDataLoader.java"]
+ C13["AbstracTXmlDataLoader.java"]
  C1 --> C2
  C2 --> Receiving --> C13
  C2 --> Sending --> C13
