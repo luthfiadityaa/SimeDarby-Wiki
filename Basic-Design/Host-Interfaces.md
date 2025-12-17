@@ -63,19 +63,19 @@ subgraph Sending
 end
 :::
 
-###**serviceHostComm.prj**
+###**1. serviceHostComm.prj**
 *   Acts as the **application entry point**    
 *   Launched via `ConsoleApplicationExecutor`    
 *   Initializes the Host Communication process
 
-###**HostCommExecutor.java**
+###**2. HostCommExecutor.java**
 *   Central **orchestrator**    
 *   Determines **what type of data** to process    
 *   Routes execution to:
     *   **Receiving flow** (incoming data from host)        
     *   **Sending flow** (outgoing data to host)
 
-####**Receiving Flow (Inbound Data)**
+####**2.1 Receiving Flow (Inbound Data)**
 This section handles **data received from the external host system**.
 
 **Receiving functions:**
@@ -93,7 +93,7 @@ This section handles **data received from the external host system**.
     *   Performs validation        
     *   Passes control to `AbstractXmlDataLoader.java`
 
-####**Sending Flow (Outbound Data)**
+####**2.2 Sending Flow (Outbound Data)**
 This section handles **data sent from WMS to the host system**.
 
 **Sending functions:**
