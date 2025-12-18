@@ -33,7 +33,7 @@
 The trigger to start the process is this file.
 `C:\daifuku\wms\tomcat\webapps\wms\serviceHostComm.prj`
 
-**Overall End-to-End Flow Summary (Stage 1 → Stage 6)**
+**Overall End-to-End Flow Summary (Stage 1 → Stage 7)**
 -------------------------------------------------------
 
 | Stage | Responsibility |
