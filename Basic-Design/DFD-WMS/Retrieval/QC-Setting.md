@@ -69,8 +69,9 @@ sequenceDiagram
 --------------------------------------
 
 **Filter:** 
-`Now() >= (Storage Date + Tempering Perios)`
-`StockStatus = UU` 
+`Now() >= (Storage Date + Tempering Period)`
+`StockStatus = UU`
+`TemperingFlag = 0` 
 
 **Data will be showing following criteria:**
 * Tempering Period: 72 H    
