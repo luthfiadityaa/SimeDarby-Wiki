@@ -22,11 +22,10 @@ Tempering Period will use the **Storage Date & Time** for calculate.
 Tempering checker monitoring will run every 10 Seconds, following below parameter: `TEMPERING_CHECKER_SEC = 10000`
 
 * Search stock with the following conditions:
-  * Current date is greater than or equal to Storage Date + Tempering Period.
-  * Stock Status = UU.
-  * Tempering Flag = 0 (Not Reached)
+  * `Current date` is greater than or equal to `Storage Date + Tempering Period`.
+  * `Stock Status = UU`.
+  * `Tempering Flag = 0 (Not Reached)`
 
-<br>
 
 ## **QC Sequence Process**
 
