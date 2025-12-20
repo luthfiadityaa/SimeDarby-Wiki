@@ -19,7 +19,7 @@ Tempering Period will use the **Storage Date & Time** for calculate.
 ## **Tempering Flag Checker**
 `jp.co.daifuku.asrs.transmission.TemperingChecker`
 
-Tempering checker monitoring will run every 10 Seconds
+Tempering checker monitoring will run every 10 Seconds, following below parameter:
 `TEMPERING_CHECKER_SEC = 10000`
 
 * Search stock with the following conditions:
