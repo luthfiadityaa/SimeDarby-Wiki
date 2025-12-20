@@ -26,6 +26,8 @@ Tempering checker monitoring will run every 10 Seconds, following below paramete
   * `Stock Status = UU`.
   * `Tempering Flag = 0 (Not Reached)`
 
+* Update toconditions:
+  * `Tempering Flag = 1 (Reached)`.
 
 ## **QC Sequence Process**
 
