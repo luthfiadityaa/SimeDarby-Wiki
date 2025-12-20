@@ -30,7 +30,7 @@ To optimize data processing, the limit is set to `100 records` per process.
   * `Stock Status = UU`.
   * `Tempering Flag = 0 (Not Reached)`
 
-* Update toconditions:
+* Update Tempering Flag when the tempering time is not or up:
   * `Tempering Flag = 1 (Reached)`.
 
 ## **QC Sequence Process**
