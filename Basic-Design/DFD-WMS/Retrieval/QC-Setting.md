@@ -17,10 +17,10 @@ Tempering Period will use the **Storage Date & Time** for calculate.
 
 
 ## **Tempering Flag Checker**
-@<5841075A-3462-65B0-8512-76DD7AE397C1> 
 `jp.co.daifuku.asrs.transmission.TemperingChecker`
-Please see this process and create the checker process.
 
+Tempering checker monitoring will run every 10 Seconds
+`TEMPERING_CHECKER_SEC = 10000`
 
 <br>
 
