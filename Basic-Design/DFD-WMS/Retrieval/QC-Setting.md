@@ -21,7 +21,9 @@ This class to check the Tempering Period if passed.
 
 `jp.co.daifuku.asrs.transmission.TemperingChecker`
 
-Tempering checker monitoring will run every 10 Seconds, following below parameter: `TEMPERING_CHECKER_SEC = 10000`
+Tempering checker monitoring will run every 10 Seconds, following below parameter: `TEMPERING_CHECKER_SEC = 10000`. 
+
+To optimize data processing, the limit is set to `100 records` per process.
 
 * Search stock with the following conditions:
   * `Current date` is greater than or equal to `Storage Date + Tempering Period`.
