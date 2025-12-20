@@ -48,7 +48,7 @@ sequenceDiagram
     participant Extend Tempering Period
 
     %% --- 1. DNSTOCK ---
-    DNSTOCK ->> Retrieval for QC Start: Now >= Tempering Period Date End <br><br> Stock Status: UU <br> Tempering Flag: Not Reached <br> QC Check Flag: Not Done <br> Stock Qty: 60
+    DNSTOCK ->> Retrieval for QC Start: Stock Status: UU <br> Tempering Flag: Reached <br> QC Check Flag: Not Done <br> Stock Qty: 60
 
 
     %% --- 2. Retrieval for QC Start ---
@@ -81,7 +81,7 @@ sequenceDiagram
 
 **Filter:** 
 `StockStatus = UU`
-`TemperingFlag = 0` 
+`TemperingFlag = 1` 
 
 **Data will be showing following criteria:**
 * Tempering Period: 72 H    
