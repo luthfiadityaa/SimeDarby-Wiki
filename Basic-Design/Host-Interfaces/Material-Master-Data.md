@@ -13,7 +13,7 @@ flowchart LR
     A[SAP] -->|Send XML via SFTP| B[(FTP Folder)]
     B -->|GET XML| C[HostCommExecutor]
     C -->|Insert Data| E[(DMItem)]
-    C -->|Insert Data| F[(DNHostSend)]
+    C -->|Insert Data| F[(DNExchangeHistory)]
 
     subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
