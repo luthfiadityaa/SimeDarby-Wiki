@@ -17,7 +17,7 @@ flowchart LR
 
     subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
-        C2["recvRetrievalPlanData()<br>→ RetrievalPlanDataLoader"]
+        C2["recvRetrievalPlanData()<br>→ RetrievalPlanHostDataLoader"]
         C1 --> C2
     end
 :::
