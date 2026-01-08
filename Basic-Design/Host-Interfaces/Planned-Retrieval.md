@@ -12,7 +12,7 @@ The trigger to start the process is this file.
 flowchart LR
     A[SAP] -->|Send XML via SFTP| B[(FTP Folder)]
     B -->|GET XML| C[HostCommExecutor]
-    C -->|Insert Data| E[(DNStoragePlan)]
+    C -->|Insert Data| E[(DNRetrievalPlan)]
     C -->|Insert Data| F[(DNExchangeHistory)]
 
     subgraph HostCommExecutor
