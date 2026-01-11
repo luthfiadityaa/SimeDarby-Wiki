@@ -45,9 +45,6 @@ flowchart LR
             <BatchNo>P132/D29P</BatchNo>
             <BatchQuantity>10.000</BatchQuantity>
             <BatchUoM>MT</BatchUoM>
-            <BatchNo>P133/D30P</BatchNo>
-            <BatchQuantity>10.000</BatchQuantity>
-            <BatchUoM>MT</BatchUoM>
         </Batch>
         <ItemNo>20</ItemNo>
         <MaterialCode>3100005422</MaterialCode>
