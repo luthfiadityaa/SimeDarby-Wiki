@@ -24,7 +24,7 @@ flowchart LR
 
 #XML Format
 
-`Name File`: PL_Stor
+`Name File`: PL_Stor_YYYYMMMDDhhmmss.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
