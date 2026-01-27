@@ -718,7 +718,7 @@ X1[(DNExchangeHistory)]
 
 subgraph Error
  C2 --> C3 
- C2 --> C4
+ C2 --> X1
  C4[(DNExchangeHistory)]
  C3[(DNLoadErrorInfo)]
  C2["Set Exchange History as Error Data"] 
