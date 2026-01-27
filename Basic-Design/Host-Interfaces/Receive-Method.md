@@ -335,15 +335,6 @@ subgraph Receiving
  C23["ShippingProcess (RetrievalPLan ID env)"] 
  C24["Response (Response ID env)"]
 end
-
-subgraph Sending
- C25["PalletUpdate (ProductionStorage ID env)"]
- C26["PalletUpdate (QCStatusUpdate ID env)"]
- C27["PalletUpdate (InternalLocTransfer ID env)"] 
- C28["GR or Cancel_GR (StorageResult ID env)"]
- C29["PalletUpdate (RetrievalResult ID env)"] 
- C30["PalletUpdate (Storage Retrieval Result ID env)"] 
-end 
 :::
 
 ### **1. Receiving Flow (Inbound Data Processing)**
