@@ -637,9 +637,9 @@ flowchart LR
 ::: mermaid
 flowchart LR
  C1["AbstractXmlDataLoader.java --> ValidationUtil.validateXml()"]
- C1 --> ValidationUtil
+ C1 --> C2
 
-subgraph ValidationUtil
+subgraph ValidationUtil 
  C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8 --> C9
  C2["Load the XML Schema --> newSchema()"]
  C3["Create a JAXB Context and Unmashaller --> createUnmarshaller()"]
