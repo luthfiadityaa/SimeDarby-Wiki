@@ -709,15 +709,11 @@ style C4 fill:#00cc66,stroke:#006633,color:#ffffff
 
 ##Stage 9
 
-Stage 8 is to validate incoming XML data against its XSD schema and convert it into Java objects with strict validation control.
-
 ::: mermaid
 flowchart LR
- C1["AbstractXmlDataLoader.java --> ValidationUtil.validateXml()"]
- C1 --> C2
- C9 --> Cond1{"isValidationOK ?"}
+Cond1{"isValidationOK ?"}
 
-subgraph ValidationUtil 
+subgraph Process
  C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8 --> C9
  C2["Load the XML Schema --> newSchema()"]
  C3["Create a JAXB Context and Unmashaller --> createUnmarshaller()"]
@@ -728,6 +724,20 @@ subgraph ValidationUtil
  C8["Inject the Custom Filter --> new ValidationUtil()"]
  C9["Perform Unmarshalling and Validation --> unmarshal()"]
 end
+
+subgraph Error
+ C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8 --> C9
+ C2["Load the XML Schema --> newSchema()"]
+ C3["Create a JAXB Context and Unmashaller --> createUnmarshaller()"]
+ C4["setTargetRootElement()"]
+ C5["Apply Schema for Validation --> setSchema()"]
+ C6["Set Custom Handler --> setEventHandler()"]
+ C7["Setup SAX Reader --> newSAXParser.getXMLReader()"]
+ C8["Inject the Custom Filter --> new ValidationUtil()"]
+ C9["Perform Unmarshalling and Validation --> unmarshal()"]
+end
+
+:::
 
 click C2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-5"
 click C4 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-4"
