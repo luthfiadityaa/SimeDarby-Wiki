@@ -640,7 +640,7 @@ flowchart TD
  C1 --> ValidationUtil
 
 subgraph ValidationUtil
- C2 --> C3 --> 
+ C2 --> C3 --> C4
  C2["Load the XML Schema"]
  C3["Create a JAXB Context and Unmashaller"]
  C4["Set Target Root Element"]
