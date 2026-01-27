@@ -47,7 +47,7 @@ The trigger to start the process is this file.
 | [Stage 7](#Stage-7) | File validation, duplication check & processing control |
 | [Stage 8](#Stage-8) | TODO |
 
-##Stage 1
+##Stage 1 - Start Process
 Stage 1 describes how the **Host Communication subsystem** handles **incoming and outgoing XML-based data** between an external host system and the internal WMS logic.
 It is divided into **Receiving** and **Sending** processes, coordinated by `HostCommExecutor.java`.
 ::: mermaid
@@ -707,7 +707,7 @@ style C4 fill:#00cc66,stroke:#006633,color:#ffffff
   - ❌ **No** → validation exception raised            
   - ✅ **Yes** → proceed to next stage
 
-##Stage 9
+##Stage 9 - End Process
 
 ::: mermaid
 flowchart LR
