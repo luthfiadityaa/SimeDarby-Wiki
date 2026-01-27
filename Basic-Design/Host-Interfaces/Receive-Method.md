@@ -19,7 +19,6 @@
 
 ##Stage 1 - Start Process
 Stage 1 describes how the **Host Communication subsystem** handles **incoming and outgoing XML-based data** between an external host system and the internal WMS logic.
-It is divided into **Receiving** and **Sending** processes, coordinated by `HostCommExecutor.java`.
 ::: mermaid
 flowchart LR
  C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]  
@@ -65,17 +64,6 @@ This section handles **data received from the external host system**.
     *   Reads XML files        
     *   Performs validation        
     *   Passes control to `AbstractXmlDataLoader.java`
-
-####**2.2 Sending Flow (Outbound Data)**
-This section handles **data sent from WMS to the host system**.
-
-**Sending functions:**
-*   `sendProductionStorageData()`    
-*   `sendQCStatusUpdateData()`    
-*   `sendInternalQCTransferData()`    
-*   `sendStorageData()`    
-*   `sendRetrievalData()`    
-*   `sendStorageRetrievalData()`    
 
 #####**What happens:**
 1.  `HostCommExecutor` triggers sending based on system events    
@@ -156,14 +144,13 @@ end
 
 Stage 3 is responsible for **executing the actual business data loaders** after the system configuration is completed in Stage 2.  
 
-It separates **Receiving** and **Sending** data processes and finally binds the processed data into a unified model.
+It is **Sending** data processes and finally binds the processed data into a unified model.
 
 ::: mermaid
 flowchart LR
  E1["setModel()"]
  C1["setConfig()"]  
  C1 --> Receiving -->E1
- C1 --> Sending -->E1
 
 subgraph Receiving
  C21["MaterialMasterDataLoader"]
@@ -171,15 +158,6 @@ subgraph Receiving
  C23["RetrievalPlanHostDataLoader"] 
  C24["ResponseDataLoader"]
 end
-
-subgraph Sending
- C25["ProductionStorageReportData"]
- C26["QCStatusUpdateReportData"]
- C27["InternalLocTransferReportData"] 
- C28["StorageReportData"]
- C29["RetrievalReportData"] 
- C30["StorageRetrievalReportData"] 
-end 
 :::
 
 ### **1. Entry Point: `setConfig()`**
