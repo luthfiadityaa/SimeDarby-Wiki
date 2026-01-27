@@ -725,7 +725,7 @@ end
 
 subgraph Process
  B2 --> B3 --> B4 
- B2["Load the XML Schema --> newSchema()"]
+ B2["Load the Selected Model Class --> process()"]
  B3["Create a JAXB Context and Unmashaller --> createUnmarshaller()"]
 end 
 
