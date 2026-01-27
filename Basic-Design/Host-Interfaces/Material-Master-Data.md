@@ -48,6 +48,7 @@ The data will be paired as an input: **Warenavi** ⇄ **SAP**
     <MaterialCode>2900000002</MaterialCode>
     <MaterialName>CRUDE PALM OIL (CPO) v1</MaterialName>
     <QuantityKGCtn>12</QuantityKGCtn>
+    <QuantityCtnPal>56</QuantityCtnPal>
     <UoM>CTN</UoM>
     <MaterialType>ZFNP</MaterialType>
     <DeletionInd>0</DeletionInd>
