@@ -736,7 +736,7 @@ subgraph Process
  Cond2 --> |FALSE| B4 --> |Insert Data| B6
  B4 --> B7
  Cond2 --> |TRUE| Cond3
- Cond3 --> |TRUE| B5 --> B7
+ Cond3 --> |FALSE| B5 --> B7
  Cond3 --> |TRUE| D2
 end 
 
