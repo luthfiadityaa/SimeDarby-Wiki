@@ -746,6 +746,8 @@ subgraph Exception
  D3["Go to the Stage 2"] 
 end
 
-click D3 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-3"
+click B2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-3"
+style B2 fill:#00cc66,stroke:#006633,color:#ffffff
+click D3 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-2"
 style D3 fill:#00cc66,stroke:#006633,color:#ffffff
 :::
