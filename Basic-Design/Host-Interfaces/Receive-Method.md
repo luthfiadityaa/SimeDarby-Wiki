@@ -250,27 +250,7 @@ These classes represent **incoming XML payloads**:
         
 At this point:
 *   XML → Java Object mapping is **fully defined**    
-*   But **not yet validated against schema**
-
-###**3. Sending Flow (Outbound Data)**
-
-When the system is **sending data to Host**:
-####**3.1 Bound Model Classes**
-
-These classes represent **outgoing result/report data**:
-*   `ProductionStorage.class`    
-*   `QCStatusUpdate.class`    
-*   `InternalLocTransfer.class`    
-*   `StorageResult.class`    
-*   `RetrievalResult.class`    
-*   `StorageRetrievalResult.class`    
-
-####**3.2 What Happens Here**
-*   Internal processing results are converted into **standardized outbound models**    
-*   These models are later:
-    *   Serialized into XML        
-    *   Validated        
-    *   Sent to Host        
+*   But **not yet validated against schema** 
 
 ###**4. Schema Preparation: `setSchema()`**
 After model binding is complete: `setSchema()` is executed
