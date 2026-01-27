@@ -45,7 +45,8 @@ The trigger to start the process is this file.
 | [Stage 5](#Stage-5) | XSD schema validation |
 | [Stage 6](#Stage-6) | Environment binding & file resolution |
 | [Stage 7](#Stage-7) | File validation, duplication check & processing control |
-| [Stage 8](#Stage-8) | TODO |
+| [Stage 8](#Stage-8) | XML validation, unmarshalling, and entity conversion |
+| [Stage 9](#Stage-9) | Processing finalization, history recording, and flow rollback control |
 
 ##Stage 1 - Start Process
 Stage 1 describes how the **Host Communication subsystem** handles **incoming and outgoing XML-based data** between an external host system and the internal WMS logic.
