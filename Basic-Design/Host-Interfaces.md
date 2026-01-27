@@ -738,7 +738,5 @@ subgraph Process
 end 
 
 click B2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-3"
-click B3 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-4"
 style B2 fill:#00cc66,stroke:#006633,color:#ffffff
-style B3 fill:#00cc66,stroke:#006633,color:#ffffff
 :::
