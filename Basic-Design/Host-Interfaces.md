@@ -712,10 +712,12 @@ style C4 fill:#00cc66,stroke:#006633,color:#ffffff
 ::: mermaid
 flowchart LR
 Cond1{"isValidationOK ?"}
+Cond1 --> |TRUE| C2
+Cond1 --> |FALSE| B2
 
 subgraph Process
  C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8 --> C9
- C2["Load the XML Schema --> newSchema()"]
+ C2["Selected Data Loader --> process()"]
  C3["Create a JAXB Context and Unmashaller --> createUnmarshaller()"]
  C4["setTargetRootElement()"]
  C5["Apply Schema for Validation --> setSchema()"]
@@ -726,7 +728,7 @@ subgraph Process
 end
 
 subgraph Error
- C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8 --> C9
+ B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8 --> B9
  C2["Load the XML Schema --> newSchema()"]
  C3["Create a JAXB Context and Unmashaller --> createUnmarshaller()"]
  C4["setTargetRootElement()"]
@@ -735,9 +737,7 @@ subgraph Error
  C7["Setup SAX Reader --> newSAXParser.getXMLReader()"]
  C8["Inject the Custom Filter --> new ValidationUtil()"]
  C9["Perform Unmarshalling and Validation --> unmarshal()"]
-end
-
-:::
+end 
 
 click C2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-5"
 click C4 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-4"
