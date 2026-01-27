@@ -636,18 +636,18 @@ flowchart LR
 
 ::: mermaid
 flowchart TD
- C1["AbstractXmlDataLoader.java"]
- C1 --> execute
+ C1["AbstractXmlDataLoader.java --> ValidationUtil.validateXml()"]
+ C1 --> ValidationUtil
 
 subgraph ValidationUtil
- C2 --> C3 --> Cond1
+ C2 --> C3 --> 
  C2["Load the XML Schema"]
- C3["WarenaviSystemController"]
- Cond1{"!getLock(sysCon) ?"} 
- Cond1 --> |FALSE| C2
- Cond1 --> |TRUE| C4["setConfig()"]
+ C3["Create a JAXB Context and Unmashaller"]
+ C4["Set Target Root Element"]
 end
 
 click C2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-5"
+click C4 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-5"
 style C2 fill:#00cc66,stroke:#006633,color:#ffffff
+style C4 fill:#00cc66,stroke:#006633,color:#ffffff
 :::
