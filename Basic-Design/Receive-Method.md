@@ -1,3 +1,6 @@
+[[_TOC_]]
+[[_TOSP_]]
+
 #Receive Method (Data Loader)
 **Overall End-to-End Flow Summary (Stage 1 → Stage 7)**
 -------------------------------------------------------
