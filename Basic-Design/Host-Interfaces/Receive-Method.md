@@ -27,7 +27,6 @@ flowchart LR
  C13["AbstractXmlDataLoader.java"]
  C1 --> C2
  C2 --> Receiving --> C13
- C2 --> Sending --> C13
 
 subgraph Receiving
  C3["recvMaterialMasterData()"]
