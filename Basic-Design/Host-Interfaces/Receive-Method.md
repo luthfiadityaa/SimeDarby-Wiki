@@ -216,7 +216,6 @@ flowchart LR
  E1["setSchema()"]
  C1["setModel()"]  
  C1 --> Receiving --> E1
- C1 --> Sending --> E1
 
 subgraph Receiving
  C21["MaterialMaster.class"]
@@ -224,15 +223,6 @@ subgraph Receiving
  C23["RetrievalPlan.class"] 
  C24["Response.class"]
 end
-
-subgraph Sending
- C25["ProductionStorage.class"]
- C26["QCStatusUpdate.class"]
- C27["InternalLocTransfer.class"] 
- C28["StorageResult.class"]
- C29["RetrievalResult.class"] 
- C30["StorageRetrievalResult.class"] 
-end 
 :::
 
 ### **1. Input from Stage 3:** `setModel()`
