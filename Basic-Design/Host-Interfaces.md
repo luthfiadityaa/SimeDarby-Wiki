@@ -648,6 +648,6 @@ subgraph ValidationUtil
  Cond1 --> |TRUE| C4["setConfig()"]
 end
 
-click C2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/844/Internal-Location-Transfer-Result" "Go Internal Location Transfer Result"
+click C2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-5"
 style C2 fill:#00cc66,stroke:#006633,color:#ffffff
 :::
