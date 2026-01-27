@@ -47,10 +47,6 @@ The data will be selected as a result: **Warenavi** ⇄ **SAP**
 * **BCR_DATA** ⇄ **PALLET ID**
 
 #Result Data from WareNavi
-##TXT/CSV Format
-```csv
-1469,0,3100006023,9908,PS023128,64,CTN,2025-04-10,UU,VT01,FGW2,PLY0001
-```
 
 ##XML Format
 `Name File`: YYYYMMDD_HHMMSS_PalletUpdate_<BatchID>.xml
@@ -70,6 +66,9 @@ The data will be selected as a result: **Warenavi** ⇄ **SAP**
     <StorageLocationFrom>VT01</StorageLocationFrom>
     <StorageLocationTo>FGW2</StorageLocationTo>
     <PalletID>PLY0001</PalletID>
+    <StartDateTime>2025-04-10-08:00:00</StartDateTime> 
+    <EndDateTime>2025-04-13-08:00:00<EndDateTime>
+    <Remarks>process complete</Remarks>
 </PalletUpdate>
 ```
 
