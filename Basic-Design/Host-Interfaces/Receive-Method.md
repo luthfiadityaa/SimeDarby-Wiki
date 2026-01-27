@@ -549,8 +549,8 @@ Cond1 --> |FALSE| C2
 subgraph Error
  C2 --> C3 
  C2 --> C4
- C4[(DNExchangeHistory)]
- C3[(DNLoadErrorInfo)]
+ C4[(DNExchangeHistory)] --> D2
+ C3[(DNLoadErrorInfo)] --> D2
  C2["Set Exchange History as Error Data"] 
 end
 
