@@ -714,6 +714,7 @@ flowchart LR
 Cond1{"isValidationOK ?"}
 Cond1 --> |TRUE| B2
 Cond1 --> |FALSE| C2
+X1[(DNExchangeHistory)]
 
 subgraph Error
  C2 --> C3 
@@ -728,10 +729,11 @@ subgraph Process
  Cond2{"isProcess ?"}
  B2["Load the Selected Data Loader Class --> process()"]
  B3["Validation Process --> validationBeforeInsert()"]
- B4["Set Exchange History as Error Data"]
- B5["Set Exchange History as Normal or Skip Data"]
- Cond2 --> |FALSE| B4
- Cond2 --> |TRUE| B5
+ B4["Set Exchange History as Error Data or Skip Data"]
+ B5["Set Exchange History as Normal"]
+ B6[(DNLoadErrorInfo)]
+ Cond2 --> |FALSE| B4 --> |Insert Data| B6
+ Cond2 --> |TRUE| B5 --> X1
 end 
 
 click B2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-3"
