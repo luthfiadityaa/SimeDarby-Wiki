@@ -11,7 +11,7 @@ The trigger to start the process is this file.
 ::: mermaid
 flowchart LR
     A[HostCommExecutor] --> |SEND XML| C[(FTP Folder)]
-    C -->|Send XML via SFTP| D[SAP]
+    C -->|GET XML via SFTP| D[SAP]
     D -->|Send Back Response| C
     C -->|Return XML Response via SFTP| A
     E[(DNStoragePlan)] <--> |Update| A
