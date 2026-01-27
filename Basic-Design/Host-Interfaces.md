@@ -642,8 +642,10 @@ flowchart TD
 subgraph ValidationUtil
  C2 --> C3 --> C4
  C2["Load the XML Schema"]
- C3["Create a JAXB Context and Unmashaller"]
+ C3["Create a JAXB Context and Unmashaller --> createUnmarshaller()"]
  C4["Set Target Root Element"]
+ C5["Apply Schema for Validation --> setSchema()"]
+ C6["Set Custom Handler --> setEventHandler()"]
 end
 
 click C2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-5"
