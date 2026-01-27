@@ -715,12 +715,11 @@ Cond1{"isValidationOK ?"}
 Cond1 --> |TRUE| B2
 Cond1 --> |FALSE| C2
 X1[(DNExchangeHistory)]
+X2[(DNLoadErrorInfo)]
 
 subgraph Error
- C2 --> C3 
+ C2 --> X2 
  C2 --> X1
- C4[(DNExchangeHistory)]
- C3[(DNLoadErrorInfo)]
  C2["Set Exchange History as Error Data"] 
 end
 
