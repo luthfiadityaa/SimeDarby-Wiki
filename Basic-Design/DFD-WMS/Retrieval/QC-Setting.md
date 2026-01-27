@@ -23,7 +23,7 @@ This class to check the Tempering Period if passed.
 
 Tempering checker monitoring will run every 10 Seconds, following below parameter: `TEMPERING_CHECKER_SEC = 10000`. 
 
-To optimize data processing, the limit is set to `100 records` per process.
+To optimize data processing, the process will check in each batch group.
 
 * Search stock with the following conditions:
   * `Current date` is greater than or equal to `Storage Date + Tempering Period`.
