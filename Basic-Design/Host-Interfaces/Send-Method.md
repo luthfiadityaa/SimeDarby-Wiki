@@ -2,7 +2,7 @@
 [[_TOSP_]]
 
 #Send Method (Data Report)
-**Overall End-to-End Flow Summary (Stage 1 → Stage 7)**
+**Overall End-to-End Flow Summary (Stage 1 → Stage 9)**
 -------------------------------------------------------
 
 | Stage | Responsibility |
