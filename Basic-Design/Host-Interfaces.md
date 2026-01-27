@@ -709,6 +709,8 @@ style C4 fill:#00cc66,stroke:#006633,color:#ffffff
 
 ##Stage 9 - End Process
 
+Stage 9 is to **finalize processing**, record execution results, manage database transactions, and control rollback or continuation based on validation and processing outcomes.
+
 ::: mermaid
 flowchart LR
 Cond1{"isValidationOK ?"}
