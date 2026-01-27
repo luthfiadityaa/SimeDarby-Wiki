@@ -716,8 +716,10 @@ Cond1 --> |TRUE| B2
 Cond1 --> |FALSE| C2
 
 subgraph Error
- C2 --> X2 
- C2 --> X1
+ C2 --> C3 
+ C2 --> C4
+ C4[(DNExchangeHistory)]
+ C3[(DNLoadErrorInfo)]
  C2["Set Exchange History as Error Data"] 
 end
 
@@ -729,13 +731,10 @@ subgraph Process
  B4["Set Exchange History as Error Data or Skip Data"]
  B5["Set Exchange History as Normal"]
  B6[(DNLoadErrorInfo)]
- Cond2 --> |FALSE| B4 --> |Insert Data| X2
+ Cond2 --> |FALSE| B4 --> |Insert Data| B6
  B4 --> X1
  Cond2 --> |TRUE| B5 --> X1
 end 
-
-X1[(DNExchangeHistory)]
-X2[(DNLoadErrorInfo)]
 
 click B2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-3"
 style B2 fill:#00cc66,stroke:#006633,color:#ffffff
