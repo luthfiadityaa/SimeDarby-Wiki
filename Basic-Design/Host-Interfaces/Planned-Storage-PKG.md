@@ -13,7 +13,9 @@ flowchart LR
     A[SAP] -->|Send XML via SFTP| B[(FTP Folder)]
     B -->|GET XML| C[HostCommExecutor]
     C -->|Insert Data| E[(DNStoragePlan)]
-    C -->|Insert Data| F[(DNExchangeHistory)]
+    C --> Cond1{"isDataError ?"} 
+    Cond1 --> |TRUE OR False will Insert Data| F[(DNExchangeHistory)]
+    Cond1 --> |Only FALSE will Insert Data| G[(DNLoadErrorInfo)]
 
     subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
