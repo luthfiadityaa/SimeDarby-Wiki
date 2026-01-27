@@ -731,9 +731,10 @@ subgraph Process
  B4["Set Exchange History as Error Data or Skip Data"]
  B5["Set Exchange History as Normal"]
  B6[(DNLoadErrorInfo)]
+ B7[(DNExchangeHistory)]
  Cond2 --> |FALSE| B4 --> |Insert Data| B6
- B4 --> X1
- Cond2 --> |TRUE| B5 --> X1
+ B4 --> B7
+ Cond2 --> |TRUE| B5 --> B7
 end 
 
 click B2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-3"
