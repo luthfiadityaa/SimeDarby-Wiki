@@ -733,16 +733,15 @@ subgraph Process
  B5["Set Exchange History as Normal"]
  B6[(DNLoadErrorInfo)]
  B7[(DNExchangeHistory)]
- Cond2 --> |FALSE| Cond3 
- Cond3 --> |FALSE| B4 --> |Insert Data| B6
+ Cond2 --> |FALSE| B4 --> |Insert Data| B6
  B4 --> B7
  Cond2 --> |TRUE| Cond3
  Cond3 --> |TRUE| B5 --> B7
+ Cond3 --> |TRUE| D2
 end 
 
 subgraph Exception
  D2 --> D3 
- D2 --> D4
  D2["Rollback"]
  D3["Go to the Stage 2"] 
 end
