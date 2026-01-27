@@ -733,6 +733,7 @@ subgraph Process
  B5["Set Exchange History as Normal"]
  B6[(DNLoadErrorInfo)]
  Cond2 --> |FALSE| B4 --> |Insert Data| B6
+ B4 --> X1
  Cond2 --> |TRUE| B5 --> X1
 end 
 
