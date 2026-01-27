@@ -363,27 +363,6 @@ At this point:
 *   Each object is **environment-aware**    
 *   Routing and validation rules are now deterministic
 
-### **2. Sending Flow (Outbound Result Generation)**
-After processing, outbound messages are created and tagged with the correct environment:
-1.  **PalletUpdate**
-    *   ProductionStorage ID env        
-    *   QCStatusUpdate ID env        
-    *   RetrievalResult ID env        
-    *   StorageRetrievalResult ID env
-        
-2.  **GR or Cancel_GR**
-    *   StorageResult ID env        
-    *   Represents Goods Receipt or cancellation logic
-        
-3.  **InternalLocTransfer**
-    *   InternalLocTransfer ID env        
-    *   Handles internal movement updates
-        
-Each outbound payload:
-*   Is mapped to the **correct business result**    
-*   Uses the **correct environment ID**    
-*   Is ready for **file generation or transmission**
-
 ### **3. Final Transition → `getFile()`**
 Once all objects are:
 *   Bound to environment    
