@@ -19,7 +19,7 @@
 |------|----------------------------------------------------------|-------------------------------|---------------------------------------------------------------------------------|---------------|
 | 1    | Material Master Data                                     | Material Master Data          | [MaterialMasterDataLoader](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/835/Material-Master-Data)                                 | Every 10 min  |
 | 2    | Planned Storage PKG                                          | Planned Storage               | [StoragePlanPkgDataLoader](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/836/Planned-Storage-PKG)                                 | Every 5 min   |
-| 3    | Planned Retrieval                                        | Planned Retrieval             | [RetrievalPlanDataLoader](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/838/Planned-Retrieval)                             | Every 5 min   |
+| 3    | Planned Retrieval                                        | Planned Retrieval             | [RetrievalPlanHostDataLoader](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/838/Planned-Retrieval)                             | Every 5 min   |
 | 4    | Response                                                 | SAP Response                  | [ResponseDataLoader](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/866/SAP-Response)                                                                                | Every Result  | 
 | 5    | Production Storage Result                                | Production Storage Result     | [ProductionStorageReportData](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)                                 | Once has Data |
 | 6    | QC Status Update Result                                  | QC Status Update              | [QCStatusUpdateReportData](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/842/QC-Status-Update-Result)                                      | Once has Data |
@@ -208,7 +208,7 @@ flowchart LR
 subgraph Receiving
  C21["MaterialMasterDataLoader"]
  C22["StoragePlanPkgDataLoader"] 
- C23["RetrievalPlanDataLoader"] 
+ C23["RetrievalPlanHostDataLoader"] 
  C24["ResponseDataLoader"]
 end
 
@@ -237,7 +237,7 @@ Process incoming XML data from the host system and convert it into internal doma
 Each loader handles **one specific inbound data type**:
 *   `MaterialMasterDataLoader`    
 *   `StoragePlanPkgDataLoader`    
-*   `RetrievalPlanDataLoader`    
+*   `RetrievalPlanHostDataLoader`    
 *   `ResponseDataLoader`
     
 #### **2.2 Process**
