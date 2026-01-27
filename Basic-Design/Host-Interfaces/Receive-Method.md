@@ -327,7 +327,6 @@ flowchart LR
  E1["getFile()"]
  C1["setExEnv()"]  
  C1 --> Receiving --> E1
- C1 --> Sending --> E1
 
 subgraph Receiving
  C21["Material (MaterialMaster ID env)"]
