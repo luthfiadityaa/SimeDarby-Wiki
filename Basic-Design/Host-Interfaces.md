@@ -638,6 +638,7 @@ flowchart LR
 flowchart LR
  C1["AbstractXmlDataLoader.java --> ValidationUtil.validateXml()"]
  C1 --> C2
+ C9 --> --> Cond1{"isValidationOK ?"}
 
 subgraph ValidationUtil 
  C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8 --> C9
