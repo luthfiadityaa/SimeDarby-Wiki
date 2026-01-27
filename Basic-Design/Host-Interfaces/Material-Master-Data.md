@@ -14,9 +14,8 @@ flowchart LR
     B -->|GET XML| C[HostCommExecutor]
     C -->|Insert Data| E[(DMItem)]
     C --> Cond1{"isDataError ?"} 
-    Cond1 --> |TRUE - Insert Data| F[(DNExchangeHistory)]
-    Cond1 --> |FALSE - Insert Data| G[(DNLoadErrorInfo)]
-    Cond1 --> |TRUE - Insert Data| F
+    Cond1 --> |TRUE OR False will Insert Data| F[(DNExchangeHistory)]
+    Cond1 --> |Only FALSE will Insert Data| G[(DNLoadErrorInfo)]
 
     subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
