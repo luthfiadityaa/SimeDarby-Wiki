@@ -35,15 +35,6 @@ subgraph Receiving
  C5["recvRetrievalPlanData()"]
  C6["recvResponseData()"]
 end
-
-subgraph Sending
- C7["sendProductionStorageData()"]
- C8["sendQCStatusUpdateData()"]
- C9["sendInternalLocTransferData()"]
- C10["sendStorageData()"]
- C11["sendRetrievalData()"]
- C12["sendStorageRetrievalData()"]
-end
 :::
 
 ###**1. serviceHostComm.prj**
