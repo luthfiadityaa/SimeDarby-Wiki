@@ -640,14 +640,15 @@ flowchart TD
  C1 --> ValidationUtil
 
 subgraph ValidationUtil
- C2 --> C3 --> C4 --> C5 --> C6
+ C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> C8 --> C9
  C2["Load the XML Schema --> newSchema()"]
  C3["Create a JAXB Context and Unmashaller --> createUnmarshaller()"]
- C4["Set Target Root Element()"]
+ C4["setTargetRootElement()"]
  C5["Apply Schema for Validation --> setSchema()"]
  C6["Set Custom Handler --> setEventHandler()"]
  C7["Setup SAX Reader --> newSAXParser.getXMLReader()"]
- C8["Setup SAX Reader --> newSAXParser.getXMLReader()"]
+ C8["Inject the Custom Filter --> new ValidationUtil()"]
+ C9["Perform Unmarshalling and Validation --> unmarshal()"]
 end
 
 click C2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-5"
