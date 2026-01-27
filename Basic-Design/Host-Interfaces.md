@@ -635,7 +635,7 @@ flowchart LR
 ##Stage 8
 
 ::: mermaid
-flowchart TD
+flowchart LR
  C1["AbstractXmlDataLoader.java --> ValidationUtil.validateXml()"]
  C1 --> ValidationUtil
 
