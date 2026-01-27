@@ -65,17 +65,6 @@ The data will be paired as an input: **Warenavi** ⇄ **SAP**
 </MaterialMaster>
 ```
 
-#TXT/CSV Format
-##Finish Goods
-```csv
-0000000002523009,2900000002,"CRUDE PALM OIL (CPO) v1",12,64,CTN,ZFNP,0
-```  
-
-##Packaging Material
-```csv
-00000000025230999,4900000002,"PACKAGING 001",KG,ZPCK,0
-```
-
 ###<span style="color:skyblue; font-weight:bold">DMItem</span>
 The data will be paired as an input: **Warenavi** ⇄ **SAP**
 * **ITEM_CODE** ⇄ **MATERIAL CODE**
