@@ -714,8 +714,6 @@ flowchart LR
 Cond1{"isValidationOK ?"}
 Cond1 --> |TRUE| B2
 Cond1 --> |FALSE| C2
-X1[(DNExchangeHistory)]
-X2[(DNLoadErrorInfo)]
 
 subgraph Error
  C2 --> X2 
@@ -735,6 +733,9 @@ subgraph Process
  B4 --> X1
  Cond2 --> |TRUE| B5 --> X1
 end 
+
+X1[(DNExchangeHistory)]
+X2[(DNLoadErrorInfo)]
 
 click B2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-3"
 style B2 fill:#00cc66,stroke:#006633,color:#ffffff
