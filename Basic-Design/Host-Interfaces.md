@@ -634,6 +634,8 @@ flowchart LR
 
 ##Stage 8
 
+Stage 8 is to validate incoming XML data against its XSD schema and convert it into Java objects with strict validation control.
+
 ::: mermaid
 flowchart LR
  C1["AbstractXmlDataLoader.java --> ValidationUtil.validateXml()"]
@@ -657,3 +659,50 @@ click C4 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID
 style C2 fill:#00cc66,stroke:#006633,color:#ffffff
 style C4 fill:#00cc66,stroke:#006633,color:#ffffff
 :::
+
+**Detailed Flow Description**
+
+### **1. Entry Point**
+- `AbstractXmlDataLoader.java`        
+- Calls `ValidationUtil.validateXml()`
+        
+### **2. Load XML Schema**
+- Load the corresponding XSD schema (`newSchema`)
+- Schema is selected based on data type (Material, StoragePlan, etc.)
+        
+### **3. Create JAXB Context**
+- Initialize `JAXBContext`
+- Create `Unmarshaller`
+        
+### **4. Set Target Root Element**
+- Define the expected root XML element (Selected Model Class)
+- Prevents incorrect document structure
+        
+### **5. Apply Schema Validation**
+- Attach XSD schema to the unmarshaller
+- Enables schema-based validation during parsing
+        
+### **6. Set Custom Validation Handler**
+- Register custom `ValidationEventHandler`
+- Captures:
+  - Validation error message
+  - XML line number
+  - Column number
+            
+### **7. Setup SAX Reader**
+- Initialize `SAXParser`
+- Create `XMLReader`
+        
+### **8. Inject Custom Validation Filter**
+- Attach `ValidationUtil` as a filter
+- Enables enhanced error tracking and filtering logic
+        
+### **9. Unmarshal XML**
+- Parse XML
+- Convert XML → Java model
+- Validate structure and data at the same time
+        
+### **10. Validation Result Check**
+- Decision: `isValidationOK?`
+  - ❌ **No** → validation exception raised            
+  - ✅ **Yes** → proceed to next stage
