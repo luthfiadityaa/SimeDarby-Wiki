@@ -724,9 +724,14 @@ subgraph Error
 end
 
 subgraph Process
- B2 --> B3 --> B4 
+ B2 --> B3 
+ Cond2{"isProcess ?"}
  B2["Load the Selected Data Loader Class --> process()"]
  B3["Validation Process --> validationBeforeInsert()"]
+ B4["Set Exchange History as Error Data"]
+ B5["Set Exchange History as Normal or Skip Data"]
+ Cond2 --> |FALSE| B4
+ Cond2 --> |TRUE| B5
 end 
 
 click B2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-3"
