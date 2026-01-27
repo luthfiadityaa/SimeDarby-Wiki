@@ -726,6 +726,7 @@ end
 subgraph Process
  B2 --> B3 --> Cond2
  Cond2{"isProcess ?"}
+ Cond3{"isException ?"}
  B2["Load the Selected Data Loader Class --> process()"]
  B3["Validation Process --> validationBeforeInsert()"]
  B4["Set Exchange History as Error Data or Skip Data"]
@@ -740,11 +741,10 @@ end
 subgraph Exception
  D2 --> D3 
  D2 --> D4
- D4[(DNExchangeHistory)]
- D3[(DNLoadErrorInfo)]
- D2["Set Exchange History as Error Data"] 
+ D2["Rollback"]
+ D3["Go to the Stage 2"] 
 end
 
-click B2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-3"
-style B2 fill:#00cc66,stroke:#006633,color:#ffffff
+click D3 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-3"
+style D3 fill:#00cc66,stroke:#006633,color:#ffffff
 :::
