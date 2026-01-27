@@ -274,7 +274,6 @@ flowchart LR
  E1["setExEnv()"]
  C1["setSchema()"]  
  C1 --> Receiving --> E1
- C1 --> Sending --> E1
 
 subgraph Receiving
  C21["MaterialMaster.xsd"]
@@ -282,15 +281,6 @@ subgraph Receiving
  C23["RetrievalPlan.xsd"] 
  C24["Response.xsd"]
 end
-
-subgraph Sending
- C25["ProductionStorage.xsd"]
- C26["QCStatusUpdate.xsd"]
- C27["InternalLocTransfer.xsd"] 
- C28["StorageResult.xsd"]
- C29["RetrievalResult.xsd"] 
- C30["StorageRetrievalResult.xsd"] 
-end 
 :::
 
 ####**1. Input from Previous Stage**
@@ -320,23 +310,6 @@ These schemas ensure:
 This is typically used by:
 *   JAXB validation    
 *   SAX pre-validation
-
-####**2. Sending (Outbound XML Generation)**
-
-The system also assigns XSDs for **outgoing messages**:
-
-| XML Type | XSD |
-| --- | --- |
-| Production Storage | `ProductionStorage.xsd` |
-| QC Status Update | `QCStatusUpdate.xsd` |
-| Internal Location Transfer | `InternalLocTransfer.xsd` |
-| Storage Result | `StorageResult.xsd` |
-| Retrieval Result | `RetrievalResult.xsd` |
-| Storage Retrieval Result | `StorageRetrievalResult.xsd` |
-
-These ensure:
-*   Generated XML conforms to host system specs    
-*   Response messages are valid before sending
 
 <br>
 <hr>
