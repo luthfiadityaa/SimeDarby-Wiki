@@ -188,27 +188,6 @@ For each incoming XML file:
     
 All receiving loaders follow the **same abstract execution pattern** inherited from `AbstractXmlDataLoader`.
 
-###**3. Sending Flow (Outbound Data)**
-
-**Objective:**  
-Generate outbound data based on internal system state and send it to the host.
-
-#### **3.1 Sending Report Generators**
-Each report represents a **specific business message**:
-*   `ProductionStorageReportData`    
-*   `QCStatusUpdateReportData`    
-*   `InternalLocTransferReportData`    
-*   `StorageReportData`    
-*   `RetrievalReportData`    
-*   `StorageRetrievalReportData`   
-
-### **3.2 Process**
-For each outbound data type:
-1.  Collect required business data    
-2.  Transform data into report format    
-3.  Generate XML    
-4.  Prepare transmission payload    
-
 ###**4. Model Binding: `setModel()`**
 After **Receiving or Sending processing completes**:
 *   `setModel()` is invoked    
