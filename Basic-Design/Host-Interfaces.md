@@ -753,3 +753,56 @@ style B2 fill:#00cc66,stroke:#006633,color:#ffffff
 click D3 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/833/Host-Interfaces?anchor=stage-2"
 style D3 fill:#00cc66,stroke:#006633,color:#ffffff
 :::
+
+**Detailed Flow Description**
+
+### 1. Entry Condition
+- Input decision: **`isValidationOK?`**
+- Result from **Stage 8 (XML validation & unmarshalling)**
+
+### 2. Validation Failed (`FALSE`)
+
+If validation fails:
+1.  **Set Exchange History as Error Data**    
+2.  **Insert error records**
+    - `DNLoadErrorInfo`
+    - `DNExchangeHistory`        
+3.  **End current file processing**
+    
+➡ Flow continues to the **next execution cycle**
+
+### 3. Validation Passed (`TRUE`)
+If validation passes:
+1.  **Load Selected Data Loader**
+    - Execute `process()`        
+2.  **Business Validation**
+    - `validationBeforeInsert()`
+       
+### 4. Process Decision (`isProcess?`)
+#### a. Processing Successful (`TRUE`)
+1.  **Set Exchange History as Normal**    
+2.  **Insert into `DNExchangeHistory`**
+3.  **Processing ends normally**
+
+#### b. Processing Failed (`FALSE`)
+Continue to exception evaluation
+
+### 5. Exception Check (`isException?`)
+#### a. No Exception (`FALSE`)
+*   Data is skipped or business rule failed    
+*   **Set Exchange History as Error / Skip Data**    
+*   Insert into:
+    - `DNLoadErrorInfo`
+    - `DNExchangeHistory`
+        
+➡ End current file processing
+
+#### b. Exception Occurred (`TRUE`)
+1.  **Insert error information**
+    - `DNLoadErrorInfo`
+        
+2.  **Control-flow rollback**
+    *   Processing flow returns to **Stage 2**        
+    *   System reconnects and reinitializes
+        
+➡ Database state remains unchanged
