@@ -43,7 +43,7 @@ The data will be selected as a result: **SAP** ⇄ **WARENAVI**
 * **QUANTITY** ⇄ **RESULT_QTY**
 * **UNIT_OF_ENTRY** ⇄ **UOM**
 * **UNLOADING_POINT** ⇄ **BCR_DATA**
-* **BATCH* ⇄ **BATCH_NO**
+* **BATCH** ⇄ **BATCH_NO**
 
 #Result Data from WareNavi
 ##GR XML Format
