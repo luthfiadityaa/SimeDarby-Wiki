@@ -16,6 +16,7 @@ flowchart LR
     C -->|Return XML Response via SFTP| A
     E[(DNStoragePlan)] <--> |Update| A
     F[(DNHostSend)] <--> |Update| A
+    G[(DNWorkInfo)] <--> |Update| A
 
      subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
