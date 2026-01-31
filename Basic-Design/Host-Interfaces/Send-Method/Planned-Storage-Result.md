@@ -25,6 +25,26 @@ flowchart LR
     end
 :::
 
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###<span style="color:skyblue; font-weight:bold">DNHostSend</span>
+* **MSG_ID**: Sequence Object
+* **MSG_TYPE**: 3:Delivery Order 
+* **ERROR_INDICATION**: 0:Successful
+* **TYPE**: S: Success
+* **MESSAGE_DESC**: Free Text -> **The storage process has been finished.**    
+
+The data will be selected as a result: **SAP** ⇄ **WARENAVI**
+* **POSTING_DATE** ⇄ **PLAN_DAY**
+* **DOCUMENT_DATE** ⇄ **RECEIVE_TICKET_DATE** 
+* **MOVEMENT_TYPE** ⇄ **CANCE_FLAG**
+* **PURCHASE_ORDER** ⇄ **RECEIVE_TICKET_NO**
+* **MATERIAL_NUMBER** ⇄ **ITEM_CODE**
+* **PLANT** ⇄ **STORAGE_LOCATION**
+* **QUANTITY** ⇄ **RESULT_QTY**
+* **UNIT_OF_ENTRY** ⇄ **UOM**
+* **UNLOADING_POINT** ⇄ **BCR_DATA**
+* **BATCH* ⇄ **BATCH_NO**
+
 #Result Data from WareNavi
 ##GR XML Format
 `Name File`: GR_XMLxml  
