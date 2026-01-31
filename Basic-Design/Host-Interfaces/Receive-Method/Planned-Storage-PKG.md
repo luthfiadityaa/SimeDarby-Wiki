@@ -37,6 +37,7 @@ flowchart LR
     <DocumentDate>20250623</DocumentDate>
     <Items>
         <Item>
+            <PurchaseOrder>1111111111<PurchaseOrder>
             <ItemNumber>00010</ItemNumber>
             <Plant>SG01</Plant>
             <MaterialNumber>MAT123456789000001</MaterialNumber>
@@ -45,6 +46,7 @@ flowchart LR
             <DeliveryDate>20250701</DeliveryDate>
         </Item>
         <Item>
+<PurchaseOrder>1111111111<PurchaseOrder>
             <ItemNumber>00020</ItemNumber>
             <Plant>SG01</Plant>
             <MaterialNumber>MAT123456789000002</MaterialNumber>
