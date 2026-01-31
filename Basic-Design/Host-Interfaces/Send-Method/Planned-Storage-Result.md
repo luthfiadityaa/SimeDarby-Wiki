@@ -10,15 +10,13 @@ The trigger to start the process is this file.
 
 ::: mermaid
 flowchart LR
-    A[HostCommExecutor] -->|Convert TXT/CSV -> XML| B[FileExchangeConverter]
-    B -->|GET XML| C[(FTP Folder)]
-    C -->|Send XML via SFTP| D[SAP]
+    A[HostCommExecutor] --> |SEND XML| C[(FTP Folder)]
+    C -->|GET XML via SFTP| D[SAP]
     D -->|Send Back Response| C
-    C -->|Convert XML → TXT/CSV| B
-    B -->|Return TXT/CSV Response via SFTP| A
-    E[(DNStock)] <--> |Update| A
+    C -->|Return XML Response via SFTP| A
+    E[(DNStoragePlan)] <--> |Update| A
     F[(DNHostSend)] <--> |Update| A
-    G[(DNStoragePlan)] <--> |Update| A
+    G[(DNWorkInfo)] <--> |Update| A
 
      subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
@@ -28,13 +26,7 @@ flowchart LR
 :::
 
 #Result Data from WareNavi
-##GR
-###TXT/CSV Format
-```csv
-20250623,20250620,101,4500012345,00010,MAT123456789000001,SG01,0001,50.000,EA,PALLET-001,BATCH00123
-20250623,20250620,101,4500012345,00020,MAT123456789000002,SG01,0002,75.000,EA,PALLET-002,BATCH00456
-```
-###XML Format
+##GR XML Format
 `Name File`: GR_XMLxml  
 
 ```xml
@@ -71,13 +63,7 @@ flowchart LR
 </MaterialDocument>
 ```
 
-##CANCEL GR
-###TXT/CSV Format
-```csv
-20250623,20250620,102,4500012345,00010,MAT123456789000001,SG01,0001,50.000,EA,PALLET-001,BATCH00123
-20250623,20250620,101,4500012345,00020,MAT123456789000002,SG01,0002,75.000,EA,PALLET-002,BATCH0045656
-```
-###XML Format
+##CANCEL GR XML Format
 `Name File`: Cancel_GR_XML.xml
 
 ```xml
