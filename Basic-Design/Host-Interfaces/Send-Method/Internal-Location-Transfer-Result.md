@@ -10,19 +10,19 @@ The trigger to start the process is this file.
 
 ::: mermaid
 flowchart LR
-    A[HostCommExecutor] -->|Convert TXT/CSV -> XML| B[FileExchangeConverter]
-    B -->|GET XML| C[(FTP Folder)]
-    C -->|Send XML via SFTP| D[SAP]
+    A[HostCommExecutor] --> |SEND XML| C[(FTP Folder)]
+    C -->|GET XML via SFTP| D[SAP]
     D -->|Send Back Response| C
-    C -->|Convert XML → TXT/CSV| B
-    B -->|Return TXT/CSV Response via SFTP| A
+    C -->|Return XML Response via SFTP| A
     F[(DNHostSend)] <--> |Update| A
+    G[(DNWorkInfo)] <--> |Update| A
+    H[(DNStock)] <--> |Update| A
 
-     subgraph HostCommExecutor
+   subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
         C2["sendInternalLocTransferReportData()<br>→ InternalLocTransferReportData"]
         C1 --> C2
-    end
+   end
 :::
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
@@ -45,11 +45,6 @@ The data will be selected as a result: **Warenavi** ⇄ **SAP**
 * **STORAGE_LOCATION_TO** ⇄ **STORAGE LOCATION TO**
 
 #Result Data from WareNavi
-##TXT/CSV Format
-```csv
-1469,0,3100006023,9908,PS023128,64,CTN,2025-04-10,UU,FGW2,FGW1
-```
-
 ##XML Format
 `Name File`: YYYYMMDD_HHMMSS_PalletUpdate_<BatchID>.xml
 
@@ -67,6 +62,9 @@ The data will be selected as a result: **Warenavi** ⇄ **SAP**
     <StatusTo>UU</StatusTo>
     <StorageLocationFrom>FGW2</StorageLocationFrom>
     <StorageLocationTo>FGW1</StorageLocationTo>
+    <StartDateTime>2025-04-10-08:00:00</StartDateTime>
+    <EndDateTime>2025-04-13-08:00:00</EndDateTime>
+    <Remark>process complete</Remark>
 </PalletUpdate>
 ```
 
