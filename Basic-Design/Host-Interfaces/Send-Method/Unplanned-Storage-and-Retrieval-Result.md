@@ -31,10 +31,6 @@ flowchart LR
 #Result Data from WareNavi
 ##Unplanned Storage
 ###Finish Goods
-####TXT/CSV Format
-```csv
-1469,0,3100006023,PS023128,64,CTN,2025-04-10,UU,9908,VT01,FGW1
-```
 ####XML Format
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -54,10 +50,6 @@ flowchart LR
 ```
 
 ###Packaging Material
-####TXT/CSV Format
-```csv
-1469,0,3100006023,PS023128,64,CTN,2025-04-10,UU,9908,VT01,ZPCK
-```
 ####XML Format
 `Name File`: YYYYMMDD_HHMMSS_PalletUpdate_<BatchID>.xml
 
@@ -80,10 +72,6 @@ flowchart LR
 
 ##Unplanned Retrieval
 ###Finish Goods
-####TXT/CSV Format
-```csv
-1469,0,3100006023,PS023128,64,CTN,2025-04-10,UU,9908,FGW1,VT01
-```
 ####XML Format
 `Name File`: YYYYMMDD_HHMMSS_PalletUpdate_<BatchID>.xml
 
@@ -105,10 +93,6 @@ flowchart LR
 ```
 
 ###Packaging Material
-####TXT/CSV Format
-```csv
-1469,0,3100006023,PS023128,64,CTN,2025-04-10,UU,9908,ZPCK,VT01
-```
 ####XML Format
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
