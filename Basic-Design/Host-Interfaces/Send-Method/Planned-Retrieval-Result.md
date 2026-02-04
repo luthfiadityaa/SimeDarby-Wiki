@@ -10,17 +10,15 @@ The trigger to start the process is this file.
 
 ::: mermaid
 flowchart LR
-    A[HostCommExecutor] -->|Convert TXT/CSV -> XML| B[FileExchangeConverter]
-    B -->|GET XML| C[(FTP Folder)]
-    C -->|Send XML via SFTP| D[SAP]
+    A[HostCommExecutor] --> |SEND XML| C[(FTP Folder)]
+    C -->|GET XML via SFTP| D[SAP]
     D -->|Send Back Response| C
-    C -->|Convert XML → TXT/CSV| B
-    B -->|Return TXT/CSV Response via SFTP| A
-    E[(DNStock)] <--> |Update| A
+    C -->|Return XML Response via SFTP| A
+    E[(DNRetrievalPlan)] <--> |Update| A
     F[(DNHostSend)] <--> |Update| A
-    G[(DNRetrievalPlan)] <--> |Update| A
+    G[(DNWorkInfo)] <--> |Update| A
 
-     subgraph HostCommExecutor
+    subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
         C2["sendRetrievalReportData()<br>→ RetrievalReportData"]
         C1 --> C2
@@ -28,10 +26,6 @@ flowchart LR
 :::
 
 #Result Data from WareNavi
-##TXT/CSV Format
-```csv
-1469,0,3100006023,9908,PS023128,64,CTN,2025-04-10,QI,UU,FGW2,3050343982,PLT00001
-```
 ##XML Format
 `Name File`: YYYYMMDD_HHMMSS_PalletUpdate_<BatchID>.xml
 ```xml
