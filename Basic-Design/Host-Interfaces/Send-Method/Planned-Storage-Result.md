@@ -47,7 +47,7 @@ The data will be selected as a result: **SAP** ⇄ **WARENAVI**
 
 #Result Data from WareNavi
 ##GR XML Format
-`Name File`: GR_XMLxml  
+`Name File`: GR_XML_YYYYMMMDDhhmmss.xml  
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -84,7 +84,7 @@ The data will be selected as a result: **SAP** ⇄ **WARENAVI**
 ```
 
 ##CANCEL GR XML Format
-`Name File`: Cancel_GR_XML.xml
+`Name File`: Cancel_GR_XML_YYYYMMMDDhhmmss.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
