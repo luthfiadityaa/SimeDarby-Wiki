@@ -107,7 +107,7 @@ The data will be selected as a result: **SAP** ⇄ **WARENAVI**
             <Batch>BATCH00123</Batch>
         </Item>
         <Item>
-            <MovementType>101</MovementType>
+            <MovementType>102</MovementType>
             <PurchaseOrder>4500012345</PurchaseOrder>
             <PurchaseOrderItem>00020</PurchaseOrderItem>
             <MaterialNumber>MAT123456789000002</MaterialNumber>
