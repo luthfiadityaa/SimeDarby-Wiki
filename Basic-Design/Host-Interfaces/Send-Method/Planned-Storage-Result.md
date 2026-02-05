@@ -52,6 +52,7 @@ The data will be selected as a result: **SAP** ⇄ **WARENAVI**
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <MaterialDocument>
+    <MsgID>000000000000000239</MsgID>
     <PostingDate>20250623</PostingDate>
     <DocumentDate>20250620</DocumentDate>
     <Items>
@@ -89,6 +90,7 @@ The data will be selected as a result: **SAP** ⇄ **WARENAVI**
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <MaterialDocument>
+    <MsgID>000000000000000239</MsgID>
     <PostingDate>20250623</PostingDate>
     <DocumentDate>20250620</DocumentDate>
     <Items>
