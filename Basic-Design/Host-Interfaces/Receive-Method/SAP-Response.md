@@ -34,6 +34,7 @@ flowchart LR
 - <b>OriginalMessageID</b>  
   Original Message ID originationg from the file sent by Warenavi to SAP  
 - <b>MessageType</b>
+![image.png](/.attachments/image-0953a9ac-e601-4ae7-bb27-06b4cb667d71.png)
   Mentioning of the interfaces Processed below:  
   1. Production Storage
      - [Production Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)
