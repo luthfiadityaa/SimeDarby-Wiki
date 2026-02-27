@@ -443,7 +443,7 @@ automaticmodechangesender-input-->storageSender-->id05msg
 storageSender--> |UPDATE| automaticmodechangesender-update
 :::
 
-After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, StorageSender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">1:Started to 2:Waiting for Response.</span>
+After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, StorageSender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated <span style="color:green; font-weight:bold">1:Started.</span>
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
@@ -459,7 +459,7 @@ After successful creation of arrival record in <span style="color:green; font-we
 
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 *   **AISLE_STATION_NO** : Aisle Number where a reserved location belongs to    
-*   **CMD_STATUS** : 2:Waiting for response    
+*   **CMD_STATUS** : 1:Started    
 *   **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO : **(1111 / 1112 / 1113 / 1114 / 1115)**
 *   **DEST_STATION_NO** : **Based on Empty location search: (7101 / 7102 / 7103 / 7104 / 7105 / 7106 / 7107 / 7108 / 7109 / 7110)**
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
