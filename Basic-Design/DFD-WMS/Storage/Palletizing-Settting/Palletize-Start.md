@@ -163,7 +163,7 @@ This section explains the validations for the whole proccess Palletize Start
 *   **REPORT_FLAG** : 0: Not Reported    
 *   **STORING_PAIR_KEY** : Value from screen **(Material Code + Batch_No)**    
 *   **STATION_NO** : Value from screen (**Station No**)    
-*   **CURRENT_STATUS** : Value from screen (**Current Status**)    
+*   **CURRENT_STATUS** : 1:Palletizing Started    
 *   **MATERIAL_NAME** : Value from screen (**Material Name**) -> **<span style="color:green; font-weight:bold">DMITEM.ITEM_NAME </span>**    
 *   **MATERIAL_TYPE** : Value from screen (**Material Type**) -> **<span style="color:green; font-weight:bold">DMITEM.ITEM_TYPE </span>**    
 *   **BATCH_NO** : Value from screen (**Batch_No**)    
