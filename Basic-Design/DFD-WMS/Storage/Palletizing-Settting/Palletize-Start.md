@@ -148,12 +148,20 @@ This section explains the validations for the whole proccess Palletize Start
 - <span style="color:green; font-weight:bold">Planned Carton</span> must be greater than or equal to <span style="color:green; font-weight:bold">Quantity (Carton per Pallet)</span>.
 - Material Code exists in <span style="color:green; font-weight:bold">DMITEM</span>
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
-- Ex.)
+- If the actual Carton Qty exceeds the planned Qty, continue the storage operation.
+  Ex.)
   Planned Carton Qty: 1000
   Actual: 1010
   The purpose to show the Planned Carton Qty is to have the history purpose.
   With this history, user can detect the result is abit exceeded from plan.
   So the Planned Carton Qty doesn't directly affect to the number of Pallet or Carton in Storage Operation.
+- If DNCarryInfo found from 1101-1105 to 1111-1115 when Batch start
+  - The pallet is for next up coming Batch
+  - Update Batch No. on the associated DNStoragePlan
+
+    Ex.)
+    ![image.png](/.attachments/image-0fb60da3-6bc2-4fd7-bce4-bce1e8df8f6e.png =400x)
+    ![image.png](/.attachments/image-22f2b51e-d1c8-4df5-b6e5-89081d456122.png =400x)
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
