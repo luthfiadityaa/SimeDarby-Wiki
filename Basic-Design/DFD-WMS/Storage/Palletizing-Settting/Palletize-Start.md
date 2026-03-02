@@ -148,6 +148,12 @@ This section explains the validations for the whole proccess Palletize Start
 - <span style="color:green; font-weight:bold">Planned Carton</span> must be greater than or equal to <span style="color:green; font-weight:bold">Quantity (Carton per Pallet)</span>.
 - Material Code exists in <span style="color:green; font-weight:bold">DMITEM</span>
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
+- Ex.)
+  Planned Carton Qty: 1000
+  Actual: 1010
+  The purpose to show the Planned Carton Qty is to have the history purpose.
+  With this history, user can detect the result is abit exceeded from plan.
+  So the Planned Carton Qty doesn't directly affect to the number of Pallet or Carton in Storage Operation.
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
