@@ -93,7 +93,7 @@ Continue to [If Empty pallet just arrives at 1101-1105].
 
 
 #Palletize Start - Set(F2)
-![image.png](/.attachments/image-cf980be6-3128-4022-828d-b2a0fa92b1a6.png)
+![image.png](/.attachments/image-cf980be6-3128-4022-828d-b2a0fa92b1a6.png =600x)
 `jp.co.daifuku.wms.web.display.storage.palletizingsetting.PalletizingSettingSCH`
 
 ::: mermaid
@@ -144,21 +144,21 @@ flowchart LR
     class input leftAlign;
 :::
 
-##<span style="color:skyblue; font-weight:bold">Validations</span>
+##Validations
 This section explains the validations for the whole proccess Palletize Start
-- AGC is online. <span style="color:green; font-weight:bold">(DMGroupController.STATUS_FLAG.ONLINE)</span>
-- Selected Station Number is NOT under suspend. <span style="color:green; font-weight:bold">(DMStation.SUSPEND.OFF)</span>
-- Selected Station Number is available. <span style="color:green; font-weight:bold">(DMStation.STATUS.NORMAL and DMMachine.STATUS_FLAG.ACTIVE)</span>
-- Pallet Information does not exist in <span style="color:green; font-weight:bold">DNCARRYINFO.</span>  
+- AGC is online. **(DMGroupController.STATUS_FLAG.ONLINE)**
+- Selected Station Number is NOT under suspend. **(DMStation.SUSPEND.OFF)**
+- Selected Station Number is available. **(DMStation.STATUS.NORMAL and DMMachine.STATUS_FLAG.ACTIVE)**
+- Pallet Information does not exist in
   To check for Pallet Information:  
-  <span style="color:green; font-weight:bold">JOIN DNCARRYINFO.PALLET_ID = DNPALLET.PALLET_ID  
-  CONDITION DNPALLET.BCR_DATA = <Pallet Number> </span>  
+  **JOIN DNCARRYINFO.PALLET_ID = DNPALLET.PALLET_ID  
+  CONDITION DNPALLET.BCR_DATA = <Pallet Number>**
   So if result > 0, Palletize Start cannot proceed.
-- <span style="color:green; font-weight:bold">Planned Carton</span> must be greater than <span style="color:green; font-weight:bold">0</span>.
-- <span style="color:green; font-weight:bold">Quantity (Carton per Pallet)</span> must be greater than <span style="color:green; font-weight:bold">0</span>.
-- <span style="color:green; font-weight:bold">Planned Carton</span> must be greater than or equal to <span style="color:green; font-weight:bold">Quantity (Carton per Pallet)</span>.
-- Material Code exists in <span style="color:green; font-weight:bold">DMITEM</span>
-- Input text with red asterisk <span style="color:red">(*)</span> is not empty
+- **Planned Carton** must be greater than **0**.
+- **Quantity (Carton per Pallet)** must be greater than **0**.
+- **Planned Carton** must be greater than or equal to **Quantity (Carton per Pallet)**.
+- Material Code exists in **DMITEM**
+- Input text with red asterisk <span style="color:red">(*)** is not empty
 - If the actual Carton Qty exceeds the planned Qty, continue the storage operation.
   Ex.)
   Planned Carton Qty: 1000
@@ -174,27 +174,27 @@ This section explains the validations for the whole proccess Palletize Start
     ![image.png](/.attachments/image-0fb60da3-6bc2-4fd7-bce4-bce1e8df8f6e.png =400x)
     ![image.png](/.attachments/image-22f2b51e-d1c8-4df5-b6e5-89081d456122.png =400x)
 
-##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+##Table Operation DML**
 
-###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span>
+###DNStoragePlan**
 *   **PLAN_UKEY** : Sequence Object    
 *   **STATUS_FLAG** : 0: Not Started    
 *   **CANCEL_FLAG** : 0: Normal Data    
 *   **DELETE_FLAG** : 0: No    
 *   **PLAN_DAY** : Value from screen (**Storage Date/Time**)    
 *   **PLAN_AREA_NO** : Value from screen (**Storage Location**) : **FGW1 (Ambient/9002)** or **FGW2 (Tempering/9001)**    
-*   **MATERIAL_CODE** : Value from screen (**Material Code**) -> **<span style="color:green; font-weight:bold">DMITEM.ITEM_CODE </span>**   
+*   **MATERIAL_CODE** : Value from screen (**Material Code**) -> ****DMITEM.ITEM_CODE ****   
 *   **PLAN_QTY** : Value from screen (**Qty Crtn/PL**)    
 *   **REPORT_FLAG** : 0: Not Reported    
 *   **STORING_PAIR_KEY** : Value from screen **(Material Code + Batch_No)**    
 *   **STATION_NO** : Value from screen (**Station No**)    
 *   **CURRENT_STATUS** : 1:Palletizing Started    
-*   **MATERIAL_NAME** : Value from screen (**Material Name**) -> **<span style="color:green; font-weight:bold">DMITEM.ITEM_NAME </span>**    
-*   **MATERIAL_TYPE** : Value from screen (**Material Type**) -> **<span style="color:green; font-weight:bold">DMITEM.ITEM_TYPE </span>**    
+*   **MATERIAL_NAME** : Value from screen (**Material Name**) -> ****DMITEM.ITEM_NAME ****    
+*   **MATERIAL_TYPE** : Value from screen (**Material Type**) -> ****DMITEM.ITEM_TYPE ****    
 *   **BATCH_NO** : Value from screen (**Batch_No**)    
 *   **PLANNED_CARTON_QTY** : Value from screen (**Planned Carton Qty**)    
-*   **QTY_KG_CRTN** : Value from screen (**Qty Kg/Crtn**) -> **<span style="color:green; font-weight:bold">DMITEM.ENTERING_QTY </span>**    
-*   **UOM** : Value from screen (**UOM**) -> **<span style="color:green; font-weight:bold">DMITEM.UOM </span>**    
+*   **QTY_KG_CRTN** : Value from screen (**Qty Kg/Crtn**) -> ****DMITEM.ENTERING_QTY ****    
+*   **UOM** : Value from screen (**UOM**) -> ****DMITEM.UOM ****    
 *   **TEMPERING_PERIOD** : Value from screen (**Tempering Period**)    
 *   **EXPIRY_DAYS** : Value from screen (**Expiry Days**)    
 *   **STORAGE_QTY** : **PLANNED_CARTON_QTY - TOTAL_ACTUAL_CARTON_QTY**    
@@ -207,7 +207,7 @@ This section explains the validations for the whole proccess Palletize Start
 *   **LAST_UPDATE_PNAME** : ClassName
 
 #Release Command from Palletize Robot - Dummy Arrival
-After palletizing is completed, the palletizing robot sends <span style="color:green; font-weight:bold">“Release Command”</span> signal via conveyor interlock.
+After palletizing is completed, the palletizing robot sends **“Release Command”** signal via conveyor interlock.
 
 <hr style="border: 2px solid red;">
 
@@ -245,13 +245,13 @@ prePalletizeStationOperator--> |INSERT| id26-insert
 
 After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and PrePalletizeStationOperator will execute the receive task based on information in received ID26. While PrePalletizeStationOperator processes ID26, it will create an Arrival record.
 
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
+jp.co.daifuku.asrs.communication.id.recv.As21Id26
 
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.location.PrePalletizeStationOperator &nbsp;</span>
+jp.co.daifuku.asrs.location.PrePalletizeStationOperator
 
-###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###Table Operation DML**
 
-####<span style="color:skyblue; font-weight:bold">DNArrival</span>
+####DNArrival**
 *   **ARRIVAL_DATE** : SYSTIMESTAMP    
 *   **STATION_NO** : Arrival Station Number from **ID26**    
 *   **CARRY_KEY** : 99999999    
@@ -265,7 +265,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME** : ClassName
 
-####<span style="color:skyblue; font-weight:bold">DNPallet</span>
+####DNPallet**
 *   **PALLET_ID** : Sequence Object    
 *   **CURRENT_STATION_NO** : DNSTORAGEPLAN.STATION_NO    
 *   **WH_STATION_NO** : DNSTORAGEPLAN.PLAN_AREA_NO    
@@ -278,7 +278,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 *   **REGIST_PNAME** : ClassName    
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP
 
-####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
+####DNWorkInfo**
 *   **JOB_NO** : Sequence Object    
 *   **SETTING_UNIT_KEY** : Sequence Object    
 *   **COLLECT_JOB_NO** : Sequence Object    
@@ -299,7 +299,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME** : ClassName
 
-####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+####DNCarryInfo**
 *   **CARRY_KEY** : Sequence Object    
 *   **PALLET_ID** : DNPALLET.PALLET_ID    
 *   **WORK_TYPE** : 26: Direct Transfer    
@@ -318,7 +318,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME** : ClassName
 
-####<span style="color:skyblue; font-weight:bold">DNStock</span>
+####DNStock**
 *   **STOCK_ID** : Sequence Object    
 *   **AREA_NO** : DNSTORAGEPLAN.PLAN_AREA_NO    
 *   **STORAGE_TYPE** : 2: New    
@@ -335,12 +335,12 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME** : ClassName
 
-###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span> 
+###DNStoragePlan** 
 *  **STATUS_FLAG**: 1: Working  
 *  **BCR_DATA**: DNPALLET.BCR_DATA
 
 ##Storage Sender at 1101-1105
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
+jp.co.daifuku.asrs.transmission.StorageSender
 
 ::: mermaid
 flowchart LR
@@ -361,23 +361,23 @@ storageSender-input-->storageSender-->id05msg
 storageSender--> |UPDATE| storageSender-update
 :::
 
-After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, StorageSender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">1:Started to 2:Waiting for Response.</span>
+After successful creation of arrival record in **ID26process**, StorageSender is the following process where it will send **ID05 to AGC**. To indicate **ID05** is sent to AGC, **DNCARRYINFO.CMD_STATUS** will be updated from **1:Started to 2:Waiting for Response.**
 
-###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###Table Operation DML**
 
-####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+####DNCarryInfo**
 *   **CMD_STATUS** : 2: Waiting for response    
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME** : ClassName
 
-####<span style="color:skyblue; font-weight:bold">DNArrival</span>
+####DNArrival**
 *   **CARRY_KEY** : DNCARRYINFO.CARRY_KEY    
 *   **SEND_FLAG** : 1: Sent    
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME** : ClassName
 
 ##ID25 at 1101-1105
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process &nbsp;</span>
+jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process
 
 ::: mermaid
 flowchart LR
@@ -400,8 +400,8 @@ id25process--> |DELETE| id25-delete
 
 ID25 sent from AGC to WareNavi indicate AGC responded the job by WareNavi.
 
-###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+###Table Operation DML**
+####DNCarryInfo**
 *   **CMD_STATUS** : 3: Commanded   
 *   **ERROR_CODE** : 0    
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
@@ -437,12 +437,12 @@ palletizeLaneStationOperator--> |INSERT| id26-insert
 palletizeLaneStationOperator--> |UPDATE| id26-update
 :::
 
-Continue the process <span style="color:green; font-weight:bold">Direct Transfer</span>, AGC will send ID26 to WareNavi and PalletizeLaneStationOperator will execute the receive task based on information in received ID26. While PalletizeLaneStationOperator processes ID26, it will create an Arrival record..
+Continue the process **Direct Transfer**, AGC will send ID26 to WareNavi and PalletizeLaneStationOperator will execute the receive task based on information in received ID26. While PalletizeLaneStationOperator processes ID26, it will create an Arrival record..
 At the same time, search for Empty location and decide an Aisle to storage(7101-7110).
 
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.id.recv.As21Id26 &nbsp;</span>
+jp.co.daifuku.asrs.communication.id.recv.As21Id26
 
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.location.PalletizeLaneStationOperator &nbsp;</span>
+jp.co.daifuku.asrs.location.PalletizeLaneStationOperator
 
 ::: mermaid
 flowchart LR
@@ -468,21 +468,21 @@ automaticmodechangesender-input-->storageSender-->id05msg
 storageSender--> |UPDATE| automaticmodechangesender-update
 :::
 
-After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, StorageSender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated <span style="color:green; font-weight:bold">1:Started.</span>
+After successful creation of arrival record in **ID26process**, StorageSender is the following process where it will send **ID05 to AGC**. To indicate **ID05** is sent to AGC, **DNCARRYINFO.CMD_STATUS** will be updated **1:Started.**
 
-###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###Table Operation DML**
 
-####<span style="color:skyblue; font-weight:bold">DMWarehouse</span>
+####DMWarehouse**
 *   **LAST_USED_STATION_NO** : Aisle Number where a reserved location belongs to    
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME** : Class name
 
-####<span style="color:skyblue; font-weight:bold">DMShelf</span>
+####DMShelf**
 *   **STATUS_FLAG** : 2:Reserved Location    
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME** : Class name
 
-####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+####DNCarryInfo**
 *   **AISLE_STATION_NO** : Aisle Number where a reserved location belongs to    
 *   **CMD_STATUS** : 1:Started    
 *   **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO : **(1111 / 1112 / 1113 / 1114 / 1115)**
@@ -490,24 +490,24 @@ After successful creation of arrival record in <span style="color:green; font-we
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME** : Class name
 
-####<span style="color:skyblue; font-weight:bold">DNStock</span>
+####DNStock**
 *   **LOCATION_NO** : Reserved Location Number    
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME** : Class name
 
-####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
+####DNWorkInfo**
 *   **PLAN_LOCATION_NO** : Reserved Location Number    
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME** : Class name
 
-####<span style="color:skyblue; font-weight:bold">DNArrival</span>
+####DNArrival**
 *   **CARRY_KEY** : DNCARRYINFO.CARRY_KEY    
 *   **SEND_FLAG** : 1:Sent    
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME** : Class name
 
 ##Storage Sender at 1111-1115
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
+jp.co.daifuku.asrs.transmission.StorageSender
 
 ::: mermaid
 flowchart LR
@@ -528,16 +528,16 @@ storageSender-input-->storageSender-->id05msg
 storageSender--> |UPDATE| storageSender-update
 :::
 
-After successful creation of arrival record in <span style="color:green; font-weight:bold">ID26process</span>, StorageSender is the following process where it will send <span style="color:green; font-weight:bold">ID05 to AGC</span>. To indicate <span style="color:green; font-weight:bold">ID05</span> is sent to AGC, <span style="color:green; font-weight:bold">DNCARRYINFO.CMD_STATUS</span> will be updated from <span style="color:green; font-weight:bold">1:Started to 2:Waiting for Response.</span>
+After successful creation of arrival record in **ID26process**, StorageSender is the following process where it will send **ID05 to AGC**. To indicate **ID05** is sent to AGC, **DNCARRYINFO.CMD_STATUS** will be updated from **1:Started to 2:Waiting for Response.**
 
-###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+###Table Operation DML**
 
-####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+####DNCarryInfo**
 *   **CMD_STATUS** : 2: Waiting for response    
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME** : ClassName
 
-####<span style="color:skyblue; font-weight:bold">DNArrival</span>
+####DNArrival**
 *   **CARRY_KEY** : DNCARRYINFO.CARRY_KEY    
 *   **SEND_FLAG** : 1: Sent    
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
