@@ -15,7 +15,7 @@ P1[FROM AISLE STATION - 9001,
 9002 , 9003, 9004, 9005, 
 9006, 9007, 9008, 9009, 
 9010, 9011, 9012, 9013, 
-9014]-->P2[RetrievalSender]-->P21[ID12]-->P3[ID32]-->P4[ID33]-->P6[ID68]-->P7[ID26]-->P8[To STATION - 1205, 1206, 
+9014]-->P2[RetrievalSender]-->P21[ID12]-->P3[ID32]-->P4[ID33]-->P5[ID64]-->P6[ID68]-->P7[ID26]-->P8[To STATION - 1205, 1206, 
 1207, 1208, 1209, 1301, 
 1302] 
 :::
@@ -54,6 +54,7 @@ P1[FROM AISLE STATION - 9001,
 | ID12[(3)](#ID12)                                                                |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |     |  
 | ID32[(4)](#ID32)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |     |     |    
 | ID33[(5)](#ID33)                                                                |    |    |    | U  |    |    |     |    | U  |    |    |    |    |    |     |     |     
+| ID64[(6)](#ID64)                                                                |    |    |    | U  |    |    |     |    |    |    |    |    |    |    |     |     |
 | ID68[(7)](#ID68)                                                                | S  |    |    | S  |    |    |     |    |    |    |    |    |    | I  |     |     |
 | ID26[(8)](#ID26)                                                                | U  |    | D  | D  | D  | I  |     |    | U  | I  |    |    |    |    | I   |     |
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |     |
@@ -379,10 +380,29 @@ ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
+#ID64
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.communication.control.Id64Process &nbsp;</span>
 
+::: mermaid
+flowchart LR
+
+id64("
+ID 64
+")
+
+id64-update[("
+DNCARRYINFO
+")]
+
+id64-->id64process
+id64process--> |UPDATE| id64-update
+:::
+
+Upon equipment have picked up the Pallet successfully, ID64 will be sent from AGC to WareNavi to indicate pick up of Pallet is completed.
+
+##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
-* **CMD_STATUS**: 5:Retrieval completed
-* **RETRIEVAL_STATION_NO**: DMSHELF.STATION_NO
+* **CMD_STATUS**: 4:Pickup completed
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
