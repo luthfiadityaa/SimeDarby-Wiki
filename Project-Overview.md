@@ -6,6 +6,8 @@
 # Layouts
 ![image.png](/.attachments/image-26a3012a-c929-4720-b855-d1ace53a2af2.png)  
 ![image.png](/.attachments/image-66baeeb4-b157-44ba-ab6a-5a087e0bbc2f.png =320x)  
+![image.png](/.attachments/image-dcea343d-cec9-4cce-ad84-8b2e08613ef2.png =600x)  
+![image.png](/.attachments/image-da53d978-42f8-4810-99db-b7aa90cdceb7.png =600x)  
 
 # Documents List
 Documents for SimeDerby Oil are mainly managed in SharePoint.
