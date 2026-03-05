@@ -14,7 +14,7 @@
 
 ## **1.  No Operations (Empty Pallet Supply)**
 
-![image.png](/.attachments/image-56482763-e68b-431c-84be-2d13a2934286.png)
+![image.png](/.attachments/image-fcbd5772-843f-4e27-a5aa-b91dbcff9d9a.png)
 
 ::: mermaid
 flowchart LR
