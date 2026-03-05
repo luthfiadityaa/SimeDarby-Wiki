@@ -162,9 +162,9 @@ ID 26
 
 id26-insert[("
    DNARRIVAL
-   DNPALLET(for EMP_PB)
-   DNCARRYINFO(for EMP_PB)
-   DNSTOCK(for EMP_PB)
+   DNPALLET(for DIRECT_PB)
+   DNCARRYINFO(for DIRECT_PB)
+   DNSTOCK(for DIRECT_PB)
 ")]
 
 prePalletizeStationOperator[PrePalletizeStationOperator]
@@ -189,12 +189,12 @@ flowchart LR
 }}%%
 
 storageSender-update[("
-DNCARRYINFO(for EMP_PB)
+DNCARRYINFO(for DIRECT_PB)
 DNARRIVAL
 ")]
 storageSender-input[("
 DNARRIVAL
-DNCARRYINFO(for EMP_PB)
+DNCARRYINFO(for DIRECT_PB)
 ")]
 
 id05msg("
