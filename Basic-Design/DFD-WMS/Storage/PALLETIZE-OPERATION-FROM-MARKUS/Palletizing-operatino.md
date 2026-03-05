@@ -12,7 +12,7 @@
 
 ## Condition during operation (Regardless of Batch Start/End)
 ### At 1101-1105
-- Empty palelt exists at 1101-1105. AGC automatically supplies.
+- Empty palelt exists at 1101-1105 and may be also in front of Robot. Because AGC automatically supplies.
 
 #### In case a batch is not executed
 - DNPallet and DNSotck exist but DNStoragePlan and DNCarryInfo don't exist.
