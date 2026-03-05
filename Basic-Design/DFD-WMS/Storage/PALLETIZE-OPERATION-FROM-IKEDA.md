@@ -103,9 +103,9 @@ flowchart LR
   "themeVariables": { "fontSize": "10px" },
   "flowchart": {
     "useMaxWidth": false,
-    "diagramPadding": 2,
-    "nodeSpacing": 20,
-    "rankSpacing": 18
+    "diagramPadding": 5,
+    "nodeSpacing": 15,
+    "rankSpacing": 15
   }
 }}%%
 
