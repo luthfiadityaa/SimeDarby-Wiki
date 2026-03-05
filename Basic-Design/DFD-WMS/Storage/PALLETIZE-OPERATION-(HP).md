@@ -16,6 +16,5 @@ STATUS_FLAG | Meaning | Explain
 0 | No Started | Plan just register and do not have any Pallet
 1 | Working | When the 1st Pallet store in update to 1
 2 | Waiting for last pallet | Batch end submitted (last_pallet_qty > 0) and waiting for ID25.force_completion flag
-3 | Batch End | Batch end submitted (qty = 0)
 4 | Completed | Updated to 4, will inserted do DNHostsend for reporting to host
 
