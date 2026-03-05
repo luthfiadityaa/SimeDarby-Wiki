@@ -6,7 +6,7 @@
 - Cartons are not on production lane conveyor.
 
 ### Begining of one day after operation day.
-- Empty palelt exists at 1101-1105. (Because AGC automatically supplied the day before)
+- Empty palelt exists at 1101-1105 and may be also in front of Robot. Because AGC automatically supplies.
 - Batch is not execued.
 - Cartons are not on production lane conveyor.
 
