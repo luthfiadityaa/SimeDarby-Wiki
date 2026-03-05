@@ -64,19 +64,27 @@ Continue to [If Empty pallet just arrives at 1101-1105].
 4. Empty pallet moves to front of Robot area.
 5. Robot starts palletizing work.
 #### If the number of cartons is totlly planned number.
-6. Robot completes the work and releases the palelt to 1111-1115.
+6. Robot completes the work and releases the pallet to 1111-1115.
 7. Warenavi receives ID26 with Normal Completion.
 8. Warenavi creates DNWorkInfo and connects it to active DNStoragePlan and DNCarryInfo.
 9. WareNavi sends ID05 for going to Aisle station.
-
-10. Already the next pallet arrives at 1101-1105.
-11. **This pallet moves to front of Robot due to step 1.**
+---
+10. At the same time, the next pallet arrives at 1101-1105.
+11. **This pallet moves to front of Robot because Batch is not Ended on WareNavi screen.**
+---
+12. Operator stops batch on Robot.
+13. Operator executes Batch End on WareNavi screen.
+14. The pallet in front of robot remains there.
 
 #### If the number of cartons is not planned number.
-7. Robot stops work because there are not cartons from production lane.
-8. Operator Ends Batch on WareNavi screen.
-9. Operator forcibly completes the pallet.
-10. Robot releases the palelt to 1111-1115.
-11. Warenavi receives ID26 with Force Completion.
-12. Warenavi creates DNWorkInfo and connects it to DNStoragePlan(Waiting for last pallet) and DNCarryInfo.
-10. WareNavi sends ID05 for going to Aisle station.
+6. Robot stops work because there are not cartons from production lane.
+7. Operator executes Batch End on WareNavi screen. (Status --> Waiting for last pallet) Cf. Step11
+8. Operator forcibly completes the pallet.
+9. Robot releases the pallet to 1111-1115.
+10. Warenavi receives ID26 with Force Completion.
+11. Warenavi creates DNWorkInfo and connects it to DNStoragePlan(Waiting for last pallet) and DNCarryInfo.
+12. WareNavi sends ID05 for going to Aisle station.
+---
+13. At the same time, the next pallet arrives at 1101-1105.
+14. **This pallet won't move to front of Robot because Batch is Ended on WareNavi screen.**
+---
