@@ -11,10 +11,10 @@
 
 Those processes are related to DNStoragePlan status_flag.
 
-STATUS_FLAG | Meaning | Explain
--------------------------------
-0 | No Started | Plan just register and do not have any Pallet
-1 | Working | When the 1st Pallet store in update to 1
-2 | Waiting for last pallet | Batch end submitted (last_pallet_qty > 0) and waiting for ID25.force_completion flag
-4 | Completed | Updated to 4, will inserted do DNHostsend for reporting to host
+|STATUS_FLAG | Meaning | Explain |
+| --- | --- | --- |
+|0 | No Started | Plan just register and do not have any Pallet |
+|1 | Working | When the 1st Pallet store in update to 1 |
+|2 | Waiting for last pallet | Batch end submitted (last_pallet_qty > 0) and waiting for ID25.force_completion flag |
+|4 | Completed | Process Completed |
 
