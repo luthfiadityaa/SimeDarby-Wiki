@@ -145,6 +145,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 
 ## DNSTOCK
 - STOCK_ID           = Sequence Object
+- ITEM_CODE          = EMP_PB
 - AREA_NO            = DNWORKINFO.PLAN_AREA_NO
 - LOCATION_NO        = DNWORKINFO.PLAN_LOCATION_NO
 - STORAGE_TYPE       = 2:NEW
