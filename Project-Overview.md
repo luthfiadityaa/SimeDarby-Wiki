@@ -21,6 +21,7 @@ Documents for SimeDerby Oil are mainly managed in SharePoint.
   - Program Design
   - Program List
   - Function Specifications
+  - [Initial Table Data]([241_DD_D_WN7A_JP_WN7A_EN_Initial_Data_Registration.xlsm](https://daifuku.sharepoint.com/:x:/r/sites/jp0211039/Shared%20Documents/PTDI/Projects/PT.%20Guthrie%20Indonesia%20Sei%20Mangkei%20Refinery(Sime%20Darby)/Garuda%20Project/F.%20Basic%20Design/C.%20Initial%20Data/241_DD_D_WN7A_JP_WN7A_EN_Initial_Data_Registration.xlsm?d=w141406e2c78847439d0814d87aaf9791&csf=1&web=1&e=CLaTZU&xsdata=MDV8MDJ8fGM3YzhhYzEyNDFhNzQxYzc1ODFlMDhkZTc5OWE4OTMxfDJjMzdhN2E0NTdlMzRkOTk5Y2NiZmYxZjQ3NTBjMTA4fDB8MHw2MzkwODE5MDE3NjY4MjYwMTR8VW5rbm93bnxWR1ZoYlhOVFpXTjFjbWwwZVZObGNuWnBZMlY4ZXlKRFFTSTZJbFJsWVcxelgwRlVVRk5sY25acFkyVmZVMUJQVEU5R0lpd2lWaUk2SWpBdU1DNHdNREF3SWl3aVVDSTZJbGRwYmpNeUlpd2lRVTRpT2lKUGRHaGxjaUlzSWxkVUlqb3hNWDA9fDF8TDJOb1lYUnpMekU1T20xbFpYUnBibWRmVDBSYWFGbHFVbTFaYlUxMFRUSkpNVTVUTURCYVYwVXhURmRLYVZwRVkzUlplbVJwVFdwV2ExbFVhekZaYWxGNVFIUm9jbVZoWkM1Mk1pOXRaWE56WVdkbGN5OHhOemN5TlRrek16YzFNVEUzfDBkOWNjZDA2NmNjMDQ0MDFjNDE1MDhkZTc5OWE4OTMwfDM4NjliMzI3NjViNDRkODRiNzYzOTQ5NzQ5YjEzNjgz&sdata=VUlyNHVZUE9sdUxqQlFvZXo1U1V0bFdmZk9uOUNKT0kydkVWMy9Uc3RaOD0%3D&ovuser=2c37a7a4-57e3-4d99-9ccb-ff1f4750c108%2Cmarkusbala%40ptsos.co.id))
 
 # Environment Settings
 - [Azure Devops](/Manual-Guide/Azure-Devops)
