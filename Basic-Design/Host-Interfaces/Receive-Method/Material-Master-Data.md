@@ -72,7 +72,7 @@ The data will be paired as an input: **Warenavi** ⇄ **SAP**
 The data will be paired as an input: **Warenavi** ⇄ **SAP**
 * **ITEM_CODE** ⇄ **MATERIAL CODE**
 * **ITEM_NAME** ⇄ **MATERIAL MATERIAL**
-* **QTY_KG_CRTN** ⇄ **QUANTITY KG CTN**
+* **ENTERING_QTY** ⇄ **QUANTITY KG CTN**
 * **UOM** ⇄ **UOM**
 * **ITEM_TYPE** ⇄ **ITEM TYPE**
 

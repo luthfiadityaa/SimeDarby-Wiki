@@ -172,24 +172,19 @@ This section explains the validations for the whole proccess Palletize Start
 *   **DELETE_FLAG** : 0: No    
 *   **PLAN_DAY** : Value from screen (**Storage Date/Time**)    
 *   **PLAN_AREA_NO** : Value from screen (**Storage Location**) : **FGW1 (Ambient/9002)** or **FGW2 (Tempering/9001)**    
-*   **MATERIAL_CODE** : Value from screen (**Material Code**) -> **<span style="color:green; font-weight:bold">DMITEM.ITEM_CODE </span>**   
-*   **PLAN_QTY** : Value from screen (**Qty Crtn/PL**)    
+*   **ITEM_CODE** : Value from screen (**Material Code**) -> **<span style="color:green; font-weight:bold">DMITEM.ITEM_CODE </span>**   
+*   **PLAN_QTY** : Value from screen (**PLANNED CARTON QTY**)    
 *   **REPORT_FLAG** : 0: Not Reported    
 *   **STORING_PAIR_KEY** : Value from screen **(Material Code + Batch_No)**    
 *   **STATION_NO** : Value from screen (**Station No**)    
 *   **CURRENT_STATUS** : 1:Palletizing Started    
-*   **MATERIAL_NAME** : Value from screen (**Material Name**) -> **<span style="color:green; font-weight:bold">DMITEM.ITEM_NAME </span>**    
-*   **MATERIAL_TYPE** : Value from screen (**Material Type**) -> **<span style="color:green; font-weight:bold">DMITEM.ITEM_TYPE </span>**    
-*   **BATCH_NO** : Value from screen (**Batch_No**)    
-*   **PLANNED_CARTON_QTY** : Value from screen (**Planned Carton Qty**)    
-*   **QTY_KG_CRTN** : Value from screen (**Qty Kg/Crtn**) -> **<span style="color:green; font-weight:bold">DMITEM.ENTERING_QTY </span>**    
-*   **UOM** : Value from screen (**UOM**) -> **<span style="color:green; font-weight:bold">DMITEM.UOM </span>**    
+*   **PLAN_LOT_NO** : Value from screen (**Batch_No**)    
+*   **QTY_CTRN_PLT** : Value from screen (**QtyCrtnPL**)    
 *   **TEMPERING_PERIOD** : Value from screen (**Tempering Period**)    
 *   **EXPIRY_DAYS** : Value from screen (**Expiry Days**)    
-*   **STORAGE_QTY** : **PLANNED_CARTON_QTY - TOTAL_ACTUAL_CARTON_QTY**    
-*   **TOTAL_ACTUAL_CARTON_QTY** : **TOTAL_ACTUAL_CARTON_QTY + PLAN_QTY**    
-*   **MAX_PALLET_BATCH_END** : **PLANNED_CARTON_QTY / PLAN_QTY**    
+*   **MAX_PALLET_BATCH_END** : **RESULT_QTY / PLAN_QTY**    
 *   **BATCH_PALLET_START** : **PLAN_DAY + System Timestamp (Time Value)**    
+*   **MSG_TYPE** : 1: Production Storage
 *   **REGIST_DATE** : SYSTIMESTAMP    
 *   **REGIST_PNAME** : ClassName    
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
@@ -256,7 +251,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
 *   **PALLET_ID** : Sequence Object    
-*   **CURRENT_STATION_NO** : DNSTORAGEPLAN.STATION_NO    
+*   **CURRENT_STATION_NO** : ID26.STATION_NO    
 *   **WH_STATION_NO** : DNSTORAGEPLAN.PLAN_AREA_NO    
 *   **STATUS_FLAG** : 1: Reserved for Storage    
 *   **EMPTY_FLAG** : 0: Normal Pallet    
@@ -267,6 +262,23 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 *   **REGIST_PNAME** : ClassName    
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP
 
+####<span style="color:skyblue; font-weight:bold">DNStock</span>
+*   **STOCK_ID** : Sequence Object    
+*   **AREA_NO** : DNSTORAGEPLAN.PLAN_AREA_NO    
+*   **STORAGE_TYPE** : 2: New    
+*   **STOCK_QTY** : 0    
+*   **ALLOCATION_QTY** : 0    
+*   **PLAN_QTY** : DNSTORAGEPLAN.PLAN_QTY    
+*   **PALLET_ID** : DNPALLET.PALLET_ID    
+*   **LOT_NO** : DNSTORAGEPLAN.PLAN_LOT_NO    
+*   **TEMPERING_PERIOD** : DNSTORAGEPLAN.TEMPERING_PERIOD    
+*   **STORING_PAIR_KEY** : DNSTORAGEPLAN.STORING_PAIR_KEY    
+*   **EXPIRY_DATE** : DNSTORAGEPLAN.PLAN_DAY + DNSTORAGEPLAN.EXPIRY_DAYS    
+*   **REGIST_DATE** : SYSTIMESTAMP    
+*   **REGIST_PNAME** : ClassName    
+*   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
+*   **LAST_UPDATE_PNAME** : ClassName
+
 ####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 *   **JOB_NO** : Sequence Object    
 *   **SETTING_UNIT_KEY** : Sequence Object    
@@ -274,15 +286,13 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 *   **JOB_TYPE** : 02: Storage    
 *   **STATUS_FLAG** : 0: Not Started    
 *   **PLAN_UKEY** : DNSTORAGEPLAN.PLAN_UKEY    
-*   **STOCK_ID** : Sequence Object    
+*   **STOCK_ID** : DNSTOCK.STOCK_ID    
 *   **PLAN_DAY** : DMWARENAVISYSTEM.WORK_DAY    
-*   **BATCH_NO** : DNSTORAGEPLAN.BATCH_NO    
+*   **PLAN_LOT_NO** : DNSTORAGEPLAN.PLAN_LOT_NO    
 *   **PLAN_AREA_NO** : DNSTORAGEPLAN.PLAN_AREA_NO_NO    
-*   **MATERIAL_CODE** : DNSTORAGEPLAN.MATERIAL_CODE    
-*   **PLAN_QTY** : DNSTORAGEPLAN.PLAN_QTY    
-*   **WORK_DAY** : DMWARENAVISYSTEM.WORK_DAY    
-*   **USER_ID** : Login Info    
-*   **STORAGE_LOCATION_FROM** : DNSTORAGEPLAN.STATION_NO    
+*   **ITEM_CODE** : DNSTORAGEPLAN.ITEM_CODE    
+*   **PLAN_QTY** : DNSTORAGEPLAN.PLAN_QTY       
+*   **USER_ID** : Login Info     (SYSTEM)
 *   **REGIST_DATE** : SYSTIMESTAMP    
 *   **REGIST_PNAME** : ClassName    
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
@@ -297,36 +307,21 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 *   **RESTORING_FLAG** : 0: Not Restore to Original Location    
 *   **CARRY_FLAG** : 3: Direct Transfer    
 *   **WORK_NO** : Sequence Object    
-*   **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO : **(1101 / 1102 / 1103 / 1104 / 1105)**    
+*   **SOURCE_STATION_NO** : ID26.STATION_NO
 *   **DEST_STATION_NO** : **Based on SOURCE_STATION_NO where a reserved location belongs to : (1111 / 1112 / 1113 / 1114 / 1115)**    
 *   **CANCEL_REQUEST** : 0: Not Requested    
 *   **SCHEDULE_NO** : Sequence Object    
-*   **END_STATION_NO** : DNWORKINFO.PLAN_AREA_NO    
 *   **REGIST_DATE** : SYSTIMESTAMP    
 *   **REGIST_PNAME** : ClassName    
 *   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME** : ClassName
 
-####<span style="color:skyblue; font-weight:bold">DNStock</span>
-*   **STOCK_ID** : Sequence Object    
-*   **AREA_NO** : DNSTORAGEPLAN.PLAN_AREA_NO    
-*   **STORAGE_TYPE** : 2: New    
-*   **STOCK_QTY** : 0    
-*   **ALLOCATION_QTY** : 0    
-*   **PLAN_QTY** : DNSTORAGEPLAN.PLAN_QTY    
-*   **PALLET_ID** : Sequence Object    
-*   **BATCH_NO** : DNSTORAGEPLAN.BATCH_NO    
-*   **TEMPERING_PERIOD** : DNSTORAGEPLAN.TEMPERING_PERIOD    
-*   **STORING_PAIR_KEY** : DNSTORAGEPLAN.STORING_PAIR_KEY    
-*   **EXPIRY_DATE** : DNSTORAGEPLAN.EXPIRY_DAYS    
-*   **REGIST_DATE** : SYSTIMESTAMP    
-*   **REGIST_PNAME** : ClassName    
-*   **LAST_UPDATE_DATE** : SYSTIMESTAMP    
-*   **LAST_UPDATE_PNAME** : ClassName
+
 
 ###<span style="color:skyblue; font-weight:bold">DNStoragePlan</span> 
 *  **STATUS_FLAG**: 1: Working  
-*  **BCR_DATA**: DNPALLET.BCR_DATA
+*  **LAST_UPDATE_DATE** : SYSTIMESTAMP    
+*  **LAST_UPDATE_PNAME** : ClassName
 
 ##Storage Sender at 1101-1105
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender &nbsp;</span>
