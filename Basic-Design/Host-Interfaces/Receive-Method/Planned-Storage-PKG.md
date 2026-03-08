@@ -1,10 +1,12 @@
 [[_TOC_]]
 
 # StoragePlanPkgDataLoader
+
 This is the module to receive planned storage PKG data from SAP.
 SAP will send the planned storage data on the SFTP.
 
 # DFD
+
 The trigger to start the process is this file.
 `C:\daifuku\wms\tomcat\webapps\wms\serviceHostComm.prj`
 
@@ -12,10 +14,11 @@ The trigger to start the process is this file.
 flowchart LR
     A[SAP] -->|Send XML via SFTP| B[(FTP Folder)]
     B -->|GET XML| C[HostCommExecutor]
-    C -->|Insert Data| E[(DNStoragePlan)]
-    C --> Cond1{"isDataError ?"} 
-    Cond1 --> |TRUE OR False will Insert Data| F[(DNExchangeHistory)]
-    Cond1 --> |Only FALSE will Insert Data| G[(DNLoadErrorInfo)]
+    C --> Cond1{"isDataError ?"}
+    Cond1 --> |FALSE| E[(DNStoragePlan)]
+    Cond1 --> |TRUE| G[(DNLoadErrorInfo)]
+    E --> |Save Communication Data|F[(DNExchangeHistory)]
+    G --> |Save Communication Data|F[(DNExchangeHistory)]
 
     subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
@@ -24,7 +27,7 @@ flowchart LR
     end
 :::
 
-#XML Format
+# XML Format
 
 `Name File`: PL_Stor_YYYYMMMDDhhmmss.xml
 
@@ -58,8 +61,28 @@ flowchart LR
 </PurchaseOrder>
 ```
 
+### <span style="color:skyblue; font-weight:bold">DNSTORAGEPLAN</span>
+
+The data will be paired as an input: **SAP** ⇄ **Warenavi**
+
+|       SAP      |      Warenavi     |  Primary Key | Required |            Remarks            |
+|:--------------:|:-----------------:|:------------:|:--------:|:-----------------------------:|
+|     Vendor     |   SUPPLIER_CODE   |              |          |                               |
+|   VendorName   |   SUPPLIER_NAME   |              |          |                               |
+|  DocumentDate  |       --NA--      |              |          |                               |
+|    ---------   |   --------------  | ------------ |  ------- |  ---------------------------- |
+|  PurchaseOrder | RECEIVE_TICKET_NO |      P1      |          |                               |
+|   ItemNumber   |  RECEIVE_LINE_NO  |      P2      |          |                               |
+|      Plant     |  SAP_TO_LOCATION  |              |          | Refer: DMTOSTATION.STATION_NO |
+| MaterialNumber |     ITEM_CODE     |              |          |                               |
+|  OrderQuantity |      PLAN_QTY     |              |          |                               |
+|    OrderUnit   |       --NA--      |              |          |       Follow DMITEM.UOM       |
+|  DeliveryDate  |      PLAN_DAY     |              |          |                               |
+
 # User Story
-  - #5117
+
+- #5117
 
 # Related DFD
+
 - [Storage Plan Maintenance (PKG) - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/917/Storage-Plan-Maintenance-(PKG))
