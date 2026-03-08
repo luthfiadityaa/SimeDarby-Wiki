@@ -104,7 +104,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 - JOB_TYPE           = 02:Storage
 - STATUS_FLAG        = 0:Not Started
 - HARDWARE_TYPE      = 3:ASRS
-- PLAN_UKEY          = Sequence Object
+- PLAN_UKEY          = ~~Sequence Object~~ This is nullable
 - STOCK_ID           = Sequence Object
 - SYSTEM_CONN_KEY    = Sequence Object
 - PLAN_DAY           = DMWARENAVISYSTEM.WORK_DAY
@@ -126,7 +126,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 - SETTING_UNIT_KEY   = DNWORKINFO.SETTING_UNIT_KEY
 - COLLECT_JOB_NO     = DNWORKINFO.COLLECT_JOB_NO
 - JOB_TYPE           = DNWORKINFO.JOB_TYPE
-- PLAN_UKEY          = DNWORKINFO.PLAN_UKEY
+- PLAN_UKEY          = ~~DNWORKINFO.PLAN_UKEY~~ This is nullable
 - STOCK_ID           = DNWORKINFO.STOCK_ID
 - PALLET_ID          = DNPALLET.PALLET_ID
 - PLAN_DAY           = DNWORKINFO.PLAN_DAY
@@ -145,6 +145,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 
 ## DNSTOCK
 - STOCK_ID           = Sequence Object
+- ITEM_CODE          = EMP_PB
 - AREA_NO            = DNWORKINFO.PLAN_AREA_NO
 - LOCATION_NO        = DNWORKINFO.PLAN_LOCATION_NO
 - STORAGE_TYPE       = 2:NEW

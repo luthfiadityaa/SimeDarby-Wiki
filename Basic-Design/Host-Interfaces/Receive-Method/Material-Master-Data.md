@@ -12,10 +12,11 @@ The trigger to start the process is this file.
 flowchart LR
     A[SAP] -->|Send XML via SFTP| B[(FTP Folder)]
     B -->|GET XML| C[HostCommExecutor]
-    C -->|Insert Data| E[(DMItem)]
     C --> Cond1{"isDataError ?"} 
-    Cond1 --> |TRUE OR False will Insert Data| F[(DNExchangeHistory)]
-    Cond1 --> |Only FALSE will Insert Data| G[(DNLoadErrorInfo)]
+    Cond1 --> |FALSE| E[(DMITEM)]
+    Cond1 --> |TRUE| G[(DNLoadErrorInfo)]
+    E --> |Save Communication Data|F[(DNExchangeHistory)]
+    G --> |Save Communication Data|F[(DNExchangeHistory)]
 
     subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
@@ -33,9 +34,6 @@ flowchart LR
 * **TYPE**: S: Success
 * **MESSAGE_DESC**: Free Text -> **The master material data has been inserted.**    
 
-The data will be paired as an input: **Warenavi** ⇄ **SAP**
-* **ITEM_CODE** ⇄ **MATERIAL CODE**
-* **UOM** ⇄ **UOM**
 
 #XML Format
 `Name File`: Material_<MaterialNum>_YYYYMMMDD_hhmmss-xxx.xml​
@@ -69,12 +67,16 @@ The data will be paired as an input: **Warenavi** ⇄ **SAP**
 ```
 
 ###<span style="color:skyblue; font-weight:bold">DMItem</span>
-The data will be paired as an input: **Warenavi** ⇄ **SAP**
-* **ITEM_CODE** ⇄ **MATERIAL CODE**
-* **ITEM_NAME** ⇄ **MATERIAL MATERIAL**
-* **ENTERING_QTY** ⇄ **QUANTITY KG CTN**
-* **UOM** ⇄ **UOM**
-* **ITEM_TYPE** ⇄ **ITEM TYPE**
+The data will be paired as an input: **SAP** ⇄ **Warenavi**
+
+|       SAP      |       Warenavi      | Primary Key | Required |
+|:--------------:|:-------------------:|:-----------:|:--------:|
+|  MaterialCode  |      ITEM_CODE      |      P1     |     Y    |
+|  MaterialName  |      ITEM_NAME      |             |     Y    |
+|  MaterialType  |      ITEM_TYPE      |             |     Y    |
+|       UOM      |         UOM         |             |     Y    |
+|  QuantityKgCtn |     ENTERING_QTY    |             |          |
+| QuantityCtnPal | BUNDLE_ENTERING_QTY |             |          |
 
 # User Story
 - #5737
