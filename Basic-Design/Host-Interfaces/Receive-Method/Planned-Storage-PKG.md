@@ -27,6 +27,9 @@ flowchart LR
     end
 :::
 
+![image.png](/.attachments/image-409d5c38-b7f4-4af5-99c4-2be34851bf7f.png)
+
+
 # XML Format
 
 `Name File`: PL_Stor_YYYYMMMDDhhmmss.xml
@@ -34,13 +37,13 @@ flowchart LR
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <PurchaseOrder>
+    <PurchaseOrder>1111111111<PurchaseOrder>
     <CompanyCode>1000</CompanyCode>
     <Vendor>1234567890</Vendor>
     <VendorName>ABC Supplies Ltd.</VendorName>
     <DocumentDate>20250623</DocumentDate>
     <Items>
         <Item>
-            <PurchaseOrder>1111111111<PurchaseOrder>
             <ItemNumber>00010</ItemNumber>
             <Plant>SG01</Plant>
             <MaterialNumber>MAT123456789000001</MaterialNumber>
@@ -49,7 +52,6 @@ flowchart LR
             <DeliveryDate>20250701</DeliveryDate>
         </Item>
         <Item>
-            <PurchaseOrder>1111111111<PurchaseOrder>
             <ItemNumber>00020</ItemNumber>
             <Plant>SG01</Plant>
             <MaterialNumber>MAT123456789000002</MaterialNumber>
@@ -61,20 +63,22 @@ flowchart LR
 </PurchaseOrder>
 ```
 
+
+
 ### <span style="color:skyblue; font-weight:bold">DNSTORAGEPLAN</span>
 
 The data will be paired as an input: **SAP** ⇄ **Warenavi**
 
 |       SAP      |      Warenavi     |  Primary Key | Required |            Remarks            |
 |:--------------:|:-----------------:|:------------:|:--------:|:-----------------------------:|
+|  PurchaseOrder | RECEIVE_TICKET_NO |      P1      |          |                               |
 |     Vendor     |   SUPPLIER_CODE   |              |          |                               |
 |   VendorName   |   SUPPLIER_NAME   |              |          |                               |
 |  DocumentDate  |       --NA--      |              |          |                               |
 |    ---------   |   --------------  | ------------ |  ------- |  ---------------------------- |
-|  PurchaseOrder | RECEIVE_TICKET_NO |      P1      |          |                               |
 |   ItemNumber   |  RECEIVE_LINE_NO  |      P2      |          |                               |
 |      Plant     |  SAP_TO_LOCATION  |              |          | Refer: DMTOSTATION.STATION_NO |
-| MaterialNumber |     ITEM_CODE     |              |          |                               |
+| MaterialNumber |     ITEM_CODE     |      P3      |          |                               |
 |  OrderQuantity |      PLAN_QTY     |              |          |                               |
 |    OrderUnit   |       --NA--      |              |          |       Follow DMITEM.UOM       |
 |  DeliveryDate  |      PLAN_DAY     |              |          |                               |
