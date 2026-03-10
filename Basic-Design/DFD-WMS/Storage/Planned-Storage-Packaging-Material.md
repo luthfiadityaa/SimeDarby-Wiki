@@ -153,21 +153,20 @@ flowchart LR
 
 ::: mermaid
 erDiagram
-    STORAGE-PLAN ||--o{ PALLET : "contains"
-    
-    STORAGE-PLAN {
-        string plan_id PK
-        string warehouse_zone
-        datetime creation_date
-        string status
+    DNSTORAGEPLAN ||--o{ DNWORKINFO : "identifies"
+    DNWORKINFO ||--|| DNPALLET : "mapped_by_bcr"
+
+    STORAGEPLAN {
+        string plan_ukey PK
     }
 
-    PALLET {
-        string pallet_id PK
-        string plan_id FK
-        float weight
-        string contents
-        string dimensions
+    WORKINFO {
+        string plan_ukey FK
+        string bcr_data PK
+    }
+
+    DNPALLET {
+        string bcr_data PK
     }
 	
 :::
