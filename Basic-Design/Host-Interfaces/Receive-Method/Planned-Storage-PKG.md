@@ -63,6 +63,8 @@ flowchart LR
 </PurchaseOrder>
 ```
 
+## Validation
+- When the OrderUnit is not same to existing UOM in DMItem, the plan data should be rejected with error message.
 
 
 ### <span style="color:skyblue; font-weight:bold">DNSTORAGEPLAN</span>
