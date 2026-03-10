@@ -151,6 +151,9 @@ flowchart LR
 
 ## Relantionship between Storage Plan and Pallet
 
+One Storage Plan can have many Workinfo.
+One workinfo is one pallet.
+
 ::: mermaid
 erDiagram
     DNSTORAGEPLAN ||--o{ DNWORKINFO : "identifies"
