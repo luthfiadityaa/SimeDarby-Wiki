@@ -183,7 +183,7 @@ This section explains the validations for the whole proccess Storage Packaging M
   CONDITION DNPALLET.BCR_DATA = <Pallet Number>**
   So if result > 0, Palletize Start cannot proceed.
 - Storage Qty must be greater than **"0"**
-- ** Planned Qty and Stored Qty ** are calculated fields (readonly).
+- **Planned Qty and Stored Qty** are calculated fields (readonly).
 - ~~Station (**ST1106**) is not suspended (**DMSTATION.SUSPEND.OFF**)~~
 - ~~Station (**ST1106**) is not disconnected (**DMSTATION.STATUS_FLAG.ACTIVE**)~~
 
@@ -193,9 +193,9 @@ This section explains the validations for the whole proccess Storage Packaging M
 - PLAN_UKEY         = Sequence Object                                                                                                             
 - STATUS_FLAG       = 1:Working    **Very first pallet will update**                                                   
 - CANCEL_FLAG       = 0:Normal Data                                                                                                          
-- ~~ PLAN_QTY          = Value from screen (**Planned Qty**)~~
-- ~~ PROCESS_QTY       = Value from screen (**Storage Qty**)~~
-- ~~ RESULT_QTY        = Value from screen (**Stored Qty**)~~
+- ~~PLAN_QTY          = Value from screen (**Planned Qty**)~~
+- ~~PROCESS_QTY       = Value from screen (**Storage Qty**)~~
+- ~~RESULT_QTY        = Value from screen (**Stored Qty**)~~
 - ~~REPORT_FLAG       = 0:Not Reported~~                                                      
 - ~~WORK_DAY          = DMWARENAVISYSTEM.WORK_DAY~~                                                                                                            
 - ~~BCR_DATA          = Value from screen (**Pallet #**)~~       
