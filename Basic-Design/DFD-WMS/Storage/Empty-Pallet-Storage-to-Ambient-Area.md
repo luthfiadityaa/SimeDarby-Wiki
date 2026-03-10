@@ -60,7 +60,6 @@ DNPALLET
 DNWORKINFO
 DNWORKLIST
 DNSTOCK
-DNCARRYINFO
 ")]
 
 tableList-select[("
@@ -185,6 +184,7 @@ DNPALLET
 
 id26-insert[("
 DNARRIVAL
+DNCARRYINFO
 ")]
 
 storageStationOperator[storageStationOperator]
