@@ -200,15 +200,26 @@ ID 26
 
 id26-insert[("
 DNARRIVAL
+")]
+
+carry-insert[("
 DNCARRYINFO
 DNPALLET
 DNSTOCK
 ")]
 
-StorageStationOperator[StorageStationOperator]
+plan-select[("
+DNSTORAGEPLAN
+")]
 
-releaseCommand-->id26msg-->id26process-->StorageStationOperator
-StorageStationOperator--> |INSERT| id26-insert
+operator[StorageStationOperator]
+scheduler[AutoStorageScheduler]
+
+releaseCommand-->id26msg-->id26process-->operator--RMI-->scheduler
+operator--> |INSERT| id26-insert
+scheduler--> |SELECT| id26-insert
+scheduler--> |SELECT| plan-select
+scheduler--> |INSERT| carry-insert
 :::
 
 After Completion, Conveyor receives the signal and starts transferring the pallet. AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let InOutStationOperator picks up the data.
