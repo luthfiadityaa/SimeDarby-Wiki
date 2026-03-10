@@ -32,7 +32,7 @@
 | Action Name                                                    | STRP | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT  | HTSD | ITEM | STSN |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
 | Planned Storage from Host [(1)](#planned-storage-from-host)    |   I  |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| Planned Storage - Set (F2) [(2)](#planned-storage---set-(f2))  |   U  |      |      |      |      |      |      |      |      |      |      |      |   S  |   S  |
+| Planned Storage - Set (F2) [(2)](#planned-storage---set-(f2))  |   U  |      |      |      |      |      |      |      |      |      |      |      |   S  |   ~~S~~  |
 | ID26 - Dummy Arrival [(3)](#id26---dummy-arrival)              |      |   I  |      |      |   I  |   I  |   I  |      |      |      |      |      |      |      |
 | Storage Sender at 1106 [(4)](#storage-sender-at-1106)          |      |   U  |   U  |      |   U  |   U  |   U  |   U  |   U  |      |      |      |      |      |
 | ID25 at 1106 [(5)](#id25-at-1106)                              |      |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |
@@ -93,7 +93,7 @@ Upon receiving new Plan Storage from Host system, WareNavi will insert related p
 - VENDOR_CODE          = Value from SAP (**Vendor Code**)
 - VENDOR_NAME          = Value from SAP (**Vendor Name**)                                                     
 - COMPANY_CODE         = Value from SAP (**Company Code**)                                                      
-- RECEIVE_TICKET_NO    = Value from SAP (**Document Number**)                                                      
+- RECEIVE_TICKET_NO    = Value from SAP (**Purchase No**)                                                      
 - RECEIVE_LINE_NO      = Value from SAP (**Item No / Line No**)                                                      
 - RECEIVE_TICKET_DATE  = Value from SAP (**Document Date**)                                                                                                              
 - PLAN_AREA_NO         = Value from SAP (**Plant**)                                                      
@@ -134,7 +134,7 @@ flowchart LR
     ]
 
     tableList-select[("
-        DMMASTERMATERIAL
+        DMITEM
         DMSTATION
     ")]
 
@@ -149,9 +149,32 @@ flowchart LR
 
 :::
 
+## Relantionship between Storage Plan and Pallet
+
+::: mermaid
+erDiagram
+    STORAGE-PLAN ||--o{ PALLET : "contains"
+    
+    STORAGE-PLAN {
+        string plan_id PK
+        string warehouse_zone
+        datetime creation_date
+        string status
+    }
+
+    PALLET {
+        string pallet_id PK
+        string plan_id FK
+        float weight
+        string contents
+        string dimensions
+    }
+	
+:::
+
 ## Validations
 This section explains the validations for the whole proccess Storage Packaging Material
-- AGC is online. (**DMGroupController.STATUS_FLAG.ONLINE**)
+- ~~AGC is online. (**DMGroupController.STATUS_FLAG.ONLINE**)~~
 - Material Code exists in **DMMaterialMaster**
 - Material Code filtered with **MaterialType.ZPCK**
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
@@ -160,22 +183,25 @@ This section explains the validations for the whole proccess Storage Packaging M
   **JOIN DNCARRYINFO.PALLET_ID = DNPALLET.PALLET_ID  
   CONDITION DNPALLET.BCR_DATA = <Pallet Number>**
   So if result > 0, Palletize Start cannot proceed.
-- Storage Qty, Planned Qty and Stored Qty must be greater than **"0"**
-- Station (**ST1106**) is not suspended (**DMSTATION.SUSPEND.OFF**)
-- Station (**ST1106**) is not disconnected (**DMSTATION.STATUS_FLAG.ACTIVE**)
+- Storage Qty must be greater than **"0"**
+- ** Planned Qty and Stored Qty ** are calculated fields (readonly).
+- ~~Station (**ST1106**) is not suspended (**DMSTATION.SUSPEND.OFF**)~~
+- ~~Station (**ST1106**) is not disconnected (**DMSTATION.STATUS_FLAG.ACTIVE**)~~
+
+**Note:** All IN-stations can be used.
 
 ## DNSTORAGEPLAN
 - PLAN_UKEY         = Sequence Object                                                                                                             
-- STATUS_FLAG       = 1:Working                                                       
+- STATUS_FLAG       = 1:Working    **Very first pallet will update**                                                   
 - CANCEL_FLAG       = 0:Normal Data                                                                                                          
-- PLAN_QTY          = Value from screen (**Planned Qty**)                                                     
-- PROCESS_QTY       = Value from screen (**Storage Qty**)                                                       
-- RESULT_QTY        = Value from screen (**Stored Qty**)                                                                                                            
-- REPORT_FLAG       = 0:Not Reported                                                      
-- WORK_DAY          = DMWARENAVISYSTEM.WORK_DAY                                                                                                            
-- BCR_DATA          = Value from screen (**Pallet #**)       
-- BATCH_NO          = Value from screen (**Batch #**)                                                   
-- STORING_PAIR_KEY  = Value from screen (**Material Code + Batch #**)  
+- ~~ PLAN_QTY          = Value from screen (**Planned Qty**)~~
+- ~~ PROCESS_QTY       = Value from screen (**Storage Qty**)~~
+- ~~ RESULT_QTY        = Value from screen (**Stored Qty**)~~
+- ~~REPORT_FLAG       = 0:Not Reported~~                                                      
+- ~~WORK_DAY          = DMWARENAVISYSTEM.WORK_DAY~~                                                                                                            
+- ~~BCR_DATA          = Value from screen (**Pallet #**)~~       
+- ~~BATCH_NO          = Value from screen (**Batch #**)~~                                                   
+- ~~STORING_PAIR_KEY  = Value from screen (**Material Code + Batch #**)~~  
 - LAST_UPDATE_DATE  = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = ClassName
 
@@ -250,7 +276,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 - RESTORING_FLAG    = 0:Not Restore to Original Location
 - CARRY_FLAG        = 1:Storage
 - WORK_NO           = Sequence Object
-- SOURCE_STATION_NO = DNPALLET.CURRENT_STATION_NO ⟶ **1106**
+- SOURCE_STATION_NO = DNPALLET.CURRENT_STATION_NO ⟶ ~~**1106**~~
 - DEST_STATION_NO   = Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (**7211/7212/7213/7214**)
 - CANCEL_REQUEST    = 0:Not Requested
 - SCHEDULE_NO       = Sequence Object
@@ -278,7 +304,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 - STOCK_ID           = Sequence Object
 - AREA_NO            = DNWORKINFO.PLAN_AREA_NO
 - LOCATION_NO        = DNWORKINFO.PLAN_LOCATION_NO
-- MATERIAL_CODE      = DNWORKINFO.MATERIAL_CODE
+- ITEM_CODE          = DNWORKINFO.ITEM_CODE
 - COMPANY_CODE       = DNWORKINFO.COMPANY_CODE
 - VENDOR_CODE        = DNWORKINFO.VENDOR_CODE
 - VENDOR_NAME        = DNWORKINFO.VENDOR_NAME
@@ -286,11 +312,16 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 - STORAGE_DAY        = DMWARENAVISYSTEM.WORK_DAY
 - STORAGE_DATE       = SYSTIMESTAMP
 - NEWEST_STORAGE_DATE= DNSTOCK.STORAGE_DATE
-- STOCK_QTY          = DNWORKINFO.PROCESS_QTY + DNWORKINFO.RESULT_QTY
+- STOCK_QTY          = ~~DNWORKINFO.PROCESS_QTY + DNWORKINFO.RESULT_QTY~~ Now still 0
 - PLAN_QTY           = DNWORKINFO.PLAN_QTY
 - PALLET_ID          = DNPALLET.PALLET_ID
 - REGIST_DATE        = SYSTIMESTAMP
 - REGIST_PNAME       = ClassName
+- LAST_UPDATE_DATE   = SYSTIMESTAMP
+- LAST_UPDATE_PNAME  = ClassName
+
+## DNStoragePlan
+- PROCESS_QTY          = DNSTORAGEPLAN + DNWORKINGO.PLAN_QTY                                                       
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = ClassName
 
@@ -665,40 +696,7 @@ id33process--x |DELETE| id33-delete
 
 ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage operation of the pallet is completed by SRM.
 
-## DNHOSTSEND
-- WORK_DAY            = DNWORKINFO.WORK_DAY
-- JOB_NO              = DNWORKINFO.JOB_NO
-- COLLECT_JOB_NO      = DNWORKINFO.COLLECT_JOB_NO
-- SETTING_UNIT_KEY    = DNWORKINFO.SETTING_UNIT_KEY
-- JOB_TYPE            = DNWORKINFO.JOB_TYPE
-- STATUS_FLAG         = 4:Completed
-- HARDWARE_TYPE       = DNWORKINFO.HARDWARE_TYPE
-- PLAN_UKEY           = DNWORKINFO.PLAN_UKEY
-- STOCK_ID            = DNWORKINFO.STOCK_ID
-- SYSTEM_CONN_KEY     = DNWORKINFO.SYSTEM_CONN_KEY
-- PLAN_DAY            = DNWORKINFO.PLAN_DAY
-- VENDOR_CODE         = DNWORKINFO.VENDOR_CODE
-- VENDOR_NAME         = DNWORKINFO.VENDOR_NAME
-- COMPANY_CODE        = DNWORKINFO.COMPANY_CODE
-- BATCH_NO            = DNWORKINFO.BATCH_NO
-- PLAN_AREA_NO        = DNWORKINFO.PLAN_AREA_NO
-- PLAN_LOCATION_NO    = DNWORKINFO.PLAN_LOCATION_NO
-- MATERIAL_CODE       = DNWORKINFO.MATERIAL_CODE
-- MATERIAL_NAME       = DMMATERIALMASTER.MATERIAL_NAME
-- PLAN_QTY            = DNWORKINFO.PLAN_QTY
-- RESULT_QTY          = DNWORKINFO.RESULT_QTY
-- RESULT_AREA_NO      = DNWORKINFO.RESULT_AREA_NO
-- RESULT_LOCATION_NO  = DNWORKINFO.RESULT_LOCATION_NO
-- REPORT_FLAG         = 0:Not Reported
-- USER_ID             = DNWORKINFO.USER_ID
-- TERMINAL_NO         = DNWORKINFO.TERMINAL_NO
-- WORK_SECOND         = DNWORKINFO.WORK_SECOND
-- USER_NAME           = DCUSER.USERNAME
-- REPORT_FLAG         = 1:Reported
-- REGIST_DATE         = SYSTIMESTAMP
-- REGIST_PNAME        = Class name
-- LAST_UPDATE_DATE    = SYSTIMESTAMP
-- LAST_UPDATE_PNAME   = Class name
+
 
 ## DNSTOCKHISTORY
 - WORK_DAY              = DMWARENAVISYSTEM.WORK_DAY
@@ -751,6 +749,8 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 - LAST_UPDATE_DATE  = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = Class name
 
+
+
 ## DMSHELF
 - STATUS_FLAG         = 1: Occupied
 - LAST_UPDATE_DATE    = SYSTIMESTAMP
@@ -763,18 +763,60 @@ ID33 for Storage operation which is sent by AGC to WareNavi to indicate Storage 
 - LAST_UPDATE_DATE    = SYSTIMESTAMP
 - LAST_UPDATE_PNAME   = Class name
 
+## DNWORKINFO
+- WORK_DAY          = DMWARENAVISYSTEM.WORK_DAY
+- STATUS_FLAG       = 4:Completed
+- RESULT_*          = ** UPDATE ALL THE RESULT FIELDS USING PLAN DATA **
+- LAST_UPDATE_DATE  = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = ClassName
+
 ## DNSTOCK
-- STOCK_QTY          = DNWORKINFO.PROCESS_QTY + DNWORKINFO.RESULT_QTY
+- STOCK_QTY          = DNWORKINFO.RESULT_QTY
 - NEWEST_STORAGE_DATE= SYSTIMESTAMP
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = ClassName
 
+## DNHOSTSEND
+- WORK_DAY            = DNWORKINFO.WORK_DAY
+- JOB_NO              = DNWORKINFO.JOB_NO
+- COLLECT_JOB_NO      = DNWORKINFO.COLLECT_JOB_NO
+- SETTING_UNIT_KEY    = DNWORKINFO.SETTING_UNIT_KEY
+- JOB_TYPE            = DNWORKINFO.JOB_TYPE
+- STATUS_FLAG         = 4:Completed
+- HARDWARE_TYPE       = DNWORKINFO.HARDWARE_TYPE
+- PLAN_UKEY           = DNWORKINFO.PLAN_UKEY
+- STOCK_ID            = DNWORKINFO.STOCK_ID
+- SYSTEM_CONN_KEY     = DNWORKINFO.SYSTEM_CONN_KEY
+- PLAN_DAY            = DNWORKINFO.PLAN_DAY
+- VENDOR_CODE         = DNWORKINFO.VENDOR_CODE
+- VENDOR_NAME         = DNWORKINFO.VENDOR_NAME
+- COMPANY_CODE        = DNWORKINFO.COMPANY_CODE
+- BCR_DATA            = DNWORKINFO.BCR_DATA
+- LOT_NO              = DNWORKINFO.RESULT_LOT_NO
+- PLAN_AREA_NO        = DNWORKINFO.PLAN_AREA_NO
+- PLAN_LOCATION_NO    = DNWORKINFO.PLAN_LOCATION_NO
+- ITEM_CODE           = DNWORKINFO.ITEM_CODE
+- ITEM_NAME           = DMITEM.ITEM_NAME
+- PLAN_QTY            = DNWORKINFO.PLAN_QTY
+- RESULT_QTY          = DNWORKINFO.RESULT_QTY
+- RESULT_AREA_NO      = DNWORKINFO.RESULT_AREA_NO
+- RESULT_LOCATION_NO  = DNWORKINFO.RESULT_LOCATION_NO
+- REPORT_FLAG         = 0:Not Reported
+- USER_ID             = DNWORKINFO.USER_ID
+- TERMINAL_NO         = DNWORKINFO.TERMINAL_NO
+- WORK_SECOND         = DNWORKINFO.WORK_SECOND
+- USER_NAME           = DCUSER.USERNAME
+- REPORT_FLAG         = 1:Reported
+- REGIST_DATE         = SYSTIMESTAMP
+- REGIST_PNAME        = Class name
+- LAST_UPDATE_DATE    = SYSTIMESTAMP
+- LAST_UPDATE_PNAME   = Class name
 
-## DNWORKINFO
-- WORK_DAY          = DMWARENAVISYSTEM.WORK_DAY
-- STATUS_FLAG       = 4:Completed
-- LAST_UPDATE_DATE  = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = ClassName
+
+
+-------------------------------------------------------------------------------
+
+!!! **NEED A NEW SCREEN/FUNCTION TO CLOSE DNSTORAGEPLAN**
 
 ## DNSTORAGEPLAN
 - STATUS_FLAG       = 4:Completed
