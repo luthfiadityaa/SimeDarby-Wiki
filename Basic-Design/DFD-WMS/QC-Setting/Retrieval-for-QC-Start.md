@@ -94,8 +94,9 @@ flowchart LR
 **CURRENT_MODE**: 2: Retrieval Mode
 
 # Retrieval for QC Start - Set(F2)
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.QCSettingSCH &nbsp;</span>
- ![==image_0==.jpg](/.attachments/==image_0==-385c044c-0af1-4f9f-b8bd-8c195cfba22a.jpg) 
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.qcsetting.qcstartretrieval.QCStartSCH &nbsp;</span>
+
+![image.png](/.attachments/image-83b7e25b-6301-40cc-82e2-9e8cc2d635a8.png)
 
 This screen is mainly used when the pallet needs to be inspected.
 
