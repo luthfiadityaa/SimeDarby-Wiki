@@ -73,11 +73,16 @@ flowchart LR
      tableList-insert[("
         DNSTOCKHISTORY
     ")]
+	
+	 tableList-controller[("
+        WNStockController
+    ")]
 
     input-->className[QCSettingSCH]
 
-    className --> |UPDATE| tableList-update
-    className --> |INSERT| tableList-insert
+    className --> tableList-controller
+	tableList-controller --> |UPDATE| tableList-update
+    tableList-controller --> |INSERT| tableList-insert
 
     classDef leftAlign text-align:left;
     class input leftAlign;
