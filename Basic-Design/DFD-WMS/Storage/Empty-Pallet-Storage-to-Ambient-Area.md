@@ -114,7 +114,6 @@ This section explains the validations for the whole proccess Storage Packaging M
 - WORK_DAY           = DMWARENAVISYSTEM.WORK_DAY
 - USER_ID            = Login Info
 - TERMINAL_NO        = Login Terminal
-- STORING_PAIR_KEY   = DNSTORAGEPLAN.STORING_PAIR_KEY
 - REGIST_DATE        = SYSTIMESTAMP                                                    
 - REGIST_PNAME       = ClassName
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
