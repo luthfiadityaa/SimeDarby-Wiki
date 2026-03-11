@@ -33,7 +33,7 @@ from Screen]-->P2[Update To QC Status]-->P21[QC Status Update Result]
 
 | Action Name                                                                     |WRKI|WRKL|PLLT|CRYI|STCK|HSTS|ARRVL|WRHS|SHLF|STCH|ITEM|STSN|TTSN|OPRD|INOUT| 
 |---------------------------------------------------------------------------------|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|-----|
-| Update QC Status - Set(F2) [(1)](#Update-QC-Status--Set(F2))                    |    |    |    |    | U  |    |     |    |    | I  |    |    |    |    |     |
+| Update QC Status - Set(F2) [(1)](#Update-QC-Status--Set(F2))                    |    |    |    |    | U  |  I |     |    |    | I  |    |    |    |    |     |
 | **Host Communication**                                                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
 | QC Status Update Result[(2)](#QC-Status-Update-Result)                          |    |    |    |    |    |    |     |    |    |    |    |    |    |    |     |
 
@@ -77,12 +77,16 @@ flowchart LR
 	 tableList-controller[("
         WNStockController
     ")]
+	 tableList-hostsend[("
+        DNHostSend
+    ")]
 
     input-->className[QCSettingSCH]
 
     className --> tableList-controller
 	tableList-controller --> |UPDATE| tableList-update
     tableList-controller --> |INSERT| tableList-insert
+	classname --> tableList-hostsend
 
     classDef leftAlign text-align:left;
     class input leftAlign;
@@ -116,6 +120,10 @@ flowchart LR
 * **REGIST_PNAME**: ClassName
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: ClassName
+
+####<span style="color:skyblue; font-weight:bold">DNHostSend</span>
+
+**TO BE confirm**
   
 #QC Status Update Result
 - [QC Status Update Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/844/Internal-Location-Transfer-Result)
