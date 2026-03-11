@@ -29,8 +29,8 @@
 ## Inbound Table Data Flow
 | Action Name                                                    | PLLT | WRKI | WRKL | CRYI | STCK | ARVL | WRHS | SHLF | STCH | INOT | ITEM | STSN |
 |----------------------------------------------------------------|------|------|------|------|------|------|------|------|------|------|------|------|
-| Empty Pallet - Set (F2) [(1)](#empty-pallet---set-(f2))        |   I  |   I  |   I  |   I  |   I  |      |      |      |      |      |   S  |   S  |
-| ID26 at 1301-1302 [(2)](#id26-at-1301-1302)                    |   U  |      |      |      |      |   I  |      |      |      |      |      |      |
+| Empty Pallet - Set (F2) [(1)](#empty-pallet---set-(f2))        |   I  |   I  |   I  |      |   I  |      |      |      |      |      |   S  |   S  |
+| ID26 at 1301-1302 [(2)](#id26-at-1301-1302)                    |   U  |      |      |   I  |      |   I  |      |      |      |      |      |      |
 | Storage Sender at 1301-1302 [(3)](#storage-sender-at-1301-1302)|   U  |      |      |   U  |      |   U  |   U  |   U  |      |      |      |      |
 | ID25 at 1301-1302 [(4)](#id25-at-1301-1302)                    |   U  |   U  |      |   U  |   U  |   D  |      |      |   I  |   I  |      |   S  |
 | ID64 at STV [(5)](#id64-at-stv)                                |      |      |      |   U  |      |      |      |      |      |      |      |      |
@@ -70,28 +70,31 @@ DMMASTERMATERIAL
 
 
 className[EmptyPalletSettingSCH]
+scheduler[SchedulerFactory]
+createStorage[EmpPbStorageScheduler]
 
-input --> className --> |INSERT| tableList-insert
+input --> className --> scheduler --> createStorage --> |INSERT| tableList-insert
 tableList-select --> |SELECT| className
 :::
 
 ## Validations
 This section explains the validations for the whole proccess Storage Packaging Material
-- AGC is online. **DMGroupController.STATUS_FLAG.ONLINE**
+- ~~AGC is online. **DMGroupController.STATUS_FLAG.ONLINE**~~
 - Material Code exists in **DMMaterialMaster**
 - Material Code filtered with **MATERIALCODE.EMP_PB** 
-- Input text with red asterisk <span style="color:red">(*)</span> is not empty
-- Pallet Information does not exist in **DNCARRYINFO**  
-  To check for Pallet Information:  
-  **JOIN DNCARRYINFO.PALLET_ID = DNPALLET.PALLET_ID**  
-  **CONDITION DNPALLET.BCR_DATA = <Pallet Number>**  
+- Input text with red asterisk <span style="color:red">(*)</span> is not empty 
   So if result > 0, Palletize Start cannot proceed.
-- Station **(ST1301)** is not suspended **(DMSTATION.SUSPEND.OFF)**
-- Station **(ST1302)** is not disconnected **(DMSTATION.STATUS_FLAG.ACTIVE)**
+- ~~Station **(ST1301)** is not suspended **(DMSTATION.SUSPEND.OFF)**~~
+- ~~Station **(ST1302)** is not disconnected **(DMSTATION.STATUS_FLAG.ACTIVE)**~~
 
 ## DNPALLET
 - PALLET_ID = Sequence Object
 - BCR_DATA = Value from Screen (**Pallet #**)
+- WH_STATION_NO      = 9002 
+- SOFT_ZONE_ID       = 004
+- STATUS_FLAG        = 1:Reserved for Storage 
+- ALLOCATION_FLAG    = 1:Allocated
+- EMPTY_FLAG         = 0:Normal Pallet 
 - REGIST_DATE = SYSTIMESTAMP
 - REGIST_PNAME = ClassName
 - LAST_UPDATE_DATE = SYSTIMESTAMP
@@ -114,7 +117,6 @@ This section explains the validations for the whole proccess Storage Packaging M
 - WORK_DAY           = DMWARENAVISYSTEM.WORK_DAY
 - USER_ID            = Login Info
 - TERMINAL_NO        = Login Terminal
-- STORING_PAIR_KEY   = DNSTORAGEPLAN.STORING_PAIR_KEY
 - REGIST_DATE        = SYSTIMESTAMP                                                    
 - REGIST_PNAME       = ClassName
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
@@ -136,7 +138,6 @@ This section explains the validations for the whole proccess Storage Packaging M
 - STORAGE_DATE       = SYSTIMESTAMP
 - PLAN_QTY           = DNWORKINFO.PLAN_QTY
 - USER_ID            = Login Info
-- USER_NAME          = Login Info
 - TERMINAL_NO        = Login Terminal
 - REGIST_DATE        = SYSTIMESTAMP                                                    
 - REGIST_PNAME       = ClassName
@@ -158,25 +159,6 @@ This section explains the validations for the whole proccess Storage Packaging M
 - REGIST_PNAME       = ClassName
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = ClassName
-
-## DNCARRYINFO
-- CARRY_KEY         = Sequence Object  
-- PALLET_ID         = Sequence Object
-- WORK_TYPE         = 26:Direct Transfer
-- CMD_STATUS        = 1:Started 
-- PRIORITY          = 2:Normal
-- RESTORING_FLAG    = 0:Not Restore to Original Location
-- CARRY_FLAG        = 1:Storage
-- WORK_NO           = Sequence Object
-- SOURCE_STATION_NO = DNPALLET.CURRENT_STATION_NO ⟶ **1301/1302/1106** 
-- DEST_STATION_NO   = Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (**7211/7212/7213/7214**)
-- CANCEL_REQUEST    = 0:Not Requested
-- SCHEDULE_NO       = Sequence Object
-- END_STATION_NO    = DNCARRYINFO.DEST_STATION_NO
-- REGIST_DATE       = SYSTIMESTAMP                                                    
-- REGIST_PNAME      = ClassName
-- LAST_UPDATE_DATE  = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = ClassName
 
 # Storage Flow Process
 
@@ -200,6 +182,7 @@ ID 26
 
 id26-update[("
 DNPALLET
+DNCARRYINFO
 ")]
 
 id26-insert[("
@@ -220,10 +203,6 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 
 ## DNPALLET
 - CURRENT_STATION_NO = DNARRIVAL.STATION_NO ⟶ **1301/1302/1106**  
-- WH_STATION_NO      = 9002
-- STATUS_FLAG        = 1:Reserved for Storage 
-- ALLOCATION_FLAG    = 1:Allocated
-- EMPTY_FLAG         = 0:Normal Pallet 
 - LAST_STORED_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = ClassName
@@ -241,6 +220,15 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 - REGIST_PNAME       = ClassName
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = ClassName
+
+## DNCARRYINFO
+- SOURCE_STATION_NO = DNARRIVAL.STATION_NO
+- DEST_STATION_NO   = Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ (**7211/7212/7213/7214**)
+- END_STATION_NO    = DNCARRYINFO.DEST_STATION_NO
+- REGIST_DATE       = SYSTIMESTAMP                                                    
+- REGIST_PNAME      = ClassName
+- LAST_UPDATE_DATE  = SYSTIMESTAMP
+- LAST_UPDATE_PNAME = ClassName
 
 # Storage Sender at 1301-1302
 

@@ -151,23 +151,25 @@ flowchart LR
 
 ## Relantionship between Storage Plan and Pallet
 
+One Storage Plan can have many Workinfo.
+One workinfo is one pallet.
+
 ::: mermaid
 erDiagram
-    STORAGE-PLAN ||--o{ PALLET : "contains"
-    
-    STORAGE-PLAN {
-        string plan_id PK
-        string warehouse_zone
-        datetime creation_date
-        string status
+    DNSTORAGEPLAN ||--o{ DNWORKINFO : "identifies"
+    DNWORKINFO ||--|| DNPALLET : "mapped_by_bcr"
+
+    STORAGEPLAN {
+        string plan_ukey PK
     }
 
-    PALLET {
-        string pallet_id PK
-        string plan_id FK
-        float weight
-        string contents
-        string dimensions
+    WORKINFO {
+        string plan_ukey FK
+        string bcr_data PK
+    }
+
+    DNPALLET {
+        string bcr_data PK
     }
 	
 :::
@@ -184,19 +186,26 @@ This section explains the validations for the whole proccess Storage Packaging M
   CONDITION DNPALLET.BCR_DATA = <Pallet Number>**
   So if result > 0, Palletize Start cannot proceed.
 - Storage Qty must be greater than **"0"**
-- ** Planned Qty and Stored Qty ** are calculated fields (readonly).
+- Stored Qty + Storage Qty cannot bigger than Planned Qty
+- **Planned Qty and Stored Qty** are calculated fields (readonly).
 - ~~Station (**ST1106**) is not suspended (**DMSTATION.SUSPEND.OFF**)~~
 - ~~Station (**ST1106**) is not disconnected (**DMSTATION.STATUS_FLAG.ACTIVE**)~~
 
 **Note:** All IN-stations can be used.
 
+## DNWorkInfo
+## DNPallet
+Update 
+## DNStock
+
 ## DNSTORAGEPLAN
 - PLAN_UKEY         = Sequence Object                                                                                                             
 - STATUS_FLAG       = 1:Working    **Very first pallet will update**                                                   
-- CANCEL_FLAG       = 0:Normal Data                                                                                                          
-- ~~ PLAN_QTY          = Value from screen (**Planned Qty**)~~
-- ~~ PROCESS_QTY       = Value from screen (**Storage Qty**)~~
-- ~~ RESULT_QTY        = Value from screen (**Stored Qty**)~~
+- CANCEL_FLAG       = 0:Normal Data                           
+- PROCESS_QTY          = DNSTORAGEPLAN + DNWORKINGO.PLAN_QTY                                                                                
+- ~~PLAN_QTY          = Value from screen (**Planned Qty**)~~
+- ~~PROCESS_QTY       = Value from screen (**Storage Qty**)~~
+- ~~RESULT_QTY        = Value from screen (**Stored Qty**)~~
 - ~~REPORT_FLAG       = 0:Not Reported~~                                                      
 - ~~WORK_DAY          = DMWARENAVISYSTEM.WORK_DAY~~                                                                                                            
 - ~~BCR_DATA          = Value from screen (**Pallet #**)~~       
@@ -320,10 +329,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = ClassName
 
-## DNStoragePlan
-- PROCESS_QTY          = DNSTORAGEPLAN + DNWORKINGO.PLAN_QTY                                                       
-- LAST_UPDATE_DATE   = SYSTIMESTAMP
-- LAST_UPDATE_PNAME  = ClassName
+
 
 # Storage Sender at 1106
 

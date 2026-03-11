@@ -37,7 +37,7 @@ flowchart LR
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <PurchaseOrder>
-    <PurchaseOrder>1111111111<PurchaseOrder>
+    <PurchaseOrder>1111111111</PurchaseOrder>
     <CompanyCode>1000</CompanyCode>
     <Vendor>1234567890</Vendor>
     <VendorName>ABC Supplies Ltd.</VendorName>
