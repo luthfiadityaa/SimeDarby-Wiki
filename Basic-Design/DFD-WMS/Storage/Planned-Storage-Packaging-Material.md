@@ -195,7 +195,8 @@ This section explains the validations for the whole proccess Storage Packaging M
 ## DNSTORAGEPLAN
 - PLAN_UKEY         = Sequence Object                                                                                                             
 - STATUS_FLAG       = 1:Working    **Very first pallet will update**                                                   
-- CANCEL_FLAG       = 0:Normal Data                                                                                                          
+- CANCEL_FLAG       = 0:Normal Data                           
+- PROCESS_QTY          = DNSTORAGEPLAN + DNWORKINGO.PLAN_QTY                                                                                
 - ~~PLAN_QTY          = Value from screen (**Planned Qty**)~~
 - ~~PROCESS_QTY       = Value from screen (**Storage Qty**)~~
 - ~~RESULT_QTY        = Value from screen (**Stored Qty**)~~
@@ -322,10 +323,7 @@ After Completion, Conveyor receives the signal and starts transferring the palle
 - LAST_UPDATE_DATE   = SYSTIMESTAMP
 - LAST_UPDATE_PNAME  = ClassName
 
-## DNStoragePlan
-- PROCESS_QTY          = DNSTORAGEPLAN + DNWORKINGO.PLAN_QTY                                                       
-- LAST_UPDATE_DATE   = SYSTIMESTAMP
-- LAST_UPDATE_PNAME  = ClassName
+
 
 # Storage Sender at 1106
 
