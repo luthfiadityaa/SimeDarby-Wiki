@@ -64,6 +64,10 @@ flowchart LR
         QC Duration
         Extend to Hours
     ]
+	
+	 tableList-controller[("
+        WNStockController
+    ")]
 
      tableList-update[("
         DNSTOCK
@@ -75,8 +79,9 @@ flowchart LR
 
     input-->className[QCSettingSCH]
 
-    className --> |UPDATE| tableList-update
-    className --> |INSERT| tableList-insert
+    className --> tableList-controller
+	tableList-controller --> |UPDATE| tableList-update
+    tableList-controller --> |INSERT| tableList-insert
 
     classDef leftAlign text-align:left;
     class input leftAlign;
