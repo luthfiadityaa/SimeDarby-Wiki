@@ -131,7 +131,7 @@ flowchart LR
 **CURRENT_MODE**: 1:Storage Mode
 
 # QC Work - Retrieval for QC Start - Completion and Restorage
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.qcsetting.qcstartretrieval.QCStartSCH &nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.QCWorkSettingSCH   &nbsp;</span>
 
 ![Picture1.png](/.attachments/Picture1-bc50da6b-1545-456a-807f-701a53af0980.png)
   
