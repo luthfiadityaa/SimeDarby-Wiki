@@ -136,7 +136,6 @@ This section explains the validations for the whole proccess Storage Packaging M
 - STORAGE_DATE       = SYSTIMESTAMP
 - PLAN_QTY           = DNWORKINFO.PLAN_QTY
 - USER_ID            = Login Info
-- USER_NAME          = Login Info
 - TERMINAL_NO        = Login Terminal
 - REGIST_DATE        = SYSTIMESTAMP                                                    
 - REGIST_PNAME       = ClassName
