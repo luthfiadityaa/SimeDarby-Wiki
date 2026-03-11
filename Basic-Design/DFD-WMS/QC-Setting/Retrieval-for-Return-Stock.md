@@ -102,8 +102,9 @@ flowchart LR
 **CURRENT_MODE**: 2: Retrieval Mode
 
 # Retrieval for Return Stock - Set(F2)
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.retrieval.QCSettingSCH &nbsp;</span>
-![Picture1.png](/.attachments/Picture1-bdec4735-9094-418a-9a9f-09579d66436b.png)
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.wms.web.display.qcsetting.qcreturnstock.QCReturnStockSCH&nbsp;</span>
+
+![image.png](/.attachments/image-63a44364-b2da-4bfe-949e-e4a1f068af89.png)
   
 This screen is mainly used when the cartons needs to be returned to the pallet after QC operation.
 
