@@ -186,11 +186,17 @@ This section explains the validations for the whole proccess Storage Packaging M
   CONDITION DNPALLET.BCR_DATA = <Pallet Number>**
   So if result > 0, Palletize Start cannot proceed.
 - Storage Qty must be greater than **"0"**
+- Stored Qty + Storage Qty cannot bigger than Planned Qty
 - **Planned Qty and Stored Qty** are calculated fields (readonly).
 - ~~Station (**ST1106**) is not suspended (**DMSTATION.SUSPEND.OFF**)~~
 - ~~Station (**ST1106**) is not disconnected (**DMSTATION.STATUS_FLAG.ACTIVE**)~~
 
 **Note:** All IN-stations can be used.
+
+## DNWorkInfo
+## DNPallet
+Update 
+## DNStock
 
 ## DNSTORAGEPLAN
 - PLAN_UKEY         = Sequence Object                                                                                                             
