@@ -1,10 +1,12 @@
 [[_TOC_]]
 
 # RetrievalPlanDataLoader
+
 This is the module to receive planned retrieval data from SAP.
 SAP will send the planned retrieval data on the SFTP.
 
 # DFD
+
 The trigger to start the process is this file.
 `C:\daifuku\wms\tomcat\webapps\wms\serviceHostComm.prj`
 
@@ -12,10 +14,11 @@ The trigger to start the process is this file.
 flowchart LR
     A[SAP] -->|Send XML via SFTP| B[(FTP Folder)]
     B -->|GET XML| C[HostCommExecutor]
-    C -->|Insert Data| E[(DNRetrievalPlan)]
-    C --> Cond1{"isDataError ?"} 
-    Cond1 --> |TRUE OR False will Insert Data| F[(DNExchangeHistory)]
-    Cond1 --> |Only FALSE will Insert Data| G[(DNLoadErrorInfo)]
+    C --> Cond1{"isDataError ?"}
+    Cond1 --> |FALSE| E[(DNRetrievalPlan)]
+    Cond1 --> |TRUE| G[(DNLoadErrorInfo)]
+    E --> |Save Communication Data|F[(DNExchangeHistory)]
+    G --> |Save Communication Data|F[(DNExchangeHistory)]
 
     subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
@@ -24,7 +27,7 @@ flowchart LR
     end
 :::
 
-#XML Format
+# XML Format
 
 `Name File`: ShippingProcess_<MaterialNum>_YYYYMMMDD_hhmmss-xxx.xml
 
@@ -62,8 +65,23 @@ flowchart LR
 </ShippingProcess>
 ```
 
+### <span style="color:skyblue; font-weight:bold">DNRETRIEVALPLAN</span>
+
+The data will be paired as an input: **SAP** ⇄ **Warenavi**
+
+|       SAP      |       Warenavi      | Primary Key | Required |
+|:--------------:|:-------------------:|:-----------:|:--------:|
+|  MaterialCode  |      ITEM_CODE      |      P1     |     Y    |
+|  MaterialName  |      ITEM_NAME      |             |     Y    |
+|  MaterialType  |      ITEM_TYPE      |             |     Y    |
+|       UOM      |         UOM         |             |     Y    |
+|  QuantityKgCtn |     ENTERING_QTY    |             |          |
+| QuantityCtnPal | BUNDLE_ENTERING_QTY |             |          |
+
 # User Story
+
 - #5749
 
 # Related DFD
+
 - [Retrieval Plan Maintenance - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/915/Retrieval-Plan-Maintenance)
