@@ -35,7 +35,7 @@ The Empty Pallet Setting Screen uses for storage the empty pallet to ASRS.
 ::: mermaid
 flowchart LR
 input[
-PALLET #
+PALLET No
 EMP_PB   
 ]
 
@@ -43,17 +43,10 @@ tableList-insert[("
 DNSTORAGEPLAN
 ")]
 
-tableList-select[("
-DMSTATION
-DMMASTERMATERIAL
-")]
-
-
 className[EmptyPalletSettingSCH]
-scheduler[SchedulerFactory]
-createStorage[EmpPbStorageScheduler]
 
-input --> className |INSERT| tableList-insert
+
+input --> className --> |"INSERT"| tableList-insert
 
 :::
 
@@ -83,6 +76,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 
 #User Story
 - [DFD Storage Stacked Empty Pallet](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5787)
+- [5464 Empty Pallet Setting](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5464)
 
 # Related DFD
   - {}
