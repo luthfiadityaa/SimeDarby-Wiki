@@ -2,7 +2,7 @@
 [[_TOC_]]
 [[_TOSP_]]
 
-# Planned Storage Setting (PKG) database flow
+# [SCREEN] Planned Storage Setting (PKG) database flow
 
 ## Abbreviation
 | **CODE** | TABLE NAME       |

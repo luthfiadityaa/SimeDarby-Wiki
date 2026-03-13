@@ -1,7 +1,7 @@
 [[_TOC_]]
 [[_TOSP_]]
 
-# Empty Pallet Storage (SCREEN) DATABASE FLOW
+# [SCREEN] Empty Pallet Storage DATABASE FLOW
 ## Abbreviation
 | **CODE** | TABLE NAME       |
 |----------|------------------|
