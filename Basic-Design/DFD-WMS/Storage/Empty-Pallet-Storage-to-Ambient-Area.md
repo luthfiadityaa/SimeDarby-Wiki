@@ -6,17 +6,7 @@
 | **CODE** | TABLE NAME       |
 |----------|------------------|
 | **STPL** | DNSTORAGEPLAN    | 
-| **PLLT** | DNPALLET         | 
-| **WRKI** | DNWORKINFO       | 
-| **WRKL** | DNWORKLIST       | 
-| **CRYI** | DNCARRYINFO      | 
-| **STCK** | DNSTOCK          | 
-| **ARVL** | DNARRIVAL        |
-| **WRHS** | DMWAREHOUSE      |
-| **SHLF** | DMSHELF          |
-| **STCH** | DNSTOCKHISTORY   |
-| **INOT** | DNINOUTRESULT    |
-| **ITEM** | DMITEM           |
+| **ITEM** | DNPALLET         | 
 
 
 | **CODE** | OPERATION NAME   |

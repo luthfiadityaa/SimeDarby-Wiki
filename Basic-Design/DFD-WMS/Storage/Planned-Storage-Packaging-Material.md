@@ -9,19 +9,7 @@
 |----------|------------------|
 | **RECP** | DNRETRIEVALPLAN  | 
 | **STRP** | DNSTORAGEPLAN    | 
-| **PLLT** | DNPALLET         | 
-| **WRKI** | DNWORKINFO       | 
-| **WRKL** | DNWORKLIST       | 
-| **CRYI** | DNCARRYINFO      | 
-| **STCK** | DNSTOCK          | 
-| **ARVL** | DNARRIVAL        |
-| **WRHS** | DMWAREHOUSE      |
-| **SHLF** | DMSHELF          |
-| **STCH** | DNSTOCKHISTORY   |
-| **INOT** | DNINOUTRESULT    |
-| **HTSD** | DNHOSTSEND       |
-| **ITEM** | DMITEM           |
-| **STSN** | DMSTATION        |
+
 
 | **CODE** | OPERATION NAME   |
 |----------|------------------|
