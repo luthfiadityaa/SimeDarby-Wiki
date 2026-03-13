@@ -72,16 +72,15 @@ One workinfo is one pallet.
 ::: mermaid
 erDiagram
     DNRETRIEVALPLAN ||--o{ DNSTORAGEPLAN : "identifies"
-   
 
     DNRETRIEVALPLAN {
         string RECEIVE_TICKET_NO PK
-		string RECEIVE_LINE_NO PK2
+        string RECEIVE_LINE_NO PK
     }
 
     DNSTORAGEPLAN {
-        string RECEIVE_TICKET_NO PK
-		string RECEIVE_LINE_NO PK2
+        string RECEIVE_TICKET_NO FK
+        string RECEIVE_LINE_NO FK
         string bcr_data PK
     }
 
