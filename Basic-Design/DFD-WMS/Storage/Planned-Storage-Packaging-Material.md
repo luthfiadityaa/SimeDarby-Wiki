@@ -27,7 +27,8 @@
 
 # Planned Storage - Set (F2)
 ![image.png](/.attachments/image-d46acf7f-3bd7-437c-b1d2-19798aacae2d.png)
-Planned Storage Setting (PKG) is used to set the information of stock which will be entered into ASRS. After **Set(F2)** all item in input text will be process and The result will be posted back to SAP as [Production Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/840/Production-Storage-Result)
+Planned Storage Setting (PKG) is used to set the information of stock which will be entered into ASRS. After **Set(F2)** all item in input text will be process and The result will be posted back to SAP as [Planned Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/846/Planned-Storage-Result).
+
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.wms.web.display.storage.plannedstoragepkg.PlannedStoragePkgSCH` &nbsp;</span>
 
@@ -66,8 +67,8 @@ flowchart LR
 
 ## Relantionship between Storage Plan and Pallet
 
-One Storage Plan can have many Workinfo.
-One workinfo is one pallet.
+One ReceivingPlan can have many StoragePlan.
+
 
 ::: mermaid
 erDiagram
@@ -136,6 +137,8 @@ This section explains the validations for the whole proccess Storage Packaging M
 
 # User Story
   - [DFD Storage Packaging Material](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5784)
+
+  - [5472: Storage Plan Information Maintenance​ (PKG)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5472/)
 
 #<span style="color:skyblue; font-weight:bold">Related DFD</span>
 
