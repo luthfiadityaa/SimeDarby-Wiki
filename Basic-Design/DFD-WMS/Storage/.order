@@ -2,7 +2,7 @@ PALLETIZE-OPERATION-(HP)
 PALLETIZE-OPERATION-FROM-IKEDA
 Palletizing-Settting
 Unplanned-Storage
-Planned-Storage-Packaging-Material
+[SCREEN]-Planned-Storage-Packaging-Material
 [SCREEN]-Empty-Pallet-Storage
 AutoStorageScheduler
 Empty-Pallet-Storage-to-Ambient-Area-backup
