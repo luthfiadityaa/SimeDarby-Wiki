@@ -104,21 +104,23 @@ This section explains the validations for the whole proccess Storage Packaging M
 
 ## DNSTORAGEPLAN
 
-- PLAN_UKEY         = Sequence Object
-- LOAD_UNIT_KEY     = Sequence Object
-- CANCEL_FLAG       = 0
-- STATUS_FLAG       = 0
-- JOB_TYPE = DNSTORAGEPLAN.JOB_TYPE.STORAGE
-- PLAN_DAY          = TODAY (YYYYMMDD)
-- BCR_DATA          = Value from Screen (**Pallet #**)
-- ITEM_CODE         = Value from screen (**ITEM CODE**)
-- PLAN_QTY          = Value from screen (**Storage Qty**)
-- RECEIVE_TICKET_NO = DNSTORAGEPLAN.RECEIVE_TICKET_NO
-- RECEIVE_LINE_NO   = DNSTORAGEPLAN.RECEIVE_LINE_NO
-- REGIST_DATE       = SYSTIMESTAMP
-- REGIST_PNAME      = ClassName
-- LAST_UPDATE_DATE  = SYSTIMESTAMP
-- LAST_UPDATE_PNAME = ClassName
+- PLAN_UKEY             = Sequence Object
+- LOAD_UNIT_KEY         = Sequence Object
+- CANCEL_FLAG           = 0
+- STATUS_FLAG           = 0
+- JOB_TYPE              = DNSTORAGEPLAN.JOB_TYPE.STORAGE
+- PLAN_DAY              = TODAY (YYYYMMDD)
+- BCR_DATA              = Value from Screen (**Pallet #**)
+- ITEM_CODE             = Value from screen (**ITEM CODE**)
+- PLAN_QTY              = Value from screen (**Storage Qty**)
+- STORAGE_LOCATION_FROM = Constant.SAP_STORAGE_LOCATION.TEMPORARY_LOCATION
+- STORAGE_LOCATION_TO   = Constant.SAP_STORAGE_LOCATION.PACKAGING_MATERIAL
+- RECEIVE_TICKET_NO     = DNSTORAGEPLAN.RECEIVE_TICKET_NO
+- RECEIVE_LINE_NO       = DNSTORAGEPLAN.RECEIVE_LINE_NO
+- REGIST_DATE           = SYSTIMESTAMP
+- REGIST_PNAME          = ClassName
+- LAST_UPDATE_DATE      = SYSTIMESTAMP
+- LAST_UPDATE_PNAME     = ClassName
 
 ## DNRECEIVINGPLAN
 
