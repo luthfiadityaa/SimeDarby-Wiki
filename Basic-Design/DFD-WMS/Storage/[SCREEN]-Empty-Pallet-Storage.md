@@ -60,6 +60,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 - LOAD_UNIT_KEY = Sequence Object
 - CANCEL_FLAG = 0
 - STATUS_FLAG = 0
+- JOB_TYPE = DNSTORAGEPLAN.JOB_TYPE.STORAGE
 - PLAN_DAY = TODAY (YYYYMMDD)
 - BCR_DATA = Value from Screen (**Pallet #**)
 - ITEM_CODE = DMITEM.EMP_PB
