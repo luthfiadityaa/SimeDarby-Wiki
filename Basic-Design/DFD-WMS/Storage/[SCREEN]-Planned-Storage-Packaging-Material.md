@@ -74,7 +74,7 @@ One ReceivingPlan can have many StoragePlan.
 erDiagram
     DNRECEIVEPLAN ||--o{ DNSTORAGEPLAN : "identifies"
 
-    DNRETRIEVALPLAN {
+    DNRECEIVEPLAN {
         string RECEIVE_TICKET_NO PK
         string RECEIVE_LINE_NO PK
     }
