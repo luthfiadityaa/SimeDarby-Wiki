@@ -7,7 +7,7 @@
 ## Abbreviation
 | **CODE** | TABLE NAME       |
 |----------|------------------|
-| **RECP** | DNRETRIEVALPLAN  | 
+| **RECP** | DNRECEIVEPLAN  | 
 | **STRP** | DNSTORAGEPLAN    | 
 
 
@@ -72,7 +72,7 @@ One ReceivingPlan can have many StoragePlan.
 
 ::: mermaid
 erDiagram
-    DNRETRIEVALPLAN ||--o{ DNSTORAGEPLAN : "identifies"
+    DNRECEIVEPLAN ||--o{ DNSTORAGEPLAN : "identifies"
 
     DNRETRIEVALPLAN {
         string RECEIVE_TICKET_NO PK
