@@ -64,6 +64,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 - PLAN_DAY = TODAY (YYYYMMDD)
 - BCR_DATA = Value from Screen (**Pallet #**)
 - ITEM_CODE = DMITEM.EMP_PB
+- STORING_PAIR_KEY = **ITEM_CODE + PLAT_LOT_NO**
 - PLAN_QTY = 1
 - REGIST_DATE = SYSTIMESTAMP
 - REGIST_PNAME = ClassName
