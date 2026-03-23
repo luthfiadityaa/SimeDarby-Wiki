@@ -1,765 +1,450 @@
-Palletization Storage — Programmer Documentation
-================================================
+ASRS MC Storage System — Wiki
+=============================
 
-**Scope:** Palletization Storage Flow (OP Area) **Version:** 1.0 **Date:** 2026-03-23
-
-* * *
-
-Table of Contents
------------------
-
-1.  [System Thread Architecture](https://claude.ai/chat/51ab9b49-c6ff-4c10-8edf-3c3f5e3cf4e1#1-system-thread-architecture)
-2.  [Palletization Storage Flow Overview](https://claude.ai/chat/51ab9b49-c6ff-4c10-8edf-3c3f5e3cf4e1#2-palletization-storage-flow-overview)
-3.  [Phase 1 — User Setup](https://claude.ai/chat/51ab9b49-c6ff-4c10-8edf-3c3f5e3cf4e1#3-phase-1--user-setup)
-4.  [Phase 2 — Empty Pallet Supply](https://claude.ai/chat/51ab9b49-c6ff-4c10-8edf-3c3f5e3cf4e1#4-phase-2--empty-pallet-supply)
-5.  [Phase 3 — Arrival at 110x (BCR Scan)](https://claude.ai/chat/51ab9b49-c6ff-4c10-8edf-3c3f5e3cf4e1#5-phase-3--arrival-at-110x-bcr-scan)
-6.  [Phase 4 — Palletizing at 111x](https://claude.ai/chat/51ab9b49-c6ff-4c10-8edf-3c3f5e3cf4e1#6-phase-4--palletizing-at-111x)
-7.  [Phase 5 — Storage Destination Selection](https://claude.ai/chat/51ab9b49-c6ff-4c10-8edf-3c3f5e3cf4e1#7-phase-5--storage-destination-selection)
-8.  [Phase 6 — Control Info Processing](https://claude.ai/chat/51ab9b49-c6ff-4c10-8edf-3c3f5e3cf4e1#8-phase-6--control-info-processing)
-9.  [Phase 7 — Pallet Forced Removal (ID04)](https://claude.ai/chat/51ab9b49-c6ff-4c10-8edf-3c3f5e3cf4e1#9-phase-7--pallet-forced-removal-id04)
-10.  [Data Flow Diagram](https://claude.ai/chat/51ab9b49-c6ff-4c10-8edf-3c3f5e3cf4e1#10-data-flow-diagram)
-11.  [Table Operations Summary](https://claude.ai/chat/51ab9b49-c6ff-4c10-8edf-3c3f5e3cf4e1#11-table-operations-summary)
-12.  [Error Handling Reference](https://claude.ai/chat/51ab9b49-c6ff-4c10-8edf-3c3f5e3cf4e1#12-error-handling-reference)
+**System:** MC (Java Middleware) between WMS (Warenavi/SAP) and AGC/ASRS  
+**Date:** 2026-03-23  
+**Version:** 3.0
 
 * * *
 
-1. System Thread Architecture
------------------------------
+1. System Overview
+------------------
 
-    TransmissionExecutor (main launcher — runs once on boot)
-    │
-    ├── AutoStorageScheduler[] (one thread per station group)
-    │     Polls DNArrival continuously
-    │     Handles: 110x, 111x, 1106, 1301, 1302, 1303
-    │
-    ├── StorageSender (or DoubleDeepStorageSender if double deep)
-    │     Triggered via RMI by carryRequest()
-    │     Reads DNCarryInfo, sends ID05 storage command to AGC
-    │
-    ├── RetrievalSender
-    │     Handles retrieval commands
-    │
-    ├── TemperingChecker
-    │     Polls DNStock for expired tempering periods
-    │     Updates tempering_flag → 1
-    │
-    └── TimeKeeper, ShelfMonitor, RequestWatcher, etc.
+        SAP/Host
+           |
+           | (GR Notification / Storage Plan)
+           v
+      Warenavi (WMS)
+           |
+           | TCP/IP Socket (ID messages)
+           v
+          MC  <-----> Oracle DB (DNxx / DMxx tables)
+           |
+           | TCP/IP Socket (ID05 transport command)
+           v
+          AGC
+           |
+      STV / SRM / Conveyors
+           |
+      Physical ASRS Shelves
     
 
-**ID26 Processing Chain:**
+### Station Map
 
-    AGC sends ID26
-        │
-        ▼
-    Id26Process
-        │ parse station_no → get groupNo
-        ▼
-    Id26SubThread (per station group)
-        │ create CarryInfo from mckey
-        ▼
-    Station Operator (by station_operator_class in DMStation)
-        │
-        ├── StorageStationOperator          → used at 1101-1107
-        ├── PalletizeStorageStationOperator → used at 1111-1115
-        └── InOutStationOperator            → used at 1301-1303
+    OP Area:
+      1101-1105  Robot Input Stations (palletizing input)
+      1111-1115  Palletizing Stations (robot palletizes cartons)
+      1210       Empty Pallet Buffer
+      1220       Destacker
+      1303       QC/Reject Station
+      7101-7110  OP ASRS Inbound BCR Stations
+      SRM 9001-9006  FGW2 Tempering (single deep)
+      SRM 9007-9010  FGW1 Ambient (double deep)
+    
+    HP Area:
+      1106       PM (Packaging Material) Inbound
+      1301       FG Storage/Retrieval 1 (bi-directional)
+      1302       FG Storage/Retrieval 2 (bi-directional)
+      7207-7214  HP ASRS Inbound BCR Stations
+      SRM 9007-9010  FGW1 Ambient (shared with OP)
+      SRM 9011-9014  PM Ambient (double deep)
     
 
-* * *
+### Soft Zone to Aisle Mapping
 
-2. Palletization Storage Flow Overview
---------------------------------------
-
-    ┌─────────────────────────────────────────────────────────────────┐
-    │ PHASE 1: User Setup                                             │
-    │ User inputs batch info at Palletize Start Screen               │
-    │ → INSERT DNReceivingPlan (status=0)                            │
-    └──────────────────────────┬──────────────────────────────────────┘
-                               │
-    ┌──────────────────────────▼──────────────────────────────────────┐
-    │ PHASE 2: Empty Pallet Supply                                    │
-    │ AGC sends ID66 (1210 empty) → MC selects from SRM 9007-9010    │
-    │ FIFO by DNStock.storage_date → sends to 1210 → 1220 → 110x    │
-    └──────────────────────────┬──────────────────────────────────────┘
-                               │
-    ┌──────────────────────────▼──────────────────────────────────────┐
-    │ PHASE 3: Arrival at 110x                                        │
-    │ AGC sends ID26 → BCR scan result                               │
-    │ BCR OK → INSERT DNPallet, DNStock(DIRECT_PB)                   │
-    │         UPDATE DNReceivingPlan 0→1 (first pallet only)         │
-    │         store in DNArrival → AutoStorageScheduler sends ID05   │
-    │         direct transfer → 111x                                 │
-    │ BCR Fail → INSERT DNStock(IRREGULAR_PB) → route to 1303        │
-    └──────────────────────────┬──────────────────────────────────────┘
-                               │
-    ┌──────────────────────────▼──────────────────────────────────────┐
-    │ PHASE 4: Arrival at 111x — Robot Palletizes                     │
-    │ PalletizeStorageStationOperator receives ID26                   │
-    │ Real carry arrives → LoadRemover cleans up direct carry        │
-    │ Re-register as dummy → AutoStorageScheduler picks up           │
-    └──────────────────────────┬──────────────────────────────────────┘
-                               │
-    ┌──────────────────────────▼──────────────────────────────────────┐
-    │ PHASE 5: AutoStorageScheduler at 111x                          │
-    │ insertStoragePlan() → create DNStoragePlan from DNReceivingPlan│
-    │ createCarryStorage() → INSERT DNPallet, DNCarryInfo,           │
-    │                         DNStock, DNWorkInfo                    │
-    │ carryRequest() → triggers StorageSender                        │
-    └──────────────────────────┬──────────────────────────────────────┘
-                               │
-    ┌──────────────────────────▼──────────────────────────────────────┐
-    │ PHASE 6: StorageSender                                          │
-    │ Reads DNCarryInfo, selects bin location                        │
-    │ Sends ID05 storage command → 710x → SRM bin                   │
-    └──────────────────────────┬──────────────────────────────────────┘
-                               │
-    ┌──────────────────────────▼──────────────────────────────────────┐
-    │ PHASE 7: Storage Complete                                       │
-    │ AGC sends ID33 completion → MC updates DNStock, DNCarryInfo    │
-    │ Updates DNWorkInfo status → Complete                           │
-    └─────────────────────────────────────────────────────────────────┘
+    Soft Zone 001 (FG Tempering) → Aisles 01-06 → SRM 9001-9006 → BCR 7101-7106
+    Soft Zone 002 (FG Ambient)   → Aisles 07-10 → SRM 9007-9010 → BCR 7107-7110 / 7207-7210
+    Soft Zone 003 (PM Ambient)   → Aisles 11-14 → SRM 9011-9014 → BCR 7211-7214
+    Soft Zone 004 (Empty Pallet) → Aisles 07-10 → SRM 9007-9010 → BCR 7107-7110 / 7207-7210
+    
+    Alternative zones (DMSoftZonePriority):
+      002 → fallback: 004 → 003
+      004 → fallback: 002 (SRM 7-10 only)
     
 
 * * *
 
-3. Phase 1 — User Setup
+2. Storage Flows
+----------------
+
+### 2.1 Palletization Storage Flow
+
+    USER                MC                    AGC/SRM
+     |                   |                       |
+     |--[Input batch]    |                       |
+     |  DNReceivingPlan  |                       |
+     |  status=0         |                       |
+     |                   |                       |
+     |                   |<--[ID66: 1210 empty]--|
+     |                   |                       |
+     |                   |--[ID05: retrieve EMP_PB from SRM]-->|
+     |                   |                       |-->[1210->1220->110x]
+     |                   |                       |
+     |                   |<--[ID26: pallet at 110x, carry=DUMMY]--|
+     |                   |                       |
+     |                   | AutoStorageScheduler polls DNArrival
+     |                   | No plan? -> silent wait
+     |                   | Plan found:
+     |                   |   INSERT DNPallet (DIRECT_PB)
+     |                   |   INSERT DNStock (DIRECT_PB)
+     |                   |   INSERT DNCarryInfo (DIRECT_TRAVEL)
+     |                   |     dest=111x, end=710x
+     |                   |   UPDATE DNReceivingPlan 0->1
+     |                   |   UPDATE DNArrival SCHEDULED
+     |                   |                       |
+     |                   |--[ID05: 110x->111x]-->|
+     |                   |                       |-->[pallet moves]
+     |                   |<--[ID26: pallet at 111x, carry=CK001]--|
+     |                   |                       |
+     |                   | PalletizeStorageStationOperator:
+     |                   |   dest was 111x, end=710x, reject_factor=00
+     |                   |   LoadRemover.remove() (cleans direct carry)
+     |                   |   re-register as DUMMY DNArrival
+     |                   |                       |
+     |                   | [Robot palletizes cartons]
+     |                   |                       |
+     |                   |<--[ID26: DUMMY, control_info='0']--|
+     |                   |                       |
+     |                   | AutoStorageScheduler:
+     |                   |   insertStoragePlan from DNReceivingPlan
+     |                   |   selectAisle -> AisleShelfDecider
+     |                   |   WNCollectAisleSelector -> DNCollectInfo
+     |                   |   INSERT DNPallet (real item)
+     |                   |   INSERT DNCarryInfo (DIRECT_TRAVEL)
+     |                   |     dest=710x, end=wh_station
+     |                   |   INSERT DNStock (UU)
+     |                   |   INSERT DNWorkInfo
+     |                   |   UPDATE DNStoragePlan status=1
+     |                   |   UPDATE DNArrival SCHEDULED
+     |                   |                       |
+     |                   |--[ID05: 111x->710x]-->|
+     |                   |                       |-->[pallet moves]
+     |                   |<--[ID26: pallet at 710x, carry=CK002]--|
+     |                   |                       |
+     |                   | AsrsInboundStationOperator:
+     |                   |   wh_station=9100 = end_station=9100
+     |                   |   -> FINAL BCR station
+     |                   |   UPDATE DNCarryInfo:
+     |                   |     carry_flag -> STORAGE
+     |                   |     dest -> 9100
+     |                   |                       |
+     |                   | StorageSender:
+     |                   |   LocationManager.searchLocation()
+     |                   |   finds bin SHF001 in aisle 9001
+     |                   |   UPDATE DMShelf -> RESERVED
+     |                   |                       |
+     |                   |--[ID05: storage to SHF001]-->|
+     |                   |                       |-->[SRM stores]
+     |                   |<--[ID33: storage complete]--|
+     |                   |                       |
+     |                   | ID33 handler:
+     |                   |   UPDATE DNStock location, storage_date
+     |                   |   UPDATE DNWorkInfo status=4
+     |                   |   UPDATE DNStoragePlan status=4
+     |                   |   UPDATE DMShelf -> OCCUPIED
+     |                   |   INSERT DNHostSend (report_flag=0)
+     |                   |   INSERT DNInOutResult
+     |                   |   DELETE DNCarryInfo
+     |                   |                       |
+     |                   | ShelfMonitor (next cycle):
+     |                   |   count empty shelves
+     |                   |   -> ID54 lamp update if threshold
+    
+
+### 2.2 PM / FG Inbound Storage (same warehouse)
+
+    USER                MC                    AGC/SRM
+     |                   |                       |
+     |--[Input plan]     |                       |
+     |  DNStoragePlan    |                       |
+     |  (PM/unplanned)   |                       |
+     |                   |                       |
+     |--[Place pallet]   |                       |
+     |  at 1106/1301     |<--[ID26: DUMMY at 1106/1301]--|
+     |                   |                       |
+     |                   | InOutStationOperator / StorageStationOperator:
+     |                   |   registArrival -> INSERT DNArrival
+     |                   |   autoScheduleRequest
+     |                   |                       |
+     |                   | AutoStorageScheduler:
+     |                   |   existsCarryInfo? No
+     |                   |   insertStoragePlan
+     |                   |   selectAisleAndGetBcrStation()
+     |                   |     soft_zone from DMItem
+     |                   |     DMSoftZonePriority fallback
+     |                   |     AisleShelfDecider -> BCR 720x
+     |                   |   INSERT DNPallet, DNCarryInfo
+     |                   |     dest=720x, end=wh_station
+     |                   |   INSERT DNStock, DNWorkInfo
+     |                   |     job_type = DNStoragePlan.job_type
+     |                   |   UPDATE DNStoragePlan status=1
+     |                   |   UPDATE DNArrival SCHEDULED
+     |                   |                       |
+     |                   |--[ID05: 1106->720x]-->|
+     |                   |                       |
+     |                   |<--[ID26: at 720x]-----|
+     |                   |                       |
+     |                   | AsrsInboundStationOperator at 720x:
+     |                   |   wh=9200 = end=9200 -> FINAL BCR
+     |                   |   -> STORAGE, dest=9200
+     |                   |                       |
+     |                   | StorageSender -> bin selection -> ID05
+     |                   |<--[ID33: complete]----|
+     |                   | -> DNStock/WorkInfo/StoragePlan/HostSend updated
+    
+
+### 2.3 FG Inbound Cross Warehouse (1301 → FGW2)
+
+    USER                MC                    AGC/SRM
+     |                   |                       |
+     |--[Unplanned]      |                       |
+     |  DNStoragePlan    |                       |
+     |  plan_area=FGW2   |                       |
+     |                   |                       |
+     |--[Place pallet]   |<--[ID26: DUMMY at 1301]--|
+     |  at 1301          |                       |
+     |                   | AutoStorageScheduler:
+     |                   |   isCrossWarehouseRoute? YES
+     |                   |   selectLeastBusyIntermediateStation()
+     |                   |     DMRouteId: 1301 -> 7207-7210
+     |                   |     count active carries per 720x
+     |                   |     select least busy: e.g. 7208
+     |                   |   INSERT DNCarryInfo
+     |                   |     dest=7208, end=9100
+     |                   |   INSERT DNPallet, DNStock, DNWorkInfo
+     |                   |   UPDATE DNArrival SCHEDULED
+     |                   |                       |
+     |                   |--[ID05: 1301->7208]-->|
+     |                   |                       |
+     |                   |<--[ID26: at 7208]-----|
+     |                   |                       |
+     |                   | AsrsInboundStationOperator at 7208:
+     |                   |   wh=9200 != end=9100 -> INTERMEDIATE
+     |                   |   selectTargetAisleStation():
+     |                   |     getReachableBcrStations(7208, 9100)
+     |                   |     -> DMRouteId: 7208->710x: [7103,7104]
+     |                   |     mapBcr->Aisle: [9003, 9004]
+     |                   |     AisleShelfDecider(filtered aisles)
+     |                   |     soft_zone + batch balance + DNCollectInfo
+     |                   |     -> BCR 7103
+     |                   |   UPDATE DNCarryInfo dest=7103, end=9100
+     |                   |                       |
+     |                   |--[ID05: 7208->7103]-->|
+     |                   |                       |
+     |                   |<--[ID26: at 7103]-----|
+     |                   |                       |
+     |                   | AsrsInboundStationOperator at 7103:
+     |                   |   wh=9100 = end=9100 -> FINAL BCR
+     |                   |   -> STORAGE, dest=9100
+     |                   |                       |
+     |                   | StorageSender -> bin in 9003
+     |                   |--[ID05: storage]----->|
+     |                   |<--[ID33: complete]----|
+     |                   | -> all tables updated
+    
+
+* * *
+
+3. Reject Flows
+---------------
+
+### 3.1 BCR Fail at 110x
+
+    110x                 111x                1303
+     |                    |                    |
+     | AGC: ID26 bcr='?'  |                    |
+     | AutoStorageScheduler checkBcr FAIL      |
+     | createCarryDirect: dest=111x, end=1303  |
+     |--[ID05: direct]-->|                     |
+     |                   | PalletizeStorageStationOperator:
+     |                   | reject_factor!=00   |
+     |                   | updateDestToEndStation: dest=1303
+     |                   |--[ID05: direct]---->|
+     |                   |                    | LoadRemover.remove()
+     |                   |                    | pallet sits at 1303
+    
+
+### 3.2 Error Completion at 111x (control_info=2)
+
+    111x                1303
+     | AGC: ID26 control_info[2]='2'
+     | checkControlInfo -> PALLETIZING_ERROR_COMPLETION
+     | (called BEFORE insertStoragePlan -> no orphan data)
+     | createCarryDirect: dest=1303, end=1303
+     |--[ID05: direct]-->|
+                        | LoadRemover.remove()
+    
+
+### 3.3 Force Completion (control_info=1)
+
+    status=1: lamp 17 ON -> user inputs last qty
+             -> DNReceivingPlan status=2
+             -> AGC resends -> normal storage
+    
+    status=2, qty>0: insertStoragePlan (last pallet)
+                     createCarryStorage -> normal flow
+                     UPDATE DNReceivingPlan status=4
+    
+    status=2, qty=0: no DNStoragePlan
+                     createCarryDirect to 1303 (empty pallet)
+    
+
+* * *
+
+4. Aisle Selection Logic
+------------------------
+
+### 4.1 Same-warehouse aisle selection
+
+    AisleShelfDecider.decideAisle(pallet, warehouse):
+    
+    Step 1: WNCollectAisleSelector
+      Check DNCollectInfo for aisle_collect_key:
+        EXISTS -> use that aisle (same batch grouping)
+        NOT EXISTS -> run balance query:
+          ORDER BY ALL_BATCH_COUNT ASC,
+                   ALL_STOCK_COUNT ASC,
+                   AISLE_STATION_NO ASC
+          (counts in-transit + stored pallets)
+    
+    Step 2: SoftZoneSelector
+      primary soft_zone from DMItem
+      fallback via DMSoftZonePriority (in priority order)
+    
+    Step 3: checkStorageAisle(aisle, soft_zone)
+      DMShelf has empty locations in this aisle+zone?
+    
+    Step 4: determin()
+      Write/update DNCollectInfo: aisle_collect_key -> aisle_no
+      Update DMWareHouse last_used_station_no (round-robin)
+    
+
+### 4.2 Cross-warehouse intermediate selection (1301→FGW2)
+
+    Step 1: selectLeastBusyIntermediateStation()
+      Query DMRouteId: source -> HP_INTERMEDIATE_STATION_NOS
+      Filter: DMStation online, not suspended, connected
+      Count DNCarryInfo active per 720x station
+      Select min count (tiebreak: station_no ASC)
+      -> 720x intermediate (e.g. 7208)
+    
+    Step 2: At 720x - selectTargetAisleStation()
+      getReachableBcrStations(720x, target_wh):
+        DMRouteId: 720x -> 710x routes
+        Filter: DMStation status online, max_instruction not full
+    
+      mapBcrToAisleStations():
+        DMAisle.bcr_station_no -> aisle station_no
+    
+      AisleShelfDecider.decideAisle(filtered_aisles):
+        Same as 4.1 but restricted to reachable aisles only
+      -> BCR 710x (e.g. 7103)
+    
+
+### 4.3 Balance query states covered
+
+    BC1/SC1: Already stored (DNStock + DMShelf OCCUPIED)
+    BC2/SC2: In transit main->BCR (DNCarryInfo DIRECT_TRAVEL, dest=BCR)
+    BC3/SC3: In transit BCR->shelf (DNCarryInfo STORAGE, dest=shelf)
+    BC4/SC4: Aisle decided not yet sent (DNStoragePlan status=0, DNCollectInfo set)
+    
+
+* * *
+
+5. Storage Completion (ID33)
+----------------------------
+
+    ID33 (storage complete) triggers:
+    
+    1. DNWorkInfo.status_flag -> 4 (COMPLETION)
+       DNWorkInfo.result_location_no -> actual bin
+       DNWorkInfo.result_qty -> stored qty
+    
+    2. DNStock.location_no -> actual bin
+       DNStock.storage_date -> now
+       DNStock.stock_qty += qty
+       DNStock.plan_qty -> 0
+    
+    3. DMShelf.status_flag -> 1 (OCCUPIED)
+    
+    4. DNPallet.current_station_no -> shelf
+       DNPallet.status_flag -> STORED
+    
+    5. INSERT DNHostSend:
+       job_type = from DNWorkInfo (02 or 22)
+       result_location_no = actual bin
+       report_flag = 0 (pending SAP notification)
+    
+    6. UPDATE DNStoragePlan.status_flag -> 4 (COMPLETE)
+       (via PlanControllerFactory by job_type)
+    
+    7. INSERT DNInOutResult (audit trail)
+    
+    8. DELETE DNCarryInfo
+    
+    9. ShelfMonitor (next cycle):
+       count empty DMShelf -> ID54 lamp if threshold changed
+    
+
+* * *
+
+6. Location Full Lamp (ShelfMonitor)
+------------------------------------
+
+    ShelfMonitor runs every SHELF_MONITOR_SLEEP_SEC:
+    
+    For each DMLocationFullLamp record:
+      count empty DMShelf:
+        WHERE wh_station_no = configured wh
+        AND status = EMPTY (0)
+        AND aisle.status != DISCONNECTED
+        AND prohibition = OK, access_ng = OK
+        minus reserved_qty
+    
+      Compare against DNSystemKVs thresholds:
+        warningQty  = free_shelf_warning_num_agc5     (= 50)
+        lightOffQty = free_shelf_warning_release_num_agc5 (= 60)
+    
+      emptyCount = 0:         LAMP_FULL ON, WARNING OFF
+      0 < count < 50:         WARNING ON, LAMP_FULL OFF
+      50 <= count <= 60:      hysteresis (stays WARNING if was FULL)
+      count > 60:             both OFF
+    
+      If status changed from last check:
+        Send ID54 to DMLocationFullLamp.station_no
+        UPDATE DMLocationFullLamp.status_flag
+    
+    NOTE: MC code does NOT send LAMP_FULL directly.
+          ShelfMonitor is the ONLY source for this lamp.
+    
+
+* * *
+
+7. Key Tables Reference
 -----------------------
 
-### Actor: User at Warenavi (WMS) Palletize Start Screen
-
-    User inputs:
-      ┌─────────────────────────────────────────┐
-      │ Station No      : 1111 - 1115           │
-      │ Material Code   : (item_code)           │
-      │ Batch/Lot No    : (plan_lot_no)         │
-      │ Expiry Days     : (batch_expiry_days)   │
-      │ Planned Qty     : (plan_qty)            │
-      │ Storage Date    : (batch_storage_datetime)│
-      │ Qty Ctrn/Pl     : (batch_qty_ctrn_pl)  │
-      │ Tempering Period: (batch_tempering_period in hours) │
-      │ Storage Location: FGW1 or FGW2         │
-      └─────────────────────────────────────────┘
-             │
-             ▼
-    INSERT DNReceivingPlan
-      status_flag         = 0 (Not started)
-      plan_ukey           = "01" + sequence
-      batch_station_no    = selected station (1111-1115)
-      plan_area_no        = FGW1 or FGW2
-      item_code           = input value
-      plan_lot_no         = input value
-      batch_qty_ctrn_pl   = input value
-      batch_tempering_period = input value
-      batch_expiry_days   = input value
-      batch_storage_datetime = input value
-      batch_last_pallet_qty = 0 (default)
-      storing_pair_key    = item_code + plan_lot_no
+    DNReceivingPlan  - Palletization batch plan (from Warenavi screen)
+                       status: 0=Not started, 1=Working, 2=Last pallet wait, 4=Complete
     
-
-* * *
-
-4. Phase 2 — Empty Pallet Supply
---------------------------------
-
-### Trigger: AGC detects 1210 (Empty Pallet Buffer) is empty → sends ID66
-
-    AGC sends ID66 to MC
-      station_no = 1210 (empty)
-             │
-             ▼
-    MC queries DNStock:
-      WHERE item_code = 'EMP_PB'  (empty pallet)
-      AND area in (9007, 9008, 9009, 9010)
-      ORDER BY storage_date ASC  ← FIFO
-             │
-        ┌────┴────┐
-      No stock   Stock found
-        │              │
-        ▼              ▼
-      Send ID54   Send ID05 → AGC
-      lamp 15     (retrieve from SRM → send to 1210)
-      (Out of
-      Empty Pallet)
-             │
-             ▼
-      Station 1210 receives pallet stack
-             │
-             ▼
-      1210 supplies single empty pallet
-      → 1220 (Destacker)
-      → 1101-1105 (controlled by AGC)
+    DNStoragePlan    - Storage plan for each pallet (from system or user)
+                       status: 0=Unstart, 1=Working, 4=Complete
+                       job_type: 02=Storage, 22=Unplanned
     
-
-* * *
-
-5. Phase 3 — Arrival at 110x (BCR Scan)
----------------------------------------
-
-### Handler: StorageStationOperator → AutoStorageScheduler
-
-    Pallet arrives at 110x (1101-1105)
-             │
-             ▼
-    AGC scans BCR + detects pallet presence
-    AGC sends ID26 to MC:
-      station_no  = 110x
-      carry_key   = 99999999 (dummy)
-      bcr_data    = scan result
-             │
-             ▼
-    Id26Process → Id26SubThread → StorageStationOperator.arrival()
-             │
-             ▼
-    Duplicate check:
-      carry_key = 99999999?
-      → bcr_data already in DNArrival? → DISCARD
-      → not exist → continue
-             │
-             ▼
-    BCR check: bcr_data = '?' or '@'?
-             │
-        ┌────┴────┐
-      FAIL       OK
-        │          │
-        ▼          ▼
-    INSERT      INSERT DNPallet:
-    DNStock       pallet_id         = new sequence
-    (IRREGULAR    current_station_no = 110x
-    _PB)          wh_station_no     = 9100
-                  bcr_data          = from ID26
-                  status_flag       = STORAGE_PLAN
-                  empty_flag        = NORMAL
-        │
-        ▼         INSERT DNStock:
-    Send ID05       item_code   = 'DIRECT_PB'
-    transport       plan_qty    = 1
-    classification  pallet_id   = new pallet_id
-    = 3 (direct)    area_no     = area of wh_station
-    dest = 1303     storage_location = FGW1 or FGW2
-    via 111x
-    controlinfo     UPDATE DNReceivingPlan:
-    = 010           WHERE batch_station_no = next_station_no
-                    AND status_flag = '0' (UNSTART only)
-    reject_factor   → status_flag = '1' (NOWWORKING)
-    = 01
-                    INSERT DNArrival:
-    DELETE          station_no   = 110x
-    DNArrival       carry_key    = 99999999
-                    bcr_data     = from ID26
-                    sch_flag     = 0 (not scheduled)
-                             │
-                             ▼
-                  AutoStorageScheduler polls DNArrival
-                             │
-                  Check DNReceivingPlan:
-                  WHERE batch_station_no = next_station_no (111x)
-                  AND status_flag IN ('0','1','2')
-                             │
-                        ┌────┴────┐
-                      None      Found
-                        │          │
-                      Stay in    Send ID05:
-                      DNArrival   transport_class = 3 (direct)
-                      (silent     source = 110x
-                      wait)       dest   = 111x (next_station_no)
-                                  bc_data = from ID26
-                                  UPDATE DNArrival sch_flag → SCHEDULED
-                                  commit → carryRequest()
+    DNArrival        - Pallet arrival record per station
+                       sch_flag: 0=Not scheduled, 1=Scheduled
+                       sch_carry_key: carry key after scheduling
     
-
-* * *
-
-6. Phase 4 — Palletizing at 111x
---------------------------------
-
-### Handler: PalletizeStorageStationOperator
-
-    Pallet arrives at 111x physically
-             │
-             ▼
-    AGC sends ID26:
-      station_no = 111x
-      carry_key  = real key (from direct transfer)
-      bcr_data   = pallet barcode
-      carry_flag = DIRECT_TRAVEL
-             │
-             ▼
-    PalletizeStorageStationOperator.arrival()
-             │
-    carry_key = DUMMY (99999999)?
-             │
-        ┌────┴──────────────────────────────┐
-       YES (dummy)               NO (real carry)
-        │                                   │
-    Register DNArrival             carry_flag = DIRECT_TRAVEL?
-    autoScheduleRequest()          AND end_station_no = this 111x?
-                                             │
-                                        ┌────┴────┐
-                                       YES        NO
-                                        │          │
-                                 LoadRemover    Re-register
-                                 .remove(ci)   as dummy arrival
-                                 (cleans up    → autoScheduleRequest
-                                 direct carry  (AutoStorageScheduler
-                                 DNCarryInfo)  handles reject)
-                                        │
-                                 set carry_key = DUMMY
-                                 registArrival(ci, plt)
-                                 carryRequest()
-                                        │
-                                        ▼
-                                 AutoStorageScheduler
-                                 picks up dummy arrival
-                                 at 111x
+    DNCarryInfo      - Transport command record
+                       carry_flag: 1=Storage, 3=Direct Travel
+                       cmd_status: 1=Start, 2=Arrival, 3=Instruction, 4=Wait response
     
-
-### Robot Palletizing States
-
-    Pallet at 111x
-    Robot palletizes cartons
-             │
-        ┌────┴──────────────────────────────┐
-    Full pallet                       Last pallet
-    (qty = batch_qty_ctrn_pl)         (partial qty)
-        │                                   │
-    Auto released by robot            User: Batch End at
-        │                             Palletization Screen
-        │                             input last_pallet_qty (≥ 0)
-        │                                   │
-        │                             UPDATE DNReceivingPlan:
-        │                               status 1 → 2
-        │                               batch_last_pallet_qty = input
-        │                                   │
-        │                             User: Force completion
-        │                             at robot side
-        │
-    AGC sends ID26 at 111x:
-      station_no    = 111x
-      carry_key     = 99999999 (dummy, re-registered)
-      bcr_data      = pallet barcode
-      control_info  = [x][x][N]  ← position 3:
-                                   0 = normal completion
-                                   1 = force completion
-                                   2 = error completion
-    
-
-* * *
-
-7. Phase 5 — Storage Destination Selection
-------------------------------------------
-
-### Handler: AutoStorageScheduler (PALLETIZATION_STORAGE_STATION_NOS path)
-
-    AutoStorageScheduler picks up DNArrival at 111x
-             │
-             ▼
-    checkBcr(arrival)
-      bcr_data = '?' or '@'? → rejectProcess() → 1303
-             │
-             ▼
-    checkControlInfo(arrival)
-      controlInfo null or length < 3? → MALFUNCTION_CONTROL_DATA
-      position 3 = '2'? → PALLETIZING_ERROR_COMPLETION
-      position 3 = '1' (FORCE)?
-        → check DNReceivingPlan status:
-          status = '2' (WAITING_LAST_PALLET) → OK, continue
-          status = '1' (NOWWORKING) → WAITING_LAST_PALLET (send lamp 17)
-      position 3 = '0' (NORMAL)? → OK, continue
-             │
-             ▼
-    insertStoragePlan(arrival):
-      Find DNReceivingPlan WHERE:
-        batch_station_no = 111x
-        status IN ('0','1','2')
-      Lock record (NOWAIT)
-             │
-      status = '2' AND batch_last_pallet_qty <= 0?
-        → UPDATE DNReceivingPlan status → '4' (COMPLETE)
-        → return (no StoragePlan created — zero qty last pallet)
-        → send empty pallet to 1303 as DIRECT_PB
-             │
-      else → INSERT DNStoragePlan:
-        plan_ukey      = "02" + sequence
-        status_flag    = '0' (UNSTART)
-        plan_area_no   = from DNReceivingPlan
-        plan_qty       = batch_qty_ctrn_pl (normal)
-                       OR batch_last_pallet_qty (force)
-        bcr_data       = from DNArrival
-        item_code      = from DNReceivingPlan
-        plan_lot_no    = from DNReceivingPlan
-        storing_pair_key = item_code + plan_lot_no
-        batch_tempering_period = from DNReceivingPlan
-        batch_expiry_days      = from DNReceivingPlan
-             │
-             ▼
-    createCarryStorage(arrival):
-      Find DNStoragePlan WHERE:
-        status_flag = '0' (UNSTART)
-        bcr_data = from arrival (trimmed match)
-      Lock record (NOWAIT) → ROLLBACK if locked
-             │
-             ▼
-    insertPalletStorage(arrival):
-      NEW INSERT DNPallet:
-        pallet_id          = new sequence
-        current_station_no = 111x
-        wh_station_no      = 9100
-        status_flag        = STORAGE_PLAN
-        empty_flag         = NORMAL
-        bcr_data           = from arrival (trimmed)
-        soft_zone_id       = from DMItem (first item's zone)
-             │
-             ▼
-    insertCarryInfoStorage(pallet):
-      INSERT DNCarryInfo:
-        carry_key      = new sequence
-        pallet_id      = new pallet_id
-        work_type      = '02' (Storage)
-        cmd_status     = '1' (Started)
-        carry_flag     = '1' (Storage)
-        source_station = 111x
-        dest_station   = wh_station_no (9100)
-        end_station    = wh_station_no (9100)
-        reject_factor  = '00' (None)
-             │
-             ▼
-    For each DNStoragePlan record:
-      insertStockStorage(pallet, storagePlan):
-        INSERT DNStock:
-          stock_id         = new sequence
-          area_no          = area of wh_station
-          item_code        = from DNStoragePlan
-          lot_no           = from DNStoragePlan
-          storage_type     = '2' (New)
-          plan_qty         = from DNStoragePlan
-          pallet_id        = new pallet_id
-          storage_location = from DNStoragePlan (FGW1/FGW2)
-          stock_status     = 'UU' (Unrestricted)
-          tempering_period = from DNStoragePlan
-          expiry_date      = storage_datetime + expiry_days
-          storing_pair_key = item_code + lot_no
-             │
-      insertWorkInfoStorage(carryInfo, stock, storagePlan):
-        INSERT DNWorkInfo:
-          job_no           = new sequence
-          plan_ukey        = from DNStoragePlan
-          stock_id         = new stock_id
-          system_conn_key  = carry_key
-          job_type         = '02' (Storage)
-          status_flag      = '1' (Working)
-          hardware_type    = '3' (ASRS)
-          storing_pair_key = item_code + lot_no
-             │
-      UPDATE DNStoragePlan:
-        status_flag  → '1' (NOWWORKING)
-        process_qty  → plan_qty
-             │
-             ▼
-    UPDATE DNArrival:
-      sch_flag     → '1' (SCHEDULED)
-      sch_carry_key → carry_key
-             │
-             ▼
-    commit → carryRequest() → triggers StorageSender via RMI
-    
-
-* * *
-
-8. Phase 6 — Control Info Processing Detail
--------------------------------------------
-
-### Control Info = 0 (Normal Completion — Full Pallet)
-
-    Full pallet auto released by robot
-    AGC sends ID26 with control_info[2] = '0'
-             │
-             ▼
-    checkControlInfo → OK
-    insertStoragePlan → INSERT DNStoragePlan (qty = batch_qty_ctrn_pl)
-    createCarryStorage → INSERT DNPallet, DNCarryInfo, DNStock, DNWorkInfo
-             │
-             ▼
-    UPDATE DNArrival sch_flag → SCHEDULED
-    commit → carryRequest()
-             │
-             ▼
-    StorageSender selects bin → sends ID05 storage → 710x → SRM
-    
-
-### Control Info = 1 (Force Completion — Last Pallet)
-
-    User force releases last pallet from robot
-    AGC sends ID26 with control_info[2] = '1'
-             │
-             ▼
-    checkControlInfo:
-      DNReceivingPlan status = '2'? → OK
-      DNReceivingPlan status = '1'? → WAITING_LAST_PALLET
-             │
-        ┌────┴──────────────────────────┐
-      status = '1'            status = '2'
-      (not yet batch end)          │
-        │                    batch_last_pallet_qty = 0?
-        ▼                         │
-      Send ID54:            ┌─────┴──────┐
-      lamp 17 ON           qty=0        qty>0
-      (Batch End            │             │
-      Incomplete)     UPDATE          INSERT DNStoragePlan
-      Hold at 111x    DNReceivingPlan   (qty = last_pallet_qty)
-                      status → '4'    INSERT DNPallet
-                      Send empty      INSERT DNCarryInfo
-                      pallet to 1303  INSERT DNStock
-                      as DIRECT_PB    INSERT DNWorkInfo
-                                      UPDATE DNReceivingPlan
-                                        status → '4' (Complete)
-                                      carryRequest()
-             │
-             ▼  (after user does batch end + error reset)
-      AGC resends ID26 (control_info[2] = '1')
-      → loop back to checkControlInfo
-    
-
-### Control Info = 2 (Error Completion)
-
-    Robot reports error completion
-    AGC sends ID26 with control_info[2] = '2'
-             │
-             ▼
-    checkControlInfo → PALLETIZING_ERROR_COMPLETION
-    rejectProcess():
-      station has reject_station_no (1303)?
-      → createCarryDirect(arrival) → route to 1303
-      reject_factor = '06' (No Storage Data)
-    
-
-### Lamp 17 Recovery Flow
-
-    ID54 lamp 17 ON sent by MC
-             │
-             ▼
-    Tower light ON at 111x
-    User sees alert on Warenavi screen
-             │
-             ▼
-    User inputs actual last pallet qty
-    at Palletization Screen → Batch End
-             │
-             ▼
-    UPDATE DNReceivingPlan:
-      status 1 → 2
-      batch_last_pallet_qty = actual qty
-             │
-             ▼
-    User presses Error Reset
-    at operation box near station
-             │
-             ▼
-    AGC turns lamp OFF
-    AGC resends ID26 (control_info[2] = '1')
-             │
-             ▼
-    MC processes → normal force completion flow
-    
-
-### Location Full Recovery Flow
-
-    All aisles full / disconnected
-             │
-             ▼
-    Send ID54 lamp 01 ON (Location Full)
-    Pallet holds at 111x
-    DNArrival record stays (not deleted)
-             │
-             ▼
-    When slot becomes available:
-    MC detects → Send ID54 lamp 01 OFF
-    DNArrival polling resumes
-    → aisle selection → carryRequest()
-    
-
-* * *
-
-9. Phase 7 — Pallet Forced Removal (ID04)
------------------------------------------
-
-### Trigger: User removes pallet physically → AGC detects no-load → user does delete tracking in MOS
-
-    AGC sends ID04 to MC:
-      mc_key          = original carry key
-      source_station  = station where removed
-      dest_station    = original destination
-      location_no     = original location
-    
-
-### Scenario A — Removed at 110x
-
-    ID04 received (source = 110x)
-             │
-             ▼
-    Lookup by mc_key + source_station
-    DELETE DNStock WHERE item_code = 'DIRECT_PB' AND pallet matches
-    DELETE DNPallet
-    (AGC handles tower light OFF automatically)
-    
-
-### Scenario B — Removed at 111x BEFORE ID26
-
-    ID04 received (source = 111x, no real stock yet)
-             │
-             ▼
-    DELETE DNStock WHERE item_code = 'DIRECT_PB' AND pallet matches
-    DELETE DNPallet
-    
-
-### Scenario C — Removed at 111x AFTER ID26 (real stock created)
-
-    ID04 received (source = 111x, real stock exists)
-             │
-             ▼
-    DELETE DNStock (real item)
-    DELETE DNPallet
-    DELETE DNCarryInfo
-    DELETE DNStoragePlan
-    DELETE DNWorkInfo
-    (Aisle reservation released)
-    (AGC handles tower light OFF)
-    
-
-**Note:** DNReceivingPlan status is NOT rolled back in any scenario. The batch continues — next pallet from 110x will arrive and continue. If the removed pallet needs to be re-stored, user uses station 1303 unplanned storage.
-
-* * *
-
-10. Data Flow Diagram
----------------------
-
-    ┌─────────────────────────────────────────────────────────────────────────────┐
-    │                         PALLETIZATION STORAGE DATA FLOW                     │
-    └─────────────────────────────────────────────────────────────────────────────┘
-    
-    USER INPUT
-        │
-        │ INSERT
-        ▼
-    ┌───────────────┐
-    │DNReceivingPlan│ status: 0→1→2→4
-    └───────┬───────┘
-            │ read (find plan by batch_station_no)
-            │
-    AGC ID26 (110x)
-        │
-        │ INSERT
-        ▼
-    ┌───────────┐     INSERT    ┌──────────┐
-    │ DNArrival │──────────────▶│ DNPallet │ (DIRECT_PB placeholder)
-    └─────┬─────┘               └──────────┘
-          │ poll                     │
-          │                    INSERT▼
-          │               ┌──────────────┐
-          │               │   DNStock    │ item_code=DIRECT_PB
-          │               └──────────────┘
-          │
-          │ AutoStorageScheduler (110x path)
-          │ sends ID05 direct transfer → 111x
-          │
-    AGC ID26 (111x — real carry)
-          │
-          │ PalletizeStorageStationOperator
-          │ LoadRemover cleans direct carry
-          │ re-register as dummy
-          │
-          │ AutoStorageScheduler (111x path)
-          │
-          │ INSERT
-          ▼
-    ┌─────────────────┐
-    │  DNStoragePlan  │ status: 0→1
-    └────────┬────────┘
-             │
-             │ INSERT (from DNStoragePlan data)
-             ▼
-    ┌───────────┐   INSERT   ┌──────────┐   INSERT   ┌──────────────┐
-    │ DNPallet  │◄───────────│          │────────────▶│   DNStock    │
-    │ (new)     │            │          │             │ (real item)  │
-    └───────────┘            │  create  │             └──────────────┘
-                             │  Carry   │                    │
-    ┌───────────┐   INSERT   │  Storage │   INSERT           │
-    │DNCarryInfo│◄───────────│          │──────────────▶┌────────────┐
-    │           │            │          │               │ DNWorkInfo │
-    └─────┬─────┘            └──────────┘               └────────────┘
-          │
-          │ UPDATE sch_flag→SCHEDULED
-          ▼
-    ┌───────────┐
-    │ DNArrival │
-    └───────────┘
-    
-          │ carryRequest() via RMI
-          ▼
-    StorageSender
-          │ reads DNCarryInfo
-          │ selects bin (via StorageRouteController)
-          │ sends ID05 storage → 710x → SRM bin
-          ▼
-    AGC → SRM stores pallet
-          │
-          │ AGC sends ID33 (completion)
-          ▼
-    MC updates:
-      DNCarryInfo  cmd_status → ARRIVAL/COMPLETE
-      DNStock      location_no, storage_date (actual)
-      DNWorkInfo   status → COMPLETE, result_location_no
-    
-
-* * *
-
-11. Table Operations Summary
-----------------------------
-
-| Phase | Table | Operation | Key Values |
-| --- | --- | --- | --- |
-| User setup | DNReceivingPlan | INSERT | status=0 |
-| 110x arrival (BCR OK) | DNPallet | INSERT | item=DIRECT_PB |
-| 110x arrival (BCR OK) | DNStock | INSERT | item=DIRECT_PB |
-| 110x arrival (BCR OK) | DNReceivingPlan | UPDATE | status 0→1 (first pallet) |
-| 110x arrival (BCR OK) | DNArrival | INSERT | sch_flag=0 |
-| 110x arrival (BCR fail) | DNStock | INSERT | item=IRREGULAR_PB |
-| 110x→111x direct carry | DNCarryInfo | INSERT | carry_flag=3 (direct) |
-| 110x→111x direct carry | DNArrival | UPDATE | sch_flag=SCHEDULED |
-| 111x arrival (real) | DNCarryInfo | DELETE | direct carry cleanup |
-| 111x arrival (dummy) | DNArrival | INSERT | sch_flag=0 |
-| 111x processing | DNStoragePlan | INSERT | status=0, from DNReceivingPlan |
-| 111x processing | DNPallet | INSERT (NEW) | replace DIRECT_PB concept |
-| 111x processing | DNCarryInfo | INSERT | carry_flag=1 (storage) |
-| 111x processing | DNStock | INSERT | real item, status=UU |
-| 111x processing | DNWorkInfo | INSERT | job_type=02 |
-| 111x processing | DNStoragePlan | UPDATE | status=1, process_qty |
-| 111x processing | DNArrival | UPDATE | sch_flag=SCHEDULED |
-| Force completion | DNReceivingPlan | UPDATE | status 2→4 |
-| ID04 at 110x | DNStock | DELETE | DIRECT_PB |
-| ID04 at 110x | DNPallet | DELETE |  |
-| ID04 at 111x (after ID26) | DNStock | DELETE | real item |
-| ID04 at 111x (after ID26) | DNPallet | DELETE |  |
-| ID04 at 111x (after ID26) | DNCarryInfo | DELETE |  |
-| ID04 at 111x (after ID26) | DNStoragePlan | DELETE |  |
-| ID04 at 111x (after ID26) | DNWorkInfo | DELETE |  |
-| Storage complete | DNStock | UPDATE | location_no, storage_date |
-| Storage complete | DNCarryInfo | UPDATE | cmd_status→complete |
-| Storage complete | DNWorkInfo | UPDATE | status→4, result_location |
-
-* * *
-
-12. Error Handling Reference
-----------------------------
-
-| Error | Trigger | MC Action | Lamp |
-| --- | --- | --- | --- |
-| BCR fail at 110x | bcr_data = ? or @ | Route to 1303, DNStock=IRREGULAR_PB | — |
-| No DNReceivingPlan | status not in 0,1,2 | Silent wait in DNArrival | — |
-| Control info = 2 (error completion) | Robot error | Route to 1303, reject_factor=06 | — |
-| Force completion, status not 2 | User forgot batch end | Hold at 111x | ID54 lamp 17 ON |
-| Zero qty last pallet | batch_last_pallet_qty = 0 | Complete plan, send empty to 1303 | — |
-| All aisles full | No available aisle | Hold at 111x | ID54 lamp 01 ON |
-| Aisle available again | MC detects slot | Resume, lamp OFF | ID54 lamp 01 OFF |
-| Pallet removed at 110x | ID04 received | DELETE DNStock(DIRECT_PB), DNPallet | AGC handles |
-| Pallet removed at 111x after ID26 | ID04 received | DELETE all related records | AGC handles |
-| Lock timeout (DNStoragePlan) | Concurrent access | ROLLBACK, sleep, retry | — |
-| Malformed control info | Length < 3 | rejectProcess() | ID54 lamp (data error) |
+    DNPallet         - Pallet tracking record
+    DNStock          - Inventory record (location, qty, status)
+    DNWorkInfo       - Work instruction linked to carry + stock
+    DNCollectInfo    - Aisle grouping for batch (aisle_collect_key -> aisle_no)
+    DNHostSend       - Result notification to SAP/Host (report_flag: 0=pending, 1=sent)
+    DNInOutResult    - Audit trail of all storage/retrieval operations
+    DMShelf          - Physical shelf location (status: 0=Empty, 1=Occupied, 2=Reserved)
+    DMLocationFullLamp - Tower light configuration per warehouse
+    DMWareHouse      - Warehouse settings (aisle_decision_pattern, zone_manage_type)
+    DNSystemKVs      - System parameters (lamp thresholds etc.)
