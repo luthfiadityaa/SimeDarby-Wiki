@@ -360,34 +360,76 @@ flowchart LR
 
 #<span style="color:skyblue; font-weight:bold">Aisle Selection Logic</span>
 
-##<span style="color:skyblue; font-weight:bold">Same-Warehouse Aisle Selection</span>
+##<span style="color:skyblue; font-weight:bold">Aisle Decision Pattern by Warehouse</span>
 
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.location.AisleShelfDecider &nbsp;</span>
+The aisle selector is chosen based on `DMWareHouse.aisle_decision_pattern`:
+
+| Warehouse | Pattern | Value | Selector Class | Reason |
+|-----------|---------|-------|----------------|--------|
+| 9100 (FGW2 Tempering) | Aisle Distributed | **3** | `DisperseAisleSelector` | Single deep racks - distribute evenly across aisles |
+| 9200 (FGW1 Ambient / PM) | Aisle Aggregation (WN) | **4** | `WNCollectAisleSelector` | Double deep racks - aggregate same batch into same aisle via DNCollectInfo |
+
+**All available patterns:**
+| Value | Name | Selector | Description |
+|-------|------|----------|-------------|
+| 0 | OFF | `ConnectedAisleSelector` | Default / no special logic |
+| 1 | LOCAL_BRANCH | (local branch) | Local branch routing |
+| 2 | PATTERN_BRANCH | `PatternAisleSelector` | Pattern-based branch routing |
+| 3 | AISLE_DISTRIBUTED | `DisperseAisleSelector` | Distribute pallets evenly across aisles |
+| 4 | AISLE_AGGREGATION_WN | `WNCollectAisleSelector` | Aggregate same batch into same aisle (WN decides) |
+| 5 | AISLE_AGGREGATION_HOST | `HostCollectAisleSelector` | Aggregate same batch into same aisle (Host decides) |
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.location.decide.AbstractShelfDecider &nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.location.decide.AisleShelfDecider &nbsp;</span>
+
+##<span style="color:skyblue; font-weight:bold">9100 — DisperseAisleSelector (Pattern 3, Single Deep)</span>
+
+For single deep racks, pallets are distributed evenly across aisles to maximize throughput.
 
 ::: mermaid
 flowchart TD
-    A[AisleShelfDecider.decideAisle
-    Pallet, WareHouse] --> B[WNCollectAisleSelector]
+    A["AisleShelfDecider.decideAisle
+    Pallet, WareHouse (9100)"] --> B["DisperseAisleSelector"]
+    B --> C["Distribute pallets evenly
+    across available aisles 9001-9006"]
+    C --> D["SoftZoneSelector
+    primary zone from DMItem
+    fallback via DMSoftZonePriority"]
+    D --> E["checkStorageAisle(aisle, soft_zone)
+    DMShelf has empty locations?"]
+    E --> F["determin()
+    Update DMWareHouse.last_used_station_no"]
+:::
+
+##<span style="color:skyblue; font-weight:bold">9200 — WNCollectAisleSelector (Pattern 4, Double Deep)</span>
+
+For double deep racks, same batch pallets are aggregated into the same aisle to optimize double-deep placement and retrieval efficiency.
+
+::: mermaid
+flowchart TD
+    A["AisleShelfDecider.decideAisle
+    Pallet, WareHouse (9200)"] --> B["WNCollectAisleSelector"]
     B --> C{DNCollectInfo
     aisle_collect_key exists?}
-    C -->|YES| D[Use same aisle
-    batch grouping]
+    C -->|YES| D["Use same aisle
+    (batch grouping)"]
     C -->|NO| E["Balance query:
     ORDER BY ALL_BATCH_COUNT ASC,
     ALL_STOCK_COUNT ASC,
-    AISLE_STATION_NO ASC"]
-    D --> F[SoftZoneSelector
+    AISLE_STATION_NO ASC
+    (counts in-transit + stored pallets)"]
+    D --> F["SoftZoneSelector
     primary zone from DMItem
-    fallback via DMSoftZonePriority]
+    fallback via DMSoftZonePriority"]
     E --> F
     F --> G["checkStorageAisle(aisle, soft_zone)
     DMShelf has empty locations?"]
     G --> H["determin()
-    Write/update DNCollectInfo
+    Write/update DNCollectInfo: aisle_collect_key -> aisle_no
     Update DMWareHouse.last_used_station_no"]
 :::
 
-**Balance query counts:**
+**Balance query counts (WNCollectAisleSelector):**
 | State | Description |
 |-------|-------------|
 | BC1/SC1 | Already stored (DNStock + DMShelf OCCUPIED) |
