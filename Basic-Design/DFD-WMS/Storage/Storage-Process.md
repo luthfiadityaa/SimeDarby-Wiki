@@ -56,12 +56,14 @@ flowchart TD
 | 002 | FG Ambient | 07-10 | 9007-9010 | 7107-7110 / 7207-7210 |
 | 003 | PM Ambient | 11-14 | 9011-9014 | 7211-7214 |
 | 004 | Empty Pallet | 07-10 | 9007-9010 | 7107-7110 / 7207-7210 |
+| 005 | ZNFP Product | 01-10 | 9001-9010 | 7101-7110 / 7207-7210 |
 
 **DMSoftZonePriority fallback order:**
 | Primary Zone | Fallback |
 |--------------|----------|
 | 002 (FG Ambient) | 004 -> 003 |
 | 004 (Empty Pallet) | 002 |
+| 005 (ZNFP Product) | 001 -> 002 |
 
 <hr>
 
