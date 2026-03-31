@@ -42,10 +42,10 @@ Each BCR station can ONLY deliver to its own aisle:
 | Config | Status |
 |--------|--------|
 | BCR sendable | **1** (OK) -- StorageSender can find them |
-| BCR max_instruction | **1** (OK) -- capacity check in getReachableBcrStations |
+| BCR max_instruction | **2** (OK) -- capacity check in getReachableBcrStations |
 | BCR class_name | AsrsInboundStationOperator (OK) |
-| AGC status_flag | **1** ONLINE (OK) |
-| AGC connection_flag | **1** CONNECTED (OK) |
+| AGC status_flag | **2** OFFLINE (dev/test -- set to 1 for production) |
+| AGC connection_flag | **0** DISCONNECTED (dev/test -- set to 1 for production) |
 | DMLocationFullLamp | station_no = 1106/1111-1115/1301-1303 -- lamp at physical station, counts by wh_station via join (OK) |
 | DMLocationFullLamp keywords | `free_shelf_warning_num_agc` matches DNSystemKVs (OK) |
 | DMWareHouse | 9100=pattern 3, 9200=pattern 4 (OK) |
@@ -312,13 +312,36 @@ AsrsInboundStationOperator at 720x then selects final BCR.
 
 ---
 
+## Extra: 720x ZFNP Intermediate -> 710x (Cross-Warehouse Tempering)
+
+Tests the full intermediate forwarding path for each 720x station with ZFNP items (zone 005, plan_area 9100).
+
+| Station | Source | End | Flow | Result |
+|---------|--------|-----|------|--------|
+| 7207 | 1301 | 9100 | wh(9200)!=end(9100) -> selectTargetAisleStation -> 9001-9006 -> 7101-7106. carry stays DIRECT_TRAVEL | **OK** |
+| 7208 | 1301 | 9100 | wh(9200)!=end(9100) -> selectTargetAisleStation -> 9001-9006 -> 7101-7106 | **OK** |
+| 7209 | 1302 | 9100 | wh(9200)!=end(9100) -> selectTargetAisleStation -> 9001-9006 -> 7101-7106 | **OK** |
+| 7210 | 1302 | 9100 | wh(9200)!=end(9100) -> selectTargetAisleStation -> 9001-9006 -> 7101-7106 | **OK** |
+
+DB prerequisites verified per test:
+- Routes 720x -> 7101-7106: 24 routes exist (full mesh)
+- 710x stations: status=1 (NORMAL), max_instruction=2
+- DMAisle 9001-9006: status=1 (NORMAL)
+- WH 9100: aisle_decision_pattern=3 (DisperseAisleSelector)
+- DMShelf: zone 001 shelves in 9001-9006 (1040 empty per aisle)
+- DMSoftZonePriority: zone 005 -> 001 in WH 9100
+
+**Result: OK - All 4 stations verified** -- Tested: `AsrsInboundStationOperatorTest` tests 17-20.
+
+---
+
 ## Extra: ZFNP (TestZFNP, zone 005 -> fallback per warehouse)
 
 | Source | plan_area | Flow | Result |
 |--------|-----------|------|--------|
 | 111x | 9100 | zone 005 -> 001 -> 9001-9006 -> BCR 7101-7106 | **OK** |
 | 111x | 9200 | zone 005 -> 002 -> 9007-9010 -> BCR 7107-7110 | **OK** |
-| 1301/1302 | 9100 | HP_INBOUND -> 720x -> 710x (cross-wh) | **OK** |
+| 1301/1302 | 9100 | HP_INBOUND -> 720x INTERMEDIATE -> 710x (cross-wh, 3-stage) | **OK** |
 | 1301/1302 | 9200 | Tier 1 direct -> 720x (final BCR) | **OK** |
 | 1303 | 9100 | 1303->7101-7106 | **OK** |
 | 1303 | 9200 | 1303->7107-7110 | **OK** |
@@ -326,7 +349,7 @@ AsrsInboundStationOperator at 720x then selects final BCR.
 
 **Result: OK for all valid ZFNP scenarios** -- zone 005 targets aisles 9001-9010 via DMSoftZonePriority fallback chain (005->001 in WH 9100, 005->002 in WH 9200).
 
-Tested: `AsrsInboundStationOperatorTest` ZFNP tests at 7207/7208/7209/7211/7214, `AutoStorageSchedulerStorageTest` path3 ZFNP tests.
+Tested: `AsrsInboundStationOperatorTest` ZFNP tests at 7207/7208/7209/7210/7211/7214 (including intermediate tests 17-20), `AutoStorageSchedulerStorageTest` path3 ZFNP tests.
 
 ---
 
@@ -363,6 +386,7 @@ Tested: `AsrsInboundStationOperatorTest` ZFNP tests at 7207/7208/7209/7211/7214,
 | 13b | 1303, PM/ZPCK z003 | REJECT | - | - | - | **EXPECTED (FIXED)** |
 | 14 | 1303, EMP_PB z004 | OK | OK | OK | OK | **OK** |
 | 15 | 1303, ZFNP z005 | OK | OK | OK | OK | **OK** |
+| ex | 720x ZFNP intermediate->710x | OK | OK (all 720x) | OK | OK | **OK** |
 | ex | ZFNP all sources | OK | OK | OK | OK | **OK** |
 | ex | 710x from 1303 | OK | OK | OK | OK | **OK** |
 
@@ -419,7 +443,7 @@ Tested: `AsrsInboundStationOperatorTest` ZFNP tests at 7207/7208/7209/7211/7214,
 | testLastPallet_Qty0_Reject | WAITING_LAST_PALLET, qty=0 -> dest=1303 | PASS |
 | testBadControl_Reject | Invalid control_info -> dest=1303 | PASS |
 
-## AsrsInboundStationOperatorTest (16 tests)
+## AsrsInboundStationOperatorTest (20 tests)
 
 | Test | Description | Status |
 |------|-------------|--------|
@@ -439,6 +463,10 @@ Tested: `AsrsInboundStationOperatorTest` ZFNP tests at 7207/7208/7209/7211/7214,
 | testFinalBcr_7101_EmpPb_FromStation1303_9100 | 7101 EMP_PB from 1303, WH 9100 | PASS |
 | testFinalBcr_7108_EmpPb_FromStation1303_9200 | 7108 EMP_PB from 1303, WH 9200 | PASS |
 | testIntermediate_7207_Tempering_ForwardTo710x | 7207 Tempering, wh!=end -> forward to 710x | PASS |
+| testIntermediate_7207_ZFNP_FromStation1301_To710x | 7207 ZFNP from 1301, end=9100 -> forward to 710x | PASS |
+| testIntermediate_7208_ZFNP_FromStation1301_To710x | 7208 ZFNP from 1301, end=9100 -> forward to 710x | PASS |
+| testIntermediate_7209_ZFNP_FromStation1302_To710x | 7209 ZFNP from 1302, end=9100 -> forward to 710x | PASS |
+| testIntermediate_7210_ZFNP_FromStation1302_To710x | 7210 ZFNP from 1302, end=9100 -> forward to 710x | PASS |
 
 ---
 

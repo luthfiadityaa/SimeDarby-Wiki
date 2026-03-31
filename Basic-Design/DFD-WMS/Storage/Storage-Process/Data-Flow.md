@@ -1,8 +1,8 @@
 Storage System — Developer Data Flow Reference
 ==============================================
 
-**Version:** 3.0  
-**Date:** 2026-03-23  
+**Version:** 3.1  
+**Date:** 2026-03-31  
 **Audience:** Developers implementing or maintaining storage flow
 
 * * *
@@ -42,7 +42,7 @@ Section A — Palletization Storage Data Flow
 | 4 | WNCollectAisleSelector.determin() | INSERT | DNCollectInfo | aisle_collect_key, storage_aisle_no |
 | 5 | AutoStorageScheduler | INSERT | DNPallet | PLT001, current=110x, item=DIRECT_PB, collect_batch_no=lot |
 | 6 | AutoStorageScheduler | INSERT | DNStock | item=DIRECT_PB, pallet=PLT001, area=9100 |
-| 7 | AutoStorageScheduler | INSERT | DNCarryInfo CK001 | carry_flag=3, dest=111x, end=710x |
+| 7 | AutoStorageScheduler | INSERT | DNCarryInfo CK001 | carry_flag=3, dest=111x, end=plan_area(9100/9200) |
 | 8 | AutoStorageScheduler | UPDATE | DNReceivingPlan | status: 0→1 (only if status=0) |
 | 9 | AutoStorageScheduler | UPDATE | DNArrival | sch_flag=1, sch_carry_key=CK001 |
 | — | commit + carryRequest() | — | — | — |
@@ -51,30 +51,26 @@ Section A — Palletization Storage Data Flow
 
 * * *
 
-### A4. Phase 3 — Arrival at 111x (normal storage pass-through)
+### A4. Phase 3 — Arrival at 111x (StorageSender Path 2)
 
 | Step | Class | DB Operation | Table | Key Values |
 | --- | --- | --- | --- | --- |
-| 1 | PalletizeStorageStationOperator | UPDATE | DNCarryInfo CK001 | dest→710x (end_station), cmd_status→ARRIVAL |
-| 2 | PalletizeStorageStationOperator | DELETE via LoadRemover | DNCarryInfo CK001 | (direct carry cleaned) |
-| 3 | PalletizeStorageStationOperator | INSERT | DNArrival | station=111x, carry_key=DUMMY, sch_flag=0 |
-**AutoStorageScheduler at 111x — ONE TRANSACTION:**
+| 1 | PalletizeStorageStationOperator | registArrival + carryRequest | DNArrival | station=111x, carry_key=CK001 (same carry from 110x) |
+**StorageSender.processPalletizeStorage at 111x — reuses same carry/mckey from 110x:**
 | Step | Class | DB Operation | Table | Key Values |
 | --- | --- | --- | --- | --- |
-| 4 | AutoStorageScheduler | SELECT+LOCK | DNReceivingPlan | NOWAIT |
-| 5 | AutoStorageScheduler | INSERT | DNStoragePlan SP001 | status=0, plan_qty, bcr_data, job_type from plan |
-| 6 | AisleShelfDecider.decideAisle() | SELECT | DMAisle, DMShelf | soft_zone, batch balance |
-| 7 | WNCollectAisleSelector.determin() | INSERT/UPDATE | DNCollectInfo | aisle_collect_key, aisle_no |
-| 8 | AutoStorageScheduler | SELECT+LOCK | DNStoragePlan | NOWAIT → ROLLBACK if locked |
-| 9 | AutoStorageScheduler | INSERT | DNPallet PLT002 | current=111x, soft_zone, collect_key |
-| 10 | AutoStorageScheduler | INSERT | DNCarryInfo CK002 | carry_flag=3, dest=710x, end=wh_station |
-| 11 | AutoStorageScheduler | INSERT | DNStock STK001 | item=ZFNP, status=UU, tempering_period, expiry_date |
-| 12 | AutoStorageScheduler | INSERT | DNWorkInfo WK001 | **job_type = DNStoragePlan.job_type** ← not hardcoded |
-| 13 | AutoStorageScheduler | UPDATE | DNStoragePlan SP001 | status→1 (NOWWORKING) |
-| 14 | AutoStorageScheduler | UPDATE | DNArrival | sch_flag=1, sch_carry_key=CK002 |
-| — | commit + carryRequest() | — | — | — |
-| 15 | StorageSender | UPDATE | DNArrival | send_flag=SENDED |
-| 15 | StorageSender | SEND | ID05 | dest=710x, carry=DIRECT_TRAVEL |
+| 2 | StorageSender | getPalletizingCompletion | DNArrival | control_info check (000=normal, 001=force) |
+| 3 | StorageSender | findReceivingPlan | DNReceivingPlan | batch_station_no=111x, status IN(0,1,2) |
+| 4 | StorageSender | determinePlanQty | — | status 0,1→batch_qty_ctrn_pl; status 2→batch_last_pallet_qty |
+| 5 | StorageSender | deleteDirectPbStock | DNStock | DELETE item=DIRECT_PB placeholder from 110x |
+| 6 | StorageSender | createStoragePlan | DNStoragePlan SP001 | status=0, plan_qty, bcr_data, job_type from ReceivingPlan |
+| 7 | StorageSender | createStock | DNStock STK001 | real stock from ReceivingPlan data |
+| 8 | StorageSender | createWorkInfo | DNWorkInfo WK001 | **job_type = DNStoragePlan.job_type** ← not hardcoded |
+| 9 | StorageSender | updatePalletSoftZone | DNPallet PLT001 | soft_zone, aisle_collect_key (same pallet from 110x) |
+| 10 | StorageSender | selectAisleAndUpdateCarry | DNCarryInfo CK001 | dest→710x BCR, source=111x, wait_reason=OFF |
+| 11 | StorageSender | updateReceivingPlanProgress | DNReceivingPlan | progress_qty += plan_qty; status→4 if last pallet |
+| — | commit | — | — | — |
+| 12 | StorageSender | SEND | ID05 | dest=710x, carry=DIRECT_TRAVEL |
 
 * * *
 
@@ -83,16 +79,16 @@ Section A — Palletization Storage Data Flow
 | Step | Class | DB Operation | Table | Key Values |
 | --- | --- | --- | --- | --- |
 | 1 | AsrsInboundStationOperator | CHECK | DMStation | this.wh_station = end_station → FINAL BCR |
-| 2 | AsrsInboundStationOperator | UPDATE | DNCarryInfo CK002 | carry_flag→1(STORAGE), source→710x, dest→9100, cmd_status→START |
-| 3 | AsrsInboundStationOperator | INSERT | DNArrival | station=710x, carry_key=CK002 |
+| 2 | AsrsInboundStationOperator | UPDATE | DNCarryInfo CK001 | carry_flag→1(STORAGE), source→710x, dest→9100, cmd_status→START |
+| 3 | AsrsInboundStationOperator | INSERT | DNArrival | station=710x, carry_key=CK001 |
 | — | carryRequest() | — | — | — |
 **StorageSender at 710x (bin selection):**
 | Step | Class | DB Operation | Table | Key Values |
 | --- | --- | --- | --- | --- |
-| 4 | StorageSender.soueceRightStation() | CHECK | DMStation | max_instruction, suspend, mode |
+| 4 | StorageSender.soueceRightStation() | CHECK | DMStation | max_instruction=2, suspend, mode |
 | 5 | LocationManager.searchLocation() | SELECT | DMShelf | status=EMPTY, soft_zone=001, aisle=9001 |
 | 6 | ShelfController.reserveShelf() | UPDATE | DMShelf SHF001 | status→2 (RESERVED) |
-| 7 | StorageSender | UPDATE | DNCarryInfo CK002 | dest→SHF001, aisle_station_no=9001 |
+| 7 | StorageSender | UPDATE | DNCarryInfo CK001 | dest→SHF001, aisle_station_no=9001 |
 | 8 | StorageSender | UPDATE | DNArrival | send_flag=SENDED |
 | 8 | StorageSender | SEND | ID05 | dest=SHF001, location_no=B1-L1-A1, carry=STORAGE |
 
@@ -109,8 +105,8 @@ Section A — Palletization Storage Data Flow
 | 5 | AsStockController | UPDATE | DNPallet PLT002 | current_station=SHF001, status=STORED |
 | 6 | AsStockController | INSERT | DNStockHistory | storage audit |
 | 7 | PlanController.updatePlan() | UPDATE | **DNStoragePlan SP001** | ⚑ status→4 (COMPLETE) |
-| 8 | InOutResultController | INSERT | DNInOutResult | result_kind=1, carry_key=CK001, location=B1-L1-A1 |
-| 9 | Id33Process | DELETE | DNCarryInfo CK002 | — |
+| 8 | InOutResultController | INSERT | DNInOutResult | result_kind=1, carry_key=CK001 (same carry throughout), location=B1-L1-A1 |
+| 9 | Id33Process | DELETE | DNCarryInfo CK001 | — |
 | 10 | ShelfMonitor (next cycle) | SEND | ID54 | lamp update if empty count threshold crossed |
 
 > ⚑ = Fields to verify during testing
@@ -224,16 +220,16 @@ Section D — Settings Reference ⚙️
 
 | station_no | aisle_decision_pattern | Reason |
 | --- | --- | --- |
-| 9100 | **4** (WN Collect) | Enables WNCollectAisleSelector + DNCollectInfo |
-| 9200 | **4** (WN Collect) | Same |
-Current value: `0` (wrong — ConnectedAisleSelector, no DNCollectInfo write)
+| 9100 | **3** (Disperse) | DisperseAisleSelector — distributes across aisles evenly |
+| 9200 | **4** (WN Collect) | WNCollectAisleSelector + DNCollectInfo |
+Current value: **3** and **4** respectively (OK — applied)
 
 ### D2. DMStation — max_instruction
 
 | station_no range | max_instruction | Reason |
 | --- | --- | --- |
-| 7101-7110, 7207-7214 | **1** | Allow StorageSender to send commands |
-Current value: `0` (wrong — blocks all storage commands)
+| 7101-7110, 7207-7214 | **2** | Allow StorageSender to send commands; capacity check in getReachableBcrStations |
+Current value: **2** (OK — applied)
 
 ### D3. DMStation — station_operator_class
 
@@ -262,14 +258,14 @@ Current value: `0` (wrong — blocks all storage commands)
 
 ### D6. DMRouteId — Missing Routes (must add)
 
-Routes required for 1301/1302 → FGW2 cross-warehouse storage:
-| start_station_no | end_station_no | Notes |
-| --- | --- | --- |
-| 7207 | 7101-7106 | After route fix by engineer |
-| 7208 | 7103-7106 | After route fix |
-| 7209 | 7104-7106 | After route fix |
-| 7210 | 7105-7106 | After route fix |
-Corresponding `DMRouteDetail` rows with machine path must also be added.
+Routes for 1301/1302 → FGW2 cross-warehouse storage (full mesh, 24 routes):
+| start_station_no | end_station_no | Route IDs | Status |
+| --- | --- | --- | --- |
+| 7207 | 7101-7106 | 337-342 | **APPLIED** |
+| 7208 | 7101-7106 | 343-348 | **APPLIED** |
+| 7209 | 7101-7106 | 349-354 | **APPLIED** |
+| 7210 | 7101-7106 | 355-360 | **APPLIED** |
+Corresponding `DMRouteDetail` rows with machine path also added.
 
 ### D7. Constant.java — New Constants
 
