@@ -8,14 +8,14 @@
 ::: mermaid
 flowchart LR
 
-P1[TransferSettingSCH<br/>Set F2]-->P2[processTransferWarehouse<br/>in RetrievalSender]-->P3[ID12]-->P4[ID32]-->P5[ID33]-->P6[ID64]-->P7[ID26<br/>at 7207-7210]-->P8[StorageSender<br/>swap rear/front]-->P9[ID05]-->P10[ID25]-->P11[ID64]-->P12[ID33<br/>at 9007-9010]
+P1[TransferSettingSCH<br/>Set F2]-->P2[processTransferWarehouse<br/>in RetrievalSender]-->P3[ID12]-->P4[ID32]-->P5[ID33]-->P6[ID64]-->P7[ID26<br/>at 7207-7214]-->P8[StorageSender<br/>swap rear/front]-->P9[ID05]-->P10[ID25]-->P11[ID64]-->P12[ID33<br/>at 9007-9014]
 :::
 
 ## Scope
 - **Item type**: ZFNP only (Soft Zone 005, 002)
 - **Source**: Tempering shelves in aisles 9001-9006 (WH 9100, single deep)
-- **Destination**: Ambient shelves in aisles 9007-9010 (WH 9200, double deep)
-- **Route**: Shelf (9001-9006) -> ID12 -> BCR (7207-7210) -> ID05 -> Aisle (9007-9010)
+- **Destination**: Ambient shelves in aisles 9007-9014 (WH 9200, double deep)
+- **Route**: Shelf (9001-9006) -> ID12 -> BCR (7207-7214) -> ID05 -> Aisle (9007-9014)
 
 ## Station Map
 ```
@@ -32,9 +32,13 @@ Destination Aisles (WH 9200 Ambient, double deep):
   9008 -> BCR 7108 (OP) / 7208 (HP)   <- transfer uses 7208
   9009 -> BCR 7109 (OP) / 7209 (HP)   <- transfer uses 7209
   9010 -> BCR 7110 (OP) / 7210 (HP)   <- transfer uses 7210
+  9011 -> BCR 7211 (HP)               <- transfer uses 7211
+  9012 -> BCR 7212 (HP)               <- transfer uses 7212
+  9013 -> BCR 7213 (HP)               <- transfer uses 7213
+  9014 -> BCR 7214 (HP)               <- transfer uses 7214
 
 Transfer Route:
-  Shelf in 9001-9006 --ID12--> 7207-7210 (HP BCR) --ID05--> 9007-9010
+  Shelf in 9001-9006 --ID12--> 7207-7214 (HP BCR) --ID05--> 9007-9014
   via STV 8102
 ```
 
@@ -57,12 +61,19 @@ Pallet  5 -> aisle 9009, pair C REAR   -> dest=7209
 Pallet  6 -> aisle 9009, pair C FRONT  -> dest=7209
 Pallet  7 -> aisle 9010, pair D REAR   -> dest=7210
 Pallet  8 -> aisle 9010, pair D FRONT  -> dest=7210
-Pallet  9 -> aisle 9007, pair E REAR   -> dest=7207
-Pallet 10 -> aisle 9007, pair E FRONT  -> dest=7207
-... round-robin across aisles, 2 per pair
+Pallet  9 -> aisle 9011, pair E REAR   -> dest=7211
+Pallet 10 -> aisle 9011, pair E FRONT  -> dest=7211
+Pallet 11 -> aisle 9012, pair F REAR   -> dest=7212
+Pallet 12 -> aisle 9012, pair F FRONT  -> dest=7212
+Pallet 13 -> aisle 9013, pair G REAR   -> dest=7213
+Pallet 14 -> aisle 9013, pair G FRONT  -> dest=7213
+Pallet 15 -> aisle 9014, pair H REAR   -> dest=7214
+Pallet 16 -> aisle 9014, pair H FRONT  -> dest=7214
+Pallet 17 -> aisle 9007, pair I REAR   -> dest=7207  (second round)
+... round-robin across 8 aisles, 2 per pair
 ```
 
-## Arrival Swap Logic (StorageSender at 7207-7210)
+## Arrival Swap Logic (StorageSender at 7207-7214)
 Pallets may arrive out of order. If front-booked pallet arrives before rear-booked:
 
 ```
@@ -153,11 +164,15 @@ Aisles 9007-9010 handle THREE types of operations simultaneously:
 | ID33 Retrieval [(5)](#5-id33-retrieval-complete)                  |      |      |      |   U  |      |      |      |  U   |      |      |      |      |      |      |      |
 | ID64 STV [(6)](#6-id64-stv-pickup)                                |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
 | **Re-Storage Flow**                                               |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| ID26 at 7207-7210 [(7)](#7-id26-at-7207-7210)                    |   U  |   U  |      |   U  |      |   I  |      |      |      |      |      |      |      |      |      |
+| ID26 at 7207-7214 [(7)](#7-id26-at-7207-7210)                    |   U  |   U  |      |   U  |      |   I  |      |      |      |      |      |      |      |      |      |
 | StorageSender + swap [(8)](#8-storagesender-at-7207-7210)         |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |      |
 | ID25 [(9)](#9-id25-at-7207-7210)                                  |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |      |
 | ID64 SRM [(10)](#10-id64-at-srm)                                  |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
-| ID33 Storage [(11)](#11-id33-at-9007-9010)                        |   U  |   U  |      |   D  |   U  |      |      |  U   |   I  |      |      |      |      |      |      |
+| ID33 Storage [(11)](#11-id33-at-9007-9014)                        |   U  |   U  |      |   D  |   U  |      |      |  U   |   I  |      |   I  |      |      |      |      |
+| **Host Reporting**                                                |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| DNHostSend [(12)](#12-dnhostsend---sap-reporting)                 |      |      |      |      |      |      |      |      |      |      |   U  |      |      |      |      |
+| **Error Handling**                                                |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| Aisle Error [(13)](#13-aisle-disconnecterror-handling)             |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 
 ---
 
@@ -269,7 +284,7 @@ flowchart TD
 ## Aisle Decision Criteria
 ```
 1. Query DMAisle WHERE wh_station_no = '9200' AND status = NORMAL
-   -> aisles 9007, 9008, 9009, 9010
+   -> aisles 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014
 2. Round-robin using DMWareHouse.last_used_station_no
 3. For each aisle: searchPairEmptyShelf (both rear+front EMPTY)
    -> filter: soft_zone matches pallet (005 or 002)
@@ -349,7 +364,7 @@ STV picked up the pallet from SRM and transporting to BCR.
 
 ---
 
-# (7) ID26 at 7207-7210
+# (7) ID26 at 7207-7214
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.asrs.location.AsrsInboundStationOperator` &nbsp;</span>
@@ -383,7 +398,7 @@ Converts carry from rack-to-rack retrieval to storage for re-storage into 9200.
 
 ---
 
-# (8) StorageSender at 7207-7210
+# (8) StorageSender at 7207-7214
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.asrs.transmission.StorageSender` &nbsp;</span>
@@ -419,7 +434,7 @@ flowchart TD
 
 ---
 
-# (9) ID25 at 7207-7210
+# (9) ID25 at 7207-7214
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.asrs.communication.control.Id25Process` &nbsp;</span>
@@ -447,7 +462,7 @@ SRM picked up pallet for storage into shelf.
 
 ---
 
-# (11) ID33 at 9007-9010
+# (11) ID33 at 9007-9014
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.asrs.communication.control.Id33Process` &nbsp;</span>
@@ -486,6 +501,101 @@ Storage complete. Pallet is now on the shelf in 9200.
 
 ---
 
+# (12) DNHostSend - SAP Reporting
+
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
+`jp.co.daifuku.wms.host.InternalLocTransferReportDataCreator` &nbsp;</span>
+
+At ID33 storage completion, a DNHostSend record is created. The HostCommExecutor picks it up and sends an XML PalletUpdate to SAP via SFTP.
+
+See: [Internal Location Transfer Result](../../Host-Interfaces/Send-Method/Internal-Location-Transfer-Result)
+
+## <span style="color:skyblue; font-weight:bold">DNHOSTSEND (INSERT at ID33)</span>
+- **JOB_TYPE** : 45: ASRS Rack-to-Rack
+- **REPORT_FLAG** : 0: Not reported
+- **PLAN_UKEY** : DNWORKINFO.PLAN_UKEY
+- **ITEM_CODE** : DNSTOCK.ITEM_CODE
+- **BATCH_NO** : DNSTOCK.BATCH_NO
+- **RESULT_QTY** : DNWORKINFO.RESULT_QTY
+- **UOM** : DNWORKINFO.UOM
+- **RESULT_AREA_NO** : 9200 (destination area)
+- **STOCK_STATUS** : DNSTOCK.STOCK_STATUS (UU)
+- **TEMPERING_FLAG** : DNSTOCK.TEMPERING_FLAG (REACHED)
+
+## <span style="color:skyblue; font-weight:bold">XML to SAP (PalletUpdate)</span>
+```xml
+<PalletUpdate>
+    <MsgID>{sequence}</MsgID>
+    <Action>0</Action>
+    <MaterialCode>{ITEM_CODE}</MaterialCode>
+    <Plant>{RESULT_AREA_NO mapped}</Plant>
+    <Batch>{BATCH_NO}</Batch>
+    <Quantity>{RESULT_QTY}</Quantity>
+    <UoM>{UOM}</UoM>
+    <PostingDate>{LAST_UPDATE_DATE}</PostingDate>
+    <StatusTo>UU</StatusTo>
+    <StorageLocationFrom>FGW2</StorageLocationFrom>
+    <StorageLocationTo>FGW1</StorageLocationTo>
+    <StartDateTime>{retrieval start}</StartDateTime>
+    <EndDateTime>{storage complete}</EndDateTime>
+    <Remark>process complete</Remark>
+</PalletUpdate>
+```
+
+After SAP response:
+- **DNHOSTSEND.REPORT_FLAG** : 1: Reported
+- **DNHOSTSEND.MSG_ID** : assigned by SAP
+
+---
+
+# (13) Aisle Disconnect/Error Handling
+
+## At processTransferWarehouse (booking time)
+```
+If aisle status != NORMAL (disconnect/error):
+  -> skip this aisle, try next aisle in round-robin
+  -> if ALL aisles in 9200 are down: wait_reason=NO_ROUTE, retry next cycle
+```
+
+## At StorageSender (7207-7214, after pallet arrives)
+```
+If target aisle is disconnect/error:
+  -> StorageSender cannot send ID05
+  -> wait_reason = NO_ROUTE or FULL
+  -> Pallet sits at BCR station (7207-7214)
+  -> StorageSender retries each cycle
+
+If aisle does NOT recover:
+  -> Operator sends ID35 (manual interference) to clear the pallet
+  -> Id35Process cancels the carry
+  -> Releases reserved shelf (DMSHELF.status -> EMPTY)
+  -> Deletes DNCarryInfo
+  -> Pallet physically removed by operator from BCR
+```
+
+## At ID33 Retrieval (pallet out of source shelf, in transit)
+```
+If target aisle goes down AFTER retrieval but BEFORE arrival at BCR:
+  -> Pallet is in transit on STV, cannot be stopped
+  -> Pallet arrives at BCR (7207-7214), ID26 received
+  -> AsrsInboundStationOperator converts carry to STORAGE
+  -> StorageSender finds aisle down -> wait_reason=NO_ROUTE
+  -> Same as above: wait for recovery or ID35
+```
+
+## Reserved shelf cleanup on ID35
+```
+Id35Process:
+  1. Read carry.reserved_shelf_no
+  2. If shelf status = RESERVED: update to EMPTY
+  3. Delete DNCarryInfo
+  4. Update DNPallet status
+  5. Update DNWorkInfo status -> cancelled
+  NOTE: DNHostSend is NOT created for cancelled transfers
+```
+
+---
+
 # Carry Lifecycle Summary
 
 ```
@@ -509,7 +619,7 @@ Storage complete. Pallet is now on the shelf in 9200.
 (6) ID64:
     cmd_status=4(PICKUP)
 
-(7) ID26 at 7207-7210:
+(7) ID26 at 7207-7214:
     carry_flag=1(STORAGE), cmd_status=1(START)
     source=7207-7210, dest=9200, end=9200
 
@@ -530,12 +640,13 @@ Storage complete. Pallet is now on the shelf in 9200.
 
 # Database Prerequisites
 
-## DMRouteId — Routes 9001-9006 -> 7207-7210
-24 routes (route_id 449-472), route_type='2' (retrieval).
-Already added to `DMRouteId.sql`.
+## DMRouteId — Routes 9001-9006 -> 7207-7214
+48 routes total, route_type='2' (retrieval). Already added to `DMRouteId.sql`:
+- route_id 449-472: 9001-9006 -> 7207-7210 (aisles 9007-9010)
+- route_id 473-496: 9001-9006 -> 7211-7214 (aisles 9011-9014)
 
 ## DMRouteDetail — Physical path via STV 8102
-72 entries (3 per route): SRM -> STV 8102 -> BCR.
+144 entries (3 per route): SRM -> STV 8102 -> BCR.
 Already added to `DMRouteDetail.sql`.
 
 ## DMStation — Required status
@@ -562,6 +673,10 @@ WHERE station_no IN ('9007','9008','9009','9010');
 9008 -> bcr_station_no = 7108  (OP)  /  7208 (HP)
 9009 -> bcr_station_no = 7109  (OP)  /  7209 (HP)
 9010 -> bcr_station_no = 7110  (OP)  /  7210 (HP)
+9011 -> bcr_station_no = 7211  (HP, used by transfer)
+9012 -> bcr_station_no = 7212  (HP)
+9013 -> bcr_station_no = 7213  (HP)
+9014 -> bcr_station_no = 7214  (HP)
 ```
 Note: DMAisle.bcr_station_no holds only ONE BCR per aisle.
 Transfer must use `getReachableBcrForAisle()` or hardcode 720x for HP route.
@@ -597,10 +712,12 @@ SELECT controller_no, status_flag, connection_flag FROM DMGroupController;
 | 4 | getRackMoveInfoForUpdate() — add dest=blank check | RetrievalSender.java | TODO |
 | 5 | AsrsInboundStationOperator — handle RACK_TO_RACK arrival | AsrsInboundStationOperator.java | TODO |
 | 6 | StorageSender — rear/front swap logic | StorageSender.java | TODO |
-| 7 | DMRouteId 449-472 | DMRouteId.sql | DONE |
-| 8 | DMRouteDetail 449-472 | DMRouteDetail.sql | DONE |
+| 7 | DMRouteId 449-496 | DMRouteId.sql | DONE |
+| 8 | DMRouteDetail 449-496 | DMRouteDetail.sql | DONE |
 | 9 | ID35 cancel — release reserved shelf in 9200 | Verify existing | TODO |
-| 10 | InternalLocTransferReportDataCreator | Host reporting | TODO |
+| 10 | DNHostSend insert at ID33 (job_type=45) | CarryCompleteOperator / HostSendController | TODO |
+| 11 | InternalLocTransferReportDataCreator | Host reporting (existing, verify) | TODO |
+| 12 | Aisle error handling at StorageSender | StorageSender.java | TODO |
 
 # User Story
   - #6614
