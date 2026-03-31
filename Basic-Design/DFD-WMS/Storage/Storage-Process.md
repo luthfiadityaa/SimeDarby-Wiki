@@ -96,75 +96,84 @@ flowchart TD
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.location.PalletizeRobotStationOperator (110x) &nbsp;</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.location.PalletizeStorageStationOperator (111x) &nbsp;</span>
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.location.AsrsInboundStationOperator (710x) &nbsp;</span>
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.AutoStorageScheduler &nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.AutoStorageScheduler (110x) &nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp; jp.co.daifuku.asrs.transmission.StorageSender (111x) &nbsp;</span>
+
+Only **ZFNP** item_type (soft_zone 005). User chooses plan_area_no 9100 or 9200.
 
 | Step | Action |RECP|STRP|PLLT|CRYI|STCK|WRKI|HSTS|ARVL|SHLF|COLI|INOUT|
 |------|--------|----|----|----|----|----|----|----|----|----|----|-----|
 | 1 | ID26 at 110x - AutoStorageScheduler (plan found) | U | | I | I | I | | | U | | | |
-| 2 | ID26 at 111x - PalletizeStorageStationOperator (pass-through) | | | | D | | | | D,I | | | |
-| 3 | ID26 at 111x - AutoStorageScheduler (storage carry) | | U | I | I | I | I | | U | | I | |
+| 2 | ID26 at 111x - PalletizeStorageStationOperator (pass-through) | | | | | | | | I | | | |
+| 3 | StorageSender at 111x (reuses carry from step 1) | | I | U | U | D,I | I | | | | I | |
 | 4 | ID26 at 710x - AsrsInboundStationOperator (FINAL BCR) | | | | U | | | | | | | |
-| 5 | StorageSender (bin selection) | | | | | | | | | U | | |
+| 5 | StorageSender at 710x (bin selection) | | | | | | | | | U | | |
 | 6 | ID33 (storage complete) | | U | U | D | U | U | I | | U | | I |
 
 ###<span style="color:skyblue; font-weight:bold">Step 1 - ID26 at 110x (Robot Input)</span>
 
 Pallet arrives at robot input station (1101-1105) with DUMMY mckey. `PalletizeRobotStationOperator` registers DNArrival and calls `autoScheduleRequest()`.
 
-`AutoStorageScheduler` polls DNArrival:
+`AutoStorageScheduler` polls DNArrival (status 0,1 only — not WAITING_LAST_PALLET):
 - **No plan found** -> silent wait, DNArrival stays NOT_SCHEDULED
-- **Plan found** ->
+- **Plan found** -> No aisle selection at 110x (pallet doesn't know which aisle yet)
 
 ::: mermaid
 flowchart LR
-    A[getReceivingPlan
-    next_station_no] --> B{Plan found?}
+    A["getReceivingPlanForRobot
+    (next_station_no, status 0,1)"] --> B{Plan found?}
     B -->|NO| C[Silent wait]
-    B -->|YES| D[selectAisleAndGetBcrStation
-    -> BCR 710x]
-    D --> E[INSERT DNPallet
-    DIRECT_PB + collect_key]
-    E --> F[INSERT DNStock
-    DIRECT_PB]
-    F --> G[INSERT DNCarryInfo
+    B -->|YES| E["INSERT DNPallet
+    DIRECT_PB + collect_key"]
+    E --> F["INSERT DNStock
+    DIRECT_PB"]
+    F --> G["INSERT DNCarryInfo
     DIRECT_TRAVEL
-    dest=111x, end=710x]
-    G --> H[UPDATE DNReceivingPlan
-    status 0->1]
-    H --> I[UPDATE DNArrival
-    SCHEDULED]
-    I --> J[ID05: 110x->111x]
+    dest=111x, end=plan_area (9100/9200)"]
+    G --> H["UPDATE DNReceivingPlan
+    status 0->1 (only if status=0)"]
+    H --> I["UPDATE DNArrival
+    SCHEDULED"]
+    I --> J["ID05: 110x->111x"]
 :::
 
 ###<span style="color:skyblue; font-weight:bold">Step 2 - ID26 at 111x (Palletizing Station - Pass-through)</span>
 
 `PalletizeStorageStationOperator.arrival()`:
-- `reject_factor == "00"` (normal) -> `LoadRemover.remove()` cleans direct carry, re-registers as DUMMY DNArrival
+- `reject_factor == "00"` (normal) -> `registArrival()` + `carryRequest()` wakes StorageSender
 - Robot palletizes cartons onto the pallet
 
-###<span style="color:skyblue; font-weight:bold">Step 3 - ID26 at 111x (AutoStorageScheduler - Storage Carry)</span>
+###<span style="color:skyblue; font-weight:bold">Step 3 - StorageSender at 111x (Path 2 — Storage Plan + Aisle Selection)</span>
 
-After palletizing, AGC sends ID26 with DUMMY, `control_info='0'`.
-
-`AutoStorageScheduler`:
+`StorageSender.processPalletizeStorage()` reuses the same carry/mckey from step 1:
 
 ::: mermaid
 flowchart LR
-    A[checkControlInfo] --> B{control_info?}
-    B -->|0: Normal| C[insertStoragePlan]
-    C --> D[selectAisleAndGetBcrStation
-    -> BCR 710x]
-    D --> E[INSERT DNPallet - real item]
-    E --> F[INSERT DNCarryInfo
-    DIRECT_TRAVEL
-    dest=710x, end=wh_station]
-    F --> G[INSERT DNStock + DNWorkInfo
-    job_type from DNStoragePlan]
-    G --> H[UPDATE DNStoragePlan
-    status 0->1]
-    H --> I[UPDATE DNArrival
-    SCHEDULED]
-    I --> J[ID05: 111x->710x]
+    A["getPalletizingCompletion
+    from DNArrival"] --> B{control_info?}
+    B -->|"not 000/001"| R1["rejectCarryTo1303"]
+    B -->|"000 or 001"| C["findReceivingPlan
+    (status 0,1,2)"]
+    C --> D{Plan found?}
+    D -->|NO| R2["rejectCarryTo1303"]
+    D -->|YES + 001 + status!=2| W["updateWaitReason=17
+    hold pallet"]
+    D -->|YES + 001 + status=2 + qty=0| R3["rejectCarryTo1303"]
+    D -->|"YES (normal)"| E["deleteDirectPbStock
+    (remove DIRECT_PB placeholder)"]
+    E --> F["createStoragePlan
+    plan_qty=batch_qty_ctrn_pl
+    (or batch_last_pallet_qty if status=2)"]
+    F --> G["createStock
+    (real item from DNReceivingPlan)"]
+    G --> H["createWorkInfo"]
+    H --> I["updatePalletSoftZone"]
+    I --> J["selectAisleAndUpdateCarry
+    dest=710x (7101-7110)"]
+    J --> K["updateReceivingPlanProgress
+    progress_qty += plan_qty
+    (status->4 if last pallet)"]
+    K --> L["ID05: 111x->710x"]
 :::
 
 ###<span style="color:skyblue; font-weight:bold">Step 4 - ID26 at 710x (FINAL BCR)</span>
@@ -202,26 +211,35 @@ See [Storage Completion (ID33)](#Storage-Completion-ID33) section below.
 
 Pallet placed at inbound station. `InOutStationOperator` / `StorageStationOperator` registers DNArrival and calls `autoScheduleRequest()`.
 
-`AutoStorageScheduler`:
+`AutoStorageScheduler` — DNStoragePlan already exists from screen input (NOT created here):
+
+**Station-specific routing:**
+| Station | Allowed Items | Destination | Notes |
+|---------|--------------|-------------|-------|
+| 1106 | ZPCK only | 7207-7210 | PM Inbound. No empty pallet, no Tempering |
+| 1301 | ALL (ZFNP, ZPCK, EMP_PB) | 7207-7214 | PM direct to 721x, Ambient to 720x, Tempering via 720x intermediate |
+| 1302 | ALL | 7207-7214 | Same as 1301 |
+| 1303 | ZFNP, EMP_PB (no ZPCK) | 7101-7110 | QC/Reject station. plan_area 9100 or 9200 |
 
 ::: mermaid
 flowchart LR
-    A[existsCarryInfo?] --> B{Exists?}
-    B -->|YES| C[updateArrival + carryRequest
-    continue]
-    B -->|NO| D[insertStoragePlan]
-    D --> E[selectAisleAndGetBcrStation
-    -> BCR 720x]
-    E --> F[INSERT DNPallet, DNCarryInfo
+    A["existsCarryInfo?"] --> B{Exists?}
+    B -->|YES| C["updateArrival + carryRequest
+    continue"]
+    B -->|NO| D["validateStoragePlan
+    (zone + shelf check with
+    DMSoftZonePriority fallback)"]
+    D --> E["selectAisleAndGetBcrStation
+    -> BCR reachable from source"]
+    E --> F["INSERT DNPallet, DNCarryInfo
     DIRECT_TRAVEL
-    dest=720x, end=wh_station]
-    F --> G[INSERT DNStock + DNWorkInfo
-    job_type from DNStoragePlan]
-    G --> H[UPDATE DNStoragePlan
-    status 0->1]
-    H --> I[UPDATE DNArrival
-    SCHEDULED]
-    I --> J[ID05: source->720x]
+    dest=BCR, end=plan_area"]
+    F --> G["INSERT DNStock + DNWorkInfo
+    job_type from DNStoragePlan"]
+    G --> H["UPDATE DNStoragePlan
+    status 0->1, process_qty += plan_qty"]
+    H --> I["UPDATE DNArrival SCHEDULED"]
+    I --> J["ID05: source->BCR"]
 :::
 
 ###<span style="color:skyblue; font-weight:bold">Step 2 - ID26 at 720x (FINAL BCR - Same Warehouse)</span>
@@ -253,23 +271,30 @@ Example: 1301 -> FGW2 Tempering (plan_area = 9100)
 
 ###<span style="color:skyblue; font-weight:bold">Step 1 - ID26 at 1301 (Cross-Warehouse Routing)</span>
 
-`AutoStorageScheduler` detects `isCrossWarehouseRoute(planAreaNo)` = YES:
+`AutoStorageScheduler` routing for HP inbound stations (1301/1302):
 
 ::: mermaid
 flowchart LR
-    A[isCrossWarehouseRoute?
-    YES] --> B[selectLeastBusyIntermediateStation]
-    B --> C[Count active DNCarryInfo
-    per 720x station
-    Select min count]
-    C --> D["INSERT DNCarryInfo
-    DIRECT_TRAVEL
-    dest=720x (e.g. 7208)
+    A["selectAisleAndGetBcrStation()
+    Try direct BCR first"] --> B{Direct BCR
+    reachable?}
+    B -->|YES: PM item zone 003
+    route 1301->7211 exists| C["dest=721x (direct)
+    end=9200"]
+    B -->|NO: Ambient/Tempering
+    no direct BCR route| D["selectLeastBusyIntermediateStation
+    720x intermediate"]
+    D --> E["Count active DNCarryInfo
+    per 720x, select min"]
+    E --> F["dest=720x (e.g. 7208)
     end=wh_station (9100)"]
-    D --> E[INSERT DNPallet, DNStock, DNWorkInfo]
-    E --> F[UPDATE DNArrival SCHEDULED]
-    F --> G["ID05: 1301->7208"]
+    C --> G[INSERT DNPallet, DNStock, DNWorkInfo]
+    F --> G
+    G --> H[UPDATE DNArrival SCHEDULED]
+    H --> I["ID05: source->dest"]
 :::
+
+**Key:** PM items (zone 003) from 1301/1302 route DIRECTLY to 721x BCR (7211-7214) because 720x (7207-7210) can only physically reach aisles 9007-9010, not PM aisles 9011-9014.
 
 ###<span style="color:skyblue; font-weight:bold">Step 2 - ID26 at 720x (INTERMEDIATE Station)</span>
 
@@ -330,31 +355,38 @@ flowchart LR
 
 > **Note:** No DNPallet/DNStock exist at 110x if no plan was found - nothing to clean up.
 
-## 2. Error Completion at 111x (control_info=2)
+## 2. Invalid Control Info at 111x (control_info not 000/001)
+
+Handled by `StorageSender.processPalletizeStorage()`:
 
 ::: mermaid
 flowchart LR
-    A["ID26 at 111x
-    control_info='2'"] --> B["checkControlInfo
-    -> PALLETIZING_ERROR_COMPLETION
-    (called BEFORE insertStoragePlan)"]
-    B --> C["createCarryDirect
-    dest=1303, end=1303
-    reject_factor=ERROR_COMPLETION"]
-    C --> D["ID05: 111x->1303"]
-    D --> E["LoadRemover.remove()"]
+    A["StorageSender at 111x
+    control_info not 000/001"] --> B["rejectCarryTo1303
+    dest=1303, end=1303"]
+    B --> C["ID05: 111x->1303"]
 :::
 
-> **Note:** `checkControlInfo()` is called **before** `insertStoragePlan()` at 111x. No DNPallet/DNStock exist yet - no orphan cleanup needed.
+## 3. No Receiving Plan at 111x
 
-## 3. Force Completion at 111x (control_info=1)
+::: mermaid
+flowchart LR
+    A["StorageSender at 111x
+    No DNReceivingPlan found"] --> B["rejectCarryTo1303
+    dest=1303, end=1303"]
+    B --> C["ID05: 111x->1303"]
+:::
+
+## 4. Force Completion at 111x (control_info=001)
+
+Handled by `StorageSender.processPalletizeStorage()`:
 
 | DNReceivingPlan Status | Condition | Action |
 |------------------------|-----------|--------|
-| status=1 (Working) | control_info=1 | Lamp 17 ON -> user inputs last qty |
-| | | User submits -> DNReceivingPlan status=2, AGC resends |
-| status=2 (Last Pallet Wait), qty > 0 | Last pallet | insertStoragePlan (last pallet), createCarryStorage -> normal flow, UPDATE DNReceivingPlan status=4 |
-| status=2 (Last Pallet Wait), qty = 0 | Empty pallet | No DNStoragePlan, createCarryDirect to 1303 (empty pallet disposal) |
+| status=0 or 1 | control_info=001 | `updateWaitReason=17` (batch end incomplete), hold pallet, lamp 17 ON |
+| | | User does batch end -> DNReceivingPlan status=2, AGC resends with control_info=001 |
+| status=2 (Last Pallet Wait), qty > 0 | Last pallet | `createStoragePlan(plan_qty=batch_last_pallet_qty)`, normal storage flow, UPDATE DNReceivingPlan status=4 (COMPLETION) |
+| status=2 (Last Pallet Wait), qty = 0 | Zero qty | `rejectCarryTo1303` -> 1303 |
 
 <hr>
 
