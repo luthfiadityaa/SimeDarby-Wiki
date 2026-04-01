@@ -152,8 +152,6 @@ This section explains the validations for the **Finish** process.
 - **Stored Qty** is not equal than **Planned Qty** will be marked as *A shortage occurred*.
 - The **Storage Qty + Stored Qty** should be less than Planned Qty.
 - **Daily cleanup** not processing.
-- **Pallet No** is progress does not exist in **DNStoragePlan**.
-- **Pallet ID** is not found in existing pallet in **DNStock**
 
 
 # CONTROL FLOW
