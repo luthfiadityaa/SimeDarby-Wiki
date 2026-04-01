@@ -59,7 +59,7 @@ flowchart LR
     ")]
 
     tableList-update[("
-        DNSTORAGEPLAN
+        DNRECEIVINGPLAN
     ")]
 
     className[PlannedStoragePkgSCH]
