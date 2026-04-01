@@ -119,8 +119,8 @@ The data will be paired as an input: **SAP** ⇄ **Warenavi**
 |    OrderUnit   |       --NA--         |           UOM            |             |          |  DMITEM.UOM  |
 |  DeliveryDate  |       PLAN_DAY       |       Delivery Date      |             |          |              |
 
-# Related User Story
 
+# Related User Story
 - [#5139 Planned Storage Setting (PKG)​](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5139)
 - [#6578 Planned Storage Setting (PKG)​ - Validation for identical pallet](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=6578)
 - [#5450 Host Interface - Planned Storage](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5450)
@@ -130,7 +130,6 @@ The data will be paired as an input: **SAP** ⇄ **Warenavi**
 - [#5800 Control at Storage for Packaging Material](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5800)
 
 # Related DFD
-
 - [[SCREEN ONLY] Planned Storage Packaging Material - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/882/-SCREEN-ONLY-Planned-Storage-Packaging-Material)
 - [Storage Process - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/1040/Storage-Process)
 - [Storage Plan Maintenance (PKG) - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/917/Storage-Plan-Maintenance-(PKG))
