@@ -155,7 +155,7 @@ This section explains the validations for the **Finish** process.
 
 ## DNRECEIVINGPLAN
 - STATUS_FLAG       = 4:Completion
-- PROCESS_QTY       = PROCESS_QTY + Value from screen (**Storage Qty**)   
+- PROCESS_QTY       = PROCESS_QTY + Value from screen (**Storage Qty --> will be 0 at this condition**)   
 - REGIST_DATE       = SYSTIMESTAMP
 - REGIST_PNAME      = ClassName
 - LAST_UPDATE_DATE  = SYSTIMESTAMP
