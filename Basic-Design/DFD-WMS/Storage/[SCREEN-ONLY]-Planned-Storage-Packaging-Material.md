@@ -96,6 +96,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 - Input text with red asterisk <span style="color:red">(*)</span> is required to filled.
 - Storage Qty must be greater than **"0"**
 - The Storage Qty + Stored Qty should be less than Planned Qty.
+- Daily cleanup not processing.
 
 **Note:** 
 - All IN-stations can be used.
