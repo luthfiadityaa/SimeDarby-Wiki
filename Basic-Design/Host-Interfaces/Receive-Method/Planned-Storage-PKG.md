@@ -119,9 +119,10 @@ The data will be paired as an input: **SAP** ⇄ **Warenavi**
 |    OrderUnit   |       --NA--         |           UOM            |             |          |  DMITEM.UOM  |
 |  DeliveryDate  |       PLAN_DAY       |       Delivery Date      |             |          |              |
 
-# User Story
+# Related User Story
 
 - [#5139 Planned Storage Setting (PKG)​](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5139)
+- [#6578 Planned Storage Setting (PKG)​ - Validation for identical pallet](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=6578)
 - [#5455 Host Interface - Planned Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5455)
 
 # Related DFD
