@@ -101,20 +101,17 @@ Upon receiving new Plan Storage from Host system, WareNavi will insert related p
 ## DNRECEIVINGPLAN 
 - PLAN_UKEY            = WMS Sequence Handler   
 - LOAD_UNIT_KEY        = System Date with format **yyyyMMddHHmmss**
+- RECEIVE_TICKET_NO    = Value from SAP (**Purchase No**) 
 - CUSTOMER_CODE        = Value from SAP (**Company Code**)          
 - SUPPLIER_CODE        = Value from SAP (**Vendor**)
 - SUPPLIER_NAME        = Value from SAP (**Vendor Name**)
-- DOCUMENT_DATE        = Value from SAP (**DOCUMENT_DATE**)
-                                                                                                       
+- DOCUMENT_DATE        = Value from SAP (**DOCUMENT_DATE**)                                                                                                       
 - STATUS_FLAG          = 0:Not Started                                                       
 - CANCEL_FLAG          = 0:Normal Data                                                      
 - PLAN_DAY             = Value from SAP (**Delivery Date**)
-- FILE_LINE_NO         = Indicating Line Number of location XML Tag (**System Decided**), as default is null.                                                        
-                                                    
-                                            
-- RECEIVE_TICKET_NO    = Value from SAP (**Purchase No**)                                                      
+- FILE_LINE_NO         = Indicating Line Number of location XML Tag (**System Decided**), as default is null.                                     
 - RECEIVE_LINE_NO      = Value from SAP (**ItemNumber**)                                                      
-- DOCUMENT_DATE        = Value from SAP (**Document Date**)                                                                                                              
+- PLAN_AREA_NO         = 9200                                                                                                             
 - PLANT                = CONSTANT.SAP_PLANT (9908)                                                      
 - ITEM_CODE            = Value from SAP (**MaterialNumber**)                                                                                                              
 - PLAN_QTY             = Value from SAP (**OrderQuantity**) 
