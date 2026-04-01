@@ -84,17 +84,16 @@ HostCommExecutor
 :::
 
 # StoragePlanPkgDataLoader
-- Document Number
+- Purchase Order
 - Company Code
 - Vendor
 - Vendor Name
-- Company Code
 - Document Date
-- Item No / Line No
+- Item Number
 - Plant
-- Material Code
-- Planned Quantity
-- UOM
+- Material Number
+- Order Quantity
+- Order Unit
 - Delivery Date
 
 Upon receiving new Plan Storage from Host system, WareNavi will insert related planned information to DNRETRIEVALPLAN database table.
