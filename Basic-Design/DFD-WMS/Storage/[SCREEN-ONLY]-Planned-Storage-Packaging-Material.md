@@ -125,6 +125,8 @@ This section explains the validations for the whole proccess Storage Packaging M
 - RECEIVE_TICKET_NO     = DNRECEIVINGPLAN.RECEIVE_TICKET_NO
 - RECEIVE_LINE_NO       = DNRECEIVINGPLAN.RECEIVE_LINE_NO
 - PLAN_AREA_NO          = 9200 (Ambient)
+- ITEM_CODE             = DNRECEIVINGPLAN.ITEM_CODE
+- PLANT_LOT_NO          = Value from Screen (**Batch #**)
 
 - BCR_DATA              = Value from Screen (**Pallet #**)
 - ITEM_CODE             = Value from screen (**ITEM CODE**)
