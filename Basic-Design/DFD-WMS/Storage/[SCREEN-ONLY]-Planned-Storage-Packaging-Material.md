@@ -33,7 +33,7 @@ Planned Storage Setting (PKG) is used to set the information of stock which will
 <span style="background-color:yellow; color:black; font-weight:bold">jp.co.daifuku.wms.web.display.storage.plannedstoragepkg.PlannedStoragePkgSCH</span>
 
 ::: mermaid
-flowchart LD
+flowchart LR
     input[
         Pallet #
         Document #
