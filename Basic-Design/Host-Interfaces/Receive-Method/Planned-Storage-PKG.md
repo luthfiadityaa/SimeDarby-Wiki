@@ -98,7 +98,8 @@ HostCommExecutor
 
 Upon receiving new Plan Storage from Host system, WareNavi will insert related planned information to DNRETRIEVALPLAN database table.
 
-## DNRECEIVINGPLAN                                                                                                           
+## DNRECEIVINGPLAN 
+- PLAN_UKEY            = Sequence Handler                                                                                                          
 - STATUS_FLAG          = 0:Not Started                                                       
 - CANCEL_FLAG          = 0:Normal Data                                                      
 - PLAN_DAY             = Value from SAP (**Delivery Date**)                                                       
