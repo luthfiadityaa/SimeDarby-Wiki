@@ -147,7 +147,7 @@ This section explains the validations for the Set(F2) process.
 
 # Planned Storage - Finish
 ## Validation
-This section explains the validations for the Finish process.
+This section explains the validations for the **Finish** process.
 
 - Material Code exists in **DMITEM**
 - The Planned Storage PKG list is displayed after being filtered by **DMITEM.ITEM_TYPE.ZPCK**.
