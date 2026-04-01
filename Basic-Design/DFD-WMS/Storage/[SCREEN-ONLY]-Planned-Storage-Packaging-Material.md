@@ -130,7 +130,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 - PLAN_QTY              = Value from screen (**Storage Qty**)
 - BCR_DATA              = Value from Screen (**Pallet #**)
 - STORAGE_LOCATION_FROM = VT01
-- STORAGE_LOCATION_TO   = Constant.SAP_STORAGE_LOCATION.PACKAGING_MATERIAL
+- STORAGE_LOCATION_TO   = ZPCK
 
 - **STORING_PAIR_KEY    = DNSTORAGEPLAN.ITEM_CODE + DNSTORAGEPLAN.PLAT_LOT_NO**
 - REGIST_DATE           = SYSTIMESTAMP
