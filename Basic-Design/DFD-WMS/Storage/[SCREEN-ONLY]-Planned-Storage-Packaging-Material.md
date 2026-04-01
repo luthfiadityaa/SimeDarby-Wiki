@@ -118,7 +118,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 - CANCEL_FLAG           = 0: Normal Data
 - STATUS_FLAG           = 0: Unstart
 - JOB_TYPE              = 02: Storage
-- PLAN_DAY              = TODAY (YYYYMMDD)
+- PLAN_DAY              = System Date with format **yyyyMMdd**
 - BCR_DATA              = Value from Screen (**Pallet #**)
 - ITEM_CODE             = Value from screen (**ITEM CODE**)
 - PLAN_QTY              = Value from screen (**Storage Qty**)
