@@ -151,10 +151,6 @@ This section explains the validations for the whole proccess Storage Packaging M
 
 **TO BE CONTINUE**
 
-
-##<span style="color:skyblue; font-weight:bold">[Planned Storage PKG - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/836/Planned-Storage-PKG)</span>
-
-
 # User Story
   - [DFD Storage Packaging Material](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5784)
 
