@@ -149,7 +149,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 
 # Planned Storage - Finish
 
-## CONTROL FLOW
+# CONTROL FLOW
 
 **TO BE CONTINUE**
 
