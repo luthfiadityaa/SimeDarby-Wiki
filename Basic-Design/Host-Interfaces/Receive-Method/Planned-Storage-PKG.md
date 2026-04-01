@@ -72,6 +72,7 @@ flowchart LR
 - The **direct shipping** associated with the **material number** cannot be used. 
 - The **delivery date** should be using format **yyyyMMdd**.
 - The **order quantity** must be greater than 0 and less than or equal to **MAX_STOCK_QTY (999,999)**.
+- The **Purchase Number** with same **Item Number** are already registered, an error occurs. 
 
 
 ## Planned Storage from Host
