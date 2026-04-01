@@ -63,8 +63,7 @@ flowchart LR
     input --> className--> |INSERT| tableList-insert
     tableList-select--> |SELECT| className 
 
-style input text-align:left
-
+    style input text-align:left
 :::
 
 ## Relantionship between Storage Plan and Pallet
