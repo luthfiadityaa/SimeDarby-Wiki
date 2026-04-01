@@ -93,6 +93,11 @@ erDiagram
     }	
 :::
 
+**Note:** 
+- All IN-stations can be used.
+- Stored Qty = DNRECEIVINGPLAN.PROCESS_QTY
+- Planned Qty = DNRECEVINGPLAN.PLAN_QTY
+
 ## Validation
 This section explains the validations for the whole proccess Storage Packaging Material
 
