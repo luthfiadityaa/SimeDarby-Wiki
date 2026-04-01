@@ -147,6 +147,8 @@ This section explains the validations for the whole proccess Storage Packaging M
 - LAST_UPDATE_DATE  = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = ClassName
 
+# Planned Storage - Finish
+
 ## CONTROL FLOW
 
 **TO BE CONTINUE**
