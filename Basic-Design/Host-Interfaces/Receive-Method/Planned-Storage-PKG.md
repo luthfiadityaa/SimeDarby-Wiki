@@ -111,11 +111,13 @@ Upon receiving new Plan Storage from Host system, WareNavi will insert related p
 - PLAN_DAY             = Value from SAP (**Delivery Date**)
 - FILE_LINE_NO         = Indicating Line Number of location XML Tag (**System Decided**), as default is null.                                     
 - RECEIVE_LINE_NO      = Value from SAP (**ItemNumber**)                                                      
-- PLAN_AREA_NO         = 9200                                                                                                             
+- PLAN_AREA_NO         = 9200
+- ITEM_CODE            = Value from SAP (**MaterialNumber**)
+- SAP_TO_LOCATION      = Value from SAP (**PLANT**)                                                           
 - PLANT                = CONSTANT.SAP_PLANT (9908)                                                      
-- ITEM_CODE            = Value from SAP (**MaterialNumber**)                                                                                                              
+                                                                                                       
 - PLAN_QTY             = Value from SAP (**OrderQuantity**) 
-- SAP_TO_LOCATION      = CONSTANT.SLOC_PACK 
+
 - REPORT_FLAG          = 0:Not Reported                                                                                                           
 - REGIST_KIND          = 0:File Loading                                                      
 - REGIST_DATE          = SYSTIMESTAMP                                                  
