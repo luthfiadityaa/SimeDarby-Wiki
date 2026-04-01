@@ -104,20 +104,20 @@ Upon receiving new Plan Storage from Host system, WareNavi will insert related p
 
 The data will be paired as an input: **SAP** ⇄ **Warenavi**
 
-|       SAP      |      Warenavi     |  Primary Key | Required |            Remarks            |
-|:--------------:|:-----------------:|:------------:|:--------:|:-----------------------------:|
-|  PurchaseOrder | RECEIVE_TICKET_NO |      P1      |          |                               |
-|     Vendor     |   SUPPLIER_CODE   |              |          |                               |
-|   VendorName   |   SUPPLIER_NAME   |              |          |                               |
-|  DocumentDate  |   DOCUMENT_DATE   |              |          |                               |
-|  CompanyCode   |   CUSTOMER_CODE   |              |          |                               |
-|    ---------   |   --------------  | ------------ |  ------- |  ---------------------------- |
-|   ItemNumber   |  RECEIVE_LINE_NO  |      P2      |          |                               |
-|      Plant     |       9908        |              |          |                               |
-| MaterialNumber |     ITEM_CODE     |      P3      |          |                               |
-|  OrderQuantity |      PLAN_QTY     |              |          |                               |
-|    OrderUnit   |       --NA--      |              |          |       Follow DMITEM.UOM       |
-|  DeliveryDate  |     PLAN_DAY      |              |          |                               |
+|       SAP      | WN (DNRECEIVINGPLAN) | WN (Planned Storage PKG) | Primary Key | Required |   Remarks    |
+|----------------|----------------------|--------------------------|-------------|----------|--------------|
+|  PurchaseOrder |   RECEIVE_TICKET_NO  |        DOCUMENT #        |     P1      |    Y     |              |            
+|   CompanyCode  |     CUSTOMER_CODE    |        COMPANY CODE      |             |    Y     |              |
+|     Vendor     |     SUPPLIER_CODE    |          VENDOR          |             |    Y     |              |
+|   VendorName   |     SUPPLIER_NAME    |        VENDOR NAME       |             |    Y     |              |
+|  DocumentDate  |     DOCUMENT_DATE    |       DOCUMENT DATE      |             |    Y     |              |
+|    ---------   |     -------------    |       -------------      |  --------   |  ------  |   --------   |
+|   ItemNumber   |    RECEIVE_LINE_NO   |          Line #          |     P2      |          |              |
+|      Plant     |    SAP_TO_LOCATION   |          PLANT           |             |          |              |
+| MaterialNumber |       ITEM_CODE      |       MATERIAL CODE      |     P3      |          |              |
+|  OrderQuantity |       PLAN_QTY       |        PLANNED QTY       |             |          |          |                               |
+|    OrderUnit   |       --NA--      |RECEIVE_TICKET_NO |              |          |       Follow DMITEM.UOM       |
+|  DeliveryDate  |     PLAN_DAY      |RECEIVE_TICKET_NO |              |          |                               |
 
 # User Story
 
