@@ -121,6 +121,7 @@ The data will be paired as an input: **SAP** ⇄ **Warenavi**
 
 # User Story
 
+- [#5139 Planned Storage Setting (PKG)​](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5139)
 - [#5455 Host Interface - Planned Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5455)
 
 # Related DFD
