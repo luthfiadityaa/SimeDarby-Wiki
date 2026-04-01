@@ -141,7 +141,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 - STATUS_FLAG       = 1:Working (**Only very first pallet will update**)
 - REPORT_FLAG       = 0: Not Reported    
 - PLAN_LOT_NO       = Value from Screen (**Batch #**)
-- PROCESS_QTY       = DNSTORAGEPLAN + DNWORKINGO.PLAN_QTY   
+- PROCESS_QTY       = PROCESS_QTY + Value from screen (**Storage Qty**)   
 - REGIST_DATE       = SYSTIMESTAMP
 - REGIST_PNAME      = ClassName
 - LAST_UPDATE_DATE  = SYSTIMESTAMP
