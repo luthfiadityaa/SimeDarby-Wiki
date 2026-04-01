@@ -115,8 +115,8 @@ The data will be paired as an input: **SAP** ⇄ **Warenavi**
 |   ItemNumber   |    RECEIVE_LINE_NO   |          Line #          |     P2      |          |              |
 |      Plant     |    SAP_TO_LOCATION   |          PLANT           |             |          |              |
 | MaterialNumber |       ITEM_CODE      |       MATERIAL CODE      |     P3      |          |              |
-|  OrderQuantity |       PLAN_QTY       |        PLANNED QTY       |             |          |          |                               |
-|    OrderUnit   |       --NA--      |RECEIVE_TICKET_NO |              |          |       Follow DMITEM.UOM       |
+|  OrderQuantity |       PLAN_QTY       |        PLANNED QTY       |             |          |              |                               
+|    OrderUnit   |       --NA--         |           UOM            |             |          |  DMITEM.UOM  |
 |  DeliveryDate  |     PLAN_DAY      |RECEIVE_TICKET_NO |              |          |                               |
 
 # User Story
