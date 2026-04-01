@@ -124,7 +124,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 - CUSTOMER_CODE         = DNRECEIVINGPLAN.CUSTOMER_NAME
 - RECEIVE_TICKET_NO     = DNRECEIVINGPLAN.RECEIVE_TICKET_NO
 - RECEIVE_LINE_NO       = DNRECEIVINGPLAN.RECEIVE_LINE_NO
-- PLAN_AREA_NO          = 9200
+- PLAN_AREA_NO          = 9200 (Ambient)
 
 - BCR_DATA              = Value from Screen (**Pallet #**)
 - ITEM_CODE             = Value from screen (**ITEM CODE**)
