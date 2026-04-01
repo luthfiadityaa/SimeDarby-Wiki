@@ -108,7 +108,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 - Planned Qty = DNRECEVINGPLAN.PLAN_QTY
 
 ## DNStoragePlan
-- PLAN_UKEY             = Sequence Object
+- PLAN_UKEY             = WMS Sequence Handler
 - LOAD_UNIT_KEY         = Sequence Object
 - CANCEL_FLAG           = 0
 - STATUS_FLAG           = 0
