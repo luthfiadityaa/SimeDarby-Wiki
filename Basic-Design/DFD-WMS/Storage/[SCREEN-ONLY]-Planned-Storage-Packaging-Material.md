@@ -58,6 +58,10 @@ flowchart LR
         DNRECEIVINGPLAN
     ")]
 
+    tableList-select3[("
+        DNSTORAGEPLAN
+    ")]
+
     className[PlannedStoragePkgSCH]
 
     input --> className--> |UPDATE| tableList-select2
@@ -110,7 +114,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 ## DNStoragePlan
 - PLAN_UKEY             = WMS Sequence Handler
 - LOAD_UNIT_KEY         = System Date with format **yyyyMMddHHmmss**
-- CANCEL_FLAG           = 0
+- CANCEL_FLAG           = 0:Normal Data
 - STATUS_FLAG           = 0
 - JOB_TYPE              = DNSTORAGEPLAN.JOB_TYPE.STORAGE
 - PLAN_DAY              = TODAY (YYYYMMDD)
