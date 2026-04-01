@@ -107,11 +107,6 @@ This section explains the validations for the whole proccess Storage Packaging M
 
 <br>
 
-**Note:** 
-- All IN-stations can be used.
-- Stored Qty = DNRECEIVINGPLAN.PROCESS_QTY
-- Planned Qty = DNRECEVINGPLAN.PLAN_QTY
-
 ## DNStoragePlan
 - PLAN_UKEY             = WMS Sequence Handler
 - LOAD_UNIT_KEY         = System Date with format **yyyyMMddHHmmss**
