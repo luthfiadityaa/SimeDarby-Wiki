@@ -98,7 +98,10 @@ This section explains the validations for the whole proccess Storage Packaging M
 - The Storage Qty + Stored Qty should be less than Planned Qty.
 
 
-**Note:** All IN-stations can be used.
+**Note:** 
+- All IN-stations can be used.
+- Stored Qty = DNRECEIVINGPLAN.PROCESS_QTY
+- Planned Qty = DNRECEVINGPLAN.PLAN_QTY
 
 
 ## DNSTORAGEPLAN
