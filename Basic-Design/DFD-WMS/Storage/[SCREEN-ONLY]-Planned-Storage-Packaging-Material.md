@@ -124,12 +124,12 @@ This section explains the validations for the **Set(F2)** process.
 - RECEIVE_LINE_NO       = DNRECEIVINGPLAN.RECEIVE_LINE_NO
 - PLAN_AREA_NO          = 9200 (Ambient)
 - ITEM_CODE             = DNRECEIVINGPLAN.ITEM_CODE
-- PLANT_LOT_NO          = Value from Screen (**Batch #**)
+- PLAN_LOT_NO          = Value from Screen (**Batch #**)
 - PLAN_QTY              = Value from screen (**Storage Qty**)
 - BCR_DATA              = Value from Screen (**Pallet #**)
 - STORAGE_LOCATION_FROM = VT01
 - STORAGE_LOCATION_TO   = ZPCK
-- STORING_PAIR_KEY      = ITEM_CODE + PLANT_LOT_NO
+- STORING_PAIR_KEY      = ITEM_CODE + PLAN_LOT_NO
 - REGIST_DATE           = SYSTIMESTAMP
 - REGIST_PNAME          = ClassName
 - LAST_UPDATE_DATE      = SYSTIMESTAMP
