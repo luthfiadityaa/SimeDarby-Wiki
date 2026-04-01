@@ -165,11 +165,16 @@ This section explains the validations for the **Finish** process.
 
 **TO BE CONTINUE**
 
-# User Story
-  - [DFD Storage Packaging Material](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5784)
+# Related User Story
+- [#5139 Planned Storage Setting (PKG)​](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5139)
+- [#6578 Planned Storage Setting (PKG)​ - Validation for identical pallet](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=6578)
+- [#5450 Host Interface - Planned Storage](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5450)
+- [#5455 Host Interface - Planned Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5455)
+- [#5472 Storage Plan Information Maintenance​ (PKG)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5472)
+- [#6438 Control at Storage for PKG](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=6438)
+- [#5800 Control at Storage for Packaging Material](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5800)
 
-  - [5472: Storage Plan Information Maintenance​ (PKG)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5472/)
-
-#<span style="color:skyblue; font-weight:bold">Related DFD</span>
-
-- [Planned Storage Result - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/846/Planned-Storage-Result)
+# Related DFD
+- [[SCREEN ONLY] Planned Storage Packaging Material - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/882/-SCREEN-ONLY-Planned-Storage-Packaging-Material)
+- [Storage Process - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/1040/Storage-Process)
+- [Storage Plan Maintenance (PKG) - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/917/Storage-Plan-Maintenance-(PKG))
