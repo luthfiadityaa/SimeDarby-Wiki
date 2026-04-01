@@ -54,6 +54,10 @@ flowchart LR
         DMITEM
     ")]
 
+    tableList-select2[("
+        DNRECEIVINGPLAN
+    ")]
+
     tableList-insert[("
         DNSTORAGEPLAN
     ")]
