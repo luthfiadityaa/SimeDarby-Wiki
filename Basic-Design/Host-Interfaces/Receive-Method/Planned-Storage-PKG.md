@@ -71,7 +71,7 @@ flowchart LR
 - The **irregular pallet** associated with the **material number** for abnormal shelves and cannot be used. 
 - The **direct shipping** associated with the **material number** cannot be used. 
 - The **delivery date** should be using format **yyyyMMdd**.
-- The **order quantity** should be greater than 0 or less than or equal to MAX_STOCK_QTY = 999999
+- The **order quantity** must be greater than 0 and less than or equal to **MAX_STOCK_QTY (999,999)**.
 
 
 ## Planned Storage from Host
