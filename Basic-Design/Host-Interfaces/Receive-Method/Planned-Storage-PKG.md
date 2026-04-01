@@ -94,7 +94,7 @@ HostCommExecutor
 - Plant
 - Material Code
 - Planned Quantity
-- Uom
+- UOM
 - Delivery Date
 
 Upon receiving new Plan Storage from Host system, WareNavi will insert related planned information to DNRETRIEVALPLAN database table.
