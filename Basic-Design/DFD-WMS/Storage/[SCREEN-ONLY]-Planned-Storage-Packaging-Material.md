@@ -99,6 +99,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 - **Daily cleanup** not processing.
 - **Pallet No** is progress does not exist in **DNStoragePlan**.
 
+<br>
 **Note:** 
 - All IN-stations can be used.
 - Stored Qty = DNRECEIVINGPLAN.PROCESS_QTY
