@@ -138,7 +138,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 - LAST_UPDATE_PNAME     = ClassName
 
 ## DNRECEIVINGPLAN
-- STATUS_FLAG       = 1:Working    **Very first pallet will update**    
+- STATUS_FLAG       = 1:Working (**Very first pallet will update**)    
 - PROCESS_QTY       = DNSTORAGEPLAN + DNWORKINGO.PLAN_QTY   
 - LAST_UPDATE_DATE  = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = ClassName
