@@ -74,19 +74,6 @@ flowchart LR
 - The **order quantity** must be greater than 0 and less than or equal to **MAX_STOCK_QTY (999,999)**.
 - The **Purchase Number** with same **Item Number** are already registered, an error occurs. 
 
-# StoragePlanPkgDataLoader
-- Purchase Order
-- Company Code
-- Vendor
-- Vendor Name
-- Document Date
-- Item Number
-- Plant
-- Material Number
-- Order Quantity
-- Order Unit
-- Delivery Date
-
 Upon receiving new Plan Storage from Host system, WareNavi will insert related planned information to DNRECEIVINGPLAN database table.
 
 ## DNRECEIVINGPLAN 
