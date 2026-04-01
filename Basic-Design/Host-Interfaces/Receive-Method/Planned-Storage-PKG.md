@@ -68,7 +68,7 @@ flowchart LR
 - The **item type** associated with the **material number** must be **ZPCK**.
 - The **order unit** associated with the material number must be same with **UOM** in **DMItem**.
 - The **plant** should be existed in **DMToStation**.
-- The irregular pallet associated with the **material number** for abnormal shelves and cannot be used. 
+- The **irregular pallet** associated with the **material number** for abnormal shelves and cannot be used. 
 
 
 ## Planned Storage from Host
