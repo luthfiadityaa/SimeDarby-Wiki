@@ -96,7 +96,7 @@ HostCommExecutor
 - Order Unit
 - Delivery Date
 
-Upon receiving new Plan Storage from Host system, WareNavi will insert related planned information to DNRETRIEVALPLAN database table.
+Upon receiving new Plan Storage from Host system, WareNavi will insert related planned information to DNRECEIVINGPLAN database table.
 
 ## DNRECEIVINGPLAN 
 - PLAN_UKEY            = WMS Sequence Handler   
@@ -113,11 +113,8 @@ Upon receiving new Plan Storage from Host system, WareNavi will insert related p
 - RECEIVE_LINE_NO      = Value from SAP (**ItemNumber**)                                                      
 - PLAN_AREA_NO         = 9200
 - ITEM_CODE            = Value from SAP (**MaterialNumber**)
-- SAP_TO_LOCATION      = Value from SAP (**PLANT**)                                                           
-- PLANT                = CONSTANT.SAP_PLANT (9908)                                                      
-                                                                                                       
-- PLAN_QTY             = Value from SAP (**OrderQuantity**) 
-
+- SAP_TO_LOCATION      = Value from SAP (**PLANT**)                                                                                                              
+- PLAN_QTY             = Value from SAP (**OrderQuantity**)
 - REPORT_FLAG          = 0:Not Reported                                                                                                           
 - REGIST_KIND          = 0:File Loading                                                      
 - REGIST_DATE          = SYSTIMESTAMP                                                  
