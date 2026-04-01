@@ -22,7 +22,7 @@
 | Action Name                                                    | RECP | STRP |
 |----------------------------------------------------------------|------|------|
 | Planned Storage from Host [(1)](#planned-storage-from-host)    |   S  |      |
-| Planned Storage - Set (F2) [(2)](#planned-storage---set-(f2))  |   U  |   I  |
+| Planned Storage - Set (F2) [(2)](#planned-storage---set-(f2))  |   U  |      |
 
 
 # Planned Storage - Set (F2)
