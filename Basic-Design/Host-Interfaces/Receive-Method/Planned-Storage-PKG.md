@@ -127,6 +127,7 @@ The data will be paired as an input: **SAP** ⇄ **Warenavi**
 - [#5455 Host Interface - Planned Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5455)
 - [#5472 Storage Plan Information Maintenance​ (PKG)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5472)
 - [#6438 Control at Storage for PKG](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=6438)
+- [#5800 Control at Storage for Packaging Material](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5800)
 
 # Related DFD
 
