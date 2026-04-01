@@ -35,15 +35,15 @@ Planned Storage Setting (PKG) is used to set the information of stock which will
 ::: mermaid
 flowchart LR
     input[
-        Pallet #
         Document #
         Company Code
         Vendor Code / Vendor Name
         Material Code
         Material Name
-        Batch #
-        Storage Qty /  Planned Qty / Input Qty / Stored Qty
         UOM
+        Pallet No        
+        Batch #
+        Storage Qty / Planned Qty / Stored Qty        
         Plant
         Line #
         Document Date
