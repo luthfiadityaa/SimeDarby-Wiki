@@ -64,6 +64,9 @@ flowchart LR
 ```
 
 ## Validation
+- Material Number should be exist in **DMItem**
+- Material Type should be **ZPCK**
+-
 - When the OrderUnit is not same to existing UOM in DMItem, the plan data should be rejected with error message.
 
 
