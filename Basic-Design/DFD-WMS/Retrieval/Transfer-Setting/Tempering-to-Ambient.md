@@ -8,7 +8,7 @@
 ::: mermaid
 flowchart LR
 
-P1[TransferSettingSCH<br/>Set F2]-->P2[processTransferWarehouse<br/>in RetrievalSender]-->P3[ID12]-->P4[ID32]-->P5[ID33]-->P6[ID64]-->P7[ID26<br/>at 7207-7214]-->P8[StorageSender<br/>swap rear/front]-->P9[ID05]-->P10[ID25]-->P11[ID64]-->P12[ID33<br/>at 9007-9014]
+P1[TransferSettingSCH<br/>Set F2]-->P2[processTransferWarehouse<br/>in RetrievalSender<br/>book REAR shelf]-->P3[ID12]-->P4[ID32]-->P5[ID33]-->P6[ID64]-->P7[ID26<br/>at 7207-7214<br/>dest=reserved shelf]-->P8[StorageSender<br/>standard framework]-->P9[ID05]-->P10[ID25]-->P11[ID64]-->P12[ID33<br/>at 9007-9014]
 :::
 
 ## Scope
@@ -44,118 +44,47 @@ Transfer Route:
 
 ---
 
-# <span style="color:red; font-weight:bold">Shelf Booking Strategy (Double Deep)</span>
+# <span style="color:red; font-weight:bold">Shelf Booking Strategy (Double Deep) — Simplified</span>
 
-## Problem
-40 pallets same item/batch booked in a fast loop. Aisles 9007-9014 are **double deep**.
-If we only book rear shelves, 10 pairs used for 10 pallets (front wasted).
-We should book **rear + front of same pair** before moving to next aisle.
+## Design Decision
+**processTransferWarehouse always books REAR shelves only.** Front shelves are filled naturally by the framework's `DoubleDeepShelfSelector.findEmptyShelf()` when a pallet arrives at 7207-7214 and the rear is already OCCUPIED (stored).
+
+## Why REAR only (no front booking at transfer time)
+1. `DMWareHouse.last_used_station_no` is shared across all operations — trying to book rear+front pairs requires tracking state that conflicts with concurrent normal storage
+2. `RackToRackDecider.findEmptyShelfForRackToRack()` always returns the rear shelf of an empty pair — this is the framework's standard behavior
+3. Front is only valid when rear is physically stored (OCCUPIED). Booking front before rear is stored creates race conditions
 
 ## Booking Order (processTransferWarehouse)
 ```
 Pallet  1 -> aisle 9007, pair A REAR   -> dest=7207
-Pallet  2 -> aisle 9007, pair A FRONT  -> dest=7207
-Pallet  3 -> aisle 9008, pair B REAR   -> dest=7208
-Pallet  4 -> aisle 9008, pair B FRONT  -> dest=7208
-Pallet  5 -> aisle 9009, pair C REAR   -> dest=7209
-Pallet  6 -> aisle 9009, pair C FRONT  -> dest=7209
-Pallet  7 -> aisle 9010, pair D REAR   -> dest=7210
-Pallet  8 -> aisle 9010, pair D FRONT  -> dest=7210
-Pallet  9 -> aisle 9011, pair E REAR   -> dest=7211
-Pallet 10 -> aisle 9011, pair E FRONT  -> dest=7211
-Pallet 11 -> aisle 9012, pair F REAR   -> dest=7212
-Pallet 12 -> aisle 9012, pair F FRONT  -> dest=7212
-Pallet 13 -> aisle 9013, pair G REAR   -> dest=7213
-Pallet 14 -> aisle 9013, pair G FRONT  -> dest=7213
-Pallet 15 -> aisle 9014, pair H REAR   -> dest=7214
-Pallet 16 -> aisle 9014, pair H FRONT  -> dest=7214
-Pallet 17 -> aisle 9007, pair I REAR   -> dest=7207  (second round)
-... round-robin across 8 aisles, 2 per pair
+Pallet  2 -> aisle 9008, pair B REAR   -> dest=7208   (round-robin)
+Pallet  3 -> aisle 9009, pair C REAR   -> dest=7209
+Pallet  4 -> aisle 9010, pair D REAR   -> dest=7210
+Pallet  5 -> aisle 9011, pair E REAR   -> dest=7211
+...round-robin across 8 aisles, 1 rear per pair
 ```
 
-## Arrival Swap Logic (StorageSender at 7207-7214)
-Pallets may arrive out of order. If front-booked pallet arrives before rear-booked:
+Each booking uses 1 pair. With `MIN_EMPTY_PAIR_DIFFERENT_ZONE=2`, each aisle needs >=2 empty pairs to book, leaving 1 as buffer.
 
-```
-Case 1: Booked REAR -> rear shelf empty -> store at rear. OK.
+## Front Filling (at StorageSender, 7207-7214)
+When a transfer pallet arrives at BCR station:
+1. `AsrsInboundStationOperator` converts carry: dest = reserved_shelf_no (the booked rear)
+2. `StorageSender.destDetermine()` sees dest is a Shelf instance
+3. If `load_size_check=ON`: re-searches shelves in the aisle
+   - `findEmptyShelf()` naturally fills rear first, then front when rear is OCCUPIED
+   - If rear of pair X is OCCUPIED (previous pallet stored), front of pair X becomes available
+   - Same item/batch on rear -> framework selects front of same pair for next pallet
+4. If `load_size_check=OFF`: uses the reserved shelf directly
 
-Case 2: Booked FRONT -> check rear shelf status:
-  2a: rear = OCCUPIED   -> store at front. OK.
-  2b: rear = RESERVED   -> rear pallet not stored yet.
-      SWAP: this pallet takes rear, update the other carry to front.
-      Store at rear. OK.
-  2c: rear = EMPTY       -> rear reservation cancelled/failed.
-      Take rear instead. Store at rear. OK.
-```
-
-**Rule: rear must always be filled before front.** The swap ensures physical correctness regardless of arrival order.
+## No StorageSender Modifications Needed
+The standard `destDetermine()` handles everything:
+- Reserved shelf used as dest (set by `AsrsInboundStationOperator`)
+- Framework's `DoubleDeepShelfSelector` decides rear vs front based on current occupancy
+- No swap logic, no custom shelf resolution
 
 ---
 
-# <span style="color:red; font-weight:bold">Aisle Decision & BCR Selection — Key Differences</span>
-
-Normal storage and transfer use the same `DMWareHouse.last_used_station_no` for round-robin but differ in **how they select the aisle** and **which BCR** they route to.
-
-## Aisle Decision Comparison
-
-| | Normal Inbound Storage | Transfer (9100 -> 9200) |
-|---|---|---|
-| **Who decides** | StorageSender -> LocationManager -> AisleShelfDecider | processTransferWarehouse -> RackToRackDecider |
-| **Aisle selector** | Based on `DMWareHouse.aisle_decision_pattern` (e.g. WNCollectAisleSelector for pattern 4) | Always `RackToRackAisleSelector` (ignores aisle_decision_pattern) |
-| **Round-robin** | `DMWareHouse.last_used_station_no` — shared | Same field — **shared with normal storage** |
-| **Shelf search** | `DoubleDeepShelfSelector.searchEmptyShelf()` — fills rear first, then front | `DoubleDeepShelfSelector.searchShelfRackToRack()` -> `findEmptyShelfForRackToRack()` — requires empty **pair** (both rear+front empty) |
-| **Min empty pairs** | No minimum pair requirement | `MIN_EMPTY_PAIR_DIFFERENT_ZONE = 2` (must leave 2 empty pairs per aisle+zone as buffer) |
-| **When shelf is reserved** | At StorageSender time (pallet already at BCR) | At processTransferWarehouse time (before retrieval starts) |
-| **Pallet zone** | Pallet `soft_zone_id` already set for target WH | Pallet `soft_zone_id` must be set to target zone (e.g. `002` Ambient) **before** transfer booking |
-
-## BCR Selection — CRITICAL
-
-DMAisle stores **only ONE** `bcr_station_no` per aisle (the OP BCR):
-```
-DMAisle 9007 -> bcr_station_no = 7107 (OP BCR)
-DMAisle 9008 -> bcr_station_no = 7108 (OP BCR)
-...
-```
-
-For transfer, the pallet travels from OP (9100) to HP (9200). The retrieval ID12 destination must be the **HP BCR** (7207-7214), NOT the OP BCR (7107-7110).
-
-**`getBcrForTransfer(sourceAisle, targetAisle)`** uses `DMRouteId` to find the correct BCR:
-```
-sourceAisle=9001, targetAisle=9007
-  -> DMRouteId: route 9001->7207 exists
-  -> DMStation 7207: aisle_station_no=9007 -> match
-  -> return "7207" (HP BCR) ✓
-
-DO NOT use DMAisle.bcr_station_no directly — it returns 7107 (OP BCR) which has
-no route from 9001-9006. The pallet would be undeliverable.
-```
-
-## DMWareHouse.last_used_station_no — Shared Round-Robin
-
-This field is ONE value per warehouse, updated by:
-1. **`AbstractAisleSelector.determin()`** — called after ANY successful shelf decision
-2. **`processTransferWarehouse.updateLastUsedAisle()`** — after transfer booking
-
-All operations share the same round-robin counter:
-```
-Time 1: Normal storage stores to 9007 -> last_used = 9007
-Time 2: Transfer books 9008          -> last_used = 9008
-Time 3: Normal storage skips 9008    -> stores to 9009 -> last_used = 9009
-Time 4: Transfer books 9010          -> last_used = 9010
-```
-This is **correct behavior** — global round-robin balances load across all operations.
-
-## DB Settings Checklist
-
-| Setting | Table | Column | Required Value | Impact if Wrong |
-|---------|-------|--------|---------------|-----------------|
-| Aisle status | DMAisle | status | `1` (NORMAL) | Aisle skipped by both storage and transfer |
-| Aisle decision pattern | DMWareHouse | aisle_decision_pattern | `4` (WNCollect) for 9200 | Normal storage uses wrong selector |
-| Zone manage type | DMWareHouse | zone_manage_type | `2` (SOFT_ZONE) for 9200 | Zone matching fails |
-| Direction | DMWareHouse | direction | `13` (BAY_HP) for 9200 | Empty shelf search order wrong |
-| Pallet soft_zone | DNPallet | soft_zone_id | Must match target WH zones (002/004 in 9200) | No shelf found (zone 001 has no fallback in 9200) |
-| Routes | DMRouteId | start/end | 9001-9006 -> 7207-7214 must exist | `getBcrForTransfer` returns null or wrong BCR |
-| BCR aisle_station_no | DMStation | aisle_station_no | 7207->9007, 7208->9008, etc. | `getBcrForTransfer` can't match BCR to aisle |
+> **See [Aisle Selection & BCR Routing Reference](../../Aisle-Selection-and-BCR-Routing)** for detailed comparison of how storage vs transfer select aisles, BCR routing differences (`DMAisle.bcr_station_no` vs `getBcrForTransfer`), round-robin counter (`DMWareHouse.last_used_station_no`), and complete DB settings checklist.
 
 ---
 
@@ -233,7 +162,7 @@ Aisles 9007-9014 handle THREE types of operations simultaneously:
 | ID64 STV [(6)](#6-id64-stv-pickup)                                |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
 | **Re-Storage Flow**                                               |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
 | ID26 at 7207-7214 [(7)](#7-id26-at-7207-7210)                    |   U  |   U  |      |   U  |      |   I  |      |      |      |      |      |      |      |      |      |
-| StorageSender + swap [(8)](#8-storagesender-at-7207-7210)         |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |      |
+| StorageSender [(8)](#8-storagesender-at-7207-7214)                |      |   U  |      |   U  |      |   U  |   U  |   U  |      |      |      |      |      |      |      |
 | ID25 [(9)](#9-id25-at-7207-7210)                                  |      |      |      |   U  |      |   D  |      |      |      |      |      |      |      |      |      |
 | ID64 SRM [(10)](#10-id64-at-srm)                                  |      |      |      |   U  |      |      |      |      |      |      |      |      |      |      |      |
 | ID33 Storage [(11)](#11-id33-at-9007-9014)                        |   U  |   U  |      |   D  |   U  |      |      |  U   |   I  |      |   I  |      |      |      |      |
@@ -337,45 +266,41 @@ Called from `getRackMoveInfoForUpdate()` when carry has `carry_flag=5` AND `dest
 ::: mermaid
 flowchart TD
     A[Query DNCarryInfo<br/>carry_flag=5, cmd_status=1<br/>dest_station_no IS BLANK] --> B[Load Pallet + target WH 9200]
-    B --> C[Decide aisle in 9200<br/>round-robin 9007-9014]
-    C --> D{Empty pair<br/>available?}
-    D -->|YES| E[Book rear shelf<br/>DMSHELF status->RESERVED<br/>FOR UPDATE lock]
-    D -->|NO| F[wait_reason=FULL<br/>skip, retry next cycle]
-    E --> G[Check: is front of<br/>same pair also empty?]
-    G -->|YES next pallet| H[Book front shelf<br/>DMSHELF status->RESERVED]
-    G -->|NO or last pallet| I[Get BCR from DMAisle<br/>aisle 9007->7207]
-    H --> I
-    I --> J[Update DNCarryInfo:<br/>dest=BCR, reserved_shelf_no=shelf<br/>aisle_station_no=target aisle]
-    J --> K[Continue to ID12 send]
+    B --> C[searchRearShelf:<br/>iterate aisles round-robin<br/>RackToRackDecider per aisle]
+    C --> D{Empty pair<br/>found?}
+    D -->|YES| E[Reserve REAR shelf<br/>DMSHELF status->RESERVED]
+    D -->|NO all aisles| F[wait_reason=FULL<br/>skip, retry next cycle]
+    E --> G[getBcrForTransfer:<br/>DMRouteId sourceAisle->BCR]
+    G --> H[Update DNCarryInfo:<br/>dest=BCR, reserved_shelf_no=rear shelf<br/>aisle_station_no=target aisle]
+    H --> I[Continue to ID12 send]
 :::
 
 ## Aisle Decision Criteria
 ```
 1. Query DMAisle WHERE wh_station_no = '9200' AND status = NORMAL
    -> aisles 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014
-2. Round-robin using DMWareHouse.last_used_station_no
-3. For each aisle: searchPairEmptyShelf (both rear+front EMPTY)
-   -> filter: soft_zone matches pallet (005 or 002)
-   -> filter: hard_zone matches
-   -> FOR UPDATE WAIT (locks shelf rows)
-4. Book rear first, then front of same pair, then next aisle
-5. Leave buffer: stop booking if aisle has < 2 empty pairs remaining
-   (for normal inbound storage to still work)
+2. Round-robin: start after DMWareHouse.last_used_station_no
+3. For each aisle: set pallet current to aisle, call
+   LocationManager.searchRackToRack() -> RackToRackDecider
+   -> DoubleDeepShelfSelector.findEmptyShelfForRackToRack()
+   -> searchPairEmptyShelf (both rear+front EMPTY, FOR UPDATE WAIT)
+   -> requires MIN_EMPTY_PAIR_DIFFERENT_ZONE = 2 empty pairs
+4. First aisle with available pair -> book REAR shelf
+5. getBcrForTransfer(sourceAisle, targetAisle) via DMRouteId
+   (NOT DMAisle.bcr_station_no — see Aisle Selection Reference)
+6. Framework determin() updates last_used_station_no automatically
 ```
 
 ## <span style="color:skyblue; font-weight:bold">DNCARRYINFO (UPDATE)</span>
-- **DEST_STATION_NO** : BCR station (7207..7214) from DMAisle.bcr_station_no
+- **DEST_STATION_NO** : HP BCR station (7207..7214) from `getBcrForTransfer` via DMRouteId
 - **END_STATION_NO** : 9200 (stays unchanged)
 - **AISLE_STATION_NO** : target aisle (9007..9014) — **changed from source to target**
-- **RESERVED_SHELF_NO** : booked shelf location (rear or front)
+- **RESERVED_SHELF_NO** : booked REAR shelf location
 - **LAST_UPDATE_PNAME** : RetrievalSender
 
 ## <span style="color:skyblue; font-weight:bold">DMSHELF (UPDATE)</span>
-- **STATUS_FLAG** : 2: Reserved
+- **STATUS_FLAG** : 2: Reserved (rear shelf only)
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
-
-## <span style="color:skyblue; font-weight:bold">DNPALLET (UPDATE)</span>
-- **STATUS_FLAG** : 3: Reserved for Retrieval
 
 ---
 
@@ -471,31 +396,30 @@ Converts carry from rack-to-rack retrieval to storage for re-storage into 9200.
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
 `jp.co.daifuku.asrs.transmission.StorageSender` &nbsp;</span>
 
-StorageSender picks up carry (now carry_flag=STORAGE, cmd_status=START). **Before calling LocationManager**, checks `reserved_shelf_no` and applies the **rear/front swap logic**.
+StorageSender picks up carry (now carry_flag=STORAGE, cmd_status=START). **No custom logic needed** — standard `destDetermine()` handles the reserved shelf.
+
+Since `AsrsInboundStationOperator` set dest = reserved_shelf_no (a Shelf), `destDetermine()` sees `destSt instanceof Shelf` and:
+- If `load_size_check=ON`: re-searches within the aisle (may pick front if rear is OCCUPIED)
+- If `load_size_check=OFF`: uses the reserved shelf directly
 
 ::: mermaid
 flowchart TD
-    A[Carry has reserved_shelf_no<br/>from processTransferWarehouse] --> B{reserved shelf<br/>side?}
-    B -->|REAR| C[Send ID05<br/>to rear shelf]
-    B -->|FRONT| D{Check rear shelf<br/>of same pair}
-    D -->|rear=OCCUPIED| E[Send ID05<br/>to front shelf]
-    D -->|rear=RESERVED<br/>another carry| F[SWAP:<br/>this carry->rear<br/>other carry->front]
-    D -->|rear=EMPTY| G[Take rear instead<br/>update reserved_shelf]
-    F --> C
-    G --> C
+    A[Carry: dest=reserved rear shelf<br/>carry_flag=STORAGE] --> B[destDetermine]
+    B --> C{destSt<br/>instanceof Shelf?}
+    C -->|YES| D{load_size_check?}
+    D -->|ON| E[Re-search in aisle<br/>findEmptyShelf]
+    D -->|OFF| F[Use reserved shelf<br/>directly]
+    E --> G{Rear OCCUPIED<br/>same item on rear?}
+    G -->|YES| H[Framework picks FRONT<br/>of same pair]
+    G -->|NO| I[Use reserved REAR shelf]
+    F --> J[Send ID05]
+    H --> J
+    I --> J
 :::
 
-## <span style="color:skyblue; font-weight:bold">DMSHELF (booked shelf)</span>
-- **STATUS_FLAG** : 2: Reserved (already set, confirmed)
-
 ## <span style="color:skyblue; font-weight:bold">DNCARRYINFO (UPDATE)</span>
-- **AISLE_STATION_NO** : target aisle (9007..9014)
-- **RESERVED_SHELF_NO** : final shelf (after swap if needed)
-- **DEST_STATION_NO** : final shelf location
+- **DEST_STATION_NO** : final shelf location (may change if re-searched)
 - **CMD_STATUS** : 2: Waiting for response
-
-## <span style="color:skyblue; font-weight:bold">DMWAREHOUSE (UPDATE)</span>
-- **LAST_USED_STATION_NO** : aisle used
 
 ## <span style="color:skyblue; font-weight:bold">DNARRIVAL (UPDATE)</span>
 - **SEND_FLAG** : 1: Sent
@@ -691,8 +615,8 @@ Id35Process:
     carry_flag=1(STORAGE), cmd_status=1(START)
     source=7207-7210, dest=9200, end=9200
 
-(8) StorageSender (swap logic):
-    dest=final shelf, cmd_status=2(WAIT_RESPONSE)
+(8) StorageSender (standard framework):
+    dest=reserved shelf (or re-searched), cmd_status=2(WAIT_RESPONSE)
 
 (9) ID25:
     cmd_status=3(COMMANDED)
@@ -775,20 +699,21 @@ SELECT controller_no, status_flag, connection_flag FROM DMGroupController;
 | # | Item | Class/File | Status |
 |---|------|-----------|--------|
 | 1 | TransferSettingSCH.addnew() | TransferSettingSCH.java | TODO |
-| 2 | processTransferWarehouse() in RetrievalSender | RetrievalSender.java | TODO |
-| 3 | Shelf booking (rear+front pair, round-robin) | New method in RetrievalSender | TODO |
-| 4 | getRackMoveInfoForUpdate() — add dest=blank check | RetrievalSender.java | TODO |
-| 5 | AsrsInboundStationOperator — handle RACK_TO_RACK arrival | AsrsInboundStationOperator.java | TODO |
-| 6 | StorageSender — rear/front swap logic | StorageSender.java | TODO |
-| 7 | DMRouteId 449-496 | DMRouteId.sql | DONE |
-| 8 | DMRouteDetail 449-496 | DMRouteDetail.sql | DONE |
-| 9 | ID35 cancel — release reserved shelf in 9200 | Verify existing | TODO |
-| 10 | DNHostSend insert at ID33 (job_type=45) | CarryCompleteOperator / HostSendController | TODO |
-| 11 | InternalLocTransferReportDataCreator | Host reporting (existing, verify) | TODO |
-| 12 | Aisle error handling at StorageSender | StorageSender.java | TODO |
+| 2 | processTransferWarehouse() — rear booking + aisle round-robin | RetrievalSender.java | DONE (8/8 tests pass) |
+| 3 | processTransferCarries() + getRackMoveInfoForUpdate() integration | RetrievalSender.java | DONE |
+| 4 | searchRearShelf() — aisle iteration with RackToRackDecider | RetrievalSender.java | DONE |
+| 5 | getBcrForTransfer() — route-based BCR selection | RetrievalSender.java | DONE |
+| 6 | AsrsInboundStationOperator — R2R arrival, dest=reserved shelf | AsrsInboundStationOperator.java | DONE |
+| 7 | StorageSender — no changes needed (standard framework) | StorageSender.java | DONE (no change) |
+| 8 | DMRouteId 449-496 (9001-9006 -> 7207-7214) | DMRouteId.sql | DONE |
+| 9 | DMRouteDetail 449-496 | DMRouteDetail.sql | DONE |
+| 10 | ID35 cancel — release reserved shelf in 9200 | Verify existing | TODO |
+| 11 | DNHostSend insert at ID33 (job_type=45) | CarryCompleteOperator / HostSendController | TODO |
+| 12 | InternalLocTransferReportDataCreator | Host reporting (existing, verify) | TODO |
 
 # User Story
   - #6614
 
 # Related DFD
   - [Ambient-to-Tempering](Ambient-to-Tempering)
+  - [Aisle Selection & BCR Routing Reference](../../Aisle-Selection-and-BCR-Routing) — **CRITICAL:** BCR selection differences between storage and transfer, round-robin, DB settings
