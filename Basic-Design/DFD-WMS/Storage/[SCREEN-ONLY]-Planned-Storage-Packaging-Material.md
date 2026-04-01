@@ -94,9 +94,10 @@ This section explains the validations for the whole proccess Storage Packaging M
 - Material Code exists in **DMITEM**
 - The Planned Storage PKG list is displayed after being filtered by **DMITEM.ITEM_TYPE.ZPCK**.
 - Input text with red asterisk <span style="color:red">(*)</span> is required to filled.
-- Storage Qty must be greater than **"0"**
-- The Storage Qty + Stored Qty should be less than Planned Qty.
-- Daily cleanup not processing.
+- **Storage Qty** must be greater than **"0"**
+- The **Storage Qty + Stored Qty** should be less than Planned Qty.
+- **Daily cleanup** not processing.
+- **Pallet No** is progress does not exist in **DNStoragePlan**.
 
 **Note:** 
 - All IN-stations can be used.
