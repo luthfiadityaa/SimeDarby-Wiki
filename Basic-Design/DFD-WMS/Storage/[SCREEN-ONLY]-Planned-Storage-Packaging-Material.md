@@ -131,8 +131,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 - BCR_DATA              = Value from Screen (**Pallet #**)
 - STORAGE_LOCATION_FROM = VT01
 - STORAGE_LOCATION_TO   = ZPCK
-
-- **STORING_PAIR_KEY    = DNSTORAGEPLAN.ITEM_CODE + DNSTORAGEPLAN.PLAT_LOT_NO**
+- STORING_PAIR_KEY      = DNRECEIVINGPLAN.ITEM_CODE + PLANT_LOT_NO
 - REGIST_DATE           = SYSTIMESTAMP
 - REGIST_PNAME          = ClassName
 - LAST_UPDATE_DATE      = SYSTIMESTAMP
