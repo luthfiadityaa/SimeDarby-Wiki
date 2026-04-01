@@ -129,9 +129,6 @@ This section explains the validations for the whole proccess Storage Packaging M
 - PLANT_LOT_NO          = Value from Screen (**Batch #**)
 - PLAN_QTY              = Value from screen (**Storage Qty**)
 - BCR_DATA              = Value from Screen (**Pallet #**)
-
-
-
 - STORAGE_LOCATION_FROM = Constant.SAP_STORAGE_LOCATION.TEMPORARY_LOCATION
 - STORAGE_LOCATION_TO   = Constant.SAP_STORAGE_LOCATION.PACKAGING_MATERIAL
 
