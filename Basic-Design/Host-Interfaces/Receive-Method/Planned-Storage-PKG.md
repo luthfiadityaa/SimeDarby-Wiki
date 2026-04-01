@@ -74,23 +74,6 @@ flowchart LR
 - The **order quantity** must be greater than 0 and less than or equal to **MAX_STOCK_QTY (999,999)**.
 - The **Purchase Number** with same **Item Number** are already registered, an error occurs. 
 
-
-## Planned Storage from Host
-
-<span style="background-color:yellow; color:black; font-weight:bold"> `jp.co.daifuku.wms.web.display.storage.plannedstoragepkg.PlannedStoragePkgSCH` </span>
-
-::: mermaid
-flowchart LR
-
-subgraph HostCommExecutor
-        C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
-        C2["recvStoragePlanPkgData()<br>→ StoragePlanPkgDataLoader"]
-        C1 --> C2 --> insert[("DNRECEIVINGPLAN")]
-end
-
-HostCommExecutor
-:::
-
 # StoragePlanPkgDataLoader
 - Purchase Order
 - Company Code
