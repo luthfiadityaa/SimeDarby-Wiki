@@ -77,15 +77,7 @@ flowchart LR
 subgraph HostCommExecutor
         C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
         C2["recvStoragePlanPkgData()<br>→ StoragePlanPkgDataLoader"]
-        C1 --> C2
-    end
-
-subgraph WareNavi7A
-FileExchange[FileExchangeConverter]
-
-FileExchange-insert[("
-DNRETRIEVALPLAN
-")]
+        C1 --> C2 --> insert[("DNRETRIEVALPLAN")]
 end
 
 HostCommExecutor-->FileExchange
