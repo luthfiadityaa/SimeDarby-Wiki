@@ -92,6 +92,73 @@ Case 2: Booked FRONT -> check rear shelf status:
 
 ---
 
+# <span style="color:red; font-weight:bold">Aisle Decision & BCR Selection — Key Differences</span>
+
+Normal storage and transfer use the same `DMWareHouse.last_used_station_no` for round-robin but differ in **how they select the aisle** and **which BCR** they route to.
+
+## Aisle Decision Comparison
+
+| | Normal Inbound Storage | Transfer (9100 -> 9200) |
+|---|---|---|
+| **Who decides** | StorageSender -> LocationManager -> AisleShelfDecider | processTransferWarehouse -> RackToRackDecider |
+| **Aisle selector** | Based on `DMWareHouse.aisle_decision_pattern` (e.g. WNCollectAisleSelector for pattern 4) | Always `RackToRackAisleSelector` (ignores aisle_decision_pattern) |
+| **Round-robin** | `DMWareHouse.last_used_station_no` — shared | Same field — **shared with normal storage** |
+| **Shelf search** | `DoubleDeepShelfSelector.searchEmptyShelf()` — fills rear first, then front | `DoubleDeepShelfSelector.searchShelfRackToRack()` -> `findEmptyShelfForRackToRack()` — requires empty **pair** (both rear+front empty) |
+| **Min empty pairs** | No minimum pair requirement | `MIN_EMPTY_PAIR_DIFFERENT_ZONE = 2` (must leave 2 empty pairs per aisle+zone as buffer) |
+| **When shelf is reserved** | At StorageSender time (pallet already at BCR) | At processTransferWarehouse time (before retrieval starts) |
+| **Pallet zone** | Pallet `soft_zone_id` already set for target WH | Pallet `soft_zone_id` must be set to target zone (e.g. `002` Ambient) **before** transfer booking |
+
+## BCR Selection — CRITICAL
+
+DMAisle stores **only ONE** `bcr_station_no` per aisle (the OP BCR):
+```
+DMAisle 9007 -> bcr_station_no = 7107 (OP BCR)
+DMAisle 9008 -> bcr_station_no = 7108 (OP BCR)
+...
+```
+
+For transfer, the pallet travels from OP (9100) to HP (9200). The retrieval ID12 destination must be the **HP BCR** (7207-7214), NOT the OP BCR (7107-7110).
+
+**`getBcrForTransfer(sourceAisle, targetAisle)`** uses `DMRouteId` to find the correct BCR:
+```
+sourceAisle=9001, targetAisle=9007
+  -> DMRouteId: route 9001->7207 exists
+  -> DMStation 7207: aisle_station_no=9007 -> match
+  -> return "7207" (HP BCR) ✓
+
+DO NOT use DMAisle.bcr_station_no directly — it returns 7107 (OP BCR) which has
+no route from 9001-9006. The pallet would be undeliverable.
+```
+
+## DMWareHouse.last_used_station_no — Shared Round-Robin
+
+This field is ONE value per warehouse, updated by:
+1. **`AbstractAisleSelector.determin()`** — called after ANY successful shelf decision
+2. **`processTransferWarehouse.updateLastUsedAisle()`** — after transfer booking
+
+All operations share the same round-robin counter:
+```
+Time 1: Normal storage stores to 9007 -> last_used = 9007
+Time 2: Transfer books 9008          -> last_used = 9008
+Time 3: Normal storage skips 9008    -> stores to 9009 -> last_used = 9009
+Time 4: Transfer books 9010          -> last_used = 9010
+```
+This is **correct behavior** — global round-robin balances load across all operations.
+
+## DB Settings Checklist
+
+| Setting | Table | Column | Required Value | Impact if Wrong |
+|---------|-------|--------|---------------|-----------------|
+| Aisle status | DMAisle | status | `1` (NORMAL) | Aisle skipped by both storage and transfer |
+| Aisle decision pattern | DMWareHouse | aisle_decision_pattern | `4` (WNCollect) for 9200 | Normal storage uses wrong selector |
+| Zone manage type | DMWareHouse | zone_manage_type | `2` (SOFT_ZONE) for 9200 | Zone matching fails |
+| Direction | DMWareHouse | direction | `13` (BAY_HP) for 9200 | Empty shelf search order wrong |
+| Pallet soft_zone | DNPallet | soft_zone_id | Must match target WH zones (002/004 in 9200) | No shelf found (zone 001 has no fallback in 9200) |
+| Routes | DMRouteId | start/end | 9001-9006 -> 7207-7214 must exist | `getBcrForTransfer` returns null or wrong BCR |
+| BCR aisle_station_no | DMStation | aisle_station_no | 7207->9007, 7208->9008, etc. | `getBcrForTransfer` can't match BCR to aisle |
+
+---
+
 # <span style="color:red; font-weight:bold">Concurrent Operation Analysis</span>
 
 Aisles 9007-9010 handle THREE types of operations simultaneously:
