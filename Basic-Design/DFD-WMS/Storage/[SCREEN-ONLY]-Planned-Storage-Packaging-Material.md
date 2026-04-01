@@ -99,7 +99,7 @@ erDiagram
 - Planned Qty = DNRECEVINGPLAN.PLAN_QTY
 
 ## Validation
-This section explains the validations for the whole proccess Storage Packaging Material
+This section explains the validations for the Finish process:
 
 - Material Code exists in **DMITEM**
 - The Planned Storage PKG list is displayed after being filtered by **DMITEM.ITEM_TYPE.ZPCK**.
