@@ -102,7 +102,6 @@ This section explains the validations for the whole proccess Storage Packaging M
 - Stored Qty = DNRECEIVINGPLAN.PROCESS_QTY
 - Planned Qty = DNRECEVINGPLAN.PLAN_QTY
 
-
 ## DNSTORAGEPLAN
 
 - PLAN_UKEY             = Sequence Object
