@@ -129,8 +129,8 @@ The data will be paired as an input: **SAP** ⇄ **Warenavi**
 |  PurchaseOrder | RECEIVE_TICKET_NO |      P1      |          |                               |
 |     Vendor     |   SUPPLIER_CODE   |              |          |                               |
 |   VendorName   |   SUPPLIER_NAME   |              |          |                               |
-|  DocumentDate  |   DOCUMENT DATE   |              |          |                               |
-|  CompanyCode   |   CUSTOMER CODE   |              |          |                               |
+|  DocumentDate  |   DOCUMENT_DATE   |              |          |                               |
+|  CompanyCode   |   CUSTOMER_CODE   |              |          |                               |
 |    ---------   |   --------------  | ------------ |  ------- |  ---------------------------- |
 |   ItemNumber   |  RECEIVE_LINE_NO  |      P2      |          |                               |
 |      Plant     |       9908        |              |          |                               |
