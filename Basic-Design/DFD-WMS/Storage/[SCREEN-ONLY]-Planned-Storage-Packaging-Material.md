@@ -34,22 +34,37 @@ Planned Storage Setting (PKG) is used to set the information of stock which will
 
 ::: mermaid
 flowchart LR
-    input["<b>Pallet Information</b><br/>- Pallet #<br/>- Document #<br/>- Company Code<br/>- Vendor Code / Name<br/>- Material Code<br/>- Material Name<br/>- Batch #<br/>- Storage / Planned Qty<br/>- UOM<br/>- Plant / Line #<br/>- Document Date<br/>- Delivery Date"]
+    input[
+        Pallet #
+        Document #
+        Company Code
+        Vendor Code / Vendor Name
+        Material Code
+        Material Name
+        Batch #
+        Storage Qty /  Planned Qty / Input Qty / Stored Qty
+        UOM
+        Plant
+        Line #
+        Document Date
+        Delivery Date
+    ]
 
-    %% Database Tables
-    DMITEM[("DMITEM<br/>(Master Data)")]
-    DNSTORAGEPLAN[("DNSTORAGEPLAN<br/>(Storage Plan)")]
+    tableList-select[("
+        DMITEM
+    ")]
 
-    %% Logic Class
-    className{{"PlannedStoragePkgSCH"}}
+    tableList-insert[("
+        DNSTORAGEPLAN
+    ")]
 
-    %% Flow
-    input --> className
-    tableList-select("DMITEM") --> |SELECT| className 
-    className --> |INSERT| DNSTORAGEPLAN
+    className[PlannedStoragePkgSCH]
 
-    %% Styling for Left Alignment
-    style input text-align:left
+    input --> className--> |INSERT| tableList-insert
+    tableList-select--> |SELECT| className 
+
+style input text-align:left
+
 :::
 
 ## Relantionship between Storage Plan and Pallet
