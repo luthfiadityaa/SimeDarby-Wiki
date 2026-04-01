@@ -155,8 +155,6 @@ This section explains the validations for the **Finish** process.
 
 ## DNRECEIVINGPLAN
 - STATUS_FLAG       = 4:Completion
-- REPORT_FLAG       = 0: Not Reported    
-- PLAN_LOT_NO       = Value from Screen (**Batch #**)
 - PROCESS_QTY       = PROCESS_QTY + Value from screen (**Storage Qty**)   
 - REGIST_DATE       = SYSTIMESTAMP
 - REGIST_PNAME      = ClassName
