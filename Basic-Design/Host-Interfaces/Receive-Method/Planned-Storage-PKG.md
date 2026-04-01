@@ -108,7 +108,8 @@ Upon receiving new Plan Storage from Host system, WareNavi will insert related p
                                                                                                        
 - STATUS_FLAG          = 0:Not Started                                                       
 - CANCEL_FLAG          = 0:Normal Data                                                      
-- PLAN_DAY             = Value from SAP (**Delivery Date**)                                                       
+- PLAN_DAY             = Value from SAP (**Delivery Date**)
+- FILE_LINE_NO         = Indicating Line Number of location XML Tag (**System Decided**)                                                        
                                                     
                                             
 - RECEIVE_TICKET_NO    = Value from SAP (**Purchase No**)                                                      
