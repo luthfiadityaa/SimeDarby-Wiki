@@ -88,6 +88,7 @@ HostCommExecutor
 - Company Code
 - Vendor
 - Vendor Name
+- Company Code
 - Document Date
 - Item No / Line No
 - Plant
