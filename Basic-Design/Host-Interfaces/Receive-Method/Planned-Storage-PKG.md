@@ -101,9 +101,10 @@ Upon receiving new Plan Storage from Host system, WareNavi will insert related p
 ## DNRECEIVINGPLAN 
 - PLAN_UKEY            = WMS Sequence Handler   
 - LOAD_UNIT_KEY        = System Date with format **yyyyMMddHHmmss**
-- CUSTOMER_CODE         = Value from SAP (**Company Code**)          
-- SUPPLIER_CODE          = Value from SAP (**Vendor**)
-- SUPPLIER_NAME          = Value from SAP (**Vendor Name**) 
+- CUSTOMER_CODE        = Value from SAP (**Company Code**)          
+- SUPPLIER_CODE        = Value from SAP (**Vendor**)
+- SUPPLIER_NAME        = Value from SAP (**Vendor Name**)
+- DOCUMENT_DATE        = Value from SAP (**DOCUMENT_DATE**)
                                                                                                        
 - STATUS_FLAG          = 0:Not Started                                                       
 - CANCEL_FLAG          = 0:Normal Data                                                      
