@@ -95,7 +95,7 @@ This section explains the validations for the whole proccess Storage Packaging M
 - The Planned Storage PKG list is displayed after being filtered by **DMITEM.ITEM_TYPE.ZPCK**.
 - Input text with red asterisk <span style="color:red">(*)</span> is required to filled.
 - Storage Qty must be greater than **"0"**
-- Stored Qty + Storage Qty cannot bigger than Planned Qty
+- The Storage Qty + Stored Qty should be less than Planned Qty.
 - **Planned Qty and Stored Qty** are calculated fields (readonly).
 
 
