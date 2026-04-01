@@ -15,7 +15,7 @@ flowchart LR
     A[SAP] -->|Send XML via SFTP| B[(FTP Folder)]
     B -->|GET XML| C[HostCommExecutor]
     C --> Cond1{"isDataError ?"}
-    Cond1 --> |FALSE| E[(DNStoragePlan)]
+    Cond1 --> |FALSE| E[(DNReceivingPlan)]
     Cond1 --> |TRUE| G[(DNLoadErrorInfo)]
     E --> |Save Communication Data|F[(DNExchangeHistory)]
     G --> |Save Communication Data|F[(DNExchangeHistory)]
@@ -64,64 +64,35 @@ flowchart LR
 ```
 
 ## Validation
-- When the OrderUnit is not same to existing UOM in DMItem, the plan data should be rejected with error message.
+- **Material number** should be exist in **DMItem**
+- The **item type** associated with the **material number** must be **ZPCK**.
+- The **order unit** associated with the material number must be same with **UOM** in **DMItem**.
+- The **plant** should be existed in **DMToStation**.
+- The **irregular pallet** associated with the **material number** for abnormal shelves and cannot be used. 
+- The **direct shipping** associated with the **material number** cannot be used. 
+- The **delivery date** should be using format **yyyyMMdd**.
+- The **order quantity** must be greater than 0 and less than or equal to **MAX_STOCK_QTY (999,999)**.
+- The **Purchase Number** with same **Item Number** are already registered, an error occurs. 
 
+Upon receiving new Plan Storage from Host system, WareNavi will insert related planned information to DNRECEIVINGPLAN database table.
 
-## Planned Storage from Host
-
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.wms.web.display.storage.plannedstoragepkg.PlannedStoragePkgSCH` &nbsp;</span>
-
-::: mermaid
-flowchart LR
-
-subgraph HostCommExecutor
-        C1["serviceHostComm.prj<br>(ConsoleApplicationExecutor)"]
-        C2["recvStoragePlanPkgData()<br>→ StoragePlanPkgDataLoader"]
-        C1 --> C2
-    end
-
-subgraph WareNavi7A
-FileExchange[FileExchangeConverter]
-
-FileExchange-insert[("
-DNRETRIEVALPLAN
-")]
-end
-
-HostCommExecutor-->FileExchange
-FileExchange--INSERT-->FileExchange-insert
-:::
-
-# StoragePlanPkgDataLoader
-- Document Number
-- Company Code
-- Vendor
-- Vendor Name
-- Document Date
-- Item No / Line No
-- Plant
-- Material Code
-- Planned Quantity
-- Uom
-- Delivery Date
-
-Upon receiving new Plan Storage from Host system, WareNavi will insert related planned information to DNRETRIEVALPLAN database table.
-
-## DNRECEIVINGPLAN                                                                                                           
+## DNRECEIVINGPLAN 
+- PLAN_UKEY            = WMS Sequence Handler   
+- LOAD_UNIT_KEY        = System Date with format **yyyyMMddHHmmss**
+- RECEIVE_TICKET_NO    = Value from SAP (**Purchase No**) 
+- CUSTOMER_CODE        = Value from SAP (**Company Code**)          
+- SUPPLIER_CODE        = Value from SAP (**Vendor**)
+- SUPPLIER_NAME        = Value from SAP (**Vendor Name**)
+- DOCUMENT_DATE        = Value from SAP (**DOCUMENT_DATE**)                                                                                                       
 - STATUS_FLAG          = 0:Not Started                                                       
 - CANCEL_FLAG          = 0:Normal Data                                                      
-- PLAN_DAY             = Value from SAP (**Delivery Date**)                                                       
-- VENDOR_CODE          = Value from SAP (**Vendor Code**)
-- VENDOR_NAME          = Value from SAP (**Vendor Name**)                                                     
-- COMPANY_CODE         = Value from SAP (**Company Code**)                                                      
-- RECEIVE_TICKET_NO    = Value from SAP (**Purchase No**)                                                      
+- PLAN_DAY             = Value from SAP (**Delivery Date**)
+- FILE_LINE_NO         = Indicating Line Number of location XML Tag (**System Decided**), as default is null.                                     
 - RECEIVE_LINE_NO      = Value from SAP (**ItemNumber**)                                                      
-- DOCUMENT_DATE        = Value from SAP (**Document Date**)                                                                                                              
-- PLANT                = CONSTANT.SAP_PLANT (9908)                                                      
-- ITEM_CODE            = Value from SAP (**MaterialNumber**)                                                                                                              
-- PLAN_QTY             = Value from SAP (**OrderQuantity**) 
-- SAP_TO_LOCATION      = CONSTANT.SLOC_PACK 
+- PLAN_AREA_NO         = 9200
+- ITEM_CODE            = Value from SAP (**MaterialNumber**)
+- SAP_TO_LOCATION      = Value from SAP (**PLANT**)                                                                                                              
+- PLAN_QTY             = Value from SAP (**OrderQuantity**)
 - REPORT_FLAG          = 0:Not Reported                                                                                                           
 - REGIST_KIND          = 0:File Loading                                                      
 - REGIST_DATE          = SYSTIMESTAMP                                                  
@@ -133,24 +104,33 @@ Upon receiving new Plan Storage from Host system, WareNavi will insert related p
 
 The data will be paired as an input: **SAP** ⇄ **Warenavi**
 
-|       SAP      |      Warenavi     |  Primary Key | Required |            Remarks            |
-|:--------------:|:-----------------:|:------------:|:--------:|:-----------------------------:|
-|  PurchaseOrder | RECEIVE_TICKET_NO |      P1      |          |                               |
-|     Vendor     |   SUPPLIER_CODE   |              |          |                               |
-|   VendorName   |   SUPPLIER_NAME   |              |          |                               |
-|  DocumentDate  |       --NA--      |              |          |                               |
-|    ---------   |   --------------  | ------------ |  ------- |  ---------------------------- |
-|   ItemNumber   |  RECEIVE_LINE_NO  |      P2      |          |                               |
-|      Plant     |       9908        |              |          |                               |
-| MaterialNumber |     ITEM_CODE     |      P3      |          |                               |
-|  OrderQuantity |      PLAN_QTY     |              |          |                               |
-|    OrderUnit   |       --NA--      |              |          |       Follow DMITEM.UOM       |
-|  DeliveryDate  |     PLAN_DAY      |              |          |                               |
+|       SAP      | WN (DNRECEIVINGPLAN) | WN (Planned Storage PKG) | Primary Key | Required |   Remarks    |
+|----------------|----------------------|--------------------------|-------------|----------|--------------|
+|  PurchaseOrder |   RECEIVE_TICKET_NO  |        DOCUMENT #        |     P1      |    Y     |              |            
+|   CompanyCode  |     CUSTOMER_CODE    |        COMPANY CODE      |             |    Y     |              |
+|     Vendor     |     SUPPLIER_CODE    |          VENDOR          |             |    Y     |              |
+|   VendorName   |     SUPPLIER_NAME    |        VENDOR NAME       |             |    Y     |              |
+|  DocumentDate  |     DOCUMENT_DATE    |       DOCUMENT DATE      |             |    Y     |              |
+|    ---------   |     -------------    |       -------------      |  --------   |  ------  |   --------   |
+|   ItemNumber   |    RECEIVE_LINE_NO   |          Line #          |     P2      |          |              |
+|      Plant     |    SAP_TO_LOCATION   |          PLANT           |             |          |              |
+| MaterialNumber |       ITEM_CODE      |       MATERIAL CODE      |     P3      |          |              |
+|  OrderQuantity |       PLAN_QTY       |        PLANNED QTY       |             |          |              |                               
+|    OrderUnit   |       --NA--         |           UOM            |             |          |  DMITEM.UOM  |
+|  DeliveryDate  |       PLAN_DAY       |       Delivery Date      |             |          |              |
 
-# User Story
 
-- #5117
+# Related User Story
+- [#5139 Planned Storage Setting (PKG)​](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5139)
+- [#6578 Planned Storage Setting (PKG)​ - Validation for identical pallet](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=6578)
+- [#5450 Host Interface - Planned Storage](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5450)
+- [#5455 Host Interface - Planned Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5455)
+- [#5472 Storage Plan Information Maintenance​ (PKG)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5472)
+- [#6438 Control at Storage for PKG](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=6438)
+- [#5800 Control at Storage for Packaging Material](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5800)
 
 # Related DFD
-
+- [[SCREEN ONLY] Planned Storage Packaging Material - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/882/-SCREEN-ONLY-Planned-Storage-Packaging-Material)
+- [Storage Process - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/1040/Storage-Process)
 - [Storage Plan Maintenance (PKG) - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/917/Storage-Plan-Maintenance-(PKG))
+

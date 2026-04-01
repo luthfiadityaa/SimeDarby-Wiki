@@ -47,7 +47,7 @@ Transfer Route:
 # <span style="color:red; font-weight:bold">Shelf Booking Strategy (Double Deep)</span>
 
 ## Problem
-40 pallets same item/batch booked in a fast loop. Aisles 9007-9010 are **double deep**.
+40 pallets same item/batch booked in a fast loop. Aisles 9007-9014 are **double deep**.
 If we only book rear shelves, 10 pairs used for 10 pallets (front wasted).
 We should book **rear + front of same pair** before moving to next aisle.
 
@@ -161,14 +161,15 @@ This is **correct behavior** — global round-robin balances load across all ope
 
 # <span style="color:red; font-weight:bold">Concurrent Operation Analysis</span>
 
-Aisles 9007-9010 handle THREE types of operations simultaneously:
+Aisles 9007-9014 handle THREE types of operations simultaneously:
 
 | Operation | carry_flag | Source | Shelf Search |
 |-----------|-----------|--------|-------------|
-| Normal inbound storage | 1 (STORAGE) | 1301/1302 via 7207-7210 | StorageSender -> LocationManager (new search) |
-| Transfer from Tempering | 5 (RACK_TO_RACK) | 9001-9006 via 7207-7210 | processTransferWarehouse (pre-booked) |
+| Normal inbound storage | 1 (STORAGE) | 1301/1302 via 7207-7214 | StorageSender -> LocationManager (new search) |
+| Transfer from Tempering | 5 (RACK_TO_RACK) | 9001-9006 via 7207-7214 | processTransferWarehouse (pre-booked) |
 | DoubleDeep rack-to-rack | 5 (RACK_TO_RACK) | within 9200 | DoubleDeepChecker (dest=shelf, no BCR) |
-| Retrieval outbound | 2 (RETRIEVAL) | 9007-9010 to 1301/1302 | Releases shelves |
+| Retrieval outbound | 2 (RETRIEVAL) | 9007-9010 to 1301/1302, 1205-1209 | Releases shelves |
+| Retrieval outbound | 2 (RETRIEVAL) | 9007-9014 to 1301/1302, 1205-1209, 1201-1204 | Releases shelves |
 
 ## Conflict Analysis
 
@@ -336,7 +337,7 @@ Called from `getRackMoveInfoForUpdate()` when carry has `carry_flag=5` AND `dest
 ::: mermaid
 flowchart TD
     A[Query DNCarryInfo<br/>carry_flag=5, cmd_status=1<br/>dest_station_no IS BLANK] --> B[Load Pallet + target WH 9200]
-    B --> C[Decide aisle in 9200<br/>round-robin 9007-9010]
+    B --> C[Decide aisle in 9200<br/>round-robin 9007-9014]
     C --> D{Empty pair<br/>available?}
     D -->|YES| E[Book rear shelf<br/>DMSHELF status->RESERVED<br/>FOR UPDATE lock]
     D -->|NO| F[wait_reason=FULL<br/>skip, retry next cycle]
@@ -363,9 +364,9 @@ flowchart TD
 ```
 
 ## <span style="color:skyblue; font-weight:bold">DNCARRYINFO (UPDATE)</span>
-- **DEST_STATION_NO** : BCR station (7207/7208/7209/7210) from DMAisle.bcr_station_no
+- **DEST_STATION_NO** : BCR station (7207..7214) from DMAisle.bcr_station_no
 - **END_STATION_NO** : 9200 (stays unchanged)
-- **AISLE_STATION_NO** : target aisle (9007/9008/9009/9010) — **changed from source to target**
+- **AISLE_STATION_NO** : target aisle (9007..9014) — **changed from source to target**
 - **RESERVED_SHELF_NO** : booked shelf location (rear or front)
 - **LAST_UPDATE_PNAME** : RetrievalSender
 
@@ -442,7 +443,7 @@ Converts carry from rack-to-rack retrieval to storage for re-storage into 9200.
 
 ## <span style="color:skyblue; font-weight:bold">DNARRIVAL (INSERT)</span>
 - **ARRIVAL_DATE** : SYSTIMESTAMP
-- **STATION_NO** : 7207/7208/7209/7210
+- **STATION_NO** : 7207..7214
 - **CARRY_KEY** : DNCARRYINFO.CARRY_KEY
 - **BCR_DATA** : from ID26
 - **SEND_FLAG** : 0: Not sent
@@ -451,12 +452,12 @@ Converts carry from rack-to-rack retrieval to storage for re-storage into 9200.
 - **WORK_TYPE** : 2: Storage
 - **CMD_STATUS** : 1: Started
 - **CARRY_FLAG** : 1: Storage
-- **SOURCE_STATION_NO** : 7207/7208/7209/7210
+- **SOURCE_STATION_NO** : 7207..7214
 - **DEST_STATION_NO** : 9200 (WH station)
 - **END_STATION_NO** : 9200
 
 ## <span style="color:skyblue; font-weight:bold">DNPALLET (UPDATE)</span>
-- **CURRENT_STATION_NO** : 7207/7208/7209/7210
+- **CURRENT_STATION_NO** : 7207..7214
 - **WH_STATION_NO** : 9200
 
 ## <span style="color:skyblue; font-weight:bold">DNWORKINFO (UPDATE)</span>
@@ -488,7 +489,7 @@ flowchart TD
 - **STATUS_FLAG** : 2: Reserved (already set, confirmed)
 
 ## <span style="color:skyblue; font-weight:bold">DNCARRYINFO (UPDATE)</span>
-- **AISLE_STATION_NO** : target aisle (9007-9010)
+- **AISLE_STATION_NO** : target aisle (9007..9014)
 - **RESERVED_SHELF_NO** : final shelf (after swap if needed)
 - **DEST_STATION_NO** : final shelf location
 - **CMD_STATUS** : 2: Waiting for response
