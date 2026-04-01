@@ -117,7 +117,7 @@ The data will be paired as an input: **SAP** ⇄ **Warenavi**
 | MaterialNumber |       ITEM_CODE      |       MATERIAL CODE      |     P3      |          |              |
 |  OrderQuantity |       PLAN_QTY       |        PLANNED QTY       |             |          |              |                               
 |    OrderUnit   |       --NA--         |           UOM            |             |          |  DMITEM.UOM  |
-|  DeliveryDate  |     PLAN_DAY      |RECEIVE_TICKET_NO |              |          |                               |
+|  DeliveryDate  |       PLAN_DAY       |       Delivery Date      |             |          |              |
 
 # User Story
 
