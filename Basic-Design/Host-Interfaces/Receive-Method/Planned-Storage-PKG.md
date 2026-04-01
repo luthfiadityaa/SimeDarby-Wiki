@@ -69,6 +69,8 @@ flowchart LR
 - The **order unit** associated with the material number must be same with **UOM** in **DMItem**.
 - The **plant** should be existed in **DMToStation**.
 - The **irregular pallet** associated with the **material number** for abnormal shelves and cannot be used. 
+- The **direct shipping** associated with the **material number** cannot be used. 
+- The **delivery date** should be using format **yyyyMMdd**.
 
 
 ## Planned Storage from Host
