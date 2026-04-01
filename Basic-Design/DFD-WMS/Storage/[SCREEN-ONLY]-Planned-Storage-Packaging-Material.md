@@ -127,10 +127,11 @@ This section explains the validations for the whole proccess Storage Packaging M
 - PLAN_AREA_NO          = 9200 (Ambient)
 - ITEM_CODE             = DNRECEIVINGPLAN.ITEM_CODE
 - PLANT_LOT_NO          = Value from Screen (**Batch #**)
-
-- BCR_DATA              = Value from Screen (**Pallet #**)
-- ITEM_CODE             = Value from screen (**ITEM CODE**)
 - PLAN_QTY              = Value from screen (**Storage Qty**)
+- BCR_DATA              = Value from Screen (**Pallet #**)
+
+
+
 - STORAGE_LOCATION_FROM = Constant.SAP_STORAGE_LOCATION.TEMPORARY_LOCATION
 - STORAGE_LOCATION_TO   = Constant.SAP_STORAGE_LOCATION.PACKAGING_MATERIAL
 
