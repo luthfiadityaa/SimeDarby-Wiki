@@ -119,6 +119,10 @@ This section explains the validations for the whole proccess Storage Packaging M
 - STATUS_FLAG           = 0: Unstart
 - JOB_TYPE              = 02: Storage
 - PLAN_DAY              = System Date with format **yyyyMMdd**
+- SUPPLIER_CODE         = DNRECEIVINGPLAN.SUPPLIER_CODE
+- SUPPLIER_NAME         = DNRECEIVINGPLAN.SUPPLIER_NAME
+- CUSTOMER_CODE         = DNRECEIVINGPLAN.CUSTOMER_NAME
+
 - BCR_DATA              = Value from Screen (**Pallet #**)
 - ITEM_CODE             = Value from screen (**ITEM CODE**)
 - PLAN_QTY              = Value from screen (**Storage Qty**)
