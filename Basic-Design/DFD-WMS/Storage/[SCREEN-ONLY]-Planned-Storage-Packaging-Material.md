@@ -66,7 +66,8 @@ flowchart LR
 
     input --> className--> |UPDATE| tableList-select2
     tableList-select--> |SELECT| className 
-    tableList-select2--> |SELECT| className 
+    tableList-select2--> |SELECT| className
+    tableList-select3--> |INSERT| className  
 
     style input text-align:left
 :::
