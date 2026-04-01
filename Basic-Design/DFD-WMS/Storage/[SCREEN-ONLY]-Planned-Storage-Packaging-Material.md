@@ -154,7 +154,7 @@ This section explains the validations for the **Finish** process.
 - **Daily cleanup** not processing.
 
 ## DNRECEIVINGPLAN
-- STATUS_FLAG       = 4:Completion
+- STATUS_FLAG       = 4: Completion
 - PROCESS_QTY       = PROCESS_QTY + Value from screen (**Storage Qty --> will be 0 at this condition**)   
 - REGIST_DATE       = SYSTIMESTAMP
 - REGIST_PNAME      = ClassName
