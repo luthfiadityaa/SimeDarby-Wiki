@@ -58,13 +58,13 @@ flowchart LR
         DNRECEIVINGPLAN
     ")]
 
-    tableList-insert[("
+    tableList-update[("
         DNSTORAGEPLAN
     ")]
 
     className[PlannedStoragePkgSCH]
 
-    input --> className--> |INSERT| tableList-insert
+    input --> className--> |UPDATE| tableList-update
     tableList-select--> |SELECT| className 
     tableList-select2--> |SELECT| className 
 
