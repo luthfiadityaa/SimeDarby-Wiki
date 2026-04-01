@@ -15,7 +15,7 @@ flowchart LR
     A[SAP] -->|Send XML via SFTP| B[(FTP Folder)]
     B -->|GET XML| C[HostCommExecutor]
     C --> Cond1{"isDataError ?"}
-    Cond1 --> |FALSE| E[(DNStoragePlan)]
+    Cond1 --> |FALSE| E[(DNReceivingPlan)]
     Cond1 --> |TRUE| G[(DNLoadErrorInfo)]
     E --> |Save Communication Data|F[(DNExchangeHistory)]
     G --> |Save Communication Data|F[(DNExchangeHistory)]
