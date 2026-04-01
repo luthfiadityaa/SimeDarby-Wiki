@@ -80,8 +80,7 @@ subgraph HostCommExecutor
         C1 --> C2 --> insert[("DNRETRIEVALPLAN")]
 end
 
-HostCommExecutor-->FileExchange
-FileExchange--INSERT-->FileExchange-insert
+HostCommExecutor
 :::
 
 # StoragePlanPkgDataLoader
