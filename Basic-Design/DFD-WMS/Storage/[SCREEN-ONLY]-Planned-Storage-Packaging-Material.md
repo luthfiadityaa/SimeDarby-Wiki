@@ -85,16 +85,14 @@ erDiagram
         string RECEIVE_TICKET_NO FK
         string RECEIVE_LINE_NO FK
         string bcr_data PK
-    }
-
-	
+    }	
 :::
 
 ## Validations
 This section explains the validations for the whole proccess Storage Packaging Material
 
 - Material Code exists in **DMITEM**
-- Material Code filtered with **DMITEM.ITEM_TYPE.ZPCK**
+- Material Code shows as filtered with **DMITEM.ITEM_TYPE.ZPCK**
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
 - Storage Qty must be greater than **"0"**
 - Stored Qty + Storage Qty cannot bigger than Planned Qty
