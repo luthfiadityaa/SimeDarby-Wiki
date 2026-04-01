@@ -105,8 +105,6 @@ This section explains the validations for the whole proccess Storage Packaging M
 - **Pallet No** is progress does not exist in **DNStoragePlan**.
 - **Pallet ID** is not found in existing pallet in **DNStock**
 
-<br>
-
 ## DNStoragePlan
 - PLAN_UKEY             = WMS Sequence Handler
 - LOAD_UNIT_KEY         = System Date with format **yyyyMMddHHmmss**
