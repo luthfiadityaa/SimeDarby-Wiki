@@ -69,8 +69,7 @@ flowchart LR
 
 ## Planned Storage from Host
 
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.wms.web.display.storage.plannedstoragepkg.PlannedStoragePkgSCH` &nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold"> `jp.co.daifuku.wms.web.display.storage.plannedstoragepkg.PlannedStoragePkgSCH` </span>
 
 ::: mermaid
 flowchart LR
