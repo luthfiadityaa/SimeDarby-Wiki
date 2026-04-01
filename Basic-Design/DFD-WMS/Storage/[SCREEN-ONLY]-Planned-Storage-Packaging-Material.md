@@ -149,10 +149,7 @@ This section explains the validations for the **Set(F2)** process.
 ## Validation
 This section explains the validations for the **Finish** process.
 
-- Material Code exists in **DMITEM**
-- The Planned Storage PKG list is displayed after being filtered by **DMITEM.ITEM_TYPE.ZPCK**.
-- Input text with red asterisk <span style="color:red">(*)</span> is required to filled.
-- **Storage Qty** must be greater than **"0"**
+- **Stored Qty** is not equal than **Planned Qty** will be marked as *A shortage occurred*.
 - The **Storage Qty + Stored Qty** should be less than Planned Qty.
 - **Daily cleanup** not processing.
 - **Pallet No** is progress does not exist in **DNStoragePlan**.
