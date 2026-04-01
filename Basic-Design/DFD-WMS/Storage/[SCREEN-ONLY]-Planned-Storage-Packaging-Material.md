@@ -97,7 +97,6 @@ This section explains the validations for the whole proccess Storage Packaging M
 - Storage Qty must be greater than **"0"**
 - The Storage Qty + Stored Qty should be less than Planned Qty.
 
-
 **Note:** 
 - All IN-stations can be used.
 - Stored Qty = DNRECEIVINGPLAN.PROCESS_QTY
