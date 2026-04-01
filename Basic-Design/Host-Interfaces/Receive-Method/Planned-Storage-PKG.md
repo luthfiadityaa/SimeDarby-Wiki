@@ -66,7 +66,7 @@ flowchart LR
 ## Validation
 - **Material number** should be exist in **DMItem**
 - The **item type** associated with the **material number** must be **ZPCK**.
-- The **order unit** associated with the material number must be same with (UOM) in **DMItem**.
+- The **order unit** associated with the material number must be same with **UOM** in **DMItem**.
 -.
 
 
