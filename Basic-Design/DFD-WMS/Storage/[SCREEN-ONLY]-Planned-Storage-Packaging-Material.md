@@ -58,13 +58,9 @@ flowchart LR
         DNRECEIVINGPLAN
     ")]
 
-    tableList-update[("
-        DNRECEIVINGPLAN
-    ")]
-
     className[PlannedStoragePkgSCH]
 
-    input --> className--> |UPDATE| tableList-update
+    input --> className--> |UPDATE| tableList-select2
     tableList-select--> |SELECT| className 
     tableList-select2--> |SELECT| className 
 
