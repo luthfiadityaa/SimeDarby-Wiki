@@ -115,9 +115,9 @@ This section explains the validations for the whole proccess Storage Packaging M
 ## DNStoragePlan
 - PLAN_UKEY             = WMS Sequence Handler
 - LOAD_UNIT_KEY         = System Date with format **yyyyMMddHHmmss**
-- CANCEL_FLAG           = 0:Normal Data
-- STATUS_FLAG           = 0
-- JOB_TYPE              = DNSTORAGEPLAN.JOB_TYPE.STORAGE
+- CANCEL_FLAG           = 0: Normal Data
+- STATUS_FLAG           = 0: Unstart
+- JOB_TYPE              = 02: Storage
 - PLAN_DAY              = TODAY (YYYYMMDD)
 - BCR_DATA              = Value from Screen (**Pallet #**)
 - ITEM_CODE             = Value from screen (**ITEM CODE**)
