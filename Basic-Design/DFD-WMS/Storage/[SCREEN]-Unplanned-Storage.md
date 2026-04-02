@@ -134,5 +134,6 @@ CONTROL FLOW[](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wik
 
 #<span style="color:skyblue; font-weight:bold">Related DFD</span>
 - [Unplanned Storage and Retrieval Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result)
+- [Unplanned Storage - Overview](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/946/Unplanned-Storage)
 - [DFD Manual Storage to Ambient](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5785)
 - [DFD Manual Storage to Tempering](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5786)
