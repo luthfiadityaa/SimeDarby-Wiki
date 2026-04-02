@@ -1,7 +1,7 @@
 [[_TOC_]]
 [[_TOSP_]]
 
-#<span style="color:skyblue; font-weight:bold">Storage from 1301 & 1302</span>
+#<span style="color:skyblue; font-weight:bold">Storage from 1301, 1302 & 1106</span>
 ![image.png](/.attachments/image-0a629e0c-d766-4b61-aba2-f968f908bd60.png)
 
 
