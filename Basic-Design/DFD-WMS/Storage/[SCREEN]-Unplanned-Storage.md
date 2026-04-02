@@ -44,6 +44,7 @@ flowchart LR
         UOM
         Tempering Period
         Expiry Days
+        Stock Status
         Storage Location From
         Storage Location To        
     ]
@@ -52,21 +53,47 @@ flowchart LR
         DNSTORAGEPLAN
     ")]
 
+    tableList-select[("
+        DMITEM
+    ")]
+
     className[UnplannedStorageSCH]
 
     input --> className --> |INSERT| tableList-insert
-	
+    tableList-select --> |SELECT| className
+
     classDef leftAlign text-align:left;
     class input leftAlign;
 :::
 
 ##<span style="color:skyblue; font-weight:bold">Validations</span>
-This section explains the validations for the whole proccess Palletize Start
+This section explains the validations for the whole proccess Unplanned Storage Start
 
-- Pallet cannot exist in <span style="color:green; font-weight:bold">DNPallet.</span>  
-  * if DNPallet.Bcr_data = pallet_no then failed
-- Material Code exists in <span style="color:green; font-weight:bold">DMITEM</span>
 - Input text with red asterisk <span style="color:red">(*)</span> is not empty
+- **Barcode Data** not exist : 
+  *   PalletNo is progress does not exist in **DNStoragePlan**.
+  *   PalletID is not found in existing pallet in **DNStock**.
+- **Daily cleanup** not processing.
+- **Material Code** only select exclude :
+  * if select Material_Type = **99** (EMP_PB) OR **98** (IRREGULAR_PB) OR **97** (DIRECT_PB), Then pass <span style="color:red">**ERROR**</span> message.
+- **Storage Location (Master)** only display <span style="color:green; font-weight:bold">SAP_LOCATION_STORAGE</span> List.
+- When **Material Code** has been selected, it will be filtered based on <span style="color:green; font-weight:bold">DMITEM.SOFT_ZONE_ID</span>:
+  * **SOFT_ZONE_ID** = <span style="color:green; font-weight:bold">005</span>
+    --> **To Location** is display value (**FGW1, FGW2**).
+    --> **Stock Status** will appear with Value is **'UU'**.
+
+  * **SOFT_ZONE_ID** = <span style="color:green; font-weight:bold">001</span> 
+    --> **To Location** is display value (**FGW2**).
+    --> **Stock Status** will appear with Value is '**UU**'.
+
+  * **SOFT_ZONE_ID** = <span style="color:green; font-weight:bold">002</span> 
+    --> **To Location** is display value (**FGW1**).
+    --> **Stock Status** will appear with Value is '**UU**'.
+
+  * **SOFT_ZONE_ID** = <span style="color:green; font-weight:bold">003</span> 
+    --> **To Location** is display value (**ZPCK**)
+    --> **Tempering Period** will be <span style="color:red">disable</span> .
+    --> **Expiry Days** will be <span style="color:red">disable</span> .
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
@@ -81,12 +108,13 @@ This section explains the validations for the whole proccess Palletize Start
 - ITEM_CODE         = Value from screen (**ITEM CODE**)
 - PLAN_QTY          = Value from screen (**Storage Qty**)
 - PLAN_LOT_NO       = Value from screen (**Storage Qty**)
-- PLAN_AREA_NO      = Value from screen (**Storage Location**)
+- PLAN_AREA_NO      = **FGW1:9002 or FGW2:9001**
 - STORAGE_LOCATION_FROM = Constant.SAP_STORAGE_LOCATION.TEMPORARY_LOCATION
 - STORAGE_LOCATION_TO   = Value from screen (**Storage Location**)
 - STORING_PAIR_KEY  = **ITEM_CODE + PLAN_LOT_NO**
 - BATCH_TEMPEREING_PERIOD = Value from screen (**Tempering Period**)
 - BATCH_EXPIRY_DAYS = Value from screen (**Expiry Days**)
+- STOCK_STATUS      = Value from screen (**Stock Status**)
 - REGIST_DATE       = SYSTIMESTAMP
 - REGIST_PNAME      = ClassName
 - LAST_UPDATE_DATE  = SYSTIMESTAMP
