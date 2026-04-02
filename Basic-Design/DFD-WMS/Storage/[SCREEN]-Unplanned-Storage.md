@@ -120,15 +120,19 @@ This section explains the validations for the whole proccess Unplanned Storage S
 - LAST_UPDATE_DATE  = SYSTIMESTAMP
 - LAST_UPDATE_PNAME = ClassName
 
+CONTROL FLOW[](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/882/-SCREEN-ONLY-Planned-Storage-Packaging-Material?anchor=control-flow)
+=======================================================================================================================================================================================
 
-#Unplanned Storage and Retrieval Result
-- (https://dev.azure.com/DaifukuSW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result)
+*   [PM / FG Inbound Storage - Same Warehouse (1106/1301/1302 -> 720x -> SRM)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/1040/Storage-Process?anchor=2.-pm-/-fg-inbound-storage---same-warehouse-(1106/1301/1302--%3E-720x--%3E-srm))
+*   [9200 — WNCollectAisleSelector (Pattern 4, Double Deep)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/1040/Storage-Process?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3E9200-%E2%80%94-wncollectaisleselector-(pattern-4%2C-double-deep)%3C/span%3E)
+*   [Storage Completion (ID33)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/1040/Storage-Process?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Estorage-completion-(id33)%3C/span%3E)
 
-<hr>
+#Related User Story
 
-#User Story
-- [DFD Manual Storage to Ambient](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5785)
-- [DFD Manual Storage to Tempering](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5786)
+- [#5139 Unplanned Storage Setting​​](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5140)
+- [#6524 Control for ALL Storage operation](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/6524)
 
 #<span style="color:skyblue; font-weight:bold">Related DFD</span>
 - [Unplanned Storage and Retrieval Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result)
+- [DFD Manual Storage to Ambient](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5785)
+- [DFD Manual Storage to Tempering](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5786)
