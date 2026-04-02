@@ -109,8 +109,8 @@ This section explains the validations for the whole proccess Unplanned Storage S
 - PLAN_QTY          = Value from screen (**Storage Qty**)
 - PLAN_LOT_NO       = Value from screen (**Storage Qty**)
 - PLAN_AREA_NO      = **FGW1:9002 or FGW2:9001**
-- STORAGE_LOCATION_FROM = Constant.SAP_STORAGE_LOCATION.TEMPORARY_LOCATION
-- STORAGE_LOCATION_TO   = Value from screen (**Storage Location**)
+- STORAGE_LOCATION_FROM = Value from screen (**Storage Location**)
+- STORAGE_LOCATION_TO   = Value from screen (**To Location**)
 - STORING_PAIR_KEY  = **ITEM_CODE + PLAN_LOT_NO**
 - BATCH_TEMPEREING_PERIOD = Value from screen (**Tempering Period**)
 - BATCH_EXPIRY_DAYS = Value from screen (**Expiry Days**)
