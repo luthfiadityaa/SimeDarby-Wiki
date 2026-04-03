@@ -107,6 +107,7 @@ This section explains the validations for the **Set(F2)** process.
 - **Storage Qty** must be greater than **"0"**
 - The **Storage Qty + Stored Qty** should be less than Planned Qty.
 - **Daily cleanup** not processing.
+- Selected Station Number is NOT under suspend. <span style="color:green; font-weight:bold">(DMStation.SUSPEND.OFF)</span>
 - **Pallet No** is progress does not exist in **DNStoragePlan**.
 - **Pallet ID** is not found in existing pallet in **DNStock**
 
