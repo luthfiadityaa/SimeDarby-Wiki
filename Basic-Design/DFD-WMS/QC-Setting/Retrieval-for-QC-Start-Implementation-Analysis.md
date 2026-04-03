@@ -63,8 +63,8 @@ All QC retrieval goes to station **1303** (QC Station, `wh_station_no=9200`).
 | Source Aisles | Warehouse | Physical Path to 1303 | Status |
 |---|---|---|---|
 | 9007-9010 (FGW1 Ambient) | 9200 | Direct via STV | **WORKING** - routes exist |
-| 9001-9006 (FGW2 Tempering) | 9100 | Via STV to **any** of 7207-7210, then to 1303 | **NOT WORKING** |
-| 9011-9014 (PM Ambient) | 9200 | Via STV to **any** of 7207-7210, then to 1303 | **NOT WORKING** |
+| 9001-9006 (FGW2 Tempering) | 9100 | Via STV to **any** of 7207-7210, then to 1303 | **IMPLEMENTED** - Option B |
+| 9011-9014 (PM Ambient) | 9200 | Via STV to **any** of 7207-7210, then to 1303 | **IMPLEMENTED** - Option B |
 
 ### Key Physical Fact
 
@@ -77,11 +77,22 @@ Aisles 9001-9006 and 9011-9014 can physically reach **any** of 7207-7210 via STV
 9007->1303   9008->1303   9009->1303   9010->1303
 ```
 
-**Missing routes (no direct physical path, must go through 7207-7210):**
+**Cross-warehouse routes (added for QC retrieval):**
 ```
-9001->1303   9002->1303   9003->1303   9004->1303   9005->1303   9006->1303
-9011->1303   9012->1303   9013->1303   9014->1303
+9001->7207   9001->7208   9001->7209   9001->7210   (routes 449-452, already existed)
+9002->7207   9002->7208   9002->7209   9002->7210   (routes 453-456, already existed)
+...
+9006->7207   9006->7208   9006->7209   9006->7210   (routes 469-472, already existed)
+
+9011->7207   9011->7208   9011->7209   9011->7210   (routes 501-504, NEW)
+9012->7207   9012->7208   9012->7209   9012->7210   (routes 505-508, NEW)
+9013->7207   9013->7208   9013->7209   9013->7210   (routes 509-512, NEW)
+9014->7207   9014->7208   9014->7209   9014->7210   (routes 513-516, NEW)
+
+7207->1303   7208->1303   7209->1303   7210->1303   (routes 497-500, NEW)
 ```
+
+**SQL file:** `sqlscript/oracle/3.initdata/wms/QCRetrievalRoutes.sql`
 
 **Existing storage routes (for reference):**
 ```
@@ -102,238 +113,152 @@ Problems:
 
 ---
 
-# 3. Intermediate Station Selection - Solution Options
+# 3. Chosen Approach: Option B — Selection in RetrievalSender
 
-## Shared Requirement (all options)
+**Decision date:** 2026-04-04
+**Branch:** `6619-control-transfer-9100-1303`
 
-Regardless of which option is chosen:
-- 7207-7210 need `max_instruction >= 1` for StorageSender to send ID05
-- 7207-7210 need a station operator that handles RETRIEVAL carry arrival and creates DIRECT_TRAVEL carry to 1303
-- Routes `7207->1303`, `7208->1303`, `7209->1303`, `7210->1303` must exist in DMRouteId (for the DIRECT_TRAVEL leg)
+## Why Option B
 
-## Option A: Selection in QCStartSCH (at scheduling time)
+Selection at **send time** (in RetrievalSender) provides the most up-to-date workload information. The scheduler creates the carry with `dest=1303, end=1303` normally — no changes to QCStartSCH or the scheduling framework. RetrievalSender intercepts when the route check fails and dynamically picks the least-busy 720x.
 
-**Concept:** Before calling `WebUnplannedRetrievalScheduler.schedule()`, QCStartSCH determines the intermediate 720x station and passes it as destStationNo. The scheduler creates DNCarryInfo with `dest=720x, end=1303`.
+## Implemented Flow
 
-**Flow:**
 ```
 QCStartSCH.addnewConfirmationList()
-  -> selectLeastBusyIntermediate(sourceAisle, "1303")
-     -> count active DNCarryInfo per 7207-7210 (both STORAGE + RETRIEVAL)
-     -> pick station with lowest count
-  -> RetrievalScheduleParamMaker.makeParam(whStationNo, dest=720x, ...)
-  -> scheduler.schedule() creates carry: dest=720x, end=1303, carry_flag=RETRIEVAL
-  -> RetrievalSender sends ID12 from aisle to 720x
-  -> ID26 at 720x: operator creates DIRECT_TRAVEL carry to 1303
-  -> StorageSender sends ID05 from 720x to 1303
+  → scheduler.schedule() creates carry: dest=1303, end=1303, carry_flag=RETRIEVAL
+  → RetrievalSender.destDetermine()
+     → retrievalDetermin(pallet, endSt=1303): routeOK = false (no route 9001→1303)
+     → isIntermediateRetrievalNeeded(): aisle IN (9001-9006, 9011-9014) → true
+     → handleIntermediateRetrieval():
+        1. countCarriesHeadingToStation("1303") — count dest=1303 OR end=1303
+           If count >= 1303.max_pallet_qty(1) → DEST_FULL, ROLLBACK (deadlock prevention)
+        2. selectLeastBusyIntermediate(aisle) — find 720x routes, count dest OR source per 720x
+           Pick station with lowest active carry count
+        3. Validate DMRouteId: aisle → selected 720x
+        4. Update carry: dest=720x, end stays 1303
+     → sends ID12 from aisle to 720x
+  → ID26 at 720x: AsrsInboundStationOperator.arrival()
+     → carry_flag=RETRIEVAL → updateCarryInfoForRetrievalForwarding()
+        carry_flag: RETRIEVAL(2) → DIRECT_TRAVEL(3)
+        work_type:  → 26 (DIRECT_TRAVEL)
+        source:     → this 720x
+        dest:       → 1303 (from end_station_no)
+        end:        → 1303
+        cmd_status: → START(1)
+     → registArrival + carryRequest()
+  → StorageSender picks up DIRECT_TRAVEL carry → ID05 from 720x to 1303
+  → ID26 at 1303: InOutStationOperator handles arrival, completes work
 ```
 
-**Pros:**
-- Selection logic centralized in SCH, easy to understand
-- Scheduler receives a concrete dest station, no framework modification needed
-- Can reuse `selectLeastBusyIntermediateStation()` pattern from AutoStorageScheduler
+## Modified Files
 
-**Cons:**
-- QCStartSCH needs to know which aisles require intermediate routing (9001-9006, 9011-9014 vs 9007-9010 direct)
-- Need to create direct `DMRouteId` entries: `9001->7207`, `9001->7208`, etc. (for RouteChecker validation) — or bypass route validation for intermediate selection
-- Selection happens at scheduling time, not at retrieval time — if station becomes busy between scheduling and actual retrieval, the choice may be suboptimal
+### `RetrievalSender.java` — Cross-warehouse intermediate routing
 
-**DB routes needed:**
-```sql
--- Intermediate leg: aisle -> 720x (one per combination, 10 aisles x 4 stations = 40 routes)
--- 9001->7207, 9001->7208, 9001->7209, 9001->7210
--- 9002->7207, 9002->7208, ... etc.
--- 9011->7207, 9011->7208, ... etc.
+New methods added to `destDetermine()` flow:
 
--- Final leg: 720x -> 1303
--- 7207->1303, 7208->1303, 7209->1303, 7210->1303
-```
+| Method | Purpose |
+|--------|---------|
+| `isIntermediateRetrievalNeeded(con, cInfo)` | Returns true if aisle is 9001-9006 or 9011-9014 (no direct route to 1303) |
+| `handleIntermediateRetrieval(con, cInfo, destSt)` | Orchestrator: checks 1303 capacity → selects 720x → validates route → updates carry dest |
+| `countCarriesHeadingToStation(con, stationNo)` | Counts active carries where `dest=stationNo OR end=stationNo`. Used for 1303 deadlock prevention |
+| `selectLeastBusyIntermediate(con, aisleNo)` | Finds routes aisle→720x, filters by HP_INTERMEDIATE + NORMAL + not suspended. Counts active carries where `dest=720x OR source=720x`, picks lowest |
 
-## Option B: Selection in RetrievalSender (at ID12 send time)
+**Deadlock prevention:** Station 1303 has `max_pallet_qty=1`. Before routing any cross-warehouse retrieval, `countCarriesHeadingToStation("1303")` counts ALL active carries heading to 1303 (direct retrievals, in-transit cross-WH carries, DIRECT_TRAVEL forwards). If count >= max, carry waits with `wait_reason=DEST_FULL(09)`.
 
-**Concept:** The scheduler creates DNCarryInfo with `dest=1303, end=1303` as if it's a direct route. But `RetrievalSender.getSendCarryArray()` detects that aisle 9001 cannot reach 1303 directly and selects an intermediate 720x station, updating the carry's dest before sending ID12.
+**Least-busy logic:** Counts carries by `dest OR source` for each 720x candidate. This captures both inbound carries heading TO the station and outbound carries currently AT it (e.g., STORAGE carries with source=720x).
 
-**Flow:**
-```
-QCStartSCH.addnewConfirmationList()
-  -> scheduler.schedule() creates carry: dest=1303, end=1303, carry_flag=RETRIEVAL
-  -> RetrievalSender.getSendCarryArray()
-     -> checks route 9001->1303: no direct route
-     -> selectLeastBusyIntermediate(9001, 1303)
-     -> updates carry: dest=720x, end=1303
-     -> sends ID12 from aisle to 720x
-  -> ID26 at 720x: operator creates DIRECT_TRAVEL carry to 1303
-  -> StorageSender sends ID05 from 720x to 1303
-```
+### `AsrsInboundStationOperator.java` — RETRIEVAL forwarding at 720x
 
-**Pros:**
-- SCH code stays simple, no routing awareness needed
-- Selection happens at send time (more up-to-date workload info)
-- Works for any future retrieval screen, not just QC Start
-
-**Cons:**
-- Requires modifying RetrievalSender (core framework class, high risk)
-- RetrievalSender currently does simple carry_flag=RETRIEVAL search with fixed dest — adding intermediate routing logic increases complexity
-- Need a way to detect "needs intermediate" vs "direct" — cannot rely on DMRouteId since no direct route exists
-
-## Option C: Selection in a new RetrievalIntermediateSelector (called by scheduler)
-
-**Concept:** Create a dedicated class that the retrieval scheduler calls when it detects the route requires intermediate stations. Similar to how `AisleShelfDecider` works for storage.
-
-**Flow:**
-```
-QCStartSCH.addnewConfirmationList()
-  -> scheduler.schedule()
-     -> RouteChecker: 9001->1303 no direct route -> returns false
-     -> scheduler detects cross-warehouse retrieval
-     -> RetrievalIntermediateSelector.selectStation(sourceAisle, finalDest)
-        -> find candidate 720x stations reachable from sourceAisle
-        -> count active DNCarryInfo per candidate (STORAGE + RETRIEVAL + DIRECT_TRAVEL)
-        -> pick least busy
-        -> return 720x
-     -> creates carry: dest=720x, end=1303, carry_flag=RETRIEVAL
-  -> RetrievalSender sends ID12 from aisle to 720x
-  -> ID26 at 720x: operator creates DIRECT_TRAVEL carry to 1303
-  -> StorageSender sends ID05 from 720x to 1303
-```
-
-**Pros:**
-- Clean separation of concerns (selector class is testable, reusable)
-- Works within existing scheduler framework (just adds a fallback when direct route fails)
-- Can share counting logic with storage `selectLeastBusyIntermediateStation()`
-- Easy to extend for other intermediate routing scenarios
-
-**Cons:**
-- Requires modifying `WebUnplannedRetrievalScheduler` or `RetrievalScheduleManager` to call the selector when direct route fails
-- Need to define which stations are "intermediate candidates" — either by config or by querying DMStation/DMRouteId
-- More classes to maintain
-
-**DB routes needed:**
-```sql
--- Aisle -> 720x routes (for route validation)
--- 9001->7207, 9001->7208, 9001->7209, 9001->7210, etc.
-
--- Final leg: 720x -> 1303
--- 7207->1303, 7208->1303, 7209->1303, 7210->1303
-```
-
-## Option D: Selection in AsrsInboundStationOperator (no intermediate routing in scheduler)
-
-**Concept:** The scheduler routes 9001->1303 as a "virtual" direct route using a dummy DMRouteId entry. RetrievalSender sends ID12 with dest=1303. AGC physically delivers the pallet to one of 7207-7210 (AGC decides). When ID26 arrives at 720x, the operator handles forwarding.
-
-**Flow:**
-```
-QCStartSCH.addnewConfirmationList()
-  -> scheduler.schedule() creates carry: dest=1303, end=1303
-  -> RetrievalSender sends ID12 from aisle, AGC routes to 720x physically
-  -> ID26 at 720x: operator sees dest=1303 != this station
-     -> creates DIRECT_TRAVEL carry: source=720x, dest=1303
-     -> StorageSender sends ID05 from 720x to 1303
-```
-
-**Pros:**
-- Simplest code change — no intermediate selection logic in WMS at all
-- AGC handles physical routing and station selection (AGC already knows STV traffic)
-- WMS only needs to handle the arrival at 720x and forward
-- No new routes needed between aisles and 720x
-
-**Cons:**
-- Depends on AGC being smart enough to pick the right 720x (may not balance load)
-- WMS loses visibility of which intermediate station will be used
-- Need a "virtual" route 9001->1303 in DMRouteId for scheduler validation, but the physical path goes through 720x
-- May not work if AGC requires WMS to specify the exact intermediate station in ID12
-
----
-
-# 4. Comparison Matrix
-
-| Criteria | Option A (SCH) | Option B (Sender) | Option C (Selector) | Option D (AGC decides) |
-|---|---|---|---|---|
-| Load balance accuracy | Good (at schedule time) | Best (at send time) | Good (at schedule time) | Depends on AGC |
-| Considers storage+retrieval | Yes (count all carries) | Yes | Yes | AGC decides |
-| Code complexity | Low | High (modify Sender) | Medium | Low |
-| Framework risk | Low | High | Medium | Low |
-| DB routes needed | 40 aisle->720x + 4 720x->1303 | 4 720x->1303 only | 40 aisle->720x + 4 720x->1303 | 10 aisle->1303 (virtual) + 4 720x->1303 |
-| Reusable for other screens | No (SCH-specific) | Yes (all retrieval) | Yes (scheduler level) | Yes (operator level) |
-| AGC dependency | Low | Low | Low | High |
-
----
-
-# 5. Station Operator at 7207-7210 (Required for all options)
-
-## Problem
-
-When RETRIEVAL carry arrives at 7207-7210 via ID26, current `StorageStationOperator` just does `updateArrival()` — does NOT create a forward carry to 1303.
-
-`InOutStationOperator` was tested — it calls `ReturnStorageManager` which **completes the retrieval work** at 7207-7210 and tries to re-store the pallet. This is wrong because work should complete at 1303, not 7207-7210.
-
-## Solution: Add retrieval forwarding to AsrsInboundStationOperator
-
-`AsrsInboundStationOperator` is already planned for 7207-7210 (handles storage inbound per CLAUDE.md). Add RETRIEVAL carry handling:
+New `RETRIEVAL` case in `arrival()` method, before existing STORAGE case:
 
 ```java
-// In AsrsInboundStationOperator.arrival():
 if (DNCarryInfo.CARRY_FLAG.RETRIEVAL.equals(ci.getCarryFlag()))
 {
-    // QC retrieval arrived at intermediate 720x
-    // 1. Complete old retrieval carry (delete or update cmd_status)
-    // 2. Update DNPallet current_station_no = this station
-    // 3. Create DNARRIVAL
-    // 4. Create NEW DNCarryInfo:
-    //      carry_flag   = DIRECT_TRAVEL (3)
-    //      work_type    = 26 (Direct Transfer)
-    //      cmd_status   = START (1)
-    //      source       = this station (720x)
-    //      dest         = end_station_no from old carry (1303)
-    //      end          = same as dest (1303)
-    // 5. carryRequest() -> StorageSender sends ID05
-    handleRetrievalForwarding(ci, pallet);
-}
-else if (DNCarryInfo.CARRY_FLAG.DIRECT_TRAVEL.equals(ci.getCarryFlag()))
-{
-    // Existing storage inbound logic (Rule 5 from CLAUDE.md)
-    ...
+    updateCarryInfoForRetrievalForwarding(ci);
+    registArrival(ci, plt);
+    carryRequest();
 }
 ```
 
-**No conflict with storage:** StorageSender queries `carry_flag IN (STORAGE, DIRECT_TRAVEL)` while RetrievalSender queries `carry_flag = RETRIEVAL`. The new DIRECT_TRAVEL carry to 1303 is picked up by StorageSender, completely separate from storage carries.
+`updateCarryInfoForRetrievalForwarding()` converts the carry in-place (same carry_key):
+- `carry_flag`: RETRIEVAL(2) → DIRECT_TRAVEL(3)
+- `work_type`: → DIRECT_TRAVEL(26)
+- `source`: → this 720x station
+- `dest`: → end_station_no (1303)
+- `end`: → 1303
+- `cmd_status`: → START(1)
 
----
+**No conflict with storage flow:** StorageSender queries `carry_flag IN (STORAGE, DIRECT_TRAVEL)`. The new DIRECT_TRAVEL carry to 1303 is picked up by StorageSender, separate from storage carries.
 
-# 6. DB Changes Required (all options need these)
+## DB Changes
+
+### Routes — `QCRetrievalRoutes.sql`
+
+| Route IDs | Path | Count | Physical Detail |
+|-----------|------|-------|-----------------|
+| 497-500 | 7207-7210 → 1303 | 4 | BCR → SRM → conveyor → STV(8101) → conveyor → 1303 |
+| 501-504 | 9011 → 7207-7210 | 4 | SRM → 1AA160 → 1BA220 → STV(SLA00111/8102) → BCR |
+| 505-508 | 9012 → 7207-7210 | 4 | SRM → 1AA180 → 1BA240 → STV(SLA00112/8102) → BCR |
+| 509-512 | 9013 → 7207-7210 | 4 | SRM → 1AA200 → 1BA260 → STV(SLA00113/8102) → BCR |
+| 513-516 | 9014 → 7207-7210 | 4 | SRM → 1AA220 → 1BA280 → STV(SLA00101/8102) → BCR |
+
+Total: 20 new routes (DMRouteId + DMRouteDetail).
+
+Routes 9001-9006 → 7207-7210 already existed (routes 449-472).
+
+### Station update
 
 ```sql
--- 1. Routes: 720x -> 1303 (for DIRECT_TRAVEL leg)
-INSERT INTO DMRouteId (...) VALUES ('xxx', '01', '7207->1303', '7207', '1303', ...);
-INSERT INTO DMRouteId (...) VALUES ('xxx', '01', '7208->1303', '7208', '1303', ...);
-INSERT INTO DMRouteId (...) VALUES ('xxx', '01', '7209->1303', '7209', '1303', ...);
-INSERT INTO DMRouteId (...) VALUES ('xxx', '01', '7210->1303', '7210', '1303', ...);
--- Plus DMRouteDetail entries for each
-
--- 2. max_instruction for StorageSender to send ID05
-UPDATE DMStation SET max_instruction = 1
-WHERE station_no IN ('7207','7208','7209','7210');
-
--- 3. class_name for retrieval + storage handling
-UPDATE DMStation SET class_name = 'jp.co.daifuku.asrs.location.AsrsInboundStationOperator'
-WHERE station_no IN ('7207','7208','7209','7210');
+UPDATE DMStation SET max_pallet_qty = 1 WHERE station_no = '1303';
 ```
+
+## Test Results — 8/8 Pass
+
+**Test class:** `WEB-INF/test/jp/co/daifuku/asrs/transmission/QCRetrievalTest.java`
+**SQL files:** `WEB-INF/test/resources/qcretrieval/sql/`
+
+| # | Test | What it verifies |
+|---|------|-----------------|
+| 1 | `testDbConfig_Routes` | All 20 new routes exist + 24 existing 9001-9006→720x routes + 1303 max_pallet=1 |
+| 2 | `testIsIntermediateNeeded` | 9001/9011 → true (need intermediate), 9007/9010 → false (direct route) |
+| 3 | `testCrossWarehouse_9001_Via720x` | Aisle 9001 → handleIntermediateRetrieval → dest updated to 7207-7210, end stays 1303 |
+| 4 | `testCrossWarehouse_9011_Via720x` | Aisle 9011 (PM) → same logic → dest updated to 7207-7210, end stays 1303 |
+| 5 | `test1303Full_DestFull` | Blocking carry at 1303 → ROLLBACK, wait_reason=DEST_FULL(09) |
+| 6 | `testLeastBusy_720x_Selection` | 7207 has 2 carries, 7208 has 1 → selects 7209 or 7210 (0 carries) |
+| 7 | `testArrival_7207_RetrievalForward` | RETRIEVAL at 7207 → DIRECT_TRAVEL, source=7207, dest=1303, work_type=26 |
+| 8 | `testArrival_7209_RetrievalForward_PM` | RETRIEVAL at 7209 from PM aisle 9013 → same forwarding |
 
 ---
 
-# 7. Action Items Summary
+# 4. Action Items Summary
 
 | # | Item | Status | Notes |
 |---|------|--------|-------|
-| 1 | QCStartSCH validation + retrieval | DONE | Branch: 5137-qcsetting |
-| 2 | Choose intermediate selection strategy | **PENDING** | Option A / B / C / D — see comparison above |
-| 3 | DMRouteId: 720x -> 1303 routes | TODO | Required for all options |
-| 4 | AsrsInboundStationOperator: RETRIEVAL forwarding | TODO | Required for all options |
-| 5 | DMStation: max_instruction, class_name for 720x | TODO | Required for all options |
-| 6 | Aisle->720x routes (if Option A or C) | TODO | 40 routes if needed |
-| 7 | Verify with AGC team: can WMS specify intermediate? | TODO | Affects Option D viability |
-| 8 | selectLeastBusy: count both STORAGE + RETRIEVAL + DIRECT_TRAVEL | TODO | Shared concern for storage and retrieval |
-| 9 | Test direct retrieval (9007-9010 -> 1303) first | TODO | Verify scheduler + SendRequestor flow |
+| 1 | QCStartSCH validation + retrieval | **DONE** | Branch: 5137-qcsetting |
+| 2 | Choose intermediate selection strategy | **DONE** | Option B — RetrievalSender (at send time) |
+| 3 | DMRouteId: 720x → 1303 routes | **DONE** | Routes 497-500, `QCRetrievalRoutes.sql` |
+| 4 | DMRouteId: 9011-9014 → 720x routes | **DONE** | Routes 501-516, `QCRetrievalRoutes.sql` |
+| 5 | AsrsInboundStationOperator: RETRIEVAL forwarding | **DONE** | `updateCarryInfoForRetrievalForwarding()` |
+| 6 | RetrievalSender: intermediate selection + 1303 deadlock | **DONE** | `handleIntermediateRetrieval()`, `selectLeastBusyIntermediate()` |
+| 7 | DMStation: 1303 max_pallet_qty=1 | **DONE** | `QCRetrievalRoutes.sql` |
+| 8 | Integration test: 8/8 pass | **DONE** | `QCRetrievalTest.java` |
+| 9 | Test direct retrieval (9007-9010 → 1303) | TODO | Verify full scheduler + RetrievalSender + InOutStationOperator flow |
+| 10 | End-to-end test with AGC simulator | TODO | Verify ID12/ID26/ID05 message exchange |
+
+---
+
+# 5. Comparison Matrix (for reference)
+
+| Criteria | Option A (SCH) | **Option B (Sender)** ✓ | Option C (Selector) | Option D (AGC decides) |
+|---|---|---|---|---|
+| Load balance accuracy | Good (at schedule time) | **Best (at send time)** | Good (at schedule time) | Depends on AGC |
+| Considers storage+retrieval | Yes (count all carries) | **Yes** | Yes | AGC decides |
+| Code complexity | Low | **Medium** | Medium | Low |
+| Framework risk | Low | **Medium** (RetrievalSender) | Medium | Low |
+| DB routes needed | 40+4 | **16+4** (9011-9014→720x + 720x→1303) | 40+4 | 10 virtual + 4 |
+| Reusable for other screens | No (SCH-specific) | **Yes (all retrieval)** | Yes (scheduler level) | Yes (operator level) |
+| AGC dependency | Low | **Low** | Low | High |
 
 ---
 
@@ -341,11 +266,10 @@ WHERE station_no IN ('7207','7208','7209','7210');
 
 - [Retrieval for QC Start - DFD](Retrieval-for-QC-Start)
 - [QC Work from Retrieval for QC Start](QC-Work-from-Retrieval-for-QC-Start)
+- RetrievalSender: `WEB-INF/src/jp/co/daifuku/asrs/transmission/RetrievalSender.java`
+- AsrsInboundStationOperator: `WEB-INF/src/jp/co/daifuku/asrs/location/AsrsInboundStationOperator.java`
+- QCRetrievalRoutes SQL: `sqlscript/oracle/3.initdata/wms/QCRetrievalRoutes.sql`
+- QCRetrievalTest: `WEB-INF/test/jp/co/daifuku/asrs/transmission/QCRetrievalTest.java`
 - RetrievalRouteControllerImpl: `WEB-INF/src/jp/co/daifuku/asrs/location/route/controller/RetrievalRouteControllerImpl.java`
-- RouteCheckerImpl (relay logic): `WEB-INF/src/jp/co/daifuku/asrs/location/route/RouteCheckerImpl.java`
-- RouteDB (DMRouteDetail): `WEB-INF/src/jp/co/daifuku/asrs/location/route/RouteDB.java`
-- InOutStationOperator: `WEB-INF/src/jp/co/daifuku/asrs/location/InOutStationOperator.java`
-- ReturnStorageManager: `WEB-INF/src/jp/co/daifuku/asrs/location/ReturnStorageManager.java`
-- StorageSender (ID05): `WEB-INF/src/jp/co/daifuku/asrs/transmission/StorageSender.java`
-- RetrievalSender (ID12): `WEB-INF/src/jp/co/daifuku/asrs/transmission/RetrievalSender.java`
+- RouteCheckerImpl: `WEB-INF/src/jp/co/daifuku/asrs/location/route/RouteCheckerImpl.java`
 - AutoStorageScheduler (selectLeastBusyIntermediateStation): `WEB-INF/src/jp/co/daifuku/asrs/transmission/AutoStorageScheduler.java`
