@@ -1,21 +1,35 @@
 [[_TOC_]]
 
 #<span style="color:skyblue; font-weight:bold">Summary Flow</span>
-**Stage 1**
+**Stage 1 — Direct retrieval (9007-9010 to 1303)**
 ::: mermaid
 flowchart LR
 
-P1[FROM AISLE STATION - 9001, 
-9002 , 9003, 9004, 9005, 
-9006]-->P2[RetrievalSender]-->P21[ID12]-->P3[ID32]-->P4[ID33]
+P1[FROM AISLE STATION - 9007, 
+9008, 9009, 9010]-->P2[RetrievalSender]-->P21[ID12]-->P3[ID32]-->P4[ID33]-->P5[To Station 1303]
 :::
 
-**Stage 2 -  Thorugh crane 7-10.**
+**Stage 1a — Cross-warehouse retrieval (9001-9006, 9011-9014 to 1303 via 720x)**
 ::: mermaid
 flowchart LR
 
-P5[ID64]--> |7207-7210| P8[ID26]-->P9[Retrieval Sender]-->P10[ID25]--> |SRM| P11[ID64]--> |STV| P12[ID64]--> P7[ID68]
-P7[ID68]-->P71[ID45]-->P81[ID26]-->P13[To Station 1303]
+P1[FROM AISLE STATION - 9001-9006, 
+9011-9014]-->P2[RetrievalSender
+destDetermine: no direct route
+handleIntermediateRetrieval
+selectLeastBusy 720x
+check 1303 capacity]-->P21[ID12 to 720x]-->P3[ID32]-->P4[ID33]
+:::
+
+**Stage 2 — Through crane 7-10 (cross-warehouse only)**
+::: mermaid
+flowchart LR
+
+P5[ID64]--> |7207-7210| P8[ID26]-->P9[AsrsInboundStationOperator
+RETRIEVAL→DIRECT_TRAVEL
+dest=1303]-->P10[StorageSender
+ID05]-->P11[ID25]--> |SRM| P12[ID64]--> |STV| P13[ID64]--> P7[ID68]
+P7[ID68]-->P71[ID45]-->P81[ID26]-->P14[To Station 1303]
 :::
 
 #<span style="color:skyblue; font-weight:bold">Retrieval for QC Start database flow</span>
@@ -283,6 +297,21 @@ P2--> |SendText| id12msg
 
 All Pallet Retrieval operation at Ambient or Tempering will be retrieved to Station 1301, 1302, 1205, 1206, 1207, 1208, 1209 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
 
+**Cross-warehouse QC retrieval (9001-9006, 9011-9014 → 1303):**
+
+When `destDetermine()` detects no direct route from the pallet's aisle to 1303, it calls `handleIntermediateRetrieval()`:
+
+1. **Check 1303 capacity** — `countCarriesHeadingToStation("1303")` counts all active carries where `dest=1303 OR end=1303`. If count >= `max_pallet_qty` (1), blocks with `wait_reason=DEST_FULL(09)` to prevent deadlock.
+2. **Select least-busy 720x** — `selectLeastBusyIntermediate(aisleNo)` finds routes from aisle to 7207-7210, filters by NORMAL/not suspended, counts active carries where `dest=720x OR source=720x`, picks lowest.
+3. **Validate route** — confirms DMRouteId exists for aisle → selected 720x.
+4. **Update carry** — `dest_station_no` updated to selected 720x, `end_station_no` stays 1303. ID12 sent from aisle to 720x.
+
+| Aisle | Route | Intermediate |
+|-------|-------|-------------|
+| 9007-9010 | Direct to 1303 | None needed |
+| 9001-9006 | Via 720x (routes 449-472) | 7207-7210 (least busy) |
+| 9011-9014 | Via 720x (routes 501-516) | 7207-7210 (least busy) |
+
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 * **CMD_STATUS**: 2:Waiting for response
@@ -356,8 +385,8 @@ ID33 for Retrieval operation which is sent by AGC to WareNavi to notify WareNavi
 <hr>
 
 #<span style="color:skyblue; font-weight:bold">Continue Process with</span>
-- ##[Flow 1 : through crane 7-10 from 9001-9006 & 9011-9014](#Flow-1)
-- ##[Flow 2 : not through crane 7-10 from 9007-9010](#Flow-2)
+- ##[Flow 1 : through crane 7-10 from 9001-9006 & 9011-9014 (cross-warehouse via 720x)](#Flow-1)
+- ##[Flow 2 : not through crane 7-10 from 9007-9010 (direct to 1303)](#Flow-2)
 
 <hr>
 
@@ -417,17 +446,17 @@ DNPALLET
 ")]
 
 id26process[id26process]
-retrievaloperator[InOutStationOperator]
+asrsoperator[AsrsInboundStationOperator]
 
 
 buttonclicked --> id26msg
 id26msg -->id26process
-id26process-->retrievaloperator
-retrievaloperator--> |INSERT| id26-insert
-retrievaloperator--> |UPDATE| id26-update
+id26process-->asrsoperator
+asrsoperator--> |INSERT| id26-insert
+asrsoperator--> |UPDATE| id26-update
 :::
 
-Continue the process Direct Transfer, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record.
+When pallet arrives at 7207-7210, AGC sends ID26. `AsrsInboundStationOperator.arrival()` detects `carry_flag=RETRIEVAL` and calls `updateCarryInfoForRetrievalForwarding()` which converts the carry in-place (same carry_key). Then calls `registArrival()` + `carryRequest()` so StorageSender picks up the DIRECT_TRAVEL carry and sends ID05 to 1303.
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNArrival</span>
@@ -452,48 +481,47 @@ Continue the process Direct Transfer, AGC will send ID26 to WareNavi and WareNa
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP
 *   **LAST_UPDATE_PNAME**: ClassName
 
-####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo (updated in-place by AsrsInboundStationOperator)</span>
 
-*   **WORK_TYPE**: 26:Direct Transfer
-*   **CMD_STATUS**: 1:Started
-*   **CARRY_FLAG**: 3: Direct Transfer
+*   **CARRY_FLAG**: <span style="color:green; font-weight:bold">3: Direct Travel</span> (was 2: Retrieval)
+*   **WORK_TYPE**: <span style="color:green; font-weight:bold">26: Direct Travel</span> (was 40: Inventory Check)
+*   **CMD_STATUS**: <span style="color:green; font-weight:bold">1: Started</span>
 *   **SOURCE_STATION_NO**: DNARRIVAL.STATION_NO ⟶ (7207, 7208, 7209, 7210)
-*   **DEST_STATION_NO**: **<span style="color:green">1303</span>**
-*   **REGIST_DATE**: SYSTIMESTAMP
-*   **REGIST_PNAME**: ClassName
+*   **DEST_STATION_NO**: **<span style="color:green">1303</span>** (from end_station_no)
+*   **END_STATION_NO**: **<span style="color:green">1303</span>**
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP
-*   **LAST_UPDATE_PNAME**: ClassName
+*   **LAST_UPDATE_PNAME**: AsrsInboundStationOperator
 
-##Retrieval Sender at 7207-7210
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.RetrievalSender&nbsp;</span>
+##StorageSender at 7207-7210
+<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.transmission.StorageSender&nbsp;</span>
 
 ::: mermaid
 flowchart LR
 
-retrievalsender-input[("
+storagesender-input[("
 DNCARRYINFO
+carry_flag=DIRECT_TRAVEL
+dest=1303
 ")]
 
-retrievalsender-update[("
+storagesender-update[("
 DNCARRYINFO
-DNPALLET
+cmd_status→WAIT_RESPONSE
 ")]
 
-retrievalsender-input-->retrievalsender--> |UPDATE| retrievalsender-update
+id05msg("ID 05")
+
+storagesender-input-->storagesender--> |UPDATE| storagesender-update
+storagesender-->id05msg
 :::
 
-All Carton Retrieval operation at Ambient or Tempering will be retrieved to Station 1303 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
+StorageSender picks up the DIRECT_TRAVEL carry (carry_flag=3, dest=1303) created by AsrsInboundStationOperator. Sends ID05 to transport pallet from 720x to 1303 via routes 497-500.
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 * **CMD_STATUS**: 2:Waiting for response
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
-* **LAST_UPDATE_PNAME**: Class name
-
-####<span style="color:skyblue; font-weight:bold">DNPallet</span>
-* **STATUS_FLAG**: 4:Being retrieved
-* **LAST_UPDATE_DATE**: SYSTIMESTAMP
-* **LAST_UPDATE_PNAME**: Class name
+* **LAST_UPDATE_PNAME**: StorageSender
 
 ##ID25 at 7207-7210
 jp.co.daifuku.wcs.mc.as21.communication.control.Id25Process
@@ -672,15 +700,15 @@ DNINOUTRESULT
 ")]
 
 id26process[id26process]
-retrievaloperator[InOutStationOperator]
+inoutoperator[InOutStationOperator]
 
 buttonclicked-->buttonclicked3
 buttonclicked --> id26msg
 id26msg -->id26process
-id26process-->retrievaloperator
+id26process-->inoutoperator
 
-retrievaloperator--> |INSERT| id26-insert
-retrievaloperator--> |UPDATE| id26-update
+inoutoperator--> |INSERT| id26-insert
+inoutoperator--> |UPDATE| id26-update
 id26-insert-->buttonclicked2 
 
 click buttonclicked2 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/844/Internal-Location-Transfer-Result" "Go Internal Location Transfer Result"
