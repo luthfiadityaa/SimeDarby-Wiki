@@ -77,6 +77,98 @@ UPDATE DMStation SET restoring_instruction = '1' WHERE station_no = '1303';
 UPDATE DMStation SET max_instruction = 1 WHERE station_no = '1303';
 ```
 
+#<span style="color:skyblue; font-weight:bold">DMRouteId — QC Retrieval Routes</span>
+
+Routes required for QC retrieval from ASRS aisles to station 1303.
+
+###<span style="color:skyblue; font-weight:bold">Direct Retrieval: 9007-9010 → 1303</span>
+
+Aisles 9007-9010 (FGW1 Ambient, wh=9200) have a **direct physical path** to station 1303 via STV.
+
+```
+9007 → SRM(SRA00701) → conveyor(1AB070) → STV(SLA00201/8101) → conveyor(1BB520_02) → 1303
+9008 → SRM(SRA00801) → conveyor(1AB090) → STV(SLA00202/8101) → conveyor(1BB520_02) → 1303
+9009 → SRM(SRA00901) → conveyor(1AB110) → STV(SLA00203/8101) → conveyor(1BB520_02) → 1303
+9010 → SRM(SRA01001) → conveyor(1AB130) → STV(SLA00201/8101) → conveyor(1BB520_02) → 1303
+```
+
+RetrievalSender sends ID12 directly from aisle to 1303. No intermediate station needed.
+
+###<span style="color:skyblue; font-weight:bold">Cross-warehouse: 9001-9006 → 7207-7210 (intermediate)</span>
+
+Aisles 9001-9006 (FGW2 Tempering, wh=9100) have **no direct path** to 1303. Pallets must go through HP BCR stations 7207-7210 as intermediate, then forward to 1303.
+
+**Leg 1 — Aisle to 720x** (24 routes, already existed):
+```
+9001 → SRM(SRA00101) → STV(SLA00101/8102) → 7207(1AA070)
+9001 → SRM(SRA00101) → STV(SLA00101/8102) → 7208(1AA090)
+9001 → SRM(SRA00101) → STV(SLA00101/8102) → 7209(1AA110)
+9001 → SRM(SRA00101) → STV(SLA00101/8102) → 7210(1AA130)
+... (same pattern for 9002-9006)
+```
+
+RetrievalSender selects the **least-busy** 720x station (counts active carries per station). The carry is updated: `dest=720x, end stays 1303`.
+
+###<span style="color:skyblue; font-weight:bold">Cross-warehouse: 9011-9014 → 7207-7210 (intermediate)</span>
+
+Aisles 9011-9014 (PM Ambient, wh=9200) also have **no direct path** to 1303. Same intermediate routing via 7207-7210.
+
+**Leg 1 — Aisle to 720x** (16 routes, NEW):
+```
+9011 → SRM(SRA01101) → conveyor(1AA160) → conveyor(1BA220) → STV(SLA00111/8102) → 720x
+9012 → SRM(SRA01201) → conveyor(1AA180) → conveyor(1BA240) → STV(SLA00112/8102) → 720x
+9013 → SRM(SRA01301) → conveyor(1AA200) → conveyor(1BA260) → STV(SLA00113/8102) → 720x
+9014 → SRM(SRA01401) → conveyor(1AA220) → conveyor(1BA280) → STV(SLA00101/8102) → 720x
+```
+
+###<span style="color:skyblue; font-weight:bold">Forwarding: 7207-7210 → 1303</span>
+
+**Leg 2 — 720x to 1303** (4 routes, NEW):
+
+After AsrsInboundStationOperator at 720x converts the carry (RETRIEVAL → DIRECT_TRAVEL, work_type stays 40), StorageSender sends ID05 from 720x to 1303 via these routes.
+
+```
+7207 → SRM(SRA00701/9007) → conveyor(1AB070) → STV(SLA00201/8101) → conveyor(1BB520_02) → 1303
+7208 → SRM(SRA00801/9008) → conveyor(1AB090) → STV(SLA00202/8101) → conveyor(1BB520_02) → 1303
+7209 → SRM(SRA00901/9009) → conveyor(1AB110) → STV(SLA00203/8101) → conveyor(1BB520_02) → 1303
+7210 → SRM(SRA01001/9010) → conveyor(1AB130) → STV(SLA00201/8101) → conveyor(1BB520_02) → 1303
+```
+
+###<span style="color:skyblue; font-weight:bold">Virtual Routes: 9001-9006/9011-9014 → 1303 (scheduler validation)</span>
+
+Virtual DMRouteId entries exist **only** for `WebUnplannedRetrievalScheduler` route validation. They have minimal DMRouteDetail (source station only) so `RouteDB.check()` returns ACTIVE. RetrievalSender **never uses** these routes — it intercepts before the route check via `isIntermediateRetrievalNeeded()` and redirects to 720x.
+
+```
+9001->1303v  9002->1303v  9003->1303v  9004->1303v  9005->1303v  9006->1303v   (6 routes)
+9011->1303v  9012->1303v  9013->1303v  9014->1303v                              (4 routes)
+```
+
+Without these, the scheduler cannot create DNCarryInfo for cross-warehouse pallets (route check fails → carry never created → RetrievalSender never gets a chance to apply intermediate routing).
+
+###<span style="color:skyblue; font-weight:bold">Route Summary</span>
+
+| Route | Count | Purpose | Used by |
+|-------|-------|---------|---------|
+| 9007-9010 → 1303 | 4 | Direct QC retrieval | RetrievalSender (ID12) |
+| 9001-9006 → 7207-7210 | 24 | Cross-WH leg 1 (already existed) | RetrievalSender (ID12 to 720x) |
+| 9011-9014 → 7207-7210 | 16 | Cross-WH leg 1 (NEW) | RetrievalSender (ID12 to 720x) |
+| 7207-7210 → 1303 | 4 | Cross-WH leg 2 (NEW) | StorageSender (ID05 from 720x) |
+| 9001-9006 → 1303v | 6 | Virtual — scheduler only (NEW) | WebUnplannedRetrievalScheduler |
+| 9011-9014 → 1303v | 4 | Virtual — scheduler only (NEW) | WebUnplannedRetrievalScheduler |
+| **Total new** | **30** | | `QCRetrievalRoutes.sql` |
+
+###<span style="color:skyblue; font-weight:bold">Return Storage Routes (1303 → ASRS)</span>
+
+After QC work, ReturnStorageManager converts carry to STORAGE with `dest=pallet.wh_station_no`. StorageSender uses LocationManager to find an empty shelf and routes back to the aisle.
+
+| Route | Count | Purpose |
+|-------|-------|---------|
+| 1303 → 9001-9006 | 6 | Return to WH 9100 (Tempering) |
+| 1303 → 9007-9010 | 4 | Return to WH 9200 (Ambient/PM) |
+| 1303 → 7101-7110 | 10 | Storage outbound via OP BCR |
+
+Note: No routes 1303 → 9011-9014 (no physical path). PM pallets returning from QC go to aisles 9007-9010 via WH 9200.
+
 #<span style="color:skyblue; font-weight:bold">Retrieval for QC Start database flow</span>
 **Abbreviation:**
 - **WRKI** : DNWORKINFO  
