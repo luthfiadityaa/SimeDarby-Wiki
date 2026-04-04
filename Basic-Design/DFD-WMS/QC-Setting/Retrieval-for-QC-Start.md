@@ -308,9 +308,9 @@ When `destDetermine()` detects no direct route from the pallet's aisle to 1303, 
 
 | Aisle | Route | Intermediate |
 |-------|-------|-------------|
-| 9007-9010 | Direct to 1303 | None needed |
-| 9001-9006 | Via 720x (routes 449-472) | 7207-7210 (least busy) |
-| 9011-9014 | Via 720x (routes 501-516) | 7207-7210 (least busy) |
+| 9007-9010 | Direct to 1303 (9007->1303 .. 9010->1303) | None needed |
+| 9001-9006 | Via 720x (9001->7207 .. 9006->7210) | 7207-7210 (least busy) |
+| 9011-9014 | Via 720x (9011->7207 .. 9014->7210) | 7207-7210 (least busy) |
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
@@ -515,7 +515,7 @@ storagesender-input-->storagesender--> |UPDATE| storagesender-update
 storagesender-->id05msg
 :::
 
-StorageSender picks up the DIRECT_TRAVEL carry (carry_flag=3, dest=1303) created by AsrsInboundStationOperator. Sends ID05 to transport pallet from 720x to 1303 via routes 497-500.
+StorageSender picks up the DIRECT_TRAVEL carry (carry_flag=3, dest=1303) created by AsrsInboundStationOperator. Sends ID05 to transport pallet from 720x to 1303 via routes 7207->1303, 7208->1303, 7209->1303, 7210->1303.
 
 ###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 ####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
@@ -725,10 +725,13 @@ When the retrieved pallet reaches the QC station, Warenavi sends an ‘Internal 
 * **SEND_FLAG**: 0:Not Sent
 * **BCR_DATA**: Arrival Information from ID26 
 
-###<span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
+###<span style="color:skyblue; font-weight:bold">DNCARRYINFO (updated by ReturnStorageManager)</span>
 * **CMD_STATUS**: 6:Arrival
-* **RESTORING_FLAG**: 0:Not Re-store to Original Location
 * **CARRY_FLAG**: 1:Storage
+* **RESTORING_FLAG**: 0:Not Re-store to Original Location
+* **SOURCE_STATION_NO**: 1303
+* **DEST_STATION_NO**: <span style="color:green; font-weight:bold">DNPALLET.WH_STATION_NO</span> (9100 or 9200 — pallet's original warehouse)
+* **END_STATION_NO**: same as DEST_STATION_NO
 
 ###<span style="color:skyblue; font-weight:bold">DNPALLET</span>
 * **STATUS_FLAG**: 1:Reserved for Storage
