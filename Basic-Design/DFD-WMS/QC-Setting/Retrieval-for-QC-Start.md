@@ -32,6 +32,51 @@ ID05]-->P11[ID25]--> |SRM| P12[ID64]--> |STV| P13[ID64]--> P7[ID68]
 P7[ID68]-->P71[ID45]-->P81[ID26]-->P14[To Station 1303]
 :::
 
+#<span style="color:skyblue; font-weight:bold">DMStation Settings — Station 1303 (QC Station)</span>
+
+Station 1303 requires specific configuration for the QC retrieval and return-storage flow:
+
+| Setting | Value | Description |
+|---------|-------|-------------|
+| **station_type** | 3 (INOUT) | Bi-directional station for retrieval and re-storage |
+| **operation_display** | **3 (INSTRUCTION_AUTO_COMP)** | Enables ID68 → OperationDisplay → ID45 → ID26 flow. MC/WareNavi decides work completion timing based on operator input from QC Work screen. Without this, DIRECT_TRAVEL pallets are immediately removed by LoadRemover |
+| **restoring_instruction** | **1 (WN_STORAGE_SEND)** | Required for StorageSender to accept return-storage carries with `cmd_status=ARRIVAL`. Without this (value 0), StorageSender only accepts `cmd_status=START` and return carries are stuck |
+| **max_instruction** | **1** | StorageSender requires `max_instruction >= 1` to send carries from this station. With 0, StorageSender always skips (0 <= count is always true → OVER) |
+| **max_pallet_qty** | **1** | Deadlock prevention — only 1 pallet heading to 1303 at a time. RetrievalSender checks `countCarriesHeadingToStation("1303")` before routing cross-warehouse carries |
+| **wh_station_no** | 9200 | Station belongs to warehouse 9200. **Note:** return-storage uses `pallet.wh_station_no` (not station wh) for correct cross-warehouse routing |
+
+###<span style="color:skyblue; font-weight:bold">Operation Display Modes</span>
+
+| Value | Name | Behavior at ID26 (DIRECT_TRAVEL + end=1303) |
+|-------|------|----------------------------------------------|
+| 0 | NONE | `LoadRemover.remove()` — pallet data deleted immediately (reject flow) |
+| 1 | DISP_ONLY | Same as NONE |
+| **2** | **INSTRUCTION_HARD_SWITCH_COMP** | Operator presses physical button. `work_type=40` → ReturnStorageManager, `work_type=26` → LoadRemover |
+| **3** | **INSTRUCTION_AUTO_COMP** | MC/WareNavi decides completion. Same routing logic as value 2. **Used for 1303** |
+
+With `operation_display=3`, the flow at station 1303 is:
+```
+ID68 → OperationDisplay created → Work Display shows task (carry_key links to DNWorkInfoList)
+  → Operator inspects pallet (QC Work screen — not yet implemented)
+  → WareNavi sends ID45 (payout type decided by operator input)
+  → AGC sends ID26
+     → load=1 (pallet present): InOutStationOperator.arrival()
+        → RETRIEVAL: updateArrival → ReturnStorageManager → return to ASRS
+        → DIRECT_TRAVEL + work_type=40: same as RETRIEVAL (QC cross-warehouse)
+        → DIRECT_TRAVEL + work_type=26: LoadRemover.remove() (reject)
+     → load=0 (pallet taken out): LoadRemover.remove()
+```
+
+###<span style="color:skyblue; font-weight:bold">SQL</span>
+
+```sql
+-- QCRetrievalRoutes.sql
+UPDATE DMStation SET max_pallet_qty = 1 WHERE station_no = '1303';
+UPDATE DMStation SET operation_display = '3' WHERE station_no = '1303';
+UPDATE DMStation SET restoring_instruction = '1' WHERE station_no = '1303';
+UPDATE DMStation SET max_instruction = 1 WHERE station_no = '1303';
+```
+
 #<span style="color:skyblue; font-weight:bold">Retrieval for QC Start database flow</span>
 **Abbreviation:**
 - **WRKI** : DNWORKINFO  
