@@ -245,7 +245,38 @@ RetrievalSender--> |SendText| id12msg
 :::
 
 
-The Retrieval operation at **Ambient Area (9002: Ambient)** will be retrieved to Station 7101, 7102, 7103, 7104, 7105, 7207, 7208, 7209, 7210 where the related DNCARRYNFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
+The Retrieval operation at **Ambient Area (9002: Ambient)** will be retrieved to Station 7101-7106 or 7207-7210 where the related DNCARRYINFO data will be processed in Retrieval Sender. ID12 will be sent after related tables are updated successfully.
+
+### processTransferWarehouse — BCR Selection Logic
+`processTransferWarehouse` in RetrievalSender decides the BCR destination:
+
+1. `searchRearShelf()` — finds empty shelf in target WH 9100 (single deep, aisles 9001-9006)
+2. `getBcrForTransfer(sourceAisle, targetAisle)` — finds BCR reachable from source aisle
+   - Checks **DMRouteId** for route from source to BCR
+   - Checks BCR **status** (must be NORMAL), **suspend** (must be OFF), **capacity** (active carries < max_instruction)
+   - If no direct BCR available → falls back to `selectIntermediateForTransfer()`
+3. `selectIntermediateForTransfer(sourceAisle)` — for aisles with no direct route to 710x (e.g. 9011-9014)
+   - Finds reachable 720x intermediate from **HP_INTERMEDIATE_STATION_NOS** (7207-7210)
+   - Checks status, suspend, capacity; picks **least busy** 720x
+
+### Route Map
+```
+Direct routes (DMRouteId 527-550):
+  9007 -> 7101, 7102, 7103, 7104, 7105, 7106   (route_type=2, via STV 8101)
+  9008 -> 7101, 7102, 7103, 7104, 7105, 7106
+  9009 -> 7101, 7102, 7103, 7104, 7105, 7106
+  9010 -> 7101, 7102, 7103, 7104, 7105, 7106
+
+Intermediate routes (existing):
+  9011 -> 7207, 7208, 7209, 7210   (via STV 8102, then forwarded to 710x)
+  9012 -> 7207, 7208, 7209, 7210
+  9013 -> 7207, 7208, 7209, 7210
+  9014 -> 7207, 7208, 7209, 7210
+  7207 -> 7101, 7102, 7103, 7104, 7105, 7106   (forwarding routes)
+  7208 -> 7101, 7102, 7103, 7104, 7105, 7106
+  7209 -> 7101, 7102, 7103, 7104, 7105, 7106
+  7210 -> 7101, 7102, 7103, 7104, 7105, 7106
+```
 
 ## <span style="color:skyblue; font-weight:bold">DNPALLET</span>
 - **STATUS_FLAG** : 3:Reserved for Retrieval
@@ -356,7 +387,7 @@ Upon equipment **(STV)** have picked up the Pallet successfully, ID64 will be se
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : Class name
 
-# ID26 at 7207-7210
+# ID26 at 7207-7210 (INTERMEDIATE — R2R forwarding)
 
 ::: mermaid
 flowchart LR
@@ -379,17 +410,29 @@ DNPALLET
 DNWORKINFO
 ")]
 
-storageStationOperator[storageStationOperator]
+storageStationOperator[AsrsInboundStationOperator]
+decision{"wh(9200)==end(9100)?"}
+forward["getBcrFromReservedShelf
+reserved_shelf->aisle->bcr"]
+result["carry stays R2R
+dest=710x, carryRequest"]
 
-releaseCommand-->id26msg-->id26process-->storageStationOperator
-storageStationOperator--> |INSERT| id26-insert
-storageStationOperator--> |UPDATE| id26-update
+releaseCommand-->id26msg-->id26process-->storageStationOperator-->decision
+decision-->|"NO: INTERMEDIATE"|forward-->result
 :::
 
-Continue the process **storage**, AGC will send ID26 to WareNavi and WareNavi will execute the receive task based on information in received ID26. While WareNavi processes ID26, WareNavi will create a Arrival record and let Automatic Mode Change Sender picks up the data.
+Pallet arrives at 7207-7210 (HP BCR, WH 9200) via STV from SRM 9011-9014. This is an **INTERMEDIATE** station because `wh_station(9200) != end_station(9100)`.
 
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.asrs.communication.id.recv.As21Id26` &nbsp;</span>
+`jp.co.daifuku.asrs.location.AsrsInboundStationOperator` &nbsp;</span>
+
+`AsrsInboundStationOperator.arrival()` detects RACK_TO_RACK with `wh_station != end_station` -> **intermediate forwarding** (not STORAGE conversion).
+
+Uses `getBcrFromReservedShelf(ci)`:
+1. `reserved_shelf_no` -> DMSHELF.parent_station_no -> aisle (e.g. 9001)
+2. DMAisle(9001).bcr_station_no -> 7101
+3. Verify route 7207->7101 exists in DMRouteId
+4. `updateDestForForwarding(ci, "7101")` -> forward pallet to 710x
 
 ## <span style="color:skyblue; font-weight:bold">DNARRIVAL</span>
 - **ARRIVAL_DATE** : SYSTIMESTAMP 
@@ -406,25 +449,23 @@ Continue the process **storage**, AGC will send ID26 to WareNavi and WareNavi w
 - **LAST_UPDATE_PNAME** : ClassName
 
 ## <span style="color:skyblue; font-weight:bold">DNCARRYINFO</span>
-- **PALLET_ID** : DNPALLET.PALLET_ID
-- **WORK_TYPE** : 2: Storage
+- **CARRY_FLAG** : 5: Location-to-location Move (**stays R2R, NOT converted to STORAGE**)
 - **CMD_STATUS** : 1:Started 
-- **PRIORITY** : 2:Normal
-- **CARRY_FLAG** : 1: Storage
-- **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO ⟶ **(7207, 7208, 7209, 7210)**
-- **DEST_STATION_NO** : Based on SOURCE_STATION_NO where a reserved location belongs to ⟶ **(7101, 7102, 7103, 7104, 7105, 7106)**
-- **END_STATION_NO** : DNCARRYINFO.DEST_STATION_NO
+- **SOURCE_STATION_NO** : -> **(7207, 7208, 7209, 7210)** (this intermediate station)
+- **DEST_STATION_NO** : -> **(7101, 7102, 7103, 7104, 7105, 7106)** (from getBcrFromReservedShelf)
+- **END_STATION_NO** : 9100 (**unchanged**)
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
-- **LAST_UPDATE_PNAME** : ClassName
+- **LAST_UPDATE_PNAME** : AsrsInboundStationOperator
 
 ## <span style="color:skyblue; font-weight:bold">DNPALLET</span>                                                     
 - **CURRENT_STATION_NO** : DNARRIVAL.STATION_NO
-- **WH_STATION_NO** : DNCARRYINFO.END_STATION_NO                                                                                                                                                
 - **LAST_UPDATE_DATE** : SYSTIMESTAMP
 - **LAST_UPDATE_PNAME** : ClassName
 
-# StorageSender at 7207-7210
 
+> **Note**: StorageSender at 7207-7210 is **NOT triggered** for Flow 1 intermediate forwarding. The carry stays R2R and is forwarded directly to 710x. StorageSender only processes STORAGE carries.
+
+# StorageSender at 7207-7210 (skipped for Flow 1)
 ::: mermaid
 flowchart LR
 storageSender-update[("
