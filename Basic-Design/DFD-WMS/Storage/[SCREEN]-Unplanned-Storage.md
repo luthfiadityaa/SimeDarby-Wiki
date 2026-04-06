@@ -22,7 +22,7 @@
 
 
 #Unplanned Storage - Set(F2)
-![image.png](/.attachments/image-6293c4f4-5fd4-4247-8cbc-fbcc6d9cf3a5.png)
+![image.png](/.attachments/image-23a9603f-7f45-4eb1-9c78-9eaf8b8e13b0.png)
  
 The Unplanned Storage Setting screen uses for manually set the storage work .
 This screen mainly uses when there are some troubles with Host System Linkage(irregular cases) or when manual operation is necessary.
@@ -94,6 +94,10 @@ This section explains the validations for the whole proccess Unplanned Storage S
     --> **To Location** is display value (**ZPCK**)
     --> **Tempering Period** will be <span style="color:red">disable</span> .
     --> **Expiry Days** will be <span style="color:red">disable</span> .
+- **Pallet No** and **Batch No** must be 10 characters.
+- **Storage QTY** greater than 0.
+- **Tempering Period** greater than 1.
+- **Expiry Days** greater than **Tempering Period**.
 
 ##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
 
