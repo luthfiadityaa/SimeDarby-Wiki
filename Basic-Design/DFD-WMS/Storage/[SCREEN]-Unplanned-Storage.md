@@ -22,7 +22,7 @@
 
 
 #Unplanned Storage - Set(F2)
-![image.png](/.attachments/image-23a9603f-7f45-4eb1-9c78-9eaf8b8e13b0.png)
+![image.png](/.attachments/image-5a51cda4-8535-4637-85d0-1afb04bbd2d6.png)
  
 The Unplanned Storage Setting screen uses for manually set the storage work .
 This screen mainly uses when there are some troubles with Host System Linkage(irregular cases) or when manual operation is necessary.
