@@ -30,6 +30,17 @@ When group is selected, the framework resolves to the least-busy member via `che
 ## Operation Display Panel
 Stations with display panel (OPERATION_DISPLAY = 1): **1205, 1206, 1207, 1208, 1209, 1301, 1302**
 
+## Station Mode (InOut Stations: 1301, 1302)
+These stations are bi-directional (STATION_TYPE=3: INOUT). Mode switching is managed by `AutomaticModeChangeSender`.
+
+| CURRENT_MODE | Name | Behavior |
+|---|---|---|
+| 0 | NEUTRAL | No active operation |
+| 1 | STORAGE | Storage mode — retrieval blocked |
+| 2 | RETRIEVAL | Retrieval mode — storage blocked |
+
+`RetrievalSender` does **NOT** check mode directly. `AutomaticModeChangeSender` switches mode to RETRIEVAL before `RetrievalSender` sends ID12.
+
 #<span style="color:skyblue; font-weight:bold">Unplanned Retrieval database flow</span>
 **Abbreviation:**
 - **WRKI** : DNWORKINFO  

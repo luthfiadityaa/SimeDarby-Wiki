@@ -40,6 +40,25 @@ Stations with display panel (OPERATION_DISPLAY = 1: display only):
 
 When pallet arrives, ID68 writes work data (material, qty, batch) to the display panel.
 
+## Station Mode (InOut Stations: 1301, 1302, 1303)
+These stations are bi-directional (STATION_TYPE=3: INOUT) and operate in one of three modes:
+
+| CURRENT_MODE | Name | Behavior |
+|---|---|---|
+| 0 | NEUTRAL | No active operation |
+| 1 | STORAGE | Storage mode — retrieval blocked |
+| 2 | RETRIEVAL | Retrieval mode — storage blocked |
+
+**MODE_TYPE=2 (AGC_CHANGE)**: The AGC controls mode switching.
+
+**Mode switch flow for retrieval:**
+1. Screen creates carry with `CMD_STATUS=START`, `dest=1301`
+2. `AutomaticModeChangeSender` detects station is in STORAGE mode
+3. Sends mode change command to AGC → AGC switches station to RETRIEVAL
+4. After mode switch complete → `RetrievalSender` picks up carry and sends ID12
+
+`RetrievalSender` does **NOT** check station mode directly — mode switch is handled by `AutomaticModeChangeSender` upstream in the pipeline.
+
 #<span style="color:skyblue; font-weight:bold">Planned Retrieval database flow</span>
 **Abbreviation:**
 - **WRKI** : DNWORKINFO  
