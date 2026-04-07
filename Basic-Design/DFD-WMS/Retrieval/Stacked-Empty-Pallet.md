@@ -20,6 +20,28 @@ flowchart LR
 P1[FROM AISLE STATION - 9007, 9008, 9009, 9010]-->P4[RetrievalSender]-->P41[ID12]-->P5[ID32]-->P6[ID33]-->P7[ID64]-->P9[ID26]-->P10[To STATION - 1210] 
 :::
 
+## Station 1210 Configuration
+```
+DMSTATION:
+  STATUS = 1 (NORMAL)
+  SENDABLE = 1 (OK)
+  RETRIEVAL_TRIGGER_REQUEST = 1 (AGC_REQUEST)
+  STATION_TYPE = 2 (OUT)
+  WH_STATION_NO = 9200
+
+Routes (DMRouteId):
+  9007 -> 1210
+  9008 -> 1210
+  9009 -> 1210
+  9010 -> 1210
+  (9001-9006 and 9011-9014 have NO route to 1210)
+
+Lamp 15 (As21Id54.LAMP_EMPTY_PALLET_NOT_FOUND):
+  Target: station 1107 (signal tower)
+  ON (instruction=1): no empty pallet found in ASRS
+  OFF (instruction=0): empty pallet found and allocated
+```
+
 #<span style="color:skyblue; font-weight:bold">Empty Stacked database flow</span>
 **Abbreviation:**
 - **WRKI** : DNWORKINFO  
@@ -172,6 +194,10 @@ As21Id54 --> buttonlight --> releaseCommand2
 
 Once WareNavi receives the signal from ID66 indicating **No Empty Pallet**,” it automatically transmits ID54 to the AGC. At the designated station, the signal tower will flash to indicate **Out of Empty Pallet in ASRS**. MC will save and retain the retrieval trigger in memory until the load arrives at the station.
 
+**Lamp Number**: 15 (`As21Id54.LAMP_EMPTY_PALLET_NOT_FOUND`)
+**Instruction**: 1 (ON) — signal tower lights up
+**Target Station**: 1107
+
 
 ###ID54 at finish [1107]
 <span style="background-color:yellow; color:black; font-weight:bold">&nbsp;jp.co.daifuku.asrs.communication.id.sendAs21Id54&nbsp;</span>
@@ -188,6 +214,10 @@ The signal tower lights.
 
 releaseCommand2["
 Wait until applicable load becomes available
+
+**Lamp Number**: 15 (`As21Id54.LAMP_EMPTY_PALLET_NOT_FOUND`)
+**Instruction**: 0 (OFF) — signal tower off
+**Target Station**: 1107
 "]
 
 releaseCommand3["

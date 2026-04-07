@@ -20,6 +20,26 @@ P1[FROM AISLE STATION - 9001,
 1302] 
 :::
 
+## Station Groups
+User can select either a group station or an individual station as retrieval destination.
+When group is selected, the framework resolves to the least-busy member via `checkChildren` round-robin.
+
+| Group | Members | Area |
+|-------|---------|------|
+| 1211 | 1205, 1301 | HP Area 1 |
+| 1212 | 1206, 1207, 1208 | HP Area 2 |
+| 1213 | 1209, 1302 | HP Area 3 |
+
+`RetrievalRouteControllerImpl.retrievalDetermin()` detects group (WORKPLACE_TYPE != FLOOR),
+calls `checkChildren()` which iterates members starting after `last_used_station_no` (round-robin).
+Suspended members are skipped (via `RetrievalStationCheckerAllocate`).
+
+## Operation Display Panel
+Stations with display panel (OPERATION_DISPLAY = 1: display only):
+**1205, 1206, 1207, 1208, 1209, 1301, 1302**
+
+When pallet arrives, ID68 writes work data (material, qty, batch) to the display panel.
+
 #<span style="color:skyblue; font-weight:bold">Planned Retrieval database flow</span>
 **Abbreviation:**
 - **WRKI** : DNWORKINFO  

@@ -17,6 +17,14 @@ P1[FROM AISLE STATION -
 1203, 1204] 
 :::
 
+## Station Group
+| Group | Members | Area |
+|-------|---------|------|
+| 1200 | 1201, 1202, 1203, 1204 | OP Packaging |
+
+**Route restriction**: Only aisles 9011-9014 (PM) can reach 1201-1204.
+Aisles 9001-9006 (Tempering) and 9007-9010 (Ambient) have NO route to OP packaging stations.
+
 #<span style="color:skyblue; font-weight:bold">Planned Retrieval database flow</span>
 **Abbreviation:**
 - **WRKI** : DNWORKINFO  

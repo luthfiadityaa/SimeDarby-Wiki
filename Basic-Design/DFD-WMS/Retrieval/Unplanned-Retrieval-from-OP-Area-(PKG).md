@@ -11,6 +11,13 @@ flowchart LR
 P1[FROM AISLE STATION - 9011, 9012, 9013, 9014]-->P2[RetrievalSender]-->P3[ID12]-->P4[ID32]-->P5[ID33]-->P7[ID68]-->P8[ID26]-->P9[To STATION - 1201, 1202, 1203, 1204] 
 :::
 
+## Station Group
+| Group | Members | Area |
+|-------|---------|------|
+| 1200 | 1201, 1202, 1203, 1204 | OP Packaging |
+
+**Route restriction**: Only aisles 9011-9014 (PM) can reach 1201-1204.
+
 #<span style="color:skyblue; font-weight:bold">Unplanned Retrieval from OP Area (PKG)</span>
 ## Abbreviation
 - **PLLT** : DNPALLET          
