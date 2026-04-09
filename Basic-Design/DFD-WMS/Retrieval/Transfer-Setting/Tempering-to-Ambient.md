@@ -175,10 +175,11 @@ Aisles 9007-9014 handle THREE types of operations simultaneously:
 
 # (1) Transfer Setting - Set(F2)
 
-<span style="background-color:yellow; color:black; font-weight:bold">&nbsp;
-`jp.co.daifuku.wms.web.display.retrieval.transfersetting.TransferSettingSCH` &nbsp;</span>
+<span style="background-color:yellow; color:black; font-weight:bold">jp.co.daifuku.wms.web.display.retrieval.transfersetting.TransferSettingSCH</span>
 
-User selects pallets to transfer from Tempering (9100) to Ambient (9200).
+![image.png](/.attachments/image-9fb0dce4-f3a4-438a-8114-f9bd2913641d.png)
+
+User selects pallets to transfer from Tempering (9100) to Ambient (9200) or vice versa.
 **Aisle/shelf is NOT decided here.** Only creates work + carry records.
 
 ## <span style="color:skyblue; font-weight:bold">Validations</span>
