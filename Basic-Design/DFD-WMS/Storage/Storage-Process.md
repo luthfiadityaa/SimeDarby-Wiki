@@ -129,7 +129,7 @@ flowchart LR
     DIRECT_PB"]
     F --> G["INSERT DNCarryInfo
     DIRECT_TRAVEL
-    dest=111x, end=plan_area (9100/9200)"]
+    dest=111x, end=111x (next station)"]
     G --> H["UPDATE DNReceivingPlan
     status 0->1 (only if status=0)"]
     H --> I["UPDATE DNArrival
@@ -169,7 +169,8 @@ flowchart LR
     G --> H["createWorkInfo"]
     H --> I["updatePalletSoftZone"]
     I --> J["selectAisleAndUpdateCarry
-    dest=710x (7101-7110)"]
+    dest=710x (7101-7110)
+    end=plan_area (9100/9200)"]
     J --> K["updateReceivingPlanProgress
     progress_qty += plan_qty
     (status->4 if last pallet)"]
