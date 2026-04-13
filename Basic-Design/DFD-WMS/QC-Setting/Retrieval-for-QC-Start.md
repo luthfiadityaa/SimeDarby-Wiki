@@ -54,18 +54,39 @@ Station 1303 requires specific configuration for the QC retrieval and return-sto
 | **2** | **INSTRUCTION_HARD_SWITCH_COMP** | Operator presses physical button. `work_type=40` → ReturnStorageManager, `work_type=26` → LoadRemover |
 | **3** | **INSTRUCTION_AUTO_COMP** | MC/WareNavi decides completion. Same routing logic as value 2. **Used for 1303** |
 
-With `operation_display=3`, the flow at station 1303 is:
+With `operation_display=3`, the flow at station 1303 depends on `DNWorkInfo.job_type`:
+
+**Inventory Check (job_type=40) — QC retrieval return-to-ASRS:**
 ```
 ID68 → OperationDisplay created → Work Display shows task (carry_key links to DNWorkInfoList)
-  → Operator inspects pallet (QC Work screen — not yet implemented)
-  → WareNavi sends ID45 (payout type decided by operator input)
+  → Operator inspects pallet (QC Work screen)
+  → WareNavi sends ID45 (return_storage type)
   → AGC sends ID26
      → load=1 (pallet present): InOutStationOperator.arrival()
         → RETRIEVAL: updateArrival → ReturnStorageManager → return to ASRS
         → DIRECT_TRAVEL + work_type=40: same as RETRIEVAL (QC cross-warehouse)
-        → DIRECT_TRAVEL + work_type=26: LoadRemover.remove() (reject)
      → load=0 (pallet taken out): LoadRemover.remove()
 ```
+
+**Non-Inventory Check (job_type≠40) — Transfer payout:**
+```
+ID64 → ID68 → Id68Process checks DNWorkInfo.job_type via SYSTEM_CONN_KEY = carry_key
+  → job_type ≠ 40: sends ID45 directly (transfer_class=0, PAYOUT)
+     → NO OperationDisplay created (skip Work Display)
+  → AGC receives ID45 with transfer_class=0 (Transfer)
+  → User physically removes pallet from station 1303
+  → AGC sends ID26 (load_present=0)
+  → Id26SubThread → LoadRemover.remove() → carry data cleaned up
+```
+
+| Scenario | DNWorkInfo.job_type | ID45 transfer_class | Triggered by | Post-ID45 |
+|----------|---------------------|---------------------|--------------|-----------|
+| QC retrieval | 40 (ASRS_INVENTORYCHECK) | 1 or 3 (RETURN_STORAGE) | OperationDisplay → Work Display → operator | ReturnStorageManager → return to ASRS |
+| Transfer payout | ≠ 40 | **0 (PAYOUT / Transfer)** | **Id68Process directly on ID68** | User removes pallet → ID26 load=0 → LoadRemover |
+
+**Key implementation details:**
+- `Id68Process.java`: checks station=1303, looks up `DNWorkInfo.job_type` via `SYSTEM_CONN_KEY`. Non-inventory-check → creates `TextSendRequest` for ID45, skips OperationDisplay.
+- `As21Id45.setType()`: for DIRECT_TRAVEL + AUTO_COMP at station 1303, uses `PAYOUT (0)` instead of `PAYOUT_NO_OPERATION (2)` to produce transfer_class=0.
 
 ###<span style="color:skyblue; font-weight:bold">SQL</span>
 
