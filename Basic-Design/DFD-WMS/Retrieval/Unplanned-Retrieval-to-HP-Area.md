@@ -200,7 +200,8 @@ flowchart LR
 *   **COLLECT_JOB_NO**: Sequence Object    
 *   **HARDWARE_TYPE**: 3:ASRS 
 *   **JOB_TYPE**: 23:Unplanned Retrieval    
-*   **STATUS_FLAG**: 0:Not Started    
+*   **STATUS_FLAG**: 0:Not Started
+*   **SYSTEM_CONN_KEY** : DNCARRYINFO.CARRY_KEY   
 *   **PLAN_UKEY**: Sequence Object    
 *   **STOCK_ID**: DNSTOCK.STOCKID    
 *   **PLAN_AREA_NO**: DNSTOCK.AREANO   
@@ -208,9 +209,9 @@ flowchart LR
 *   **PLAN_DAY**: DMWARENAVISYSTEM.WORK_DAY    
 *   **BATCH_NO**: DNSTOCK.BATCH_NO    
 *   **MATERIAL_CODE**: DNSTOCK.MATERIAL_CODE    
-*   **MATERIAL_NAME**: DMITEM.MATERIAL_NAME    
-*   **MATERIAL_TYPE**: DMITEM.MATERIAL_TYPE 
-*   **PLAN_QTY**: Value from screen (Retrieval Qty / Stock Qty)    
+*   **SUPPLIER_CODE**: DNSTOCK.SUPPLIER_CODE
+*   **CUSTOMER_CODE**: DNSTOCK.CUSTOMER_CODE
+*   **PLAN_QTY**: Value from screen (Retrieval Qty)    
 *   **TEMPERING_PERIOD**: DNSTOCK.TEMPERING_PERIOD
 *   **TEMPERING_FLAG**: DNSTOCK.TEMPERING_FLAG      
 *   **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE
@@ -219,8 +220,7 @@ flowchart LR
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY  
 *   **BCR_DATA**: DNPALLET.BCR_DATA  
 *   **STORAGE_LOCATION**: Value from Screen (To Location)
-*   **DOCK_NO**: Value from Screen (Dock No)
-*   **TRUCK_PLATE_NO**: Value from Screen (Truck Plate No)
+*   **HARDWARE_TYPE** = DNWORKINFO.HARDWARE_TYPE.ASRS
 *   **USER_ID**: Login Info     
 *   **TERMINAL_NO**: Login info
 *   **REGIST_DATE**: SYSTIMESTAMP    
