@@ -180,14 +180,10 @@ flowchart LR
     ")]
 
     className[InquiryRetrievalSettingSCH]
-    className--> |Calling| className2[WebUnplannedRetrievalScheduler→schedule] --> |INSERT| tableList-insert
+    className--> |INSERT| tableList-insert
     input --> |getValue| className 
-    className--> |Calling| P1[RetrievalSender]
-    className2 --> |UPDATE| tableList-update
+    className --> |UPDATE| tableList-update
     tableList-select --> |SELECT| className
-
-    click P1 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/956/Stacked-Empty-Pallet?anchor=retrieval-sender" "Go to Retrieval Retrieval Sender"
-    style P1 fill:#00cc66,stroke:#006633,color:#ffffff
 
     classDef leftAlign text-align:left;
     class input leftAlign;
@@ -209,8 +205,6 @@ flowchart LR
 *   **PLAN_DAY**: DMWARENAVISYSTEM.WORK_DAY    
 *   **BATCH_NO**: DNSTOCK.BATCH_NO    
 *   **MATERIAL_CODE**: DNSTOCK.MATERIAL_CODE    
-*   **SUPPLIER_CODE**: DNSTOCK.SUPPLIER_CODE
-*   **CUSTOMER_CODE**: DNSTOCK.CUSTOMER_CODE
 *   **PLAN_QTY**: Value from screen (Retrieval Qty)    
 *   **TEMPERING_PERIOD**: DNSTOCK.TEMPERING_PERIOD
 *   **TEMPERING_FLAG**: DNSTOCK.TEMPERING_FLAG      
