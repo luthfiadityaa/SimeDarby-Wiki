@@ -172,7 +172,7 @@ flowchart LR
         DNPALLET
         DMITEM
         DMSTATION
-        DMTOSTATION
+        DMAREA
     ")]
 
     tableList-update[("
