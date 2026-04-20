@@ -112,7 +112,7 @@ flowchart LR
         DNPALLET
         DMITEM
         DMSTATION
-        DMTOSTATION
+        DMAREA
     ")]
 
     tableList-update[("
@@ -120,27 +120,24 @@ flowchart LR
     ")]
 
     className[InquiryRetrievalSettingSCH]
-    className--> |Calling| className2[WebUnplannedRetrievalScheduler→schedule] --> |INSERT| tableList-insert
+    className--> |INSERT| tableList-insert
     input --> |getValue| className 
-    className--> |Calling| P1[RetrievalSender]
-    className2 --> |UPDATE| tableList-update
+    className --> |UPDATE| tableList-update
     tableList-select --> |SELECT| className
-
-    click P1 "https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/956/Stacked-Empty-Pallet?anchor=retrieval-sender" "Go to Retrieval Retrieval Sender"
-    style P1 fill:#00cc66,stroke:#006633,color:#ffffff
 
     classDef leftAlign text-align:left;
     class input leftAlign;
 :::
 
-##<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
-###<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
+###<span style="color:skyblue; font-weight:bold">Table Operation DML</span>
+####<span style="color:skyblue; font-weight:bold">DNWorkInfo</span>
 *   **JOB_NO**: Sequence Object    
 *   **SETTING_UNIT_KEY**: Sequence Object    
 *   **COLLECT_JOB_NO**: Sequence Object    
 *   **HARDWARE_TYPE**: 3:ASRS 
 *   **JOB_TYPE**: 23:Unplanned Retrieval    
-*   **STATUS_FLAG**: 0:Not Started    
+*   **STATUS_FLAG**: 0:Not Started
+*   **SYSTEM_CONN_KEY** : DNCARRYINFO.CARRY_KEY   
 *   **PLAN_UKEY**: Sequence Object    
 *   **STOCK_ID**: DNSTOCK.STOCKID    
 *   **PLAN_AREA_NO**: DNSTOCK.AREANO   
@@ -148,9 +145,7 @@ flowchart LR
 *   **PLAN_DAY**: DMWARENAVISYSTEM.WORK_DAY    
 *   **BATCH_NO**: DNSTOCK.BATCH_NO    
 *   **MATERIAL_CODE**: DNSTOCK.MATERIAL_CODE    
-*   **MATERIAL_NAME**: DMITEM.MATERIAL_NAME    
-*   **MATERIAL_TYPE**: DMITEM.MATERIAL_TYPE 
-*   **PLAN_QTY**: Value from screen (Retrieval Qty / Stock Qty)    
+*   **PLAN_QTY**: Value from screen (Retrieval Qty)    
 *   **TEMPERING_PERIOD**: DNSTOCK.TEMPERING_PERIOD
 *   **TEMPERING_FLAG**: DNSTOCK.TEMPERING_FLAG      
 *   **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE
@@ -158,9 +153,9 @@ flowchart LR
 *   **QC_CHECK_FLAG**: DNSTOCK_QC_CHECK_FLAG    
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY  
 *   **BCR_DATA**: DNPALLET.BCR_DATA  
+*   **EXPIRY_DATE**: DNSTOCK.EXPIRY_DATE
 *   **STORAGE_LOCATION**: Value from Screen (To Location)
-*   **DOCK_NO**: Value from Screen (Dock No)
-*   **TRUCK_PLATE_NO**: Value from Screen (Truck Plate No)
+*   **HARDWARE_TYPE** = DNWORKINFO.HARDWARE_TYPE.ASRS
 *   **USER_ID**: Login Info     
 *   **TERMINAL_NO**: Login info
 *   **REGIST_DATE**: SYSTIMESTAMP    
@@ -168,7 +163,7 @@ flowchart LR
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
 
-###<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
+####<span style="color:skyblue; font-weight:bold">DNCarryInfo</span>
 *   **CARRY_KEY**: Sequence Object    
 *   **PALLET_ID**: DNSTOCK.PALLET_ID    
 *   **WORK_TYPE**: 23:Unplanned Retrieval    
@@ -190,12 +185,12 @@ flowchart LR
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
 *   **LAST_UPDATE_PNAME**: ClassName
 
-###<span style="color:skyblue; font-weight:bold">DNPallet</span>
+####<span style="color:skyblue; font-weight:bold">DNPallet</span>
 * **STATUS_FLAG**: 3:Reserved for Retrieval
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
-###<span style="color:skyblue; font-weight:bold">DNWorkList</span>
+####<span style="color:skyblue; font-weight:bold">DNWorkList</span>
 *   **JOB_NO**: DNWORKINFO.JOB_NO    
 *   **SETTING_UNIT_KEY**: Sequence Object   
 *   **COLLECT_JOB_NO**: DNWORKINFO.COLLECT_JOB_NO    
@@ -210,13 +205,12 @@ flowchart LR
 *   **MATERIAL_NAME**: DNWORKINFO.MATERIAL_NAME      
 *   **RETRIEVAL_DETAIL**: 1:Unit Retrieval   
 *   **PLAN_QTY**: DNWORKINFO.PLAN_QTY  
+*   **BCR_DATA** : DNWORKINFO.BCR_DATA
 *   **TEMPERING_PERIOD**: DNSTOCK.TEMPERING_PERIOD
 *   **TEMPERING_FLAG**: DNSTOCK.TEMPERING_FLAG      
 *   **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE
 *   **QC_DURATION**: DNSTOCK.QC_DURATION
-*   **QC_CHECK_FLAG**: DNSTOCK_QC_CHECK_FLAG        
-*   **DOCK_NO**: DNWORKINFO.DOCK_NO
-*   **TRUCK_PLATE_NO**: DNWORKINFO.TRUCK_PLATE_NO 
+*   **QC_CHECK_FLAG**: DNSTOCK_QC_CHECK_FLAG
 *   **USER_ID**: DNWORKINFO.USER_ID    
 *   **USER_NAME**: DCUSER.USER_NAME    
 *   **REGIST_DATE**: SYSTIMESTAMP    
