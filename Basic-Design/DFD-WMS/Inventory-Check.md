@@ -245,7 +245,7 @@ This section explains the validations for the whole process Inventory Check
 - **WORK_TYPE** : 40: Inventory Check    
 - **CMD_STATUS** : 1: Started    
 - **PRIORITY** : 2: Normal    
-- **RESTORING_FLAG** : 1: Return to Same Location  
+- **RESTORING_FLAG** : 0: Return to NOT Same Location  
 - **WORK_NO** : Sequence Object
 - **CARRY_FLAG** : 2: Retrieval    
 - **RETRIEVAL_STATION_NO** : DNSTOCK.LOCATION_NO
