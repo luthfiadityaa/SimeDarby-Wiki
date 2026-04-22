@@ -250,8 +250,7 @@ This section explains the validations for the whole process Inventory Check
 - **CARRY_FLAG** : 2: Retrieval    
 - **RETRIEVAL_STATION_NO** : DNSTOCK.LOCATION_NO
 - **RETRIEVAL_DETAIL** : 0: Inventory Check
-- **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO    
-- **DEST_STATION_NO** : Based on **SOURCE_STATION_NO** where a reserved location belongs to ⟶ **(1301, 1302)**
+- **SOURCE_STATION_NO** : DNPALLET.CURRENT_STATION_NO
 - **PRIORITY** : 2: Normal
 - **CANCEL_REQUEST** : 0: Not Requested    
 - **SCHEDULE_NO** : Sequence Object  
