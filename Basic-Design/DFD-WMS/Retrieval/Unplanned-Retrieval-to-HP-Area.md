@@ -233,7 +233,7 @@ flowchart LR
 *   **CARRY_FLAG**: 2:Retrieval
 *   **CANCEL_REQUEST**: 0:Not requested
 *   **AISLE_STATION_NO**: DMSHELF.PARENT_STATION_NO
-*   **END_STATION_NO**: DNCARRYINFO.DEST_STATION_NO  
+*   **END_STATION_NO**: Value from screen (Station) ⟶ **<span style="color:green;">1205, 1206, 1207, 1208, 1209, 1301, 1302</span>**      
 *   **REGIST_DATE**: SYSTIMESTAMP    
 *   **REGIST_PNAME**: ClassName    
 *   **LAST_UPDATE_DATE**: SYSTIMESTAMP    
