@@ -154,10 +154,6 @@ flowchart LR
         UOM
         Tempering Flag
         Tempering Period
-        QC Duration
-        QC Check Flag
-        Dock #
-        Truck Plate #  
     ]
 
     tableList-insert[("
@@ -209,8 +205,6 @@ flowchart LR
 *   **TEMPERING_PERIOD**: DNSTOCK.TEMPERING_PERIOD
 *   **TEMPERING_FLAG**: DNSTOCK.TEMPERING_FLAG      
 *   **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE
-*   **QC_DURATION**: DNSTOCK.QC_DURATION
-*   **QC_CHECK_FLAG**: DNSTOCK_QC_CHECK_FLAG    
 *   **WORK_DAY**: DMWARENAVISYSTEM.WORK_DAY  
 *   **BCR_DATA**: DNPALLET.BCR_DATA  
 *   **EXPIRY_DATE**: DNSTOCK.EXPIRY_DATE
@@ -232,7 +226,7 @@ flowchart LR
 *   **WORK_NO**: Sequence Object    
 *   **RETRIEVAL_STATION_NO**: DNSTOCK.LOCATION_NO
 *   **SOURCE_STATION_NO**: DNPALLET.CURRENT_STATION_NO    
-*   **DEST_STATION_NO**: Value from screen (Station) ⟶ **<span style="color:green;">1205, 1206, 1207, 1208, 1209, 1301, 1302</span>**     
+*   **DEST_STATION_NO**: Value from screen (Station) ⟶ **<span style="color:green;">1205, 1206, 1207, 1208, 1209, 1301, 1302</span>** — **<span style="color:red;">⚠ CRITICAL: RetrievalSender queries DNCARRYINFO WHERE DEST_STATION_NO = station. Must be set or jobs are never dispatched.</span>**     
 *   **PRIORITY**: Value from screen ⟶ **<span style="color:green;">(1:Urgent, 2:Normal)</span>**
 *   **CANCEL_REQUEST**: 0:Not Requested    
 *   **SCHEDULE_NO**: Sequence Object    
@@ -269,8 +263,6 @@ flowchart LR
 *   **TEMPERING_PERIOD**: DNSTOCK.TEMPERING_PERIOD
 *   **TEMPERING_FLAG**: DNSTOCK.TEMPERING_FLAG      
 *   **EXPIRY_DAYS**: DNSTOCK.EXPIRYDATE
-*   **QC_DURATION**: DNSTOCK.QC_DURATION
-*   **QC_CHECK_FLAG**: DNSTOCK_QC_CHECK_FLAG        
 *   **USER_ID**: DNWORKINFO.USER_ID    
 *   **USER_NAME**: DCUSER.USER_NAME    
 *   **REGIST_DATE**: SYSTIMESTAMP    
@@ -440,14 +432,12 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 ###<span style="color:skyblue; font-weight:bold">DNOperationDisplay</span>
 * **CARRY_KEY**: MC Key information from ID68
 * **STATION_NO**: Station information from ID68
-* **MATERIAL_CODE**: **<span style="color:green">DNWORKINFO.MATERIAL_CODE</span>**
-* **RETRIEVAL_QTY**: **<span style="color:green">DNWORKINFO.RESULT_QTY</span>**
-* **DOCK_NO**: **<span style="color:green">DNWORKINFO.DOCK_NO</span>**
-* **TRUCK_PLATE_NO**: **<span style="color:green">DNWORKINFO.TRUCK_PLATE_NO</span>**
-* **ARRIAL_DATE**: SYSTIMESTAMP
+* **ARRIVAL_DATE**: SYSTIMESTAMP
 * **REGIST_PNAME**: Class name
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
+
+> **Code review note (2026-04-23):** Original spec listed MATERIAL_CODE, RETRIEVAL_QTY, DOCK_NO, TRUCK_PLATE_NO here. Actual `Id68Process.java` only inserts CARRY_KEY + STATION_NO + ARRIVAL_DATE. Spec was outdated.
 
 ##<span style="color:skyblue; font-weight:bold">LED sign displays the work</span>  
 [Display information]
@@ -456,6 +446,8 @@ ID68 will be sent from AGC to WareNavi to indicate Pallet has arrived to related
 * **Qty**
 * **Dock No**
 * **Truck Plate No**
+
+> **Code review note (2026-04-23):** LED display data comes from DNOPERATIONDISPLAY which only contains CARRY_KEY, STATION_NO, ARRIVAL_DATE for this flow. Display fields above reflect original spec intent, not current code behaviour.
 
 ![image.png](/.attachments/image-1e56dc6e-657e-47ff-9a47-575b04705583.png)
 
@@ -537,8 +529,6 @@ After the completion button flashes, the operator removes the pallet and presses
 *   **RETRIEVAL_STATION_NO**: DNWORKINFO.RESULT_LOCATION_NO   
 *   **RETRIEVAL_DETAIL**: 1:Unit Retrieval   
 *   **PLAN_QTY**: DNWORKINFO.PLAN_QTY      
-*   **DOCK_NO**: DNWORKINFO.DOCK_NO
-*   **TRUCK_PLATE_NO**: DNWORKINFO.TRUCK_PLATE_NO 
 *   **USER_ID**: DNWORKINFO.USER_ID    
 *   **USER_NAME**: DCUSER.USER_NAME    
 *   **REGIST_DATE**: SYSTIMESTAMP    
