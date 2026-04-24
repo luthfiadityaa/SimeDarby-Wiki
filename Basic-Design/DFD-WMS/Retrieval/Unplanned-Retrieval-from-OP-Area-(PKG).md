@@ -180,6 +180,7 @@ flowchart LR
 
 ####<span style="color:skyblue; font-weight:bold">DNPallet</span>
 * **STATUS_FLAG**: 3:Reserved for Retrieval
+* **ALLOCATION_FLAG**: 1:Allocated
 * **LAST_UPDATE_DATE**: SYSTIMESTAMP
 * **LAST_UPDATE_PNAME**: Class name
 
