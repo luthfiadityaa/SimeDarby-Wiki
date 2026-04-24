@@ -55,7 +55,11 @@ Section A — Palletization Storage Data Flow
 
 | Step | Class | DB Operation | Table | Key Values |
 | --- | --- | --- | --- | --- |
-| 1 | PalletizeStorageStationOperator | registArrival + carryRequest | DNArrival | station=111x, carry_key=CK001 (same carry from 110x) |
+| 1 | PalletizeStorageStationOperator.arrival B2 | registArrival + carryRequest | DNArrival | station=111x, carry_key=CK001 (real mckey from 110x), **sch_flag=9 (UNNEEDED)** — registArrival's default for non-DUMMY mckey |
+**StorageSender.dispatchPalletizeStorage — Path 2 dispatch at top of per-station loop:**
+| Step | Class | DB Operation | Table | Key Values |
+| --- | --- | --- | --- | --- |
+| 2a | StorageSender.dispatchPalletizeStorage | SELECT | DNArrival | station_no=111x, send_flag=NOT_SEND, **sch_flag=UNNEEDED** (Fix 1 — matches registArrival default) |
 **StorageSender.processPalletizeStorage at 111x — reuses same carry/mckey from 110x:**
 | Step | Class | DB Operation | Table | Key Values |
 | --- | --- | --- | --- | --- |
@@ -63,11 +67,11 @@ Section A — Palletization Storage Data Flow
 | 3 | StorageSender | findReceivingPlan | DNReceivingPlan | batch_station_no=111x, status IN(0,1,2) |
 | 4 | StorageSender | determinePlanQty | — | status 0,1→batch_qty_ctrn_pl; status 2→batch_last_pallet_qty |
 | 5 | StorageSender | deleteDirectPbStock | DNStock | DELETE item=DIRECT_PB placeholder from 110x |
-| 6 | StorageSender | createStoragePlan | DNStoragePlan SP001 | status=0, plan_qty, bcr_data, job_type from ReceivingPlan |
-| 7 | StorageSender | createStock | DNStock STK001 | real stock from ReceivingPlan data |
-| 8 | StorageSender | createWorkInfo | DNWorkInfo WK001 | **job_type = DNStoragePlan.job_type** ← not hardcoded |
+| 6 | StorageSender | createStoragePlan | DNStoragePlan SP001 | status=0, plan_qty, bcr_data, job_type from ReceivingPlan; **receive_ticket_no=ReceivingPlan.plan_ukey**, batch_station_no, batch_start_time, batch_storage_datetime, **storage_location_from=VT01** (TEMPORARY_LOCATION), **storage_location_to=ReceivingPlan.sap_to_location** (Fix 5) |
+| 7 | StorageSender | createStock | DNStock STK001 | real stock from ReceivingPlan data; **stock_qty=0** (real qty set at ID33), **storage_type=NEW ("2")**, storage_date=batch_storage_datetime, storage_day=YYYYMMDD, expiry_date=batch_storage_datetime+batch_expiry_days, tempering_period, tempering_flag=NOT_REACHED, qc_flag=NOT_DONE, qc_duration=0, storage_location=sap_to_location (Fix 4) |
+| 8 | StorageSender | createWorkInfo | DNWorkInfo WK001 | **job_type = DNStoragePlan.job_type** ← not hardcoded; plan_day, plan_lot_no, tempering_period, tempering_flag=NOT_REACHED, expiry_date, **user_id=AS21Param.SYS_USER_ID**, terminal_no=SYS_TERMINAL_NO (Fix 4 — Option C avoids ID35 null-user crash); **storage_location_from=VT01, storage_location_to=sap_to_location** (Fix 6 — propagates to DNHostSend at ID33) |
 | 9 | StorageSender | updatePalletSoftZone | DNPallet PLT001 | soft_zone, aisle_collect_key (same pallet from 110x) |
-| 10 | StorageSender | selectAisleAndUpdateCarry | DNCarryInfo CK001 | dest→710x BCR, source=111x, wait_reason=OFF |
+| 10 | StorageSender | selectAisleAndUpdateCarry | DNCarryInfo CK001 | dest→710x BCR, source=111x, **cmd_status=START (Fix 2 — reset so same-tick getCarryInfo emits ID05)**, wait_reason=OFF |
 | 11 | StorageSender | updateReceivingPlanProgress | DNReceivingPlan | progress_qty += plan_qty; status→4 if last pallet |
 | — | commit | — | — | — |
 | 12 | StorageSender | SEND | ID05 | dest=710x, carry=DIRECT_TRAVEL |
@@ -99,7 +103,7 @@ Section A — Palletization Storage Data Flow
 | Step | Class | DB Operation | Table | Key Values |
 | --- | --- | --- | --- | --- |
 | 1 | CarryCompleteOperator | UPDATE | DNWorkInfo WK001 | ⚑ status→4, result_location=B1-L1-A1, result_qty=qty |
-| 2 | WorkInfoController | INSERT | **DNHostSend** | ⚑ job_type from DNWorkInfo, report_flag=0, result_location=B1-L1-A1 |
+| 2 | HostSendController.insertByWorkInfo | INSERT | **DNHostSend** | ⚑ job_type from DNWorkInfo, report_flag=0, result_location=B1-L1-A1; **storage_location_from/to** copied from DNWorkInfo (set at Phase 3 step 8, Fix 6); **stock_status_from** from staged DNStock.stock_status; **qc_flag_from=0 (NOT_DONE), tempering_flag_from=0 (NOT_REACHED), plant=Constant.SAP_PLANT ("9908")** (Fix 7) |
 | 3 | AsStockController.addStock() | UPDATE | **DNStock STK001** | ⚑ location_no=B1-L1-A1, storage_date=now, stock_qty+=qty, plan_qty=0 |
 | 4 | AsStockController | UPDATE | DMShelf SHF001 | status→1 (OCCUPIED) |
 | 5 | AsStockController | UPDATE | DNPallet PLT002 | current_station=SHF001, status=STORED |

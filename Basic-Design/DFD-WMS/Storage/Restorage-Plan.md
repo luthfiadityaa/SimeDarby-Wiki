@@ -73,30 +73,31 @@ The **critical setting** that controls whether DNReStoringPlan is created is:
 
 All retrieval stations currently have `restoring_operation = '0'`:
 
-| Station | Name | restoring_operation |
-|---------|------|---------------------|
-| 1205 | FG Retrieval 1 | 0 (disabled) |
-| 1206 | FG Retrieval 2 | 0 (disabled) |
-| 1207 | FG Retrieval 3 | 0 (disabled) |
-| 1208 | FG Retrieval 4 | 0 (disabled) |
-| 1209 | FG Retrieval 5 | 0 (disabled) |
-| 1210 | EP Retrieval | 0 (disabled) |
-| 1220 | EP Retrieval End | 0 (disabled) |
-| 1201 | PM Retrieval 1 | 0 (disabled) |
-| 1202 | PM Retrieval 2 | 0 (disabled) |
-| 1203 | PM Retrieval 3 | 0 (disabled) |
-| 1204 | PM Retrieval 4 | 0 (disabled) |
+| Station | Name | restoring_operation | Enable? |
+|---------|------|---------------------|---------|
+| 1201 | PM Retrieval 1 | 0 → **1** | YES |
+| 1202 | PM Retrieval 2 | 0 → **1** | YES |
+| 1203 | PM Retrieval 3 | 0 → **1** | YES |
+| 1204 | PM Retrieval 4 | 0 → **1** | YES |
+| 1205 | FG Retrieval 1 | 0 → **1** | YES |
+| 1206 | FG Retrieval 2 | 0 → **1** | YES |
+| 1207 | FG Retrieval 3 | 0 → **1** | YES |
+| 1208 | FG Retrieval 4 | 0 → **1** | YES |
+| 1209 | FG Retrieval 5 | 0 → **1** | YES |
+| 1210 | EP Retrieval | 0 (disabled) | NO |
+| 1220 | EP Retrieval End | 0 (disabled) | NO |
+| 1301 | FG Inbound/Outbound 1 | 0 → **1** | YES |
+| 1302 | FG Inbound/Outbound 2 | 0 → **1** | YES |
 
 ### To Enable Restorage Plan Creation
 
 ```sql
--- Enable restorage plan for FG retrieval stations (partial picking)
 UPDATE DMStation SET restoring_operation = '1'
-WHERE station_no IN ('1205','1206','1207','1208','1209');
-
--- Optional: Enable for PM retrieval stations
-UPDATE DMStation SET restoring_operation = '1'
-WHERE station_no IN ('1201','1202','1203','1204');
+WHERE station_no IN (
+    '1201','1202','1203','1204',          -- PM Retrieval 1-4
+    '1205','1206','1207','1208','1209',   -- FG Retrieval 1-5
+    '1301','1302'                         -- FG Inbound/Outbound 1-2
+);
 ```
 
 ## Two Paths at ID26 (load_present=0)
