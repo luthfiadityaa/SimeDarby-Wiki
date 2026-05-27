@@ -23,3 +23,12 @@
 |  |  |  | Negative | TC.Data.001.006 | No values are set for required Items (missing value). | To ensure when specific tag no value to set and change to Error file format. | 1 | HostCommExecutor -> recvStoragePlanData() was running | The unexpected data was not passed and change file to C:\daifuku\data\host\oldData\PL_Stor_YYYYMMDDhhmmss.err. Additionally, the transaction has been recorded in DNExchangeHistory and DNLoaderErrorInfo | Not Tested | EXCHANGE STATUS will be recorded as ERROR DATA. |
 |  |  |  | Negative | TC.Data.001.007 | Undefined values are set for Items such as a Plant. | To ensure when undefined values to set not exist and change to Error file format. | 1 | HostCommExecutor -> recvStoragePlanData() was running | The unexpected data was not passed and change file to C:\daifuku\data\host\oldData\PL_Stor_YYYYMMDDhhmmss.err. Additionally, the transaction has been recorded in DNExchangeHistory and DNLoaderErrorInfo | Not Tested | EXCHANGE STATUS will be recorded as ERROR DATA |
 |  |  |  | Negative | TC.Data.001.008 | The number of loaded lines is zero (0) | To ensure when zero (0) lines and change to Error file format. | 1 | HostCommExecutor -> recvStoragePlanData() was running | The unexpected data was not passed and change file to C:\daifuku\data\host\oldData\PL_Stor_YYYYMMDDhhmmss.err. Additionally, the transaction has been recorded in DNExchangeHistory and DNLoaderErrorInfo | Not Tested | EXCHANGE STATUS will be recorded as EXCEPTION OCCURED. |
+
+#<span style="color:skyblue; font-weight:bold">Notes / Defects</span>
+
+_Record any deviation, screenshot reference, or observation here._
+
+```
+[                                                                                ]
+[                                                                                ]
+```
