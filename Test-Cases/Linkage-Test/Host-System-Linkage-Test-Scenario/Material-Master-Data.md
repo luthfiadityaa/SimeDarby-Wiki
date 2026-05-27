@@ -25,3 +25,12 @@
 |  |  |  | Negative | TC.Data.001.007 | Undefined values are set for Materials such as a Material type. | To ensure when undefined values to set not exist and change to Error file format. | 1 | HostCommExecutor -> recvMaterialMasterData() was running | The unexpected data was not passed and change to C:\daifuku\data\host\oldData\Material__YYYYMMDD_hhmmss-xxx.err. Additionally, the transaction has been recorded in DNExchangeHistory and DNLoaderErrorInfo | Not Tested |  |
 |  |  |  | Negative | TC.Data.001.008 | The number of loaded lines is zero (0) | To ensure when zero (0) lines and change to Error file format. | 1 | HostCommExecutor -> recvMaterialMasterData() was running | The unexpected data was not passed and change to C:\daifuku\data\host\oldData\Material__YYYYMMDD_hhmmss-xxx.err. Additionally, the transaction has been recorded in DNExchangeHistory and DNLoaderErrorInfo | Not Tested |  |
 |  |  |  | Negative | TC.Data.001.009 | The number of loaded lines exceeds the maximum number of lines that cannot be loaded. | To ensure when exceeds the maximum number of lines and change to Error file format. | 1 | HostCommExecutor -> recvMaterialMasterData() was running | The unexpected data was not passed and change to C:\daifuku\data\host\oldData\Material__YYYYMMDD_hhmmss-xxx.err. Additionally, the transaction has been recorded in DNExchangeHistory and DNLoaderErrorInfo | Not Tested |  |
+
+#<span style="color:skyblue; font-weight:bold">Notes / Defects</span>
+
+_Record any deviation, screenshot reference, or observation here._
+
+```
+[                                                                                ]
+[                                                                                ]
+```
