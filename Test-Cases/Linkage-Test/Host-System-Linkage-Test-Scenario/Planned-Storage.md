@@ -1,5 +1,4 @@
 [[_TOC_]]
-[[_TOSP_]]
 
 #Summary
 - **Test Type**:  Host System Linkage Test                                                                                   
