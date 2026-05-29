@@ -5,3 +5,13 @@
 - **Tester**: _____________                                                                                                
 - **Test Date**: _____________                                                                                              
 - **Overall Status**:  [ ] Pass &nbsp;&nbsp; [ ] Fail          
+
+
+#<span style="color:skyblue; font-weight:bold">Notes / Defects</span>
+
+_Record any deviation, screenshot reference, or observation here._
+
+```
+[                                                                                ]
+[                                                                                ]
+```
