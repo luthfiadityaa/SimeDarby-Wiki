@@ -3,18 +3,18 @@
 
 #<span style="color:skyblue; font-weight:bold">TC-PRHP-C001 — Planned Retrieval to ST 1207 (ticket batch)</span>
 
-| Field              | Value                                                                                          |
-| ------------------ | ---------------------------------------------------------------------------------------------- |
-| **Test Type**      | Combine Test                                                                                   |
-| **DFD Reference**  | [Planned Retrieval to HP Area](/Basic-Design/DFD-WMS/Retrieval/Planned-Retrieval-to-HP-Area)   |
-| **Screen**         | `jp.co.daifuku.wms.web.display.retrieval.PlannedRetrievalSettingSCH`                           |
-| **Job Type**       | Planned Retrieval (`JOB_TYPE` per `DNRETRIEVALPLAN`, allocate via `RetrievalAllocateOperator`) |
-| **Destination**    | 1207 (Unidirectional HP retrieval station)                                                     |
-| **AGC Route**      | RetrievalAllocateOperator → RetrievalSender → ID12 → ID32 → ID33 → ID64 → ID68 → ID26          |
-| **Priority**       | High                                                                                           |
-| **Tester**         | _____________                                                                                  |
-| **Test Date**      | _____________                                                                                  |
-| **Overall Status** | [ ] Pass &nbsp;&nbsp; [ ] Fail                                                                 |
+| Field            | Value                                                                                         |
+|------------------|-----------------------------------------------------------------------------------------------|
+| **Test Type**    | Combine Test                                                                                  |
+| **DFD Reference**| [Planned Retrieval to HP Area](/Basic-Design/DFD-WMS/Retrieval/Planned-Retrieval-to-HP-Area)  |
+| **Screen**       | `jp.co.daifuku.wms.web.display.retrieval.PlannedRetrievalSettingSCH`                          |
+| **Job Type**     | Planned Retrieval (`JOB_TYPE` per `DNRETRIEVALPLAN`, allocate via `RetrievalAllocateOperator`) |
+| **Destination**  | 1207 (Unidirectional HP retrieval station)                                                    |
+| **AGC Route**    | RetrievalAllocateOperator → RetrievalSender → ID12 → ID32 → ID33 → ID64 → ID68 → ID26         |
+| **Priority**     | High                                                                                          |
+| **Tester**       | _____________                                                                                 |
+| **Test Date**    | _____________                                                                                 |
+| **Overall Status** | [ ] Pass &nbsp;&nbsp; [ ] Fail                                                              |
 
 ##<span style="color:skyblue; font-weight:bold">Objective</span>
 

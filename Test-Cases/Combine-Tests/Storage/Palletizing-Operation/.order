@@ -1,0 +1,6 @@
+TC-PS-001-Empty-Pallet-Supply-via-Standard-Retrieval-Cycle-(ST1210-Triggered)
+TC-PS-002-Palletizing-Start-Screen
+TC-PS-003-No-Operations-(Empty-Pallet-Supply)-%2D-1210-to-110x-&-Barcode-No-Read-Rejection
+TC-PS-004-Batch-Start
+TC-PS-005-Robot-Station-111x-to-ASRS-Rack,-and-Host-Reporting-Flow
+TC-PS-006-Batch-End,-Force-Completion-Handling-&-Exception-Recovery

@@ -22,7 +22,7 @@
 
 
 #Unplanned Storage - Set(F2)
-![image.png](/.attachments/image-5a51cda4-8535-4637-85d0-1afb04bbd2d6.png)
+![image.png](/.attachments/image-b5894d73-9516-40dd-880f-41d2d0c1715c.png)
  
 The Unplanned Storage Setting screen uses for manually set the storage work .
 This screen mainly uses when there are some troubles with Host System Linkage(irregular cases) or when manual operation is necessary.
@@ -75,23 +75,21 @@ This section explains the validations for the whole proccess Unplanned Storage S
   *   PalletID is not found in existing pallet in **DNStock**.
 - **Daily cleanup** not processing.
 - **Material Code** only select exclude :
-  * if select Material_Type = **99** (EMP_PB) OR **98** (IRREGULAR_PB) OR **97** (DIRECT_PB), Then pass <span style="color:red">**ERROR**</span> message.
+  * if select Material_Type = **99** (EMP_PB) OR **98** (IRREGULAR_PB) OR **97** (DIRECT_PB).
 - **Storage Location (Master)** only display <span style="color:green; font-weight:bold">SAP_LOCATION_STORAGE</span> List.
+- **Stock Status** will be disable with value is **'UU'**
 - When **Material Code** has been selected, it will be filtered based on <span style="color:green; font-weight:bold">DMITEM.SOFT_ZONE_ID</span>:
   * **SOFT_ZONE_ID** = <span style="color:green; font-weight:bold">005</span>
     --> **To Location** is display value (**FGW1, FGW2**).
-    --> **Stock Status** will appear with Value is **'UU'**.
 
   * **SOFT_ZONE_ID** = <span style="color:green; font-weight:bold">001</span> 
     --> **To Location** is display value (**FGW2**).
-    --> **Stock Status** will appear with Value is '**UU**'.
 
   * **SOFT_ZONE_ID** = <span style="color:green; font-weight:bold">002</span> 
     --> **To Location** is display value (**FGW1**).
-    --> **Stock Status** will appear with Value is '**UU**'.
 
   * **SOFT_ZONE_ID** = <span style="color:green; font-weight:bold">003</span> 
-    --> **To Location** is display value (**ZPCK**)
+    --> **To Location** is display value (**PACK**)
     --> **Tempering Period** will be <span style="color:red">disable</span> .
     --> **Expiry Days** will be <span style="color:red">disable</span> .
 - **Pallet No** and **Batch No** must be 10 characters.
@@ -108,10 +106,10 @@ This section explains the validations for the whole proccess Unplanned Storage S
 - STATUS_FLAG       = 0
 - JOB_TYPE          = DNSTORAGEPLAN.JOB_TYPE.NOPLAN_STORAGE
 - PLAN_DAY          = TODAY (YYYYMMDD)
-- BCR_DATA          = Value from Screen (**Pallet #**)
-- ITEM_CODE         = Value from screen (**ITEM CODE**)
+- BCR_DATA          = Value from Screen (**Pallet No**)
+- ITEM_CODE         = Value from screen (**Material Code**)
 - PLAN_QTY          = Value from screen (**Storage Qty**)
-- PLAN_LOT_NO       = Value from screen (**Storage Qty**)
+- PLAN_LOT_NO       = Value from screen (**Batch No**)
 - PLAN_AREA_NO      = **FGW1:9002 or FGW2:9001**
 - STORAGE_LOCATION_FROM = Value from screen (**Storage Location**)
 - STORAGE_LOCATION_TO   = Value from screen (**To Location**)
@@ -127,14 +125,17 @@ This section explains the validations for the whole proccess Unplanned Storage S
 CONTROL FLOW[](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/882/-SCREEN-ONLY-Planned-Storage-Packaging-Material?anchor=control-flow)
 =======================================================================================================================================================================================
 
-*   [PM / FG Inbound Storage - Same Warehouse (1106/1301/1302 -> 720x -> SRM)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/1040/Storage-Process?anchor=2.-pm-/-fg-inbound-storage---same-warehouse-(1106/1301/1302--%3E-720x--%3E-srm))
-*   [9200 — WNCollectAisleSelector (Pattern 4, Double Deep)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/1040/Storage-Process?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3E9200-%E2%80%94-wncollectaisleselector-(pattern-4%2C-double-deep)%3C/span%3E)
-*   [Storage Completion (ID33)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/1040/Storage-Process?anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Estorage-completion-(id33)%3C/span%3E)
+- [PM / FG Inbound Storage - Same Warehouse (1106/1301/1302 -> 720x -> SRM)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Storage%20Process&pageId=1040&anchor=3.-fg-inbound-cross-warehouse-storage-(1301/1302--%3E-720x--%3E-710x--%3E-srm))
+- [9200 — WNCollectAisleSelector (Pattern 4, Double Deep)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Storage%20Process&pageId=1040&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3E9200-%E2%80%94-wncollectaisleselector-(pattern-4%2C-double-deep)%3C/span%3E)
+- [Storage Completion (ID33)](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki?wikiVersion=GBwikiMaster&_a=edit&pagePath=/Basic%20Design/DFD%20WMS/Storage/Storage%20Process&pageId=1040&anchor=%3Cspan-style%3D%22color%3Askyblue%3B-font-weight%3Abold%22%3Estorage-completion-(id33)%3C/span%3E)
 
 #Related User Story
 
-- [#5139 Unplanned Storage Setting​​](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_boards/board/t/ID_SimeDarbyPlantation%20Team/Stories?workitem=5140)
-- [#6524 Control for ALL Storage operation](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/6524)
+- [User Story 5140 Unplanned Storage Setting​](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/5140)
+- [User Story 6184 Host Interface - Unplanned Storage Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/6184)
+- [Bug 6675 Unplanned Storage - Lot optional for pck](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/6675)
+- [Bug 6673 Unplanned Storage - Tempering Period and expiry days](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/6673)
+- [Bug 6672 Unplanned Storage - Lot No & Stock Status](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_workitems/edit/6672)
 
 #<span style="color:skyblue; font-weight:bold">Related DFD</span>
 - [Unplanned Storage and Retrieval Result](https://dev.azure.com/Daifuku-SW/ID_SimeDarbyPlantation/_wiki/wikis/ID_SimeDarbyPlantation.wiki/850/Unplanned-Storage-and-Retrieval-Result)
